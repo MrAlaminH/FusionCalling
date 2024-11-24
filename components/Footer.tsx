@@ -30,7 +30,7 @@ export default function Footer() {
             </h2>
 
             <Link
-              href="/book-demo"
+              href="https://cal.com/mralamin/30min?"
               className="mt-8 px-8 py-3 bg-orange-600 text-black rounded-full font-bold hover:bg-gray-700 transition-colors duration-300 inline-flex items-center"
             >
               Book a Demo
@@ -46,12 +46,12 @@ export default function Footer() {
             <div className="flex flex-col space-y-2">
               <Link
                 href="/"
-                className="text-xl font-bold text-white hover:text-orange-600 transition-colors"
+                className="text-xl font-bold text-orange-600 transition-colors"
               >
                 Fusion Calling
               </Link>
               <p className="text-xs text-white/60">
-                © 2024 VitalAI, Inc. All rights reserved.
+                © 2024 MrAlaminH. All rights reserved.
               </p>
             </div>
 

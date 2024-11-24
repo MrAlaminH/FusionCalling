@@ -6,6 +6,7 @@ import Image from "next/image";
 import { BorderBeam } from "@/components/ui/border-beam";
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import { cn } from "@/lib/utils";
+import PhoneInputComponent from "@/components/sub/PhoneInput";
 
 export default function Component() {
   return (
@@ -79,25 +80,25 @@ export default function Component() {
         {/* CTA Button */}
         <div className="flex justify-center mb-12 sm:mb-20">
           <Link
-            href="#"
+            href="https://cal.com/mralamin/30min?"
             className="inline-flex items-center rounded-md bg-white px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base font-medium text-black transition-all hover:bg-gray-200 hover:scale-105"
           >
-            Start creating for free
+            Start creating with us
             <span className="ml-1.5 sm:ml-2">→</span>
           </Link>
         </div>
 
         {/* Demo Card Section - Updated with improved gradient transitions */}
         <div className="max-w-5xl mx-auto relative">
-          {/* Enhanced gradient shadow overlay */}
-          <div className="absolute -bottom-32 left-1/2 -translate-x-1/2 w-[200%] h-64 bg-gradient-to-t from-black via-black/90 to-transparent z-10 blur-2xl" />
-          <div className="absolute -bottom-32 left-1/2 -translate-x-1/2 w-[200%] h-64 bg-gradient-to-t from-black to-transparent z-10" />
+          {/* Enhanced gradient shadow overlay - Hidden on mobile, visible on md and up */}
+          <div className="hidden md:block absolute -bottom-32 left-1/2 -translate-x-1/2 w-[200%] h-64 bg-gradient-to-t from-black via-black/90 to-transparent z-10 blur-2xl" />
+          <div className="hidden md:block absolute -bottom-32 left-1/2 -translate-x-1/2 w-[200%] h-48 bg-gradient-to-t from-black to-transparent z-10" />
 
-          {/* Glow effect behind the card */}
-          <div className="absolute -inset-x-20 -bottom-20 h-40 bg-gradient-to-t from-orange-500/20 via-green-500/20 to-transparent blur-3xl opacity-50" />
+          {/* Glow effect behind the card - Hidden on mobile, visible on md and up */}
+          <div className="hidden md:block absolute -inset-x-20 -bottom-20 h-40 bg-gradient-to-t from-orange-500/20 via-green-500/20 to-transparent blur-3xl opacity-50" />
 
           <NeonGradientCard
-            className="w-full dark mb-32 relative z-0"
+            className="w-full dark mb-8 md:mb-32 relative z-0"
             borderSize={2}
             borderRadius={24}
             neonColors={{
@@ -113,21 +114,19 @@ export default function Component() {
                 </button>
                 <div className="space-y-4">
                   <h2 className="text-3xl sm:text-4xl font-bold text-white">
-                    Can&apos;t believe?{" "}
-                    <span className="text-orange-500">Try NOW</span> a free test
-                    call
+                    Skeptical?{" "}
+                    <span className="text-orange-500">Test it NOW</span>
                   </h2>
                   <p className="text-gray-400">
-                    Curious how our AI agents work?
+                    Wondering how our AI agents work?
                   </p>
                   <p className="text-gray-400">
-                    Get a hands-on experience by trying a free demo call. Fill
-                    in your details, and our AI representative will call you
-                    instantly.
+                    Experience it yourself with a free demo call. Share your
+                    details, and our AI will reach out instantly.
                   </p>
                   <p className="text-sm text-white">
-                    Agent is trained to discuss about Autocalls services and
-                    book appointments.
+                    The AI agent is ready to chat about Fusion Calling and book
+                    appointments for you.
                   </p>
                 </div>
               </div>
@@ -154,60 +153,87 @@ export default function Component() {
                     <h3 className="font-semibold text-lg text-white ">
                       Demo AI agent
                     </h3>
-                    <p className="text-orange-500 text-sm">
-                      Autocalls representative
-                    </p>
+                    <p className="text-orange-500 text-sm">Representative</p>
                   </div>
                 </div>
 
                 <form className="space-y-4">
+                  <label
+                    className="block text-sm font-medium text-gray-300"
+                    htmlFor="name"
+                  >
+                    Your name
+                  </label>
                   <Input
+                    id="name"
                     type="text"
                     placeholder="Your name"
                     className="bg-zinc-800 border-zinc-700 text-white"
                   />
+
+                  <label
+                    className="block text-sm font-medium text-gray-300"
+                    htmlFor="email"
+                  >
+                    Your e-mail
+                  </label>
                   <Input
+                    id="email"
                     type="email"
                     placeholder="Your e-mail"
                     className="bg-zinc-800 border-zinc-700 text-white"
                   />
-                  <Input
-                    type="tel"
-                    placeholder="Phone number"
-                    className="bg-zinc-800 border-zinc-700 text-white"
-                  />
+
+                  <label
+                    className="block text-sm font-medium text-gray-300"
+                    htmlFor="phone"
+                  >
+                    Phone number
+                  </label>
+                  <div className="[&_.PhoneInputInput]:bg-zinc-800 [&_.PhoneInputInput]:border-zinc-700 [&_.PhoneInputInput]:text-white">
+                    <PhoneInputComponent
+                      id="phone"
+                      placeholder="Phone number"
+                      defaultCountry="US"
+                      aria-label="Phone number"
+                    />
+                  </div>
 
                   <p className="text-sm text-gray-400">
                     The call will automatically end after{" "}
                     <span className="text-orange-500">5 minutes</span>
                   </p>
 
-                  <button className="w-full bg-zinc-800 hover:bg-zinc-700 text-white rounded-full p-4 flex items-center justify-between group transition-all duration-300">
-                    <div className="bg-orange-500 rounded-full p-2 group-hover:scale-110 transition-transform">
-                      <svg
-                        className="w-6 h-6 text-black"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                        />
-                      </svg>
-                    </div>
-                    <span className="flex-1 text-center">→ SLIDE TO CALL</span>
-                  </button>
+                  <div className="relative z-40">
+                    <button
+                      className="w-full bg-zinc-800 hover:bg-zinc-700 text-white rounded-full p-4 flex items-center justify-between group transition-all duration-300"
+                      aria-label="Slide to call"
+                    >
+                      <div className="bg-orange-500 rounded-full p-2 group-hover:scale-110 transition-transform">
+                        <svg
+                          className="w-6 h-6 text-black"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                          />
+                        </svg>
+                      </div>
+                      <span className="flex-1 text-center">
+                        → SLIDE TO CALL
+                      </span>
+                    </button>
+                  </div>
                 </form>
               </div>
             </div>
           </NeonGradientCard>
         </div>
-
-        {/* Increased spacing for smoother transition */}
-        {/* <div className="h-32" /> */}
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main className="min-h-screen w-full bg-black">
       <Navbar />
-      <section id="hero">
+      <section id="home">
         <Hero />
       </section>
       <section id="tools">
