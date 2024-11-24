@@ -7,6 +7,7 @@ import { BorderBeam } from "@/components/ui/border-beam";
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import { cn } from "@/lib/utils";
 import PhoneInputComponent from "@/components/sub/PhoneInput";
+import SlideToCall from "@/components/sub/SlideToCall";
 
 export default function Component() {
   return (
@@ -90,12 +91,8 @@ export default function Component() {
 
         {/* Demo Card Section - Updated with improved gradient transitions */}
         <div className="max-w-5xl mx-auto relative">
-          {/* Enhanced gradient shadow overlay - Hidden on mobile, visible on md and up */}
-          <div className="hidden md:block absolute -bottom-32 left-1/2 -translate-x-1/2 w-[200%] h-64 bg-gradient-to-t from-black via-black/90 to-transparent z-10 blur-2xl" />
-          <div className="hidden md:block absolute -bottom-32 left-1/2 -translate-x-1/2 w-[200%] h-48 bg-gradient-to-t from-black to-transparent z-10" />
-
           {/* Glow effect behind the card - Hidden on mobile, visible on md and up */}
-          <div className="hidden md:block absolute -inset-x-20 -bottom-20 h-40 bg-gradient-to-t from-orange-500/20 via-green-500/20 to-transparent blur-3xl opacity-50" />
+          <div className="hidden md:block absolute -bottom-32 left-1/2 -translate-x-1/2 w-[120%] h-64 bg-gradient-to-t from-black via-black/90 to-transparent pointer-events-none z-0" />
 
           <NeonGradientCard
             className="w-full dark mb-8 md:mb-32 relative z-0"
@@ -106,7 +103,7 @@ export default function Component() {
               secondColor: "#22c55e",
             }}
           >
-            <div className="grid md:grid-cols-2 gap-8 p-8">
+            <div className="grid md:grid-cols-2 gap-8 p-4 md:p-8 relative z-50">
               {/* Left Column */}
               <div className="space-y-6">
                 <button className="bg-orange-500 text-black px-4 py-1.5 rounded-full text-sm font-medium">
@@ -132,7 +129,7 @@ export default function Component() {
               </div>
 
               {/* Right Column - Form */}
-              <div className="bg-zinc-900 rounded-2xl p-6 border border-green-500/20 relative">
+              <div className="bg-zinc-900 z-50 rounded-2xl p-4 sm:p-6 border border-green-500/20 relative mx-[-16px] sm:mx-0">
                 <BorderBeam
                   className="opacity-40"
                   colorFrom="rgb(249 115 22)"
@@ -204,30 +201,10 @@ export default function Component() {
                     <span className="text-orange-500">5 minutes</span>
                   </p>
 
-                  <div className="relative z-40">
-                    <button
-                      className="w-full bg-zinc-800 hover:bg-zinc-700 text-white rounded-full p-4 flex items-center justify-between group transition-all duration-300"
-                      aria-label="Slide to call"
-                    >
-                      <div className="bg-orange-500 rounded-full p-2 group-hover:scale-110 transition-transform">
-                        <svg
-                          className="w-6 h-6 text-black"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                          />
-                        </svg>
-                      </div>
-                      <span className="flex-1 text-center">
-                        → SLIDE TO CALL
-                      </span>
-                    </button>
+                  <div className="relative">
+                    <div className="w-full ">
+                      <SlideToCall />
+                    </div>
                   </div>
                 </form>
               </div>

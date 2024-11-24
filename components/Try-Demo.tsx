@@ -23,7 +23,7 @@ export default function TryDemo() {
       <div className="container relative mx-auto max-w-7xl">
         {/* Header Section */}
         <h1 className="text-orange-500 text-center font-bold text-3xl md:text-4xl mb-6 pb-4">
-          Voice Call AI Example
+          Examples of AI Voice Calls
         </h1>
 
         {/* Feature Cards */}
@@ -57,6 +57,7 @@ export default function TryDemo() {
             <div
               key={index}
               className="group relative overflow-hidden rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              onClick={() => handleOpenModal(feature.video)}
             >
               <div className={`relative aspect-video ${feature.bgColor}`}>
                 <Image
@@ -69,7 +70,10 @@ export default function TryDemo() {
                 <Button
                   size="icon"
                   className="absolute bottom-4 left-4 h-12 w-12 rounded-full bg-orange-500 text-white shadow-lg transition-transform hover:scale-110 hover:bg-orange-600 active:scale-95"
-                  onClick={() => handleOpenModal(feature.video)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleOpenModal(feature.video);
+                  }}
                 >
                   <Play className="h-6 w-6" />
                   <span className="sr-only">Play demo</span>
@@ -93,16 +97,7 @@ export default function TryDemo() {
             className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
             onClick={handleCloseModal}
           >
-            <div
-              className="bg-white p-4 rounded relative"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                onClick={handleCloseModal}
-                className="absolute top-2 right-2"
-              >
-                Close
-              </button>
+            <div className="relative" onClick={(e) => e.stopPropagation()}>
               <iframe
                 width="560"
                 height="315"

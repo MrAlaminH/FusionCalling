@@ -34,7 +34,7 @@ export default function Features() {
             </ul>
           </div>
           <div className="w-full lg:w-1/2">
-            <Card className="border-orange-500 rounded-5xl">
+            <Card className="border-orange-500 rounded-lg">
               <CardContent className="p-0">
                 <Image
                   src="/feature1.jpeg"
@@ -79,7 +79,7 @@ export default function Features() {
             </ul>
           </div>
           <div className="w-full lg:w-1/2">
-            <Card className="border-orange-500 rounded-5xl">
+            <Card className="border-orange-500 rounded-lg">
               <CardContent className="p-0 ">
                 <Image
                   src="/feature2.jpeg"

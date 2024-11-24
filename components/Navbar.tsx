@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-[#03001417] backdrop-blur-md shadow-lg shadow-orange-600/50 fixed w-full z-50 top-0 px-10">
-      <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between p-4">
+      <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between p-2">
         <div className="flex items-center  space-x-3">
           <a href="#Home">
             <Image
@@ -25,8 +25,8 @@ const Navbar = () => {
             />
           </a>
 
-          <span className="self-center text-xl font-bold text-white">
-            Sodality
+          <span className="self-center text-xl font-bold text-orange-600">
+            Fusion Calling
           </span>
         </div>
 
