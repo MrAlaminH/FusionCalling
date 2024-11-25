@@ -25,7 +25,7 @@ export default function Component() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-hidden pt-24 md:pt-28 lg:pt-32 relative">
+    <div className="min-h-screen bg-black text-white overflow-hidden pt-16 sm:pt-20 md:pt-24 lg:pt-28 xl:pt-32 relative">
       {/* Background Pattern SVG */}
       <svg
         className="absolute inset-0 h-full w-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] pointer-events-none"
@@ -51,38 +51,38 @@ export default function Component() {
         ></rect>
       </svg>
 
-      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top pill button - Updated with AnimatedShinyText */}
+      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl md:py-6 py-10">
+        {/* Top pill button */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex justify-center mb-6 sm:mb-8"
+          className="flex justify-center mb-4 sm:mb-6 lg:mb-8"
         >
           <Link
             href="#"
             className={cn(
-              "group inline-flex items-center rounded-full bg-white/10 px-3 sm:px-4 py-1.5 text-xs sm:text-sm transition-colors hover:bg-white/20"
+              "group inline-flex items-center rounded-full bg-white/10 px-2.5 sm:px-3 md:px-4 py-1 sm:py-1.5 text-[10px] xxs:text-xs sm:text-sm transition-colors hover:bg-white/20"
             )}
           >
-            <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
+            <Sparkles className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4 mr-1 sm:mr-1.5 md:mr-2" />
             <AnimatedShinyText className="text-white hover:text-white/90">
               Manage Business Call Smartly
-              <span className="ml-1.5 sm:ml-2 group-hover:translate-x-0.5 transition-transform inline-block">
+              <span className="ml-1 sm:ml-1.5 md:ml-2 group-hover:translate-x-0.5 transition-transform inline-block">
                 →
               </span>
             </AnimatedShinyText>
           </Link>
         </motion.div>
 
-        {/* Main heading - Adjusted spacing */}
+        {/* Main heading */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center mb-4 sm:mb-6 px-4 sm:px-6"
+          className="text-center mb-3 sm:mb-4 md:mb-6 px-2 sm:px-4 md:px-6"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-tight">
+          <h1 className="text-2xl xxs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1]">
             Revolutionize Your Business
             <br className="hidden sm:block" />
             <span className="whitespace-nowrap"> </span>
@@ -93,14 +93,14 @@ export default function Component() {
           </h1>
         </motion.div>
 
-        {/* Subheading - Adjusted spacing */}
+        {/* Subheading */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="max-w-2xl mx-auto text-center mb-6 sm:mb-8 px-4 sm:px-6"
+          className="max-w-2xl mx-auto text-center mb-6 sm:mb-8 lg:mb-10 px-2 sm:px-4 md:px-6"
         >
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 leading-relaxed">
+          <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-400 leading-relaxed">
             Transform customer interactions with AI-powered voice assistants.
             <br className="hidden sm:block" />
             designed to scale inbound and outbound calls and improve customer
@@ -113,23 +113,23 @@ export default function Component() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex justify-center mb-12 sm:mb-20"
+          className="flex justify-center mb-8 sm:mb-12 lg:mb-16 xl:mb-20"
         >
           <Link
             href="https://cal.com/mralamin/30min?"
-            className="inline-flex items-center rounded-md bg-white px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base font-medium text-black transition-all hover:bg-gray-200 hover:scale-105"
+            className="inline-flex items-center rounded-md bg-white px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm md:text-base font-medium text-black transition-all hover:bg-gray-200 hover:scale-105"
           >
             Start creating with us
-            <span className="ml-1.5 sm:ml-2">→</span>
+            <span className="ml-1 sm:ml-1.5 md:ml-2">→</span>
           </Link>
         </motion.div>
 
         {/* Demo Card Section */}
-        <div className="max-w-5xl mx-auto relative">
+        <div className="max-w-[90rem] mx-auto relative">
           {/* Enhanced gradient shadow overlay - Hidden on mobile, visible on md and up */}
           <div className="hidden md:block absolute -bottom-32 left-1/2 -translate-x-1/2 w-[200%] h-64 bg-gradient-to-t from-black via-black/90 to-transparent z-10 blur-2xl pointer-events-none" />
-
-          <div className="hidden md:block absolute -bottom-32 left-1/2 -translate-x-1/2 w-[200%] h-48 bg-gradient-to-t from-black to-transparent z-20 pointer-events-none" />
+          <div className="hidden md:block absolute -bottom-52 left-1/2 -translate-x-1/2 w-[200%] h-48 bg-gradient-to-t from-black to-transparent z-20 pointer-events-none" />
+          <div className="hidden md:block absolute -bottom-52 left-1/2 -translate-x-1/2 w-[200%] h-48 bg-gradient-to-t from-black to-transparent z-20 pointer-events-none" />
 
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -137,7 +137,7 @@ export default function Component() {
             transition={{ duration: 0.8, delay: 1 }}
           >
             <NeonGradientCard
-              className="w-full dark mb-8 md:mb-32 relative z-0"
+              className="w-full dark mb-6 sm:mb-12 md:mb-20 lg:mb-32 relative z-0"
               borderSize={2}
               borderRadius={24}
               neonColors={{
@@ -145,25 +145,25 @@ export default function Component() {
                 secondColor: "#22c55e",
               }}
             >
-              <div className="grid md:grid-cols-2 gap-8 p-4 md:p-8 relative z-50">
+              <div className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 p-3 sm:p-4 md:p-6 lg:p-8 relative z-50">
                 {/* Left Column */}
-                <div className="space-y-6">
-                  <button className="bg-orange-500 text-black px-4 py-1.5 rounded-full text-sm font-medium">
+                <div className="space-y-4 sm:space-y-6">
+                  <button className="bg-orange-500 text-black px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium">
                     Live demo
                   </button>
-                  <div className="space-y-4">
-                    <h2 className="text-3xl sm:text-4xl font-bold text-white">
+                  <div className="space-y-2 sm:space-y-4">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
                       Skeptical?{" "}
                       <span className="text-orange-500">Test it NOW</span>
                     </h2>
-                    <p className="text-gray-400">
+                    <p className="text-sm sm:text-base text-gray-400">
                       Wondering how our AI agents work?
                     </p>
-                    <p className="text-gray-400">
+                    <p className="text-sm sm:text-base text-gray-400">
                       Experience it yourself with a free demo call. Share your
                       details, and our AI will reach out instantly.
                     </p>
-                    <p className="text-sm text-white">
+                    <p className="text-xs sm:text-sm text-white">
                       The AI agent is ready to chat about Fusion Calling and
                       book appointments for you.
                     </p>
@@ -171,7 +171,7 @@ export default function Component() {
                 </div>
 
                 {/* Right Column - Form */}
-                <div className="bg-zinc-900 z-50 rounded-2xl p-4 sm:p-6 border border-green-500/20 relative mx-[-16px] sm:mx-0">
+                <div className="bg-zinc-900 z-50 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 border border-green-500/20 relative mx-[-12px] sm:mx-0">
                   <BorderBeam
                     className="opacity-40"
                     colorFrom="rgb(249 115 22)"

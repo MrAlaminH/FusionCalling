@@ -38,7 +38,7 @@ export default function EndlessUseCases() {
     <section className="w-full bg-black py-16">
       <div className="container mx-auto max-w-7xl px-4">
         <h1 className="text-4xl font-bold text-center text-orange-500 mb-12">
-          Use Cases For AI Call Agent
+          Real-world usecases
         </h1>
 
         {/* Enhanced Tab Switcher */}

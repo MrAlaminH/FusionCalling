@@ -42,8 +42,8 @@ const logos: Logo[] = [
 
 const Tools = () => {
   return (
-    <div className="w-full bg-transparent py-16">
-      <h2 className="text-orange-500/50 text-center font-bold text-2xl mb-12">
+    <div className="w-full bg-transparent">
+      <h2 className="text-orange-500/80 text-center font-bold text-2xl mb-12">
         Tools We Integrate With
       </h2>
       <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
@@ -64,15 +64,15 @@ const Tools = () => {
                 {logos.map((logo, key) => (
                   <div
                     key={key}
-                    className="flex items-center justify-center w-[180px] h-[64px] rounded-full transition-all duration-300 backdrop-blur-sm"
+                    className="flex items-center justify-center w-[80px] h-[40px] rounded-md transition-all duration-300"
                   >
-                    <div className="w-[120px] h-[60px] relative flex items-center justify-center">
+                    <div className="w-[60px] h-[30px] relative flex items-center justify-center">
                       <Image
                         src={logo.url}
                         alt={`${logo.name} logo`}
                         title={logo.name}
                         fill
-                        className="absolute max-w-[75%] max-h-[75%] transition-all duration-300 ease-in-out object-contain"
+                        className="absolute w-full h-full transition-all duration-300 ease-in-out object-contain opacity-75 hover:opacity-100 [filter:drop-shadow(0_0_4px_rgba(59,130,246,0.3))] hover:[filter:drop-shadow(0_0_6px_rgba(59,130,246,0.5))]"
                       />
                     </div>
                   </div>

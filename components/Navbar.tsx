@@ -12,30 +12,30 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-[#03001417] backdrop-blur-md shadow-lg shadow-orange-600/50 fixed w-full z-50 top-0 px-10">
-      <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between p-2">
-        <div className="flex items-center  space-x-3">
-          <a href="#Home">
+    <nav className="bg-[#03001417] backdrop-blur-md shadow-lg shadow-orange-600/50 fixed w-full z-50 top-0">
+      <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between p-2 px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center space-x-3">
+          <a href="#Home" className="flex items-center">
             <Image
               src="/logo.png"
               alt="logo"
-              width={50}
-              height={50}
-              className="cursor-pointer hover:animate-slowspin"
+              width={40}
+              height={40}
+              className="cursor-pointer hover:animate-slowspin sm:w-[45px] sm:h-[45px] lg:w-[50px] lg:h-[50px]"
             />
           </a>
-
-          <span className="self-center text-xl font-bold text-orange-600">
+          <span className="self-center text-lg sm:text-xl font-bold text-orange-600">
             Fusion Calling
           </span>
         </div>
 
-        <div className="md:hidden">
+        <div className="flex lg:hidden">
           <button
             type="button"
-            className="text-gray-200 focus:outline-none"
+            className="inline-flex items-center p-2 text-gray-200 hover:bg-orange-600/20 rounded-lg focus:outline-none"
             onClick={toggleMenu}
           >
+            <span className="sr-only">Open main menu</span>
             <svg
               className="w-6 h-6"
               fill="none"
@@ -47,7 +47,11 @@ const Navbar = () => {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
+                d={
+                  isMenuOpen
+                    ? "M6 18L18 6M6 6l12 12"
+                    : "M4 6h16M4 12h16M4 18h16"
+                }
               />
             </svg>
           </button>
@@ -56,59 +60,40 @@ const Navbar = () => {
         <div
           className={`${
             isMenuOpen ? "block" : "hidden"
-          } w-full md:flex md:items-center md:w-auto `}
-          id="navbar-sticky"
+          } w-full lg:block lg:w-auto transition-all duration-300 ease-in-out`}
         >
-          <ul className="flex flex-col p-4 mt-4  border border-orange-600 rounded-md md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
-            <li>
-              <a
-                href="#home"
-                className="block py-2 px-3 rounded hover:bg-orange-600 text-yellow-400 font-bold transition duration-500 transform hover:-translate-y-2"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="#demo"
-                className="block py-2 px-3 rounded hover:bg-orange-600 text-gray-200 transition duration-500 transform hover:-translate-y-2"
-              >
-                Demo Call
-              </a>
-            </li>
-            <li>
-              <a
-                href="#features"
-                className="block py-2 px-3 rounded hover:bg-orange-600 text-gray-200 transition duration-500 transform hover:-translate-y-2"
-              >
-                Features
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="#faq"
-                className="block py-2 px-3 rounded hover:bg-orange-600 text-gray-200 transition duration-500 transform hover:-translate-y-2"
-              >
-                FAQs
-              </a>
-            </li>
-            <li>
+          <ul className="flex flex-col p-4 mt-4 space-y-2 lg:space-y-0 border border-orange-600/50 rounded-lg lg:flex-row lg:space-x-6 xl:space-x-8 lg:mt-0 lg:border-0 lg:bg-transparent">
+            {["Home", "Demo Call", "Features", "FAQs"].map((item) => (
+              <li key={item}>
+                <a
+                  href={`#${item.toLowerCase().replace(" ", "-")}`}
+                  className={`block py-2 px-3 rounded-lg ${
+                    item === "Home" ? "text-yellow-400" : "text-gray-200"
+                  } hover:bg-orange-600 hover:text-white font-medium transition duration-300 transform hover:-translate-y-1`}
+                >
+                  {item}
+                </a>
+              </li>
+            ))}
+            <li className="lg:hidden">
               <a
                 href="https://cal.com/mralamin/30min?"
-                target="-blank"
-                className="md:hidden block py-2 px-3 rounded hover:bg-orange-600 text-gray-200 transition duration-500 transform hover:-translate-y-2"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block py-2 px-3 rounded-lg text-gray-200 hover:bg-orange-600 hover:text-white transition duration-300 transform hover:-translate-y-1"
               >
                 Contact Us
               </a>
             </li>
           </ul>
         </div>
-        <div className="hidden md:flex ">
+
+        <div className="hidden lg:block">
           <Link
             href="https://cal.com/mralamin/30min?"
-            target="-blank"
-            className="transition duration-500 transform hover:-translate-y-2 custom-hide inline-flex h-12 items-center justify-center rounded-xl border border-orange-600 bg-orange-600 px-6 font-medium text-white hover:bg-gray-800"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-10 sm:h-11 lg:h-12 items-center justify-center rounded-xl border border-orange-600 bg-orange-600 px-4 sm:px-5 lg:px-6 font-medium text-white hover:bg-gray-800 transition duration-300 transform hover:-translate-y-1"
           >
             Contact Us
           </Link>
