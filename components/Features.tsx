@@ -42,6 +42,7 @@ export default function Features() {
                   height={400}
                   alt="Calendar Interface"
                   className="rounded-lg object-cover"
+                  layout="responsive"
                 />
               </CardContent>
             </Card>
@@ -87,6 +88,7 @@ export default function Features() {
                   height={400}
                   alt="Support Interface"
                   className="rounded-lg object-cover"
+                  layout="responsive"
                 />
               </CardContent>
             </Card>

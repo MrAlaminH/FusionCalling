@@ -1,224 +1,184 @@
 "use client";
 
-import React, { useState, useRef, useEffect, useCallback } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import { Phone } from "lucide-react";
 
 interface SlideToCallProps {
-  webhookUrl?: string;
   onCallComplete?: () => void;
   phoneNumber?: string;
+  name?: string;
+  email?: string;
+  resetInputs: () => void;
 }
 
-type TouchEvent = React.TouchEvent<HTMLDivElement>;
-type MouseEvent = React.MouseEvent<HTMLDivElement> | globalThis.MouseEvent;
+const HANDLE_WIDTH = 48;
+const THRESHOLD = 0.9;
+const VIBRATION_DURATION = 50;
+const SUCCESS_DELAY = 1000;
+const RESET_DELAY = 2000;
 
-const SlideToCall: React.FC<SlideToCallProps> = ({
-  webhookUrl,
+export default function SlideToCall({
   onCallComplete,
-  phoneNumber = "+1234567890",
-}) => {
-  const [isDragging, setIsDragging] = useState<boolean>(false);
-  const [position, setPosition] = useState<number>(0);
-  const [isCallTriggered, setIsCallTriggered] = useState<boolean>(false);
-  const [showSuccess, setShowSuccess] = useState<boolean>(false);
-  const sliderRef = useRef<HTMLDivElement | null>(null);
-  const containerWidth = useRef<number>(0);
+  phoneNumber,
+  name,
+  email,
+  resetInputs,
+}: SlideToCallProps) {
+  const [slideState, setSlideState] = useState({
+    isDragging: false,
+    position: 0,
+    isSuccess: false,
+  });
 
-  // Remove the fixed maxWidth and use dynamic width from the container
-  const handleWidth = 48; // Width of the sliding handle
-  const threshold = 0.9; // 90% threshold for triggering the call
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const widthRef = useRef(0);
+  const callInitiatedRef = useRef(false);
 
-  const updateContainerWidth = useCallback(() => {
-    if (sliderRef.current) {
-      containerWidth.current = sliderRef.current.getBoundingClientRect().width;
-    }
-  }, []);
-
-  // Calculate effective width dynamically
   const getEffectiveWidth = useCallback(() => {
-    return containerWidth.current - handleWidth;
+    if (!widthRef.current && sliderRef.current) {
+      widthRef.current =
+        sliderRef.current.getBoundingClientRect().width - HANDLE_WIDTH;
+    }
+    return widthRef.current;
   }, []);
 
-  const triggerHapticFeedback = useCallback((): void => {
+  const vibrate = useCallback(() => {
     if (navigator.vibrate) {
-      navigator.vibrate(50);
+      navigator.vibrate(VIBRATION_DURATION);
     }
   }, []);
 
-  const triggerWebhook = useCallback(async (): Promise<void> => {
-    if (webhookUrl) {
-      try {
-        const response = await fetch(webhookUrl, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            phoneNumber,
-            timestamp: new Date().toISOString(),
-            event: "call_initiated",
-          }),
-        });
+  const initiateCall = useCallback(async () => {
+    if (callInitiatedRef.current) return;
+    callInitiatedRef.current = true;
 
-        if (!response.ok) {
-          console.error("Webhook trigger failed");
-        }
-      } catch (error) {
-        console.error("Error triggering webhook:", error);
-      }
-    }
-  }, [webhookUrl, phoneNumber]);
+    try {
+      vibrate();
+      setSlideState((prev) => ({ ...prev, isSuccess: true }));
 
-  const initiateCall = useCallback(async (): Promise<void> => {
-    setIsCallTriggered(true);
-    triggerHapticFeedback();
-    setShowSuccess(true);
+      console.log("Sending values:", { phoneNumber, name, email });
 
-    await triggerWebhook();
-    onCallComplete?.();
+      const response = await fetch("/api/webhook", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ phoneNumber, name, email }),
+      });
 
-    setTimeout(() => {
-      window.location.href = `tel:${phoneNumber}`;
+      if (!response.ok) throw new Error("Webhook failed");
 
+      onCallComplete?.();
+      resetInputs();
+
+      console.log("Resetting inputs...");
+      resetInputs();
+
+      // Schedule call initiation and reset
       setTimeout(() => {
-        setIsCallTriggered(false);
-        setShowSuccess(false);
-        setPosition(0);
-      }, 2000);
-    }, 1000);
-  }, [triggerHapticFeedback, triggerWebhook, onCallComplete, phoneNumber]);
+        if (phoneNumber) window.location.href = `tel:${phoneNumber}`;
 
-  const handleEnd = useCallback((): void => {
+        setTimeout(() => {
+          setSlideState({ isDragging: false, position: 0, isSuccess: false });
+          callInitiatedRef.current = false;
+        }, RESET_DELAY);
+      }, SUCCESS_DELAY);
+    } catch (error) {
+      console.error("Call initiation failed:", error);
+      setSlideState({ isDragging: false, position: 0, isSuccess: false });
+      callInitiatedRef.current = false;
+    }
+  }, [phoneNumber, name, email, onCallComplete, vibrate, resetInputs]);
+
+  const handleDragEnd = useCallback(() => {
     const effectiveWidth = getEffectiveWidth();
-    const thresholdPosition = effectiveWidth * threshold;
+    const thresholdPosition = effectiveWidth * THRESHOLD;
 
-    if (position >= thresholdPosition && !isCallTriggered) {
-      setPosition(effectiveWidth);
-      initiateCall();
-    } else {
-      setPosition(0);
-    }
-    setIsDragging(false);
-  }, [position, isCallTriggered, getEffectiveWidth, initiateCall]);
+    setSlideState((prev) => {
+      if (prev.position >= thresholdPosition && !prev.isSuccess) {
+        initiateCall();
+        return { ...prev, position: effectiveWidth, isDragging: false };
+      }
+      return { ...prev, position: 0, isDragging: false };
+    });
+  }, [getEffectiveWidth, initiateCall]);
 
-  const calculatePosition = useCallback(
-    (clientX: number, rect: DOMRect): number => {
+  const handleDrag = useCallback(
+    (clientX: number) => {
+      if (!sliderRef.current || !slideState.isDragging) return;
+
+      const rect = sliderRef.current.getBoundingClientRect();
       const effectiveWidth = getEffectiveWidth();
-      const offsetX = clientX - rect.left - handleWidth / 2; // Center the handle on cursor
-      return Math.min(Math.max(0, offsetX), effectiveWidth);
-    },
-    [getEffectiveWidth]
-  );
+      const offsetX = clientX - rect.left - HANDLE_WIDTH / 2;
+      const newPosition = Math.min(Math.max(0, offsetX), effectiveWidth);
 
-  const handleMove = useCallback(
-    (clientX: number): void => {
-      if (!isDragging || !sliderRef.current) return;
+      setSlideState((prev) => ({ ...prev, position: newPosition }));
 
-      const sliderRect = sliderRef.current.getBoundingClientRect();
-      const newPosition = calculatePosition(clientX, sliderRect);
-      setPosition(newPosition);
-
-      // Haptic feedback at every quarter
-      const effectiveWidth = getEffectiveWidth();
+      // Vibrate at quarters
       if (Math.floor(newPosition % (effectiveWidth / 4)) === 0) {
-        triggerHapticFeedback();
+        vibrate();
       }
     },
-    [isDragging, calculatePosition, getEffectiveWidth, triggerHapticFeedback]
+    [slideState.isDragging, getEffectiveWidth, vibrate]
   );
 
-  const handleMouseMove = useCallback(
-    (e: MouseEvent): void => {
-      if (isDragging) {
-        handleMove(e.clientX);
+  const handlePointerDown = useCallback(
+    (e: React.PointerEvent) => {
+      e.preventDefault();
+      vibrate();
+      setSlideState((prev) => ({ ...prev, isDragging: true }));
+      handleDrag(e.clientX);
+    },
+    [vibrate, handleDrag]
+  );
+
+  const handlePointerMove = useCallback(
+    (e: React.PointerEvent) => {
+      if (slideState.isDragging) {
+        handleDrag(e.clientX);
       }
     },
-    [isDragging, handleMove]
+    [slideState.isDragging, handleDrag]
   );
 
-  const handleMouseDown = (e: React.MouseEvent): void => {
-    e.preventDefault();
-    setIsDragging(true);
-    triggerHapticFeedback();
-  };
-
-  const handleTouchStart = (e: TouchEvent): void => {
-    setIsDragging(true);
-    handleMove(e.touches[0].clientX);
-  };
-
-  const handleTouchMove = (e: TouchEvent): void => {
-    if (isDragging) {
-      handleMove(e.touches[0].clientX);
-    }
-  };
-
-  useEffect(() => {
-    updateContainerWidth();
-
-    const resizeObserver = new ResizeObserver(updateContainerWidth);
-    if (sliderRef.current) {
-      resizeObserver.observe(sliderRef.current);
-    }
-
-    const handleMouseMoveGlobal = (e: globalThis.MouseEvent): void => {
-      handleMouseMove(e);
-    };
-
-    const handleMouseUpGlobal = (): void => {
-      if (isDragging) {
-        handleEnd();
-      }
-    };
-
-    window.addEventListener("mousemove", handleMouseMoveGlobal);
-    window.addEventListener("mouseup", handleMouseUpGlobal);
-
-    return () => {
-      resizeObserver.disconnect();
-      window.removeEventListener("mousemove", handleMouseMoveGlobal);
-      window.removeEventListener("mouseup", handleMouseUpGlobal);
-    };
-  }, [isDragging, handleMouseMove, handleEnd, updateContainerWidth]);
-
-  const progressWidth = Math.min((position / getEffectiveWidth()) * 100, 100);
+  const progressWidth = Math.min(
+    (slideState.position / getEffectiveWidth()) * 100,
+    100
+  );
 
   return (
     <div className="relative w-full h-12 bg-gray-800 rounded-full shadow-lg overflow-hidden">
       <div
         ref={sliderRef}
         className="w-full h-full"
-        onMouseMove={
-          handleMouseMove as (e: React.MouseEvent<HTMLDivElement>) => void
-        }
-        onMouseUp={handleEnd}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleEnd}
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={handleDragEnd}
+        onPointerLeave={handleDragEnd}
       >
         {/* Progress bar */}
         <div
-          className={`absolute top-0 left-0 h-full transition-all duration-200 
-            ${showSuccess ? "bg-green-500" : "bg-orange-500"} rounded-full`}
+          className={`absolute top-0 left-0 h-full ${
+            slideState.isSuccess ? "bg-green-500" : "bg-orange-500"
+          } rounded-full transition-all duration-200`}
           style={{
             width: `${progressWidth}%`,
-            transition: isDragging ? "none" : "width 0.3s ease-out",
+            transition: slideState.isDragging ? "none" : "width 0.3s ease-out",
           }}
         />
 
-        {/* Sliding handle */}
+        {/* Handle */}
         <div
-          className={`absolute top-1/2 left-0 transform -translate-y-1/2 w-12 h-12 
-            ${showSuccess ? "bg-green-500" : "bg-orange-500"}
-            rounded-full flex items-center justify-center cursor-grab active:cursor-grabbing
-            transition-all duration-200 ${isDragging ? "scale-105" : ""}`}
+          className={`absolute top-1/2 left-0 w-12 h-12 ${
+            slideState.isSuccess ? "bg-green-500" : "bg-orange-500"
+          } rounded-full flex items-center justify-center cursor-grab
+            transition-all duration-200 ${
+              slideState.isDragging ? "scale-105" : ""
+            }`}
           style={{
-            transform: `translate(${position}px, -50%)`,
-            transition: isDragging ? "none" : "all 0.3s ease-out",
+            transform: `translate(${slideState.position}px, -50%)`,
+            transition: slideState.isDragging ? "none" : "all 0.3s ease-out",
           }}
-          onMouseDown={handleMouseDown}
         >
-          {showSuccess ? (
+          {slideState.isSuccess ? (
             <svg
               className="w-6 h-6 text-white animate-bounce"
               fill="none"
@@ -237,17 +197,17 @@ const SlideToCall: React.FC<SlideToCallProps> = ({
           )}
         </div>
 
-        {/* Text overlay */}
+        {/* Text */}
         <span
           className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
-            text-white font-semibold transition-opacity duration-300
-            ${showSuccess ? "opacity-0" : "opacity-100"}`}
+            text-white font-semibold transition-opacity duration-300 ${
+              slideState.isSuccess ? "opacity-0" : "opacity-100"
+            }`}
         >
           {progressWidth > 90 ? "Release to Call" : "→ SLIDE TO CALL"}
         </span>
 
-        {/* Success message */}
-        {showSuccess && (
+        {slideState.isSuccess && (
           <span
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
             text-white font-semibold animate-fade-in"
@@ -258,6 +218,4 @@ const SlideToCall: React.FC<SlideToCallProps> = ({
       </div>
     </div>
   );
-};
-
-export default SlideToCall;
+}

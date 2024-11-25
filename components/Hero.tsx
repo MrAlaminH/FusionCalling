@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { Sparkles } from "lucide-react";
 import { Input } from "@/components/ui/input";
@@ -8,8 +9,20 @@ import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import { cn } from "@/lib/utils";
 import PhoneInputComponent from "@/components/sub/PhoneInput";
 import SlideToCall from "@/components/sub/SlideToCall";
+import { useState } from "react";
 
 export default function Component() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+
+  // Function to reset input values
+  const resetInputs = () => {
+    setName("");
+    setEmail("");
+    setPhoneNumber("");
+  };
+
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden pt-24 md:pt-28 lg:pt-32 relative">
       {/* Background Pattern SVG */}
@@ -61,8 +74,9 @@ export default function Component() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-tight">
             Revolutionize Your Business
             <br className="hidden sm:block" />
+            <span className="whitespace-nowrap"> </span>
             with{" "}
-            <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 text-transparent bg-clip-text">
+            <span className="bg-gradient-to-r from-orange-300 via-orange-500 to-orange-600 text-transparent bg-clip-text">
               AI Phone call Automation
             </span>
           </h1>
@@ -166,6 +180,7 @@ export default function Component() {
                     type="text"
                     placeholder="Your name"
                     className="bg-zinc-800 border-zinc-700 text-white"
+                    onChange={(e) => setName(e.target.value)}
                   />
 
                   <label
@@ -179,6 +194,7 @@ export default function Component() {
                     type="email"
                     placeholder="Your e-mail"
                     className="bg-zinc-800 border-zinc-700 text-white"
+                    onChange={(e) => setEmail(e.target.value)}
                   />
 
                   <label
@@ -193,6 +209,7 @@ export default function Component() {
                       placeholder="Phone number"
                       defaultCountry="US"
                       aria-label="Phone number"
+                      onChange={(value) => setPhoneNumber(value || "")}
                     />
                   </div>
 
@@ -203,7 +220,12 @@ export default function Component() {
 
                   <div className="relative">
                     <div className="w-full ">
-                      <SlideToCall />
+                      <SlideToCall
+                        name={name}
+                        email={email}
+                        phoneNumber={phoneNumber}
+                        resetInputs={resetInputs}
+                      />
                     </div>
                   </div>
                 </form>
