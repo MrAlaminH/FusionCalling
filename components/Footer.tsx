@@ -102,13 +102,15 @@ export default function Footer() {
             {/* Legal Links */}
             <div className="flex items-center gap-4">
               <Link
-                href="/privacy"
+                href="/Privacy"
+                target="_blank"
                 className="text-xs text-white hover:text-orange-600 transition-colors"
               >
                 Privacy Policy
               </Link>
               <Link
-                href="/terms"
+                href="/Terms"
+                target="_blank"
                 className="text-xs text-white hover:text-orange-600 transition-colors"
               >
                 Terms of Use
