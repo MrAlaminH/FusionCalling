@@ -3,6 +3,8 @@ import Image from "next/image";
 import { Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SetStateAction, useState } from "react";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 export default function TryDemo() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,16 +20,32 @@ export default function TryDemo() {
     setVideoUrl("");
   };
 
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <section className="relative w-full overflow-hidden bg-transparent px-4 py-12 md:py-24">
+    <section
+      className="relative w-full overflow-hidden bg-transparent px-4 py-12 md:py-24"
+      ref={ref}
+    >
       <div className="container relative mx-auto max-w-7xl">
         {/* Header Section */}
-        <h1 className="text-orange-500 text-center font-bold text-3xl md:text-4xl mb-6 pb-4">
+        <motion.h1
+          className="text-orange-500 text-center font-bold text-3xl md:text-4xl mb-6 pb-4"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -20 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           Examples of AI Voice Calls
-        </h1>
+        </motion.h1>
 
         {/* Feature Cards */}
-        <div className="grid gap-8 md:grid-cols-3 sm:grid-cols-1">
+        <motion.div
+          className="grid gap-8 md:grid-cols-3 sm:grid-cols-1"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
           {[
             {
               title: "Listen to Lisa track her order",
@@ -89,7 +107,7 @@ export default function TryDemo() {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Modal for Video Playback */}
         {isOpen && (

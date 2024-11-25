@@ -71,9 +71,8 @@ const Tools = () => {
                         src={logo.url}
                         alt={`${logo.name} logo`}
                         title={logo.name}
-                        layout="fill"
-                        objectFit="contain"
-                        className="absolute max-w-[75%] max-h-[75%] transition-all duration-300 ease-in-out"
+                        fill
+                        className="absolute max-w-[75%] max-h-[75%] transition-all duration-300 ease-in-out object-contain"
                       />
                     </div>
                   </div>

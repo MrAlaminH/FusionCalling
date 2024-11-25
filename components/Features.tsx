@@ -1,17 +1,33 @@
+"use client";
 import { Calendar, Phone, BarChart3 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 export default function Features() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <section className="w-full bg-black">
-      <h1 className="text-orange-500 text-center font-bold text-3xl md:text-4xl mb-6 pb-4">
-        Callling Features
-      </h1>
+    <section className="w-full bg-black" ref={ref}>
+      <motion.h1
+        className="text-orange-500 text-center font-bold text-3xl md:text-4xl mb-6 pb-4"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -20 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        Calling Features
+      </motion.h1>
       {/* First Feature */}
       <div className="container mx-auto px-4 md:px-6 max-w-6xl">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-12">
-          <div className="w-full lg:w-1/2 space-y-4">
+        <motion.div
+          className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          <div className="w-full md:w-1/2 space-y-4">
             <div className="inline-block rounded-lg bg-orange-500/10 px-3 py-1 text-sm text-orange-500">
               Smart Scheduling
             </div>
@@ -33,27 +49,34 @@ export default function Features() {
               </li>
             </ul>
           </div>
-          <div className="w-full lg:w-1/2">
+          <div className="w-full md:w-1/2">
             <Card className="border-orange-500 rounded-lg">
               <CardContent className="p-0">
-                <Image
-                  src="/feature1.jpeg"
-                  width={600}
-                  height={400}
-                  alt="Calendar Interface"
-                  className="rounded-lg object-cover"
-                  layout="responsive"
-                />
+                <div className="relative w-full aspect-[3/2]">
+                  <Image
+                    src="/feature1.jpeg"
+                    alt="Calendar Interface"
+                    className="rounded-lg object-cover"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                    priority
+                  />
+                </div>
               </CardContent>
             </Card>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Second Feature */}
       <div className="container mx-auto px-4 md:px-6 mt-20 max-w-6xl">
-        <div className="flex flex-col lg:flex-row-reverse items-center justify-center gap-6 lg:gap-12">
-          <div className="w-full lg:w-1/2 space-y-4">
+        <motion.div
+          className="flex flex-col md:flex-row-reverse items-center justify-center gap-6 md:gap-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          <div className="w-full md:w-1/2 space-y-4">
             <div className="inline-block rounded-lg bg-orange-500/10 px-3 py-1 text-sm text-orange-500">
               24/7 Support
             </div>
@@ -79,26 +102,33 @@ export default function Features() {
               </li>
             </ul>
           </div>
-          <div className="w-full lg:w-1/2">
+          <div className="w-full md:w-1/2">
             <Card className="border-orange-500 rounded-lg">
-              <CardContent className="p-0 ">
-                <Image
-                  src="/feature2.jpeg"
-                  width={600}
-                  height={400}
-                  alt="Support Interface"
-                  className="rounded-lg object-cover"
-                  layout="responsive"
-                />
+              <CardContent className="p-0">
+                <div className="relative w-full aspect-[3/2]">
+                  <Image
+                    src="/feature2.jpeg"
+                    alt="Support Interface"
+                    className="rounded-lg object-cover"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                    priority
+                  />
+                </div>
               </CardContent>
             </Card>
           </div>
-        </div>
+        </motion.div>
       </div>
 
-      {/* thired Feature */}
-      <div className="container mx-auto px-4 md:px-6 mt-20 max-w-6xl">
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-12 justify-center">
+      {/* Third Feature */}
+      <div className="container mx-auto px-4 md:px-6 mt-20 max-w-6xl pb-20">
+        <motion.div
+          className="grid md:grid-cols-3 gap-8 justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+        >
           <Card className="bg-black border-orange-500/20">
             <CardContent className="p-6 space-y-4">
               <BarChart3 className="h-12 w-12 text-orange-500" />
@@ -133,7 +163,7 @@ export default function Features() {
               </p>
             </CardContent>
           </Card>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

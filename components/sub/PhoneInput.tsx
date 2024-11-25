@@ -30,7 +30,10 @@ interface CountrySelectProps {
     label: string;
   }>;
   placeholder?: string;
-  [key: string]: unknown;
+  className?: string;
+  disabled?: boolean;
+  name?: string;
+  tabIndex?: number;
 }
 
 const CustomInput = forwardRef<HTMLInputElement, DefaultInputComponentProps>(
@@ -50,29 +53,44 @@ const CustomInput = forwardRef<HTMLInputElement, DefaultInputComponentProps>(
 
 CustomInput.displayName = "CustomInput";
 
-const CountrySelect = ({
+// Updated FlagComponent with proper typing and title handling
+const FlagComponent: React.FC<{ country: Country }> = ({ country }) => {
+  const FlagIcon = country ? flags[country] : undefined;
+  const countryName = en[country as keyof typeof en] || country;
+
+  return FlagIcon ? (
+    <span className="w-6 overflow-hidden">
+      <FlagIcon title={countryName} />
+    </span>
+  ) : (
+    <Phone size={16} />
+  );
+};
+
+const CountrySelect: React.FC<CountrySelectProps> = ({
   value,
   onChange,
   options,
   placeholder,
+  className,
   ...rest
-}: CountrySelectProps) => {
-  const selectedFlag = value && flags[value];
+}) => {
+  // Only spread allowed props
+  const allowedProps = {
+    className,
+    disabled: rest.disabled,
+    name: rest.name,
+    tabIndex: rest.tabIndex,
+  };
 
   return (
     <div className="relative inline-flex items-center self-stretch rounded-s-lg border border-zinc-700 bg-zinc-800 py-2 pe-2 ps-3 text-black">
       <div className="inline-flex items-center gap-1">
-        <span className="w-6 overflow-hidden">
-          {selectedFlag ? (
-            React.createElement(selectedFlag)
-          ) : (
-            <Phone size={16} />
-          )}
-        </span>
+        <FlagComponent country={value} />
         <ChevronDown size={16} strokeWidth={2} className="text-gray-400" />
       </div>
       <select
-        {...rest}
+        {...allowedProps}
         value={value || ""}
         onChange={(event) => {
           onChange(event.target.value as Country);
@@ -90,7 +108,7 @@ const CountrySelect = ({
   );
 };
 
-export default function PhoneInputComponent({
+const PhoneInputComponent: React.FC<PhoneInputProps> = ({
   id,
   value,
   onChange,
@@ -98,7 +116,7 @@ export default function PhoneInputComponent({
   international = true,
   defaultCountry = "US",
   "aria-label": ariaLabel,
-}: PhoneInputProps) {
+}) => {
   const [phoneValue, setPhoneValue] = useState(value || "");
 
   const handleChange = (newValue: string | undefined) => {
@@ -124,4 +142,6 @@ export default function PhoneInputComponent({
       />
     </div>
   );
-}
+};
+
+export default PhoneInputComponent;
