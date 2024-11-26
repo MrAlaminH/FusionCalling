@@ -6,6 +6,7 @@ import FAQSection from "@/components/FAQs";
 import SlideText from "@/components/Slide-Text";
 import Tools from "@/components/Tools";
 import EndlessUseCases from "@/components/endless-use-cases";
+import Testimonials from "@/components/Testimonial";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -18,7 +19,7 @@ export default function Home() {
       <section id="tools">
         <Tools />
       </section>
-      <section id="demo">
+      <section id="demo-call">
         <TryDemo />
       </section>
       <section id="features">
@@ -30,7 +31,10 @@ export default function Home() {
       <section id="EndlessUseCases">
         <EndlessUseCases />
       </section>
-      <section id="faq">
+      <section id="Testimonials">
+        <Testimonials />
+      </section>
+      <section id="faqs">
         <FAQSection />
       </section>
       <Footer />

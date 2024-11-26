@@ -15,7 +15,7 @@ const Navbar = () => {
     <nav className="bg-[#03001417] backdrop-blur-md shadow-lg shadow-orange-600/50 fixed w-full z-50 top-0">
       <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between p-2 px-4 sm:px-6 lg:px-8">
         <div className="flex items-center space-x-3">
-          <a href="#Home" className="flex items-center">
+          <a href="#home" className="flex items-center">
             <Image
               src="/logo.png"
               alt="logo"

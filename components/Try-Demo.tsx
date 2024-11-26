@@ -30,14 +30,19 @@ export default function TryDemo() {
     >
       <div className="container relative mx-auto max-w-7xl">
         {/* Header Section */}
-        <motion.h1
-          className="text-orange-500 text-center font-bold text-3xl md:text-4xl mb-6 pb-4"
+        <motion.div
+          className="flex flex-col items-center"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -20 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Demo AI Voice Calls
-        </motion.h1>
+          <motion.h1 className="text-orange-500 text-center font-bold text-3xl md:text-4xl  pb-4">
+            Demo Calls
+          </motion.h1>
+          <p className="text-gray-400 text-center md:text-xl mb-8">
+            Check out some examples of how AI handles calls.
+          </p>
+        </motion.div>
 
         {/* Feature Cards */}
         <motion.div

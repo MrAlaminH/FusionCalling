@@ -11,14 +11,20 @@ export default function Features() {
 
   return (
     <section className="w-full bg-black" ref={ref}>
-      <motion.h1
-        className="text-orange-500 text-center font-bold text-3xl md:text-4xl mb-6 pb-4"
+      <motion.div
+        className="flex flex-col items-center"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -20 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        Calling Features
-      </motion.h1>
+        <motion.h1 className="text-orange-500 text-center font-bold text-3xl md:text-4xl  pb-4">
+          Calling Features
+        </motion.h1>
+        <p className="text-gray-400 text-center md:text-xl mb-6">
+          Turn missed calls into revenue with <br /> AI phone call agents that
+          sound and behave like real humans.
+        </p>
+      </motion.div>
       {/* First Feature */}
       <div className="container mx-auto px-4 md:px-6 max-w-6xl">
         <motion.div
@@ -50,13 +56,14 @@ export default function Features() {
             </ul>
           </div>
           <div className="w-full md:w-1/2">
-            <Card className="border-orange-500 rounded-lg">
+            <Card className="border-orange-500 rounded-lg group relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_15px_rgba(249,115,22,0.3)]">
               <CardContent className="p-0">
                 <div className="relative w-full aspect-[3/2]">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <Image
                     src="/feature1.jpeg"
                     alt="Calendar Interface"
-                    className="rounded-lg object-cover"
+                    className="rounded-lg object-cover transition-transform duration-500 group-hover:scale-110"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                     priority
@@ -103,13 +110,14 @@ export default function Features() {
             </ul>
           </div>
           <div className="w-full md:w-1/2">
-            <Card className="border-orange-500 rounded-lg">
+            <Card className="border-orange-500 rounded-lg group relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_15px_rgba(249,115,22,0.3)]">
               <CardContent className="p-0">
                 <div className="relative w-full aspect-[3/2]">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <Image
                     src="/feature2.jpeg"
                     alt="Support Interface"
-                    className="rounded-lg object-cover"
+                    className="rounded-lg object-cover transition-transform duration-500 group-hover:scale-110"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                     priority
@@ -129,7 +137,7 @@ export default function Features() {
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          <Card className="bg-black border-orange-500/20">
+          <Card className="bg-black border-orange-500/20 group relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_15px_rgba(249,115,22,0.3)]">
             <CardContent className="p-6 space-y-4">
               <BarChart3 className="h-12 w-12 text-orange-500" />
               <h3 className="text-xl font-bold text-white">Detailed Reports</h3>
@@ -139,7 +147,7 @@ export default function Features() {
               </p>
             </CardContent>
           </Card>
-          <Card className="bg-black border-orange-500/20">
+          <Card className="bg-black border-orange-500/20 group relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_15px_rgba(249,115,22,0.3)]">
             <CardContent className="p-6 space-y-4">
               <Calendar className="h-12 w-12 text-orange-500" />
               <h3 className="text-xl font-bold text-white">
@@ -151,7 +159,7 @@ export default function Features() {
               </p>
             </CardContent>
           </Card>
-          <Card className="bg-black border-orange-500/20">
+          <Card className="bg-black border-orange-500/20 group relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_15px_rgba(249,115,22,0.3)]">
             <CardContent className="p-6 space-y-4">
               <Phone className="h-12 w-12 text-orange-500" />
               <h3 className="text-xl font-bold text-white">

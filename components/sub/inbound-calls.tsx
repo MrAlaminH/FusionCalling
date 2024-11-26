@@ -65,7 +65,7 @@ export default function InboundCalls() {
 
   return (
     <div className="bg-black text-white min-h-screen">
-      <div className="container mx-auto px-4 py-12 space-y-12">
+      <div className="container mx-auto px-1 py-12 space-y-12">
         <motion.div
           ref={ref}
           initial="hidden"
@@ -76,7 +76,7 @@ export default function InboundCalls() {
           }}
           transition={{ duration: 0.5 }}
         >
-          <Card className="w-full p-8 bg-gradient-to-r from-gray-900 to-gray-800 shadow-xl rounded-lg overflow-hidden">
+          <Card className="w-full p-8 bg-black border-orange-500/20 group relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_15px_rgba(249,115,22,0.3)]">
             <div className="flex flex-col lg:flex-row gap-8">
               <div className="flex-shrink-0 rounded-lg overflow-hidden lg:w-1/3">
                 <div className="relative w-full aspect-[4/3]">
