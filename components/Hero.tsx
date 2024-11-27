@@ -162,6 +162,10 @@ export default function Component() {
                     <p className="text-sm sm:text-base text-gray-400">
                       Experience it yourself with a free demo call. Share your
                       details, and our AI will reach out instantly.
+                      <br />
+                      Note: If the number you provided is incorrect or you want
+                      to make another call then, please refresh the page to make
+                      the new call again.
                     </p>
                     <p className="text-xs sm:text-sm text-white">
                       The AI agent is ready to chat about Fusion Calling and
