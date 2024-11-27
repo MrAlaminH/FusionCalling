@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <nav className="bg-[#03001417] backdrop-blur-md shadow-lg shadow-orange-600/50 fixed w-full z-50 top-0">
       <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between p-2 px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center">
           <a href="#home" className="flex items-center">
             <Image
               src="/logo.png"
@@ -24,9 +24,14 @@ const Navbar = () => {
               className="cursor-pointer hover:animate-slowspin sm:w-[45px] sm:h-[45px] lg:w-[50px] lg:h-[50px]"
             />
           </a>
-          <span className="self-center text-lg sm:text-xl font-bold text-orange-600">
-            Fusion Calling
-          </span>
+          <div className="flex flex-col ml-3 mt-3">
+            <span className="text-lg sm:text-xl text-orange-600 font-extrabold">
+              Fusion Calling
+            </span>
+            <span className="text-[#FF4500] text-[10px] self-end mr-[8px] -mt-1 font-bold">
+              Labs
+            </span>
+          </div>
         </div>
 
         <div className="flex lg:hidden">
