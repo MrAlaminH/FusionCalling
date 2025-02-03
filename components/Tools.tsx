@@ -34,10 +34,6 @@ const logos: Logo[] = [
     name: "GoHighLevel",
     url: "/tools/gohighlevel.jpg",
   },
-  {
-    name: "Twilio",
-    url: "/tools/twilio.png",
-  },
 ];
 
 const Tools = () => {

@@ -58,40 +58,40 @@ export default function Footer() {
             {/* Contact Information */}
             <div className="flex flex-col space-y-2 md:flex-row md:items-center md:space-y-0 md:space-x-6">
               <Link
-                href="mailto:contact@dentina.ai"
+                href="mailto:hello@fusioncalling.com"
                 className="flex items-center gap-2 text-sm text-white hover:text-orange-600 transition-colors"
               >
                 <Mail className="h-4 w-4" />
-                contact@FusionCalling
+                hello@fusioncalling.com
               </Link>
 
               <Link
-                href="tel:(323)283-8368"
+                href="tel:+12029983591"
                 className="flex items-center gap-2 text-sm text-white hover:text-orange-600 transition-colors"
               >
                 <Phone className="h-4 w-4" />
-                (000) 000-0000
+                +12029983591
               </Link>
             </div>
 
             {/* Social Media Links */}
             <div className="flex items-center gap-4">
               <Link
-                href="#"
+                href="https://x.com/MrAlaminH"
                 className="text-white hover:text-orange-600 transition-colors"
                 aria-label="Twitter"
               >
                 <Twitter className="h-5 w-5" />
               </Link>
               <Link
-                href="#"
+                href="https://x.com/MrAlaminH"
                 className="text-white hover:text-orange-600 transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
               </Link>
               <Link
-                href="#"
+                href="https://x.com/MrAlaminH"
                 className="text-white hover:text-orange-600 transition-colors"
                 aria-label="Facebook"
               >
