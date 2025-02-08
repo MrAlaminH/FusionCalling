@@ -38,7 +38,7 @@ export const FEMALE_VOICES: Voice[] = [
     accent: "American Accent",
     language: "English",
     avatarUrl: "https://avatar.iran.liara.run/public/99",
-    audioUrl: "/voices/Lori11labs.mp3",
+    audioUrl: "/voices/Lori11Labs.mp3",
     sampleText: "Cześć, jestem Anna. Pomogę Ci dotrzeć do polskiej publiczności."
   },
   {
