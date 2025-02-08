@@ -91,7 +91,7 @@ export function VelocityScroll({
 
     return (
       <div
-        className="w-full overflow-hidden whitespace-nowrap"
+        className="w-full overflow-hidden whitespace-nowrap relative"
         ref={containerRef}
       >
         <motion.div className={cn("inline-block", className)} style={{ x }}>
@@ -101,6 +101,9 @@ export function VelocityScroll({
             </span>
           ))}
         </motion.div>
+        {/* Gradient overlays for fade effect */}
+        <div className="absolute left-0 top-0 h-full w-[100px] bg-gradient-to-r from-black via-black to-transparent"></div>
+        <div className="absolute right-0 top-0 h-full w-[100px] bg-gradient-to-l from-black via-black to-transparent"></div>
       </div>
     );
   }

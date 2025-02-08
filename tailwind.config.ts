@@ -9,10 +9,9 @@ const config: Config = {
   ],
   theme: {
   	extend: {
-		screens: {
-			'xxs': '360px',
-			// ... your other breakpoints
-		  },
+  		screens: {
+  			xxs: '360px'
+  		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -91,6 +90,12 @@ const config: Config = {
   				},
   				'100%': {
   					transform: 'translateX(-100%)'
+  				},
+  				from: {
+  					transform: 'translateX(0)'
+  				},
+  				to: {
+  					transform: 'translateX(calc(-100% - var(--gap)))'
   				}
   			},
   			marquee2: {
@@ -121,17 +126,26 @@ const config: Config = {
   				'30%, 60%': {
   					'background-position': 'calc(100% + var(--shiny-width)) 0'
   				}
+  			},
+  			'marquee-vertical': {
+  				from: {
+  					transform: 'translateY(0)'
+  				},
+  				to: {
+  					transform: 'translateY(calc(-100% - var(--gap)))'
+  				}
   			}
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
   			'logo-cloud': 'logo-cloud 30s linear infinite',
-  			marquee: 'marquee 25s linear infinite',
+  			marquee: 'marquee var(--duration) infinite linear',
   			marquee2: 'marquee2 25s linear infinite',
   			'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
   			'background-position-spin': 'background-position-spin 3000ms infinite alternate',
-  			'shiny-text': 'shiny-text 8s infinite'
+  			'shiny-text': 'shiny-text 8s infinite',
+  			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite'
   		}
   	}
   },

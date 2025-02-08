@@ -4,6 +4,7 @@ import TryDemo from "@/components/Try-Demo";
 import Features from "@/components/Features";
 import FAQSection from "@/components/FAQs";
 import SlideText from "@/components/Slide-Text";
+import VoiceCarousel from "@/components/voice-carousel";
 import Tools from "@/components/Tools";
 import EndlessUseCases from "@/components/endless-use-cases";
 import Testimonials from "@/components/Testimonial";
@@ -30,6 +31,9 @@ export default function Home() {
       </section>
       <section id="EndlessUseCases">
         <EndlessUseCases />
+      </section>
+      <section id="VoiceCarousel">
+        <VoiceCarousel />
       </section>
       <section id="Testimonials">
         <Testimonials />

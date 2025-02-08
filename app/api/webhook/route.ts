@@ -4,7 +4,7 @@ export async function POST(request: Request) {
     const { phoneNumber, name, email } = await request.json();
 
     // Replace with your actual webhook URL
-    const webhookUrl = 'https://heda.deployify.xyz/webhook/0c3c493b-d14f-49ca-ab8e-62d7d7a8c9c1';
+    const webhookUrl = 'https://n8n.deployify.xyz/webhook/0c3c493b-d14f-49ca-ab8e-62d7d7a8c9c1';
 
     try {
         const response = await fetch(webhookUrl, {
