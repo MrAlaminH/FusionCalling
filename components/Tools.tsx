@@ -39,8 +39,8 @@ const logos: Logo[] = [
 const Tools = () => {
   return (
     <div className="w-full bg-transparent">
-      <h2 className="text-orange-500/80 text-center font-bold text-2xl mb-12">
-        Tools We Integrate With
+      <h2 className="text-orange-500/80 text-center font-bold text-xl mb-12">
+        Connect with over 2,200+ apps from around the world!
       </h2>
       <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
         <div

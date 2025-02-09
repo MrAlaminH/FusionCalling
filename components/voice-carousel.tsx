@@ -3,28 +3,65 @@
 import { Marquee } from "@/components/magicui/marquee";
 import { VoiceCard } from "@/components/sub/voice-card";
 import { FEMALE_VOICES, MALE_VOICES } from "@/data/voices";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 export default function VoiceCarousel() {
-  return (
-    <div className=" bg-black p-6 md:p-8">
-      <div className="mb-12 max-w-none mx-auto">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 text-orange-500 mb-4">
-            <span className="w-2 h-2 rounded-full bg-orange-500" />
-            <span className="text-sm font-medium">Our Voices</span>
-          </div>
-          <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-orange-500 mb-4">
-            Test Out Our Most Used Voices
-          </h1>
-          <p className="text-gray-400">
-            Along with multiple languages, we offer different gender voices with
-            different accents!
-          </p>
-        </div>
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
-        <div className="space-y-6">
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        staggerChildren: 0.3,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.215, 0.61, 0.355, 1.0],
+      },
+    },
+  };
+
+  return (
+    <div className="bg-black p-6 md:p-8">
+      <motion.div
+        ref={containerRef}
+        variants={containerVariants}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        className="mb-12 max-w-none mx-auto"
+      >
+        <motion.div variants={itemVariants} className="text-center mb-16">
+          <motion.h1
+            variants={itemVariants}
+            className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-orange-500 mb-4"
+          >
+            Test Out Some Used Voices
+          </motion.h1>
+          <motion.p variants={itemVariants} className="text-gray-400">
+            We offer voices in multiple languages, with different genders and
+            accents!
+          </motion.p>
+        </motion.div>
+
+        <motion.div variants={itemVariants} className="space-y-6">
           {/* Female voices - scrolling left */}
-          <div className="relative w-full overflow-hidden">
+          <motion.div
+            variants={itemVariants}
+            className="relative w-full overflow-hidden"
+          >
             <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
             <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
             <Marquee
@@ -42,10 +79,13 @@ export default function VoiceCarousel() {
                 />
               ))}
             </Marquee>
-          </div>
+          </motion.div>
 
           {/* Male voices - scrolling right */}
-          <div className="relative w-full overflow-hidden">
+          <motion.div
+            variants={itemVariants}
+            className="relative w-full overflow-hidden"
+          >
             <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
             <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
             <Marquee
@@ -64,9 +104,9 @@ export default function VoiceCarousel() {
                 />
               ))}
             </Marquee>
-          </div>
-        </div>
-      </div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }
