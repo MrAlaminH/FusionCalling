@@ -14,7 +14,7 @@ export default function FAQSection() {
           {/* Security Section */}
           <div className="w-full md:w-1/2 space-y-8">
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 text-orange-500">
+              <div className="inline-flex items-center gap-2 text-orange-600">
                 <svg
                   className="w-6 h-6"
                   fill="none"
@@ -44,7 +44,7 @@ export default function FAQSection() {
                 <div key={index} className="flex items-start gap-3">
                   <div className="flex-shrink-0 w-6 h-6 rounded-full bg-orange-500/20 flex items-center justify-center">
                     <svg
-                      className="w-4 h-4 text-orange-500"
+                      className="w-4 h-4 text-orange-600"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -69,7 +69,7 @@ export default function FAQSection() {
           {/* FAQ Section */}
           <div className="w-full md:w-1/2 space-y-8">
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 text-orange-500">
+              <div className="inline-flex items-center gap-2 text-orange-600">
                 <svg
                   className="w-6 h-6"
                   fill="none"

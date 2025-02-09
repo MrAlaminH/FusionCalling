@@ -46,7 +46,7 @@ export default function VoiceCarousel() {
         <motion.div variants={itemVariants} className="text-center mb-16">
           <motion.h1
             variants={itemVariants}
-            className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-orange-500 mb-4"
+            className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-orange-600 mb-4"
           >
             Test Out Some Used Voices
           </motion.h1>

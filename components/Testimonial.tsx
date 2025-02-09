@@ -55,7 +55,7 @@ export default function TestimonialsSection() {
           className="flex flex-col items-center justify-center space-y-4 text-center"
         >
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl whitespace-nowrap">
-            <span className="text-orange-500">Customer</span>{" "}
+            <span className="text-orange-600">Customer</span>{" "}
             <span className="text-white">Success Stories</span>
           </h2>
           <p className="text-gray-400 text-center md:text-xl mb-8">
@@ -72,7 +72,7 @@ export default function TestimonialsSection() {
             >
               <Card className=" bg-black border-orange-500/20 group relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_15px_rgba(249,115,22,0.3)] w-full max-w-sm mx-auto">
                 <div className="p-6">
-                  <div className="text-orange-500 mb-4 text-4xl font-extrabold">
+                  <div className="text-orange-600 mb-4 text-4xl font-extrabold">
                     <Quote />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-4">
@@ -106,7 +106,7 @@ export default function TestimonialsSection() {
                         .map((_, i) => (
                           <Star
                             key={i}
-                            className="w-4 h-4 fill-orange-500 text-orange-500"
+                            className="w-4 h-4 fill-orange-500 text-orange-600"
                           />
                         ))}
                     </div>

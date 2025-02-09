@@ -37,7 +37,7 @@ export default function EndlessUseCases() {
   return (
     <section className="w-full bg-black py-16">
       <div className="container mx-auto max-w-7xl px-4">
-        <h1 className="text-4xl font-bold text-center text-orange-500 mb-12">
+        <h1 className="text-4xl font-bold text-center text-orange-600 mb-12">
           Real-world usecases
         </h1>
 

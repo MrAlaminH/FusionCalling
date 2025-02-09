@@ -36,7 +36,7 @@ export default function TryDemo() {
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -20 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <motion.h1 className="text-orange-500 text-center font-bold text-3xl md:text-4xl  pb-4">
+          <motion.h1 className="text-orange-600 text-center font-bold text-3xl md:text-4xl  pb-4">
             Demo Calls
           </motion.h1>
           <p className="text-gray-400 text-center md:text-xl mb-8">

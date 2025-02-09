@@ -154,7 +154,7 @@ export default function Component() {
                   <div className="space-y-2 sm:space-y-4">
                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
                       Skeptical?{" "}
-                      <span className="text-orange-500">Test it NOW</span>
+                      <span className="text-orange-600">Test it NOW</span>
                     </h2>
                     <p className="text-sm sm:text-base text-gray-400">
                       Wondering how our AI agents work?
@@ -196,7 +196,7 @@ export default function Component() {
                       <h3 className="font-semibold text-lg text-white ">
                         Demo AI agent
                       </h3>
-                      <p className="text-orange-500 text-sm">Representative</p>
+                      <p className="text-orange-600 text-sm">Representative</p>
                     </div>
                   </div>
 
@@ -250,7 +250,7 @@ export default function Component() {
 
                     <p className="text-sm text-gray-400">
                       The call will automatically end after{" "}
-                      <span className="text-orange-500">5 minutes</span>
+                      <span className="text-orange-600">5 minutes</span>
                     </p>
 
                     <div className="relative">

@@ -17,7 +17,7 @@ export default function Features() {
         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -20 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        <motion.h1 className="text-orange-500 text-center font-bold text-3xl md:text-4xl  pb-4">
+        <motion.h1 className="text-orange-600 text-center font-bold text-3xl md:text-4xl  pb-4">
           Calling Features
         </motion.h1>
         <p className="text-gray-400 text-center md:text-xl mb-6">
@@ -34,7 +34,7 @@ export default function Features() {
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           <div className="w-full md:w-1/2 space-y-4">
-            <div className="inline-block rounded-lg bg-orange-500/10 px-3 py-1 text-sm text-orange-500">
+            <div className="inline-block rounded-lg bg-orange-500/10 px-3 py-1 text-sm text-orange-600">
               Smart Scheduling
             </div>
             <h2 className="text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl">
@@ -46,11 +46,11 @@ export default function Features() {
             </p>
             <ul className="space-y-2 text-gray-400">
               <li className="flex items-center gap-2">
-                <Calendar className="h-4 w-4 text-orange-500" />
+                <Calendar className="h-4 w-4 text-orange-600" />
                 Live calendar integration
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-orange-500" />
+                <Phone className="h-4 w-4 text-orange-600" />
                 Automated confirmation calls
               </li>
             </ul>
@@ -84,7 +84,7 @@ export default function Features() {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <div className="w-full md:w-1/2 space-y-4">
-            <div className="inline-block rounded-lg bg-orange-500/10 px-3 py-1 text-sm text-orange-500">
+            <div className="inline-block rounded-lg bg-orange-500/10 px-3 py-1 text-sm text-orange-600">
               24/7 Support
             </div>
             <h2 className="text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl">
@@ -139,7 +139,7 @@ export default function Features() {
         >
           <Card className="bg-black border-orange-500/20 group relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_15px_rgba(249,115,22,0.3)]">
             <CardContent className="p-6 space-y-4">
-              <BarChart3 className="h-12 w-12 text-orange-500" />
+              <BarChart3 className="h-12 w-12 text-orange-600" />
               <h3 className="text-xl font-bold text-white">Detailed Reports</h3>
               <p className="text-gray-400">
                 Track every interaction with comprehensive call recordings,
@@ -149,7 +149,7 @@ export default function Features() {
           </Card>
           <Card className="bg-black border-orange-500/20 group relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_15px_rgba(249,115,22,0.3)]">
             <CardContent className="p-6 space-y-4">
-              <Calendar className="h-12 w-12 text-orange-500" />
+              <Calendar className="h-12 w-12 text-orange-600" />
               <h3 className="text-xl font-bold text-white">
                 Focus on Priorities
               </h3>
@@ -161,7 +161,7 @@ export default function Features() {
           </Card>
           <Card className="bg-black border-orange-500/20 group relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_15px_rgba(249,115,22,0.3)]">
             <CardContent className="p-6 space-y-4">
-              <Phone className="h-12 w-12 text-orange-500" />
+              <Phone className="h-12 w-12 text-orange-600" />
               <h3 className="text-xl font-bold text-white">
                 Outbound Campaigns
               </h3>

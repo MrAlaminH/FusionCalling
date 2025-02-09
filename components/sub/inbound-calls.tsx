@@ -92,7 +92,7 @@ export default function InboundCalls() {
                 </div>
               </div>
               <div className="flex-grow">
-                <h2 className="text-4xl font-bold text-orange-500 mb-4">
+                <h2 className="text-4xl font-bold text-orange-600 mb-4">
                   Inbound Calls Management
                 </h2>
                 <p className="text-gray-300 mb-4 text-lg">
