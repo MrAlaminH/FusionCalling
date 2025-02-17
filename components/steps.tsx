@@ -41,10 +41,15 @@ export default function HowItWorks() {
   return (
     <div className="bg-black text-white py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-orange-600">
+        <div className="flex flex-col items-center mb-6">
+          <h1 className="text-orange-600 text-center font-bold text-3xl md:text-4xl  pb-4">
             How It Works
-          </h2>
+          </h1>
+          <p className="text-gray-400 text-center md:text-xl mb-6">
+            {" "}
+            Learn how to build, test, deploy, and monitor your voice AI agents
+            with Fusion Calling.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative ">
