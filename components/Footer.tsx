@@ -30,7 +30,7 @@ export default function Footer() {
             </h2>
 
             <Link
-              href="https://cal.com/mralamin/30min?"
+              href="https://cal.com/mralamin/discovery-call"
               className="mt-8 px-8 py-3 bg-orange-600 text-black rounded-full font-bold hover:bg-gray-700 transition-colors duration-300 inline-flex items-center"
             >
               Book a Demo

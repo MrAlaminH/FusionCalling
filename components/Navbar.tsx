@@ -82,7 +82,7 @@ const Navbar = () => {
             ))}
             <li className="lg:hidden">
               <a
-                href="https://cal.com/mralamin/30min?"
+                href="https://cal.com/mralamin/discovery-call"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block py-2 px-3 rounded-lg text-gray-200 hover:bg-orange-600 hover:text-white transition duration-300 transform hover:-translate-y-1"
@@ -95,7 +95,7 @@ const Navbar = () => {
 
         <div className="hidden lg:block">
           <Link
-            href="https://cal.com/mralamin/30min?"
+            href="https://cal.com/mralamin/discovery-call"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex h-10 sm:h-11 lg:h-12 items-center justify-center rounded-xl border border-orange-600 bg-orange-600 px-4 sm:px-5 lg:px-6 font-medium text-white hover:bg-gray-800 transition duration-300 transform hover:-translate-y-1"

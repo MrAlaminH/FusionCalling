@@ -116,7 +116,7 @@ export default function Component() {
           className="flex justify-center mb-8 sm:mb-12 lg:mb-16 xl:mb-20"
         >
           <Link
-            href="https://cal.com/mralamin/30min?"
+            href="https://cal.com/mralamin/discovery-call"
             className="inline-flex items-center rounded-md bg-white px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm md:text-base font-medium text-black transition-all hover:bg-gray-200 hover:scale-105"
           >
             Start creating with us
