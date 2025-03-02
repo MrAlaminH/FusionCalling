@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useCallback } from "react";
 import { Phone } from "lucide-react";
+import Toast from "@/components/ui/Toast";
 
 interface SlideToCallProps {
   onCallComplete?: () => void;
@@ -9,6 +10,7 @@ interface SlideToCallProps {
   name?: string;
   email?: string;
   resetInputs: () => void;
+  disabled?: boolean;
 }
 
 const HANDLE_WIDTH = 48;
@@ -23,12 +25,15 @@ export default function SlideToCall({
   name,
   email,
   resetInputs,
+  disabled,
 }: SlideToCallProps) {
   const [slideState, setSlideState] = useState({
     isDragging: false,
     position: 0,
     isSuccess: false,
   });
+
+  const [showToast, setShowToast] = useState(false);
 
   const sliderRef = useRef<HTMLDivElement>(null);
   const widthRef = useRef(0);
@@ -49,6 +54,7 @@ export default function SlideToCall({
   }, []);
 
   const initiateCall = useCallback(async () => {
+    if (disabled) return;
     if (callInitiatedRef.current) return;
     callInitiatedRef.current = true;
 
@@ -86,7 +92,15 @@ export default function SlideToCall({
       setSlideState({ isDragging: false, position: 0, isSuccess: false });
       callInitiatedRef.current = false;
     }
-  }, [phoneNumber, name, email, onCallComplete, vibrate, resetInputs]);
+  }, [
+    phoneNumber,
+    name,
+    email,
+    onCallComplete,
+    vibrate,
+    resetInputs,
+    disabled,
+  ]);
 
   const handleDragEnd = useCallback(() => {
     const effectiveWidth = getEffectiveWidth();
@@ -123,11 +137,17 @@ export default function SlideToCall({
   const handlePointerDown = useCallback(
     (e: React.PointerEvent) => {
       e.preventDefault();
+      if (disabled) {
+        setShowToast(true);
+        // Show toast for longer duration and clear any existing timeout
+        const timeoutId = setTimeout(() => setShowToast(false), 5000);
+        return () => clearTimeout(timeoutId);
+      }
       vibrate();
       setSlideState((prev) => ({ ...prev, isDragging: true }));
       handleDrag(e.clientX);
     },
-    [vibrate, handleDrag]
+    [vibrate, handleDrag, disabled]
   );
 
   const handlePointerMove = useCallback(
@@ -145,76 +165,92 @@ export default function SlideToCall({
   );
 
   return (
-    <div className="relative w-full h-12 bg-gray-800 rounded-full shadow-lg overflow-hidden">
+    <div className="relative">
+      {showToast && (
+        <div className="absolute top-[-80px] left-1/2 transform -translate-x-1/2 z-50 w-full">
+          <Toast
+            message="Please fill in all fields correctly: valid name, valid email, and phone number"
+            onClose={() => setShowToast(false)}
+          />
+        </div>
+      )}
       <div
-        ref={sliderRef}
-        className="w-full h-full"
-        onPointerDown={handlePointerDown}
-        onPointerMove={handlePointerMove}
-        onPointerUp={handleDragEnd}
-        onPointerLeave={handleDragEnd}
+        className={`relative w-full h-12 bg-gray-800 rounded-full shadow-lg overflow-hidden ${
+          disabled ? "opacity-50 cursor-not-allowed" : ""
+        }`}
       >
-        {/* Progress bar */}
         <div
-          className={`absolute top-0 left-0 h-full ${
-            slideState.isSuccess ? "bg-green-500" : "bg-orange-500"
-          } rounded-full transition-all duration-200`}
-          style={{
-            width: `${progressWidth}%`,
-            transition: slideState.isDragging ? "none" : "width 0.3s ease-out",
-          }}
-        />
-
-        {/* Handle */}
-        <div
-          className={`absolute top-1/2 left-0 w-12 h-12 ${
-            slideState.isSuccess ? "bg-green-500" : "bg-orange-500"
-          } rounded-full flex items-center justify-center cursor-grab
-            transition-all duration-200 ${
-              slideState.isDragging ? "scale-105" : ""
-            }`}
-          style={{
-            transform: `translate(${slideState.position}px, -50%)`,
-            transition: slideState.isDragging ? "none" : "all 0.3s ease-out",
-          }}
+          ref={sliderRef}
+          className="w-full h-full"
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={handleDragEnd}
+          onPointerLeave={handleDragEnd}
         >
-          {slideState.isSuccess ? (
-            <svg
-              className="w-6 h-6 text-white animate-bounce"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+          {/* Progress bar */}
+          <div
+            className={`absolute top-0 left-0 h-full ${
+              slideState.isSuccess ? "bg-green-500" : "bg-orange-500"
+            } rounded-full transition-all duration-200`}
+            style={{
+              width: `${progressWidth}%`,
+              transition: slideState.isDragging
+                ? "none"
+                : "width 0.3s ease-out",
+            }}
+          />
+
+          {/* Handle */}
+          <div
+            className={`absolute top-1/2 left-0 w-12 h-12 ${
+              slideState.isSuccess ? "bg-green-500" : "bg-orange-500"
+            } rounded-full flex items-center justify-center cursor-grab
+              transition-all duration-200 ${
+                slideState.isDragging ? "scale-105" : ""
+              }`}
+            style={{
+              transform: `translate(${slideState.position}px, -50%)`,
+              transition: slideState.isDragging ? "none" : "all 0.3s ease-out",
+            }}
+          >
+            {slideState.isSuccess ? (
+              <svg
+                className="w-6 h-6 text-white animate-bounce"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+            ) : (
+              <Phone className="w-6 h-6 text-black" />
+            )}
+          </div>
+
+          {/* Text */}
+          <span
+            className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+              text-white font-semibold transition-opacity duration-300 ${
+                slideState.isSuccess ? "opacity-0" : "opacity-100"
+              }`}
+          >
+            {progressWidth > 90 ? "Release to Call" : "→ SLIDE TO CALL"}
+          </span>
+
+          {slideState.isSuccess && (
+            <span
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+              text-white font-semibold animate-fade-in"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-          ) : (
-            <Phone className="w-6 h-6 text-black" />
+              Initiating Call...
+            </span>
           )}
         </div>
-
-        {/* Text */}
-        <span
-          className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
-            text-white font-semibold transition-opacity duration-300 ${
-              slideState.isSuccess ? "opacity-0" : "opacity-100"
-            }`}
-        >
-          {progressWidth > 90 ? "Release to Call" : "→ SLIDE TO CALL"}
-        </span>
-
-        {slideState.isSuccess && (
-          <span
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
-            text-white font-semibold animate-fade-in"
-          >
-            Initiating Call...
-          </span>
-        )}
       </div>
     </div>
   );

@@ -24,6 +24,21 @@ export default function Component() {
     setPhoneNumber("");
   };
 
+  // Function to validate email format
+  const isValidEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  // Function to check if inputs are valid
+  const isFormValid = () => {
+    return (
+      name.trim().length >= 2 && // Name should be at least 2 characters
+      isValidEmail(email.trim()) && // Email should be valid
+      phoneNumber.trim().length >= 10 // Phone should be at least 10 digits
+    );
+  };
+
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden pt-16 sm:pt-20 md:pt-24 lg:pt-28 xl:pt-32 relative">
       {/* Background Pattern SVG */}
@@ -260,6 +275,7 @@ export default function Component() {
                           email={email}
                           phoneNumber={phoneNumber}
                           resetInputs={resetInputs}
+                          disabled={!isFormValid()}
                         />
                       </div>
                     </div>
