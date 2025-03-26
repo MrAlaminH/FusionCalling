@@ -1,11 +1,13 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { Bot, TestTube2, Rocket, BarChart3, ArrowRight } from "lucide-react";
 
 export default function HowItWorks() {
   const [hoveredStep, setHoveredStep] = useState<number | null>(null);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const steps = [
     {
@@ -42,24 +44,36 @@ export default function HowItWorks() {
     <div className="bg-black text-white py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col items-center mb-6">
-          <h1 className="text-orange-600 text-center font-bold text-3xl md:text-4xl  pb-4">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5 }}
+            className="text-orange-600 text-center font-bold text-3xl md:text-4xl pb-4"
+          >
             How It Works
-          </h1>
-          <p className="text-gray-400 text-center md:text-xl mb-6">
-            {" "}
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-gray-400 text-center md:text-xl mb-6"
+          >
             Learn how to build, test, deploy, and monitor your voice AI agents
             with Fusion Calling.
-          </p>
+          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative ">
+        <div
+          ref={ref}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative"
+        >
           {steps.map((step, index) => (
             <motion.div
               key={step.number}
               className="relative"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
               onHoverStart={() => setHoveredStep(index)}
               onHoverEnd={() => setHoveredStep(null)}
             >

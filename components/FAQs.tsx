@@ -133,28 +133,34 @@ const securityFeatures = [
 
 const faqItems = [
   {
-    question: "How does our AI platform work?",
+    question: "What is your development process?",
     answer:
-      "Our AI platform automates interactions with a customizable AI agent that can scale. It manages outbound (proactive outreach) and inbound (responsive) tasks for lead qualification, customer support, and appointment scheduling. With no-code tools and flexible deployment options, we enhance engagement and streamline communication using the latest technology.",
+      "We follow a structured, results-driven approach to building AI solutions: 1) Discovery – We analyze your workflows and customer interactions to pinpoint where AI can add the most value. 2) Validation – We ensure AI aligns with your goals and delivers a strong return on investment. 3) Design & Development – We create AI-powered agents and integrate them seamlessly into your systems. 4) Testing – We rigorously test for accuracy, reliability, and a smooth user experience. 5) Deployment & Optimization – We launch your AI solution, monitor its performance, and fine-tune it for peak efficiency.",
   },
   {
-    question: "Can I use your platform with my existing system?",
+    question: "How long does it take to deploy an AI agent?",
     answer:
-      "Yes, our platform is designed to integrate seamlessly with most existing phone systems and CRM solutions. We provide comprehensive documentation and support for integration.",
+      "Most AI agents go live within 4 weeks after proposal approval. However, timelines may vary depending on the complexity of conversational flows, required functionalities, and system integrations.",
   },
   {
-    question: "Is expertise required for quality prompts?",
+    question: "Can your AI agents integrate with our existing systems?",
     answer:
-      "No special expertise is required. Our platform includes pre-built templates and an intuitive interface for creating and managing prompts. We also provide training and support.",
+      "Yes! Our AI agents are built to work seamlessly with your current systems, enhancing functionality without disrupting existing operations.",
   },
   {
-    question: "Can I set up automations with your service?",
+    question: "What kind of support do you offer after deployment?",
     answer:
-      "Yes, you can easily set up various automations through our user-friendly interface. We offer templates and customization options to suit your specific needs.",
+      "We provide two flexible support options: 1) Managed Services – 24/7 monitoring, ongoing support, regular AI model updates, and performance analytics. 2) Adhoc Services – Hourly support as needed, ideal for teams that prefer to manage their AI solutions in-house.",
   },
   {
-    question: "How does the AI load with my company information?",
+    question:
+      "How do you ensure projects are completed on time and meet high-quality standards?",
     answer:
-      "The AI is trained on your company data through a secure onboarding process. We use advanced machine learning techniques to ensure accurate representation of your business.",
+      "We follow a structured project timeline with clear milestones and deliverables. Our rigorous testing process ensures reliability, and we keep you updated with regular progress reports throughout development.",
+  },
+  {
+    question: "What tools and technologies do you use?",
+    answer:
+      "We leverage cutting-edge AI technologies tailored to your needs, including: AI Models: OpenAI GPT, Claude, Gemini; Voice Agent Development: Retell, Vapi, ElevenLabs; Chatbot Development: Voiceflow, Botpress; Automation Platforms: Make, Zapier, n8n. AI is constantly evolving, and we stay ahead by using the most advanced and suitable tools for your project.",
   },
 ];
