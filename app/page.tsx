@@ -10,6 +10,7 @@ import HowItWorks from "@/components/steps";
 import EndlessUseCases from "@/components/endless-use-cases";
 import Testimonials from "@/components/Testimonial";
 import Footer from "@/components/Footer";
+import PricingSection from "@/components/pricing-section";
 
 export default function Home() {
   return (
@@ -41,6 +42,9 @@ export default function Home() {
       </section>
       <section id="Testimonials">
         <Testimonials />
+      </section>
+      <section id="pricing">
+        <PricingSection />
       </section>
       <section id="faqs">
         <FAQSection />
