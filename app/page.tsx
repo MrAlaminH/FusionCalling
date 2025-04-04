@@ -11,6 +11,7 @@ import EndlessUseCases from "@/components/endless-use-cases";
 import Testimonials from "@/components/Testimonial";
 import Footer from "@/components/Footer";
 import PricingSection from "@/components/pricing-section";
+import Calendar from "@/components/calendar";
 
 export default function Home() {
   return (
@@ -49,6 +50,10 @@ export default function Home() {
       <section id="faqs">
         <FAQSection />
       </section>
+      <section id="calendar">
+        <Calendar calUsername={"mralamin"} eventSlug={"discovery-call"} />
+      </section>
+
       <Footer />
     </main>
   );

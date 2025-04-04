@@ -18,7 +18,7 @@ export default function PricingSection() {
         {/* Pricing Cards Container */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 items-stretch">
           {/* Starter Plan */}
-          <div className="relative bg-gradient-to-b from-[#0f172a] to-[#1e293b] text-white rounded-xl p-6 flex flex-col shadow-xl">
+          <div className="relative bg-gradient-to-b from-[#0f172a] to-[#1e293b] text-white rounded-xl p-6 flex flex-col shadow-xl transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl">
             <div className="flex justify-between items-start mb-4">
               <div>
                 <h3 className="text-lg font-semibold">Starter</h3>
@@ -29,7 +29,7 @@ export default function PricingSection() {
               <h2 className="text-4xl font-bold text-white">€99</h2>
               <p className="text-sm text-gray-300">/ per month</p>
             </div>
-            <button className="w-full bg-white text-[#0f172a] hover:bg-gray-100 rounded-full py-3 font-medium mb-8">
+            <button className="w-full bg-white text-[#0f172a] hover:bg-gray-100 rounded-full py-3 font-medium mb-8 transition-all duration-300 hover:shadow-lg hover:transform hover:scale-105">
               Get Started
             </button>
             <div className="border-t border-gray-700 pt-8 mt-auto">
@@ -56,7 +56,7 @@ export default function PricingSection() {
           </div>
 
           {/* Pro Plan - Main Design */}
-          <div className="relative bg-gradient-to-b from-[#1e2356] to-[#2a2f69] text-white rounded-xl p-6 flex flex-col transform lg:scale-105 lg:-translate-y-3 shadow-xl">
+          <div className="relative bg-gradient-to-b from-[#1e2356] to-[#2a2f69] text-white rounded-xl p-6 flex flex-col transform lg:scale-105 lg:-translate-y-3 shadow-xl transition-all duration-300 hover:shadow-2xl hover:transform hover:scale-110">
             <div className="absolute -top-6 -left-6">
               <div className="w-12 h-12 flex items-center justify-center">
                 <div className="absolute inset-0">
@@ -86,7 +86,7 @@ export default function PricingSection() {
               <h2 className="text-4xl font-bold text-[#8a94ff]">€199</h2>
               <p className="text-sm opacity-80">/ per month</p>
             </div>
-            <button className="w-full bg-gradient-to-r from-[#5a66ff] to-[#8a94ff] text-white rounded-full py-3 font-medium mb-8">
+            <button className="w-full bg-gradient-to-r from-[#5a66ff] to-[#8a94ff] text-white rounded-full py-3 font-medium mb-8 transition-all duration-300 hover:shadow-lg hover:transform hover:scale-105 hover:from-[#6b76ff] hover:to-[#9ba4ff]">
               Let&apos;s Start
             </button>
             <div className="border-t border-[#3a4184] pt-8 mt-auto">
@@ -113,7 +113,7 @@ export default function PricingSection() {
           </div>
 
           {/* Enterprise Plan */}
-          <div className="relative bg-gradient-to-b from-[#0f172a] to-[#1e293b] text-white rounded-xl p-6 flex flex-col shadow-xl">
+          <div className="relative bg-gradient-to-b from-[#0f172a] to-[#1e293b] text-white rounded-xl p-6 flex flex-col shadow-xl transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-2xl">
             <div className="flex justify-between items-start mb-4">
               <div>
                 <h3 className="text-lg font-semibold">Enterprise</h3>
@@ -124,7 +124,7 @@ export default function PricingSection() {
               <h2 className="text-4xl font-bold text-white">€299</h2>
               <p className="text-sm text-gray-300">/ per month</p>
             </div>
-            <button className="w-full bg-white text-[#0f172a] hover:bg-gray-100 rounded-full py-3 font-medium mb-8">
+            <button className="w-full bg-white text-[#0f172a] hover:bg-gray-100 rounded-full py-3 font-medium mb-8 transition-all duration-300 hover:shadow-lg hover:transform hover:scale-105">
               Contact Sales
             </button>
             <div className="border-t border-gray-700 pt-8 mt-auto">
