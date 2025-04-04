@@ -29,9 +29,12 @@ export default function PricingSection() {
               <h2 className="text-4xl font-bold text-white">€99</h2>
               <p className="text-sm text-gray-300">/ per month</p>
             </div>
-            <button className="w-full bg-white text-[#0f172a] hover:bg-gray-100 rounded-full py-3 font-medium mb-8 transition-all duration-300 hover:shadow-lg hover:transform hover:scale-105">
+            <a
+              href="#calendar"
+              className="w-full bg-white text-[#0f172a] hover:bg-gray-100 rounded-full py-3 font-medium mb-8 transition-all duration-300 hover:shadow-lg hover:transform hover:scale-105 inline-block text-center"
+            >
               Get Started
-            </button>
+            </a>
             <div className="border-t border-gray-700 pt-8 mt-auto">
               <h4 className="font-medium mb-4 text-white">What you will get</h4>
               <ul className="space-y-3">
@@ -86,9 +89,12 @@ export default function PricingSection() {
               <h2 className="text-4xl font-bold text-[#8a94ff]">€199</h2>
               <p className="text-sm opacity-80">/ per month</p>
             </div>
-            <button className="w-full bg-gradient-to-r from-[#5a66ff] to-[#8a94ff] text-white rounded-full py-3 font-medium mb-8 transition-all duration-300 hover:shadow-lg hover:transform hover:scale-105 hover:from-[#6b76ff] hover:to-[#9ba4ff]">
+            <a
+              href="#calendar"
+              className="w-full bg-gradient-to-r from-[#5a66ff] to-[#8a94ff] text-white rounded-full py-3 font-medium mb-8 transition-all duration-300 hover:shadow-lg hover:transform hover:scale-105 hover:from-[#6b76ff] hover:to-[#9ba4ff] inline-block text-center"
+            >
               Let&apos;s Start
-            </button>
+            </a>
             <div className="border-t border-[#3a4184] pt-8 mt-auto">
               <h4 className="font-medium mb-4">What you will get</h4>
               <ul className="space-y-3">
@@ -124,9 +130,12 @@ export default function PricingSection() {
               <h2 className="text-4xl font-bold text-white">€299</h2>
               <p className="text-sm text-gray-300">/ per month</p>
             </div>
-            <button className="w-full bg-white text-[#0f172a] hover:bg-gray-100 rounded-full py-3 font-medium mb-8 transition-all duration-300 hover:shadow-lg hover:transform hover:scale-105">
+            <a
+              href="#calendar"
+              className="w-full bg-white text-[#0f172a] hover:bg-gray-100 rounded-full py-3 font-medium mb-8 transition-all duration-300 hover:shadow-lg hover:transform hover:scale-105 inline-block text-center"
+            >
               Contact Sales
-            </button>
+            </a>
             <div className="border-t border-gray-700 pt-8 mt-auto">
               <h4 className="font-medium mb-4 text-white">What you will get</h4>
               <ul className="space-y-3">
