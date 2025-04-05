@@ -47,6 +47,7 @@ export default function PricingSection() {
               </h4>
               <ul className="space-y-2 md:space-y-3">
                 {[
+                  "Includes 550 minutes",
                   "$0.42 Extra Per Minute",
                   "Full Portal Access",
                   "All Integrations Compatible",
@@ -126,6 +127,7 @@ export default function PricingSection() {
               </h4>
               <ul className="space-y-2 md:space-y-3">
                 {[
+                  "Includes 1050 minutes",
                   "$0.30 Extra Per Minute",
                   "Full Portal Access",
                   "All Integrations Compatible",
@@ -178,6 +180,7 @@ export default function PricingSection() {
               </h4>
               <ul className="space-y-2 md:space-y-3">
                 {[
+                  "Includes 2100 minutes",
                   "$0.20 Extra Per Minute",
                   "Full Portal Access",
                   "Everything in Pro",
