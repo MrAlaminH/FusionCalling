@@ -39,7 +39,7 @@ export default function PricingSection() {
               <h4 className="font-medium mb-4 text-white">What you will get</h4>
               <ul className="space-y-3">
                 {[
-                  "$0.42 Per Minute",
+                  "$0.42 Extra Per Minute",
                   "Full Portal Access",
                   "All Integrations Compatible",
                   "Basic FAQ handling",
@@ -99,7 +99,7 @@ export default function PricingSection() {
               <h4 className="font-medium mb-4">What you will get</h4>
               <ul className="space-y-3">
                 {[
-                  "$0.30 Per Minute",
+                  "$0.30 Extra Per Minute",
                   "Full Portal Access",
                   "All Integrations Compatible",
                   "Advanced response scripts",
@@ -141,7 +141,7 @@ export default function PricingSection() {
               <h4 className="font-medium mb-4 text-white">What you will get</h4>
               <ul className="space-y-3">
                 {[
-                  "$0.20 Per Minute",
+                  "$0.20 Extra Per Minute",
                   "Full Portal Access",
                   "Everything in Pro",
                   "Custom Trained Voice",
