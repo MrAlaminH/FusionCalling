@@ -26,7 +26,7 @@ export default function PricingSection() {
               </div>
             </div>
             <div className="mb-8">
-              <h2 className="text-4xl font-bold text-white">€99</h2>
+              <h2 className="text-4xl font-bold text-white">$297</h2>
               <p className="text-sm text-gray-300">/ per month</p>
             </div>
             <a
@@ -39,13 +39,13 @@ export default function PricingSection() {
               <h4 className="font-medium mb-4 text-white">What you will get</h4>
               <ul className="space-y-3">
                 {[
-                  "$1.00 Per Minute",
-                  "Basic IFTTT script",
+                  "$0.42 Per Minute",
+                  "Full Portal Access",
+                  "All Integrations Compatible",
                   "Basic FAQ handling",
-                  "Call metrics dashboard",
-                  "Dedicated Account Manager",
+                  "Basic response scripts",
                   "Basic Testing",
-                  "$1250 Build Fee",
+                  "$799 Build Fee",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <div className="min-w-5 min-h-5 rounded-full bg-green-500 flex items-center justify-center mt-0.5">
@@ -86,7 +86,7 @@ export default function PricingSection() {
               </span>
             </div>
             <div className="mb-8">
-              <h2 className="text-4xl font-bold text-[#8a94ff]">€199</h2>
+              <h2 className="text-4xl font-bold text-[#8a94ff]">€397</h2>
               <p className="text-sm opacity-80">/ per month</p>
             </div>
             <a
@@ -99,12 +99,13 @@ export default function PricingSection() {
               <h4 className="font-medium mb-4">What you will get</h4>
               <ul className="space-y-3">
                 {[
-                  "$0.80 Per Minute",
-                  "Everything in Starter",
-                  "Custom trained voices",
+                  "$0.30 Per Minute",
+                  "Full Portal Access",
+                  "All Integrations Compatible",
                   "Advanced response scripts",
-                  "Custom dashboard",
+                  "Advanced FAQ handling",
                   "Advanced Testing",
+                  "Custom LLM Integration",
                   "$1250 Build Fee",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
@@ -127,7 +128,7 @@ export default function PricingSection() {
               </div>
             </div>
             <div className="mb-8">
-              <h2 className="text-4xl font-bold text-white">€299</h2>
+              <h2 className="text-4xl font-bold text-white">$597</h2>
               <p className="text-sm text-gray-300">/ per month</p>
             </div>
             <a
@@ -140,13 +141,14 @@ export default function PricingSection() {
               <h4 className="font-medium mb-4 text-white">What you will get</h4>
               <ul className="space-y-3">
                 {[
-                  "$0.65 Per Minute",
+                  "$0.20 Per Minute",
+                  "Full Portal Access",
                   "Everything in Pro",
-                  "Custom LLM Integration",
-                  "Bespoke trained voice",
-                  "Dedicated developer",
+                  "Custom Trained Voice",
+                  "Dedicated Support and Developer",
+                  "Extensive script",
                   "Extensive Testing",
-                  "$1250 Build Fee",
+                  "$2250 Build Fee",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <div className="min-w-5 min-h-5 rounded-full bg-green-500 flex items-center justify-center mt-0.5">

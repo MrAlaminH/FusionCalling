@@ -68,18 +68,20 @@ const Navbar = () => {
           } w-full lg:block lg:w-auto transition-all duration-300 ease-in-out`}
         >
           <ul className="flex flex-col p-4 mt-4 space-y-2 lg:space-y-0 border border-orange-600/50 rounded-lg lg:flex-row lg:space-x-6 xl:space-x-8 lg:mt-0 lg:border-0 lg:bg-transparent">
-            {["Home", "Demo Call", "Features", "FAQs"].map((item) => (
-              <li key={item}>
-                <a
-                  href={`#${item.toLowerCase().replace(" ", "-")}`}
-                  className={`block py-2 px-3 rounded-lg ${
-                    item === "Home" ? "text-yellow-400" : "text-gray-200"
-                  } hover:bg-orange-600 hover:text-white font-medium transition duration-300 transform hover:-translate-y-1`}
-                >
-                  {item}
-                </a>
-              </li>
-            ))}
+            {["Home", "Demo Call", "Features", "Pricing", "FAQs"].map(
+              (item) => (
+                <li key={item}>
+                  <a
+                    href={`#${item.toLowerCase().replace(" ", "-")}`}
+                    className={`block py-2 px-3 rounded-lg ${
+                      item === "Home" ? "text-yellow-400" : "text-gray-200"
+                    } hover:bg-orange-600 hover:text-white font-medium transition duration-300 transform hover:-translate-y-1`}
+                  >
+                    {item}
+                  </a>
+                </li>
+              )
+            )}
             <li className="lg:hidden">
               <a
                 href="https://cal.com/mralamin/discovery-call"
