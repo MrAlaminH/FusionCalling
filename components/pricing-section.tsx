@@ -128,7 +128,7 @@ export default function PricingSection() {
               </div>
             </div>
             <div className="mb-8">
-              <h2 className="text-4xl font-bold text-white">$597</h2>
+              <h2 className="text-4xl font-bold text-white">$797</h2>
               <p className="text-sm text-gray-300">/ per month</p>
             </div>
             <a
