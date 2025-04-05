@@ -1,6 +1,7 @@
 "use client";
 
 import Cal from "@calcom/embed-react";
+import { useEffect, useState } from "react";
 
 interface CalendarProps {
   calUsername: string;
@@ -8,6 +9,23 @@ interface CalendarProps {
 }
 
 const Calendar = ({ calUsername, eventSlug }: CalendarProps) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Check initially
+    checkMobile();
+
+    // Add resize listener
+    window.addEventListener("resize", checkMobile);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
     <div className="calendar-wrapper">
       <div className="calendar-header">
@@ -23,12 +41,18 @@ const Calendar = ({ calUsername, eventSlug }: CalendarProps) => {
           style={{
             width: "100%",
             height: "100%",
-            minHeight: "450px",
+            minHeight: isMobile ? "600px" : "450px",
             borderRadius: "16px",
+            overflow: "auto",
+            WebkitOverflowScrolling: "touch",
           }}
           config={{
-            layout: "month_view",
             theme: "dark",
+            layout: "month_view",
+            hideEventTypeDetails: "true",
+            layout_mobile: "month_view",
+            hideRangeSelection: "true",
+            hideTimeZoneSwitcher: "true",
           }}
         />
       </div>
@@ -43,6 +67,7 @@ const Calendar = ({ calUsername, eventSlug }: CalendarProps) => {
           display: flex;
           flex-direction: column;
           align-items: center;
+          overflow-x: hidden;
         }
         .calendar-header {
           text-align: center;
@@ -69,10 +94,13 @@ const Calendar = ({ calUsername, eventSlug }: CalendarProps) => {
           padding: 1.5rem;
           box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
           width: 100%;
-          height: 600px;
-          overflow: hidden;
+          height: auto;
+          min-height: 600px;
+          position: relative;
+          overflow: visible;
           border: 1px solid rgba(255, 255, 255, 0.1);
           margin-bottom: 1rem;
+          -webkit-overflow-scrolling: touch;
         }
 
         /* Large desktop screens */
@@ -82,7 +110,7 @@ const Calendar = ({ calUsername, eventSlug }: CalendarProps) => {
             padding-bottom: 1rem;
           }
           .calendar-container {
-            height: 650px;
+            min-height: 650px;
           }
           .calendar-header h2 {
             font-size: 3rem;
@@ -96,7 +124,7 @@ const Calendar = ({ calUsername, eventSlug }: CalendarProps) => {
             padding-bottom: 1rem;
           }
           .calendar-container {
-            height: 580px;
+            min-height: 580px;
           }
           .calendar-header h2 {
             font-size: 2.25rem;
@@ -110,8 +138,9 @@ const Calendar = ({ calUsername, eventSlug }: CalendarProps) => {
             padding-bottom: 0.5rem;
           }
           .calendar-container {
-            height: 550px;
+            min-height: 550px;
             padding: 1rem;
+            overflow: visible;
           }
           .calendar-header h2 {
             font-size: 2rem;
@@ -126,11 +155,15 @@ const Calendar = ({ calUsername, eventSlug }: CalendarProps) => {
           .calendar-wrapper {
             padding: 1rem;
             padding-bottom: 0;
+            overflow-x: hidden;
+            overflow-y: visible;
           }
           .calendar-container {
             padding: 0.75rem;
-            height: 500px;
+            min-height: 500px;
             margin-bottom: 0;
+            overflow: visible;
+            height: auto;
           }
           .calendar-header {
             margin-bottom: 1.5rem;
