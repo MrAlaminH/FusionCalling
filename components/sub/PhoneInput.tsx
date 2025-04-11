@@ -3,7 +3,7 @@
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { ChevronDown, Phone } from "lucide-react";
-import React, { forwardRef, useState } from "react";
+import React, { forwardRef, useState, useEffect } from "react";
 import PhoneInput, { Country } from "react-phone-number-input";
 import type { DefaultInputComponentProps } from "react-phone-number-input";
 import "react-phone-number-input/style.css";
@@ -118,6 +118,11 @@ const PhoneInputComponent: React.FC<PhoneInputProps> = ({
   "aria-label": ariaLabel,
 }) => {
   const [phoneValue, setPhoneValue] = useState(value || "");
+
+  // Update internal state when value prop changes
+  useEffect(() => {
+    setPhoneValue(value || "");
+  }, [value]);
 
   const handleChange = (newValue: string | undefined) => {
     setPhoneValue(newValue || "");

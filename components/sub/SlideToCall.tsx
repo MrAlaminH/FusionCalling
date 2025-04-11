@@ -9,6 +9,7 @@ interface SlideToCallProps {
   phoneNumber?: string;
   name?: string;
   email?: string;
+  selectedAgent?: string;
   resetInputs: () => void;
   disabled?: boolean;
 }
@@ -16,14 +17,15 @@ interface SlideToCallProps {
 const HANDLE_WIDTH = 48;
 const THRESHOLD = 0.9;
 const VIBRATION_DURATION = 50;
-const SUCCESS_DELAY = 1000;
-const RESET_DELAY = 2000;
+const SUCCESS_DELAY = 6000;
+const RESET_DELAY = 6000;
 
 export default function SlideToCall({
   onCallComplete,
   phoneNumber,
   name,
   email,
+  selectedAgent,
   resetInputs,
   disabled,
 }: SlideToCallProps) {
@@ -62,21 +64,26 @@ export default function SlideToCall({
       vibrate();
       setSlideState((prev) => ({ ...prev, isSuccess: true }));
 
-      console.log("Sending values:", { phoneNumber, name, email });
+      console.log("Sending values:", {
+        phoneNumber,
+        name,
+        email,
+        selectedAgent,
+      });
 
       const response = await fetch("/api/webhook", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ phoneNumber, name, email }),
+        body: JSON.stringify({ phoneNumber, name, email, selectedAgent }),
       });
 
       if (!response.ok) throw new Error("Webhook failed");
 
       onCallComplete?.();
-      resetInputs();
 
-      console.log("Resetting inputs...");
+      // Reset inputs first
       resetInputs();
+      console.log("Resetting inputs...");
 
       // Schedule call initiation and reset
       setTimeout(() => {
@@ -96,6 +103,7 @@ export default function SlideToCall({
     phoneNumber,
     name,
     email,
+    selectedAgent,
     onCallComplete,
     vibrate,
     resetInputs,
@@ -139,8 +147,8 @@ export default function SlideToCall({
       e.preventDefault();
       if (disabled) {
         setShowToast(true);
-        // Show toast for longer duration and clear any existing timeout
-        const timeoutId = setTimeout(() => setShowToast(false), 5000);
+        // Show toast for 4 seconds
+        const timeoutId = setTimeout(() => setShowToast(false), 4000);
         return () => clearTimeout(timeoutId);
       }
       vibrate();
@@ -169,11 +177,13 @@ export default function SlideToCall({
       {showToast && (
         <div className="absolute top-[-80px] left-1/2 transform -translate-x-1/2 z-50 w-full">
           <Toast
-            message="Please fill in all fields correctly: valid name, valid email, and phone number"
+            message="Please fill in all fields correctly: valid name, valid email, phone number, and select an agent"
+            type="error"
             onClose={() => setShowToast(false)}
           />
         </div>
       )}
+
       <div
         className={`relative w-full h-12 bg-gray-800 rounded-full shadow-lg overflow-hidden ${
           disabled ? "opacity-50 cursor-not-allowed" : ""

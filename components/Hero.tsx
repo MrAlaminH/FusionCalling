@@ -16,12 +16,16 @@ export default function Component() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [selectedAgent, setSelectedAgent] = useState("");
+  const [formKey, setFormKey] = useState(0);
 
   // Function to reset input values
   const resetInputs = () => {
     setName("");
     setEmail("");
     setPhoneNumber("");
+    setSelectedAgent("");
+    setFormKey((prev) => prev + 1);
   };
 
   // Function to validate email format
@@ -35,8 +39,15 @@ export default function Component() {
     return (
       name.trim().length >= 2 && // Name should be at least 2 characters
       isValidEmail(email.trim()) && // Email should be valid
-      phoneNumber.trim().length >= 10 // Phone should be at least 10 digits
+      phoneNumber.trim().length >= 10 && // Phone should be at least 10 digits
+      selectedAgent !== "" // Agent must be selected
     );
+  };
+
+  // Function to handle form submission completion
+  const handleCallComplete = () => {
+    // This function will be called after the call is initiated
+    // We don't need to do anything here as resetInputs is already called in SlideToCall
   };
 
   return (
@@ -215,7 +226,7 @@ export default function Component() {
                     </div>
                   </div>
 
-                  <form className="space-y-4">
+                  <form className="space-y-4" key={formKey}>
                     <label
                       className="block text-sm font-medium text-gray-300"
                       htmlFor="name"
@@ -263,6 +274,26 @@ export default function Component() {
                       />
                     </div>
 
+                    <label
+                      className="block text-sm font-medium text-gray-300"
+                      htmlFor="agent"
+                    >
+                      Select Agent
+                    </label>
+                    <select
+                      id="agent"
+                      value={selectedAgent}
+                      onChange={(e) => setSelectedAgent(e.target.value)}
+                      className="w-full bg-zinc-800 border border-zinc-700 text-white rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    >
+                      <option value="">Choose an agent</option>
+                      <option value="appointment-scheduler">
+                        Appointment Scheduler
+                      </option>
+                      <option value="real-estate">Real Estate</option>
+                      <option value="dental-practice">Dental Practice</option>
+                    </select>
+
                     <p className="text-sm text-gray-400">
                       The call will automatically end after{" "}
                       <span className="text-orange-600">5 minutes</span>
@@ -274,7 +305,9 @@ export default function Component() {
                           name={name}
                           email={email}
                           phoneNumber={phoneNumber}
+                          selectedAgent={selectedAgent}
                           resetInputs={resetInputs}
+                          onCallComplete={handleCallComplete}
                           disabled={!isFormValid()}
                         />
                       </div>
