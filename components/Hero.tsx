@@ -18,6 +18,7 @@ export default function Component() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [selectedAgent, setSelectedAgent] = useState("");
   const [formKey, setFormKey] = useState(0);
+  const [copySuccess, setCopySuccess] = useState(false);
 
   // Function to reset input values
   const resetInputs = () => {
@@ -48,6 +49,13 @@ export default function Component() {
   const handleCallComplete = () => {
     // This function will be called after the call is initiated
     // We don't need to do anything here as resetInputs is already called in SlideToCall
+  };
+
+  // Function to handle copying phone number
+  const handleCopyNumber = () => {
+    navigator.clipboard.writeText("+12029983591");
+    setCopySuccess(true);
+    setTimeout(() => setCopySuccess(false), 2000);
   };
 
   return (
@@ -197,7 +205,74 @@ export default function Component() {
                       The AI agent is ready to chat about Fusion Calling and
                       book appointments for you.
                     </p>
+
+                    {/* Guide text for inbound call */}
+                    <p className="mt-2 text-xs md:text-sm text-orange-400/80">
+                      To test our inbound call handling, dial the number below:
+                    </p>
+
+                    {/* Inbound Call Box */}
+                    <div className="mt-2 bg-zinc-800/80 border border-orange-500/30 rounded-lg p-3 flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                        <span className="text-xs sm:text-sm text-gray-300">
+                          Inbound Call:
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs sm:text-sm font-medium text-white">
+                          +1 (202) 998-3591
+                        </span>
+                        <motion.button
+                          onClick={handleCopyNumber}
+                          className={`transition-colors ${
+                            copySuccess
+                              ? "text-green-500"
+                              : "text-orange-500 hover:text-orange-400"
+                          }`}
+                          aria-label="Copy phone number"
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            {copySuccess ? (
+                              <polyline points="20 6 9 17 4 12"></polyline>
+                            ) : (
+                              <>
+                                <rect
+                                  x="9"
+                                  y="9"
+                                  width="13"
+                                  height="13"
+                                  rx="2"
+                                  ry="2"
+                                ></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                              </>
+                            )}
+                          </svg>
+                        </motion.button>
+                      </div>
+                    </div>
                   </div>
+                </div>
+
+                {/* OR Divider - Only visible on mobile */}
+                <div className="md:hidden flex items-center justify-center my-6">
+                  <div className="bg-zinc-700/50 h-[1px] flex-grow"></div>
+                  <span className="px-4 text-orange-600 text-sm font-medium">
+                    OR
+                  </span>
+                  <div className="bg-zinc-700/50 h-[1px] flex-grow"></div>
                 </div>
 
                 {/* Right Column - Form */}
