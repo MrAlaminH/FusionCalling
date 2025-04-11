@@ -2,53 +2,49 @@ import { Check } from "lucide-react";
 
 export default function PricingSection() {
   return (
-    <section className="w-full py-8 md:py-12 lg:py-18 bg-black text-gray-200">
-      <div className="container px-4 md:px-6 max-w-7xl mx-auto">
+    <section className="w-full py-6 md:py-8 lg:py-12 bg-black text-gray-200">
+      <div className="container px-4 md:px-6 max-w-6xl mx-auto">
         {/* Title Header */}
-        <div className="text-center mb-8 md:mb-12 lg:mb-20">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-orange-600 mb-2 md:mb-3">
+        <div className="text-center mb-6 md:mb-8 lg:mb-12">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-orange-600 mb-2">
             Simple, Fair Pricing
           </h2>
-          <p className="text-sm md:text-base text-gray-400 md:text-lg max-w-2xl mx-auto">
+          <p className="text-xs text-gray-400 md:text-sm max-w-xl mx-auto">
             Choose the perfect plan for your business needs. Scale effortlessly
             as you grow.
           </p>
         </div>
 
         {/* Pricing Cards Container */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {/* Starter Plan */}
-          <div className="relative bg-gradient-to-b from-[#0f172a] to-[#1e293b] text-white rounded-xl p-4 md:p-6 flex flex-col shadow-xl transition-all duration-300 hover:shadow-2xl h-full">
-            <div className="flex justify-between items-start mb-3 md:mb-4">
+          <div className="relative bg-gradient-to-b from-[#0f172a] to-[#1e293b] text-white rounded-lg p-3 md:p-4 flex flex-col shadow-lg transition-all duration-300 hover:shadow-xl h-full">
+            <div className="flex justify-between items-start mb-2 md:mb-3">
               <div>
-                <h3 className="text-base md:text-lg font-semibold">Starter</h3>
-                <p className="text-xs md:text-sm opacity-80">
-                  Perfect for small teams
-                </p>
+                <h3 className="text-sm md:text-base font-semibold">Starter</h3>
+                <p className="text-xs opacity-80">Perfect for small teams</p>
               </div>
             </div>
-            <div className="mb-6 md:mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
-                $297
-              </h2>
-              <p className="text-xs md:text-sm text-gray-300">/ per month</p>
+            <div className="mb-4 md:mb-5">
+              <h2 className="text-xl md:text-2xl font-bold text-white">$249</h2>
+              <p className="text-xs text-gray-300">/ per month</p>
             </div>
             <a
               href="#calendar"
-              className="w-full bg-white text-[#0f172a] hover:bg-gray-100 rounded-full py-2 md:py-3 font-medium mb-6 md:mb-8 transition-all duration-300 hover:shadow-lg text-sm md:text-base inline-block text-center"
+              className="w-full bg-white text-[#0f172a] hover:bg-gray-100 rounded-full py-1.5 md:py-2 font-medium mb-4 md:mb-5 transition-all duration-300 hover:shadow-lg text-xs md:text-sm inline-block text-center"
             >
               Get Started
             </a>
             {/* Fixed height spacer to ensure consistent border position */}
             <div className="flex-grow min-h-4"></div>
-            <div className="border-t border-gray-700 pt-6 md:pt-8">
-              <h4 className="font-medium mb-3 md:mb-4 text-white text-sm md:text-base">
+            <div className="border-t border-gray-700 pt-4 md:pt-5">
+              <h4 className="font-medium mb-2 md:mb-3 text-white text-xs md:text-sm">
                 What you will get
               </h4>
-              <ul className="space-y-2 md:space-y-3">
+              <ul className="space-y-1.5 md:space-y-2">
                 {[
-                  "Includes 550 minutes",
-                  "$0.42 Extra Per Minute",
+                  "Includes 500 minutes",
+                  "$0.50 Extra Per Minute",
                   "Full Portal Access",
                   "All Integrations Compatible",
                   "Basic FAQ handling",
@@ -61,17 +57,15 @@ export default function PricingSection() {
                     item ? (
                       <li
                         key={index}
-                        className="flex items-start gap-2 md:gap-3"
+                        className="flex items-start gap-1.5 md:gap-2"
                       >
-                        <div className="min-w-4 min-h-4 md:min-w-5 md:min-h-5 rounded-full bg-green-500 flex items-center justify-center mt-0.5">
-                          <Check className="w-2 h-2 md:w-3 md:h-3 text-white" />
+                        <div className="min-w-3 min-h-3 md:min-w-4 md:min-h-4 rounded-full bg-green-500 flex items-center justify-center mt-0.5">
+                          <Check className="w-1.5 h-1.5 md:w-2 md:h-2 text-white" />
                         </div>
-                        <span className="text-xs md:text-sm text-gray-300">
-                          {item}
-                        </span>
+                        <span className="text-xs text-gray-300">{item}</span>
                       </li>
                     ) : (
-                      <li key={index} className="h-5 md:h-6"></li>
+                      <li key={index} className="h-4 md:h-5"></li>
                     ) // Empty space placeholder with height
                 )}
               </ul>
@@ -79,9 +73,9 @@ export default function PricingSection() {
           </div>
 
           {/* Pro Plan - Main Design */}
-          <div className="relative bg-gradient-to-b from-[#1e2356] to-[#2a2f69] text-white rounded-xl p-4 md:p-6 flex flex-col shadow-xl transition-all duration-300 hover:shadow-2xl order-first md:order-none lg:transform lg:scale-105 lg:-translate-y-3 h-full">
-            <div className="absolute -top-4 -left-4 md:-top-6 md:-left-6">
-              <div className="w-8 h-8 md:w-12 md:h-12 flex items-center justify-center">
+          <div className="relative bg-gradient-to-b from-[#1e2356] to-[#2a2f69] text-white rounded-lg p-3 md:p-4 flex flex-col shadow-lg transition-all duration-300 hover:shadow-xl order-first md:order-none lg:transform lg:scale-105 lg:-translate-y-2 h-full">
+            <div className="absolute -top-3 -left-3 md:-top-4 md:-left-4">
+              <div className="w-6 h-6 md:w-8 md:h-8 flex items-center justify-center">
                 <div className="absolute inset-0">
                   <svg
                     viewBox="0 0 24 24"
@@ -93,55 +87,53 @@ export default function PricingSection() {
                     />
                   </svg>
                 </div>
-                <Check className="w-3 h-3 md:w-4 md:h-4 text-white z-10" />
+                <Check className="w-2 h-2 md:w-3 md:h-3 text-white z-10" />
               </div>
             </div>
-            <div className="flex justify-between items-start mb-3 md:mb-4">
+            <div className="flex justify-between items-start mb-2 md:mb-3">
               <div>
-                <h3 className="text-base md:text-lg font-semibold">Pro</h3>
-                <p className="text-xs md:text-sm opacity-80">
-                  For growing businesses
-                </p>
+                <h3 className="text-sm md:text-base font-semibold">Pro</h3>
+                <p className="text-xs opacity-80">For growing businesses</p>
               </div>
-              <span className="bg-white text-indigo-600 px-2 py-1 rounded-full text-xs font-medium">
+              <span className="bg-white text-indigo-600 px-1.5 py-0.5 rounded-full text-xs font-medium">
                 Popular
               </span>
             </div>
-            <div className="mb-6 md:mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#8a94ff]">
-                €397
+            <div className="mb-4 md:mb-5">
+              <h2 className="text-xl md:text-2xl font-bold text-[#8a94ff]">
+                €449
               </h2>
-              <p className="text-xs md:text-sm opacity-80">/ per month</p>
+              <p className="text-xs opacity-80">/ per month</p>
             </div>
             <a
               href="#calendar"
-              className="w-full bg-gradient-to-r from-[#5a66ff] to-[#8a94ff] text-white rounded-full py-2 md:py-3 font-medium mb-6 md:mb-8 transition-all duration-300 hover:shadow-lg text-sm md:text-base inline-block text-center"
+              className="w-full bg-gradient-to-r from-[#5a66ff] to-[#8a94ff] text-white rounded-full py-1.5 md:py-2 font-medium mb-4 md:mb-5 transition-all duration-300 hover:shadow-lg text-xs md:text-sm inline-block text-center"
             >
               Let&apos;s Start
             </a>
             {/* Fixed height spacer to ensure consistent border position */}
             <div className="flex-grow min-h-4"></div>
-            <div className="border-t border-[#3a4184] pt-6 md:pt-8">
-              <h4 className="font-medium mb-3 md:mb-4 text-sm md:text-base">
+            <div className="border-t border-[#3a4184] pt-4 md:pt-5">
+              <h4 className="font-medium mb-2 md:mb-3 text-xs md:text-sm">
                 What you will get
               </h4>
-              <ul className="space-y-2 md:space-y-3">
+              <ul className="space-y-1.5 md:space-y-2">
                 {[
                   "Includes 1050 minutes",
-                  "$0.30 Extra Per Minute",
+                  "$0.40 Extra Per Minute",
                   "Full Portal Access",
                   "All Integrations Compatible",
                   "Advanced response scripts",
                   "Advanced FAQ handling",
                   "Advanced Testing",
                   "Custom LLM Integration",
-                  "$1250 Build Fee",
+                  "$799 Build Fee",
                 ].map((item, index) => (
-                  <li key={index} className="flex items-start gap-2 md:gap-3">
-                    <div className="min-w-4 min-h-4 md:min-w-5 md:min-h-5 rounded-full bg-[#5a66ff] flex items-center justify-center mt-0.5">
-                      <Check className="w-2 h-2 md:w-3 md:h-3 text-white" />
+                  <li key={index} className="flex items-start gap-1.5 md:gap-2">
+                    <div className="min-w-3 min-h-3 md:min-w-4 md:min-h-4 rounded-full bg-[#5a66ff] flex items-center justify-center mt-0.5">
+                      <Check className="w-1.5 h-1.5 md:w-2 md:h-2 text-white" />
                     </div>
-                    <span className="text-xs md:text-sm">{item}</span>
+                    <span className="text-xs">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -149,54 +141,48 @@ export default function PricingSection() {
           </div>
 
           {/* Enterprise Plan */}
-          <div className="relative bg-gradient-to-b from-[#0f172a] to-[#1e293b] text-white rounded-xl p-4 md:p-6 flex flex-col shadow-xl transition-all duration-300 hover:shadow-2xl h-full">
-            <div className="flex justify-between items-start mb-3 md:mb-4">
+          <div className="relative bg-gradient-to-b from-[#0f172a] to-[#1e293b] text-white rounded-lg p-3 md:p-4 flex flex-col shadow-lg transition-all duration-300 hover:shadow-xl h-full">
+            <div className="flex justify-between items-start mb-2 md:mb-3">
               <div>
-                <h3 className="text-base md:text-lg font-semibold">
+                <h3 className="text-sm md:text-base font-semibold">
                   Enterprise
                 </h3>
-                <p className="text-xs md:text-sm opacity-80">
-                  For large organizations
-                </p>
+                <p className="text-xs opacity-80">For large organizations</p>
               </div>
             </div>
-            <div className="mb-6 md:mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
-                $797
-              </h2>
-              <p className="text-xs md:text-sm text-gray-300">/ per month</p>
+            <div className="mb-4 md:mb-5">
+              <h2 className="text-xl md:text-2xl font-bold text-white">$997</h2>
+              <p className="text-xs text-gray-300">/ per month</p>
             </div>
             <a
               href="#calendar"
-              className="w-full bg-white text-[#0f172a] hover:bg-gray-100 rounded-full py-2 md:py-3 font-medium mb-6 md:mb-8 transition-all duration-300 hover:shadow-lg text-sm md:text-base inline-block text-center"
+              className="w-full bg-white text-[#0f172a] hover:bg-gray-100 rounded-full py-1.5 md:py-2 font-medium mb-4 md:mb-5 transition-all duration-300 hover:shadow-lg text-xs md:text-sm inline-block text-center"
             >
               Contact Sales
             </a>
             {/* Fixed height spacer to ensure consistent border position */}
             <div className="flex-grow min-h-4"></div>
-            <div className="border-t border-gray-700 pt-6 md:pt-8">
-              <h4 className="font-medium mb-3 md:mb-4 text-white text-sm md:text-base">
+            <div className="border-t border-gray-700 pt-4 md:pt-5">
+              <h4 className="font-medium mb-2 md:mb-3 text-white text-xs md:text-sm">
                 What you will get
               </h4>
-              <ul className="space-y-2 md:space-y-3">
+              <ul className="space-y-1.5 md:space-y-2">
                 {[
                   "Includes 2100 minutes",
-                  "$0.20 Extra Per Minute",
+                  "$0.30 Extra Per Minute",
                   "Full Portal Access",
                   "Everything in Pro",
                   "Custom Trained Voice",
                   "Dedicated Support and Developer",
                   "Extensive script",
                   "Extensive Testing",
-                  "$2250 Build Fee",
+                  "$1250 Build Fee",
                 ].map((item, index) => (
-                  <li key={index} className="flex items-start gap-2 md:gap-3">
-                    <div className="min-w-4 min-h-4 md:min-w-5 md:min-h-5 rounded-full bg-green-500 flex items-center justify-center mt-0.5">
-                      <Check className="w-2 h-2 md:w-3 md:h-3 text-white" />
+                  <li key={index} className="flex items-start gap-1.5 md:gap-2">
+                    <div className="min-w-3 min-h-3 md:min-w-4 md:min-h-4 rounded-full bg-green-500 flex items-center justify-center mt-0.5">
+                      <Check className="w-1.5 h-1.5 md:w-2 md:h-2 text-white" />
                     </div>
-                    <span className="text-xs md:text-sm text-gray-300">
-                      {item}
-                    </span>
+                    <span className="text-xs text-gray-300">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -205,7 +191,7 @@ export default function PricingSection() {
         </div>
 
         {/* Footnote */}
-        <p className="text-center text-gray-400 mt-6 md:mt-8 text-xs md:text-sm">
+        <p className="text-center text-gray-400 mt-4 md:mt-6 text-xs">
           *All plans include 24/7 support and 99.9% uptime guarantee
         </p>
       </div>
