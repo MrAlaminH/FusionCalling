@@ -208,7 +208,7 @@ export default function Component() {
 
                     {/* Guide text for inbound call */}
                     <p className="mt-2 text-xs md:text-sm text-orange-400/80">
-                      To test our inbound call handling, dial the number below:
+                      To Test Our Inbound Call Handling, Dial The Number Below:
                     </p>
 
                     {/* Inbound Call Box */}
@@ -216,12 +216,12 @@ export default function Component() {
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
                         <span className="text-xs sm:text-sm text-gray-300">
-                          Inbound Call:
+                          Inbound AI Agent:
                         </span>
                       </div>
                       <div className="flex items-center gap-2">
                         <span className="text-xs sm:text-sm font-medium text-white">
-                          +1 (202) 998-3591
+                          +1 (651) 427 2794
                         </span>
                         <motion.button
                           onClick={handleCopyNumber}
@@ -269,7 +269,7 @@ export default function Component() {
                 {/* OR Divider - Only visible on mobile */}
                 <div className="md:hidden flex items-center justify-center my-6">
                   <div className="bg-zinc-700/50 h-[1px] flex-grow"></div>
-                  <span className="px-4 text-orange-600 text-sm font-medium">
+                  <span className="px-4 text-orange-600 text-xl font-medium">
                     OR
                   </span>
                   <div className="bg-zinc-700/50 h-[1px] flex-grow"></div>
@@ -295,7 +295,7 @@ export default function Component() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-lg text-white ">
-                        Demo AI agent
+                        Outbound AI Agent
                       </h3>
                       <p className="text-orange-600 text-sm">Representative</p>
                     </div>
@@ -306,7 +306,7 @@ export default function Component() {
                       className="block text-sm font-medium text-gray-300"
                       htmlFor="name"
                     >
-                      Your name
+                      Your name <span className="text-red-500">*</span>
                     </label>
                     <Input
                       id="name"
@@ -321,7 +321,7 @@ export default function Component() {
                       className="block text-sm font-medium text-gray-300"
                       htmlFor="email"
                     >
-                      Your e-mail
+                      Your e-mail <span className="text-red-500">*</span>
                     </label>
                     <Input
                       id="email"
@@ -336,7 +336,7 @@ export default function Component() {
                       className="block text-sm font-medium text-gray-300"
                       htmlFor="phone"
                     >
-                      Phone number
+                      Phone number <span className="text-red-500">*</span>
                     </label>
                     <div className="[&_.PhoneInputInput]:bg-zinc-800 [&_.PhoneInputInput]:border-zinc-700 [&_.PhoneInputInput]:text-white">
                       <PhoneInputComponent
@@ -353,7 +353,7 @@ export default function Component() {
                       className="block text-sm font-medium text-gray-300"
                       htmlFor="agent"
                     >
-                      Select Agent
+                      Select Agent <span className="text-red-500">*</span>
                     </label>
                     <select
                       id="agent"
