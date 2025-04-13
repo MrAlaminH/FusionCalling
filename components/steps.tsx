@@ -71,8 +71,8 @@ export default function HowItWorks() {
             <motion.div
               key={step.number}
               className="relative"
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               onHoverStart={() => setHoveredStep(index)}
               onHoverEnd={() => setHoveredStep(null)}

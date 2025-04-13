@@ -97,7 +97,7 @@ export default function TryDemo() {
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
         >
           {features.map((feature, index) => (
             <motion.div

@@ -31,7 +31,7 @@ export default function Features() {
           className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
         >
           <div className="w-full md:w-1/2 space-y-4">
             <div className="inline-block rounded-lg bg-orange-500/10 px-3 py-1 text-sm text-orange-600">

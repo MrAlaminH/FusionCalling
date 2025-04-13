@@ -51,7 +51,7 @@ export default function TestimonialsSection() {
           ref={ref}
           initial={{ opacity: 0, y: -20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col items-center justify-center space-y-4 text-center"
         >
           <h2 className="text-3xl font-bold tracking-tighter sm:text-3xl md:text-4xl whitespace-nowrap">
@@ -68,7 +68,7 @@ export default function TestimonialsSection() {
               key={index}
               initial={{ opacity: 0, y: 10 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: index * 0.3 }}
+              transition={{ duration: 0.8, delay: index * 0.5 }}
             >
               <Card className=" bg-black border-orange-500/20 group relative overflow-hidden transition-all duration-500 hover:shadow-lg hover:shadow-orange-600 hover:-translate-y-1 min-h-[200px] w-full max-w-sm mx-auto">
                 <div className="p-6">
