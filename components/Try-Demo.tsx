@@ -109,8 +109,7 @@ export default function TryDemo() {
             >
               <div
                 className="group relative overflow-hidden rounded-2xl transition-all duration-500 
-                  hover:-translate-y-2
-                  hover:shadow-[0_0_15px_rgba(249,115,22,0.3)]"
+                  hover:shadow-lg hover:shadow-orange-600 hover:-translate-y-1 min-h-[200px]"
               >
                 <div
                   className={`relative aspect-video ${feature.bgColor} overflow-hidden`}

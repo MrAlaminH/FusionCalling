@@ -56,12 +56,12 @@ export default function Features() {
             </ul>
           </div>
           <div className="w-full md:w-1/2">
-            <Card className="border-orange-500 rounded-lg group relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_15px_rgba(249,115,22,0.3)]">
+            <Card className="border-orange-500 rounded-lg group relative overflow-hidden transition-all duration-500 hover:shadow-lg hover:shadow-orange-600 hover:-translate-y-1 min-h-[200px]">
               <CardContent className="p-0">
                 <div className="relative w-full aspect-[3/2]">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <Image
-                    src="/feature1.jpeg"
+                    src="/feature2.png"
                     alt="Calendar Interface"
                     className="rounded-lg object-cover transition-transform duration-500 group-hover:scale-110"
                     fill
@@ -110,12 +110,12 @@ export default function Features() {
             </ul>
           </div>
           <div className="w-full md:w-1/2">
-            <Card className="border-orange-500 rounded-lg group relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_15px_rgba(249,115,22,0.3)]">
+            <Card className="border-orange-500 rounded-lg group relative overflow-hidden transition-all duration-500 hover:shadow-lg hover:shadow-orange-600 hover:-translate-y-1 min-h-[200px]">
               <CardContent className="p-0">
                 <div className="relative w-full aspect-[3/2]">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <Image
-                    src="/feature2.jpeg"
+                    src="/feature3.jpeg"
                     alt="Support Interface"
                     className="rounded-lg object-cover transition-transform duration-500 group-hover:scale-110"
                     fill
@@ -137,7 +137,7 @@ export default function Features() {
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          <Card className="bg-black border-orange-500/20 group relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_15px_rgba(249,115,22,0.3)]">
+          <Card className="bg-black border-orange-500/20 group relative overflow-hidden transition-all duration-500 hover:shadow-lg hover:shadow-orange-600 hover:-translate-y-1 min-h-[200px]">
             <CardContent className="p-6 space-y-4">
               <BarChart3 className="h-12 w-12 text-orange-600" />
               <h3 className="text-xl font-bold text-white">Detailed Reports</h3>
@@ -147,7 +147,7 @@ export default function Features() {
               </p>
             </CardContent>
           </Card>
-          <Card className="bg-black border-orange-500/20 group relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_15px_rgba(249,115,22,0.3)]">
+          <Card className="bg-black border-orange-500/20 group relative overflow-hidden transition-all duration-500 hover:shadow-lg hover:shadow-orange-600 hover:-translate-y-1 min-h-[200px]">
             <CardContent className="p-6 space-y-4">
               <Calendar className="h-12 w-12 text-orange-600" />
               <h3 className="text-xl font-bold text-white">
@@ -159,7 +159,7 @@ export default function Features() {
               </p>
             </CardContent>
           </Card>
-          <Card className="bg-black border-orange-500/20 group relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_15px_rgba(249,115,22,0.3)]">
+          <Card className="bg-black border-orange-500/20 group relative overflow-hidden transition-all duration-500 hover:shadow-lg hover:shadow-orange-600 hover:-translate-y-1 min-h-[200px]">
             <CardContent className="p-6 space-y-4">
               <Phone className="h-12 w-12 text-orange-600" />
               <h3 className="text-xl font-bold text-white">

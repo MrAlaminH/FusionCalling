@@ -12,6 +12,7 @@ import Testimonials from "@/components/Testimonial";
 import Footer from "@/components/Footer";
 import PricingSection from "@/components/pricing-section";
 import Calendar from "@/components/calendar";
+import StatisticsComponent from "@/components/stats";
 
 export default function Home() {
   return (
@@ -31,6 +32,9 @@ export default function Home() {
       </section>
       <section id="slide-text">
         <SlideText />
+      </section>
+      <section id="StatisticsComponent">
+        <StatisticsComponent />
       </section>
       <section id="HowItWorks">
         <HowItWorks />

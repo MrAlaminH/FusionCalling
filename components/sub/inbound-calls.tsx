@@ -12,6 +12,8 @@ import {
   Briefcase,
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { Button } from "../ui/button";
+import Link from "next/link";
 
 type FeatureCardProps = {
   icon: React.ElementType;
@@ -76,19 +78,26 @@ export default function InboundCalls() {
           }}
           transition={{ duration: 0.5 }}
         >
-          <Card className="w-full p-8 bg-black border-orange-500/20 group relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_15px_rgba(249,115,22,0.3)]">
+          <Card className="w-full p-8 bg-black border-orange-500/20 group relative overflow-hidden transition-all duration-500 hover:shadow-lg hover:shadow-orange-600 hover:-translate-y-1 min-h-[200px]">
             <div className="flex flex-col lg:flex-row gap-8">
               <div className="flex-shrink-0 rounded-lg overflow-hidden lg:w-1/3">
-                <div className="relative w-full aspect-[4/3]">
-                  <Image
-                    src="/inbound.jpeg"
-                    alt="Satellite dish illustration"
-                    className="transition-transform duration-300 transform hover:scale-110"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    priority
-                    style={{ objectFit: "cover" }}
-                  />
+                <div
+                  className="relative"
+                  style={{ minHeight: "300px", maxHeight: "400px" }}
+                >
+                  <div className="absolute inset-0">
+                    <Image
+                      src="/agent.jpg"
+                      alt="Satellite dish illustration"
+                      className="transition-transform duration-300 transform hover:scale-110"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      priority
+                      style={{
+                        objectFit: "contain",
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
               <div className="flex-grow">
@@ -107,6 +116,11 @@ export default function InboundCalls() {
                   service delivery. Experience a seamless integration with your
                   existing systems for a hassle-free setup.
                 </p>
+                <Link href="#calendar" passHref legacyBehavior>
+                  <Button className="mt-8 bg-orange-600 hover:bg-orange-700 text-white">
+                    Get Started
+                  </Button>
+                </Link>
               </div>
             </div>
           </Card>

@@ -54,7 +54,7 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.8 }}
           className="flex flex-col items-center justify-center space-y-4 text-center"
         >
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl whitespace-nowrap">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-3xl md:text-4xl whitespace-nowrap">
             <span className="text-orange-600">Customer</span>{" "}
             <span className="text-white">Success Stories</span>
           </h2>
@@ -70,7 +70,7 @@ export default function TestimonialsSection() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: index * 0.3 }}
             >
-              <Card className=" bg-black border-orange-500/20 group relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_15px_rgba(249,115,22,0.3)] w-full max-w-sm mx-auto">
+              <Card className=" bg-black border-orange-500/20 group relative overflow-hidden transition-all duration-500 hover:shadow-lg hover:shadow-orange-600 hover:-translate-y-1 min-h-[200px] w-full max-w-sm mx-auto">
                 <div className="p-6">
                   <div className="text-orange-600 mb-4 text-4xl font-extrabold">
                     <Quote />

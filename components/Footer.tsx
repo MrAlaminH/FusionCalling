@@ -33,7 +33,7 @@ export default function Footer() {
               href="#home"
               className="mt-8 px-8 py-3 bg-orange-600 text-black rounded-full font-bold hover:bg-gray-700 transition-colors duration-300 inline-flex items-center"
             >
-              Book a Demo
+              Try Our Demo
             </Link>
           </div>
         </div>
@@ -51,7 +51,7 @@ export default function Footer() {
                 Fusion Calling
               </Link>
               <p className="text-xs text-white/60">
-                © 2024 MrAlaminH. All rights reserved.
+                © 2025 MrAlaminH. All rights reserved.
               </p>
             </div>
 
