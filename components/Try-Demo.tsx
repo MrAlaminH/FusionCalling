@@ -1,92 +1,75 @@
 "use client";
 import Image from "next/image";
-import { Play, ChevronLeft, ChevronRight } from "lucide-react";
+import { Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { SetStateAction, useState, useRef } from "react";
+import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 export default function TryDemo() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [videoUrl, setVideoUrl] = useState("");
-  const [currentIndex, setCurrentIndex] = useState(1);
-  const sliderRef = useRef<HTMLDivElement>(null);
+  const [playingVideos, setPlayingVideos] = useState<{
+    [key: number]: boolean;
+  }>({});
 
   const features = [
     {
-      title: "Listen to Lisa track her order",
+      title: "Restaurant AI Order Taking",
       description:
-        "Let AI handle customer support for your business and allow your team to focus on high-value tasks.",
+        "Watch a demo of AI taking a customer's food order over the phone. See how AI streamlines restaurant order taking, improves efficiency, and enhances customer convenience.",
       bgColor: "bg-purple-100",
       video: "https://www.youtube.com/embed/9OwEH18xYdc",
-      image: "/ex1.png",
+      image: "/cardImage.png",
     },
     {
-      title: "See how Alex books an appointment",
+      title: "AI Appointment Booking",
       description:
-        "Dental clinics, beauty salons and other services keep up easier with appointments and reminders.",
+        "Automate scheduling with natural conversation. Check availability, offer options, confirm details, and update calendars, boosting efficiency and customer convenience.",
       bgColor: "bg-pink-100",
       video: "https://www.youtube.com/embed/yGUVPSFZcSE",
-      image: "/ex2.png",
+      image: "/cardImage.png",
     },
     {
-      title: "AI voice agent cold calls lead",
+      title: "Cold Call Lead Generation",
       description:
-        "Check out our AI voice agent in action, making cold calls to leads and opening doors for your business.",
+        "Listen to a cold call offering a local business a free SEO service to rank higher on Google. Learn about the initial pitch and value proposition",
       bgColor: "bg-orange-100",
-      video: "https://www.youtube.com/embed/IS_kRLY3_zc",
-      image: "/ex4.jpeg",
+      video: " https://www.youtube.com/embed/9SWY-Xp7huw",
+      image: "/cardImage.png",
     },
     {
-      title: "AI Assistant Demo Call",
+      title: "Restaurant Reservations",
       description:
-        "Experience our advanced AI assistant handling complex customer interactions with natural conversation flow.",
+        "Listen to a customer, calling to make a restaurant reservation. Hear how the restaurant handles the booking process and checks for availability.",
       bgColor: "bg-blue-100",
-      video: "https://www.youtube.com/embed/9SWY-Xp7huw",
-      image: "/ex3.jpeg",
+      video: "https://www.youtube.com/embed/IS_kRLY3_zc",
+      image: "/cardImage.png",
+    },
+    {
+      title: "Credit Repair Service Inquiry",
+      description:
+        "Listen to a potential client call Credit Repair Company to learn about their credit repair services and costs. Focus on the initial information provided.",
+      bgColor: "bg-green-100",
+      video: "https://www.youtube.com/embed/NaZ_pXdLu4I",
+      image: "/cardImage.png",
+    },
+    {
+      title: "Trading System Offering",
+      description:
+        "Listen to a discussion about a system designed to automate and simplify Forex trading. Discover how AI can potentially manage trades and aim for profitable outcomes without constant user monitoring",
+      bgColor: "bg-yellow-100",
+      video: "https://www.youtube.com/embed/mr6TUF16KIA",
+      image: "/cardImage.png",
     },
   ];
 
-  const handleOpenModal = (url: SetStateAction<string>) => {
-    setVideoUrl(url);
-    setIsOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsOpen(false);
-    setVideoUrl("");
+  const handlePlayVideo = (index: number) => {
+    setPlayingVideos((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
   };
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-
-  const slideLeft = () => {
-    if (sliderRef.current) {
-      setCurrentIndex((prevIndex) => {
-        const newIndex = prevIndex === 0 ? features.length - 1 : prevIndex - 1;
-        return newIndex;
-      });
-    }
-  };
-
-  const slideRight = () => {
-    if (sliderRef.current) {
-      setCurrentIndex((prevIndex) => {
-        const newIndex = prevIndex === features.length - 1 ? 0 : prevIndex + 1;
-        return newIndex;
-      });
-    }
-  };
-
-  // Get visible cards based on current index
-  const getVisibleCards = () => {
-    const cards = [...features, ...features]; // Duplicate for infinite effect
-    const prevIndex =
-      currentIndex === 0 ? features.length - 1 : currentIndex - 1;
-    const nextIndex =
-      currentIndex === features.length - 1 ? 0 : currentIndex + 1;
-
-    return [cards[prevIndex], cards[currentIndex], cards[nextIndex]];
-  };
 
   return (
     <section
@@ -109,41 +92,39 @@ export default function TryDemo() {
           </p>
         </motion.div>
 
-        {/* Feature Cards with Slider */}
-        <div className="relative px-12">
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <div
-              ref={sliderRef}
-              className="grid grid-cols-1 md:grid-cols-12 gap-8"
+        {/* Feature Cards Grid */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              className="relative"
+              initial={false}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
             >
-              {getVisibleCards().map((feature, index) => (
-                <motion.div
-                  key={index}
-                  className={`md:col-span-4 ${
-                    index === 1 ? "md:scale-110 z-10" : ""
-                  }`}
-                  initial={false}
-                  animate={{
-                    scale: index === 1 ? 1.1 : 1,
-                    opacity: 1,
-                  }}
-                  transition={{ duration: 0.5 }}
+              <div
+                className="group relative overflow-hidden rounded-2xl transition-all duration-500 
+                  hover:-translate-y-2
+                  hover:shadow-[0_0_15px_rgba(249,115,22,0.3)]"
+              >
+                <div
+                  className={`relative aspect-video ${feature.bgColor} overflow-hidden`}
                 >
-                  <div
-                    className={`group relative overflow-hidden rounded-2xl transition-all duration-500 
-                      hover:-translate-y-2
-                      hover:shadow-[0_0_15px_rgba(249,115,22,0.3)]
-                      ${index === 1 ? "hover:scale-105" : "hover:scale-103"}`}
-                    onClick={() => handleOpenModal(feature.video)}
-                  >
-                    <div
-                      className={`relative aspect-video ${feature.bgColor} overflow-hidden`}
-                    >
+                  {playingVideos[index] ? (
+                    <iframe
+                      src={`${feature.video}?autoplay=1`}
+                      title={feature.title}
+                      className="h-full w-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  ) : (
+                    <>
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       <Image
                         src={feature.image}
@@ -154,74 +135,38 @@ export default function TryDemo() {
                       />
                       <Button
                         size="icon"
-                        className="absolute bottom-4 left-4 h-12 w-12 rounded-full bg-orange-500 text-white 
+                        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-16 w-16 rounded-full 
+                          bg-black/30 text-white backdrop-blur-sm
                           shadow-lg transition-all duration-300 
-                          hover:scale-110 hover:bg-orange-600 
+                          hover:scale-110 hover:bg-black/50
                           active:scale-95 
-                          group-hover:shadow-[0_0_15px_rgba(249,115,22,0.5)]"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleOpenModal(feature.video);
-                        }}
+                          group-hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]"
+                        onClick={() => handlePlayVideo(index)}
                       >
-                        <Play className="h-6 w-6" />
+                        <Play className="h-8 w-8" />
                         <span className="sr-only">Play demo</span>
                       </Button>
-                    </div>
-                    <div className="space-y-2 p-6 relative z-10">
-                      <h3
-                        className="text-xl font-semibold tracking-tight text-white 
-                        transition-transform duration-300 group-hover:translate-x-2"
-                      >
-                        {feature.title}
-                      </h3>
-                      <p
-                        className="text-sm leading-relaxed text-muted-foreground text-gray-300 
-                        transition-transform duration-300 group-hover:translate-x-2"
-                      >
-                        {feature.description}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Slider Controls */}
-          <Button
-            onClick={slideLeft}
-            className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm rounded-full p-2 z-20"
-          >
-            <ChevronLeft className="h-6 w-6 text-white" />
-          </Button>
-          <Button
-            onClick={slideRight}
-            className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm rounded-full p-2 z-20"
-          >
-            <ChevronRight className="h-6 w-6 text-white" />
-          </Button>
-        </div>
-
-        {/* Modal for Video Playback */}
-        {isOpen && (
-          <div
-            className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
-            onClick={handleCloseModal}
-          >
-            <div className="relative" onClick={(e) => e.stopPropagation()}>
-              <iframe
-                width="560"
-                height="315"
-                src={videoUrl}
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
-        )}
+                    </>
+                  )}
+                </div>
+                <div className="space-y-2 p-6 relative z-10">
+                  <h3
+                    className="text-xl font-semibold tracking-tight text-white 
+                    transition-transform duration-300 group-hover:translate-x-2"
+                  >
+                    {feature.title}
+                  </h3>
+                  <p
+                    className="text-sm leading-relaxed text-muted-foreground text-gray-200 
+                    transition-transform duration-300 group-hover:translate-x-2"
+                  >
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
