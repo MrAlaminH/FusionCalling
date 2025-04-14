@@ -24,7 +24,7 @@ export default function Home() {
       <section id="tools">
         <Tools />
       </section>
-      <section id="demo-call">
+      <section id="show-case">
         <TryDemo />
       </section>
       <section id="features">

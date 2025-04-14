@@ -67,13 +67,13 @@ const Navbar = () => {
             isMenuOpen ? "block" : "hidden"
           } w-full lg:block lg:w-auto transition-all duration-300 ease-in-out`}
         >
-          <ul className="flex flex-col p-4 mt-4 space-y-2 lg:space-y-0 border border-orange-600/50 rounded-lg lg:flex-row lg:space-x-6 xl:space-x-8 lg:mt-0 lg:border-0 lg:bg-transparent">
-            {["Home", "Demo Call", "Features", "Pricing", "FAQs"].map(
+          <ul className="flex flex-col p-4 mt-4 space-y-3 lg:space-y-0 border border-orange-600/50 rounded-lg lg:flex-row lg:space-x-6 xl:space-x-8 lg:mt-0 lg:border-0 lg:bg-transparent">
+            {["Home", "Show Case", "Features", "Pricing", "FAQs"].map(
               (item) => (
                 <li key={item}>
                   <a
                     href={`#${item.toLowerCase().replace(" ", "-")}`}
-                    className={`block py-2 px-3 rounded-lg ${
+                    className={`block py-2.5 px-4 rounded-lg ${
                       item === "Home" ? "text-yellow-400" : "text-gray-200"
                     } hover:bg-orange-600 hover:text-white font-medium transition duration-300 transform hover:-translate-y-1`}
                   >
@@ -82,12 +82,12 @@ const Navbar = () => {
                 </li>
               )
             )}
-            <li className="lg:hidden">
+            <li className="lg:hidden mt-4 !border-t border-orange-600/30 pt-4">
               <a
                 href="https://cal.com/mralamin/discovery-call"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block py-2 px-3 rounded-lg text-gray-200 hover:bg-orange-600 hover:text-white transition duration-300 transform hover:-translate-y-1"
+                className="block py-3 px-4 rounded-lg text-white bg-orange-600 hover:bg-orange-700 text-center font-semibold shadow-lg shadow-orange-600/30 transition duration-300 transform hover:-translate-y-1"
               >
                 Contact Us
               </a>

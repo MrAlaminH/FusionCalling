@@ -85,10 +85,10 @@ export default function TryDemo() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <motion.h1 className="text-orange-600 text-center font-bold text-3xl md:text-4xl pb-2">
-            Demo Calls
+            Show Case
           </motion.h1>
           <p className="text-gray-400 text-center md:text-xl mb-12">
-            Check out some examples of how AI handles calls.
+            Check out some examples of how our AI handles calls.
           </p>
         </motion.div>
 

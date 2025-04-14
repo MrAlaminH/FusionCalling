@@ -363,10 +363,12 @@ export default function Component() {
                     >
                       <option value="">Choose an agent</option>
                       <option value="appointment-scheduler">
-                        Appointment Scheduler
+                        Appointment Scheduler Agent
                       </option>
-                      <option value="real-estate">Real Estate</option>
-                      <option value="dental-practice">Dental Practice</option>
+                      <option value="real-estate">Real Estate Agent</option>
+                      <option value="dental-practice">
+                        Dental Practice Agent
+                      </option>
                     </select>
 
                     <p className="text-sm text-gray-400">
