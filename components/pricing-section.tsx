@@ -18,7 +18,7 @@ export default function PricingSection() {
         {/* Pricing Cards Container */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {/* Starter Plan */}
-          <div className="relative bg-gradient-to-b from-[#0f172a] to-[#1e293b] text-white rounded-lg p-3 md:p-4 flex flex-col shadow-lg transition-all duration-300 hover:shadow-xl h-full">
+          <div className="relative bg-gradient-to-b from-[#0f172a] to-[#1e293b] text-white border-2 border-orange-500/20 rounded-lg p-3 md:p-4 flex flex-col shadow-lg transition-all duration-300 hover:shadow-lg hover:shadow-orange-600 hover:-translate-y-1 min-h-[200px]">
             <div className="flex justify-between items-start mb-2 md:mb-3">
               <div>
                 <h3 className="text-sm md:text-base font-semibold">Starter</h3>
@@ -31,7 +31,7 @@ export default function PricingSection() {
             </div>
             <a
               href="#calendar"
-              className="w-full bg-white text-[#0f172a] hover:bg-gray-100 rounded-full py-1.5 md:py-2 font-medium mb-4 md:mb-5 transition-all duration-300 hover:shadow-lg text-xs md:text-sm inline-block text-center"
+              className="w-full bg-white text-[#0f172a] hover:bg-gray-100  rounded-full py-1.5 md:py-2 font-medium mb-4 md:mb-5 transition-all duration-300 hover:shadow-lg text-xs md:text-sm inline-block text-center"
             >
               Get Started
             </a>
@@ -73,7 +73,7 @@ export default function PricingSection() {
           </div>
 
           {/* Pro Plan - Main Design */}
-          <div className="relative bg-gradient-to-b from-[#1e2356] to-[#2a2f69] text-white rounded-lg p-3 md:p-4 flex flex-col shadow-lg transition-all duration-300 hover:shadow-xl order-first md:order-none lg:transform lg:scale-105 lg:-translate-y-2 h-full">
+          <div className="relative bg-gradient-to-b from-orange-600 to-gray-900 text-white rounded-lg p-3 md:p-4 flex flex-col shadow-lg transition-all duration-300 hover:shadow-lg hover:shadow-orange-600 hover:-translate-y-1 min-h-[200px] order-first md:order-none lg:transform lg:scale-105 lg:-translate-y-2 h-full">
             <div className="absolute -top-3 -left-3 md:-top-4 md:-left-4">
               <div className="w-6 h-6 md:w-8 md:h-8 flex items-center justify-center">
                 <div className="absolute inset-0">
@@ -100,14 +100,12 @@ export default function PricingSection() {
               </span>
             </div>
             <div className="mb-4 md:mb-5">
-              <h2 className="text-xl md:text-2xl font-bold text-[#8a94ff]">
-                €449
-              </h2>
+              <h2 className="text-xl md:text-2xl font-bold text-white">€449</h2>
               <p className="text-xs opacity-80">/ per month</p>
             </div>
             <a
               href="#calendar"
-              className="w-full bg-gradient-to-r from-[#5a66ff] to-[#8a94ff] text-white rounded-full py-1.5 md:py-2 font-medium mb-4 md:mb-5 transition-all duration-300 hover:shadow-lg text-xs md:text-sm inline-block text-center"
+              className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white  rounded-full py-1.5 md:py-2 font-medium mb-4 md:mb-5 transition-all duration-300 hover:shadow-lg text-xs md:text-sm inline-block text-center"
             >
               Let&apos;s Start
             </a>
@@ -141,7 +139,7 @@ export default function PricingSection() {
           </div>
 
           {/* Enterprise Plan */}
-          <div className="relative bg-gradient-to-b from-[#0f172a] to-[#1e293b] text-white rounded-lg p-3 md:p-4 flex flex-col shadow-lg transition-all duration-300 hover:shadow-xl h-full">
+          <div className="relative bg-gradient-to-b from-[#0f172a] to-[#1e293b] text-white border-2 border-orange-500/20 rounded-lg p-3 md:p-4 flex flex-col shadow-lg transition-all duration-300 hover:shadow-lg hover:shadow-orange-600 hover:-translate-y-1 min-h-[200px]">
             <div className="flex justify-between items-start mb-2 md:mb-3">
               <div>
                 <h3 className="text-sm md:text-base font-semibold">

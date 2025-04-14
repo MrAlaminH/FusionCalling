@@ -78,7 +78,7 @@ export default function HowItWorks() {
               onHoverEnd={() => setHoveredStep(null)}
             >
               <div
-                className={`bg-black border-orange-500/20 rounded-lg p-6 h-full  border-2 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_15px_rgba(249,115,22,0.3)] ${
+                className={`bg-black border-orange-500/20 rounded-lg p-6 h-full  border-2 transition-all duration-300 hover:shadow-lg hover:shadow-orange-600 hover:-translate-y-1 min-h-[200px] ${
                   hoveredStep === index
                     ? " hover:shadow-lg hover:shadow-orange-600 hover:-translate-y-1 min-h-[200px]"
                     : "border-orange-500/20"
