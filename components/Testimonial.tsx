@@ -172,7 +172,7 @@ function TestimonialCard({ testimonial }: { testimonial: TestimonialProps }) {
           {testimonial.heading}
         </h3>
         <p className="text-zinc-400 mb-6 flex-grow">{testimonial.content}</p>
-        <div className="h-px bg-zinc-800 w-full mb-6" />
+        <div className="h-px bg-orange-800 w-full mb-6" />
         <div className="flex items-center space-x-4 mt-auto">
           <Image
             alt={`${testimonial.name}'s profile picture`}

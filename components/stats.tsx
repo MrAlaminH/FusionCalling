@@ -11,10 +11,10 @@ const AnimatedStatistics = () => {
   });
 
   const targets = useRef({
-    projects: 100,
-    satisfaction: 100,
-    hours: 30,
-    calls: 18,
+    projects: 60,
+    satisfaction: 99,
+    hours: 40,
+    calls: 12,
   });
 
   const sectionRef = useRef<HTMLElement>(null);
@@ -45,7 +45,7 @@ const AnimatedStatistics = () => {
   }, []);
 
   const startAnimation = () => {
-    const duration = 2000;
+    const duration = 1500;
     const start = performance.now();
 
     const animate = (timestamp: number) => {

@@ -111,7 +111,7 @@ export default function PricingSection() {
             </a>
             {/* Fixed height spacer to ensure consistent border position */}
             <div className="flex-grow min-h-4"></div>
-            <div className="border-t border-[#3a4184] pt-4 md:pt-5">
+            <div className="border-t border-orange-600 pt-4 md:pt-5">
               <h4 className="font-medium mb-2 md:mb-3 text-xs md:text-sm">
                 What you will get
               </h4>
@@ -128,7 +128,7 @@ export default function PricingSection() {
                   "$799 Build Fee",
                 ].map((item, index) => (
                   <li key={index} className="flex items-start gap-1.5 md:gap-2">
-                    <div className="min-w-3 min-h-3 md:min-w-4 md:min-h-4 rounded-full bg-[#5a66ff] flex items-center justify-center mt-0.5">
+                    <div className="min-w-3 min-h-3 md:min-w-4 md:min-h-4 rounded-full bg-orange-600 flex items-center justify-center mt-0.5">
                       <Check className="w-1.5 h-1.5 md:w-2 md:h-2 text-white" />
                     </div>
                     <span className="text-xs">{item}</span>
