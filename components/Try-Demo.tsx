@@ -32,7 +32,7 @@ export default function TryDemo() {
       description:
         "Listen to a cold call offering a local business a free SEO service to rank higher on Google. Learn about the initial pitch and value proposition",
       bgColor: "bg-orange-100",
-      video: " https://www.youtube.com/embed/9SWY-Xp7huw",
+      video: "https://www.youtube.com/embed/rkoGhVMIH10",
       image: "/cardImage.png",
     },
     {
