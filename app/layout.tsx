@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import ChatWidget from "@/components/chat/ChatWidget";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fusioncalling.com/"),
@@ -24,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth ">
       <body className="relative bg-black">
-        <div className="fixed" />
+        <ChatWidget />
         {children}
       </body>
     </html>

@@ -39,6 +39,40 @@ body {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --chat--color-primary: #1e90ff; /* Adjusted to match website theme */
+    --chat--color-secondary: #db942a;
+    --chat--color-white: #ffffff;
+    --chat--color-light: #f2f4f8;
+    --chat--color-dark: #101330;
+    --chat--color-typing: #404040;
+
+    --chat--spacing: 1rem;
+    --chat--border-radius: 0.5rem; /* Rounded corners for a professional look */
+    --chat--transition-duration: 0.3s; /* Smooth transitions */
+
+    --chat--window--width: 400px;
+    --chat--window--height: 600px;
+
+    --chat--header--background: var(--chat--color-primary);
+    --chat--header--color: var(--chat--color-white);
+    --chat--header--padding: var(--chat--spacing);
+    --chat--header--border-bottom: 2px solid var(--chat--color-secondary);
+    --chat--header--font-size: 1.25rem; /* Adjust header font size */
+    --chat--subtitle--font-size: 1rem; /* Adjust subtitle font size */
+
+    --chat--message--font-size: 0.875rem; /* Reduce font size for better user experience */
+    --chat--message--padding: 0.5rem; /* Adjust padding for compact design */
+    --chat--message--border-radius: var(--chat--border-radius);
+    --chat--message--bot--background: var(--chat--color-light);
+    --chat--message--bot--color: var(--chat--color-dark);
+    --chat--message--user--background: var(--chat--color-primary);
+    --chat--message--user--color: var(--chat--color-white);
+    --chat--message--user--border: none;
+
+    --chat--toggle--background: var(--chat--color-primary);
+    --chat--toggle--hover--background: #1c86ee; /* Slightly darker shade */
+    --chat--toggle--color: var(--chat--color-white);
+    --chat--toggle--size: 48px; /* Reduce toggle button size */
   }
   .dark {
     --background: 240 10% 3.9%;
@@ -106,4 +140,25 @@ html {
 .PhoneInputInput {
   flex: 1 !important;
   min-width: 0 !important;
+}
+
+.custom-chat-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff; /* Add a background color */
+  border-radius: 50%; /* Make it circular */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.custom-chat-icon:hover {
+  transform: scale(1.1); /* Add a hover effect */
+  transition: transform 0.2s ease-in-out;
 }
