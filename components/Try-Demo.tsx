@@ -9,14 +9,15 @@ export default function TryDemo() {
   const [playingVideos, setPlayingVideos] = useState<{
     [key: number]: boolean;
   }>({});
+  const [showMore, setShowMore] = useState(false);
 
   const features = [
     {
-      title: "Restaurant AI Order Taking",
+      title: " Real Estate Outbound Call",
       description:
-        "Watch a demo of AI taking a customer's food order over the phone. See how AI streamlines restaurant order taking, improves efficiency, and enhances customer convenience.",
-      bgColor: "bg-purple-100",
-      video: "https://www.youtube.com/embed/9OwEH18xYdc",
+        "This call demonstrates an AI assistant handling an initial consultation for real estate investments. The AI identifies client interests, discusses property preferences, and arranges for further information delivery.",
+      bgColor: "bg-orange-100",
+      video: "https://www.youtube.com/embed/Oua1TyixaoA",
       image: "/cardImage.png",
     },
     {
@@ -61,6 +62,21 @@ export default function TryDemo() {
     },
   ];
 
+  const additionalFeatures = [
+    {
+      title: "Restaurant AI Order Taking",
+      description:
+        "Watch a demo of AI taking a customer's food order over the phone. See how AI streamlines restaurant order taking, improves efficiency, and enhances customer convenience.",
+      bgColor: "bg-purple-100",
+      video: "https://www.youtube.com/embed/9OwEH18xYdc",
+      image: "/cardImage.png",
+    },
+  ];
+
+  const visibleFeatures = showMore
+    ? features.concat(additionalFeatures)
+    : features;
+
   const handlePlayVideo = (index: number) => {
     setPlayingVideos((prev) => ({
       ...prev,
@@ -99,7 +115,7 @@ export default function TryDemo() {
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          {features.map((feature, index) => (
+          {visibleFeatures.map((feature, index) => (
             <motion.div
               key={index}
               className="relative"
@@ -166,6 +182,23 @@ export default function TryDemo() {
             </motion.div>
           ))}
         </motion.div>
+
+        {/* See More Button */}
+        {!showMore && (
+          <motion.div
+            className="flex justify-center mt-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <Button
+              className="bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700"
+              onClick={() => setShowMore(true)}
+            >
+              See More
+            </Button>
+          </motion.div>
+        )}
       </div>
     </section>
   );
