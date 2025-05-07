@@ -63,18 +63,21 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth ">
       <head>
         <link rel="icon" href="/favicon.ico" />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "Fusion Calling",
-            url: "https://www.fusioncalling.com/",
-            logo: "https://www.fusioncalling.com/logo.png",
-            description:
-              "AI-powered phone call automation for businesses. Streamline customer interactions, save time, and increase productivity with advanced voice technology.",
-            sameAs: ["https://twitter.com/fusioncalling"],
-          })}
-        </script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Fusion Calling",
+              url: "https://www.fusioncalling.com/",
+              logo: "https://www.fusioncalling.com/logo.png",
+              description:
+                "AI-powered phone call automation for businesses. Streamline customer interactions, save time, and increase productivity with advanced voice technology.",
+              sameAs: ["https://twitter.com/fusioncalling"],
+            }),
+          }}
+        />
       </head>
       <body className="relative bg-black">
         <PostHogProvider>

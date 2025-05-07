@@ -98,7 +98,7 @@ export default function TryDemo() {
           className="flex flex-col items-center"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -20 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
         >
           <motion.h1 className="text-orange-600 text-center font-bold text-3xl md:text-4xl pb-2">
             Show Case
