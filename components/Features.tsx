@@ -62,7 +62,7 @@ export default function Features() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <Image
                     src="/feature2.png"
-                    alt="Calendar Interface"
+                    alt="AI-powered calendar interface for automated appointment booking and reminders"
                     className="rounded-lg object-cover transition-transform duration-500 group-hover:scale-110"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
@@ -116,7 +116,7 @@ export default function Features() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <Image
                     src="/feature3.jpeg"
-                    alt="Support Interface"
+                    alt="AI customer support interface for 24/7 automated inquiries and real-time integration"
                     className="rounded-lg object-cover transition-transform duration-500 group-hover:scale-110"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"

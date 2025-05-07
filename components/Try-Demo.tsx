@@ -143,7 +143,12 @@ export default function TryDemo() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       <Image
                         src={feature.image}
-                        alt={feature.title}
+                        alt={
+                          feature.title +
+                          " - " +
+                          feature.description.slice(0, 80) +
+                          (feature.description.length > 80 ? "..." : "")
+                        }
                         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                         height={300}
                         width={500}
