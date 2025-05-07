@@ -117,7 +117,7 @@ export default function Component() {
           className="text-center mb-3 sm:mb-4 md:mb-6 px-2 sm:px-4 md:px-6"
         >
           <h1 className="text-2xl xxs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1]">
-            Revolutionize Your Business
+            Transform Your Business
             <br className="hidden sm:block" />
             <span className="whitespace-nowrap"> </span>
             with{" "}

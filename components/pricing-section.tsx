@@ -26,7 +26,7 @@ export default function PricingSection() {
               </div>
             </div>
             <div className="mb-4 md:mb-5">
-              <h2 className="text-xl md:text-2xl font-bold text-white">$249</h2>
+              <h2 className="text-xl md:text-2xl font-bold text-white">$197</h2>
               <p className="text-xs text-gray-300">/ per month</p>
             </div>
             <a
@@ -50,7 +50,7 @@ export default function PricingSection() {
                   "Basic FAQ handling",
                   "Basic response scripts",
                   "Basic Testing",
-                  "$799 Build Fee",
+                  "$499 Build Fee",
                   "", // Empty item to maintain consistent height with other cards
                 ].map(
                   (item, index) =>
@@ -100,7 +100,7 @@ export default function PricingSection() {
               </span>
             </div>
             <div className="mb-4 md:mb-5">
-              <h2 className="text-xl md:text-2xl font-bold text-white">€449</h2>
+              <h2 className="text-xl md:text-2xl font-bold text-white">$349</h2>
               <p className="text-xs opacity-80">/ per month</p>
             </div>
             <a
