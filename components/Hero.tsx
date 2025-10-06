@@ -369,11 +369,13 @@ export default function Component() {
                       <option value="dental-practice">
                         Dental Practice Agent
                       </option>
+                      <option value="insurance-agent">insurance Agent</option>
                     </select>
 
                     <p className="text-sm text-gray-400">
                       The call will automatically end after{" "}
-                      <span className="text-orange-600">5 minutes</span>
+                      <span className="text-orange-600">5 minutes</span>. Must
+                      use USA or Canada phone number.
                     </p>
 
                     <div className="relative">

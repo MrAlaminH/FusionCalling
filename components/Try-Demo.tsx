@@ -13,7 +13,7 @@ export default function TryDemo() {
 
   const features = [
     {
-      title: " Real Estate Outbound Call",
+      title: " Real Estate Outbound Agnet",
       description:
         "This call demonstrates an AI assistant handling an initial consultation for real estate investments. The AI identifies client interests, discusses property preferences, and arranges for further information delivery.",
       bgColor: "bg-orange-100",
@@ -21,7 +21,7 @@ export default function TryDemo() {
       image: "/cardImage.png",
     },
     {
-      title: "AI Appointment Booking",
+      title: "Appointment Booking Agent",
       description:
         "Automate scheduling with natural conversation. Check availability, offer options, confirm details, and update calendars, boosting efficiency and customer convenience.",
       bgColor: "bg-pink-100",
@@ -29,7 +29,15 @@ export default function TryDemo() {
       image: "/cardImage.png",
     },
     {
-      title: "Cold Call Lead Generation",
+      title: "Insurance Lead Qualification Agent",
+      description:
+        "Listen to an AI agent qualifying a lead for insurance services. Hear how the agent gathers information, addresses concerns, and sets up a follow-up with a human agent.",
+      bgColor: "bg-pink-100",
+      video: "https://youtu.be/embed/1WisbZE1AEc",
+      image: "/cardImage.png",
+    },
+    {
+      title: "Cold Call Lead Generation Agent",
       description:
         "Listen to a cold call offering a local business a free SEO service to rank higher on Google. Learn about the initial pitch and value proposition",
       bgColor: "bg-orange-100",
@@ -37,7 +45,7 @@ export default function TryDemo() {
       image: "/cardImage.png",
     },
     {
-      title: "Restaurant Reservations",
+      title: "Restaurant Reservations Agent",
       description:
         "Listen to a customer, calling to make a restaurant reservation. Hear how the restaurant handles the booking process and checks for availability.",
       bgColor: "bg-blue-100",
@@ -45,30 +53,30 @@ export default function TryDemo() {
       image: "/cardImage.png",
     },
     {
-      title: "Credit Repair Service Inquiry",
+      title: "Credit Repair Service Inquiry Agent",
       description:
         "Listen to a potential client call Credit Repair Company to learn about their credit repair services and costs. Focus on the initial information provided.",
       bgColor: "bg-green-100",
       video: "https://www.youtube.com/embed/NaZ_pXdLu4I",
       image: "/cardImage.png",
     },
-    {
-      title: "Trading System Offering",
-      description:
-        "Listen to a discussion about a system designed to automate and simplify Forex trading. Discover how AI can potentially manage trades and aim for profitable outcomes without constant user monitoring",
-      bgColor: "bg-yellow-100",
-      video: "https://www.youtube.com/embed/mr6TUF16KIA",
-      image: "/cardImage.png",
-    },
   ];
 
   const additionalFeatures = [
     {
-      title: "Restaurant AI Order Taking",
+      title: "Restaurant AI Order Taking Agent",
       description:
         "Watch a demo of AI taking a customer's food order over the phone. See how AI streamlines restaurant order taking, improves efficiency, and enhances customer convenience.",
       bgColor: "bg-purple-100",
       video: "https://www.youtube.com/embed/9OwEH18xYdc",
+      image: "/cardImage.png",
+    },
+    {
+      title: "Trading System Offering Agent",
+      description:
+        "Listen to a discussion about a system designed to automate and simplify Forex trading. Discover how AI can potentially manage trades and aim for profitable outcomes without constant user monitoring",
+      bgColor: "bg-yellow-100",
+      video: "https://www.youtube.com/embed/mr6TUF16KIA",
       image: "/cardImage.png",
     },
   ];
