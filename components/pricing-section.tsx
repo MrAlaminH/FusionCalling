@@ -26,7 +26,7 @@ export default function PricingSection() {
               </div>
             </div>
             <div className="mb-4 md:mb-5">
-              <h2 className="text-xl md:text-2xl font-bold text-white">$197</h2>
+              <h2 className="text-xl md:text-2xl font-bold text-white">$149</h2>
               <p className="text-xs text-gray-300">/ per month</p>
             </div>
             <a
@@ -99,7 +99,7 @@ export default function PricingSection() {
               </span>
             </div>
             <div className="mb-4 md:mb-5">
-              <h2 className="text-xl md:text-2xl font-bold text-white">$349</h2>
+              <h2 className="text-xl md:text-2xl font-bold text-white">$249</h2>
               <p className="text-xs opacity-80">/ per month</p>
             </div>
             <a
@@ -147,7 +147,7 @@ export default function PricingSection() {
               </div>
             </div>
             <div className="mb-4 md:mb-5">
-              <h2 className="text-xl md:text-2xl font-bold text-white">$997</h2>
+              <h2 className="text-xl md:text-2xl font-bold text-white">$497</h2>
               <p className="text-xs text-gray-300">/ per month</p>
             </div>
             <a
