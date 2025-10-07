@@ -21,11 +21,11 @@ export default function TryDemo() {
       image: "/cardImage.png",
     },
     {
-      title: "Appointment Booking Agent",
+      title: "Dental lab customer service Agent",
       description:
-        "Automate scheduling with natural conversation. Check availability, offer options, confirm details, and update calendars, boosting efficiency and customer convenience.",
+        "Listen to a customer calling a dental lab with booking appointment and handeling questions. Hear how the dental lab handles the inquiry and provides information.",
       bgColor: "bg-pink-100",
-      video: "https://www.youtube.com/embed/yGUVPSFZcSE",
+      video: "https://www.youtube.com/embed/14XOsfBKzLg",
       image: "/cardImage.png",
     },
     {
@@ -33,15 +33,15 @@ export default function TryDemo() {
       description:
         "Listen to an AI agent qualifying a lead for insurance services. Hear how the agent gathers information, addresses concerns, and sets up a follow-up with a human agent.",
       bgColor: "bg-pink-100",
-      video: "https://youtu.be/embed/1WisbZE1AEc",
+      video: "https://www.youtube.com/embed/1WisbZE1AEc",
       image: "/cardImage.png",
     },
     {
-      title: "Cold Call Lead Generation Agent",
+      title: "Appointment Booking Agent",
       description:
-        "Listen to a cold call offering a local business a free SEO service to rank higher on Google. Learn about the initial pitch and value proposition",
-      bgColor: "bg-orange-100",
-      video: "https://www.youtube.com/embed/rkoGhVMIH10",
+        "Automate scheduling with natural conversation. Check availability, offer options, confirm details, and update calendars, boosting efficiency and customer convenience.",
+      bgColor: "bg-pink-100",
+      video: "https://www.youtube.com/embed/yGUVPSFZcSE",
       image: "/cardImage.png",
     },
     {
@@ -69,6 +69,14 @@ export default function TryDemo() {
         "Watch a demo of AI taking a customer's food order over the phone. See how AI streamlines restaurant order taking, improves efficiency, and enhances customer convenience.",
       bgColor: "bg-purple-100",
       video: "https://www.youtube.com/embed/9OwEH18xYdc",
+      image: "/cardImage.png",
+    },
+    {
+      title: "Cold Call Lead Generation Agent",
+      description:
+        "Listen to a cold call offering a local business a free SEO service to rank higher on Google. Learn about the initial pitch and value proposition",
+      bgColor: "bg-orange-100",
+      video: "https://www.youtube.com/embed/rkoGhVMIH10",
       image: "/cardImage.png",
     },
     {
