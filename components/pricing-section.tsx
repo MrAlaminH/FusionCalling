@@ -46,11 +46,10 @@ export default function PricingSection() {
                   "Includes 500 minutes",
                   "Full Portal Access",
                   "All Integrations Compatible",
-                  "Basic FAQ handling",
-                  "Basic response scripts",
-                  "Basic Testing",
-                  "$499 Build Fee",
-                  "", // Empty item to maintain consistent height with other cards
+                  "Auto-tags and logs every lead",
+                  "CRM and lead routing integrations",
+                  "24/7 performance with no burnout",
+                  "Leave customized, emotional voicemails",
                 ].map(
                   (item, index) =>
                     item ? (
@@ -117,11 +116,11 @@ export default function PricingSection() {
               <ul className="space-y-1.5 md:space-y-2">
                 {[
                   "Includes 1050 minutes",
-                  "Full Portal Access",
-                  "All Integrations Compatible",
-                  "Advanced response scripts",
+                  "Everything in Starter",
+                  "Inbound /outbound call handling",
+                  "Outbound call routing integrations",
+                  "Private Slack channel for direct support",
                   "Advanced FAQ handling",
-                  "Advanced Testing",
                   "Custom LLM Integration",
                   "$799 Build Fee",
                 ].map((item, index) => (
