@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@calcom/embed-react": "^1.5.2",
@@ -18,6 +19,7 @@
     "@radix-ui/react-navigation-menu": "^1.2.1",
     "@radix-ui/react-slot": "^1.1.0",
     "@react-three/fiber": "^8.17.10",
+    "@types/react-syntax-highlighter": "^15.5.13",
     "@types/three": "^0.170.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
@@ -31,9 +33,11 @@
     "react-dom": "^18",
     "react-hook-form": "^7.53.2",
     "react-phone-number-input": "^3.4.9",
+    "react-syntax-highlighter": "^16.1.0",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",
-    "three": "^0.170.0"
+    "three": "^0.170.0",
+    "typecheck": "^0.1.2"
   },
   "devDependencies": {
     "@types/node": "^20",

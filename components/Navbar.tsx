@@ -15,7 +15,7 @@ const Navbar = () => {
     <nav className="bg-[#03001417] backdrop-blur-md shadow-lg shadow-orange-600/50 fixed w-full z-50 top-0">
       <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between p-2 px-4 sm:px-6 lg:px-8">
         <div className="flex items-center">
-          <a href="#home" className="flex items-center">
+          <Link href="/" className="flex items-center">
             <Image
               src="/logo.png"
               alt="logo"
@@ -23,7 +23,7 @@ const Navbar = () => {
               height={40}
               className="cursor-pointer hover:animate-slowspin sm:w-[45px] sm:h-[45px] lg:w-[50px] lg:h-[50px]"
             />
-          </a>
+          </Link>
           <div className="flex flex-col ml-3 mt-3">
             <span className="text-lg sm:text-xl text-orange-600 font-extrabold">
               Fusion Calling
@@ -69,18 +69,24 @@ const Navbar = () => {
         >
           <ul className="flex flex-col p-4 mt-4 space-y-3 lg:space-y-0 border border-orange-600/50 rounded-lg lg:flex-row lg:space-x-6 xl:space-x-8 lg:mt-0 lg:border-0 lg:bg-transparent">
             {["Home", "Show Case", "Features", "Pricing", "FAQs"].map(
-              (item) => (
-                <li key={item}>
-                  <a
-                    href={`#${item.toLowerCase().replace(" ", "-")}`}
-                    className={`block py-2.5 px-4 rounded-lg ${
-                      item === "Home" ? "text-yellow-400" : "text-gray-200"
-                    } hover:bg-orange-600 hover:text-white font-medium transition duration-300 transform hover:-translate-y-1`}
-                  >
-                    {item}
-                  </a>
-                </li>
-              )
+              (item) => {
+                const href =
+                  item === "Home"
+                    ? "/"
+                    : `/#${item.toLowerCase().replace(" ", "-")}`;
+                return (
+                  <li key={item}>
+                    <Link
+                      href={href}
+                      className={`block py-2.5 px-4 rounded-lg ${
+                        item === "Home" ? "text-yellow-400" : "text-gray-200"
+                      } hover:bg-orange-600 hover:text-white font-medium transition duration-300 transform hover:-translate-y-1`}
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                );
+              }
             )}
             <li className="lg:hidden mt-4 !border-t border-orange-600/30 pt-4">
               <a

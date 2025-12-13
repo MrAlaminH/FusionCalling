@@ -3,6 +3,7 @@
 import { Play, Pause } from "lucide-react";
 import type { Voice } from "@/types/voice";
 import { useRef, useState, useEffect } from "react";
+import Image from "next/image";
 
 interface VoiceCardProps {
   voice: Voice;
@@ -117,9 +118,11 @@ export function VoiceCard({
       onMouseLeave={onMouseLeave}
     >
       <div className="flex items-center gap-4 mb-2">
-        <img
+        <Image
           src={voice.avatarUrl || "/placeholder.svg"}
           alt=""
+          width={48}
+          height={48}
           className="w-12 h-12 rounded-full object-cover ring-2 ring-orange-500/20 group-hover:ring-orange-500/40"
         />
         <div className="flex flex-col">
