@@ -7,7 +7,7 @@ export const FEMALE_VOICES: Voice[] = [
     gender: "Female",
     accent: "American Accent",
     language: "English",
-    avatarUrl: "https://avatar.iran.liara.run/public/93",
+    avatarUrl: "/avatars/female_avatar.svg",
     audioUrl: "https://peregrine-results.s3.amazonaws.com/playht20_JO35KWGTDUHu-qFdxVo2e.wav", // You'll need to add actual audio files
     sampleText: "Hi, I'm Victoria. I can help you create engaging content with my natural American accent."
   },
@@ -17,7 +17,7 @@ export const FEMALE_VOICES: Voice[] = [
     gender: "Female",
     accent: "Australian Accent",
     language: "English",
-    avatarUrl: "https://avatar.iran.liara.run/public/74",
+    avatarUrl: "/avatars/female_avatar.svg",
     audioUrl: "https://peregrine-results.s3.amazonaws.com/playht20_qBO2oE0XJn4vaKlUiGB5S.wav",
     sampleText: "Hello, I'm Sophie. Let me add a touch of British elegance to your voice projects."
   },
@@ -27,7 +27,7 @@ export const FEMALE_VOICES: Voice[] = [
     gender: "Female",
     accent: "British Accent",
     language: "English",
-    avatarUrl: "https://avatar.iran.liara.run/public/87",
+    avatarUrl: "/avatars/female_avatar.svg",
     audioUrl: "/voices/LianiMawby11labs.mp3",
     sampleText: "Hi, I'm Puja. I can help you reach a global audience with my clear Indian accent."
   },
@@ -37,7 +37,7 @@ export const FEMALE_VOICES: Voice[] = [
     gender: "Female",
     accent: "American Accent",
     language: "English",
-    avatarUrl: "https://avatar.iran.liara.run/public/99",
+    avatarUrl: "/avatars/female_avatar.svg",
     audioUrl: "/voices/Lori11Labs.mp3",
     sampleText: "Cześć, jestem Anna. Pomogę Ci dotrzeć do polskiej publiczności."
   },
@@ -47,7 +47,7 @@ export const FEMALE_VOICES: Voice[] = [
     gender: "Female",
     accent: "Canadian Accent",
     language: "English",
-    avatarUrl: "https://avatar.iran.liara.run/public/61",
+    avatarUrl: "/avatars/female_avatar.svg",
     audioUrl: "/voices/Olya11labs.mp3",
     sampleText: "¡Hola! Soy Maya. Puedo dar vida a tus proyectos con mi voz española."
   },
@@ -60,7 +60,7 @@ export const MALE_VOICES: Voice[] = [
     gender: "Male",
     accent: "American Accent",
     language: "English",
-    avatarUrl: "https://avatar.iran.liara.run/public/24",
+    avatarUrl: "/avatars/male_avatar.svg",
     audioUrl: "https://peregrine-results.s3.amazonaws.com/playht20_CdN6tsBm6-vNxh3_b28XL.wav",
     sampleText: "Hello, I'm Daren. Let me add some British charm to your voice projects."
   },
@@ -70,7 +70,7 @@ export const MALE_VOICES: Voice[] = [
     gender: "Male",
     accent: "American Accent",
     language: "English",
-    avatarUrl: "https://avatar.iran.liara.run/public/38",
+    avatarUrl: "/avatars/male_avatar.svg",
     audioUrl: "https://peregrine-results.s3.amazonaws.com/playht20_Nn2hhF9ytouA4YH5GySen.wav",
     sampleText: "Hi, I'm Kajli. I can help you create authentic Indian-English content."
   },
@@ -80,7 +80,7 @@ export const MALE_VOICES: Voice[] = [
     gender: "Male",
     accent: "Australian Accent",
     language: "English",
-    avatarUrl: "https://avatar.iran.liara.run/public/27",
+    avatarUrl: "/avatars/male_avatar.svg",
     audioUrl: "/voices/Virtual-Lan.mp3",
     sampleText: "Bonjour, je suis Louis. Je peux donner vie à vos projets en français."
   },
@@ -90,7 +90,7 @@ export const MALE_VOICES: Voice[] = [
     gender: "Male",
     accent: "American Accent",
     language: "English",
-    avatarUrl: "https://avatar.iran.liara.run/public/28",
+    avatarUrl: "/avatars/male_avatar.svg",
     audioUrl: "/voices/Drew11labs.mp3",
     sampleText: "Hey, I'm John. Let me bring your content to life with my American voice."
   },
@@ -100,7 +100,7 @@ export const MALE_VOICES: Voice[] = [
     gender: "Male",
     accent: "Canadian Accent",
     language: "English",
-    avatarUrl: "https://avatar.iran.liara.run/public/29",
+    avatarUrl: "/avatars/male_avatar.svg",
     audioUrl: "/voices/Abraham11labs.mp3",
     sampleText: "Hey, I'm John. Let me bring your content to life with my American voice."
   },
