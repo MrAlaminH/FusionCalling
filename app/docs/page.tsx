@@ -1,6 +1,16 @@
 import SidebarNav from "@/components/docs/sidebar-nav";
 import EndpointCard from "@/components/docs/endpoint-card";
 import CodeBlock from "@/components/docs/code-block";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Docs: External Calendar API Reference",
+  description:
+    "Fusion Calling External Calendar API documentation: authentication, endpoints, data models, rate limits, and code examples.",
+  alternates: {
+    canonical: "/docs",
+  },
+};
 
 const navItems = [
   { id: "overview", label: "Overview" },

@@ -24,9 +24,6 @@ export const metadata: Metadata = {
     "lead generation AI",
     "call center automation",
   ],
-  alternates: {
-    canonical: "/",
-  },
   twitter: {
     card: "summary_large_image",
     site: "@fusioncalling",

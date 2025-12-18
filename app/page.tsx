@@ -13,6 +13,13 @@ import Footer from "@/components/Footer";
 import PricingSection from "@/components/pricing-section";
 import Calendar from "@/components/calendar";
 import StatisticsComponent from "@/components/stats";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function Home() {
   return (

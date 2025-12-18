@@ -66,11 +66,11 @@ export default function Footer() {
               </Link>
 
               <Link
-                href="tel:+12029983591"
+                href="tel:+19146394069"
                 className="flex items-center gap-2 text-sm text-white hover:text-orange-600 transition-colors"
               >
                 <Phone className="h-4 w-4" />
-                +12029983591
+                +19146394069
               </Link>
             </div>
 

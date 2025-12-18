@@ -1,4 +1,14 @@
 import React from "react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "Fusion Calling privacy policy covering data collection, usage, retention, security, and your rights.",
+  alternates: {
+    canonical: "/Privacy",
+  },
+};
 
 export default function PrivacyPolicy() {
   return (
@@ -29,7 +39,8 @@ export default function PrivacyPolicy() {
           </h2>
           <p className="mb-4 text-gray-300">
             The data controller for your personal information is Fusion Calling.
-            For any privacy-related inquiries, contact support@fusioncalling.com.
+            For any privacy-related inquiries, contact
+            support@fusioncalling.com.
           </p>
         </section>
 
@@ -59,7 +70,9 @@ export default function PrivacyPolicy() {
             c. Visitor and Usage Analytics
           </h3>
           <ul className="list-disc pl-6 mb-4 text-gray-300">
-            <li>IP-based approximate location, device, and browser information</li>
+            <li>
+              IP-based approximate location, device, and browser information
+            </li>
             <li>Page visits, clicks, and interaction data</li>
             <li>Session, performance, and error logs</li>
           </ul>
@@ -82,9 +95,14 @@ export default function PrivacyPolicy() {
             Where GDPR applies, we process personal data based on:
           </p>
           <ul className="list-disc pl-6 mb-4 text-gray-300">
-            <li>Consent (e.g., marketing communications, non-essential cookies)</li>
+            <li>
+              Consent (e.g., marketing communications, non-essential cookies)
+            </li>
             <li>Contract (to provide and support the Service)</li>
-            <li>Legitimate interest (security, fraud prevention, service improvement)</li>
+            <li>
+              Legitimate interest (security, fraud prevention, service
+              improvement)
+            </li>
             <li>Legal obligation (compliance with applicable laws)</li>
           </ul>
         </section>
@@ -104,7 +122,9 @@ export default function PrivacyPolicy() {
             <li>Improve the platform and develop new capabilities</li>
           </ul>
           <p className="mb-4 text-gray-300">
-            <span className="font-semibold">For call recipients and contacts:</span>
+            <span className="font-semibold">
+              For call recipients and contacts:
+            </span>
           </p>
           <ul className="list-disc pl-6 mb-4 text-gray-300">
             <li>Deliver calls, messages, and requested information</li>
@@ -127,7 +147,10 @@ export default function PrivacyPolicy() {
             <li>Identity providers (e.g., Google OAuth) for secure sign-in</li>
             <li>Payment processors for billing and subscriptions</li>
             <li>Messaging/voice providers to route calls and messages</li>
-            <li>Analytics and infrastructure providers for performance and security</li>
+            <li>
+              Analytics and infrastructure providers for performance and
+              security
+            </li>
           </ul>
         </section>
 

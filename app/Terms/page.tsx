@@ -1,4 +1,14 @@
 import React from "react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms of Service",
+  description:
+    "Fusion Calling terms of service describing acceptable use, billing, privacy, and platform obligations.",
+  alternates: {
+    canonical: "/Terms",
+  },
+};
 
 export default function TermsOfUse() {
   return (
