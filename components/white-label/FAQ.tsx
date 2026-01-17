@@ -31,7 +31,7 @@ export default function FAQ() {
         "No technical expertise is required. We provide a fully managed white-label solution. You focus on sales and client relationships while we handle all technical aspects including integrations, updates, and maintenance.",
     },
     {
-      question: "What&apos;s the difference between partner tiers?",
+      question: "What's the difference between partner tiers?",
       answer:
         "The main differences are commission rates, support levels, and minimum client requirements. Starter Partners earn 20% commission with 5 minimum clients. Pro Partners earn 30% with 15 minimum clients. Enterprise Partners earn 40% with 30 minimum clients and get premium benefits like 24/7 support.",
     },
@@ -48,12 +48,12 @@ export default function FAQ() {
     {
       question: "Is there a setup fee?",
       answer:
-        "No, there are no setup fees for any partner tier. We only charge a monthly fee based on your usage and your chosen partner tier. This makes it risk-free to get started.",
+        "Yes, there is a setup fee based on your chosen partner tier. We only charge a monthly fee based on your usage and your chosen partner tier. This makes it risk-free to get started.",
     },
     {
       question: "Can I use my own domain?",
       answer:
-        "Absolutely. We&apos;ll set up your white-label solution on your own domain (e.g., app.youragency.com). Your clients will never know about Fusion Calling unless you choose to tell them.",
+        "Absolutely. We will set up your white-label solution on your own domain (e.g., app.youragency.com). Your clients will never know about Fusion Calling unless you choose to tell them.",
     },
     {
       question: "How do voice and branding customization work?",

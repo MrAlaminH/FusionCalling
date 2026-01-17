@@ -101,7 +101,7 @@ const WhiteLabelNavbar = () => {
             </li>
             <li className="lg:hidden">
               <Link
-                href="#"
+                href="https://app.fusioncalling.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 py-3 px-4 rounded-lg text-white bg-transparent border-2 border-orange-600 hover:bg-orange-600/20 text-center font-semibold transition duration-300 transform hover:-translate-y-1"
@@ -123,7 +123,7 @@ const WhiteLabelNavbar = () => {
             Contact Us
           </Link>
           <Link
-            href="#"
+            href="https://app.fusioncalling.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex h-10 sm:h-11 lg:h-12 items-center justify-center gap-2 rounded-xl border-2 border-orange-600 bg-transparent px-4 sm:px-5 lg:px-6 font-medium text-white hover:bg-orange-600/20 transition duration-300 transform hover:-translate-y-1"

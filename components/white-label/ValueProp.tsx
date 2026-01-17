@@ -105,7 +105,7 @@ export default function ValueProp() {
           <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 md:gap-12">
             <div className="text-center">
               <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-orange-500">
-                50+
+                20+
               </div>
               <div className="text-xs sm:text-sm text-gray-500 mt-1">
                 Active Partners
@@ -113,7 +113,7 @@ export default function ValueProp() {
             </div>
             <div className="text-center">
               <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-orange-500">
-                10M+
+                5M+
               </div>
               <div className="text-xs sm:text-sm text-gray-500 mt-1">
                 AI Calls Handled

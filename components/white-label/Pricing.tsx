@@ -22,7 +22,7 @@ export default function Pricing() {
         "Vapi + Retell Support",
         "Minute Rebilling",
       ],
-      cta: "Start 14-day Free Trial",
+      cta: "Start 3-day Free Trial",
     },
     {
       name: "Growth",
@@ -36,7 +36,7 @@ export default function Pricing() {
         "Advanced Analytics",
         "Custom Onboarding",
       ],
-      cta: "Start 14-day Free Trial",
+      cta: "Start 3-day Free Trial",
     },
     {
       name: "Scale",
@@ -51,7 +51,7 @@ export default function Pricing() {
         "Custom Integrations",
         "Early Feature Access",
       ],
-      cta: "Start 14-day Free Trial",
+      cta: "Start 3-day Free Trial",
     },
   ];
 
@@ -205,7 +205,7 @@ export default function Pricing() {
             </div>
             <div className="text-center">
               <div className="text-2xl sm:text-3xl font-bold text-orange-500">
-                14 Days
+                3 Days
               </div>
               <div className="text-xs sm:text-sm text-gray-500 mt-1">
                 Free Trial
