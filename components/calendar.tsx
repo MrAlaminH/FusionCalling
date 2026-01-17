@@ -6,9 +6,10 @@ import { useEffect, useState } from "react";
 interface CalendarProps {
   calUsername: string;
   eventSlug: string;
+  showHeader?: boolean;
 }
 
-const Calendar = ({ calUsername, eventSlug }: CalendarProps) => {
+const Calendar = ({ calUsername, eventSlug, showHeader = true }: CalendarProps) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -28,20 +29,22 @@ const Calendar = ({ calUsername, eventSlug }: CalendarProps) => {
 
   return (
     <div className="calendar-wrapper">
-      <div className="calendar-header">
-        <h2>Schedule a Discovery Call</h2>
-        <p>
-          Book a convenient time slot for us to discuss your needs and how we
-          can help you succeed.
-        </p>
-      </div>
+      {showHeader && (
+        <div className="calendar-header">
+          <h2>Schedule a Discovery Call</h2>
+          <p>
+            Book a convenient time slot for us to discuss your needs and how we
+            can help you succeed.
+          </p>
+        </div>
+      )}
       <div className="calendar-container">
         <Cal
           calLink={`${calUsername}/${eventSlug}`}
           style={{
             width: "100%",
             height: "100%",
-            minHeight: isMobile ? "600px" : "450px",
+            minHeight: isMobile ? "550px" : "500px",
             borderRadius: "16px",
             overflow: "auto",
             WebkitOverflowScrolling: "touch",
@@ -61,13 +64,11 @@ const Calendar = ({ calUsername, eventSlug }: CalendarProps) => {
           width: 100%;
           max-width: 1000px;
           margin: 0 auto;
-          padding: 2rem;
+          padding: 0;
           background: #000000;
-          min-height: 100vh;
           display: flex;
           flex-direction: column;
           align-items: center;
-          overflow-x: hidden;
         }
         .calendar-header {
           text-align: center;
@@ -95,7 +96,6 @@ const Calendar = ({ calUsername, eventSlug }: CalendarProps) => {
           box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
           width: 100%;
           height: auto;
-          min-height: 600px;
           position: relative;
           overflow: visible;
           border: 1px solid rgba(255, 255, 255, 0.1);
@@ -103,76 +103,106 @@ const Calendar = ({ calUsername, eventSlug }: CalendarProps) => {
           -webkit-overflow-scrolling: touch;
         }
 
-        /* Large desktop screens */
-        @media (min-width: 1440px) {
+        /* Extra large desktop screens (4K, ultrawide) */
+        @media (min-width: 1536px) {
           .calendar-wrapper {
-            padding: 3rem;
-            padding-bottom: 1rem;
+            max-width: 1100px;
           }
           .calendar-container {
-            min-height: 650px;
+            min-height: 520px;
           }
           .calendar-header h2 {
             font-size: 3rem;
           }
         }
 
-        /* Tablets and smaller desktops */
-        @media (max-width: 1024px) {
+        /* Large desktop screens (1440px - MacBooks, larger monitors) */
+        @media (min-width: 1280px) and (max-width: 1535px) {
           .calendar-wrapper {
-            padding: 2rem;
-            padding-bottom: 1rem;
+            padding: 2rem 0;
           }
           .calendar-container {
-            min-height: 580px;
+            min-height: 500px;
           }
           .calendar-header h2 {
-            font-size: 2.25rem;
+            font-size: 2.75rem;
           }
         }
 
-        /* Tablets */
-        @media (max-width: 768px) {
+        /* Standard desktops (1024px - 1279px) */
+        @media (min-width: 1024px) and (max-width: 1279px) {
           .calendar-wrapper {
-            padding: 1.5rem;
-            padding-bottom: 0.5rem;
+            padding: 1.5rem 0;
           }
           .calendar-container {
-            min-height: 550px;
-            padding: 1rem;
-            overflow: visible;
+            min-height: 500px;
           }
           .calendar-header h2 {
-            font-size: 2rem;
+            font-size: 2.5rem;
+          }
+        }
+
+        /* Large tablets / small laptops (768px - 1023px) */
+        @media (min-width: 768px) and (max-width: 1023px) {
+          .calendar-wrapper {
+            max-width: 900px;
+            padding: 1.5rem 0;
+          }
+          .calendar-container {
+            min-height: 480px;
+            padding: 1.25rem;
+          }
+          .calendar-header h2 {
+            font-size: 2.25rem;
           }
           .calendar-header p {
             font-size: 1.125rem;
           }
         }
 
-        /* Mobile phones */
-        @media (max-width: 480px) {
+        /* Tablets (480px - 767px) */
+        @media (min-width: 480px) and (max-width: 767px) {
           .calendar-wrapper {
+            max-width: 700px;
+            padding: 1rem 0;
+          }
+          .calendar-container {
+            min-height: 450px;
             padding: 1rem;
-            padding-bottom: 0;
+          }
+          .calendar-header h2 {
+            font-size: 2rem;
+          }
+          .calendar-header p {
+            font-size: 1rem;
+          }
+        }
+
+        /* Mobile phones (max 479px) */
+        @media (max-width: 479px) {
+          .calendar-wrapper {
+            max-width: 100%;
+            padding: 0.5rem 0;
             overflow-x: hidden;
             overflow-y: visible;
           }
           .calendar-container {
             padding: 0.75rem;
-            min-height: 500px;
+            min-height: 420px;
             margin-bottom: 0;
             overflow: visible;
             height: auto;
           }
           .calendar-header {
             margin-bottom: 1.5rem;
+            padding: 0 0.75rem;
           }
           .calendar-header h2 {
             font-size: 1.75rem;
+            line-height: 1.2;
           }
           .calendar-header p {
-            font-size: 1rem;
+            font-size: 0.9375rem;
           }
         }
       `}</style>

@@ -61,8 +61,29 @@ export default function Home() {
       <section id="faqs">
         <FAQSection />
       </section>
-      <section id="calendar">
-        <Calendar calUsername={"mralamin"} eventSlug={"discovery-call"} />
+      <section id="calendar" className="w-full bg-black py-16 sm:py-20 md:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          {/* Header */}
+          <div className="text-center mb-12 sm:mb-16 md:mb-20">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
+              Schedule a
+              <span className="bg-gradient-to-r from-orange-500 to-orange-600 text-transparent bg-clip-text">
+                {" "}
+                Discovery
+              </span>
+              {" "}
+              Call
+            </h2>
+            <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-3xl mx-auto">
+              Book a convenient time slot for us to discuss your needs and how we can help you succeed.
+            </p>
+          </div>
+
+          {/* Calendar */}
+          <div>
+            <Calendar calUsername={"mralamin"} eventSlug={"discovery-call"} showHeader={false} />
+          </div>
+        </div>
       </section>
 
       <Footer />
