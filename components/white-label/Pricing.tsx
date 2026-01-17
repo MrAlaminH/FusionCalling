@@ -10,62 +10,48 @@ export default function Pricing() {
 
   const plans = [
     {
-      name: "Starter Partner",
-      description: "Perfect for agencies starting out",
-      commission: "20%",
-      minClients: "5",
-      price: null,
-      buildFee: "$0",
+      name: "Starter",
+      description: "Perfect for agencies just starting with Voice AI",
+      price: "$99",
       popular: false,
       features: [
-        "Full white-label branding",
-        "Custom voice AI training",
-        "Basic dashboard",
-        "Email support",
-        "Marketing resources",
-        "API access",
-        "No minimum commitment",
+        "6 Sub-Accounts",
+        "Direct Calendar Booking",
+        "Complete White-Labeling",
+        "Client Portal Access",
+        "Vapi + Retell Support",
+        "Minute Rebilling",
       ],
-      cta: "Get Started",
+      cta: "Start 14-day Free Trial",
     },
     {
-      name: "Pro Partner",
-      description: "For growing agencies",
-      commission: "30%",
-      minClients: "15",
-      price: null,
-      buildFee: "$0",
+      name: "Growth",
+      description: "For growing agencies scaling their Voice AI offerings",
+      price: "$299",
       popular: true,
       features: [
+        "20 Sub-Accounts",
         "Everything in Starter",
-        "Advanced dashboard",
-        "Priority support (48h response)",
-        "Custom branding consultation",
-        "Sales training materials",
-        "Dedicated account manager",
-        "Higher commission rate",
+        "Priority Support",
+        "Advanced Analytics",
+        "Custom Onboarding",
       ],
-      cta: "Start Free Trial",
+      cta: "Start 14-day Free Trial",
     },
     {
-      name: "Enterprise Partner",
-      description: "For established agencies",
-      commission: "40%",
-      minClients: "30",
-      price: null,
-      buildFee: "$0",
+      name: "Scale",
+      description: "For established agencies with unlimited client needs",
+      price: "$499",
       popular: false,
       features: [
-        "Everything in Pro",
-        "White-label mobile app",
-        "24/7 dedicated support",
-        "Custom integrations",
-        "Revenue share optimization",
-        "Beta feature access",
-        "Maximum commission rate",
-        "Quarterly business reviews",
+        "Unlimited Sub-Accounts",
+        "Everything in Growth",
+        "Dedicated Account Manager",
+        "API Access",
+        "Custom Integrations",
+        "Early Feature Access",
       ],
-      cta: "Contact Sales",
+      cta: "Start 14-day Free Trial",
     },
   ];
 
@@ -80,15 +66,10 @@ export default function Pricing() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
-            Partner Tiers &
-            <span className="bg-gradient-to-r from-orange-500 to-orange-600 text-transparent bg-clip-text">
-              {" "}
-              Commission Rates
-            </span>
+            Pricing Plans
           </h2>
           <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-3xl mx-auto">
-            Choose the partnership level that fits your agency&apos;s growth goals.
-            Scale up as you grow with our clients.
+            Choose the plan that fits your agency&apos;s needs. Scale up as you grow.
           </p>
         </motion.div>
 
@@ -151,18 +132,15 @@ export default function Pricing() {
                           plan.popular ? "text-white" : "text-orange-500"
                         }`}
                       >
-                        {plan.commission}
+                        {plan.price}
                       </span>
                       <span
                         className={`text-sm ${
                           plan.popular ? "text-orange-100" : "text-gray-400"
                         }`}
                       >
-                        Commission
+                        /month
                       </span>
-                    </div>
-                    <div className="text-xs text-gray-500">
-                      {plan.minClients} minimum clients
                     </div>
                   </div>
                 </div>
@@ -227,7 +205,7 @@ export default function Pricing() {
             </div>
             <div className="text-center">
               <div className="text-2xl sm:text-3xl font-bold text-orange-500">
-                30 Days
+                14 Days
               </div>
               <div className="text-xs sm:text-sm text-gray-500 mt-1">
                 Free Trial

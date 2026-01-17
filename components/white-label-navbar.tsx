@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 
-const Navbar = () => {
+const WhiteLabelNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -16,7 +16,7 @@ const Navbar = () => {
     <nav className="bg-[#03001417] backdrop-blur-md shadow-lg shadow-orange-600/50 fixed w-full z-50 top-0">
       <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between p-2 px-4 sm:px-6 lg:px-8">
         <div className="flex items-center">
-          <Link href="/" className="flex items-center">
+          <Link href="/whitelabel" className="flex items-center">
             <Image
               src="/logo.png"
               alt="logo"
@@ -69,26 +69,26 @@ const Navbar = () => {
           } w-full lg:block lg:w-auto transition-all duration-300 ease-in-out`}
         >
           <ul className="flex flex-col p-4 mt-4 space-y-3 lg:space-y-0 border border-orange-600/50 rounded-lg lg:flex-row lg:space-x-6 xl:space-x-8 lg:mt-0 lg:border-0 lg:bg-transparent">
-            {["Home", "Show Case", "Features", "Pricing", "FAQs"].map(
-              (item) => {
-                const href =
-                  item === "Home"
-                    ? "/"
-                    : `/#${item.toLowerCase().replace(" ", "-")}`;
-                return (
-                  <li key={item}>
-                    <Link
-                      href={href}
-                      className={`block py-2.5 px-4 rounded-lg ${
-                        item === "Home" ? "text-yellow-400" : "text-gray-200"
-                      } hover:bg-orange-600 hover:text-white font-medium transition duration-300 transform hover:-translate-y-1`}
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                );
-              }
-            )}
+            {[
+              { label: "Home", href: "/whitelabel" },
+              { label: "Features", href: "/whitelabel#features" },
+              { label: "Pricing", href: "/whitelabel#pricing" },
+              { label: "Benefits", href: "/whitelabel#benefits" },
+              { label: "FAQs", href: "/whitelabel#faq" },
+            ].map((item) => {
+              return (
+                <li key={item.label}>
+                  <Link
+                    href={item.href}
+                    className={`block py-2.5 px-4 rounded-lg ${
+                      item.label === "Home" ? "text-yellow-400" : "text-gray-200"
+                    } hover:bg-orange-600 hover:text-white font-medium transition duration-300 transform hover:-translate-y-1`}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
             <li className="lg:hidden mt-4 !border-t border-orange-600/30 pt-4">
               <a
                 href="https://cal.com/mralamin/discovery-call"
@@ -101,12 +101,12 @@ const Navbar = () => {
             </li>
             <li className="lg:hidden">
               <Link
-                href="/whitelabel"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 py-3 px-4 rounded-lg text-white bg-transparent border-2 border-orange-600 hover:bg-orange-600/20 text-center font-semibold transition duration-300 transform hover:-translate-y-1"
               >
-                Partner
+                Open app
                 <ExternalLink className="w-4 h-4" />
               </Link>
             </li>
@@ -123,12 +123,12 @@ const Navbar = () => {
             Contact Us
           </Link>
           <Link
-            href="/whitelabel"
+            href="#"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex h-10 sm:h-11 lg:h-12 items-center justify-center gap-2 rounded-xl border-2 border-orange-600 bg-transparent px-4 sm:px-5 lg:px-6 font-medium text-white hover:bg-orange-600/20 transition duration-300 transform hover:-translate-y-1"
           >
-            Partner
+            Open app
             <ExternalLink className="w-4 h-4" />
           </Link>
         </div>
@@ -137,4 +137,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default WhiteLabelNavbar;

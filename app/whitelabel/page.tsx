@@ -1,10 +1,9 @@
-import Navbar from "@/components/Navbar";
+import WhiteLabelNavbar from "@/components/white-label-navbar";
 import Footer from "@/components/Footer";
 import Hero from "@/components/white-label/Hero";
 import ValueProp from "@/components/white-label/ValueProp";
 import Features from "@/components/white-label/Features";
 import HowItWorks from "@/components/white-label/HowItWorks";
-import Revenue from "@/components/white-label/Revenue";
 import Pricing from "@/components/white-label/Pricing";
 import Benefits from "@/components/white-label/Benefits";
 import FAQ from "@/components/white-label/FAQ";
@@ -45,7 +44,7 @@ export const metadata: Metadata = {
 export default function WhiteLevelPage() {
   return (
     <main className="min-h-screen w-full bg-black">
-      <Navbar />
+      <WhiteLabelNavbar />
       <section id="hero">
         <Hero />
       </section>
@@ -57,9 +56,6 @@ export default function WhiteLevelPage() {
       </section>
       <section id="how-it-works">
         <HowItWorks />
-      </section>
-      <section id="revenue">
-        <Revenue />
       </section>
       <section id="pricing">
         <Pricing />

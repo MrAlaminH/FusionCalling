@@ -100,15 +100,8 @@ export default function Hero() {
             href="#cta"
             className="inline-flex items-center rounded-md bg-gradient-to-r from-orange-500 to-orange-600 px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-3.5 text-xs sm:text-sm md:text-base font-medium text-white transition-all hover:from-orange-600 hover:to-orange-700 hover:scale-105 shadow-lg shadow-orange-500/30"
           >
-            Start Your Agency Partnership
+            Book a Demo
             <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
-          </Link>
-          <Link
-            href="#revenue"
-            className="inline-flex items-center rounded-md border border-white/20 bg-transparent px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-3.5 text-xs sm:text-sm md:text-base font-medium text-white transition-all hover:bg-white/10 hover:border-white/30"
-          >
-            <Play className="mr-2 w-4 h-4 sm:w-5 sm:h-5" />
-            Calculate Your Revenue
           </Link>
         </motion.div>
 
@@ -192,7 +185,7 @@ export default function Hero() {
                     {/* "Watch Demo" text */}
                     <div className="absolute bottom-8 left-0 right-0 text-center">
                       <p className="text-white text-sm sm:text-base md:text-lg font-medium opacity-90">
-                        Watch Demo
+                        Watch Demo Video
                       </p>
                     </div>
                   </div>
@@ -214,10 +207,6 @@ export default function Hero() {
             <div className="flex items-center gap-2 text-xs sm:text-sm">
               <div className="w-2 h-2 rounded-full bg-green-500"></div>
               <span>Full Brand Control</span>
-            </div>
-            <div className="flex items-center gap-2 text-xs sm:text-sm">
-              <div className="w-2 h-2 rounded-full bg-green-500"></div>
-              <span>Custom Voice Training</span>
             </div>
             <div className="flex items-center gap-2 text-xs sm:text-sm">
               <div className="w-2 h-2 rounded-full bg-green-500"></div>
