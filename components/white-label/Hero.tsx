@@ -118,9 +118,9 @@ export default function Hero() {
               {isVideoPlaying ? (
                 <iframe
                   className="w-full h-full"
-                  src="https://www.youtube.com/embed/1WisbZE1AEc?si=2in06oF4gR13hhbn&autoplay=1"
+                  src="https://player.vimeo.com/video/1155684546?autoplay=1"
                   title="Fusion Calling White-label Demo"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allow="autoplay; fullscreen; picture-in-picture"
                   allowFullScreen
                   referrerPolicy="strict-origin-when-cross-origin"
                 />
@@ -129,7 +129,7 @@ export default function Hero() {
                   {/* Custom Thumbnail */}
                   <div
                     className="absolute inset-0 bg-cover bg-center cursor-pointer group"
-                    style={{ backgroundImage: 'url(/thumbnail.png)' }}
+                    style={{ backgroundImage: 'url(/hero-thambnail.png)' }}
                     onClick={() => setIsVideoPlaying(true)}
                   >
                     {/* Dark overlay */}
