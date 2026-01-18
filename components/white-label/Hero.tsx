@@ -5,6 +5,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Play, ArrowRight, Sparkles } from "lucide-react";
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
+import { BorderBeam } from "@/components/ui/border-beam";
+import { NeonGradientCard } from "@/components/ui/neon-gradient-card";
 import { cn } from "@/lib/utils";
 
 export default function Hero() {
@@ -110,112 +112,195 @@ export default function Hero() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="max-w-5xl mx-auto"
+          className="max-w-5xl mx-auto px-4 sm:px-6"
         >
-          <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-orange-500/30 bg-zinc-900/50 backdrop-blur-sm">
-            {/* Video Container */}
-            <div className="aspect-video w-full relative">
-              {isVideoPlaying ? (
-                <iframe
-                  className="w-full h-full"
-                  src="https://player.vimeo.com/video/1155684546?autoplay=1"
-                  title="Fusion Calling White-label Demo"
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowFullScreen
-                  referrerPolicy="strict-origin-when-cross-origin"
-                />
-              ) : (
-                <>
-                  {/* Custom Thumbnail */}
-                  <div
-                    className="absolute inset-0 bg-cover bg-center cursor-pointer group"
-                    style={{ backgroundImage: 'url(/hero-thambnail.png)' }}
-                    onClick={() => setIsVideoPlaying(true)}
-                  >
-                    {/* Dark overlay */}
-                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors"></div>
-
-                    {/* Play Button */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="relative">
-                        {/* Multiple pulse circles for attention-grabbing effect */}
-                        <motion.div
-                          className="absolute inset-0 border-2 border-orange-500/30 rounded-full"
-                          animate={{
-                            scale: [1, 2, 1],
-                            opacity: [0.8, 0, 0.8],
-                          }}
-                          transition={{
-                            duration: 2,
-                            repeat: Infinity,
-                            ease: "easeOut",
-                          }}
-                        />
-                        <motion.div
-                          className="absolute inset-0 border-2 border-orange-400/40 rounded-full"
-                          animate={{
-                            scale: [1, 2, 1],
-                            opacity: [0.8, 0, 0.8],
-                          }}
-                          transition={{
-                            duration: 2,
-                            repeat: Infinity,
-                            ease: "easeOut",
-                            delay: 0.5,
-                          }}
-                        />
-                        <motion.div
-                          className="absolute inset-0 bg-orange-500/15 rounded-full blur-xl"
-                          animate={{
-                            scale: [1, 1.4, 1],
-                            opacity: [0.5, 0.8, 0.5],
-                          }}
-                          transition={{
-                            duration: 2,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                          }}
-                        />
-                        <div className="relative bg-gradient-to-br from-orange-500 to-orange-600 rounded-full p-3 sm:p-4 md:p-5 shadow-2xl shadow-orange-500/50 group-hover:scale-110 transition-transform duration-300">
-                          <Play className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white fill-white ml-1" />
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* "Watch Demo" text */}
-                    <div className="absolute bottom-8 left-0 right-0 text-center">
-                      <p className="text-white text-sm sm:text-base md:text-lg font-medium opacity-90">
-                        Watch Demo Video
-                      </p>
-                    </div>
+          {/* Outer glow container for depth */}
+          <div className="relative group">
+            {/* Outer glow effect */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/20 via-orange-400/30 to-orange-500/20 rounded-3xl blur-2xl opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+            
+            {/* Main container with padding for border visibility */}
+            <div className="relative p-[2px] rounded-3xl bg-gradient-to-r from-orange-500 via-orange-400 to-orange-600">
+              {/* Inner container with NeonGradientCard */}
+              <NeonGradientCard
+                className="relative [&>div]:p-0 [&>div]:!bg-black [&>div]:dark:!bg-black"
+                borderSize={3}
+                borderRadius={28}
+                neonColors={{
+                  firstColor: "#ff6b35",
+                  secondColor: "#f7931e",
+                }}
+              >
+                <div className="relative aspect-video w-full bg-black rounded-[25px] overflow-hidden">
+                  {/* Border Beam Effect - Multiple layers for visibility */}
+                  <div className="absolute inset-0 rounded-[25px] z-0">
+                    <BorderBeam
+                      size={300}
+                      duration={15}
+                      borderWidth={2.5}
+                      anchor={90}
+                      colorFrom="#ff6b35"
+                      colorTo="#f7931e"
+                      delay={0}
+                      className="rounded-[25px]"
+                    />
                   </div>
-                </>
-              )}
-            </div>
+                  
+                  {/* Secondary border beam for depth */}
+                  <div className="absolute inset-0 rounded-[25px] z-0 opacity-60">
+                    <BorderBeam
+                      size={300}
+                      duration={20}
+                      borderWidth={2}
+                      anchor={45}
+                      colorFrom="#f7931e"
+                      colorTo="#ff6b35"
+                      delay={7.5}
+                      className="rounded-[25px]"
+                    />
+                  </div>
+                  
+                  {/* Video/Thumbnail Content */}
+                  <div className="relative w-full h-full rounded-[25px] overflow-hidden z-10 bg-black">
+                    {isVideoPlaying ? (
+                      <iframe
+                        className="w-full h-full rounded-[25px]"
+                        src="https://player.vimeo.com/video/1155684546?autoplay=1"
+                        title="Fusion Calling White-label Demo"
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        allowFullScreen
+                        referrerPolicy="strict-origin-when-cross-origin"
+                      />
+                    ) : (
+                      <>
+                        {/* Custom Thumbnail */}
+                        <div
+                          className="absolute inset-0 bg-cover bg-center cursor-pointer group rounded-[25px] transition-transform duration-500 group-hover:scale-[1.02]"
+                          style={{ backgroundImage: 'url(/hero-thambnail.png)' }}
+                          onClick={() => setIsVideoPlaying(true)}
+                        >
+                          {/* Gradient overlay for better contrast */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40 group-hover:from-black/70 group-hover:via-black/10 group-hover:to-black/30 transition-all duration-500 rounded-[25px]"></div>
 
-            {/* Bottom gradient fade */}
-            <div className="absolute bottom-0 left-0 right-0 h-24 sm:h-32 bg-gradient-to-t from-black to-transparent pointer-events-none"></div>
+                          {/* Play Button Container */}
+                          <div className="absolute inset-0 flex items-center justify-center z-20">
+                            <div className="relative">
+                              {/* Outer glow rings */}
+                              <motion.div
+                                className="absolute inset-0 border-2 border-orange-500/40 rounded-full"
+                                animate={{
+                                  scale: [1, 2.2, 1],
+                                  opacity: [0.6, 0, 0.6],
+                                }}
+                                transition={{
+                                  duration: 2.5,
+                                  repeat: Infinity,
+                                  ease: "easeOut",
+                                }}
+                              />
+                              <motion.div
+                                className="absolute inset-0 border-2 border-orange-400/50 rounded-full"
+                                animate={{
+                                  scale: [1, 2.2, 1],
+                                  opacity: [0.6, 0, 0.6],
+                                }}
+                                transition={{
+                                  duration: 2.5,
+                                  repeat: Infinity,
+                                  ease: "easeOut",
+                                  delay: 0.6,
+                                }}
+                              />
+                              <motion.div
+                                className="absolute inset-0 border border-orange-300/60 rounded-full"
+                                animate={{
+                                  scale: [1, 2.2, 1],
+                                  opacity: [0.4, 0, 0.4],
+                                }}
+                                transition={{
+                                  duration: 2.5,
+                                  repeat: Infinity,
+                                  ease: "easeOut",
+                                  delay: 1.2,
+                                }}
+                              />
+                              
+                              {/* Glow backdrop */}
+                              <motion.div
+                                className="absolute inset-0 bg-gradient-to-br from-orange-500/30 to-orange-600/20 rounded-full blur-2xl"
+                                animate={{
+                                  scale: [1, 1.5, 1],
+                                  opacity: [0.4, 0.7, 0.4],
+                                }}
+                                transition={{
+                                  duration: 2.5,
+                                  repeat: Infinity,
+                                  ease: "easeInOut",
+                                }}
+                              />
+                              
+                              {/* Play Button */}
+                              <motion.div
+                                className="relative bg-gradient-to-br from-orange-500 to-orange-600 rounded-full p-4 sm:p-5 md:p-6 shadow-2xl shadow-orange-500/60 group-hover:shadow-orange-500/80 transition-all duration-300"
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.95 }}
+                              >
+                                <Play className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white fill-white ml-1" />
+                              </motion.div>
+                            </div>
+                          </div>
+
+                          {/* "Watch Demo" text with better styling */}
+                          <div className="absolute bottom-6 sm:bottom-8 left-0 right-0 text-center z-20">
+                            <motion.p
+                              className="text-white text-sm sm:text-base md:text-lg font-semibold opacity-95 drop-shadow-lg"
+                              initial={{ opacity: 0, y: 10 }}
+                              animate={{ opacity: 0.95, y: 0 }}
+                              transition={{ delay: 1.2, duration: 0.6 }}
+                            >
+                              Watch Demo Video
+                            </motion.p>
+                          </div>
+                        </div>
+                      </>
+                    )}
+
+                    {/* Bottom gradient fade for better text readability */}
+                    <div className="absolute bottom-0 left-0 right-0 h-32 sm:h-40 bg-gradient-to-t from-black via-black/50 to-transparent pointer-events-none rounded-b-[25px] z-10"></div>
+                  </div>
+                </div>
+              </NeonGradientCard>
+            </div>
           </div>
 
-          {/* Trust badges */}
+          {/* Trust badges with improved design */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.4 }}
-            className="mt-8 sm:mt-12 flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 text-gray-500"
+            className="mt-10 sm:mt-14 flex flex-wrap items-center justify-center gap-6 sm:gap-8 md:gap-10"
           >
-            <div className="flex items-center gap-2 text-xs sm:text-sm">
-              <div className="w-2 h-2 rounded-full bg-green-500"></div>
-              <span>Full Brand Control</span>
-            </div>
-            <div className="flex items-center gap-2 text-xs sm:text-sm">
-              <div className="w-2 h-2 rounded-full bg-green-500"></div>
-              <span>White-label Dashboard</span>
-            </div>
-            <div className="flex items-center gap-2 text-xs sm:text-sm">
-              <div className="w-2 h-2 rounded-full bg-green-500"></div>
-              <span>API Access</span>
-            </div>
+            {[
+              { label: "Full Brand Control", delay: 0 },
+              { label: "White-label Dashboard", delay: 0.1 },
+              { label: "API Access", delay: 0.2 },
+            ].map((badge) => (
+              <motion.div
+                key={badge.label}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 1.4 + badge.delay }}
+                className="flex items-center gap-2.5 group cursor-default"
+              >
+                <div className="relative">
+                  <div className="absolute inset-0 w-2.5 h-2.5 rounded-full bg-green-500/40 blur-sm group-hover:bg-green-400/60 transition-colors"></div>
+                  <div className="relative w-2.5 h-2.5 rounded-full bg-green-500 group-hover:bg-green-400 transition-colors shadow-lg shadow-green-500/50"></div>
+                </div>
+                <span className="text-gray-400 text-xs sm:text-sm font-medium group-hover:text-gray-300 transition-colors">
+                  {badge.label}
+                </span>
+              </motion.div>
+            ))}
           </motion.div>
         </motion.div>
       </div>
