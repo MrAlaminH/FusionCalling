@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "Fusion Calling",
     images: [
       {
-        url: "/opengraph-image.png",
+        url: "/og.png",
         width: 1200,
         height: 630,
         alt: "Fusion Calling - White-label AI Voice Solution",

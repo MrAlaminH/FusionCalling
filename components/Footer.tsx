@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { Facebook, Linkedin, Mail, Phone, Twitter } from "lucide-react";
+import { Facebook, Linkedin, Mail, Phone, Twitter, ArrowRight } from "lucide-react";
 
 export default function Footer() {
   return (
     <>
+      {/* CTA Section */}
       <div
         className="w-full relative overflow-hidden min-h-[40vh] flex items-center justify-center"
         style={{
@@ -31,90 +32,205 @@ export default function Footer() {
 
             <Link
               href="#home"
-              className="mt-8 px-8 py-3 bg-orange-600 text-black rounded-full font-bold hover:bg-gray-700 transition-colors duration-300 inline-flex items-center"
+              className="mt-8 px-8 py-3 bg-orange-600 text-black rounded-full font-bold hover:bg-gray-700 transition-colors duration-300 inline-flex items-center group"
             >
               Try Our Demo
+              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </div>
       </div>
 
-      <footer className="w-full bg-black py-6 md:py-8">
+      {/* Main Footer */}
+      <footer className="w-full bg-black pt-16 pb-8">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col space-y-6 md:space-y-0 md:flex-row md:items-center md:justify-between">
-            {/* Logo and Copyright */}
-            <div className="flex flex-col space-y-2">
+          {/* Footer Columns */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            {/* Company Info */}
+            <div className="flex flex-col space-y-4">
               <Link
                 href="/"
-                className="text-xl font-bold text-orange-600 transition-colors"
+                className="text-2xl font-bold text-orange-600 transition-colors"
               >
                 Fusion Calling
               </Link>
-              <p className="text-xs text-white/60">
-                © 2025 MrAlaminH. All rights reserved.
+              <p className="text-sm text-gray-400 leading-relaxed">
+                Transform your phone operations with AI-powered voice agents. Automate calls, improve customer experience, and scale effortlessly.
               </p>
+              {/* Social Links */}
+              <div className="flex items-center gap-3 pt-2">
+                <Link
+                  href="https://x.com/MrAlaminH"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 text-white hover:bg-orange-600 hover:text-black transition-colors"
+                  aria-label="Twitter"
+                >
+                  <Twitter className="h-4 w-4" />
+                </Link>
+                <Link
+                  href="https://www.linkedin.com/company/fusion-calling/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 text-white hover:bg-orange-600 hover:text-black transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="h-4 w-4" />
+                </Link>
+                <Link
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 text-white hover:bg-orange-600 hover:text-black transition-colors"
+                  aria-label="Facebook"
+                >
+                  <Facebook className="h-4 w-4" />
+                </Link>
+              </div>
             </div>
 
-            {/* Contact Information */}
-            <div className="flex flex-col space-y-2 md:flex-row md:items-center md:space-y-0 md:space-x-6">
-              <Link
-                href="mailto:hello@fusioncalling.com"
-                className="flex items-center gap-2 text-sm text-white hover:text-orange-600 transition-colors"
-              >
-                <Mail className="h-4 w-4" />
-                hello@fusioncalling.com
-              </Link>
-
-              <Link
-                href="tel:+19146394069"
-                className="flex items-center gap-2 text-sm text-white hover:text-orange-600 transition-colors"
-              >
-                <Phone className="h-4 w-4" />
-                +19146394069
-              </Link>
+            {/* Product Links */}
+            <div>
+              <h3 className="text-white font-semibold mb-4">Product</h3>
+              <ul className="space-y-3">
+                <li>
+                  <Link
+                    href="/whitelabel"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-gray-400 hover:text-orange-600 transition-colors"
+                  >
+                    White-label Solution
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#features"
+                    className="text-sm text-gray-400 hover:text-orange-600 transition-colors"
+                  >
+                    Features
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#pricing"
+                    className="text-sm text-gray-400 hover:text-orange-600 transition-colors"
+                  >
+                    Pricing
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/docs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-gray-400 hover:text-orange-600 transition-colors"
+                  >
+                    API Documentation
+                  </Link>
+                </li>
+              </ul>
             </div>
 
-            {/* Social Media Links */}
-            <div className="flex items-center gap-4">
-              <Link
-                href="https://x.com/MrAlaminH"
-                className="text-white hover:text-orange-600 transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="h-5 w-5" />
-              </Link>
-              <Link
-                href="https://x.com/MrAlaminH"
-                className="text-white hover:text-orange-600 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5" />
-              </Link>
-              <Link
-                href="https://x.com/MrAlaminH"
-                className="text-white hover:text-orange-600 transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-5 w-5" />
-              </Link>
+            {/* Company Links */}
+            <div>
+              <h3 className="text-white font-semibold mb-4">Company</h3>
+              <ul className="space-y-3">
+                <li>
+                  <Link
+                    href="#about"
+                    className="text-sm text-gray-400 hover:text-orange-600 transition-colors"
+                  >
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#blog"
+                    className="text-sm text-gray-400 hover:text-orange-600 transition-colors"
+                  >
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="#careers"
+                    className="text-sm text-gray-400 hover:text-orange-600 transition-colors"
+                  >
+                    Careers
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/whitelabel"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-gray-400 hover:text-orange-600 transition-colors"
+                  >
+                    Partner Program
+                  </Link>
+                </li>
+              </ul>
             </div>
 
-            {/* Legal Links */}
-            <div className="flex items-center gap-4">
-              <Link
-                href="/Privacy"
-                target="_blank"
-                className="text-xs text-white hover:text-orange-600 transition-colors"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="/Terms"
-                target="_blank"
-                className="text-xs text-white hover:text-orange-600 transition-colors"
-              >
-                Terms of Use
-              </Link>
+            {/* Contact Info */}
+            <div>
+              <h3 className="text-white font-semibold mb-4">Contact</h3>
+              <ul className="space-y-4">
+                <li>
+                  <Link
+                    href="mailto:hello@fusioncalling.com"
+                    className="flex items-start gap-3 text-sm text-gray-400 hover:text-orange-600 transition-colors"
+                  >
+                    <Mail className="h-5 w-5 flex-shrink-0 mt-0.5" />
+                    <span>hello@fusioncalling.com</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="tel:+19146394069"
+                    className="flex items-start gap-3 text-sm text-gray-400 hover:text-orange-600 transition-colors"
+                  >
+                    <Phone className="h-5 w-5 flex-shrink-0 mt-0.5" />
+                    <span>+1 (914) 639-4069</span>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="border-t border-gray-800 pt-8">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <p className="text-sm text-gray-500">
+                © {new Date().getFullYear()} Fusion Calling. All rights reserved.
+              </p>
+              <div className="flex items-center gap-6">
+                <Link
+                  href="/Privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-gray-500 hover:text-orange-600 transition-colors"
+                >
+                  Privacy Policy
+                </Link>
+                <Link
+                  href="/Terms"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-gray-500 hover:text-orange-600 transition-colors"
+                >
+                  Terms of Service
+                </Link>
+                <Link
+                  href="/docs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-gray-500 hover:text-orange-600 transition-colors"
+                >
+                  Docs
+                </Link>
+              </div>
             </div>
           </div>
         </div>
