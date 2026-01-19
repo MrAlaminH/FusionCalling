@@ -72,11 +72,11 @@ export default function CTA() {
               partners@fusioncalling.com
             </a>
             <a
-              href="tel:+12029983591"
+              href="tel:+19146394069"
               className="flex items-center gap-2 text-orange-500 hover:text-orange-400 transition-colors text-sm sm:text-base"
             >
               <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
-              +1 (202) 998-3591
+              +1 (914) 639-4069
             </a>
           </div>
         </motion.div>

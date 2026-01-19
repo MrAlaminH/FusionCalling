@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Facebook, Linkedin, Mail, Phone, Twitter, ArrowRight } from "lucide-react";
 
 export default function Footer() {
@@ -49,9 +50,16 @@ export default function Footer() {
             {/* Company Info */}
             <div className="flex flex-col space-y-4">
               <Link
-                href="/"
-                className="text-2xl font-bold text-orange-600 transition-colors"
+                href="#home"
+                className="flex items-center gap-3 text-2xl font-bold text-orange-600 transition-colors"
               >
+                <Image
+                  src="/logo.png"
+                  alt="Fusion Calling Logo"
+                  width={32}
+                  height={32}
+                  className="object-contain"
+                />
                 Fusion Calling
               </Link>
               <p className="text-sm text-gray-400 leading-relaxed">
