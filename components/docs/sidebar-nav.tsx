@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 interface NavItem {
   id: string;
@@ -20,7 +21,7 @@ export default function SidebarNav({ items }: SidebarNavProps) {
   useEffect(() => {
     const handleScroll = () => {
       const sections = items.flatMap((item) =>
-        item.children ? item.children.map((child) => child.id) : [item.id]
+        item.children ? item.children.map((child) => child.id) : [item.id],
       );
 
       const current = sections.find((id) => {
@@ -32,6 +33,10 @@ export default function SidebarNav({ items }: SidebarNavProps) {
 
       if (current) {
         setActiveSection(current);
+        // Update URL hash without causing scroll
+        if (window.location.hash !== `#${current}`) {
+          window.history.replaceState(null, "", `#${current}`);
+        }
       }
     };
 
@@ -40,6 +45,27 @@ export default function SidebarNav({ items }: SidebarNavProps) {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, [items]);
+
+  // Handle hash navigation on mount and hash change
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.slice(1);
+      if (hash) {
+        setTimeout(() => {
+          scrollToSection(hash);
+        }, 0);
+      }
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+
+    // Check for hash on initial load
+    if (window.location.hash) {
+      handleHashChange();
+    }
+
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -52,6 +78,10 @@ export default function SidebarNav({ items }: SidebarNavProps) {
         top: offsetPosition,
         behavior: "smooth",
       });
+
+      // Update URL hash
+      window.history.pushState(null, "", `#${id}`);
+      setActiveSection(id);
       setIsOpen(false);
     }
   };
@@ -103,6 +133,18 @@ export default function SidebarNav({ items }: SidebarNavProps) {
         }`}
       >
         <nav className="p-4 space-y-2">
+          {/* Back to Documentation Hub */}
+          <Link
+            href="/docs"
+            onClick={() => setIsOpen(false)}
+            className="flex items-center gap-2 px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-900 transition-colors mb-4"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            <span className="text-sm font-medium">Back to Hub</span>
+          </Link>
+
+          <div className="border-t border-gray-800 my-4" />
+
           <div className="mb-4">
             <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider px-4">
               Documentation

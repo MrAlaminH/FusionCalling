@@ -46,6 +46,39 @@ const docSections: DocSection[] = [
       "Troubleshooting",
     ],
   },
+  {
+    id: "agent-configuration",
+    title: "Agent Configuration",
+    description:
+      "Complete guide for creating and configuring AI phone agents with advanced settings, best practices, and troubleshooting tips.",
+    icon: "🤖",
+    href: "/docs/agent-configuration",
+    color: "purple",
+    topics: [
+      "Getting Started",
+      "Configuration Tabs",
+      "Best Practices",
+      "Common Use Cases",
+      "Troubleshooting",
+    ],
+  },
+  {
+    id: "admin-section",
+    title: "Admin Section Guide",
+    description:
+      "Comprehensive resource for agency owners to manage clients, users, AI credentials, branding, credits, and subscriptions.",
+    icon: "⚙️",
+    href: "/docs/admin-section",
+    color: "green",
+    topics: [
+      "Client Management",
+      "User Management",
+      "AI Credentials",
+      "Branding",
+      "Credits & Subscriptions",
+      "Best Practices",
+    ],
+  },
   // Future sections template:
   // {
   //   id: "integrations",
