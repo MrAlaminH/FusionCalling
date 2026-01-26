@@ -19,7 +19,7 @@ export default function HowItWorks() {
     {
       icon: FileCheck,
       step: "01",
-      title: "Apply & Get Approved",
+      title: "Schedule a call or email to apply",
       description:
         "Submit your application and get approved within 48 hours. We review your agency to ensure a successful partnership.",
     },
@@ -28,7 +28,7 @@ export default function HowItWorks() {
       step: "02",
       title: "Customize Your Brand",
       description:
-        "Set up your white-label environment with your logo, colors, and custom voice. Launch your branded AI solution.",
+        "Set up your white-label environment with your logo, colors, and domain. Launch your branded AI solution.",
     },
     {
       icon: DollarSign,

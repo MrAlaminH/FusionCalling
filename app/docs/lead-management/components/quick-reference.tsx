@@ -92,7 +92,7 @@ export function QuickReferenceSection() {
           <div className="space-y-2 font-mono text-sm text-gray-300">
             <code className="block">+12125551234</code>
             <code className="block">+447911123456</code>
-            <code className="block">+8801966317966</code>
+            <code className="block">+8801977317066</code>
           </div>
         </div>
 
@@ -101,7 +101,7 @@ export function QuickReferenceSection() {
           <div className="space-y-2 font-mono text-sm text-gray-300">
             <code className="block">212-555-1234</code>
             <code className="block">(212) 555-1234</code>
-            <code className="block">01966317966</code>
+            <code className="block">01977317066</code>
           </div>
         </div>
       </div>

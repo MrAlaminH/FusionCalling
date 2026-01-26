@@ -106,7 +106,7 @@ export function GettingStartedSection() {
             <span>
               Example:{" "}
               <code className="text-orange-400 bg-gray-900/50 px-2 py-1 rounded">
-                +8801966317966
+                +8801977317066
               </code>{" "}
               (Bangladesh)
             </span>

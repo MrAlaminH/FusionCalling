@@ -23,7 +23,7 @@ export default function FAQ() {
     {
       question: "How long does it take to get started?",
       answer:
-        "Once approved, you can launch your white-label solution within 7-10 days. This includes branding setup, voice training, and dashboard customization. Our team guides you through every step of the process.",
+        "Once approved, you can launch your white-label solution within 1-2 days. This includes branding setup, voice training, and dashboard customization. Our team guides you through every step of the process.",
     },
     {
       question: "Do I need technical expertise?",
@@ -43,7 +43,7 @@ export default function FAQ() {
     {
       question: "What support do partners receive?",
       answer:
-        "All partners receive email support and access to our partner portal. Pro Partners get priority support (48-hour response time). Enterprise Partners receive 24/7 dedicated support with a dedicated account manager.",
+        "All partners receive email and whatsapp support and access to our partner portal. Pro Partners get priority support (24-hour response time). Enterprise Partners receive 24/7 dedicated support with a dedicated account manager.",
     },
     {
       question: "Is there a setup fee?",
@@ -58,7 +58,7 @@ export default function FAQ() {
     {
       question: "How do voice and branding customization work?",
       answer:
-        "You provide your brand assets (logo, colors, fonts) and optionally a voice sample. Our team customizes your white-label environment and trains AI agents with your preferred voice. Most agencies complete this within their first week.",
+        "You provide your brand assets (logo, colors, domain) and optionally a agent voice sample. Our team customizes your white-label environment and trains AI agents with your preferred voice. Most agencies complete this within their first week.",
     },
     {
       question: "Can I cancel my partnership?",
