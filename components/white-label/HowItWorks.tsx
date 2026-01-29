@@ -7,6 +7,7 @@ import {
   Palette,
   DollarSign,
   TrendingUp,
+  ArrowDown,
   ArrowRight,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -47,23 +48,27 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section className="w-full bg-black py-16 sm:py-20 md:py-24" ref={ref}>
+    <section className="w-full bg-black section-spacing" ref={ref}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Header */}
         <motion.div
-          className="text-center mb-12 sm:mb-16 md:mb-20"
+          className="text-center mb-10 md:mb-12 lg:mb-16"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -20 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.2,
+            ease: [0.25, 0.1, 0.25, 1.0],
+          }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 tracking-tight">
             How to Launch Your
-            <span className="bg-gradient-to-r from-orange-500 to-orange-600 text-transparent bg-clip-text">
+            <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 text-transparent bg-clip-text">
               {" "}
               White-label Business
             </span>
           </h2>
-          <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-3xl mx-auto">
+          <p className="font-body text-gray-400 text-base sm:text-lg md:text-xl max-w-3xl mx-auto">
             From application to first sale in as little as one week. We handle
             the technology, you focus on growing your agency.
           </p>
@@ -74,7 +79,7 @@ export default function HowItWorks() {
           {/* Vertical line connecting steps - visible on md and up */}
           <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange-500/0 via-orange-500/50 to-orange-500/0"></div>
 
-          <div className="space-y-8 sm:space-y-12 md:space-y-16">
+          <div className="space-y-8 sm:space-y-10 md:space-y-12">
             {steps.map((step, index) => {
               const Icon = step.icon;
               const isEven = index % 2 === 0;
@@ -83,15 +88,19 @@ export default function HowItWorks() {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-                  transition={{ duration: 0.8, delay: 0.4 + index * 0.15 }}
+                  transition={{
+                    duration: 0.8,
+                    delay: 0.4 + index * 0.15,
+                    ease: [0.25, 0.1, 0.25, 1.0],
+                  }}
                   className={`relative flex flex-col md:flex-row items-center gap-6 sm:gap-8 ${
                     isEven ? "md:flex-row" : "md:flex-row-reverse"
                   }`}
                 >
                   {/* Step Number Badge */}
                   <div className="relative z-10 flex-shrink-0">
-                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-lg shadow-orange-500/30">
-                      <span className="text-2xl sm:text-3xl font-bold text-white">
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-premium">
+                      <span className="font-display text-2xl sm:text-3xl font-bold text-white">
                         {step.step}
                       </span>
                     </div>
@@ -99,7 +108,7 @@ export default function HowItWorks() {
 
                   {/* Card */}
                   <div className="flex-grow w-full">
-                    <Card className="bg-black border-orange-500/20 hover:border-orange-500/40 transition-all duration-500 hover:shadow-lg hover:shadow-orange-500/10 group">
+                    <Card className="glass-light border-orange-500/20 hover:border-orange-500/40 transition-all duration-500 hover:shadow-premium group">
                       <CardContent className="p-6 sm:p-8">
                         <div className="flex items-start gap-4 sm:gap-6">
                           <div className="flex-shrink-0 hidden md:block">
@@ -113,16 +122,16 @@ export default function HowItWorks() {
                               <div className="w-12 h-12 rounded-lg bg-orange-500/10 border border-orange-500/30 flex items-center justify-center">
                                 <Icon className="w-6 h-6 text-orange-500" />
                               </div>
-                              <h3 className="text-xl sm:text-2xl font-bold text-white">
+                              <h3 className="font-display text-xl sm:text-2xl font-bold text-white">
                                 {step.title}
                               </h3>
                             </div>
                             <div className="hidden md:block mb-3">
-                              <h3 className="text-xl sm:text-2xl font-bold text-white">
+                              <h3 className="font-display text-xl sm:text-2xl font-bold text-white">
                                 {step.title}
                               </h3>
                             </div>
-                            <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
+                            <p className="font-body text-gray-400 text-sm sm:text-base leading-relaxed">
                               {step.description}
                             </p>
                           </div>
@@ -134,7 +143,7 @@ export default function HowItWorks() {
                   {/* Arrow indicator - visible on md and up */}
                   {index < steps.length - 1 && (
                     <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-1/2 mt-8 z-20">
-                      <ArrowRight className="w-8 h-8 text-orange-500" />
+                      <ArrowDown className="w-8 h-8 text-orange-500" />
                     </div>
                   )}
                 </motion.div>
@@ -147,19 +156,25 @@ export default function HowItWorks() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
-          className="mt-16 sm:mt-20 md:mt-24 text-center"
+          transition={{
+            duration: 0.8,
+            delay: 1.2,
+            ease: [0.25, 0.1, 0.25, 1.0],
+          }}
+          className="mt-12 md:mt-16 lg:mt-20 text-center"
         >
-          <p className="text-gray-400 text-base sm:text-lg mb-4 sm:mb-6">
+          <p className="font-body text-gray-400 text-base sm:text-lg md:text-xl mb-4 md:mb-6">
             Ready to launch your white-label business?
           </p>
-          <a
+          <motion.a
             href="#cta"
-            className="inline-flex items-center rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 px-6 sm:px-8 md:px-10 py-3 sm:py-4 text-sm sm:text-base font-medium text-white transition-all hover:from-orange-600 hover:to-orange-700 hover:scale-105 shadow-lg shadow-orange-500/30"
+            className="inline-flex items-center rounded-2xl bg-gradient-to-r from-orange-500 to-orange-600 px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 text-sm sm:text-base font-semibold text-white transition-all shadow-premium hover:shadow-premium-lg hover:from-orange-600 hover:to-orange-700 hover:scale-105"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.98 }}
           >
             Apply Now
             <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
-          </a>
+          </motion.a>
         </motion.div>
       </div>
     </section>

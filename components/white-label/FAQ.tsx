@@ -68,11 +68,11 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="w-full bg-black py-16 sm:py-20 md:py-24" ref={ref}>
+    <section className="w-full bg-black section-spacing" ref={ref}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         {/* Header */}
         <motion.div
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-10 md:mb-12 lg:mb-16"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -20 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -82,14 +82,14 @@ export default function FAQ() {
               <HelpCircle className="w-7 h-7 text-orange-500" />
             </div>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 tracking-tight">
             Frequently Asked
-            <span className="bg-gradient-to-r from-orange-500 to-orange-600 text-transparent bg-clip-text">
+            <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 text-transparent bg-clip-text">
               {" "}
               Questions
             </span>
           </h2>
-          <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-3xl mx-auto">
+          <p className="font-body text-gray-400 text-base sm:text-lg md:text-xl max-w-3xl mx-auto">
             Everything you need to know about becoming a Fusion Calling partner.
             Don&apos;t see your question? Reach out to our team.
           </p>
@@ -106,14 +106,14 @@ export default function FAQ() {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-gradient-to-b from-zinc-900/50 to-black border border-orange-500/20 rounded-lg px-6 hover:border-orange-500/40 transition-all duration-300"
+                className="glass-light border border-orange-500/20 rounded-xl px-6 md:px-8 hover:border-orange-500/40 transition-all duration-300"
               >
-                <AccordionTrigger className="text-white text-left hover:no-underline py-6">
-                  <span className="text-base sm:text-lg font-medium">
+                <AccordionTrigger className="text-white text-left hover:no-underline py-5 md:py-6">
+                  <span className="font-body text-base sm:text-lg md:text-xl font-medium">
                     {faq.question}
                   </span>
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-400 text-sm sm:text-base leading-relaxed pb-6">
+                <AccordionContent className="font-body text-gray-400 text-sm sm:text-base leading-relaxed pb-5 md:pb-6">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -126,17 +126,19 @@ export default function FAQ() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-12 sm:mt-16 text-center"
+          className="mt-10 md:mt-12 lg:mt-16 text-center"
         >
-          <p className="text-gray-400 text-base sm:text-lg mb-4 sm:mb-6">
+          <p className="font-body text-gray-400 text-base sm:text-lg md:text-xl mb-4 md:mb-6">
             Still have questions?
           </p>
-          <a
+          <motion.a
             href="#cta"
-            className="inline-flex items-center rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 px-6 sm:px-8 md:px-10 py-3 sm:py-4 text-sm sm:text-base font-medium text-white transition-all hover:from-orange-600 hover:to-orange-700 hover:scale-105 shadow-lg shadow-orange-500/30"
+            className="inline-flex items-center rounded-2xl bg-gradient-to-r from-orange-500 to-orange-600 px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 text-sm sm:text-base font-semibold text-white transition-all shadow-premium hover:shadow-premium-lg hover:from-orange-600 hover:to-orange-700 hover:scale-105"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.98 }}
           >
             Talk to Our Team
-          </a>
+          </motion.a>
         </motion.div>
       </div>
     </section>

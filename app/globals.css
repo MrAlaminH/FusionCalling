@@ -2,8 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.font-display {
+  font-family: "Outfit", sans-serif;
+}
+
+.font-body {
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 @layer utilities {
@@ -161,4 +171,115 @@ html {
 .custom-chat-icon:hover {
   transform: scale(1.1); /* Add a hover effect */
   transition: transform 0.2s ease-in-out;
+}
+
+/* ===== Visual Depth Enhancements ===== */
+
+/* Subtle grain texture for premium feel */
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Gradient mesh backgrounds */
+.gradient-mesh {
+  background:
+    radial-gradient(at 40% 20%, rgba(249, 115, 22, 0.08) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, rgba(34, 197, 94, 0.05) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, rgba(249, 115, 22, 0.03) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, rgba(34, 197, 94, 0.03) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(249, 115, 22, 0.08) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Enhanced shadow system */
+.shadow-premium {
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.3),
+    0 2px 4px -2px rgba(0, 0, 0, 0.2),
+    0 20px 40px -15px rgba(249, 115, 22, 0.1);
+}
+
+.shadow-premium-lg {
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.4),
+    0 4px 6px -4px rgba(0, 0, 0, 0.3),
+    0 30px 60px -20px rgba(249, 115, 22, 0.15);
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Smooth transitions with custom easing */
+.transition-premium {
+  transition: all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.transition-premium-fast {
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Better spacing system - More balanced section spacing */
+.section-spacing {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .section-spacing {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-spacing {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+/* Atmospheric floating particles */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+    opacity: 0.2;
+  }
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(249, 115, 22, 0.15) 0%,
+    transparent 70%
+  );
+  filter: blur(40px);
+  animation: float 8s ease-in-out infinite;
+  pointer-events: none;
 }
