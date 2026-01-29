@@ -17,8 +17,8 @@ export default function VoiceCalculator() {
   // State
   const [provider, setProvider] = useState("vapi");
   const [concurrency, setConcurrency] = useState(10);
-  const [duration, setDuration] = useState(7);
-  const [accounts, setAccounts] = useState(10);
+  const [duration, setDuration] = useState(1);
+  const [accounts, setAccounts] = useState(1);
   const [cronInterval, setCronInterval] = useState(3); // Minutes
 
   // Sync concurrency when provider changes

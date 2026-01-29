@@ -1,7 +1,48 @@
+import Link from "next/link";
+import { Calculator, ArrowRight } from "lucide-react";
+
 export function QuickReferenceSection() {
   return (
     <section id="quick-reference" className="mb-16 scroll-mt-24">
       <h2 className="text-3xl font-bold mb-6 text-white">Quick Reference</h2>
+
+      {/* Voice Throughput Calculator Card */}
+      <div className="bg-indigo-900/20 border border-indigo-500/30 rounded-xl p-6 mb-10">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+          <div className="p-3 bg-indigo-600/20 rounded-lg shrink-0">
+            <Calculator className="w-8 h-8 text-indigo-400" />
+          </div>
+          <div className="flex-1">
+            <h3 className="text-xl font-semibold text-white mb-2">
+              Voice Throughput Calculator
+            </h3>
+            <p className="text-gray-300 text-sm mb-3">
+              Estimate your calling capacity based on concurrency, call
+              duration, and batch frequency. Plan your lead processing strategy
+              and understand infrastructure limits before scaling your
+              campaigns.
+            </p>
+            <div className="flex flex-wrap gap-2 text-xs text-gray-400">
+              <span className="bg-gray-800/50 px-2 py-1 rounded">
+                Concurrency Planning
+              </span>
+              <span className="bg-gray-800/50 px-2 py-1 rounded">
+                Throughput Estimation
+              </span>
+              <span className="bg-gray-800/50 px-2 py-1 rounded">
+                Infrastructure Limits
+              </span>
+            </div>
+          </div>
+          <Link
+            href="/calculator"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-lg transition-colors shrink-0"
+          >
+            Open Calculator
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </div>
 
       <h3 className="text-2xl font-semibold mb-4 text-white">
         Status Meanings
