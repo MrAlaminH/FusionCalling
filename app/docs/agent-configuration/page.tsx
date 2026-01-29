@@ -1,4 +1,7 @@
 import SidebarNav from "@/components/docs/sidebar-nav";
+import Breadcrumbs from "@/components/docs/breadcrumbs";
+import OnThisPage from "@/components/docs/on-this-page";
+import SectionHeader from "@/components/docs/section-header";
 import type { Metadata } from "next";
 import { OverviewSection } from "./components/overview";
 import { GettingStartedSection } from "./components/getting-started";
@@ -9,7 +12,7 @@ import { TroubleshootingSection } from "./components/troubleshooting";
 import { QuickReferenceSection } from "./components/quick-reference";
 
 export const metadata: Metadata = {
-  title: "Docs: Agent Configuration Guide",
+  title: "Agent Configuration Guide",
   description:
     "Complete guide to creating and configuring AI phone agents: agent setup, configuration tabs, best practices, common use cases, and troubleshooting.",
   alternates: {
@@ -27,22 +30,26 @@ const navItems = [
   { id: "quick-reference", label: "Quick Reference" },
 ];
 
+const breadcrumbs = [
+  { label: "Agent Configuration", href: "/docs/agent-configuration" },
+  { label: "Guide" },
+];
+
 export default function AgentConfigurationPage() {
   return (
     <div className="min-h-screen bg-black text-white pt-20">
       <div className="flex relative">
         <SidebarNav items={navItems} />
+
         <main className="flex-1 lg:ml-64 w-full">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div className="mb-12">
-              <h1 className="text-5xl font-bold mb-6 text-white">
-                Agent Configuration Guide
-              </h1>
-              <p className="text-xl text-gray-300">
-                A complete guide to creating and configuring AI phone agents in
-                your application.
-              </p>
-            </div>
+            <Breadcrumbs items={breadcrumbs} />
+
+            <SectionHeader
+              title="Agent Configuration Guide"
+              description="A complete guide to creating and configuring AI phone agents in your application. Learn how to set up agents, configure their behavior, and optimize them for your specific use cases."
+              difficulty="intermediate"
+            />
 
             {/* Sections */}
             <OverviewSection />
@@ -54,6 +61,9 @@ export default function AgentConfigurationPage() {
             <QuickReferenceSection />
           </div>
         </main>
+
+        {/* Right Sidebar - On This Page */}
+        <OnThisPage />
       </div>
     </div>
   );

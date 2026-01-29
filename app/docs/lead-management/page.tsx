@@ -1,5 +1,7 @@
 import SidebarNav from "@/components/docs/sidebar-nav";
-import Link from "next/link";
+import Breadcrumbs from "@/components/docs/breadcrumbs";
+import OnThisPage from "@/components/docs/on-this-page";
+import SectionHeader from "@/components/docs/section-header";
 import type { Metadata } from "next";
 import { OverviewSection } from "./components/overview";
 import { GettingStartedSection } from "./components/getting-started";
@@ -13,7 +15,7 @@ import { TroubleshootingSection } from "./components/troubleshooting";
 import { QuickReferenceSection } from "./components/quick-reference";
 
 export const metadata: Metadata = {
-  title: "Docs: Lead Management User Guide",
+  title: "Lead Management User Guide",
   description:
     "Complete guide to managing leads in Fusion Calling: adding leads, understanding statuses, configuring providers, custom fields, retry system, and best practices.",
   alternates: {
@@ -41,21 +43,26 @@ const navItems = [
   { id: "quick-reference", label: "Quick Reference" },
 ];
 
+const breadcrumbs = [
+  { label: "Lead Management", href: "/docs/lead-management" },
+  { label: "User Guide" },
+];
+
 export default function LeadManagementDocsPage() {
   return (
     <div className="min-h-screen bg-black text-white pt-20">
       <div className="flex relative">
         <SidebarNav items={navItems} />
+
         <main className="flex-1 lg:ml-64 w-full">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            {/* Back to Docs Button */}
-            <Link
-              href="/docs"
-              className="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 mb-8 text-sm font-medium transition-colors"
-            >
-              <span>←</span>
-              <span>Back to Documentation</span>
-            </Link>
+            <Breadcrumbs items={breadcrumbs} />
+
+            <SectionHeader
+              title="Lead Management User Guide"
+              description="The Lead Management system allows you to upload, organize, and automatically call leads using AI-powered calling agents. This guide covers everything you need to know to effectively manage your leads, from adding them to tracking their status through the calling process."
+              difficulty="beginner"
+            />
 
             {/* All Sections Imported as Components */}
             <OverviewSection />
@@ -70,6 +77,9 @@ export default function LeadManagementDocsPage() {
             <QuickReferenceSection />
           </div>
         </main>
+
+        {/* Right Sidebar - On This Page */}
+        <OnThisPage />
       </div>
     </div>
   );

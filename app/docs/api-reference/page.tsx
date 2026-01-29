@@ -1,11 +1,15 @@
 import SidebarNav from "@/components/docs/sidebar-nav";
 import EndpointCard from "@/components/docs/endpoint-card";
 import CodeBlock from "@/components/docs/code-block";
-import Link from "next/link";
+import Breadcrumbs from "@/components/docs/breadcrumbs";
+import OnThisPage from "@/components/docs/on-this-page";
+import SectionHeader from "@/components/docs/section-header";
+import CodeTabs from "@/components/docs/code-tabs";
+import Callout from "@/components/docs/callout";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Docs: External Calendar API Reference",
+  title: "External Calendar API Reference",
   description:
     "Fusion Calling External Calendar API documentation: authentication, endpoints, data models, rate limits, and code examples.",
   alternates: {
@@ -35,49 +39,50 @@ const navItems = [
   { id: "best-practices", label: "Best Practices" },
 ];
 
+const breadcrumbs = [
+  { label: "API Reference", href: "/docs/api-reference" },
+  { label: "External Calendar API" },
+];
+
 export default function ApiReferencePage() {
   return (
     <div className="min-h-screen bg-black text-white pt-20">
       <div className="flex relative">
         <SidebarNav items={navItems} />
+
         <main className="flex-1 lg:ml-64 w-full">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            {/* Back to Docs Button */}
-            <Link
-              href="/docs"
-              className="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 mb-8 text-sm font-medium transition-colors"
-            >
-              <span>←</span>
-              <span>Back to Documentation</span>
-            </Link>
+            <Breadcrumbs items={breadcrumbs} />
+
+            <SectionHeader
+              title="External Calendar API Reference"
+              description="The Fusion Calling External Calendar API allows you to programmatically manage calendar events using API key authentication. This RESTful API provides full CRUD (Create, Read, Update, Delete) operations for calendar events."
+              difficulty="intermediate"
+            />
 
             {/* Overview */}
             <section id="overview" className="mb-16 scroll-mt-24">
-              <h1 className="text-4xl font-bold mb-4 text-white">
-                External Calendar API Reference
-              </h1>
-              <p className="text-gray-300 text-lg mb-6">
-                The Fusion Calling External Calendar API allows you to
-                programmatically manage calendar events using API key
-                authentication. This RESTful API provides full CRUD (Create,
-                Read, Update, Delete) operations for calendar events, enabling
-                seamless integration with automation tools, webhooks, and
-                third-party applications.
-              </p>
               <div className="bg-gray-900 rounded-lg border border-gray-800 p-6 my-6">
-                <div className="space-y-2">
-                  <div>
-                    <span className="text-gray-400">Base URL:</span>
-                    <code className="ml-2 text-orange-400">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-4">
+                    <span className="text-gray-400 w-24">Base URL:</span>
+                    <code className="text-orange-400 bg-black/50 px-3 py-1.5 rounded">
                       https://app.fusioncalling.com/api/calendar/external/v1
                     </code>
                   </div>
-                  <div>
-                    <span className="text-gray-400">API Version:</span>
-                    <code className="ml-2 text-orange-400">v1</code>
+                  <div className="flex items-center gap-4">
+                    <span className="text-gray-400 w-24">API Version:</span>
+                    <code className="text-orange-400 bg-black/50 px-3 py-1.5 rounded">
+                      v1
+                    </code>
                   </div>
                 </div>
               </div>
+
+              <Callout type="info">
+                All API requests require authentication using an API key. See
+                the Authentication section below for details.
+              </Callout>
             </section>
 
             {/* Authentication */}
@@ -112,15 +117,46 @@ export default function ApiReferencePage() {
                 <code className="text-orange-400">Authorization</code> header of
                 every request:
               </p>
+
               <CodeBlock
                 code={`Authorization: Bearer your-api-key-here`}
                 language="bash"
               />
+
               <p className="text-gray-300 mb-4 mt-4">Example:</p>
-              <CodeBlock
-                code={`curl -X GET "https://app.fusioncalling.com/api/calendar/external/v1/events" \\
-  -H "Authorization: Bearer bf207bcf-c0de-4067-bd28-45728bd305aa"`}
-                language="bash"
+
+              <CodeTabs
+                examples={[
+                  {
+                    language: "bash",
+                    label: "cURL",
+                    code: `curl -X GET "https://app.fusioncalling.com/api/calendar/external/v1/events" \\
+  -H "Authorization: Bearer bf207bcf-c0de-4067-bd28-45728bd305aa"`,
+                  },
+                  {
+                    language: "javascript",
+                    label: "JavaScript",
+                    code: `const response = await fetch('https://app.fusioncalling.com/api/calendar/external/v1/events', {
+  headers: {
+    'Authorization': 'Bearer bf207bcf-c0de-4067-bd28-45728bd305aa'
+  }
+});`,
+                  },
+                  {
+                    language: "python",
+                    label: "Python",
+                    code: `import requests
+
+headers = {
+    'Authorization': 'Bearer bf207bcf-c0de-4067-bd28-45728bd305aa'
+}
+
+response = requests.get(
+    'https://app.fusioncalling.com/api/calendar/external/v1/events',
+    headers=headers
+)`,
+                  },
+                ]}
               />
             </section>
 
@@ -498,9 +534,6 @@ export default function ApiReferencePage() {
               <h3 className="text-2xl font-semibold mb-4 text-white mt-8">
                 Supported Formats
               </h3>
-              <p className="text-gray-300 mb-4">
-                All of these formats are accepted:
-              </p>
 
               <div className="space-y-4 mb-6">
                 <div className="bg-gray-900 rounded-lg border border-gray-800 p-4">
@@ -568,16 +601,6 @@ export default function ApiReferencePage() {
                   <CodeBlock code={`2025-12-15 14:30:00`} language="text" />
                   <p className="text-gray-400 text-sm mt-2">
                     Space instead of T (assumes UTC)
-                  </p>
-                </div>
-
-                <div className="bg-gray-900 rounded-lg border border-gray-800 p-4">
-                  <h4 className="text-white font-semibold mb-2">
-                    6. Other JavaScript Date Formats:
-                  </h4>
-                  <p className="text-gray-400 text-sm">
-                    Any format parseable by JavaScript&apos;s{" "}
-                    <code className="text-orange-400">Date()</code> constructor
                   </p>
                 </div>
               </div>
@@ -896,10 +919,15 @@ export default function ApiReferencePage() {
               </h2>
 
               <h3 className="text-2xl font-semibold mb-4 text-white mt-8">
-                JavaScript/TypeScript (Fetch API)
+                Complete CRUD Operations
               </h3>
-              <CodeBlock
-                code={`const API_KEY = "your-api-key-here";
+
+              <CodeTabs
+                examples={[
+                  {
+                    language: "javascript",
+                    label: "JavaScript",
+                    code: `const API_KEY = "your-api-key-here";
 const BASE_URL = "https://app.fusioncalling.com/api/calendar/external/v1";
 
 // List events
@@ -956,41 +984,12 @@ async function deleteEvent(eventId) {
   });
 
   return await response.json();
-}
-
-// Example usage
-(async () => {
-  // Create an event
-  const newEvent = await createEvent({
-    title: "Team Standup",
-    description: "Daily sync meeting",
-    start_time: "2025-12-15T09:00:00",
-    end_time: "2025-12-15T09:30:00",
-    all_day: false,
-  });
-  console.log("Created:", newEvent);
-
-  // List events
-  const events = await listEvents("2025-12-01T00:00:00", "2025-12-31T23:59:59");
-  console.log("Events:", events);
-
-  // Update event
-  if (newEvent.success) {
-    const updated = await updateEvent(newEvent.data.id, {
-      title: "Updated Standup",
-      start_time: "2025-12-15T09:15:00",
-    });
-    console.log("Updated:", updated);
-  }
-})();`}
-                language="javascript"
-              />
-
-              <h3 className="text-2xl font-semibold mb-4 text-white mt-8">
-                Python (requests)
-              </h3>
-              <CodeBlock
-                code={`import requests
+}`,
+                  },
+                  {
+                    language: "python",
+                    label: "Python",
+                    code: `import requests
 from datetime import datetime
 
 API_KEY = 'your-api-key-here'
@@ -1039,43 +1038,12 @@ def delete_event(event_id):
         f'{BASE_URL}/events/{event_id}',
         headers=headers
     )
-    return response.json()
-
-# Example usage
-if __name__ == '__main__':
-    # Create an event
-    new_event = create_event(
-        title='Team Standup',
-        description='Daily sync meeting',
-        start_time='2025-12-15T09:00:00',
-        end_time='2025-12-15T09:30:00',
-        all_day=False
-    )
-    print('Created:', new_event)
-
-    # List events
-    events = list_events(
-        from_date='2025-12-01T00:00:00',
-        to_date='2025-12-31T23:59:59'
-    )
-    print('Events:', events)
-
-    # Update event
-    if new_event.get('success'):
-        updated = update_event(
-            new_event['data']['id'],
-            title='Updated Standup',
-            start_time='2025-12-15T09:15:00'
-        )
-        print('Updated:', updated)`}
-                language="python"
-              />
-
-              <h3 className="text-2xl font-semibold mb-4 text-white mt-8">
-                cURL Examples
-              </h3>
-              <CodeBlock
-                code={`# Set your API key
+    return response.json()`,
+                  },
+                  {
+                    language: "bash",
+                    label: "cURL",
+                    code: `# Set your API key
 API_KEY="your-api-key-here"
 BASE_URL="https://app.fusioncalling.com/api/calendar/external/v1"
 
@@ -1109,8 +1077,9 @@ curl -X PATCH "\${BASE_URL}/events/550e8400-e29b-41d4-a716-446655440000" \\
 
 # Delete event
 curl -X DELETE "\${BASE_URL}/events/550e8400-e29b-41d4-a716-446655440000" \\
-  -H "Authorization: Bearer \${API_KEY}"`}
-                language="bash"
+  -H "Authorization: Bearer \${API_KEY}"`,
+                  },
+                ]}
               />
             </section>
 
@@ -1220,7 +1189,7 @@ curl -X DELETE "\${BASE_URL}/events/550e8400-e29b-41d4-a716-446655440000" \\
                     <li>
                       Validate{" "}
                       <code className="text-orange-400">
-                        end_time &gt; start_time
+                        {"end_time > start_time"}
                       </code>{" "}
                       before creating/updating events
                     </li>
@@ -1291,6 +1260,9 @@ curl -X DELETE "\${BASE_URL}/events/550e8400-e29b-41d4-a716-446655440000" \\
             </section>
           </div>
         </main>
+
+        {/* Right Sidebar - On This Page */}
+        <OnThisPage />
       </div>
     </div>
   );
