@@ -148,6 +148,148 @@ export function QuickReferenceSection() {
       </div>
 
       <h3 className="text-2xl font-semibold mb-4 text-white">
+        Error Messages Quick Reference
+      </h3>
+      <div className="overflow-x-auto mb-8">
+        <table className="w-full text-sm border border-gray-800 rounded-lg overflow-hidden">
+          <thead>
+            <tr className="bg-gray-900 border-b border-gray-800">
+              <th className="px-4 py-3 text-left text-red-400 font-semibold">
+                Permanent Errors (Action Required)
+              </th>
+              <th className="px-4 py-3 text-left text-orange-400 font-semibold">
+                What It Means
+              </th>
+              <th className="px-4 py-3 text-left text-green-400 font-semibold">
+                What To Do
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b border-gray-800 hover:bg-gray-900/50">
+              <td className="px-4 py-3 text-gray-300 font-mono text-xs">
+                Invalid lead phone number format
+              </td>
+              <td className="px-4 py-3 text-gray-300 text-sm">
+                Phone number format is wrong
+              </td>
+              <td className="px-4 py-3 text-gray-400 text-sm">
+                Fix the format to E.164 (+14155551234)
+              </td>
+            </tr>
+            <tr className="border-b border-gray-800 hover:bg-gray-900/50">
+              <td className="px-4 py-3 text-gray-300 font-mono text-xs">
+                Phone number not registered
+              </td>
+              <td className="px-4 py-3 text-gray-300 text-sm">
+                Your caller ID isn&apos;t set up
+              </td>
+              <td className="px-4 py-3 text-gray-400 text-sm">
+                Register phone number in provider dashboard
+              </td>
+            </tr>
+            <tr className="border-b border-gray-800 hover:bg-gray-900/50">
+              <td className="px-4 py-3 text-gray-300 font-mono text-xs">
+                Agent or assistant not found
+              </td>
+              <td className="px-4 py-3 text-gray-300 text-sm">
+                Agent doesn&apos;t exist
+              </td>
+              <td className="px-4 py-3 text-gray-400 text-sm">
+                Check agent ID in settings
+              </td>
+            </tr>
+            <tr className="border-b border-gray-800 hover:bg-gray-900/50">
+              <td className="px-4 py-3 text-gray-300 font-mono text-xs">
+                API key is invalid or missing
+              </td>
+              <td className="px-4 py-3 text-gray-300 text-sm">
+                Authentication failed
+              </td>
+              <td className="px-4 py-3 text-gray-400 text-sm">
+                Check/update API key
+              </td>
+            </tr>
+            <tr className="hover:bg-gray-900/50">
+              <td className="px-4 py-3 text-gray-300 font-mono text-xs">
+                Phone number does not exist
+              </td>
+              <td className="px-4 py-3 text-gray-300 text-sm">
+                Lead&apos;s number is invalid
+              </td>
+              <td className="px-4 py-3 text-gray-400 text-sm">
+                Get correct number from lead
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div className="overflow-x-auto mb-10">
+        <table className="w-full text-sm border border-gray-800 rounded-lg overflow-hidden">
+          <thead>
+            <tr className="bg-gray-900 border-b border-gray-800">
+              <th className="px-4 py-3 text-left text-yellow-400 font-semibold">
+                Temporary Errors (Auto-Retry)
+              </th>
+              <th className="px-4 py-3 text-left text-orange-400 font-semibold">
+                What It Means
+              </th>
+              <th className="px-4 py-3 text-left text-blue-400 font-semibold">
+                What Happens
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b border-gray-800 hover:bg-gray-900/50">
+              <td className="px-4 py-3 text-gray-300 font-mono text-xs">
+                Rate limit exceeded
+              </td>
+              <td className="px-4 py-3 text-gray-300 text-sm">
+                Too many calls too fast
+              </td>
+              <td className="px-4 py-3 text-gray-400 text-sm">
+                System waits and retries
+              </td>
+            </tr>
+            <tr className="border-b border-gray-800 hover:bg-gray-900/50">
+              <td className="px-4 py-3 text-gray-300 font-mono text-xs">
+                Server error
+              </td>
+              <td className="px-4 py-3 text-gray-300 text-sm">
+                Provider is having issues
+              </td>
+              <td className="px-4 py-3 text-gray-400 text-sm">
+                System retries automatically
+              </td>
+            </tr>
+            <tr className="border-b border-gray-800 hover:bg-gray-900/50">
+              <td className="px-4 py-3 text-gray-300 font-mono text-xs">
+                Network or connection error
+              </td>
+              <td className="px-4 py-3 text-gray-300 text-sm">
+                Can&apos;t reach provider
+              </td>
+              <td className="px-4 py-3 text-gray-400 text-sm">
+                System retries automatically
+              </td>
+            </tr>
+            <tr className="hover:bg-gray-900/50">
+              <td className="px-4 py-3 text-gray-300 font-mono text-xs">
+                Unknown error
+              </td>
+              <td className="px-4 py-3 text-gray-300 text-sm">
+                Unexpected issue
+              </td>
+              <td className="px-4 py-3 text-gray-400 text-sm">
+                System retries for safety
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 className="text-2xl font-semibold mb-4 text-white">
         Provider Comparison
       </h3>
       <div className="overflow-x-auto">

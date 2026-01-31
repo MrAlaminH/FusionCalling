@@ -165,6 +165,75 @@ export function TroubleshootingSection() {
             <li>Verify custom field is saved for the lead</li>
           </ol>
         </div>
+
+        {/* Issue 7 - Error Classification */}
+        <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+          <h3 className="text-xl font-semibold text-white mb-4">
+            Understanding Error Messages
+          </h3>
+          <div className="bg-orange-900/20 border border-orange-700/50 rounded p-4 mb-4">
+            <p className="text-orange-400 font-semibold mb-2">
+              Common Error Types:
+            </p>
+            <ul className="space-y-1 text-gray-300 ml-4 text-sm">
+              <li>• Invalid phone number format (E.164 required)</li>
+              <li>• Phone number not registered in account</li>
+              <li>• Agent configuration errors</li>
+              <li>• API key invalid or missing</li>
+              <li>• Rate limit exceeded</li>
+            </ul>
+          </div>
+          <p className="text-white font-semibold mb-3">Solutions:</p>
+          <ol className="space-y-2 text-gray-300 list-decimal list-inside">
+            <li>
+              Check the <strong>Error Classification Guide</strong> section for
+              detailed explanations
+            </li>
+            <li>
+              Verify phone numbers are in E.164 format:{" "}
+              <code className="text-orange-400 bg-gray-950 px-2 py-1 rounded">
+                +14155551234
+              </code>
+            </li>
+            <li>Check API keys in environment variables</li>
+            <li>Verify agent configuration in provider dashboard</li>
+            <li>
+              For rate limits: wait for automatic retry or upgrade your plan
+            </li>
+          </ol>
+        </div>
+
+        {/* Issue 8 - Provider-Specific Errors */}
+        <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+          <h3 className="text-xl font-semibold text-white mb-4">
+            Provider-Specific Errors (Vapi/Retell)
+          </h3>
+          <div className="bg-orange-900/20 border border-orange-700/50 rounded p-4 mb-4">
+            <p className="text-orange-400 font-semibold mb-2">
+              Common Provider Errors:
+            </p>
+            <ul className="space-y-1 text-gray-300 ml-4 text-sm">
+              <li>
+                • &quot;Invalid phone number format&quot; - Check E.164 format
+              </li>
+              <li>• &quot;Agent not found&quot; - Verify agent ID</li>
+              <li>• &quot;Rate limit exceeded&quot; - Too many calls</li>
+              <li>
+                • &quot;Server error&quot; - Provider issue (auto-retries)
+              </li>
+            </ul>
+          </div>
+          <p className="text-white font-semibold mb-3">Solutions:</p>
+          <ol className="space-y-2 text-gray-300 list-decimal list-inside">
+            <li>
+              See the <strong>Error Classification Guide</strong> for
+              provider-specific troubleshooting
+            </li>
+            <li>Check Vapi/Retell dashboard for configuration issues</li>
+            <li>Verify phone numbers are registered in your account</li>
+            <li>Review API key permissions and validity</li>
+          </ol>
+        </div>
       </div>
     </section>
   );

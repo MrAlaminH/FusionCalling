@@ -13,6 +13,7 @@ import { RetrySystemSection } from "./components/retry-system";
 import { BestPracticesSection } from "./components/best-practices";
 import { TroubleshootingSection } from "./components/troubleshooting";
 import { QuickReferenceSection } from "./components/quick-reference";
+import { ErrorClassificationSection } from "./components/error-classification";
 
 export const metadata: Metadata = {
   title: "Lead Management User Guide",
@@ -40,6 +41,7 @@ const navItems = [
   { id: "retry-system", label: "Retry System" },
   { id: "best-practices", label: "Best Practices" },
   { id: "troubleshooting", label: "Troubleshooting" },
+  { id: "error-classification", label: "Error Classification" },
   { id: "quick-reference", label: "Quick Reference" },
 ];
 
@@ -74,6 +76,7 @@ export default function LeadManagementDocsPage() {
             <RetrySystemSection />
             <BestPracticesSection />
             <TroubleshootingSection />
+            <ErrorClassificationSection />
             <QuickReferenceSection />
           </div>
         </main>
