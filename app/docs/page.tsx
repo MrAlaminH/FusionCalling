@@ -18,16 +18,16 @@ const docSections: DocSection[] = [
     id: "api-reference",
     title: "API Reference",
     description:
-      "Complete documentation for the External Calendar API, including endpoints, authentication, error handling, and code examples.",
+      "Complete documentation for External Calendar API and External Leads API, including endpoints, authentication, integrations, and code examples.",
     icon: "📡",
     href: "/docs/api-reference",
     color: "orange",
     topics: [
+      "Calendar API",
+      "Leads API",
       "Authentication",
-      "Endpoints",
-      "Data Models",
-      "Rate Limiting",
-      "Error Handling",
+      "Integrations",
+      "Code Examples",
     ],
   },
   {

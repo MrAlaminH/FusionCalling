@@ -1,13 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ChevronRight, ArrowLeft } from "lucide-react";
+import { ChevronRight, ChevronDown, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
 interface NavItem {
   id: string;
   label: string;
   children?: NavItem[];
+  isSection?: boolean; // New: marks top-level collapsible sections
 }
 
 interface SidebarNavProps {
@@ -17,11 +18,20 @@ interface SidebarNavProps {
 export default function SidebarNav({ items }: SidebarNavProps) {
   const [activeSection, setActiveSection] = useState<string>("");
   const [isOpen, setIsOpen] = useState(false);
+  const [expandedSections, setExpandedSections] = useState<Set<string>>(
+    new Set(items.filter((item) => item.isSection).map((item) => item.id)),
+  );
 
   useEffect(() => {
     const handleScroll = () => {
       const sections = items.flatMap((item) =>
-        item.children ? item.children.map((child) => child.id) : [item.id],
+        item.children
+          ? item.children.flatMap((child) =>
+              child.children
+                ? child.children.map((grandchild) => grandchild.id)
+                : [child.id],
+            )
+          : [item.id],
       );
 
       const current = sections.find((id) => {
@@ -86,23 +96,52 @@ export default function SidebarNav({ items }: SidebarNavProps) {
     }
   };
 
+  const toggleSection = (id: string) => {
+    setExpandedSections((prev) => {
+      const newSet = new Set(prev);
+      if (newSet.has(id)) {
+        newSet.delete(id);
+      } else {
+        newSet.add(id);
+      }
+      return newSet;
+    });
+  };
+
   const renderNavItem = (item: NavItem, level = 0) => {
     const isActive = activeSection === item.id;
     const hasChildren = item.children && item.children.length > 0;
+    const isExpanded = expandedSections.has(item.id);
+    const isSection = item.isSection;
 
     return (
       <div key={item.id}>
         <button
-          onClick={() => !hasChildren && scrollToSection(item.id)}
-          className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
+          onClick={() => {
+            if (isSection && hasChildren) {
+              toggleSection(item.id);
+            } else if (!hasChildren) {
+              scrollToSection(item.id);
+            }
+          }}
+          className={`w-full text-left px-4 py-2 rounded-lg transition-colors flex items-center justify-between ${
             isActive
               ? "bg-orange-600/20 text-orange-400 font-medium"
-              : "text-gray-300 hover:text-white hover:bg-gray-900"
-          } ${level > 0 ? "text-sm pl-8" : ""}`}
+              : isSection
+                ? "text-white font-semibold hover:bg-gray-900"
+                : "text-gray-300 hover:text-white hover:bg-gray-900"
+          } ${level === 1 ? "text-sm pl-6" : level === 2 ? "text-sm pl-10" : ""}`}
         >
-          {item.label}
+          <span>{item.label}</span>
+          {isSection && hasChildren && (
+            <ChevronDown
+              className={`w-4 h-4 transition-transform ${
+                isExpanded ? "rotate-0" : "-rotate-90"
+              }`}
+            />
+          )}
         </button>
-        {hasChildren && item.children && (
+        {hasChildren && item.children && isExpanded && (
           <div className="mt-1 space-y-1">
             {item.children.map((child) => renderNavItem(child, level + 1))}
           </div>
@@ -147,7 +186,7 @@ export default function SidebarNav({ items }: SidebarNavProps) {
 
           <div className="mb-4">
             <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider px-4">
-              Documentation
+              API Reference
             </h2>
           </div>
           {items.map((item) => renderNavItem(item))}
