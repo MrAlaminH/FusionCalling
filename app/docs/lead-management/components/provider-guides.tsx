@@ -56,7 +56,9 @@ export function ProviderGuidesSection() {
               <tr className="border-b border-gray-900">
                 <td className="py-2 px-3">
                   <code className="bg-gray-900 px-2 py-1 rounded">
-                    customer_name
+                    {"{"}
+                    {"{"}customer_name{"}"}
+                    {"}"}
                   </code>
                 </td>
                 <td className="py-2 px-3">Full name</td>
@@ -64,7 +66,9 @@ export function ProviderGuidesSection() {
               <tr className="border-b border-gray-900">
                 <td className="py-2 px-3">
                   <code className="bg-gray-900 px-2 py-1 rounded">
-                    first_name
+                    {"{"}
+                    {"{"}first_name{"}"}
+                    {"}"}
                   </code>
                 </td>
                 <td className="py-2 px-3">First name only</td>
@@ -72,7 +76,9 @@ export function ProviderGuidesSection() {
               <tr className="border-b border-gray-900">
                 <td className="py-2 px-3">
                   <code className="bg-gray-900 px-2 py-1 rounded">
-                    last_name
+                    {"{"}
+                    {"{"}last_name{"}"}
+                    {"}"}
                   </code>
                 </td>
                 <td className="py-2 px-3">Last name only</td>
@@ -80,7 +86,9 @@ export function ProviderGuidesSection() {
               <tr className="border-b border-gray-900">
                 <td className="py-2 px-3">
                   <code className="bg-gray-900 px-2 py-1 rounded">
-                    email_address
+                    {"{"}
+                    {"{"}email_address{"}"}
+                    {"}"}
                   </code>
                 </td>
                 <td className="py-2 px-3">Email</td>
@@ -88,7 +96,9 @@ export function ProviderGuidesSection() {
               <tr className="border-b border-gray-900">
                 <td className="py-2 px-3">
                   <code className="bg-gray-900 px-2 py-1 rounded">
-                    phone_number
+                    {"{"}
+                    {"{"}phone_number{"}"}
+                    {"}"}
                   </code>
                 </td>
                 <td className="py-2 px-3">Phone number</td>
@@ -96,7 +106,9 @@ export function ProviderGuidesSection() {
               <tr className="border-b border-gray-900">
                 <td className="py-2 px-3">
                   <code className="bg-gray-900 px-2 py-1 rounded">
-                    company_name
+                    {"{"}
+                    {"{"}company_name{"}"}
+                    {"}"}
                   </code>
                 </td>
                 <td className="py-2 px-3">Company</td>
@@ -104,7 +116,9 @@ export function ProviderGuidesSection() {
               <tr>
                 <td className="py-2 px-3">
                   <code className="bg-gray-900 px-2 py-1 rounded">
-                    timezone
+                    {"{"}
+                    {"{"}timezone{"}"}
+                    {"}"}
                   </code>
                 </td>
                 <td className="py-2 px-3">Timezone</td>
@@ -313,6 +327,7 @@ export function ProviderGuidesSection() {
             <h6 className="text-orange-400 font-semibold mb-2">
               First Message (Opening Line)
             </h6>
+            <p className="text-gray-500 text-xs mb-1">Vapi</p>
             <div className="bg-gray-950 rounded p-3 mb-2">
               <code className="text-gray-300 text-sm block">
                 Hi {"{"}
@@ -322,12 +337,23 @@ export function ProviderGuidesSection() {
                 {"}"} about your inquiry.
               </code>
             </div>
+            <p className="text-gray-500 text-xs mb-1">Retell</p>
+            <div className="bg-gray-950 rounded p-3">
+              <code className="text-gray-300 text-sm block">
+                Hi {"{"}
+                {"{"}customer_name{"}"}
+                {"}"}, I&apos;m calling from {"{"}
+                {"{"}company_name{"}"}
+                {"}"} about your inquiry.
+              </code>
+            </div>
           </div>
 
           <div className="bg-gray-900 rounded-lg p-4">
             <h6 className="text-orange-400 font-semibold mb-2">
               System Prompt (Agent Instructions)
             </h6>
+            <p className="text-gray-500 text-xs mb-1">Vapi</p>
             <div className="bg-gray-950 rounded p-3 mb-2">
               <code className="text-gray-300 text-sm block">
                 You are calling {"{"}
@@ -341,18 +367,43 @@ export function ProviderGuidesSection() {
                 {"}"} if available.
               </code>
             </div>
+            <p className="text-gray-500 text-xs mb-1">Retell</p>
+            <div className="bg-gray-950 rounded p-3">
+              <code className="text-gray-300 text-sm block">
+                You are calling {"{"}
+                {"{"}customer_name{"}"}
+                {"}"} at {"{"}
+                {"{"}company_name{"}"}
+                {"}"}. Their email is {"{"}
+                {"{"}email_address{"}"}
+                {"}"}. Their address is {"{"}
+                {"{"}address{"}"}
+                {"}"} if available.
+              </code>
+            </div>
           </div>
 
           <div className="bg-gray-900 rounded-lg p-4">
             <h6 className="text-orange-400 font-semibold mb-2">
               Voicemail Message
             </h6>
+            <p className="text-gray-500 text-xs mb-1">Vapi</p>
             <div className="bg-gray-950 rounded p-3 mb-2">
               <code className="text-gray-300 text-sm block">
                 Hi {"{"}
                 {"{"}name{"}"}
                 {"}"}, this is a message for you regarding {"{"}
                 {"{"}company{"}"}
+                {"}"}.
+              </code>
+            </div>
+            <p className="text-gray-500 text-xs mb-1">Retell</p>
+            <div className="bg-gray-950 rounded p-3">
+              <code className="text-gray-300 text-sm block">
+                Hi {"{"}
+                {"{"}customer_name{"}"}
+                {"}"}, this is a message for you regarding {"{"}
+                {"{"}company_name{"}"}
                 {"}"}.
               </code>
             </div>
