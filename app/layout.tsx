@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "./globals.css";
 import ChatWidget from "@/components/chat/ChatWidget";
 import { PostHogProvider } from "./providers";
 import SuspendedPostHogPageView from "./PostHogPageView";
