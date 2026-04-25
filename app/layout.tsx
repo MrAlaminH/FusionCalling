@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import ChatWidget from "@/components/chat/ChatWidget";
 import { PostHogProvider } from "./providers";
 import SuspendedPostHogPageView from "./PostHogPageView";
@@ -11,7 +10,7 @@ export const metadata: Metadata = {
     template: "%s | Fusion Calling - AI Phone Call Automation",
   },
   description:
-    "Boost your business efficiency with Fusion Calling's AI-powered phone call automation. Streamline customer interactions, save time, and increase productivity with advanced voice technology.",
+    "Boost your business efficiency with Fusion Calling's AI-powered ai receptionist phone call automation. Streamline customer interactions, save time, and increase productivity with advanced voice technology.",
   keywords: [
     "AI phone call automation",
     "business automation",
@@ -19,23 +18,26 @@ export const metadata: Metadata = {
     "customer service AI",
     "Fusion Calling",
     "automated calls",
-    "AI telephony",
+    "virtual receptionist",
     "virtual agent",
     "lead generation AI",
+    "ai receptionist",
     "call center automation",
+    "automated receptionist",
   ],
   twitter: {
     card: "summary_large_image",
     site: "@fusioncalling",
-    title: "Fusion Calling | AI Phone Call Automation for Businesses",
+    title:
+      "Fusion Calling | AI Phone Call Automation for Businesses | ai receptionist",
     description:
-      "Boost your business efficiency with Fusion Calling's AI-powered phone call automation. Streamline customer interactions, save time, and increase productivity with advanced voice technology.",
+      "Boost your business efficiency with Fusion Calling's AI-powered ai receptionist phone call automation. Streamline customer interactions, save time, and increase productivity with advanced voice technology.",
     images: ["/opengraph-image.png"],
   },
   openGraph: {
     title: "Fusion Calling | AI Phone Call Automation for Businesses",
     description:
-      "Boost your business efficiency with Fusion Calling's AI-powered phone call automation. Streamline customer interactions, save time, and increase productivity with advanced voice technology.",
+      "Boost your business efficiency with Fusion Calling's AI-powered ai receptionist phone call automation. Streamline customer interactions, save time, and increase productivity with advanced voice technology.",
     url: "https://www.fusioncalling.com/",
     siteName: "Fusion Calling",
     images: [
