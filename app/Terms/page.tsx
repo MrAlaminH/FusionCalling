@@ -20,7 +20,7 @@ export default function TermsOfUse() {
         Terms of Service
       </h1>
       <p className="text-gray-300 mb-8 text-center">
-        Last updated: June 28, 2025
+        Last updated: May 22, 2026
       </p>
 
       <div className="prose prose-invert max-w-none">
@@ -129,21 +129,162 @@ export default function TermsOfUse() {
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-white">
-            6. Payment Terms and Billing
+            5.1. Google Calendar Integration and OAuth Authorization
           </h2>
           <p className="mb-4 text-gray-300">
-            Payment processing is handled by our payment partners. Current
-            pricing and plans may include free, subscription, usage-based, or
-            one-time payment options. All payments are processed securely
-            according to the payment processor&apos;s terms. Refunds, if any,
-            are subject to the processor&apos;s policies unless otherwise stated
-            in writing.
+            <span className="font-semibold">Scope of Access:</span> When you
+            authorize Fusion Calling to access your Google Calendar through
+            OAuth authentication, you grant us read-only access to:
+          </p>
+          <ul className="list-disc pl-6 mb-4 text-gray-300">
+            <li>
+              Your calendar event titles, times, duration, and descriptions
+            </li>
+            <li>Your calendar settings to determine availability</li>
+          </ul>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">What We Will NOT Do:</span> You
+            agree that Fusion Calling will not:
+          </p>
+          <ul className="list-disc pl-6 mb-4 text-gray-300">
+            <li>Modify, create, or delete events in your Google Calendar</li>
+            <li>Share your calendar data with third parties</li>
+            <li>
+              Use your calendar data for targeted advertising or marketing
+            </li>
+            <li>Sell or trade your calendar information</li>
+            <li>
+              Use calendar data to build competing services or scrape
+              information
+            </li>
+            <li>
+              Train machine learning or AI models using your calendar data
+            </li>
+            <li>
+              Use calendar data for any purpose beyond coordinating with our
+              calling platform
+            </li>
+          </ul>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">Data Retention and Deletion:</span>{" "}
+            Calendar event information accessed through Google APIs is retained
+            only as long as necessary to provide scheduling functionality. Upon
+            account deletion or disconnection of your Google Calendar, we will
+            immediately cease accessing your data and securely delete any cached
+            information within 30 days.
+          </p>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">Revocation of Access:</span> You may
+            revoke our access to your Google Calendar at any time through your
+            Google Account settings or by contacting support@fusioncalling.com.
+            Revocation will take effect immediately and prevent future
+            calendar-based scheduling on our platform.
+          </p>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">Compliance:</span> We comply with
+            the Google API Services User Data Policy and commit to using Google
+            APIs only in accordance with Google&apos;s policies and
+            restrictions.
           </p>
         </section>
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-white">
-            7. Data Ownership and Usage Rights
+            6. AI Model and Third-Party Services
+          </h2>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">Third-Party AI Models:</span> Fusion
+            Calling utilizes third-party artificial intelligence and machine
+            learning models to provide platform features. We do not develop or
+            train these models ourselves. Our role is to integrate, configure,
+            and orchestrate these services to deliver enhanced functionality.
+          </p>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">AI Limitations:</span> AI-powered
+            features (including call transcription, predictions, and
+            recommendations) are provided on an &quot;as-is&quot; basis. AI
+            outputs may contain inaccuracies, and we make no warranties
+            regarding the accuracy or reliability of AI-generated content. You
+            are responsible for verifying any AI-generated information before
+            taking action.
+          </p>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">
+              Third-Party Service Dependencies:
+            </span>{" "}
+            Platform functionality depends on third-party services and APIs. We
+            are not responsible for outages, changes, or discontinuation of
+            these services. Your use of such features is subject to the
+            respective third-party&apos;s terms of service.
+          </p>
+        </section>
+
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4 text-white">
+            7. Recording, Consent, and Legal Compliance
+          </h2>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">
+              Call Recording Responsibility:
+            </span>{" "}
+            You are solely responsible for obtaining proper consent from all
+            call participants before recording or monitoring calls. Fusion
+            Calling does not obtain consent on your behalf. You must comply with
+            all applicable laws, regulations, and requirements in your
+            jurisdiction regarding call recording, monitoring, and disclosure.
+          </p>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">User Compliance Obligation:</span>{" "}
+            You agree to comply with all anti-spam laws, telemarketing
+            regulations, do-not-call lists, and other applicable requirements
+            when using the platform. Fusion Calling provides features to support
+            compliance, but you maintain ultimate responsibility for lawful
+            usage.
+          </p>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">
+              Indemnification for Non-Compliance:
+            </span>{" "}
+            You indemnify Fusion Calling against any claims arising from your
+            failure to obtain proper consent, violation of recording laws, or
+            non-compliance with applicable regulations.
+          </p>
+        </section>
+
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4 text-white">
+            8. White-Label and Reseller Terms
+          </h2>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">White-Label Use:</span> If you are
+            authorized to resell or rebrand Fusion Calling services (white-label
+            arrangement), you agree to:
+          </p>
+          <ul className="list-disc pl-6 mb-4 text-gray-300">
+            <li>
+              Maintain the underlying functionality and security of the platform
+            </li>
+            <li>
+              Not remove or obscure Fusion Calling&apos;s attribution as
+              required by your agreement
+            </li>
+            <li>Ensure end-users comply with these Terms of Service</li>
+            <li>
+              Remain liable for your end-users&apos; compliance and actions
+            </li>
+            <li>Not reverse-engineer, copy, or compete with the platform</li>
+          </ul>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">Sublicensing:</span> You may
+            sublicense the platform to end-users only as permitted in your
+            specific white-label agreement. You are responsible for enforcing
+            these Terms with your end-users and handling their support requests.
+          </p>
+        </section>
+
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4 text-white">
+            9. Data Ownership and Usage Rights
           </h2>
           <p className="mb-4 text-gray-300">
             <span className="font-semibold">Your Data:</span> You retain
@@ -170,7 +311,7 @@ export default function TermsOfUse() {
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-white">
-            8. Compliance and Privacy
+            10. Compliance and Privacy
           </h2>
           <p className="mb-4 text-gray-300">
             You are responsible for obtaining proper consent from call
@@ -184,7 +325,7 @@ export default function TermsOfUse() {
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-white">
-            9. Service Availability and Limitations
+            11. Service Availability and Limitations
           </h2>
           <p className="mb-4 text-gray-300">
             We strive for high availability but do not guarantee uninterrupted
@@ -196,7 +337,7 @@ export default function TermsOfUse() {
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-white">
-            10. Intellectual Property Rights
+            12. Intellectual Property Rights
           </h2>
           <p className="mb-4 text-gray-300">
             The Fusion Calling platform (including software, design, features,
@@ -209,7 +350,7 @@ export default function TermsOfUse() {
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-white">
-            11. Limitation of Liability
+            13. Limitation of Liability
           </h2>
           <p className="mb-4 text-gray-300">
             To the maximum extent permitted by law, Fusion Calling shall not be
@@ -224,7 +365,71 @@ export default function TermsOfUse() {
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-white">
-            12. Indemnification
+            14. Data Export and Portability
+          </h2>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">Data Export:</span> You may request
+            an export of your account data at any time by contacting
+            support@fusioncalling.com. We will provide your data in a
+            commonly-used format within a reasonable timeframe.
+          </p>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">Data Deletion:</span> Upon account
+            termination, we will delete your personal data within 30 days unless
+            legally required to retain it. Some residual data may exist in
+            backups for an additional period but will not be actively
+            accessible.
+          </p>
+        </section>
+
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4 text-white">
+            15. Security and Incident Notification
+          </h2>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">Security Measures:</span> We
+            implement industry-standard security measures to protect your data.
+            However, no system is 100% secure, and we cannot guarantee absolute
+            protection against unauthorized access or breaches.
+          </p>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">Incident Notification:</span> In the
+            event of a security incident that compromises your personal data, we
+            will notify you without unreasonable delay and provide information
+            about the nature of the incident, the data affected, and recommended
+            actions.
+          </p>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">Responsible Disclosure:</span> If
+            you discover a security vulnerability in our platform, please report
+            it to security@fusioncalling.com. Do not publicly disclose the
+            vulnerability before we have time to address it.
+          </p>
+        </section>
+
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4 text-white">
+            16. Third-Party Data Processing
+          </h2>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">Data Processors:</span> Fusion
+            Calling may use third-party services and sub-processors (including
+            cloud providers, analytics services, and payment processors) to
+            process your data. These processors are contractually bound to
+            protect your data in accordance with applicable privacy laws.
+          </p>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">Data Transfers:</span> Your data may
+            be processed and stored in multiple jurisdictions. Where required,
+            we use appropriate safeguards (such as standard contractual clauses)
+            to ensure adequate protection of your data during international
+            transfers.
+          </p>
+        </section>
+
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4 text-white">
+            17. Indemnification
           </h2>
           <p className="mb-4 text-gray-300">
             You agree to indemnify and hold Fusion Calling harmless from any
@@ -236,7 +441,7 @@ export default function TermsOfUse() {
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-white">
-            13. Account Termination
+            18. Account Termination
           </h2>
           <p className="mb-4 text-gray-300">
             Either party may terminate the Service relationship. You may request
@@ -249,7 +454,7 @@ export default function TermsOfUse() {
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-white">
-            14. Dispute Resolution
+            19. Dispute Resolution
           </h2>
           <p className="mb-4 text-gray-300">
             Disputes arising from these Terms will be resolved through binding
@@ -260,7 +465,7 @@ export default function TermsOfUse() {
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-white">
-            15. Changes to Terms
+            20. Changes to Terms
           </h2>
           <p className="mb-4 text-gray-300">
             We may modify these Terms at any time. Material changes will be
@@ -271,7 +476,7 @@ export default function TermsOfUse() {
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-white">
-            16. Governing Law
+            21. Governing Law
           </h2>
           <p className="mb-4 text-gray-300">
             These Terms are governed by applicable laws and regulations. Any
@@ -282,7 +487,7 @@ export default function TermsOfUse() {
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-white">
-            17. Contact Information
+            22. Contact Information
           </h2>
           <p className="mb-4 text-gray-300">
             For questions about these Terms of Service, please contact:
@@ -297,7 +502,7 @@ export default function TermsOfUse() {
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-white">
-            18. Severability
+            23. Severability
           </h2>
           <p className="mb-4 text-gray-300">
             If any provision of these Terms is found unenforceable, the
@@ -307,7 +512,7 @@ export default function TermsOfUse() {
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-white">
-            19. Entire Agreement
+            24. Entire Agreement
           </h2>
           <p className="mb-4 text-gray-300">
             These Terms, together with our Privacy Policy, constitute the entire

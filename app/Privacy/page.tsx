@@ -20,7 +20,7 @@ export default function PrivacyPolicy() {
         Privacy Policy
       </h1>
       <p className="text-gray-300 mb-8 text-center">
-        Last updated: June 28, 2025
+        Last updated: May 22, 2026
       </p>
 
       <div className="prose prose-invert max-w-none">
@@ -30,7 +30,11 @@ export default function PrivacyPolicy() {
           disclose, and safeguard your information when you visit our website
           and use our AI-powered calling services. We are committed to
           protecting your privacy and complying with applicable data protection
-          laws, including GDPR where relevant.
+          laws, including GDPR where relevant. We comply with the{" "}
+          <span className="font-semibold">
+            Google API Services User Data Policy
+          </span>
+          , including the requirements for restricted scopes.
         </p>
 
         <section className="mb-8">
@@ -156,6 +160,110 @@ export default function PrivacyPolicy() {
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-white">
+            5.1. Google Calendar API Integration
+          </h2>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">What We Access:</span> When you
+            authorize our application to access your Google Calendar, we request
+            specific permissions to:
+          </p>
+          <ul className="list-disc pl-6 mb-4 text-gray-300">
+            <li>
+              Read event details (event titles, times, duration, and
+              descriptions)
+            </li>
+            <li>Read calendar settings to determine your availability</li>
+            <li>
+              Perform these functions solely for scheduling AI-powered calls and
+              meetings
+            </li>
+          </ul>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">What We Do NOT Access:</span> We do
+            not request, store, or use:
+          </p>
+          <ul className="list-disc pl-6 mb-4 text-gray-300">
+            <li>Write or modify permissions to your Google Calendar</li>
+            <li>Delete events or calendar data</li>
+            <li>Share your calendar data with third parties</li>
+            <li>
+              Use your calendar data for any purpose other than coordinating
+              with our calling platform
+            </li>
+            <li>
+              Use your calendar data for marketing, advertising, or profiling
+            </li>
+          </ul>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">Data Retention:</span> Google
+            Calendar event information is retained only as long as necessary to
+            provide the scheduling functionality. When you disconnect your
+            Google Calendar from our platform or delete your account, we
+            immediately cease accessing your calendar data and securely delete
+            any cached information within 30 days.
+          </p>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">Your Control:</span> You can revoke
+            our access to your Google Calendar at any time through your Google
+            Account settings or by contacting support@fusioncalling.com.
+            Revocation is immediate and will prevent future calendar-based
+            scheduling.
+          </p>
+        </section>
+
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4 text-white">
+            5.2. Limited Scope Usage
+          </h2>
+          <p className="mb-4 text-gray-300">
+            In accordance with the{" "}
+            <span className="font-semibold">
+              Google API Services User Data Policy
+            </span>
+            , we strictly limit our use of Google API scopes to the minimum
+            necessary to provide scheduling and calendar coordination features.
+            We do not use any data accessed through Google APIs for purposes
+            unrelated to the specific service you requested.
+          </p>
+        </section>
+
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4 text-white">
+            5.3. OAuth Scope Transparency
+          </h2>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">Requested Scopes:</span> When you
+            connect your Google Account to Fusion Calling, we request the
+            following specific OAuth scopes:
+          </p>
+          <ul className="list-disc pl-6 mb-4 text-gray-300">
+            <li>
+              <code className="bg-gray-800 px-2 py-1 rounded">
+                calendar.readonly
+              </code>{" "}
+              — Read-only access to your Google Calendar events and settings
+            </li>
+          </ul>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">Why We Need This Scope:</span>
+          </p>
+          <ul className="list-disc pl-6 mb-4 text-gray-300">
+            <li>
+              To check your availability before scheduling AI-powered calls
+            </li>
+            <li>To prevent scheduling conflicts with existing meetings</li>
+            <li>To coordinate optimal call times based on your calendar</li>
+          </ul>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">Scope Justification:</span> We use
+            the minimum read-only scope necessary. We explicitly do NOT request
+            write permissions (calendar.events), which means we cannot modify,
+            create, or delete your calendar events.
+          </p>
+        </section>
+
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4 text-white">
             6. Data Retention
           </h2>
           <p className="mb-4 text-gray-300">
@@ -190,19 +298,71 @@ export default function PrivacyPolicy() {
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-white">
-            8. Data Security
+            8. Data Security and API Data Protection
           </h2>
           <p className="mb-4 text-gray-300">
-            We implement industry-standard security measures, including
-            encryption in transit, access controls, authentication safeguards,
-            and regular assessments. No method of transmission or storage is
-            100% secure, and we cannot guarantee absolute security.
+            <span className="font-semibold">
+              For Google API Data Specifically:
+            </span>{" "}
+            We implement industry-leading security practices to protect data
+            accessed through Google APIs, including:
+          </p>
+          <ul className="list-disc pl-6 mb-4 text-gray-300">
+            <li>End-to-end encryption for API data in transit and at rest</li>
+            <li>
+              Restricted access controls limiting employee access to production
+              data
+            </li>
+            <li>Regular security audits and penetration testing</li>
+            <li>Compliance with OWASP Top 10 security standards</li>
+            <li>Secure deletion protocols for cached Google data</li>
+            <li>No sharing of Google API data with third parties</li>
+            <li>
+              Separate data retention policies for API-sourced information
+            </li>
+          </ul>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">General Security:</span> We
+            implement industry-standard security measures, including encryption
+            in transit, access controls, authentication safeguards, and regular
+            assessments. No method of transmission or storage is 100% secure,
+            and we cannot guarantee absolute security.
           </p>
         </section>
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-white">
-            9. International Data Transfers
+            9. Prohibited Uses of API Data
+          </h2>
+          <p className="mb-4 text-gray-300">
+            In compliance with the Google API Services User Data Policy, we
+            explicitly prohibit the use of Google Calendar data for:
+          </p>
+          <ul className="list-disc pl-6 mb-4 text-gray-300">
+            <li>Targeted advertising or creating advertising profiles</li>
+            <li>
+              Selling, trading, or transferring personal information to third
+              parties
+            </li>
+            <li>
+              Building a competitive service or scraping calendar information
+            </li>
+            <li>
+              Combining with other data sources for purposes beyond service
+              delivery
+            </li>
+            <li>
+              Training machine learning or AI models using your calendar data
+            </li>
+            <li>
+              Any use that violates applicable laws or Google&apos;s policies
+            </li>
+          </ul>
+        </section>
+
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4 text-white">
+            10. International Data Transfers
           </h2>
           <p className="mb-4 text-gray-300">
             Your data may be processed outside your country or the European
@@ -214,7 +374,7 @@ export default function PrivacyPolicy() {
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-white">
-            10. Cookies and Tracking
+            11. Cookies and Tracking
           </h2>
           <p className="mb-4 text-gray-300">
             We use essential cookies for authentication and functionality. With
@@ -225,7 +385,7 @@ export default function PrivacyPolicy() {
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-white">
-            11. Children&apos;s Privacy
+            12. Children&apos;s Privacy
           </h2>
           <p className="mb-4 text-gray-300">
             Our services are not intended for children under 16. We do not
@@ -236,7 +396,85 @@ export default function PrivacyPolicy() {
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-white">
-            12. Changes to This Policy
+            13. Data Export and Portability
+          </h2>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">Right to Data Access:</span> You
+            have the right to request an export of your personal data in a
+            commonly-used, machine-readable format (e.g., CSV, JSON). To
+            exercise this right, contact support@fusioncalling.com.
+          </p>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">Timeframe:</span> We will provide
+            your data export within 30 days of your request. For large data
+            sets, we may require additional time but will keep you informed of
+            progress.
+          </p>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">
+              Data Retention After Deletion:
+            </span>{" "}
+            Upon account deletion, personal data will be removed from active
+            systems within 30 days. Residual data in backups and logs may
+            persist for an additional period but will not be accessed or
+            processed for any purpose.
+          </p>
+        </section>
+
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4 text-white">
+            14. Security Incident Notification
+          </h2>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">Incident Response:</span> In the
+            event of a security breach or unauthorized access to your personal
+            data, we will:
+          </p>
+          <ul className="list-disc pl-6 mb-4 text-gray-300">
+            <li>Investigate the incident promptly</li>
+            <li>
+              Notify you without unreasonable delay (typically within 72 hours)
+            </li>
+            <li>Provide details about the nature, scope, and data affected</li>
+            <li>Recommend steps you can take to protect yourself</li>
+          </ul>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">Responsible Disclosure:</span> If
+            you discover a security vulnerability, please report it to
+            security@fusioncalling.com rather than publicly disclosing it. We
+            appreciate responsible disclosure and will work to address
+            vulnerabilities promptly.
+          </p>
+        </section>
+
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4 text-white">
+            15. Third-Party Sub-Processors and Data Sharing
+          </h2>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">Sub-Processors:</span> To deliver
+            the Service, Fusion Calling may engage third-party sub-processors
+            (such as cloud infrastructure providers, analytics vendors, and
+            payment processors). These sub-processors are contractually bound to
+            protect your data in accordance with applicable privacy laws.
+          </p>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">Sub-Processor List:</span> We
+            maintain a current list of sub-processors. For the most up-to-date
+            information, please contact privacy@fusioncalling.com.
+          </p>
+          <p className="mb-4 text-gray-300">
+            <span className="font-semibold">Data Transfer Mechanisms:</span>{" "}
+            Where your data is transferred internationally, we employ
+            appropriate safeguards including standard contractual clauses,
+            adequacy decisions, or other mechanisms required by applicable data
+            protection laws.
+          </p>
+        </section>
+
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4 text-white">
+            16. Changes to This Policy
           </h2>
           <p className="mb-4 text-gray-300">
             We may update this Privacy Policy to reflect changes in practices or
@@ -248,7 +486,7 @@ export default function PrivacyPolicy() {
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-white">
-            13. Contact Information
+            17. Contact Information
           </h2>
           <p className="mb-4 text-gray-300">
             For questions about this Privacy Policy, to exercise your rights, or
@@ -264,7 +502,29 @@ export default function PrivacyPolicy() {
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4 text-white">
-            14. Supervisory Authority
+            18. Data Protection & API Compliance Officer
+          </h2>
+          <p className="mb-4 text-gray-300">
+            For questions specific to Google API data handling, compliance with
+            the Google API Services User Data Policy, or concerns about how we
+            handle your Google Calendar information, please contact:
+          </p>
+          <div className="bg-gray-900 p-4 rounded-lg text-gray-300 mb-4">
+            <p className="font-semibold text-white">API Data Privacy Contact</p>
+            <p>Email: privacy@fusioncalling.com</p>
+            <p>Subject: Google API Compliance or Calendar Data Privacy</p>
+            <p>Response Time: We aim to respond within 7 business days</p>
+          </div>
+          <p className="mb-4 text-gray-300">
+            We maintain a commitment to transparency and accountability
+            regarding all data accessed through Google APIs. All such data is
+            handled with the highest standards of security and care.
+          </p>
+        </section>
+
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4 text-white">
+            19. Supervisory Authority
           </h2>
           <p className="mb-4 text-gray-300">
             If you are not satisfied with our response, you may lodge a

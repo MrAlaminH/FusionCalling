@@ -2,7 +2,14 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Linkedin, Mail, Phone, Twitter, ArrowRight } from "lucide-react";
+import {
+  Facebook,
+  Linkedin,
+  Mail,
+  Phone,
+  Twitter,
+  ArrowRight,
+} from "lucide-react";
 
 export default function Footer() {
   return (
@@ -63,7 +70,9 @@ export default function Footer() {
                 Fusion Calling
               </Link>
               <p className="text-sm text-gray-400 leading-relaxed">
-                Transform your phone operations with AI-powered voice agents. Automate calls, improve customer experience, and scale effortlessly.
+                Transform your phone operations with AI-powered voice agents.
+                Automate calls, improve customer experience, and scale
+                effortlessly.
               </p>
               {/* Social Links */}
               <div className="flex items-center gap-3 pt-2">
@@ -211,11 +220,12 @@ export default function Footer() {
           <div className="border-t border-gray-800 pt-8">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <p className="text-sm text-gray-500">
-                © {new Date().getFullYear()} Fusion Calling. All rights reserved.
+                © {new Date().getFullYear()} Fusion Calling. All rights
+                reserved.
               </p>
               <div className="flex items-center gap-6">
                 <Link
-                  href="/Privacy"
+                  href="/privacy"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-gray-500 hover:text-orange-600 transition-colors"
@@ -223,7 +233,7 @@ export default function Footer() {
                   Privacy Policy
                 </Link>
                 <Link
-                  href="/Terms"
+                  href="/terms"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-gray-500 hover:text-orange-600 transition-colors"
