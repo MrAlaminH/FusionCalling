@@ -225,7 +225,7 @@ export default function Footer() {
               </p>
               <div className="flex items-center gap-6">
                 <Link
-                  href="/privacy"
+                  href="/Privacy"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-gray-500 hover:text-orange-600 transition-colors"
@@ -233,7 +233,7 @@ export default function Footer() {
                   Privacy Policy
                 </Link>
                 <Link
-                  href="/terms"
+                  href="/Terms"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-gray-500 hover:text-orange-600 transition-colors"
