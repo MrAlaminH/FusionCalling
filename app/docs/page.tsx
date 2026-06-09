@@ -79,6 +79,23 @@ const docSections: DocSection[] = [
       "Best Practices",
     ],
   },
+  {
+    id: "sms-messaging",
+    title: "SMS & Messages",
+    description:
+      "Complete guide to SMS and messaging: send texts, manage conversations, set up Twilio integration, create automated SMS campaigns, and handle inbound replies.",
+    icon: "💬",
+    href: "/docs/sms-messaging",
+    color: "orange",
+    topics: [
+      "Connect Twilio",
+      "Messages Inbox",
+      "Send Texts",
+      "SMS Campaigns",
+      "Inbound Replies",
+      "Compliance",
+    ],
+  },
   // Future sections template:
   // {
   //   id: "integrations",
@@ -227,7 +244,7 @@ export default function DocsPage() {
         </div>
 
         {/* Future Sections Teaser */}
-        {docSections.length < 4 && (
+        {docSections.length < 5 && (
           <div className="mt-16 p-8 rounded-2xl border border-gray-700/50 bg-gradient-to-r from-gray-900/50 to-gray-800/50">
             <div className="flex items-center gap-4">
               <div className="text-3xl">🚀</div>
