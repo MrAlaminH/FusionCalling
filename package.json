@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "openapi:gen": "npx --yes tsx scripts/generate-openapi.ts"
   },
   "dependencies": {
     "@calcom/embed-react": "^1.5.2",

@@ -1,0 +1,742 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Fusion Calling API",
+    "version": "1.2.0",
+    "description": "Programmatic access to Fusion Calling — manage calendar events and leads with API-key authentication.",
+    "contact": {
+      "email": "hello@fusioncalling.com"
+    },
+    "license": {
+      "name": "Proprietary"
+    }
+  },
+  "externalDocs": {
+    "description": "Full documentation",
+    "url": "https://app.fusioncalling.com/docs/api-reference"
+  },
+  "servers": [
+    {
+      "url": "https://app.fusioncalling.com",
+      "description": "Production"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Calendar",
+      "description": "Manage calendar events (CRUD, Google Meet sync)."
+    },
+    {
+      "name": "Leads",
+      "description": "Create, read, and update leads."
+    }
+  ],
+  "paths": {
+    "/api/calendar/external/v1/events": {
+      "get": {
+        "tags": [
+          "Calendar"
+        ],
+        "summary": "List calendar events",
+        "operationId": "cal-list-events",
+        "description": "Retrieve a list of events, optionally filtered by date range.",
+        "parameters": [
+          {
+            "name": "from",
+            "in": "query",
+            "required": false,
+            "description": "Filter events from this date (inclusive). Flexible datetime formats.",
+            "schema": {
+              "type": "string",
+              "description": "Filter events from this date (inclusive). Flexible datetime formats.",
+              "example": "2025-12-01T00:00:00"
+            }
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "required": false,
+            "description": "Filter events until this date (inclusive). Flexible datetime formats.",
+            "schema": {
+              "type": "string",
+              "description": "Filter events until this date (inclusive). Flexible datetime formats.",
+              "example": "2025-12-31T23:59:59"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "example": {
+                  "success": true,
+                  "data": [
+                    {
+                      "id": "550e8400-e29b-41d4-a716-446655440000",
+                      "title": "Team Meeting",
+                      "description": "Weekly team sync",
+                      "start_time": "2025-12-15T14:30:00.000Z",
+                      "end_time": "2025-12-15T16:00:00.000Z",
+                      "all_day": false,
+                      "source": "local",
+                      "created_at": "2025-12-10T10:00:00.000Z",
+                      "updated_at": "2025-12-10T10:00:00.000Z"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid date format in query parameters"
+          },
+          "401": {
+            "description": "Invalid or missing API key"
+          },
+          "500": {
+            "description": "Server error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Calendar"
+        ],
+        "summary": "Create an event",
+        "operationId": "cal-create-event",
+        "description": "Create a new calendar event.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "description": "Event title (1-255 characters).",
+                    "example": "Meeting with Client"
+                  },
+                  "start_time": {
+                    "type": "string",
+                    "description": "Event start time (flexible datetime format).",
+                    "example": "2025-12-15T14:30:00"
+                  },
+                  "end_time": {
+                    "type": "string",
+                    "description": "Event end time (must be after start_time).",
+                    "example": "2025-12-15T16:00:00"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Event description (max 500 characters).",
+                    "example": "Discuss project requirements"
+                  },
+                  "all_day": {
+                    "type": "boolean",
+                    "description": "Whether the event is all-day. Must be a boolean, not a string.",
+                    "example": "false"
+                  },
+                  "google_meet_enabled": {
+                    "type": "boolean",
+                    "description": "Enable Google Meet (requires Google Calendar connected).",
+                    "example": "true"
+                  }
+                },
+                "required": [
+                  "title",
+                  "start_time",
+                  "end_time"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Event created successfully",
+            "content": {
+              "application/json": {
+                "example": {
+                  "success": true,
+                  "data": {
+                    "id": "770e8400-e29b-41d4-a716-446655440002",
+                    "title": "Meeting with Client",
+                    "description": "Discuss project requirements",
+                    "start_time": "2025-12-15T14:30:00.000Z",
+                    "end_time": "2025-12-15T16:00:00.000Z",
+                    "all_day": false,
+                    "google_meet_enabled": true,
+                    "meet_link": "https://meet.google.com/abc-defg-hij",
+                    "source": "local",
+                    "created_at": "2025-12-11T10:00:00.000Z",
+                    "updated_at": "2025-12-11T10:00:00.000Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation error (see error details)"
+          },
+          "401": {
+            "description": "Invalid or missing API key"
+          },
+          "500": {
+            "description": "Server error"
+          }
+        }
+      }
+    },
+    "/api/calendar/external/v1/events/{id}": {
+      "get": {
+        "tags": [
+          "Calendar"
+        ],
+        "summary": "Get a single event",
+        "operationId": "cal-get-event",
+        "description": "Retrieve a single event by its ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "The unique identifier of the event.",
+            "schema": {
+              "type": "string",
+              "example": "550e8400-e29b-41d4-a716-446655440000"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "example": {
+                  "success": true,
+                  "data": {
+                    "id": "550e8400-e29b-41d4-a716-446655440000",
+                    "title": "Team Meeting",
+                    "description": "Weekly team sync",
+                    "start_time": "2025-12-15T14:30:00.000Z",
+                    "end_time": "2025-12-15T16:00:00.000Z",
+                    "all_day": false,
+                    "source": "local",
+                    "created_at": "2025-12-10T10:00:00.000Z",
+                    "updated_at": "2025-12-10T10:00:00.000Z"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid or missing API key"
+          },
+          "404": {
+            "description": "Event not found or doesn't belong to your account"
+          },
+          "500": {
+            "description": "Server error"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Calendar"
+        ],
+        "summary": "Update an event",
+        "operationId": "cal-update-event",
+        "description": "Update an existing event. Only provided fields are updated.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "The unique identifier of the event.",
+            "schema": {
+              "type": "string",
+              "example": "550e8400-e29b-41d4-a716-446655440000"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "description": "Event title (1-255 characters).",
+                    "example": "Updated Meeting Title"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Event description. Use null to clear.",
+                    "example": "Updated description"
+                  },
+                  "start_time": {
+                    "type": "string",
+                    "description": "Event start time (flexible datetime format).",
+                    "example": "2025-12-15T15:00:00"
+                  },
+                  "end_time": {
+                    "type": "string",
+                    "description": "Event end time (flexible datetime format).",
+                    "example": "2025-12-15T17:00:00"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Event updated successfully",
+            "content": {
+              "application/json": {
+                "example": {
+                  "success": true,
+                  "data": {
+                    "id": "550e8400-e29b-41d4-a716-446655440000",
+                    "title": "Updated Meeting Title",
+                    "description": "Updated description",
+                    "start_time": "2025-12-15T15:00:00.000Z",
+                    "end_time": "2025-12-15T17:00:00.000Z",
+                    "all_day": false,
+                    "source": "local",
+                    "created_at": "2025-12-10T10:00:00.000Z",
+                    "updated_at": "2025-12-11T11:30:00.000Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation error or end_time <= start_time"
+          },
+          "401": {
+            "description": "Invalid or missing API key"
+          },
+          "404": {
+            "description": "Event not found or doesn't belong to your account"
+          },
+          "500": {
+            "description": "Server error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Calendar"
+        ],
+        "summary": "Delete an event",
+        "operationId": "cal-delete-event",
+        "description": "Delete an event by its ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "The unique identifier of the event.",
+            "schema": {
+              "type": "string",
+              "example": "550e8400-e29b-41d4-a716-446655440000"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Event deleted successfully",
+            "content": {
+              "application/json": {
+                "example": {
+                  "success": true,
+                  "message": "Event deleted successfully"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid or missing API key"
+          },
+          "404": {
+            "description": "Event not found or doesn't belong to your account"
+          },
+          "500": {
+            "description": "Server error"
+          }
+        }
+      }
+    },
+    "/api/leads/external/v1/leads": {
+      "post": {
+        "tags": [
+          "Leads"
+        ],
+        "summary": "Create a lead / Create leads in batch",
+        "operationId": "leads-create__merged",
+        "description": "Create 1-100 leads in a single atomic request.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "description": "Lead's full name (2-100 characters).",
+                        "example": "John Doe"
+                      },
+                      "phone": {
+                        "type": "string",
+                        "description": "Phone number (auto-normalized to E.164).",
+                        "example": "+1 234 567 8900"
+                      },
+                      "email": {
+                        "type": "string",
+                        "description": "Email address.",
+                        "example": "john@example.com"
+                      },
+                      "company": {
+                        "type": "string",
+                        "description": "Company name (up to 100 characters).",
+                        "example": "Acme Corp"
+                      },
+                      "tags": {
+                        "type": "array",
+                        "description": "Lead tags (max 20).",
+                        "items": {
+                          "type": "string"
+                        },
+                        "example": "[\"vip\",\"website-lead\"]"
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "phone"
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "leads": {
+                        "type": "array",
+                        "description": "Array of 1-100 lead objects, each with name & phone.",
+                        "items": {
+                          "type": "string"
+                        },
+                        "example": "[{\"name\":\"Lead 1\",\"phone\":\"+1234567890\"},{\"name\":\"Lead 2\",\"phone\":\"+1234567891\"}]"
+                      },
+                      "kind": {
+                        "type": "string",
+                        "description": "Batch-level kind. Must match the target campaign kind.",
+                        "enum": [
+                          "call",
+                          "sms"
+                        ],
+                        "example": "call"
+                      }
+                    },
+                    "required": [
+                      "leads"
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Lead created successfully",
+            "content": {
+              "application/json": {
+                "example": {
+                  "success": true,
+                  "data": {
+                    "mode": "atomic",
+                    "inserted": 1,
+                    "leads": [
+                      {
+                        "id": "f1c2d3e4-5b6a-7c8d-9e0f-1a2b3c4d5e6f",
+                        "name": "John Doe",
+                        "phone": "+12345678900",
+                        "campaign_name": "Default Feed",
+                        "status": "pending",
+                        "created_at": "2026-06-17T12:00:00.000Z"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation error or invalid phone"
+          },
+          "401": {
+            "description": "Invalid or missing API key"
+          },
+          "409": {
+            "description": "Duplicate lead (same phone in campaign)"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Leads"
+        ],
+        "summary": "Lookup lead by phone / List leads (paginated)",
+        "operationId": "leads-get-by-phone__merged",
+        "description": "List leads from a campaign with filtering and pagination.",
+        "parameters": [
+          {
+            "name": "phone",
+            "in": "query",
+            "required": false,
+            "description": "Phone number to lookup (US 10-digit works without country code).",
+            "schema": {
+              "type": "string",
+              "description": "Phone number to lookup (US 10-digit works without country code).",
+              "example": "+1234567890"
+            }
+          },
+          {
+            "name": "campaign_id",
+            "in": "query",
+            "required": false,
+            "description": "Optional UUID to scope the lookup to a specific campaign.",
+            "schema": {
+              "type": "string",
+              "description": "Optional UUID to scope the lookup to a specific campaign."
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "description": "Filter by status.",
+            "schema": {
+              "type": "string",
+              "description": "Filter by status.",
+              "enum": [
+                "pending",
+                "in-progress",
+                "completed",
+                "failed",
+                "retry"
+              ],
+              "example": "pending"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "description": "Page number (default 1).",
+            "schema": {
+              "type": "number",
+              "description": "Page number (default 1).",
+              "example": "1"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "description": "Results per page (default 50, max 100).",
+            "schema": {
+              "type": "number",
+              "description": "Results per page (default 50, max 100).",
+              "example": "50"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "example": {
+                  "success": true,
+                  "data": {
+                    "id": "f1c2d3e4-5b6a-7c8d-9e0f-1a2b3c4d5e6f",
+                    "name": "John Doe",
+                    "phone": "+12345678900",
+                    "email": "john@example.com",
+                    "campaign_name": "Default Feed",
+                    "status": "pending",
+                    "created_at": "2026-06-16T12:00:00.000Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid phone format"
+          },
+          "401": {
+            "description": "Invalid or missing API key"
+          },
+          "404": {
+            "description": "No lead found for that phone"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Leads"
+        ],
+        "summary": "Update a lead",
+        "operationId": "leads-update",
+        "description": "Update an existing lead identified by phone. At least one updatable field is required.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "phone": {
+                    "type": "string",
+                    "description": "Lead's phone number (identifies the lead).",
+                    "example": "+1234567890"
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Updated lead name.",
+                    "example": "John Doe Updated"
+                  },
+                  "email": {
+                    "type": "string",
+                    "description": "Updated email address.",
+                    "example": "john.new@example.com"
+                  },
+                  "company": {
+                    "type": "string",
+                    "description": "Updated company name.",
+                    "example": "New Corp"
+                  },
+                  "tags": {
+                    "type": "array",
+                    "description": "Updated tags.",
+                    "items": {
+                      "type": "string"
+                    },
+                    "example": "vip,updated"
+                  }
+                },
+                "required": [
+                  "phone"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Lead updated successfully",
+            "content": {
+              "application/json": {
+                "example": {
+                  "success": true,
+                  "data": {
+                    "id": "f1c2d3e4-5b6a-7c8d-9e0f-1a2b3c4d5e6f",
+                    "name": "John Doe Updated",
+                    "phone": "+12345678900",
+                    "status": "pending",
+                    "updated_at": "2026-06-17T12:05:00.000Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "No updatable fields provided"
+          },
+          "401": {
+            "description": "Invalid or missing API key"
+          },
+          "404": {
+            "description": "Lead not found"
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          }
+        }
+      }
+    },
+    "/api/leads/external/v1/leads/{lead_id}": {
+      "get": {
+        "tags": [
+          "Leads"
+        ],
+        "summary": "Get a lead by ID",
+        "operationId": "leads-get-by-id",
+        "description": "Retrieve a single lead by the UUID returned from POST.",
+        "parameters": [
+          {
+            "name": "lead_id",
+            "in": "path",
+            "required": true,
+            "description": "Lead UUID from the POST response.",
+            "schema": {
+              "type": "string",
+              "example": "f1c2d3e4-5b6a-7c8d-9e0f-1a2b3c4d5e6f"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "example": {
+                  "success": true,
+                  "data": {
+                    "id": "f1c2d3e4-5b6a-7c8d-9e0f-1a2b3c4d5e6f",
+                    "name": "John Doe",
+                    "phone": "+12345678900",
+                    "email": "john@example.com",
+                    "campaign_name": "Default Feed",
+                    "status": "pending"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid or missing API key"
+          },
+          "404": {
+            "description": "Lead not found"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "API key"
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ]
+}

@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { Copy, Check } from "lucide-react";
+import { useLanguage } from "./language-context";
 
 interface CodeExample {
   language: string;
@@ -29,8 +30,15 @@ const languageColors: Record<string, string> = {
 export default function CodeTabs({ examples, filename }: CodeTabsProps) {
   const [activeTab, setActiveTab] = useState(0);
   const [copied, setCopied] = useState(false);
+  const { language } = useLanguage();
 
-  const activeExample = examples[activeTab];
+  // Follow the global language preference when a matching example exists.
+  useEffect(() => {
+    const idx = examples.findIndex((ex) => ex.language === language);
+    if (idx >= 0) setActiveTab(idx);
+  }, [language, examples]);
+
+  const activeExample = examples[activeTab] ?? examples[0];
 
   const copyToClipboard = async () => {
     try {

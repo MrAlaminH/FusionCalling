@@ -38,7 +38,7 @@ export default function CodeBlock({
       <div className="relative">
         <button
           onClick={copyToClipboard}
-          className="absolute top-4 right-4 z-10 p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors opacity-0 group-hover:opacity-100"
+          className="absolute top-3 right-3 z-10 p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all opacity-100 sm:opacity-0 sm:group-hover:opacity-100 focus:opacity-100"
           aria-label="Copy code"
         >
           {copied ? (
