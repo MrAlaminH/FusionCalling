@@ -1,18 +1,21 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion, useInView, AnimatePresence } from "framer-motion";
+import { useRef, useState } from "react";
 import { Check, Star, ArrowRight } from "lucide-react";
+import { BillingToggle, type BillingCycle } from "@/components/ui/billing-toggle";
 
 export default function Pricing() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const [billing, setBilling] = useState<BillingCycle>("monthly");
 
   const plans = [
     {
       name: "Starter",
       description: "Perfect for agencies just starting with Voice AI",
-      price: "$99",
+      priceMonthly: 99,
+      priceYearly: 89,
       popular: false,
       features: [
         "6 Sub-Accounts",
@@ -27,7 +30,8 @@ export default function Pricing() {
     {
       name: "Growth",
       description: "For growing agencies scaling their Voice AI offerings",
-      price: "$299",
+      priceMonthly: 299,
+      priceYearly: 269,
       popular: true,
       features: [
         "20 Sub-Accounts",
@@ -41,7 +45,8 @@ export default function Pricing() {
     {
       name: "Scale",
       description: "For established agencies with unlimited client needs",
-      price: "$499",
+      priceMonthly: 499,
+      priceYearly: 449,
       popular: false,
       features: [
         "Unlimited Sub-Accounts",
@@ -109,6 +114,16 @@ export default function Pricing() {
             Choose the plan that fits your agency&apos;s needs. Scale up as you
             grow.
           </p>
+        </motion.div>
+
+        {/* Billing Cycle Toggle */}
+        <motion.div
+          className="flex justify-center mb-10 md:mb-14"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -10 }}
+          transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 0.1, 0.25, 1.0] }}
+        >
+          <BillingToggle value={billing} onChange={setBilling} />
         </motion.div>
 
         {/* Pricing Cards with Glassmorphism */}
@@ -186,11 +201,16 @@ export default function Pricing() {
                     {plan.description}
                   </p>
                   <div className="space-y-1">
-                    <div className="flex items-baseline gap-2">
+                    <div className="flex items-baseline gap-2 flex-wrap">
+                      {billing === "yearly" && (
+                        <span className="font-display text-2xl md:text-3xl font-medium text-gray-500 line-through">
+                          ${plan.priceMonthly}
+                        </span>
+                      )}
                       <span
                         className={`font-display text-4xl md:text-5xl lg:text-6xl font-bold ${plan.popular ? "text-white" : "text-orange-500"}`}
                       >
-                        {plan.price}
+                        ${billing === "yearly" ? plan.priceYearly : plan.priceMonthly}
                       </span>
                       <span
                         className={`text-sm md:text-base ${plan.popular ? "text-orange-200" : "text-gray-400"}`}
@@ -198,6 +218,24 @@ export default function Pricing() {
                         /month
                       </span>
                     </div>
+                    <AnimatePresence initial={false}>
+                      {billing === "yearly" && (
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="flex flex-wrap items-center gap-2"
+                        >
+                          <span className="text-xs md:text-sm text-orange-300/80">
+                            billed annually
+                          </span>
+                          <span className="rounded-full bg-green-500/15 px-2 py-0.5 text-[10px] md:text-xs font-semibold text-green-400 ring-1 ring-inset ring-green-500/30">
+                            Save ${(plan.priceMonthly - plan.priceYearly) * 12}/yr
+                          </span>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                 </div>
 

@@ -1,6 +1,17 @@
+"use client";
+
+import { useState } from "react";
 import { Check } from "lucide-react";
+import { BillingToggle, type BillingCycle } from "@/components/ui/billing-toggle";
+
+const prices = {
+  starter: { monthly: 149, yearly: 134 },
+  pro: { monthly: 249, yearly: 224 },
+  enterprise: { monthly: 497, yearly: 447 },
+} as const;
 
 export default function PricingSection() {
+  const [billing, setBilling] = useState<BillingCycle>("monthly");
   return (
     <section className="w-full py-6 md:py-8 lg:py-12 bg-black text-gray-200">
       <div className="container px-4 md:px-6 max-w-6xl mx-auto">
@@ -15,6 +26,11 @@ export default function PricingSection() {
           </p>
         </div>
 
+        {/* Billing Cycle Toggle */}
+        <div className="flex justify-center mb-6 md:mb-8">
+          <BillingToggle value={billing} onChange={setBilling} />
+        </div>
+
         {/* Pricing Cards Container */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {/* Starter Plan */}
@@ -26,8 +42,25 @@ export default function PricingSection() {
               </div>
             </div>
             <div className="mb-4 md:mb-5">
-              <h2 className="text-xl md:text-2xl font-bold text-white">$149</h2>
-              <p className="text-xs text-gray-300">/ per month</p>
+              <div className="flex items-baseline gap-1.5 flex-wrap">
+                {billing === "yearly" && (
+                  <span className="text-sm md:text-base font-medium text-gray-500 line-through">
+                    ${prices.starter.monthly}
+                  </span>
+                )}
+                <h2 className="text-xl md:text-2xl font-bold text-white">
+                  ${billing === "yearly" ? prices.starter.yearly : prices.starter.monthly}
+                </h2>
+                <span className="text-xs text-gray-300">/ per month</span>
+              </div>
+              {billing === "yearly" ? (
+                <p className="text-xs font-semibold text-green-400">
+                  billed annually · Save $
+                  {(prices.starter.monthly - prices.starter.yearly) * 12}/year
+                </p>
+              ) : (
+                <p className="text-xs text-gray-300">billed monthly</p>
+              )}
             </div>
             <a
               href="#calendar"
@@ -98,8 +131,24 @@ export default function PricingSection() {
               </span>
             </div>
             <div className="mb-4 md:mb-5">
-              <h2 className="text-xl md:text-2xl font-bold text-white">$249</h2>
-              <p className="text-xs opacity-80">/ per month</p>
+              <div className="flex items-baseline gap-1.5 flex-wrap">
+                {billing === "yearly" && (
+                  <span className="text-sm md:text-base font-medium text-white/50 line-through">
+                    ${prices.pro.monthly}
+                  </span>
+                )}
+                <h2 className="text-xl md:text-2xl font-bold text-white">
+                  ${billing === "yearly" ? prices.pro.yearly : prices.pro.monthly}
+                </h2>
+                <span className="text-xs opacity-80">/ per month</span>
+              </div>
+              {billing === "yearly" ? (
+                <p className="text-xs font-semibold text-white">
+                  billed annually · Save ${(prices.pro.monthly - prices.pro.yearly) * 12}/year
+                </p>
+              ) : (
+                <p className="text-xs opacity-80">billed monthly</p>
+              )}
             </div>
             <a
               href="#calendar"
@@ -146,8 +195,25 @@ export default function PricingSection() {
               </div>
             </div>
             <div className="mb-4 md:mb-5">
-              <h2 className="text-xl md:text-2xl font-bold text-white">$497</h2>
-              <p className="text-xs text-gray-300">/ per month</p>
+              <div className="flex items-baseline gap-1.5 flex-wrap">
+                {billing === "yearly" && (
+                  <span className="text-sm md:text-base font-medium text-gray-500 line-through">
+                    ${prices.enterprise.monthly}
+                  </span>
+                )}
+                <h2 className="text-xl md:text-2xl font-bold text-white">
+                  ${billing === "yearly" ? prices.enterprise.yearly : prices.enterprise.monthly}
+                </h2>
+                <span className="text-xs text-gray-300">/ per month</span>
+              </div>
+              {billing === "yearly" ? (
+                <p className="text-xs font-semibold text-green-400">
+                  billed annually · Save $
+                  {(prices.enterprise.monthly - prices.enterprise.yearly) * 12}/year
+                </p>
+              ) : (
+                <p className="text-xs text-gray-300">billed monthly</p>
+              )}
             </div>
             <a
               href="#calendar"
