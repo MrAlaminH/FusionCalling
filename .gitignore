@@ -36,4 +36,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-/BingSiteAuth.xml
+
+# Bing site verification (keep local only)
+BingSiteAuth.xml
