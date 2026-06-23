@@ -129,7 +129,7 @@ export default function Hero() {
           }}
           className="text-center mb-4 sm:mb-6 md:mb-8 px-2 sm:px-4 md:px-6"
         >
-          <h1 className="font-display text-3xl xxs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[1.1]">
+          <h1 className="font-display text-2xl xxs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]">
             Scale Your Agency with,
             <br className="hidden sm:block" />
             <span className="whitespace-nowrap"> </span>
@@ -151,10 +151,7 @@ export default function Hero() {
           className="max-w-4xl mx-auto text-center mb-8 sm:mb-10 lg:mb-12 px-2 sm:px-4 md:px-6"
         >
           <p className="font-body text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-400 leading-relaxed">
-            Stop referring clients elsewhere and start owning the technology.
-            Deliver premium AI phone call automation under your own agency fully
-            branded dashboard. Automate client calls, book appointments, and
-            capture 100% of the revenue.
+            Fusion Calling&apos;s white-label partner program lets agencies and resellers offer AI phone automation under their own brand. You get a fully customizable dashboard, flexible pricing structures, and complete control over client relationships—we handle the technology while you capture 100% of the revenue.
           </p>
         </motion.div>
 

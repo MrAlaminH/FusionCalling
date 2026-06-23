@@ -70,168 +70,196 @@ export default function WhiteLabelPage() {
     {
       question: "What's the difference between partner tiers?",
       answer:
-        "The main differences are commission rates, support levels, and minimum client requirements. Starter Partners earn 20% commission with 5 minimum clients. Pro Partners earn 30% with 15 minimum clients. Enterprise Partners earn 40% with 30 minimum clients and get premium benefits like 24/7 support.",
-    },
-    {
-      question: "Can I set my own pricing?",
-      answer:
-        "Yes! You have complete control over your pricing. Set any price point that works for your market. Your earnings are based on the difference between your client price and our wholesale rate, with additional commission on top.",
-    },
-    {
-      question: "What support do partners receive?",
-      answer:
-        "All partners receive email and whatsapp support and access to our partner portal. Pro Partners get priority support (24-hour response time). Enterprise Partners receive 24/7 dedicated support with a dedicated account manager.",
-    },
-    {
-      question: "Is there a setup fee?",
-      answer:
-        "Yes, there is a setup fee based on your chosen partner tier. We only charge a monthly fee based on your usage and your chosen partner tier. This makes it risk-free to get started.",
+        "The main differences are commission rates and minimum client requirements. Starter Partners earn 20% commission with 5 minimum clients. Pro Partners earn 30% with 15 minimum clients. Enterprise Partners earn 40% with 30 minimum clients and get 24/7 support.",
     },
     {
       question: "Can I use my own domain?",
       answer:
-        "Absolutely. We will set up your white-label solution on your own domain (e.g., app.youragency.com). Your clients will never know about Fusion Calling unless you choose to tell them.",
-    },
-    {
-      question: "How do voice and branding customization work?",
-      answer:
-        "You provide your brand assets (logo, colors, domain) and optionally a agent voice sample. Our team customizes your white-label environment and trains AI agents with your preferred voice. Most agencies complete this within their first week.",
-    },
-    {
-      question: "Can I cancel my partnership?",
-      answer:
-        "Yes, you can cancel your partnership at any time without penalties. There are no long-term contracts. Any active clients you've brought on can continue using the service, and we handle the transition smoothly.",
+        "Absolutely. We set up your white-label solution on your own domain (e.g., app.youragency.com). Your clients will never know about Fusion Calling unless you choose to tell them—you have complete brand control.",
     },
   ];
 
   return (
     <>
-      <Script
-        id="whitelabel-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@type": "BreadcrumbList",
-                itemListElement: [
+          <Script
+            id="whitelabel-schema"
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@graph": [
                   {
-                    "@type": "ListItem",
-                    position: 1,
-                    name: "Home",
-                    item: "https://www.fusioncalling.com/",
+                    "@type": "LocalBusiness",
+                    "@id": "https://www.fusioncalling.com/whitelabel#localbusiness",
+                    name: "Fusion Calling White-label Partner Program",
+                    image: "https://www.fusioncalling.com/logo.png",
+                    description: "White-label AI voice solution for agencies and resellers. Offer AI phone automation under your own brand with full customization and commission structure.",
+                    url: "https://www.fusioncalling.com/whitelabel",
+                    telephone: "+1-202-998-3591",
+                    email: "partners@fusioncalling.com",
+                    parentOrganization: {
+                      "@id": "https://www.fusioncalling.com/#organization"
+                    },
+                    areaServed: {
+                      "@type": "Country",
+                      name: "United States"
+                    }
                   },
                   {
-                    "@type": "ListItem",
-                    position: 2,
-                    name: "White-label Partner Program",
-                    item: "https://www.fusioncalling.com/whitelabel",
+                    "@type": "Service",
+                    "@id": "https://www.fusioncalling.com/whitelabel#service",
+                    name: "White-label AI Voice Solution",
+                    description: "Partner program allowing agencies and resellers to offer AI phone call automation under their own brand. Includes full white-label dashboard, custom voice training, and commission-based pricing structure.",
+                    provider: {
+                      "@id": "https://www.fusioncalling.com/#organization"
+                    },
+                    offers: [
+                      {
+                        "@type": "Offer",
+                        name: "Starter Partner Plan",
+                        price: "99",
+                        priceCurrency: "USD",
+                        description: "20% commission, 5 minimum clients, email support",
+                        availability: "https://schema.org/InStock",
+                        url: "https://www.fusioncalling.com/whitelabel"
+                      },
+                      {
+                        "@type": "Offer",
+                        name: "Pro Partner Plan",
+                        price: "299",
+                        priceCurrency: "USD",
+                        description: "30% commission, 15 minimum clients, priority support",
+                        availability: "https://schema.org/InStock",
+                        url: "https://www.fusioncalling.com/whitelabel"
+                      },
+                      {
+                        "@type": "Offer",
+                        name: "Enterprise Partner Plan",
+                        price: "499",
+                        priceCurrency: "USD",
+                        description: "40% commission, 30 minimum clients, 24/7 support",
+                        availability: "https://schema.org/InStock",
+                        url: "https://www.fusioncalling.com/whitelabel"
+                      }
+                    ],
+                    audience: {
+                      "@type": "Audience",
+                      audienceType: "Marketing agencies, call centers, SaaS resellers, consultants"
+                    },
+                    keywords: "white-label AI voice, agency partnership, AI reseller, voice AI platform, call center white-label"
+                  },
+                  {
+                    "@type": "BreadcrumbList",
+                    itemListElement: [
+                      {
+                        "@type": "ListItem",
+                        position: 1,
+                        name: "Home",
+                        item: "https://www.fusioncalling.com/",
+                      },
+                      {
+                        "@type": "ListItem",
+                        position: 2,
+                        name: "White-label Partner Program",
+                        item: "https://www.fusioncalling.com/whitelabel",
+                      },
+                    ],
+                  },
+                  {
+                    "@type": "Product",
+                    "@id": "https://www.fusioncalling.com/whitelabel#product",
+                    name: "Fusion Calling White-label AI Voice Solution",
+                    description:
+                      "Become a Fusion Calling partner and white-label our AI voice solution. Offer powerful AI phone automation under your own brand.",
+                    brand: {
+                      "@id": "https://www.fusioncalling.com/#organization",
+                    },
+                    category: "Business Software",
+                    offers: [
+                      {
+                        "@type": "Offer",
+                        name: "Starter Plan",
+                        price: "99",
+                        priceCurrency: "USD",
+                        priceValidUntil: "2027-12-31",
+                        availability: "https://schema.org/InStock",
+                        url: "https://www.fusioncalling.com/whitelabel",
+                      },
+                      {
+                        "@type": "Offer",
+                        name: "Growth Plan",
+                        price: "299",
+                        priceCurrency: "USD",
+                        priceValidUntil: "2027-12-31",
+                        availability: "https://schema.org/InStock",
+                        url: "https://www.fusioncalling.com/whitelabel",
+                      },
+                      {
+                        "@type": "Offer",
+                        name: "Scale Plan",
+                        price: "499",
+                        priceCurrency: "USD",
+                        priceValidUntil: "2027-12-31",
+                        availability: "https://schema.org/InStock",
+                        url: "https://www.fusioncalling.com/whitelabel",
+                      },
+                    ],
+                  },
+                  {
+                    "@type": "FAQPage",
+                    "@id": "https://www.fusioncalling.com/whitelabel#faqpage",
+                    mainEntity: faqs.map((faq) => ({
+                      "@type": "Question",
+                      name: faq.question,
+                      acceptedAnswer: {
+                        "@type": "Answer",
+                        text: faq.answer,
+                      },
+                    })),
+                  },
+                  {
+                    "@type": "HowTo",
+                    "@id": "https://www.fusioncalling.com/whitelabel#howto",
+                    name: "How to Launch Your White-label AI Voice Business",
+                    description:
+                      "From application to first sale in as little as one week. We handle the technology, you focus on growing your agency.",
+                    step: [
+                      {
+                        "@type": "HowToStep",
+                        name: "Apply for Partnership",
+                        text: "Submit your application and get approved within 48 hours. We review your agency to ensure a successful partnership.",
+                      },
+                      {
+                        "@type": "HowToStep",
+                        name: "Customize Your Brand",
+                        text: "Set up your white-label environment with your logo, colors, and domain. Launch your branded AI solution.",
+                      },
+                      {
+                        "@type": "HowToStep",
+                        name: "Set Your Pricing",
+                        text: "Define your pricing model and margins. You have complete control over what you charge your clients.",
+                      },
+                      {
+                        "@type": "HowToStep",
+                        name: "Start Selling & Earning",
+                        text: "Begin onboarding clients and generating recurring revenue. Scale as fast as you want with our infrastructure.",
+                      },
+                    ],
+                  },
+                  {
+                    "@type": "VideoObject",
+                    "@id": "https://www.fusioncalling.com/whitelabel#video",
+                    name: "Fusion Calling White-label Demo",
+                    description: "Watch our demo video to see how the white-label AI voice solution works.",
+                    thumbnailUrl: ["https://www.fusioncalling.com/hero-thambnail.png"],
+                    uploadDate: "2024-01-01",
+                    contentUrl: "https://player.vimeo.com/video/1155684546",
+                    embedUrl: "https://player.vimeo.com/video/1155684546",
                   },
                 ],
-              },
-              {
-                "@type": "Product",
-                "@id": "https://www.fusioncalling.com/whitelabel#product",
-                name: "Fusion Calling White-label AI Voice Solution",
-                description:
-                  "Become a Fusion Calling partner and white-label our AI voice solution. Offer powerful AI phone automation under your own brand.",
-                brand: {
-                  "@id": "https://www.fusioncalling.com/#organization",
-                },
-                category: "Business Software",
-                offers: [
-                  {
-                    "@type": "Offer",
-                    name: "Starter Plan",
-                    price: "99",
-                    priceCurrency: "USD",
-                    priceValidUntil: "2027-12-31",
-                    availability: "https://schema.org/InStock",
-                    url: "https://www.fusioncalling.com/whitelabel",
-                  },
-                  {
-                    "@type": "Offer",
-                    name: "Growth Plan",
-                    price: "299",
-                    priceCurrency: "USD",
-                    priceValidUntil: "2027-12-31",
-                    availability: "https://schema.org/InStock",
-                    url: "https://www.fusioncalling.com/whitelabel",
-                  },
-                  {
-                    "@type": "Offer",
-                    name: "Scale Plan",
-                    price: "499",
-                    priceCurrency: "USD",
-                    priceValidUntil: "2027-12-31",
-                    availability: "https://schema.org/InStock",
-                    url: "https://www.fusioncalling.com/whitelabel",
-                  },
-                ],
-                aggregateRating: {
-                  "@type": "AggregateRating",
-                  ratingValue: "4.9",
-                  reviewCount: "87",
-                  bestRating: "5",
-                  worstRating: "1",
-                },
-              },
-              {
-                "@type": "FAQPage",
-                "@id": "https://www.fusioncalling.com/whitelabel#faqpage",
-                mainEntity: faqs.map((faq) => ({
-                  "@type": "Question",
-                  name: faq.question,
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: faq.answer,
-                  },
-                })),
-              },
-              {
-                "@type": "HowTo",
-                "@id": "https://www.fusioncalling.com/whitelabel#howto",
-                name: "How to Launch Your White-label AI Voice Business",
-                description:
-                  "From application to first sale in as little as one week. We handle the technology, you focus on growing your agency.",
-                step: [
-                  {
-                    "@type": "HowToStep",
-                    name: "Apply for Partnership",
-                    text: "Submit your application and get approved within 48 hours. We review your agency to ensure a successful partnership.",
-                  },
-                  {
-                    "@type": "HowToStep",
-                    name: "Customize Your Brand",
-                    text: "Set up your white-label environment with your logo, colors, and domain. Launch your branded AI solution.",
-                  },
-                  {
-                    "@type": "HowToStep",
-                    name: "Set Your Pricing",
-                    text: "Define your pricing model and margins. You have complete control over what you charge your clients.",
-                  },
-                  {
-                    "@type": "HowToStep",
-                    name: "Start Selling & Earning",
-                    text: "Begin onboarding clients and generating recurring revenue. Scale as fast as you want with our infrastructure.",
-                  },
-                ],
-              },
-              {
-                "@type": "VideoObject",
-                "@id": "https://www.fusioncalling.com/whitelabel#video",
-                name: "Fusion Calling White-label Demo",
-                description: "Watch our demo video to see how the white-label AI voice solution works.",
-                thumbnailUrl: ["https://www.fusioncalling.com/hero-thambnail.png"],
-                uploadDate: "2024-01-01",
-                contentUrl: "https://player.vimeo.com/video/1155684546",
-                embedUrl: "https://player.vimeo.com/video/1155684546",
-              },
-            ],
-          }),
-        }}
-      />
+              }),
+            }}
+          />
       <main id="main" className="min-h-screen w-full bg-black">
       <WhiteLabelNavbar />
       <section id="hero" className="scroll-mt-24">
@@ -249,10 +277,10 @@ export default function WhiteLabelPage() {
       <section id="pricing" className="scroll-mt-24">
         <Pricing />
       </section>
-      <section id="benefits" className="scroll-mt-24">
+      <section id="benefits" className="scroll-mt-16">
         <Benefits />
       </section>
-      <section id="faq" className="scroll-mt-24">
+      <section id="faq" className="scroll-mt-16">
         <FAQ />
       </section>
       <section id="cta" className="scroll-mt-24">

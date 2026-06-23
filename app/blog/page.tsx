@@ -90,14 +90,14 @@ export default function BlogPage() {
         }}
       />
       
-      <div className="min-h-screen bg-gradient-to-b from-black via-black to-gray-900 text-white py-16">
+       <div className="min-h-screen bg-gradient-to-b from-black via-black to-gray-900 text-white py-8 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-orange-200 to-orange-400 bg-clip-text text-transparent">
+          <div className="text-center mb-16 md:mb-20 pt-4 md:pt-6 relative z-10">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 md:mb-8 bg-gradient-to-r from-white via-orange-200 to-orange-400 bg-clip-text text-transparent relative">
               Voice AI Agency Insights
             </h1>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed px-4 relative">
               Expert analysis on white-label platforms, agency growth strategies, and
               the future of voice automation. Build your AI voice business with confidence.
             </p>

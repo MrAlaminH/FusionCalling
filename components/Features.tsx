@@ -17,9 +17,9 @@ export default function Features() {
         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -20 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        <motion.h1 className="text-brand-strong text-center font-bold text-3xl md:text-4xl  pb-4">
+        <motion.h2 className="text-brand-strong text-center font-bold text-3xl md:text-4xl  pb-4">
           Calling Features
-        </motion.h1>
+        </motion.h2>
         <p className="text-gray-400 text-center md:text-xl mb-6">
           Turn missed calls into revenue with <br /> AI phone call agents that
           sound and behave like real humans.

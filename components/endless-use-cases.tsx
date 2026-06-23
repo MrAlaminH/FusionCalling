@@ -37,9 +37,9 @@ export default function EndlessUseCases() {
   return (
     <section className="w-full bg-black py-16">
       <div className="container mx-auto max-w-7xl px-4">
-        <h1 className="text-4xl font-bold text-center text-brand-strong mb-12">
+        <h2 className="text-4xl font-bold text-center text-brand-strong mb-12">
           Real-world usecases
-        </h1>
+        </h2>
 
         {/* Enhanced Tab Switcher */}
         <Card className="w-full max-w-md mx-auto mb-6 p-1.5 bg-zinc-900 border-zinc-800 rounded-xl shadow-2xl">

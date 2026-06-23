@@ -61,7 +61,7 @@ export default function HowItWorks() {
             ease: [0.25, 0.1, 0.25, 1.0],
           }}
         >
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 tracking-tight">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6 tracking-tight">
             How to Launch Your
             <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
               {" "}

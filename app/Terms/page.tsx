@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Fusion Calling terms of service describing acceptable use, billing, privacy, and platform obligations.",
   alternates: {
-    canonical: "/Terms",
+    canonical: "/terms",
   },
 };
 

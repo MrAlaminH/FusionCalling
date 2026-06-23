@@ -19,7 +19,7 @@ export default function CTA() {
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -20 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">
             Ready to Start Your
             <span className="bg-gradient-to-r from-brand to-brand-strong text-transparent bg-clip-text">
               {" "}

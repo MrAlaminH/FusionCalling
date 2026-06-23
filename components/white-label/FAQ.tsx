@@ -8,7 +8,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { HelpCircle } from "lucide-react";
 
 export default function FAQ() {
   const ref = useRef(null);
@@ -33,37 +32,12 @@ export default function FAQ() {
     {
       question: "What's the difference between partner tiers?",
       answer:
-        "The main differences are commission rates, support levels, and minimum client requirements. Starter Partners earn 20% commission with 5 minimum clients. Pro Partners earn 30% with 15 minimum clients. Enterprise Partners earn 40% with 30 minimum clients and get premium benefits like 24/7 support.",
-    },
-    {
-      question: "Can I set my own pricing?",
-      answer:
-        "Yes! You have complete control over your pricing. Set any price point that works for your market. Your earnings are based on the difference between your client price and our wholesale rate, with additional commission on top.",
-    },
-    {
-      question: "What support do partners receive?",
-      answer:
-        "All partners receive email and whatsapp support and access to our partner portal. Pro Partners get priority support (24-hour response time). Enterprise Partners receive 24/7 dedicated support with a dedicated account manager.",
-    },
-    {
-      question: "Is there a setup fee?",
-      answer:
-        "Yes, there is a setup fee based on your chosen partner tier. We only charge a monthly fee based on your usage and your chosen partner tier. This makes it risk-free to get started.",
+        "The main differences are commission rates and minimum client requirements. Starter Partners earn 20% commission with 5 minimum clients. Pro Partners earn 30% with 15 minimum clients. Enterprise Partners earn 40% with 30 minimum clients and get 24/7 support.",
     },
     {
       question: "Can I use my own domain?",
       answer:
-        "Absolutely. We will set up your white-label solution on your own domain (e.g., app.youragency.com). Your clients will never know about Fusion Calling unless you choose to tell them.",
-    },
-    {
-      question: "How do voice and branding customization work?",
-      answer:
-        "You provide your brand assets (logo, colors, domain) and optionally a agent voice sample. Our team customizes your white-label environment and trains AI agents with your preferred voice. Most agencies complete this within their first week.",
-    },
-    {
-      question: "Can I cancel my partnership?",
-      answer:
-        "Yes, you can cancel your partnership at any time without penalties. There are no long-term contracts. Any active clients you've brought on can continue using the service, and we handle the transition smoothly.",
+        "Absolutely. We set up your white-label solution on your own domain (e.g., app.youragency.com). Your clients will never know about Fusion Calling unless you choose to tell them—you have complete brand control.",
     },
   ];
 
@@ -77,12 +51,7 @@ export default function FAQ() {
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -20 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className="flex items-center justify-center gap-3 mb-4 sm:mb-6">
-            <div className="w-14 h-14 rounded-full bg-brand/10 border border-brand/30 flex items-center justify-center">
-              <HelpCircle className="w-7 h-7 text-brand" />
-            </div>
-          </div>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 tracking-tight">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6 tracking-tight">
             Frequently Asked
             <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
               {" "}

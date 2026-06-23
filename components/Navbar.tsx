@@ -8,10 +8,12 @@ import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Show Case", href: "/#show-case" },
+  { label: "Showcase", href: "/#show-case" },
   { label: "Features", href: "/#features" },
   { label: "Pricing", href: "/#pricing" },
   { label: "FAQs", href: "/#faqs" },
+  { label: "Docs", href: "/docs" },
+  { label: "Blog", href: "/blog" },
 ];
 
 const CONTACT_URL = "https://cal.com/mralamin/discovery-call";
@@ -69,35 +71,35 @@ const Navbar = () => {
   }, [isMenuOpen]);
 
   return (
-    <nav className="bg-[#03001417] backdrop-blur-md shadow-lg shadow-brand-strong/50 fixed w-full z-50 top-0">
-      <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between p-2 px-4 sm:px-6 lg:px-8">
+    <nav className="bg-black/80 backdrop-blur-xl border-b border-brand/20 fixed w-full z-50 top-0">
+      <div className="max-w-screen-2xl mx-auto flex items-center justify-between p-3 sm:p-4 lg:px-8">
         {/* Brand */}
         <div className="flex items-center">
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center gap-3">
             <Image
               src="/logo.png"
               alt="Fusion Calling logo"
               width={40}
               height={40}
-              className="cursor-pointer hover:animate-slowspin sm:w-[45px] sm:h-[45px] lg:w-[50px] lg:h-[50px]"
+              className="cursor-pointer hover:animate-slowspin transition-transform"
             />
+            <div className="flex flex-col items-start">
+              <span className="text-xl sm:text-2xl text-brand-strong font-extrabold tracking-tight">
+                Fusion Calling
+              </span>
+              <span className="text-brand text-xs font-semibold self-end">
+                Labs
+              </span>
+            </div>
           </Link>
-          <div className="flex flex-col ml-3 mt-3">
-            <span className="text-lg sm:text-xl text-brand-strong font-extrabold">
-              Fusion Calling
-            </span>
-            <span className="text-[#FF4500] text-[10px] self-end mr-[8px] -mt-1 font-bold">
-              Labs
-            </span>
-          </div>
         </div>
 
         {/* Mobile toggle */}
-        <div className="flex lg:hidden">
+        <div className="flex md:hidden">
           <button
             ref={toggleRef}
             type="button"
-            className="inline-flex items-center p-2 text-gray-200 hover:bg-brand-strong/20 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+            className="inline-flex items-center p-2.5 text-gray-200 hover:bg-brand/10 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-brand transition-colors"
             aria-controls="mobile-menu"
             aria-expanded={isMenuOpen}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -126,17 +128,17 @@ const Navbar = () => {
         </div>
 
         {/* Desktop nav */}
-        <div className="hidden lg:block lg:w-auto">
-          <ul className="flex flex-row space-x-6 xl:space-x-8">
+        <div className="hidden md:flex md:items-center md:gap-1">
+          <ul className="flex flex-row items-center gap-1">
             {NAV_LINKS.map((item) => (
               <li key={item.label}>
                 <Link
                   href={item.href}
                   className={cn(
-                    "block py-2.5 px-4 rounded-lg font-medium transition duration-300 transform hover:-translate-y-1 hover:bg-brand-strong hover:text-white",
+                    "block px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-300",
                     item.label === "Home"
-                      ? "text-yellow-400"
-                      : "text-gray-200"
+                      ? "text-brand-strong"
+                      : "text-gray-300 hover:text-white hover:bg-brand/10"
                   )}
                 >
                   {item.label}
@@ -147,21 +149,23 @@ const Navbar = () => {
         </div>
 
         {/* Desktop CTAs */}
-        <div className="hidden lg:flex items-center gap-3">
+        <div className="hidden md:flex items-center gap-3">
+          <Link
+            href="/whitelabel"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 h-10 px-5 rounded-lg border border-brand/50 bg-transparent font-medium text-white hover:bg-brand/10 transition-all duration-300 text-sm"
+          >
+            Partner Program
+            <ExternalLink className="w-4 h-4" />
+          </Link>
           <Link
             href={CONTACT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-10 sm:h-11 lg:h-12 items-center justify-center rounded-xl border border-brand-strong bg-brand-strong px-4 sm:px-5 lg:px-6 font-medium text-white hover:bg-gray-800 transition duration-300 transform hover:-translate-y-1"
+            className="inline-flex items-center justify-center h-10 px-6 rounded-lg bg-brand font-medium text-white hover:bg-brand-strong transition-all duration-300 shadow-lg shadow-brand/30 text-sm"
           >
             Contact Us
-          </Link>
-          <Link
-            href="/whitelabel"
-            className="inline-flex h-10 sm:h-11 lg:h-12 items-center justify-center gap-2 rounded-xl border-2 border-brand-strong bg-transparent px-4 sm:px-5 lg:px-6 font-medium text-white hover:bg-brand-strong/20 transition duration-300 transform hover:-translate-y-1"
-          >
-            Partner Program
-            <ExternalLink className="w-4 h-4" />
           </Link>
         </div>
 
@@ -170,9 +174,9 @@ const Navbar = () => {
           <div
             ref={menuRef}
             id="mobile-menu"
-            className="w-full lg:hidden"
+            className="absolute top-full left-0 right-0 md:hidden bg-black/95 backdrop-blur-xl border-b border-brand/20"
           >
-            <ul className="flex flex-col p-4 mt-4 space-y-3 border border-brand-strong/50 rounded-lg">
+            <ul className="flex flex-col p-4 space-y-1">
               {NAV_LINKS.map((item, i) => (
                 <li key={item.label}>
                   <Link
@@ -180,32 +184,32 @@ const Navbar = () => {
                     href={item.href}
                     onClick={() => setIsMenuOpen(false)}
                     className={cn(
-                      "block py-2.5 px-4 rounded-lg font-medium transition duration-300 transform hover:-translate-y-1 hover:bg-brand-strong hover:text-white",
+                      "block px-4 py-3 rounded-lg font-medium transition-all duration-300",
                       item.label === "Home"
-                        ? "text-yellow-400"
-                        : "text-gray-200"
+                        ? "text-brand-strong bg-brand/10"
+                        : "text-gray-300 hover:text-white hover:bg-brand/10"
                     )}
                   >
                     {item.label}
                   </Link>
                 </li>
               ))}
-              <li className="mt-4 !border-t border-brand-strong/30 pt-4">
+               <li className="pt-4 mt-4 border-t border-brand/20 space-y-2">
                 <Link
                   href="/whitelabel"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setIsMenuOpen(false)}
-                  className="flex items-center justify-center gap-2 py-3 px-4 rounded-lg text-white bg-transparent border-2 border-brand-strong hover:bg-brand-strong/20 text-center font-semibold transition duration-300 transform hover:-translate-y-1"
+                  className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-lg text-white bg-brand/10 border border-brand/30 hover:bg-brand/20 font-medium transition-all duration-300"
                 >
                   Partner Program
                   <ExternalLink className="w-4 h-4" />
                 </Link>
-              </li>
-              <li>
                 <a
                   href={CONTACT_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block py-3 px-4 rounded-lg text-white bg-brand-strong hover:bg-brand-strong/90 text-center font-semibold shadow-lg shadow-brand-strong/30 transition duration-300 transform hover:-translate-y-1"
+                  className="flex items-center justify-center w-full px-4 py-3 rounded-lg text-white bg-brand hover:bg-brand-strong font-medium shadow-lg shadow-brand/30 transition-all duration-300"
                 >
                   Contact Us
                 </a>

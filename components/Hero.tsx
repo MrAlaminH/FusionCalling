@@ -107,7 +107,7 @@ export default function Component() {
           <Link
             href="#"
             className={cn(
-              "group inline-flex items-center rounded-full bg-white/10 px-2.5 sm:px-3 md:px-4 py-1 sm:py-1.5 text-[10px] xxs:text-xs sm:text-sm transition-colors hover:bg-white/20"
+              "group inline-flex items-center rounded-full bg-white/10 px-2.5 sm:px-3 md:px-4 py-1 sm:py-1.5 text-[10px] xxs:text-xs sm:text-sm transition-colors hover:bg-white/20",
             )}
           >
             <Sparkles className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4 mr-1 sm:mr-1.5 md:mr-2" />
@@ -132,7 +132,7 @@ export default function Component() {
             <br className="hidden sm:block" />
             <span className="whitespace-nowrap"> </span>
             with{" "}
-              <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
+            <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
               AI Phone call Automation
             </span>
           </h1>
@@ -146,10 +146,10 @@ export default function Component() {
           className="max-w-2xl mx-auto text-center mb-6 sm:mb-8 lg:mb-10 px-2 sm:px-4 md:px-6"
         >
           <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-400 leading-relaxed">
-            Transform customer interactions with AI-powered voice assistants.
-            <br className="hidden sm:block" />
-            designed to scale inbound and outbound calls and improve customer
-            satisfaction effortlessly.
+            Fusion Calling is an AI phone automation platform that handles
+            inbound and outbound calls 24/7. Our AI voice agents book
+            appointments, qualify leads, answer customer questions, and scale
+            your phone operations with human-like conversations
           </p>
         </motion.div>
 
@@ -160,10 +160,10 @@ export default function Component() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="flex justify-center mb-8 sm:mb-12 lg:mb-16 xl:mb-20"
         >
-            <Link
-              href="#show-case"
-              className="inline-flex items-center rounded-md bg-white px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm md:text-base font-medium text-black transition-all hover:bg-gray-200 hover:scale-105"
-            >
+          <Link
+            href="#show-case"
+            className="inline-flex items-center rounded-md bg-white px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm md:text-base font-medium text-black transition-all hover:bg-gray-200 hover:scale-105"
+          >
             Start creating with us
             <span className="ml-1 sm:ml-1.5 md:ml-2">→</span>
           </Link>
@@ -308,7 +308,9 @@ export default function Component() {
                       <h3 className="font-semibold text-lg text-white ">
                         Outbound AI Agent
                       </h3>
-                      <p className="text-brand-strong text-sm">Representative</p>
+                      <p className="text-brand-strong text-sm">
+                        Representative
+                      </p>
                     </div>
                   </div>
 
@@ -349,7 +351,9 @@ export default function Component() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       onBlur={() => markTouched("email")}
-                      aria-invalid={touched.email && !isValidEmail(email.trim())}
+                      aria-invalid={
+                        touched.email && !isValidEmail(email.trim())
+                      }
                     />
                     {touched.email && !isValidEmail(email.trim()) && (
                       <p className="-mt-2 mb-2 text-xs text-red-400">

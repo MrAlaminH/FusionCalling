@@ -44,12 +44,12 @@ export default function VoiceCarousel() {
         className="mb-12 max-w-none mx-auto"
       >
         <motion.div variants={itemVariants} className="text-center mb-16">
-          <motion.h1
+          <motion.h2
             variants={itemVariants}
             className="text-3xl md:text-4xl font-bold tracking-tighter text-brand-strong mb-4"
           >
             Test Out Some Used Voices
-          </motion.h1>
+          </motion.h2>
           <motion.p variants={itemVariants} className="text-gray-400">
             We offer voices in multiple languages, with different genders and
             accents!

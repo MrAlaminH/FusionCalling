@@ -5,7 +5,7 @@ import Script from "next/script";
 /* eslint-disable react/no-unescaped-entities */
 
 export const metadata: Metadata = {
-  title: "Retell AI White Label Reseller Program: The Fusion Calling Alternative",
+  title: "Retell AI White Label: Fusion Calling Alternative",
   description:
     "Learn why Fusion Calling's white-label model delivers better economics and growth potential than Retell AI's minute-based reseller approach. Build profitable voice AI agency.",
   keywords: [
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     canonical: "/blog/retell-ai-white-label",
   },
   openGraph: {
-    title: "Retell AI White Label Reseller Program: The Fusion Calling Alternative",
+    title: "Retell AI White Label: Fusion Calling Alternative",
     description:
       "Learn why Fusion Calling's white-label model delivers better economics and growth potential than Retell AI's minute-based reseller approach.",
     url: "https://www.fusioncalling.com/blog/retell-ai-white-label",
@@ -539,11 +539,45 @@ export default function RetellAIBlogPost() {
                     Specialized voice platform vs. generalized marketing automation.
                   </p>
                 </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-    </>
-  );
+               </div>
+             </div>
+           </div>
+
+         {/* Author Bio */}
+         <div className="mt-12 pt-8 border-t border-brand/20">
+           <div className="flex items-start gap-6">
+             <div className="w-16 h-16 rounded-full bg-gradient-to-br from-brand to-brand-strong flex items-center justify-center flex-shrink-0">
+               <span className="text-2xl font-bold text-white">FC</span>
+             </div>
+             <div className="flex-1">
+               <h3 className="text-lg font-bold text-white mb-2">About the Author</h3>
+               <p className="text-gray-400 text-sm mb-3">
+                 <strong className="text-brand-strong">Fusion Calling Team</strong>
+               </p>
+               <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                 We're the team behind Fusion Calling's white-label AI voice platform. Having helped 50+ agencies launch profitable voice AI practices since 2022, we specialize in helping businesses scale their phone operations with cutting-edge automation technology.
+               </p>
+               <div className="flex items-center gap-4 text-sm">
+                 <a
+                   href="https://www.fusioncalling.com"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="text-brand-strong hover:text-brand transition-colors"
+                 >
+                   Website →
+                 </a>
+                 <a
+                   href="/whitelabel"
+                   className="text-brand-strong hover:text-brand transition-colors"
+                 >
+                   Partner Program →
+                 </a>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </article>
+     </>
+   );
 }

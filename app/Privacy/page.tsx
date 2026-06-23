@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Fusion Calling privacy policy covering data collection, usage, retention, security, and your rights.",
   alternates: {
-    canonical: "/Privacy",
+    canonical: "/privacy",
   },
 };
 

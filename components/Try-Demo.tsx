@@ -116,9 +116,9 @@ export default function TryDemo() {
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -20 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <motion.h1 className="text-brand-strong text-center font-bold text-3xl md:text-4xl pb-2">
+          <motion.h2 className="text-brand-strong text-center font-bold text-3xl md:text-4xl pb-2">
             Show Case
-          </motion.h1>
+          </motion.h2>
           <p className="text-gray-400 text-center md:text-xl mb-12">
             Check out some examples of how our AI handles calls.
           </p>

@@ -19,7 +19,7 @@ export default function BlogLayout({
   return (
     <div className="min-h-screen bg-black">
       <Navbar />
-      <main className="pt-20">{children}</main>
+      <main className="pt-24 lg:pt-28">{children}</main>
       <Footer />
     </div>
   );

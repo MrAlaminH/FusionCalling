@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.fusioncalling.com/sitemap.xml
+
+# Disallow specific paths if needed
+# Disallow: /api/
+# Disallow: /_next/
+# Disallow: /private/

@@ -96,9 +96,9 @@ const AnimatedStatistics = () => {
       ref={sectionRef}
       className="w-full bg-black text-white flex flex-col items-center py-12"
     >
-      <h1 className="text-brand-strong text-3xl md:text-4xl font-bold text-center mb-12">
+      <h2 className="text-brand-strong text-3xl md:text-4xl font-bold text-center mb-12">
         Our Statistics
-      </h1>
+      </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-7xl px-4">
         {statItems.map((item, index) => (
@@ -116,6 +116,11 @@ const AnimatedStatistics = () => {
           </div>
         ))}
       </div>
+
+      {/* Source disclaimer */}
+      <p className="text-gray-500 text-xs mt-8 max-w-3xl text-center">
+        Statistics based on internal data from Jan 2024 - June 2026. Individual results may vary.
+      </p>
     </section>
   );
 };

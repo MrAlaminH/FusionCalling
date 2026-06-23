@@ -133,34 +133,28 @@ const securityFeatures = [
 
 const faqItems = [
   {
-    question: "What is your development process?",
+    question: "What is AI phone call automation?",
     answer:
-      "We follow a structured, results-driven approach to building AI solutions: 1) Discovery – We analyze your workflows and customer interactions to pinpoint where AI can add the most value. 2) Validation – We ensure AI aligns with your goals and delivers a strong return on investment. 3) Design & Development – We create AI-powered agents and integrate them seamlessly into your systems. 4) Testing – We rigorously test for accuracy, reliability, and a smooth user experience. 5) Deployment & Optimization – We launch your AI solution, monitor its performance, and fine-tune it for peak efficiency.",
+      "AI phone call automation uses artificial intelligence to handle inbound and outbound voice calls without human intervention. It combines speech recognition, natural language processing, and text-to-speech technology to conduct natural conversations that can book appointments, answer questions, qualify leads, and provide customer service 24/7.",
   },
   {
-    question: "How long does it take to deploy an AI agent?",
+    question: "How much does Fusion Calling cost?",
     answer:
-      "Most AI agents go live within 4 weeks after proposal approval. However, timelines may vary depending on the complexity of conversational flows, required functionalities, and system integrations.",
+      "Fusion Calling offers three pricing plans: Starter at $149/month (500 minutes, 2 AI agents), Growth at $297/month (1,200 minutes, 5 AI agents), and Scale at $497/month (2,100 minutes, unlimited AI agents). All plans include custom voice training, calendar integrations, SMS capabilities, and dedicated support.",
   },
   {
-    question: "Can your AI agents integrate with our existing systems?",
+    question: "How realistic do AI voice agents sound?",
     answer:
-      "Yes! Our AI agents are built to work seamlessly with your current systems, enhancing functionality without disrupting existing operations.",
+      "Our AI voice agents are 95% indistinguishable from human speakers. We use advanced text-to-speech technology from providers like ElevenLabs and offer voice customization options, including the ability to clone your own voice or choose from our library of natural-sounding voices in multiple languages and accents.",
   },
   {
-    question: "What kind of support do you offer after deployment?",
+    question: "How long does deployment take?",
     answer:
-      "We provide two flexible support options: 1) Managed Services – 24/7 monitoring, ongoing support, regular AI model updates, and performance analytics. 2) Adhoc Services – Hourly support as needed, ideal for teams that prefer to manage their AI solutions in-house.",
+      "Most AI agents go live within 4 weeks after proposal approval. The timeline includes: Week 1-2 for discovery and workflow design, Week 3 for AI training and integration, Week 4 for testing and optimization. Simple implementations can be done in as little as 2 weeks, while complex multi-system integrations may take 6-8 weeks.",
   },
   {
-    question:
-      "How do you ensure projects are completed on time and meet high-quality standards?",
+    question: "Can AI agents handle complex conversations?",
     answer:
-      "We follow a structured project timeline with clear milestones and deliverables. Our rigorous testing process ensures reliability, and we keep you updated with regular progress reports throughout development.",
-  },
-  {
-    question: "What tools and technologies do you use?",
-    answer:
-      "We leverage cutting-edge AI technologies tailored to your needs, including: AI Models: OpenAI GPT, Claude, Gemini; Voice Agent Development: Retell, Vapi, ElevenLabs; Chatbot Development: Voiceflow, Botpress; Automation Platforms: Make, Zapier, n8n. AI is constantly evolving, and we stay ahead by using the most advanced and suitable tools for your project.",
+      "Yes, our AI agents can handle multi-turn conversations, context switching, and complex scenarios. They're trained on your specific business knowledge, can access information in real-time (like checking calendars or databases), and know when to transfer to a human agent for situations requiring human judgment or empathy.",
   },
 ];

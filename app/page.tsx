@@ -43,8 +43,109 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://www.fusioncalling.com/#localbusiness",
+        name: "Fusion Calling",
+        image: "https://www.fusioncalling.com/logo.png",
+        description: "AI-powered phone call automation for businesses. Streamline customer interactions, save time, and increase productivity with advanced voice technology.",
+        url: "https://www.fusioncalling.com/",
+        telephone: "+1-202-998-3591",
+        email: "contact@fusioncalling.com",
+        address: {
+          "@type": "PostalAddress",
+          addressCountry: "US"
+        },
+        openingHoursSpecification: {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          opens: "09:00",
+          closes: "18:00"
+        },
+        priceRange: "$$$"
+      },
+      {
+        "@type": "Service",
+        "@id": "https://www.fusioncalling.com/#service",
+        name: "AI Phone Call Automation",
+        description: "Automate inbound and outbound phone calls with human-like AI voice agents. Our AI receptionist handles customer service, lead qualification, appointment booking, and more 24/7.",
+        provider: {
+          "@id": "https://www.fusioncalling.com/#organization"
+        },
+        offers: {
+          "@type": "Offer",
+          name: "AI Phone Automation Service",
+          priceRange: "$149-$497/month",
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
+          url: "https://www.fusioncalling.com/",
+          description: "Plans include 500-2100 minutes per month with unlimited AI agents, custom voice training, and dedicated support"
+        },
+        areaServed: {
+          "@type": "Country",
+          name: "United States"
+        },
+        audience: {
+          "@type": "Audience",
+          audienceType: "Business owners, call centers, real estate agencies, healthcare providers, insurance companies"
+        },
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "AI Phone Automation Plans",
+          itemListElement: [
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Starter Plan"
+              },
+              price: "149",
+              priceCurrency: "USD",
+              description: "500 minutes/month, 2 AI agents"
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Growth Plan"
+              },
+              price: "297",
+              priceCurrency: "USD",
+              description: "1200 minutes/month, 5 AI agents"
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Scale Plan"
+              },
+              price: "497",
+              priceCurrency: "USD",
+              description: "2100 minutes/month, unlimited AI agents"
+            }
+          ]
+        },
+        keywords: "AI phone call automation, AI receptionist, virtual agent, voice AI, call center automation, lead generation AI"
+      }
+    ]
+  };
+
   return (
-    <main id="main" className="min-h-screen w-full bg-black">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <main id="main" className="min-h-screen w-full bg-black">
       <Navbar />
       <section id="home" className="scroll-mt-24">
         <Hero />
@@ -110,5 +211,6 @@ export default function Home() {
       <Footer />
       <StickyMobileCta href="#calendar" />
     </main>
+    </>
   );
 }
