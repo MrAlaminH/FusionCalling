@@ -5,24 +5,24 @@ import Script from "next/script";
 /* eslint-disable react/no-unescaped-entities */
 
 export const metadata: Metadata = {
-  title: "Retell AI White Label: Fusion Calling Alternative",
+  title: "White-Labeling Retell AI with Fusion Calling",
   description:
-    "Learn why Fusion Calling's white-label model delivers better economics and growth potential than Retell AI's minute-based reseller approach. Build profitable voice AI agency.",
+    "Retell AI powers great conversations. Fusion Calling adds the white-label agency layer — branding, client portals, multi-client management, and client billing — so you can resell Retell under your own brand.",
   keywords: [
     "retell ai white label",
-    "retell reseller program",
-    "voice AI white label",
-    "agency voice platform",
+    "white label retell ai",
+    "retell ai integration",
+    "resell retell ai",
     "white label voice AI",
-    "AI voice reseller",
+    "agency voice platform",
   ],
   alternates: {
     canonical: "/blog/retell-ai-white-label",
   },
   openGraph: {
-    title: "Retell AI White Label: Fusion Calling Alternative",
+    title: "White-Labeling Retell AI with Fusion Calling",
     description:
-      "Learn why Fusion Calling's white-label model delivers better economics and growth potential than Retell AI's minute-based reseller approach.",
+      "Retell AI powers great conversations. Fusion Calling adds the white-label agency layer — branding, client portals, multi-client management, and client billing — so you can resell Retell under your own brand.",
     url: "https://www.fusioncalling.com/blog/retell-ai-white-label",
     siteName: "Fusion Calling",
     images: [
@@ -30,13 +30,13 @@ export const metadata: Metadata = {
         url: "/blog/retell-comparison.jpg",
         width: 1200,
         height: 630,
-        alt: "Retell AI White Label Comparison",
+        alt: "White-Labeling Retell AI with Fusion Calling",
       },
     ],
     locale: "en_US",
     type: "article",
-    publishedTime: "2024-06-22T00:00:00Z",
-    modifiedTime: "2024-06-22T00:00:00Z",
+    publishedTime: "2025-02-11T00:00:00Z",
+    modifiedTime: "2025-02-11T00:00:00Z",
     authors: ["Fusion Calling"],
   },
 };
@@ -69,7 +69,7 @@ export default function RetellAIBlogPost() {
                   {
                     "@type": "ListItem",
                     position: 3,
-                    name: "Retell AI White Label Analysis",
+                    name: "White-Labeling Retell AI with Fusion Calling",
                     item: "https://www.fusioncalling.com/blog/retell-ai-white-label",
                   },
                 ],
@@ -78,17 +78,17 @@ export default function RetellAIBlogPost() {
                 "@type": "Article",
                 "@id": "https://www.fusioncalling.com/blog/retell-ai-white-label#article",
                 url: "https://www.fusioncalling.com/blog/retell-ai-white-label",
-                name: "Retell AI White Label Reseller Program: The Fusion Calling Alternative",
+                name: "White-Labeling Retell AI with Fusion Calling",
                 headline:
-                  "Retell AI White Label Reseller Program: Why Fusion Calling Delivers Better Economics for Agencies",
+                  "White-Labeling Retell AI with Fusion Calling",
                 description:
-                  "Learn why Fusion Calling's white-label model delivers better economics and growth potential than Retell AI's minute-based reseller approach.",
+                  "Retell AI powers great conversations. Fusion Calling adds the white-label agency layer — branding, client portals, multi-client management, and client billing — so you can resell Retell under your own brand.",
                 inLanguage: "en-US",
                 isPartOf: {
                   "@id": "https://www.fusioncalling.com/#website",
                 },
-                datePublished: "2024-06-22T00:00:00Z",
-                dateModified: "2024-06-22T00:00:00Z",
+                datePublished: "2025-02-11T00:00:00Z",
+                dateModified: "2025-02-11T00:00:00Z",
                 author: {
                   "@type": "Organization",
                   name: "Fusion Calling",
@@ -103,26 +103,26 @@ export default function RetellAIBlogPost() {
                 mainEntity: [
                   {
                     "@type": "Question",
-                    name: "Does Retell AI have a white label reseller program?",
+                    name: "Do I keep my Retell account?",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "Retell AI doesn't offer a traditional white-label reseller program. They use a pay-per-minute model where agencies resell minutes with minimal margins. Fusion Calling provides complete white-label infrastructure with subscription-based pricing that delivers better economics.",
+                      text: "Yes. You connect your existing Retell API key to Fusion Calling. We layer the white-label agency experience on top of Retell, so your agents, assistants, and configurations carry over without a rebuild.",
                     },
                   },
                   {
                     "@type": "Question",
-                    name: "What are the economics of Retell AI reselling vs Fusion Calling?",
+                    name: "Can I resell Retell under my own brand?",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "Retell AI reselling typically earns $100-250 per client based on 5,000 monthly minutes. Fusion Calling's white-label model generates $150-450 per client through subscription pricing, with predictable recurring revenue and better scalability.",
+                      text: "Yes. That is exactly what Fusion Calling adds. You apply your branding, custom domain, and pricing on top of Retell, then manage and bill clients from a white-label portal that carries your agency's identity.",
                     },
                   },
                   {
                     "@type": "Question",
-                    name: "Can I use Retell AI with Fusion Calling?",
+                    name: "Does Fusion Calling support other providers too?",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "Yes! Fusion Calling supports both Retell AI and Vapi integrations. You can use Retell AI as your voice provider while maintaining complete brand control through Fusion Calling's white-label platform.",
+                      text: "Yes. Fusion Calling works with Vapi, Retell AI, and ElevenLabs. You can choose the best provider per client or use case without rebuilding your white-label setup.",
                     },
                   },
                 ],
@@ -144,26 +144,28 @@ export default function RetellAIBlogPost() {
 
           <div className="flex items-center gap-3 mb-4">
             <span className="px-4 py-2 bg-gradient-to-r from-brand to-brand-strong rounded-full text-sm font-semibold text-white">
-              Business Strategy
+              Integration Guide
             </span>
             <span className="text-gray-500 text-sm">7 min read</span>
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
-            Retell AI White Label Reseller Program:
+            White-Labeling Retell AI
             <br />
             <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong bg-clip-text text-transparent">
-              The Fusion Calling Alternative
+              with Fusion Calling
             </span>
           </h1>
 
           <p className="text-xl text-gray-400 leading-relaxed mb-8">
-            Learn why Fusion Calling's white-label model delivers better economics and
-            growth potential than Retell AI's minute-based reseller approach.
+            Retell AI is a powerful conversational voice engine. Fusion Calling is the
+            white-label agency layer built to work with it — adding branding, client
+            portals, multi-client management, and client billing so you can resell Retell
+            under your own brand.
           </p>
 
           <div className="flex items-center gap-6 text-sm text-gray-500">
-            <span>June 22, 2024</span>
+            <span>February 11, 2025</span>
             <span>•</span>
             <span>By Fusion Calling Team</span>
           </div>
@@ -173,8 +175,8 @@ export default function RetellAIBlogPost() {
         <div className="mb-12 rounded-3xl overflow-hidden border border-brand/20">
           <div className="aspect-video bg-gradient-to-br from-brand/10 to-brand-strong/5 flex items-center justify-center">
             <div className="text-center">
-              <div className="text-6xl mb-4">📊</div>
-              <div className="text-lg text-gray-500">Retell AI vs Fusion Calling Economics</div>
+              <div className="text-6xl mb-4">🤝</div>
+              <div className="text-lg text-gray-500">Retell AI + Fusion Calling Integration</div>
             </div>
           </div>
         </div>
@@ -185,240 +187,103 @@ export default function RetellAIBlogPost() {
             {/* Introduction */}
             <div className="glass-light rounded-2xl p-8 border border-brand/20">
               <h2 className="text-2xl font-bold text-white mb-4">
-                The Retell AI Dilemma for Agencies
+                A Great Voice Engine, Now a Sellable Product
               </h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                &quot;We evaluated Retell AI extensively, but Fusion Calling&apos;s white-label
-                model lets us build a true SaaS business with predictable recurring
-                revenue instead of complicated minute tracking.&quot;
+                Retell AI has earned its reputation for a reason. Its conversational
+                quality, low-latency responses, and flexible agent configuration make it
+                one of the strongest voice engines available for building natural-sounding
+                AI calls. If you are already building on Retell, you have made a smart
+                technology choice.
+              </p>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                What Retell gives you is the <strong className="text-brand-light">engine</strong>.
+                What most agencies discover, though, is that an engine on its own is not
+                yet a product you can sell to clients at scale. To turn Retell into a
+                branded, billable offering, you need a layer on top: your own identity,
+                dedicated client access, a way to manage multiple clients, and a clean way
+                to charge for it.
               </p>
               <p className="text-brand-light text-lg font-semibold">
-                Retell AI doesn&apos;t offer a true white-label reseller program.
+                That is the layer Fusion Calling is built to provide — alongside Retell,
+                not against it.
               </p>
             </div>
 
-            {/* What Agencies Really Need */}
+            {/* What Fusion Calling Adds */}
             <div>
               <h2 className="text-3xl font-bold text-white mb-6">
-                What Agencies Really Need
+                What Fusion Calling Adds on Top of Retell
               </h2>
               <p className="text-gray-300 leading-relaxed mb-6">
-                When we surveyed 50+ agencies about their voice AI partnership
-                requirements, three needs emerged consistently:
+                Think of Fusion Calling as the agency layer that wraps around Retell. You
+                bring your Retell account; we provide everything your clients see and
+                everything you need to run a multi-client business. This saves you from
+                building the white-label layer yourself — most agencies launch in about{" "}
+                <strong className="text-brand-light">7 days</strong> instead of weeks or
+                months of custom development.
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="glass-light rounded-xl p-6 border border-brand/20">
                   <h3 className="text-lg font-bold text-brand-light mb-3">
-                    Complete Brand Control
+                    Full Branding & Custom Domain
                   </h3>
                   <p className="text-gray-400 text-sm">
-                    No visible Retell branding - only your agency's identity
+                    Apply your logo, colors, and a custom domain so every client touchpoint
+                    carries your agency's identity — never anyone else's.
                   </p>
                 </div>
                 <div className="glass-light rounded-xl p-6 border border-brand/20">
                   <h3 className="text-lg font-bold text-brand-light mb-3">
-                    Pricing Freedom
+                    White-Label Client Portals
                   </h3>
                   <p className="text-gray-400 text-sm">
-                    Set your own margins without complex per-minute calculations
+                    Give each client their own branded login to review calls, agents, and
+                    activity without ever leaving your brand.
                   </p>
                 </div>
                 <div className="glass-light rounded-xl p-6 border border-brand/20">
                   <h3 className="text-lg font-bold text-brand-light mb-3">
-                    Client Ownership
+                    Sub-Account Management
                   </h3>
                   <p className="text-gray-400 text-sm">
-                    Direct billing and support relationships with your customers
+                    Manage every client from a single dashboard, with per-client settings,
+                    usage, and permissions cleanly separated.
+                  </p>
+                </div>
+                <div className="glass-light rounded-xl p-6 border border-brand/20">
+                  <h3 className="text-lg font-bold text-brand-light mb-3">
+                    Client Rebilling
+                  </h3>
+                  <p className="text-gray-400 text-sm">
+                    Set your own pricing per client and bill them directly through the
+                    platform — no spreadsheets, no manual invoicing.
                   </p>
                 </div>
               </div>
-            </div>
 
-            {/* How Fusion Calling Solves This */}
-            <div className="glass rounded-2xl p-8 border border-brand/20">
-              <h2 className="text-3xl font-bold text-white mb-6">
-                How Fusion Calling Solves This
-              </h2>
-              <p className="text-gray-300 leading-relaxed mb-6">
-                Unlike Retell's minute-based pricing that creates billing complexity,
-                Fusion Calling offers:
-              </p>
-
-              <div className="bg-gradient-to-r from-brand/10 to-brand-strong/5 rounded-xl p-6 border border-brand/30 mb-6">
-                <h3 className="text-xl font-bold text-brand-light mb-4">
-                  Simple Partnership Model
+              <div className="mt-6 bg-gradient-to-r from-brand/10 to-brand-strong/5 rounded-xl p-6 border border-brand/30">
+                <h3 className="text-xl font-bold text-brand-light mb-3">
+                  Done-With-You Setup
                 </h3>
-                <ul className="space-y-3 text-gray-300">
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
-                    <span>
-                      Fixed monthly platform fees ($99-499/month based on tier)
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
-                    <span>You set client pricing and keep 100% of revenue</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
-                    <span>No complicated per-minute math or billing surprises</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Feature Comparison Table */}
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-6">
-                Feature Comparison: Retell AI vs. Fusion Calling
-              </h2>
-
-              <div className="overflow-x-auto">
-                <table className="w-full border-collapse">
-                  <thead>
-                    <tr className="border-b border-gray-800">
-                      <th className="text-left py-4 px-4 text-white font-bold">Feature</th>
-                      <th className="text-center py-4 px-4 text-red-400 font-bold">Retell AI</th>
-                      <th className="text-center py-4 px-4 text-green-400 font-bold">
-                        Fusion Calling
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="text-gray-300">
-                    <tr className="border-b border-gray-800">
-                      <td className="py-4 px-4">White-label dashboard</td>
-                      <td className="text-center py-4 px-4">❌</td>
-                      <td className="text-center py-4 px-4">✅ Complete</td>
-                    </tr>
-                    <tr className="border-b border-gray-800">
-                      <td className="py-4 px-4">Agency pricing control</td>
-                      <td className="text-center py-4 px-4">❌</td>
-                      <td className="text-center py-4 px-4">✅ 100% control</td>
-                    </tr>
-                    <tr className="border-b border-gray-800">
-                      <td className="py-4 px-4">Multi-client management</td>
-                      <td className="text-center py-4 px-4">❌</td>
-                      <td className="text-center py-4 px-4">✅ Unlimited</td>
-                    </tr>
-                    <tr className="border-b border-gray-800">
-                      <td className="py-4 px-4">Technical expertise required</td>
-                      <td className="text-center py-4 px-4">✅ Yes</td>
-                      <td className="text-center py-4 px-4">❌ No</td>
-                    </tr>
-                    <tr className="border-b border-gray-800">
-                      <td className="py-4 px-4">Launch timeline</td>
-                      <td className="text-center py-4 px-4">Weeks-months</td>
-                      <td className="text-center py-4 px-4">✅ 7 days</td>
-                    </tr>
-                    <tr>
-                      <td className="py-4 px-4">Revenue model</td>
-                      <td className="text-center py-4 px-4">Per-minute</td>
-                      <td className="text-center py-4 px-4">✅ SaaS subscription</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            {/* The Business Case */}
-            <div className="glass rounded-2xl p-8 border border-brand/20">
-              <h2 className="text-3xl font-bold text-white mb-6">
-                The Business Case for White-Label Voice AI
-              </h2>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="space-y-4">
-                  <h3 className="text-xl font-bold text-red-400 mb-4">
-                    Retell AI Reseller Economics
-                  </h3>
-                  <ul className="space-y-3 text-gray-300">
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 mt-2 rounded-full bg-red-500 flex-shrink-0" />
-                      <span>
-                        Average client: <strong>5,000 minutes/month</strong>
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 mt-2 rounded-full bg-red-500 flex-shrink-0" />
-                      <span>
-                        Your margin: <strong>$0.02-0.05/minute</strong>
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 mt-2 rounded-full bg-red-500 flex-shrink-0" />
-                      <span>
-                        Monthly revenue: <strong>$100-250/client</strong>
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 mt-2 rounded-full bg-red-500 flex-shrink-0" />
-                      <span>
-                        Need <strong>50+ clients</strong> for meaningful income
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="space-y-4">
-                  <h3 className="text-xl font-bold text-green-400 mb-4">
-                    Fusion Calling White-Label Economics
-                  </h3>
-                  <ul className="space-y-3 text-gray-300">
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 mt-2 rounded-full bg-green-500 flex-shrink-0" />
-                      <span>
-                        Average client: <strong>$200-500/month</strong> subscription
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 mt-2 rounded-full bg-green-500 flex-shrink-0" />
-                      <span>
-                        Your margin: <strong>$150-450/client</strong>
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 mt-2 rounded-full bg-green-500 flex-shrink-0" />
-                      <span>
-                        Monthly revenue: <strong>$150-450/client</strong>
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 mt-2 rounded-full bg-green-500 flex-shrink-0" />
-                      <span>
-                        Meaningful income with <strong>10-20 clients</strong>
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="mt-8 bg-gradient-to-r from-green-500/10 to-green-600/5 rounded-xl p-6 border border-green-500/20">
-                <p className="text-center text-green-300 font-semibold text-lg">
-                  💡 Fusion Calling requires 60% fewer clients for the same revenue, with
-                  predictable recurring income
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  You are not left to figure it out alone. Our team helps you connect your
+                  Retell account, apply your branding, and onboard your first clients —
+                  typically getting you to launch in around a week.
                 </p>
               </div>
             </div>
 
-            {/* Agency Quote */}
-            <div className="glass-light rounded-2xl p-8 border border-brand/20 italic">
-              <p className="text-gray-300 text-lg leading-relaxed mb-4">
-                "We evaluated Retell AI extensively, but Fusion Calling's white-label
-                model lets us build a true SaaS business with predictable recurring
-                revenue instead of complicated minute tracking."
-              </p>
-              <p className="text-brand-light">— Agency Partner</p>
-            </div>
-
-            {/* Integration Flexibility */}
-            <div>
+            {/* How They Work Together */}
+            <div className="glass rounded-2xl p-8 border border-brand/20">
               <h2 className="text-3xl font-bold text-white mb-6">
-                The Integration Flexibility Advantage
+                How Retell + Fusion Calling Work Together
               </h2>
               <p className="text-gray-300 leading-relaxed mb-6">
-                Fusion Calling supports both Vapi AND Retell AI integrations, giving
-                you:
+                The flow is intentionally simple. Fusion Calling sits in front of Retell,
+                handling the client-facing experience and the business operations, while
+                Retell keeps doing what it does best: the conversation itself.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -427,85 +292,148 @@ export default function RetellAIBlogPost() {
                     <span className="text-2xl">🔄</span>
                   </div>
                   <div>
-                    <h3 className="text-white font-bold mb-2">Provider Flexibility</h3>
+                    <h3 className="text-white font-bold mb-2">Connect Retell</h3>
                     <p className="text-gray-400 text-sm">
-                      Switch between Vapi and Retell AI based on client needs
+                      Link your existing Retell account with a single API key — no migration
+                      required.
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">🛡️</span>
+                    <span className="text-2xl">🏷️</span>
                   </div>
                   <div>
-                    <h3 className="text-white font-bold mb-2">Backup Redundancy</h3>
+                    <h3 className="text-white font-bold mb-2">Brand It</h3>
                     <p className="text-gray-400 text-sm">
-                      Multiple provider options ensure service reliability
+                      Apply your logo, colors, and custom domain across the entire client
+                      experience.
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">💰</span>
+                    <span className="text-2xl">👥</span>
                   </div>
                   <div>
-                    <h3 className="text-white font-bold mb-2">Cost Optimization</h3>
+                    <h3 className="text-white font-bold mb-2">Manage Clients</h3>
                     <p className="text-gray-400 text-sm">
-                      Choose the most cost-effective provider for each use case
+                      Spin up sub-accounts and white-label portals for each client from one
+                      dashboard.
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">🚀</span>
+                    <span className="text-2xl">💳</span>
                   </div>
                   <div>
-                    <h3 className="text-white font-bold mb-2">Future-Proof Technology</h3>
+                    <h3 className="text-white font-bold mb-2">Bill Clients</h3>
                     <p className="text-gray-400 text-sm">
-                      Access emerging voice AI providers without rebuilding
+                      Set your own prices and rebill clients directly — you keep 100% of what
+                      you charge.
                     </p>
                   </div>
                 </div>
               </div>
             </div>
 
+            {/* Bring Your Retell Agents Along */}
+            <div className="glass-light rounded-2xl p-8 border border-brand/20">
+              <h2 className="text-3xl font-bold text-white mb-6">
+                Bring Your Retell Agents Along
+              </h2>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                If you have already invested time in Retell — configuring agents, writing
+                prompts, tuning assistants — that work comes with you. Fusion Calling does
+                not require you to rebuild your agents from scratch.
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                Because we connect to your Retell account directly, your existing agent
+                configs and assistants carry over. You keep the conversational setup you
+                already trust; you simply gain a branded, multi-client, billable product
+                around it.
+              </p>
+            </div>
+
+            {/* Economics Note */}
+            <div className="glass rounded-2xl p-8 border border-brand/20">
+              <h2 className="text-3xl font-bold text-white mb-6">
+                The Economics: Simple and Yours
+              </h2>
+              <p className="text-gray-300 leading-relaxed mb-6">
+                Fusion Calling is a subscription, not a take of your revenue. You set the
+                price you charge clients, and you keep{" "}
+                <strong className="text-brand-light">100% of that client revenue</strong>.
+                The only cost is your Fusion Calling plan:
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <div className="bg-gradient-to-br from-brand/10 to-brand-strong/5 rounded-xl p-6 border border-brand/30">
+                  <h3 className="text-lg font-bold text-brand-light mb-2">Starter</h3>
+                  <p className="text-3xl font-bold text-white mb-2">$99<span className="text-base font-normal text-gray-400">/mo</span></p>
+                  <p className="text-gray-400 text-sm">Up to 6 sub-accounts</p>
+                </div>
+                <div className="bg-gradient-to-br from-brand/10 to-brand-strong/5 rounded-xl p-6 border border-brand/30">
+                  <h3 className="text-lg font-bold text-brand-light mb-2">Growth</h3>
+                  <p className="text-3xl font-bold text-white mb-2">$299<span className="text-base font-normal text-gray-400">/mo</span></p>
+                  <p className="text-gray-400 text-sm">Up to 20 sub-accounts</p>
+                </div>
+                <div className="bg-gradient-to-br from-brand/10 to-brand-strong/5 rounded-xl p-6 border border-brand/30">
+                  <h3 className="text-lg font-bold text-brand-light mb-2">Scale</h3>
+                  <p className="text-3xl font-bold text-white mb-2">$499<span className="text-base font-normal text-gray-400">/mo</span></p>
+                  <p className="text-gray-400 text-sm">Unlimited sub-accounts</p>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-r from-brand/10 to-brand-strong/5 rounded-xl p-6 border border-brand/30">
+                <p className="text-center text-brand-light font-semibold text-lg">
+                  💡 You keep 100% of client revenue — Fusion Calling never takes a cut of what
+                  you charge.
+                </p>
+              </div>
+            </div>
+
+            {/* Provider Flexibility & GHL */}
+            <div>
+              <h2 className="text-3xl font-bold text-white mb-6">
+                Built With Retell — And Ready for More
+              </h2>
+              <p className="text-gray-300 leading-relaxed mb-6">
+                Fusion Calling is built to work with Retell, and it also supports{" "}
+                <strong className="text-brand-light">Vapi and ElevenLabs</strong>, so you can
+                match the right provider to each client or use case without rebuilding your
+                white-label setup. Need to tie calls into your clients' existing tools?
+                Fusion Calling integrates with GoHighLevel via API and webhooks, and connects
+                to more than 2,200 apps — so voice AI fits into the workflows your clients
+                already run.
+              </p>
+            </div>
+
             {/* Conclusion */}
             <div className="glass-light rounded-2xl p-8 border border-brand/30">
               <h2 className="text-3xl font-bold text-white mb-6">
-                Don't Let Retell AI's Model Limit Your Growth
+                Turn Retell Into Your Branded Product
               </h2>
-                <p className="text-gray-300 leading-relaxed mb-6">
-                Don&apos;t let Retell AI&apos;s limitations constrain your agency&apos;s growth potential.
-                Fusion Calling provides the white-label infrastructure that lets you:
+              <p className="text-gray-300 leading-relaxed mb-6">
+                Retell AI gives you a best-in-class voice engine. Fusion Calling gives you
+                the agency layer to sell it: your brand, your client portals, your sub-accounts,
+                and your billing. Together, they let you launch a complete, white-label voice
+                AI business in about 7 days.
               </p>
-
-              <ul className="space-y-3 text-gray-300 mb-8">
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
-                  <span>Build a branded voice AI practice</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
-                  <span>Create predictable recurring revenue</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
-                  <span>Scale without technical complexity</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
-                  <span>Own your client relationships</span>
-                </li>
-              </ul>
+              <p className="text-gray-300 leading-relaxed mb-8">
+                Want to see it in action? There is a live demo on the homepage, or you can
+                apply to start white-labeling Retell today.
+              </p>
 
               <Link
                 href="/whitelabel"
                 className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition-all shadow-premium hover:shadow-premium-lg hover:scale-105"
               >
-                Apply for Our Partner Program Today
+                Start White-Labeling Retell
                 <span className="ml-2">→</span>
               </Link>
             </div>
@@ -521,63 +449,64 @@ export default function RetellAIBlogPost() {
                   className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition-all group"
                 >
                   <h3 className="text-white font-bold mb-2 group-hover:text-brand-light transition-colors">
-                    Vapi White Label Platform Comparison
+                    White-Labeling Vapi with Fusion Calling
                   </h3>
                   <p className="text-gray-400 text-sm">
-                    Why Fusion Calling saves agencies $45K compared to direct Vapi
-                    integration.
+                    How Fusion Calling adds branding, client portals, and billing on top of
+                    the Vapi voice platform.
                   </p>
                 </Link>
                 <Link
-                  href="/blog/gohighlevel-white-label-voice"
+                  href="/blog/vapi-vs-retell-vs-elevenlabs"
                   className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition-all group"
                 >
                   <h3 className="text-white font-bold mb-2 group-hover:text-brand-light transition-colors">
-                    GoHighLevel Voice AI Comparison
+                    Vapi vs Retell vs ElevenLabs: Choosing a Provider
                   </h3>
                   <p className="text-gray-400 text-sm">
-                    Specialized voice platform vs. generalized marketing automation.
+                    A practical guide to picking the right voice provider for each client and
+                    use case.
                   </p>
                 </Link>
                </div>
              </div>
            </div>
 
-         {/* Author Bio */}
-         <div className="mt-12 pt-8 border-t border-brand/20">
-           <div className="flex items-start gap-6">
-             <div className="w-16 h-16 rounded-full bg-gradient-to-br from-brand to-brand-strong flex items-center justify-center flex-shrink-0">
-               <span className="text-2xl font-bold text-white">FC</span>
-             </div>
-             <div className="flex-1">
-               <h3 className="text-lg font-bold text-white mb-2">About the Author</h3>
-               <p className="text-gray-400 text-sm mb-3">
-                 <strong className="text-brand-strong">Fusion Calling Team</strong>
-               </p>
-               <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                 We're the team behind Fusion Calling's white-label AI voice platform. Having helped 50+ agencies launch profitable voice AI practices since 2022, we specialize in helping businesses scale their phone operations with cutting-edge automation technology.
-               </p>
-               <div className="flex items-center gap-4 text-sm">
-                 <a
-                   href="https://www.fusioncalling.com"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   className="text-brand-strong hover:text-brand transition-colors"
-                 >
-                   Website →
-                 </a>
-                 <a
-                   href="/whitelabel"
-                   className="text-brand-strong hover:text-brand transition-colors"
-                 >
-                   Partner Program →
-                 </a>
-               </div>
-             </div>
-           </div>
-         </div>
-       </div>
-     </article>
-     </>
-   );
+          {/* Author Bio */}
+          <div className="mt-12 pt-8 border-t border-brand/20">
+            <div className="flex items-start gap-6">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-brand to-brand-strong flex items-center justify-center flex-shrink-0">
+                <span className="text-2xl font-bold text-white">FC</span>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-lg font-bold text-white mb-2">About the Author</h3>
+                <p className="text-gray-400 text-sm mb-3">
+                  <strong className="text-brand-strong">Fusion Calling Team</strong>
+                </p>
+                <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                  We're the team behind Fusion Calling's white-label AI voice platform. Having helped 50+ agencies launch profitable voice AI practices since 2022, we specialize in helping businesses scale their phone operations with cutting-edge automation technology.
+                </p>
+                <div className="flex items-center gap-4 text-sm">
+                  <a
+                    href="https://www.fusioncalling.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-brand-strong hover:text-brand transition-colors"
+                  >
+                    Website →
+                  </a>
+                  <a
+                    href="/whitelabel"
+                    className="text-brand-strong hover:text-brand transition-colors"
+                  >
+                    Partner Program →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+      </>
+    );
 }

@@ -13,38 +13,74 @@ export const metadata: Metadata = {
 
 const blogPosts = [
   {
-    slug: "vapi-white-label-platform",
-    title: "Vapi White Label Platform: Why Fusion Calling is the Smarter Choice",
+    slug: "how-to-start-a-voice-ai-agency",
+    title: "How to Start a Voice AI Agency in 2025: A Step-by-Step Guide",
     description:
-      "Discover why agencies choose Fusion Calling's white-label solution over direct Vapi integration. Save $45K in development costs and launch in 7 days.",
-    date: "2024-06-23",
-    category: "Platform Comparison",
+      "The smart way to launch a voice AI agency without building infrastructure: partner with a white-label platform, pick a niche, set pricing, and land your first client.",
+    date: "2025-02-13",
+    category: "Agency Growth",
+    readTime: "9 min read",
+    image: "/blog/start-voice-ai-agency.jpg",
+  },
+  {
+    slug: "vapi-vs-retell-vs-elevenlabs",
+    title: "Vapi vs Retell vs ElevenLabs: Choosing the Right Voice AI Provider",
+    description:
+      "A fair, neutral comparison of the three leading voice AI providers, and why you don't have to pick just one when you use Fusion Calling's multi-provider layer.",
+    date: "2025-02-14",
+    category: "Buyer's Guide",
     readTime: "8 min read",
+    image: "/blog/vapi-vs-retell-vs-elevenlabs.jpg",
+  },
+  {
+    slug: "ai-voice-agents-for-small-business",
+    title: "AI Voice Agents for Small Business: Use Cases & ROI",
+    description:
+      "Every missed call is lost revenue. See how small businesses use AI voice agents to capture leads, book appointments, and stay open 24/7, plus the ROI math.",
+    date: "2025-02-15",
+    category: "Use Cases",
+    readTime: "8 min read",
+    image: "/blog/ai-voice-small-business.jpg",
+  },
+  {
+    slug: "vapi-white-label-platform",
+    title: "White-Labeling Vapi with Fusion Calling: A Guide for Agencies",
+    description:
+      "Vapi is excellent voice AI infrastructure. Fusion Calling is the white-label agency layer built to work with it, so you can resell Vapi under your own brand.",
+    date: "2025-02-10",
+    category: "Integration Guide",
+    readTime: "7 min read",
     image: "/blog/vapi-comparison.jpg",
   },
   {
     slug: "retell-ai-white-label",
-    title: "Retell AI White Label Reseller Program: The Fusion Calling Alternative",
+    title: "White-Labeling Retell AI with Fusion Calling",
     description:
-      "Learn why Fusion Calling's white-label model delivers better economics and growth potential than Retell AI's minute-based reseller approach.",
-    date: "2024-06-22",
-    category: "Business Strategy",
+      "Retell AI is a powerful conversational voice engine. Fusion Calling layers on top to add branding, client portals, and billing so agencies can resell Retell.",
+    date: "2025-02-11",
+    category: "Integration Guide",
     readTime: "7 min read",
     image: "/blog/retell-comparison.jpg",
   },
   {
     slug: "gohighlevel-white-label-voice",
-    title: "GoHighLevel White Label Voice AI: Why Fusion Calling is Superior",
+    title: "Adding White-Label Voice AI to Your GoHighLevel Agency",
     description:
-      "Compare GoHighLevel's voice AI features with Fusion Calling's specialized white-label platform. Built for agencies serious about voice automation.",
-    date: "2024-06-21",
-    category: "Platform Comparison",
-    readTime: "9 min read",
+      "Keep GoHighLevel as your CRM and add Fusion Calling as your dedicated, white-label voice AI layer, syncing calls and leads straight back into GHL.",
+    date: "2025-02-12",
+    category: "Integration Guide",
+    readTime: "8 min read",
     image: "/blog/gohighlevel-comparison.jpg",
   },
 ];
 
-const categories = ["All", "Platform Comparison", "Business Strategy", "Industry Insights"];
+const categories = [
+  "All",
+  "Agency Growth",
+  "Integration Guide",
+  "Buyer's Guide",
+  "Use Cases",
+];
 
 export default function BlogPage() {
   return (

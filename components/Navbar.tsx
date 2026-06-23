@@ -12,8 +12,6 @@ const NAV_LINKS = [
   { label: "Features", href: "/#features" },
   { label: "Pricing", href: "/#pricing" },
   { label: "FAQs", href: "/#faqs" },
-  { label: "Docs", href: "/docs" },
-  { label: "Blog", href: "/blog" },
 ];
 
 const CONTACT_URL = "https://cal.com/mralamin/discovery-call";

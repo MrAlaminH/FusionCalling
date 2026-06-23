@@ -70,7 +70,7 @@ export default function WhiteLabelPage() {
     {
       question: "What's the difference between partner tiers?",
       answer:
-        "The main differences are commission rates and minimum client requirements. Starter Partners earn 20% commission with 5 minimum clients. Pro Partners earn 30% with 15 minimum clients. Enterprise Partners earn 40% with 30 minimum clients and get 24/7 support.",
+        "The main differences are the number of sub-accounts, the support level, and the price. Starter includes 6 sub-accounts and client portal access for $99/month. Growth includes 20 sub-accounts with priority support and advanced analytics for $299/month. Scale includes unlimited sub-accounts, a dedicated account manager, and API access for $499/month. On every tier you keep 100% of what you charge your clients.",
     },
     {
       question: "Can I use my own domain?",
@@ -93,7 +93,7 @@ export default function WhiteLabelPage() {
                     "@id": "https://www.fusioncalling.com/whitelabel#localbusiness",
                     name: "Fusion Calling White-label Partner Program",
                     image: "https://www.fusioncalling.com/logo.png",
-                    description: "White-label AI voice solution for agencies and resellers. Offer AI phone automation under your own brand with full customization and commission structure.",
+                    description: "White-label AI voice solution for agencies and resellers. Offer AI phone automation under your own brand with full customization and pricing you control.",
                     url: "https://www.fusioncalling.com/whitelabel",
                     telephone: "+1-202-998-3591",
                     email: "partners@fusioncalling.com",
@@ -109,7 +109,7 @@ export default function WhiteLabelPage() {
                     "@type": "Service",
                     "@id": "https://www.fusioncalling.com/whitelabel#service",
                     name: "White-label AI Voice Solution",
-                    description: "Partner program allowing agencies and resellers to offer AI phone call automation under their own brand. Includes full white-label dashboard, custom voice training, and commission-based pricing structure.",
+                    description: "Partner program allowing agencies and resellers to offer AI phone call automation under their own brand. Includes full white-label dashboard, custom voice training, and subscription-based pricing you control.",
                     provider: {
                       "@id": "https://www.fusioncalling.com/#organization"
                     },
@@ -119,25 +119,25 @@ export default function WhiteLabelPage() {
                         name: "Starter Partner Plan",
                         price: "99",
                         priceCurrency: "USD",
-                        description: "20% commission, 5 minimum clients, email support",
+                        description: "6 sub-accounts, complete white-labeling, client portal access",
                         availability: "https://schema.org/InStock",
                         url: "https://www.fusioncalling.com/whitelabel"
                       },
                       {
                         "@type": "Offer",
-                        name: "Pro Partner Plan",
+                        name: "Growth Partner Plan",
                         price: "299",
                         priceCurrency: "USD",
-                        description: "30% commission, 15 minimum clients, priority support",
+                        description: "20 sub-accounts, priority support, advanced analytics",
                         availability: "https://schema.org/InStock",
                         url: "https://www.fusioncalling.com/whitelabel"
                       },
                       {
                         "@type": "Offer",
-                        name: "Enterprise Partner Plan",
+                        name: "Scale Partner Plan",
                         price: "499",
                         priceCurrency: "USD",
-                        description: "40% commission, 30 minimum clients, 24/7 support",
+                        description: "Unlimited sub-accounts, dedicated account manager, API access",
                         availability: "https://schema.org/InStock",
                         url: "https://www.fusioncalling.com/whitelabel"
                       }

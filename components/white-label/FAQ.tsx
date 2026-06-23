@@ -32,7 +32,7 @@ export default function FAQ() {
     {
       question: "What's the difference between partner tiers?",
       answer:
-        "The main differences are commission rates and minimum client requirements. Starter Partners earn 20% commission with 5 minimum clients. Pro Partners earn 30% with 15 minimum clients. Enterprise Partners earn 40% with 30 minimum clients and get 24/7 support.",
+        "The main differences are the number of sub-accounts, the support level, and the price. Starter includes 6 sub-accounts and client portal access for $99/month. Growth includes 20 sub-accounts with priority support and advanced analytics for $299/month. Scale includes unlimited sub-accounts, a dedicated account manager, and API access for $499/month. On every tier you keep 100% of what you charge your clients.",
     },
     {
       question: "Can I use my own domain?",

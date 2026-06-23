@@ -5,7 +5,6 @@ import { useRef, useState } from "react";
 import { TrendingUp, DollarSign, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 
 export default function Revenue() {
   const ref = useRef(null);
@@ -13,17 +12,14 @@ export default function Revenue() {
 
   const [clients, setClients] = useState(10);
   const [avgPrice, setAvgPrice] = useState(299);
-  const [commission, setCommission] = useState(30);
 
   const calculateRevenue = () => {
     const monthlyRevenue = clients * avgPrice;
-    const monthlyEarnings = monthlyRevenue * (commission / 100);
-    const annualEarnings = monthlyEarnings * 12;
+    const annualRevenue = monthlyRevenue * 12;
 
     return {
       monthlyRevenue,
-      monthlyEarnings,
-      annualEarnings,
+      annualRevenue,
     };
   };
 
@@ -132,39 +128,14 @@ export default function Revenue() {
                     />
                   </div>
 
-                  {/* Commission Rate */}
-                  <div>
-                    <label
-                      htmlFor="commission"
-                      className="block text-sm font-medium text-gray-300 mb-2"
-                    >
-                      Commission Rate ({commission}%)
-                    </label>
-                    <div className="flex gap-2 mb-2">
-                      {[20, 25, 30, 35, 40].map((rate) => (
-                        <Button
-                          key={rate}
-                          variant={commission === rate ? "default" : "outline"}
-                          size="sm"
-                          onClick={() => setCommission(rate)}
-                          className={`${
-                            commission === rate
-                              ? "bg-brand hover:bg-brand-strong text-white border-brand"
-                              : "bg-zinc-800 hover:bg-zinc-700 text-white border-zinc-700"
-                          }`}
-                        >
-                          {rate}%
-                        </Button>
-                      ))}
-                    </div>
-                    <input
-                      type="range"
-                      min="20"
-                      max="40"
-                      value={commission}
-                      onChange={(e) => setCommission(parseInt(e.target.value))}
-                      className="w-full h-2 bg-zinc-700 rounded-lg appearance-none cursor-pointer accent-brand"
-                    />
+                  <div className="p-4 rounded-xl bg-brand/5 border border-brand/20">
+                    <p className="text-sm text-gray-300 leading-relaxed">
+                      <span className="font-semibold text-brand-light">
+                        You keep 100%
+                      </span>{" "}
+                      of what you charge your clients. Your only cost is the flat
+                      Fusion Calling subscription you choose.
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -208,31 +179,31 @@ export default function Revenue() {
                     </p>
                   </div>
 
-                  {/* Monthly Earnings */}
+                  {/* Annual Revenue */}
                   <div className="p-4 sm:p-6 rounded-xl bg-black border-green-500/30">
                     <div className="flex items-center gap-3 mb-2">
                       <DollarSign className="w-5 h-5 text-green-500" />
-                      <span className="text-gray-400 text-sm">Monthly Earnings</span>
+                      <span className="text-gray-400 text-sm">Annual Revenue</span>
                     </div>
                     <div className="text-3xl sm:text-4xl font-bold text-green-500">
-                      ${revenue.monthlyEarnings.toLocaleString()}
+                      ${revenue.annualRevenue.toLocaleString()}
                     </div>
                     <p className="text-gray-500 text-xs sm:text-sm mt-1">
-                      Your commission at {commission}%
+                      You keep 100% of what you charge your clients
                     </p>
                   </div>
 
-                  {/* Annual Earnings */}
+                  {/* Projected Annual */}
                   <div className="p-4 sm:p-6 rounded-xl bg-black border-brand/30">
                     <div className="flex items-center gap-3 mb-2">
                       <TrendingUp className="w-5 h-5 text-brand" />
-                      <span className="text-gray-400 text-sm">Annual Earnings</span>
+                      <span className="text-gray-400 text-sm">Growth Potential</span>
                     </div>
                     <div className="text-3xl sm:text-4xl font-bold text-brand">
-                      ${revenue.annualEarnings.toLocaleString()}
+                      {clients * 12}
                     </div>
                     <p className="text-gray-500 text-xs sm:text-sm mt-1">
-                      Projected annual revenue
+                      Client-touches per year at {clients} clients
                     </p>
                   </div>
                 </div>

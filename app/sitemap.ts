@@ -1,15 +1,9 @@
 import type { MetadataRoute } from "next";
-
-const FALLBACK_SITE_URL = "https://www.fusioncalling.com";
-
-function getSiteUrl(): string {
-  const raw = process.env.NEXT_PUBLIC_SITE_URL?.trim();
-  const siteUrl = raw && raw.length > 0 ? raw : FALLBACK_SITE_URL;
-  return siteUrl.replace(/\/+$/, "");
-}
+import { SITE_URL } from "@/lib/site-url";
+import { glossaryTerms, slugifyTerm } from "@/lib/glossary";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = getSiteUrl();
+  const baseUrl = SITE_URL;
   const lastModified = new Date();
 
   const paths = [
@@ -33,13 +27,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog/vapi-white-label-platform",
     "/blog/retell-ai-white-label",
     "/blog/gohighlevel-white-label-voice",
-  ] as const;
+    "/blog/how-to-start-a-voice-ai-agency",
+    "/blog/vapi-vs-retell-vs-elevenlabs",
+    "/blog/ai-voice-agents-for-small-business",
+    "/compare",
+    "/compare/chatdash-alternative",
+    "/compare/vapify-alternative",
+    "/compare/voicerr-alternative",
+    "/compare/voiceaiwrapper-alternative",
+    "/compare/synthflow-alternative",
+    "/compare/thinkrr-alternative",
+    "/industries",
+    "/industries/ai-voice-for-real-estate",
+    "/industries/ai-voice-for-dental",
+    "/industries/ai-voice-for-insurance",
+    "/industries/ai-voice-for-home-services",
+    "/industries/ai-voice-for-law-firms",
+    "/industries/ai-voice-for-automotive",
+    "/industries/ai-voice-for-call-centers",
+    "/industries/ai-voice-for-financial-services",
+    "/glossary",
+    ...glossaryTerms.map((t) => `/glossary/${slugifyTerm(t.term)}`),
+  ];
 
   return paths.map((path) => {
-    const priority = path === "/" ? 1 : 
+    const priority = path === "/" ? 1 :
                     path.startsWith("/docs/") ? 0.8 :
                     path === "/docs" ? 0.9 :
-                    path === "/pricing" || path === "/whitelabel" ? 0.8 : 0.7;
+                    path === "/pricing" || path === "/whitelabel" ? 0.8 :
+                    path === "/compare" || path === "/industries" || path === "/glossary" ? 0.8 :
+                    path.startsWith("/compare/") || path.startsWith("/industries/") ? 0.7 :
+                    path.startsWith("/glossary/") ? 0.6 : 0.7;
     const changeFrequency = path === "/" ? "weekly" :
                           path.startsWith("/docs/") ? "monthly" :
                           "monthly";

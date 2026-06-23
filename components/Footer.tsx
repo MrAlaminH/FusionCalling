@@ -17,11 +17,13 @@ const productLinks = [
   { label: "Pricing", href: "/#pricing" },
   { label: "ROI Calculator", href: "/calculator" },
   { label: "Documentation", href: "/docs" },
-  { label: "Partner Program", href: "/whitelabel" },
 ];
 
 const resourceLinks = [
   { label: "Blog", href: "/blog" },
+  { label: "Platform Comparisons", href: "/compare" },
+  { label: "Industries", href: "/industries" },
+  { label: "Glossary", href: "/glossary" },
   { label: "Vapi Comparison", href: "/blog/vapi-white-label-platform" },
   { label: "Retell AI Comparison", href: "/blog/retell-ai-white-label" },
   {
@@ -138,12 +140,14 @@ export default function Footer() {
               <ul className="space-y-3">
                 {productLinks.map((link) => (
                   <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-gray-400 hover:text-brand transition-colors"
-                    >
-                      {link.label}
-                    </Link>
+        <a
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm text-gray-400 hover:text-brand transition-colors"
+        >
+          {link.label}
+        </a>
                   </li>
                 ))}
               </ul>
@@ -155,12 +159,14 @@ export default function Footer() {
               <ul className="space-y-3">
                 {resourceLinks.map((link) => (
                   <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-gray-400 hover:text-brand transition-colors"
-                    >
-                      {link.label}
-                    </Link>
+        <a
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm text-gray-400 hover:text-brand transition-colors"
+        >
+          {link.label}
+        </a>
                   </li>
                 ))}
               </ul>
