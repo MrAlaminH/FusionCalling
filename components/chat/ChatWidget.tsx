@@ -151,7 +151,7 @@ const ChatWidget = () => {
       {/* Floating Chat Button */}
       {!open && (
         <button
-          className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-orange-600 hover:bg-orange-500 shadow-lg flex items-center justify-center transition-transform duration-200 hover:scale-110"
+          className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-brand-strong hover:bg-brand shadow-lg flex items-center justify-center transition-transform duration-200 hover:scale-110"
           onClick={() => setOpen(true)}
           aria-label="Open chat"
         >
@@ -160,17 +160,17 @@ const ChatWidget = () => {
       )}
       {/* Chat Window */}
       {open && (
-        <div className="fixed bottom-6 right-6 z-50 w-96 max-w-full h-[600px] bg-white rounded-2xl shadow-2xl flex flex-col border-2 border-orange-400 animate-fade-in">
+        <div className="fixed bottom-6 right-6 z-50 w-96 max-w-full h-[600px] bg-white rounded-2xl shadow-2xl flex flex-col border-2 border-brand-light animate-fade-in">
           {/* Header */}
-          <div className="flex items-center justify-between px-5 py-4 bg-gradient-to-r from-orange-500 to-orange-400 rounded-t-2xl border-b-2 border-orange-300">
+          <div className="flex items-center justify-between px-5 py-4 bg-gradient-to-r from-brand to-brand-light rounded-t-2xl border-b-2 border-brand-light">
             <div>
               <div className="text-lg font-bold text-white">Fusion Calling</div>
-              <div className="text-xs text-orange-100">
+              <div className="text-xs text-white/90">
                 How can we help you?
               </div>
             </div>
             <button
-              className="text-white hover:text-orange-200 text-2xl font-bold ml-2"
+              className="text-white hover:text-brand-light text-2xl font-bold ml-2"
               onClick={() => setOpen(false)}
               aria-label="Close chat"
             >
@@ -179,7 +179,7 @@ const ChatWidget = () => {
           </div>
           {/* Messages */}
           <div
-            className="flex-1 overflow-y-auto px-4 py-3 bg-orange-50"
+            className="flex-1 overflow-y-auto px-4 py-3 bg-brand/5"
             style={{ scrollbarWidth: "thin" }}
           >
             {messages.map((msg, i) => (
@@ -193,8 +193,8 @@ const ChatWidget = () => {
                   className={`max-w-[75%] px-4 py-2 rounded-xl text-sm shadow
                     ${
                       msg.sender === "user"
-                        ? "bg-orange-500 text-white rounded-br-none"
-                        : "bg-white text-orange-900 border border-orange-200 rounded-bl-none"
+                        ? "bg-brand text-white rounded-br-none"
+                        : "bg-white text-brand-strong border border-brand-light rounded-bl-none"
                     }
                   `}
                 >
@@ -208,9 +208,9 @@ const ChatWidget = () => {
             ))}
             {loading && (
               <div className="flex justify-start mb-2">
-                <div className="bg-white border border-orange-200 text-orange-900 px-4 py-2 rounded-xl rounded-bl-none text-sm shadow flex items-center gap-2">
+                <div className="bg-white border border-brand-light text-brand-strong px-4 py-2 rounded-xl rounded-bl-none text-sm shadow flex items-center gap-2">
                   <span className="animate-bounce">...</span>
-                  <span className="text-xs text-orange-400">Typing</span>
+                  <span className="text-xs text-brand-light">Typing</span>
                 </div>
               </div>
             )}
@@ -218,11 +218,11 @@ const ChatWidget = () => {
           </div>
           {/* Quick Message Buttons */}
           {messages.length <= 2 && (
-            <div className="p-3 bg-orange-50 border-t border-orange-100 flex flex-wrap gap-2">
+            <div className="p-3 bg-brand/5 border-t border-brand/10 flex flex-wrap gap-2">
               {quickMessages.map((qm) => (
                 <button
                   key={qm.id}
-                  className="bg-white hover:bg-orange-100 text-orange-700 text-sm rounded-full px-3 py-1.5 border border-orange-200 transition flex-grow"
+                  className="bg-white hover:bg-brand/10 text-brand-strong text-sm rounded-full px-3 py-1.5 border border-brand-light transition flex-grow"
                   onClick={() => handleQuickMessage(qm)}
                 >
                   {qm.text}
@@ -231,9 +231,9 @@ const ChatWidget = () => {
             </div>
           )}
           {/* Input */}
-          <div className="p-4 bg-white border-t border-orange-200 flex items-center gap-2">
+          <div className="p-4 bg-white border-t border-brand-light flex items-center gap-2">
             <input
-              className="flex-1 rounded-lg border border-orange-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
+              className="flex-1 rounded-lg border border-brand-light px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-light transition"
               type="text"
               placeholder="Type your message..."
               value={input}
@@ -242,7 +242,7 @@ const ChatWidget = () => {
               disabled={loading}
             />
             <button
-              className="bg-orange-600 hover:bg-orange-500 text-white rounded-lg px-4 py-2 font-semibold transition disabled:opacity-50"
+              className="bg-brand-strong hover:bg-brand text-white rounded-lg px-4 py-2 font-semibold transition disabled:opacity-50"
               onClick={() => sendMessage()}
               disabled={loading || !input.trim()}
             >
@@ -250,7 +250,7 @@ const ChatWidget = () => {
             </button>
           </div>
           {/* Footer */}
-          <div className="text-center text-xs text-orange-400 py-2 bg-orange-50 rounded-b-2xl border-t border-orange-100">
+          <div className="text-center text-xs text-brand-light py-2 bg-brand/5 rounded-b-2xl border-t border-brand/10">
             Powered by Fusion Calling
           </div>
         </div>

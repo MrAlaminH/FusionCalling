@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 import PhoneInputComponent from "@/components/sub/PhoneInput";
 import SlideToCall from "@/components/sub/SlideToCall";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 export default function Component() {
   const [name, setName] = useState("");
@@ -19,6 +19,16 @@ export default function Component() {
   const [selectedAgent, setSelectedAgent] = useState("");
   const [formKey, setFormKey] = useState(0);
   const [copySuccess, setCopySuccess] = useState(false);
+  const [touched, setTouched] = useState<{
+    name: boolean;
+    email: boolean;
+    phone: boolean;
+    agent: boolean;
+  }>({ name: false, email: false, phone: false, agent: false });
+  const reduce = useReducedMotion();
+
+  const markTouched = (field: keyof typeof touched) =>
+    setTouched((t) => ({ ...t, [field]: true }));
 
   // Function to reset input values
   const resetInputs = () => {
@@ -27,6 +37,7 @@ export default function Component() {
     setPhoneNumber("");
     setSelectedAgent("");
     setFormKey((prev) => prev + 1);
+    setTouched({ name: false, email: false, phone: false, agent: false });
   };
 
   // Function to validate email format
@@ -88,7 +99,7 @@ export default function Component() {
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl md:py-6 py-10">
         {/* Top pill button */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={reduce ? false : { opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex justify-center mb-4 sm:mb-6 lg:mb-8"
@@ -111,17 +122,17 @@ export default function Component() {
 
         {/* Main heading */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={reduce ? false : { opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-center mb-3 sm:mb-4 md:mb-6 px-2 sm:px-4 md:px-6"
         >
-          <h1 className="text-2xl xxs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1]">
+          <h1 className="font-display text-2xl xxs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1]">
             Transform Your Business
             <br className="hidden sm:block" />
             <span className="whitespace-nowrap"> </span>
             with{" "}
-            <span className="bg-gradient-to-r from-orange-300 via-orange-500 to-orange-600 text-transparent bg-clip-text">
+              <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
               AI Phone call Automation
             </span>
           </h1>
@@ -129,7 +140,7 @@ export default function Component() {
 
         {/* Subheading */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={reduce ? false : { opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           className="max-w-2xl mx-auto text-center mb-6 sm:mb-8 lg:mb-10 px-2 sm:px-4 md:px-6"
@@ -144,15 +155,15 @@ export default function Component() {
 
         {/* CTA Button */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={reduce ? false : { opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
           className="flex justify-center mb-8 sm:mb-12 lg:mb-16 xl:mb-20"
         >
-          <Link
-            href="#calendar"
-            className="inline-flex items-center rounded-md bg-white px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm md:text-base font-medium text-black transition-all hover:bg-gray-200 hover:scale-105"
-          >
+            <Link
+              href="#show-case"
+              className="inline-flex items-center rounded-md bg-white px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm md:text-base font-medium text-black transition-all hover:bg-gray-200 hover:scale-105"
+            >
             Start creating with us
             <span className="ml-1 sm:ml-1.5 md:ml-2">→</span>
           </Link>
@@ -166,7 +177,7 @@ export default function Component() {
           <div className="hidden md:block absolute -bottom-52 left-1/2 -translate-x-1/2 w-[200%] h-48 bg-gradient-to-t from-black to-transparent z-20 pointer-events-none" />
 
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={reduce ? false : { opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
           >
@@ -182,13 +193,13 @@ export default function Component() {
               <div className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 p-3 sm:p-4 md:p-6 lg:p-8 relative z-50">
                 {/* Left Column */}
                 <div className="space-y-4 sm:space-y-6">
-                  <button className="bg-orange-500 text-black px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium">
+                  <button className="bg-brand text-brand-foreground px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium">
                     Live demo
                   </button>
                   <div className="space-y-2 sm:space-y-4">
                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
                       Skeptical?{" "}
-                      <span className="text-orange-600">Test it NOW</span>
+                      <span className="text-brand-strong">Test it NOW</span>
                     </h2>
                     <p className="text-sm sm:text-base text-gray-400">
                       Wondering how our AI agents work?
@@ -198,8 +209,8 @@ export default function Component() {
                       details, and our AI will reach out instantly.
                       <br />
                       Note: If the number you provided is incorrect or you want
-                      to make another call but it&apos;s not wokring, Thwn
-                      please refresh the page to make the new call again.
+                      to make another call but it&apos;s not working, then
+                      please refresh the page to make a new call again.
                     </p>
                     <p className="text-xs sm:text-sm text-white">
                       The AI agent is ready to chat about Fusion Calling and
@@ -207,12 +218,12 @@ export default function Component() {
                     </p>
 
                     {/* Guide text for inbound call */}
-                    <p className="mt-2 text-xs md:text-sm text-orange-400/80">
+                    <p className="mt-2 text-xs md:text-sm text-brand/80">
                       To Test Our Inbound Call Handling, Dial The Number Below:
                     </p>
 
                     {/* Inbound Call Box */}
-                    <div className="mt-2 bg-zinc-800/80 border border-orange-500/30 rounded-lg p-3 flex items-center justify-between">
+                    <div className="mt-2 bg-zinc-800/80 border border-brand/30 rounded-lg p-3 flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
                         <span className="text-xs sm:text-sm text-gray-300">
@@ -228,7 +239,7 @@ export default function Component() {
                           className={`transition-colors ${
                             copySuccess
                               ? "text-green-500"
-                              : "text-orange-500 hover:text-orange-400"
+                              : "text-brand hover:text-brand"
                           }`}
                           aria-label="Copy phone number"
                           whileTap={{ scale: 0.95 }}
@@ -269,7 +280,7 @@ export default function Component() {
                 {/* OR Divider - Only visible on mobile */}
                 <div className="md:hidden flex items-center justify-center my-6">
                   <div className="bg-zinc-700/50 h-[1px] flex-grow"></div>
-                  <span className="px-4 text-orange-600 text-xl font-medium">
+                  <span className="px-4 text-brand-strong text-xl font-medium">
                     OR
                   </span>
                   <div className="bg-zinc-700/50 h-[1px] flex-grow"></div>
@@ -288,7 +299,7 @@ export default function Component() {
                     <div className="w-12 h-12 rounded-full flex items-center justify-center">
                       <Image
                         src="/logo.png"
-                        alt="English"
+                        alt="Fusion Calling logo"
                         width={500}
                         height={500}
                       />
@@ -297,7 +308,7 @@ export default function Component() {
                       <h3 className="font-semibold text-lg text-white ">
                         Outbound AI Agent
                       </h3>
-                      <p className="text-orange-600 text-sm">Representative</p>
+                      <p className="text-brand-strong text-sm">Representative</p>
                     </div>
                   </div>
 
@@ -315,7 +326,14 @@ export default function Component() {
                       className="bg-zinc-800 border-zinc-700 text-white"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
+                      onBlur={() => markTouched("name")}
+                      aria-invalid={touched.name && name.trim().length < 2}
                     />
+                    {touched.name && name.trim().length < 2 && (
+                      <p className="-mt-2 mb-2 text-xs text-red-400">
+                        Please enter your name (at least 2 characters).
+                      </p>
+                    )}
 
                     <label
                       className="block text-sm font-medium text-gray-300"
@@ -330,7 +348,14 @@ export default function Component() {
                       className="bg-zinc-800 border-zinc-700 text-white"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
+                      onBlur={() => markTouched("email")}
+                      aria-invalid={touched.email && !isValidEmail(email.trim())}
                     />
+                    {touched.email && !isValidEmail(email.trim()) && (
+                      <p className="-mt-2 mb-2 text-xs text-red-400">
+                        Please enter a valid email address.
+                      </p>
+                    )}
 
                     <label
                       className="block text-sm font-medium text-gray-300"
@@ -338,7 +363,10 @@ export default function Component() {
                     >
                       Phone number <span className="text-red-500">*</span>
                     </label>
-                    <div className="[&_.PhoneInputInput]:bg-zinc-800 [&_.PhoneInputInput]:border-zinc-700 [&_.PhoneInputInput]:text-white">
+                    <div
+                      className="[&_.PhoneInputInput]:bg-zinc-800 [&_.PhoneInputInput]:border-zinc-700 [&_.PhoneInputInput]:text-white"
+                      onBlur={() => markTouched("phone")}
+                    >
                       <PhoneInputComponent
                         id="phone"
                         placeholder="Phone number"
@@ -348,6 +376,11 @@ export default function Component() {
                         onChange={(value) => setPhoneNumber(value || "")}
                       />
                     </div>
+                    {touched.phone && phoneNumber.trim().length < 10 && (
+                      <p className="-mt-2 mb-2 text-xs text-red-400">
+                        Please enter a valid phone number (min. 10 digits).
+                      </p>
+                    )}
 
                     <label
                       className="block text-sm font-medium text-gray-300"
@@ -359,7 +392,9 @@ export default function Component() {
                       id="agent"
                       value={selectedAgent}
                       onChange={(e) => setSelectedAgent(e.target.value)}
-                      className="w-full bg-zinc-800 border border-zinc-700 text-white rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                      onBlur={() => markTouched("agent")}
+                      aria-invalid={touched.agent && selectedAgent === ""}
+                      className="w-full bg-zinc-800 border border-zinc-700 text-white rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent"
                     >
                       <option value="">Choose an agent</option>
                       <option value="appointment-scheduler">
@@ -371,10 +406,15 @@ export default function Component() {
                       </option>
                       <option value="insurance-agent">insurance Agent</option>
                     </select>
+                    {touched.agent && selectedAgent === "" && (
+                      <p className="-mt-2 mb-2 text-xs text-red-400">
+                        Please select an agent.
+                      </p>
+                    )}
 
                     <p className="text-sm text-gray-400">
                       The call will automatically end after{" "}
-                      <span className="text-orange-600">5 minutes</span>. Must
+                      <span className="text-brand-strong">5 minutes</span>. Must
                       use USA or Canada phone number.
                     </p>
 

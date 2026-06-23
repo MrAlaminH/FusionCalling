@@ -137,13 +137,13 @@ export default function GoHighLevelBlogPost() {
         <div className="mb-12">
           <Link
             href="/blog"
-            className="inline-flex items-center text-orange-400 hover:text-orange-300 mb-8 transition-colors"
+            className="inline-flex items-center text-brand-light hover:text-brand-light mb-8 transition-colors"
           >
             ← Back to Blog
           </Link>
 
           <div className="flex items-center gap-3 mb-4">
-            <span className="px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full text-sm font-semibold text-white">
+            <span className="px-4 py-2 bg-gradient-to-r from-brand to-brand-strong rounded-full text-sm font-semibold text-white">
               Platform Comparison
             </span>
             <span className="text-gray-500 text-sm">9 min read</span>
@@ -152,7 +152,7 @@ export default function GoHighLevelBlogPost() {
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
             GoHighLevel White Label Voice AI:
             <br />
-            <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong bg-clip-text text-transparent">
               Why Fusion Calling is Superior
             </span>
           </h1>
@@ -170,8 +170,8 @@ export default function GoHighLevelBlogPost() {
         </div>
 
         {/* Featured Image Placeholder */}
-        <div className="mb-12 rounded-3xl overflow-hidden border border-orange-500/20">
-          <div className="aspect-video bg-gradient-to-br from-orange-500/10 to-orange-600/5 flex items-center justify-center">
+        <div className="mb-12 rounded-3xl overflow-hidden border border-brand/20">
+          <div className="aspect-video bg-gradient-to-br from-brand/10 to-brand-strong/5 flex items-center justify-center">
             <div className="text-center">
               <div className="text-6xl mb-4">⚡</div>
               <div className="text-lg text-gray-500">GoHighLevel vs Fusion Calling Platform Analysis</div>
@@ -183,7 +183,7 @@ export default function GoHighLevelBlogPost() {
         <div className="prose prose-lg prose-invert max-w-none">
           <div className="space-y-8">
             {/* Introduction */}
-            <div className="glass-light rounded-2xl p-8 border border-orange-500/20">
+            <div className="glass-light rounded-2xl p-8 border border-brand/20">
               <h2 className="text-2xl font-bold text-white mb-4">
                 The GoHighLevel Voice AI Limitation
               </h2>
@@ -290,13 +290,13 @@ export default function GoHighLevelBlogPost() {
             </div>
 
             {/* Fusion Calling's Voice-First Approach */}
-            <div className="glass rounded-2xl p-8 border border-orange-500/20">
+            <div className="glass rounded-2xl p-8 border border-brand/20">
               <h2 className="text-3xl font-bold text-white mb-6">
                 Fusion Calling's Voice-First Approach
               </h2>
               <p className="text-gray-300 leading-relaxed mb-6">
                 Unlike GoHighLevel's "voice as a feature" approach, Fusion Calling is{" "}
-                <strong className="text-orange-400">
+                <strong className="text-brand-light">
                   purpose-built for voice AI white-labeling
                 </strong>
                 :
@@ -304,31 +304,31 @@ export default function GoHighLevelBlogPost() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-4">
-                  <h3 className="text-xl font-bold text-orange-400 mb-4">
+                  <h3 className="text-xl font-bold text-brand-light mb-4">
                     Advanced Voice Capabilities
                   </h3>
                   <ul className="space-y-3 text-gray-300">
                     <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0" />
+                      <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                       <span>
                         <strong>Multi-provider support:</strong> Vapi, Retell AI,
                         ElevenLabs, and more
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0" />
+                      <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                       <span>
                         <strong>Custom voice training</strong> and cloning capabilities
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0" />
+                      <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                       <span>
                         <strong>Advanced conversation design</strong> tools and flows
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0" />
+                      <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                       <span>
                         <strong>Real-time analytics</strong> and post-call analysis
                       </span>
@@ -337,32 +337,32 @@ export default function GoHighLevelBlogPost() {
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-xl font-bold text-orange-400 mb-4">
+                  <h3 className="text-xl font-bold text-brand-light mb-4">
                     Business Advantages
                   </h3>
                   <ul className="space-y-3 text-gray-300">
                     <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0" />
+                      <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                       <span>
                         <strong>Platform-independent</strong> solution not tied to one
                         ecosystem
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0" />
+                      <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                       <span>
                         <strong>Complete pricing control</strong> and 100% revenue
                         retention
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0" />
+                      <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                       <span>
                         <strong>True brand ownership</strong> without platform limitations
                       </span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0" />
+                      <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                       <span>
                         <strong>Technology flexibility</strong> to adapt to market changes
                       </span>
@@ -373,7 +373,7 @@ export default function GoHighLevelBlogPost() {
             </div>
 
             {/* The Integration Advantage */}
-            <div className="glass rounded-2xl p-8 border border-orange-500/20">
+            <div className="glass rounded-2xl p-8 border border-brand/20">
               <h2 className="text-3xl font-bold text-white mb-6">
                 The Integration Advantage: Best of Both Worlds
               </h2>
@@ -443,7 +443,7 @@ export default function GoHighLevelBlogPost() {
             </div>
 
             {/* Revenue Comparison */}
-            <div className="glass rounded-2xl p-8 border border-orange-500/20">
+            <div className="glass rounded-2xl p-8 border border-brand/20">
               <h2 className="text-3xl font-bold text-white mb-6">
                 Revenue Comparison: GoHighLevel vs. Fusion Calling
               </h2>
@@ -511,17 +511,17 @@ export default function GoHighLevelBlogPost() {
             </div>
 
             {/* Agency Quote */}
-            <div className="glass-light rounded-2xl p-8 border border-orange-500/20 italic">
+            <div className="glass-light rounded-2xl p-8 border border-brand/20 italic">
               <p className="text-gray-300 text-lg leading-relaxed mb-4">
                 "We started with GoHighLevel voice AI but moved to Fusion Calling for
                 the advanced features and business model flexibility. Our margins
                 increased by 40% and we can now offer clients better voice quality."
               </p>
-              <p className="text-orange-400">— Agency Partner</p>
+              <p className="text-brand-light">— Agency Partner</p>
             </div>
 
             {/* Specialized vs Generalized Solutions */}
-            <div className="glass rounded-2xl p-8 border border-orange-500/20">
+            <div className="glass rounded-2xl p-8 border border-brand/20">
               <h2 className="text-3xl font-bold text-white mb-6">
                 Specialized vs. Generalized Solutions
               </h2>
@@ -530,32 +530,32 @@ export default function GoHighLevelBlogPost() {
                 a voice AI platform built for agencies.
               </p>
 
-              <div className="bg-orange-500/10 rounded-xl p-6 border border-orange-500/30 mb-6">
-                <h3 className="text-xl font-bold text-orange-400 mb-4">
+              <div className="bg-brand/10 rounded-xl p-6 border border-brand/30 mb-6">
+                <h3 className="text-xl font-bold text-brand-light mb-4">
                   Specialization Matters When:
                 </h3>
                 <ul className="space-y-3 text-gray-300">
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0" />
+                    <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                     <span>
                       <strong>Voice quality</strong> is critical for client satisfaction
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0" />
+                    <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                     <span>
                       <strong>Custom conversation flows</strong> are needed for specific
                       use cases
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0" />
+                    <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                     <span>
                       <strong>Advanced analytics</strong> are required for optimization
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0" />
+                    <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                     <span>
                       <strong>Brand differentiation</strong> is important for market positioning
                     </span>
@@ -575,7 +575,7 @@ export default function GoHighLevelBlogPost() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
                     <span className="text-2xl">🔄</span>
                   </div>
                   <div>
@@ -589,7 +589,7 @@ export default function GoHighLevelBlogPost() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
                     <span className="text-2xl">🎙️</span>
                   </div>
                   <div>
@@ -603,7 +603,7 @@ export default function GoHighLevelBlogPost() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
                     <span className="text-2xl">💼</span>
                   </div>
                   <div>
@@ -617,7 +617,7 @@ export default function GoHighLevelBlogPost() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
                     <span className="text-2xl">🚀</span>
                   </div>
                   <div>
@@ -633,7 +633,7 @@ export default function GoHighLevelBlogPost() {
             </div>
 
             {/* Conclusion */}
-            <div className="glass-light rounded-2xl p-8 border border-orange-500/30">
+            <div className="glass-light rounded-2xl p-8 border border-brand/30">
               <h2 className="text-3xl font-bold text-white mb-6">
                 Making the Right Choice for Your Agency
               </h2>
@@ -644,25 +644,25 @@ export default function GoHighLevelBlogPost() {
 
               <ul className="space-y-3 text-gray-300 mb-8">
                 <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0" />
+                  <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                   <span>
                     <strong>Superior voice quality</strong> with advanced customization
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0" />
+                  <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                   <span>
                     <strong>Advanced features</strong> for complex use cases
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0" />
+                  <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                   <span>
                     <strong>Better economics</strong> with 40% higher margins
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0" />
+                  <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                   <span>
                     <strong>Complete brand control</strong> without platform limitations
                   </span>
@@ -671,7 +671,7 @@ export default function GoHighLevelBlogPost() {
 
               <Link
                 href="/whitelabel"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all shadow-premium hover:shadow-premium-lg hover:scale-105"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition-all shadow-premium hover:shadow-premium-lg hover:scale-105"
               >
                 Explore Fusion Calling's Partner Program
                 <span className="ml-2">→</span>
@@ -686,9 +686,9 @@ export default function GoHighLevelBlogPost() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Link
                   href="/blog/vapi-white-label-platform"
-                  className="glass-light rounded-xl p-6 border border-orange-500/20 hover:border-orange-500/40 transition-all group"
+                  className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition-all group"
                 >
-                  <h3 className="text-white font-bold mb-2 group-hover:text-orange-400 transition-colors">
+                  <h3 className="text-white font-bold mb-2 group-hover:text-brand-light transition-colors">
                     Vapi White Label Platform Comparison
                   </h3>
                   <p className="text-gray-400 text-sm">
@@ -697,9 +697,9 @@ export default function GoHighLevelBlogPost() {
                 </Link>
                 <Link
                   href="/blog/retell-ai-white-label"
-                  className="glass-light rounded-xl p-6 border border-orange-500/20 hover:border-orange-500/40 transition-all group"
+                  className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition-all group"
                 >
-                  <h3 className="text-white font-bold mb-2 group-hover:text-orange-400 transition-colors">
+                  <h3 className="text-white font-bold mb-2 group-hover:text-brand-light transition-colors">
                     Retell AI White Label Reseller Program
                   </h3>
                   <p className="text-gray-400 text-sm">

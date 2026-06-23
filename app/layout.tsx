@@ -1,8 +1,23 @@
 import type { Metadata } from "next";
+import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import ChatWidget from "@/components/chat/ChatWidget";
 import { PostHogProvider } from "./providers";
 import SuspendedPostHogPageView from "./PostHogPageView";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-outfit",
+  display: "swap",
+});
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-jakarta",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.fusioncalling.com/"),
@@ -60,7 +75,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth ">
+    <html
+      lang="en"
+      className={`${outfit.variable} ${jakarta.variable} scroll-smooth`}
+    >
       <head>
         <link rel="icon" href="/favicon.ico" />
         <script
@@ -192,6 +210,14 @@ export default function RootLayout({
         />
       </head>
       <body className="relative bg-black">
+        {/* Subtle film-grain texture across the whole site */}
+        <div className="grain-overlay" aria-hidden />
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-btn focus:bg-brand focus:px-4 focus:py-2 focus:font-semibold focus:text-brand-foreground"
+        >
+          Skip to content
+        </a>
         <PostHogProvider>
           <SuspendedPostHogPageView />
           <ChatWidget />

@@ -99,7 +99,7 @@ export default function ValueProp() {
         >
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
             Why Agencies Choose
-            <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 text-transparent bg-clip-text">
+            <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
               {" "}
               Fusion Calling
             </span>
@@ -134,28 +134,28 @@ export default function ValueProp() {
                 className="relative group"
               >
                 {/* Glow effect */}
-                <div className="absolute -inset-4 bg-gradient-to-br from-orange-500/25 via-orange-600/10 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+                <div className="absolute -inset-4 bg-gradient-to-br from-brand/25 via-brand-strong/10 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
 
-                <Card className="glass-light h-full transition-premium border-gray-800/50 hover:border-orange-500/40 group-hover:bg-gradient-to-br group-hover:from-orange-500/5 group-hover:to-transparent">
+                <Card className="glass-light h-full transition-premium border-gray-800/50 hover:border-brand/40 group-hover:bg-gradient-to-br group-hover:from-brand/5 group-hover:to-transparent">
                   <CardContent className="p-6 md:p-8 space-y-5 flex flex-col h-full relative overflow-hidden">
                     {/* Decorative gradient overlay */}
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-orange-500/10 to-transparent rounded-full blur-2xl -z-10" />
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-brand/10 to-transparent rounded-full blur-2xl -z-10" />
 
                     {/* Icon with animation */}
                     <motion.div
-                      className="w-14 h-14 md:w-16 md:h-16 rounded-xl bg-gradient-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0 group-hover:border-orange-500/60 transition-premium-fast shadow-premium"
+                      className="w-14 h-14 md:w-16 md:h-16 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0 group-hover:border-brand/60 transition-premium-fast shadow-premium"
                       whileHover={{ rotate: 360, scale: 1.1 }}
                       transition={{
                         duration: 0.6,
                         ease: [0.25, 0.1, 0.25, 1.0],
                       }}
                     >
-                      <Icon className="w-7 h-7 md:w-8 md:h-8 text-orange-500" />
+                      <Icon className="w-7 h-7 md:w-8 md:h-8 text-brand" />
                     </motion.div>
 
                     {/* Content */}
                     <div className="flex-grow space-y-3">
-                      <h3 className="font-display text-lg md:text-xl font-bold text-white group-hover:text-orange-400 transition-colors duration-300">
+                      <h3 className="font-display text-lg md:text-xl font-bold text-white group-hover:text-brand-light transition-colors duration-300">
                         {benefit.title}
                       </h3>
                       <p className="font-body text-gray-400 text-sm md:text-base leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
@@ -164,8 +164,8 @@ export default function ValueProp() {
                     </div>
 
                     {/* Stat highlight */}
-                    <div className="pt-4 border-t border-gray-800/50 group-hover:border-orange-500/30 transition-colors duration-300">
-                      <div className="font-display text-2xl md:text-3xl font-bold text-orange-500 mb-1">
+                    <div className="pt-4 border-t border-gray-800/50 group-hover:border-brand/30 transition-colors duration-300">
+                      <div className="font-display text-2xl md:text-3xl font-bold text-brand mb-1">
                         {benefit.stat}
                       </div>
                       <div className="font-body text-xs md:text-sm text-gray-500">
@@ -190,9 +190,9 @@ export default function ValueProp() {
           }}
           className="relative"
         >
-          <div className="glass rounded-3xl p-8 md:p-12 lg:p-16 border border-orange-500/20 shadow-premium-lg">
+          <div className="glass rounded-3xl p-8 md:p-12 lg:p-16 border border-brand/20 shadow-premium-lg">
             {/* Background gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-green-500/5 rounded-3xl -z-10" />
+            <div className="absolute inset-0 bg-gradient-to-br from-brand/10 via-transparent to-green-500/5 rounded-3xl -z-10" />
 
             <p className="font-body text-gray-400 text-base md:text-lg lg:text-xl text-center mb-10 md:mb-12">
               Join agencies already generating 6-figure revenue streams
@@ -212,7 +212,7 @@ export default function ValueProp() {
                   }}
                   whileHover={{ scale: 1.1, y: -5 }}
                 >
-                  <div className="font-display text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-br from-orange-500 to-orange-600 text-transparent bg-clip-text mb-2">
+                  <div className="font-display text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-br from-brand to-brand-strong text-transparent bg-clip-text mb-2">
                     {stat.value}
                   </div>
                   <div className="font-body text-xs md:text-sm text-gray-500">

@@ -118,7 +118,7 @@ export default function Benefits() {
         >
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
             Partner
-            <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 text-transparent bg-clip-text">
+            <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
               {" "}
               Benefits
             </span>
@@ -152,21 +152,21 @@ export default function Benefits() {
                 className="relative group"
               >
                 {/* Glow effect on hover */}
-                <div className="absolute -inset-3 bg-gradient-to-br from-orange-500/20 via-transparent to-transparent rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+                <div className="absolute -inset-3 bg-gradient-to-br from-brand/20 via-transparent to-transparent rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
 
-                <Card className="glass-light h-full transition-premium border-gray-800/50 hover:border-orange-500/40">
+                <Card className="glass-light h-full transition-premium border-gray-800/50 hover:border-brand/40">
                   <CardContent className="p-6 md:p-8 space-y-4 md:space-y-5 flex flex-col h-full">
                     {/* Icon with enhanced styling */}
                     <motion.div
-                      className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-orange-500/15 to-orange-600/5 border border-orange-500/25 flex items-center justify-center flex-shrink-0 group-hover:border-orange-500/50 transition-premium-fast shadow-premium"
+                      className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-brand/15 to-brand-strong/5 border border-brand/25 flex items-center justify-center flex-shrink-0 group-hover:border-brand/50 transition-premium-fast shadow-premium"
                       whileHover={{ rotate: 5, scale: 1.1 }}
                     >
-                      <Icon className="w-6 h-6 md:w-7 md:h-7 text-orange-500" />
+                      <Icon className="w-6 h-6 md:w-7 md:h-7 text-brand" />
                     </motion.div>
 
                     {/* Content */}
                     <div className="flex-grow">
-                      <h3 className="font-display text-lg md:text-xl font-bold text-white mb-3 group-hover:text-orange-400 transition-colors duration-300">
+                      <h3 className="font-display text-lg md:text-xl font-bold text-white mb-3 group-hover:text-brand-light transition-colors duration-300">
                         {benefit.title}
                       </h3>
                       <p className="font-body text-gray-400 text-sm md:text-base leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
@@ -175,7 +175,7 @@ export default function Benefits() {
                     </div>
 
                     {/* Subtle bottom accent */}
-                    <div className="w-12 h-1 rounded-full bg-gradient-to-r from-orange-500/50 to-orange-600/50 group-hover:w-full transition-all duration-500 ease-out" />
+                    <div className="w-12 h-1 rounded-full bg-gradient-to-r from-brand/50 to-brand-strong/50 group-hover:w-full transition-all duration-500 ease-out" />
                   </CardContent>
                 </Card>
               </motion.div>
@@ -199,7 +199,7 @@ export default function Benefits() {
           </p>
           <motion.a
             href="#cta"
-            className="inline-flex items-center rounded-2xl bg-gradient-to-r from-orange-500 to-orange-600 px-8 md:px-10 lg:px-12 py-3.5 md:py-4 lg:py-5 text-sm md:text-base font-medium text-white transition-premium shadow-premium hover:shadow-premium-lg"
+            className="inline-flex items-center rounded-2xl bg-gradient-to-r from-brand to-brand-strong px-8 md:px-10 lg:px-12 py-3.5 md:py-4 lg:py-5 text-sm md:text-base font-medium text-white transition-premium shadow-premium hover:shadow-premium-lg"
             whileHover={{ scale: 1.05, y: -3 }}
             whileTap={{ scale: 0.98 }}
           >

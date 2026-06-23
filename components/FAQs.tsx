@@ -14,7 +14,7 @@ export default function FAQSection() {
           {/* Security Section */}
           <div className="w-full md:w-1/2 space-y-8">
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 text-orange-600">
+              <div className="inline-flex items-center gap-2 text-brand-strong">
                 <svg
                   className="w-6 h-6"
                   fill="none"
@@ -42,9 +42,9 @@ export default function FAQSection() {
             <div className="space-y-6">
               {securityFeatures.map((feature, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-orange-500/20 flex items-center justify-center">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-brand/20 flex items-center justify-center">
                     <svg
-                      className="w-4 h-4 text-orange-600"
+                      className="w-4 h-4 text-brand-strong"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -69,7 +69,7 @@ export default function FAQSection() {
           {/* FAQ Section */}
           <div className="w-full md:w-1/2 space-y-8">
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 text-orange-600">
+              <div className="inline-flex items-center gap-2 text-brand-strong">
                 <svg
                   className="w-6 h-6"
                   fill="none"
@@ -97,7 +97,7 @@ export default function FAQSection() {
                   value={`item-${index}`}
                   className="border border-gray-800 rounded-lg overflow-hidden "
                 >
-                  <AccordionTrigger className="px-6 py-4 hover:bg-orange-600 text-white [&[data-state=open]>svg]:rotate-45 ">
+                  <AccordionTrigger className="px-6 py-4 hover:bg-brand-strong text-white [&[data-state=open]>svg]:rotate-45 ">
                     <span className="text-left">{item.question}</span>
                   </AccordionTrigger>
                   <AccordionContent className="px-6 pb-4 text-gray-400">

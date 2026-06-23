@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Play, ArrowRight, Sparkles } from "lucide-react";
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import { BorderBeam } from "@/components/ui/border-beam";
@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 
 export default function Hero() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const reduce = useReducedMotion();
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden pt-16 sm:pt-20 md:pt-24 lg:pt-28 xl:pt-32 relative">
@@ -45,7 +46,7 @@ export default function Hero() {
           className="particle"
           initial={{ opacity: 0 }}
           animate={{ opacity: [0.08, 0.15, 0.08] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 10, repeat: reduce ? 0 : Infinity, ease: "easeInOut" }}
           style={{
             width: "300px",
             height: "300px",
@@ -59,7 +60,7 @@ export default function Hero() {
           animate={{ opacity: [0.06, 0.12, 0.06] }}
           transition={{
             duration: 12,
-            repeat: Infinity,
+            repeat: reduce ? 0 : Infinity,
             ease: "easeInOut",
             delay: 2,
           }}
@@ -76,7 +77,7 @@ export default function Hero() {
           animate={{ opacity: [0.05, 0.1, 0.05] }}
           transition={{
             duration: 14,
-            repeat: Infinity,
+            repeat: reduce ? 0 : Infinity,
             ease: "easeInOut",
             delay: 4,
           }}
@@ -104,10 +105,10 @@ export default function Hero() {
           <Link
             href="#pricing"
             className={cn(
-              "group inline-flex items-center rounded-full glass-light px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 text-[10px] xxs:text-xs sm:text-sm transition-premium border border-orange-500/20 hover:border-orange-500/40",
+              "group inline-flex items-center rounded-full glass-light px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 text-[10px] xxs:text-xs sm:text-sm transition-premium border border-brand/20 hover:border-brand/40",
             )}
           >
-            <Sparkles className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4 mr-1.5 sm:mr-2 text-orange-500" />
+            <Sparkles className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4 mr-1.5 sm:mr-2 text-brand" />
             <AnimatedShinyText className="text-white hover:text-white/90 font-body">
               Start Your Voice Agency Today
               <span className="ml-1.5 sm:ml-2 group-hover:translate-x-1 transition-transform inline-block">
@@ -132,7 +133,7 @@ export default function Hero() {
             Scale Your Agency with,
             <br className="hidden sm:block" />
             <span className="whitespace-nowrap"> </span>
-            <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 text-transparent bg-clip-text">
+            <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
               White-Labeled AI Voice Agents
             </span>
           </h1>
@@ -170,7 +171,7 @@ export default function Hero() {
         >
           <Link
             href="#cta"
-            className="group inline-flex items-center rounded-2xl bg-gradient-to-r from-orange-500 to-orange-600 px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 text-xs sm:text-sm md:text-base font-semibold text-white transition-all shadow-premium hover:shadow-premium-lg hover:from-orange-600 hover:to-orange-700 hover:scale-105 hover:-translate-y-1"
+            className="group inline-flex items-center rounded-2xl bg-gradient-to-r from-brand to-brand-strong px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 text-xs sm:text-sm md:text-base font-semibold text-white transition-all shadow-premium hover:shadow-premium-lg hover:from-brand-strong hover:to-orange-700 hover:scale-105 hover:-translate-y-1"
           >
             Book a Demo
             <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
@@ -187,11 +188,11 @@ export default function Hero() {
           {/* Outer glow container for depth */}
           <div className="relative group">
             {/* Enhanced glow effects */}
-            <div className="absolute -inset-2 bg-gradient-to-r from-orange-500/30 via-orange-400/40 to-orange-500/30 rounded-[32px] blur-3xl opacity-70 group-hover:opacity-100 transition-opacity duration-700"></div>
-            <div className="absolute -inset-1 bg-gradient-to-r from-orange-400/20 via-orange-500/30 to-orange-400/20 rounded-[32px] blur-2xl opacity-50 group-hover:opacity-80 transition-opacity duration-700"></div>
+            <div className="absolute -inset-2 bg-gradient-to-r from-brand/30 via-brand-light/40 to-brand/30 rounded-[32px] blur-3xl opacity-70 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div className="absolute -inset-1 bg-gradient-to-r from-brand-light/20 via-brand/30 to-brand-light/20 rounded-[32px] blur-2xl opacity-50 group-hover:opacity-80 transition-opacity duration-700"></div>
 
             {/* Main container with padding for border visibility */}
-            <div className="relative p-[3px] rounded-[32px] bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 shadow-premium-lg">
+            <div className="relative p-[3px] rounded-[32px] bg-gradient-to-r from-brand-light via-brand to-brand-strong shadow-premium-lg">
               {/* Inner container with NeonGradientCard */}
               <NeonGradientCard
                 className="relative [&>div]:p-0 [&>div]:!bg-black [&>div]:dark:!bg-black"
@@ -260,39 +261,39 @@ export default function Hero() {
                             <div className="relative">
                               {/* Outer glow rings */}
                               <motion.div
-                                className="absolute inset-0 border-2 border-orange-500/50 rounded-full"
+                                className="absolute inset-0 border-2 border-brand/50 rounded-full"
                                 animate={{
                                   scale: [1, 2.5, 1],
                                   opacity: [0.7, 0, 0.7],
                                 }}
                                 transition={{
                                   duration: 3,
-                                  repeat: Infinity,
+                                  repeat: reduce ? 0 : Infinity,
                                   ease: "easeOut",
                                 }}
                               />
                               <motion.div
-                                className="absolute inset-0 border-2 border-orange-400/60 rounded-full"
+                                className="absolute inset-0 border-2 border-brand-light/60 rounded-full"
                                 animate={{
                                   scale: [1, 2.5, 1],
                                   opacity: [0.7, 0, 0.7],
                                 }}
                                 transition={{
                                   duration: 3,
-                                  repeat: Infinity,
+                                  repeat: reduce ? 0 : Infinity,
                                   ease: "easeOut",
                                   delay: 0.8,
                                 }}
                               />
                               <motion.div
-                                className="absolute inset-0 border border-orange-300/70 rounded-full"
+                                className="absolute inset-0 border border-brand-light/70 rounded-full"
                                 animate={{
                                   scale: [1, 2.5, 1],
                                   opacity: [0.5, 0, 0.5],
                                 }}
                                 transition={{
                                   duration: 3,
-                                  repeat: Infinity,
+                                  repeat: reduce ? 0 : Infinity,
                                   ease: "easeOut",
                                   delay: 1.6,
                                 }}
@@ -300,21 +301,21 @@ export default function Hero() {
 
                               {/* Enhanced glow backdrop */}
                               <motion.div
-                                className="absolute inset-0 bg-gradient-to-br from-orange-500/40 to-orange-600/30 rounded-full blur-3xl"
+                                className="absolute inset-0 bg-gradient-to-br from-brand/40 to-brand-strong/30 rounded-full blur-3xl"
                                 animate={{
                                   scale: [1, 1.8, 1],
                                   opacity: [0.5, 0.8, 0.5],
                                 }}
                                 transition={{
                                   duration: 3,
-                                  repeat: Infinity,
+                                  repeat: reduce ? 0 : Infinity,
                                   ease: "easeInOut",
                                 }}
                               />
 
                               {/* Play Button */}
                               <motion.div
-                                className="relative bg-gradient-to-br from-orange-500 to-orange-600 rounded-full p-5 sm:p-6 md:p-7 shadow-premium-lg group-hover:shadow-premium-xl transition-all duration-300"
+                                className="relative bg-gradient-to-br from-brand to-brand-strong rounded-full p-5 sm:p-6 md:p-7 shadow-premium-lg group-hover:shadow-premium-xl transition-all duration-300"
                                 whileHover={{ scale: 1.15 }}
                                 whileTap={{ scale: 0.95 }}
                               >

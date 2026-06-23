@@ -63,7 +63,7 @@ export default function HowItWorks() {
         >
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 tracking-tight">
             How to Launch Your
-            <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 text-transparent bg-clip-text">
+            <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
               {" "}
               White-label Business
             </span>
@@ -77,7 +77,7 @@ export default function HowItWorks() {
         {/* Steps Timeline */}
         <div className="relative max-w-5xl mx-auto">
           {/* Vertical line connecting steps - visible on md and up */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange-500/0 via-orange-500/50 to-orange-500/0"></div>
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-brand/0 via-brand/50 to-brand/0"></div>
 
           <div className="space-y-8 sm:space-y-10 md:space-y-12">
             {steps.map((step, index) => {
@@ -99,7 +99,7 @@ export default function HowItWorks() {
                 >
                   {/* Step Number Badge */}
                   <div className="relative z-10 flex-shrink-0">
-                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-premium">
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-br from-brand to-brand-strong flex items-center justify-center shadow-premium">
                       <span className="font-display text-2xl sm:text-3xl font-bold text-white">
                         {step.step}
                       </span>
@@ -108,19 +108,19 @@ export default function HowItWorks() {
 
                   {/* Card */}
                   <div className="flex-grow w-full">
-                    <Card className="glass-light border-orange-500/20 hover:border-orange-500/40 transition-all duration-500 hover:shadow-premium group">
+                    <Card className="glass-light border-brand/20 hover:border-brand/40 transition-all duration-500 hover:shadow-premium group">
                       <CardContent className="p-6 sm:p-8">
                         <div className="flex items-start gap-4 sm:gap-6">
                           <div className="flex-shrink-0 hidden md:block">
-                            <div className="w-14 h-14 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center group-hover:bg-orange-500/20 group-hover:border-orange-500/50 transition-all duration-300">
-                              <Icon className="w-7 h-7 text-orange-500" />
+                            <div className="w-14 h-14 rounded-xl bg-brand/10 border border-brand/30 flex items-center justify-center group-hover:bg-brand/20 group-hover:border-brand/50 transition-all duration-300">
+                              <Icon className="w-7 h-7 text-brand" />
                             </div>
                           </div>
                           <div className="flex-grow">
                             {/* Mobile icon - visible only on small screens */}
                             <div className="flex md:hidden items-center gap-3 mb-3">
-                              <div className="w-12 h-12 rounded-lg bg-orange-500/10 border border-orange-500/30 flex items-center justify-center">
-                                <Icon className="w-6 h-6 text-orange-500" />
+                              <div className="w-12 h-12 rounded-lg bg-brand/10 border border-brand/30 flex items-center justify-center">
+                                <Icon className="w-6 h-6 text-brand" />
                               </div>
                               <h3 className="font-display text-xl sm:text-2xl font-bold text-white">
                                 {step.title}
@@ -143,7 +143,7 @@ export default function HowItWorks() {
                   {/* Arrow indicator - visible on md and up */}
                   {index < steps.length - 1 && (
                     <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-1/2 mt-8 z-20">
-                      <ArrowDown className="w-8 h-8 text-orange-500" />
+                      <ArrowDown className="w-8 h-8 text-brand" />
                     </div>
                   )}
                 </motion.div>
@@ -168,7 +168,7 @@ export default function HowItWorks() {
           </p>
           <motion.a
             href="#cta"
-            className="inline-flex items-center rounded-2xl bg-gradient-to-r from-orange-500 to-orange-600 px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 text-sm sm:text-base font-semibold text-white transition-all shadow-premium hover:shadow-premium-lg hover:from-orange-600 hover:to-orange-700 hover:scale-105"
+            className="inline-flex items-center rounded-2xl bg-gradient-to-r from-brand to-brand-strong px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 text-sm sm:text-base font-semibold text-white transition-all shadow-premium hover:shadow-premium-lg hover:from-brand-strong hover:to-orange-700 hover:scale-105"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.98 }}
           >

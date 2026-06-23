@@ -41,7 +41,7 @@ export default function Revenue() {
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
             Calculate Your
-            <span className="bg-gradient-to-r from-orange-500 to-orange-600 text-transparent bg-clip-text">
+            <span className="bg-gradient-to-r from-brand to-brand-strong text-transparent bg-clip-text">
               {" "}
               Revenue Potential
             </span>
@@ -59,11 +59,11 @@ export default function Revenue() {
             animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : -20 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <Card className="bg-black border-orange-500/20 h-full">
+            <Card className="bg-black border-brand/20 h-full">
               <CardContent className="p-6 sm:p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 rounded-lg bg-orange-500/10 border border-orange-500/30 flex items-center justify-center">
-                    <TrendingUp className="w-6 h-6 text-orange-500" />
+                  <div className="w-12 h-12 rounded-lg bg-brand/10 border border-brand/30 flex items-center justify-center">
+                    <TrendingUp className="w-6 h-6 text-brand" />
                   </div>
                   <div>
                     <h3 className="text-xl sm:text-2xl font-bold text-white">
@@ -99,7 +99,7 @@ export default function Revenue() {
                       max="1000"
                       value={clients}
                       onChange={(e) => setClients(parseInt(e.target.value))}
-                      className="w-full mt-2 h-2 bg-zinc-700 rounded-lg appearance-none cursor-pointer accent-orange-500"
+                      className="w-full mt-2 h-2 bg-zinc-700 rounded-lg appearance-none cursor-pointer accent-brand"
                     />
                   </div>
 
@@ -128,7 +128,7 @@ export default function Revenue() {
                       step="10"
                       value={avgPrice}
                       onChange={(e) => setAvgPrice(parseInt(e.target.value))}
-                      className="w-full mt-2 h-2 bg-zinc-700 rounded-lg appearance-none cursor-pointer accent-orange-500"
+                      className="w-full mt-2 h-2 bg-zinc-700 rounded-lg appearance-none cursor-pointer accent-brand"
                     />
                   </div>
 
@@ -149,7 +149,7 @@ export default function Revenue() {
                           onClick={() => setCommission(rate)}
                           className={`${
                             commission === rate
-                              ? "bg-orange-500 hover:bg-orange-600 text-white border-orange-500"
+                              ? "bg-brand hover:bg-brand-strong text-white border-brand"
                               : "bg-zinc-800 hover:bg-zinc-700 text-white border-zinc-700"
                           }`}
                         >
@@ -163,7 +163,7 @@ export default function Revenue() {
                       max="40"
                       value={commission}
                       onChange={(e) => setCommission(parseInt(e.target.value))}
-                      className="w-full h-2 bg-zinc-700 rounded-lg appearance-none cursor-pointer accent-orange-500"
+                      className="w-full h-2 bg-zinc-700 rounded-lg appearance-none cursor-pointer accent-brand"
                     />
                   </div>
                 </div>
@@ -177,7 +177,7 @@ export default function Revenue() {
             animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : 20 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <Card className="bg-black border-orange-500/30 h-full">
+            <Card className="bg-black border-brand/30 h-full">
               <CardContent className="p-6 sm:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center">
@@ -197,7 +197,7 @@ export default function Revenue() {
                   {/* Monthly Revenue */}
                   <div className="p-4 sm:p-6 rounded-xl bg-black border border-zinc-800">
                     <div className="flex items-center gap-3 mb-2">
-                      <Users className="w-5 h-5 text-orange-500" />
+                      <Users className="w-5 h-5 text-brand" />
                       <span className="text-gray-400 text-sm">Monthly Revenue</span>
                     </div>
                     <div className="text-3xl sm:text-4xl font-bold text-white">
@@ -223,12 +223,12 @@ export default function Revenue() {
                   </div>
 
                   {/* Annual Earnings */}
-                  <div className="p-4 sm:p-6 rounded-xl bg-black border-orange-500/30">
+                  <div className="p-4 sm:p-6 rounded-xl bg-black border-brand/30">
                     <div className="flex items-center gap-3 mb-2">
-                      <TrendingUp className="w-5 h-5 text-orange-500" />
+                      <TrendingUp className="w-5 h-5 text-brand" />
                       <span className="text-gray-400 text-sm">Annual Earnings</span>
                     </div>
-                    <div className="text-3xl sm:text-4xl font-bold text-orange-500">
+                    <div className="text-3xl sm:text-4xl font-bold text-brand">
                       ${revenue.annualEarnings.toLocaleString()}
                     </div>
                     <p className="text-gray-500 text-xs sm:text-sm mt-1">

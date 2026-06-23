@@ -37,7 +37,7 @@ export default function EndlessUseCases() {
   return (
     <section className="w-full bg-black py-16">
       <div className="container mx-auto max-w-7xl px-4">
-        <h1 className="text-4xl font-bold text-center text-orange-600 mb-12">
+        <h1 className="text-4xl font-bold text-center text-brand-strong mb-12">
           Real-world usecases
         </h1>
 
@@ -47,7 +47,7 @@ export default function EndlessUseCases() {
             {/* Animated Background Indicator */}
             <motion.div
               layoutId="active-tab-background"
-              className="absolute inset-0 bg-orange-500/20 rounded-lg"
+              className="absolute inset-0 bg-brand/20 rounded-lg"
               initial={false}
               animate={{
                 x: activeTab === "outbound" ? "0%" : "100%",
@@ -70,7 +70,7 @@ export default function EndlessUseCases() {
               className={cn(
                 "relative flex-1 text-sm font-medium px-4 py-3 rounded-lg z-10 transition-colors",
                 activeTab === "outbound"
-                  ? "text-orange-600 font-bold"
+                  ? "text-brand-strong font-bold"
                   : "text-gray-400 hover:text-gray-200"
               )}
             >
@@ -87,7 +87,7 @@ export default function EndlessUseCases() {
               className={cn(
                 "relative flex-1 text-sm font-medium px-4 py-3 rounded-lg z-10 transition-colors",
                 activeTab === "inbound"
-                  ? "text-orange-600 font-bold"
+                  ? "text-brand-strong font-bold"
                   : "text-gray-400 hover:text-gray-200"
               )}
             >

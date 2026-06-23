@@ -16,7 +16,7 @@ export default function TryDemo() {
       title: " Real Estate Outbound Agnet",
       description:
         "This call demonstrates an AI assistant handling an initial consultation for real estate investments. The AI identifies client interests, discusses property preferences, and arranges for further information delivery.",
-      bgColor: "bg-orange-100",
+      bgColor: "bg-brand/10",
       video: "https://www.youtube.com/embed/Oua1TyixaoA",
       image: "/cardImage.png",
     },
@@ -75,7 +75,7 @@ export default function TryDemo() {
       title: "Cold Call Lead Generation Agent",
       description:
         "Listen to a cold call offering a local business a free SEO service to rank higher on Google. Learn about the initial pitch and value proposition",
-      bgColor: "bg-orange-100",
+      bgColor: "bg-brand/10",
       video: "https://www.youtube.com/embed/rkoGhVMIH10",
       image: "/cardImage.png",
     },
@@ -116,7 +116,7 @@ export default function TryDemo() {
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -20 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <motion.h1 className="text-orange-600 text-center font-bold text-3xl md:text-4xl pb-2">
+          <motion.h1 className="text-brand-strong text-center font-bold text-3xl md:text-4xl pb-2">
             Show Case
           </motion.h1>
           <p className="text-gray-400 text-center md:text-xl mb-12">
@@ -141,7 +141,7 @@ export default function TryDemo() {
             >
               <div
                 className="group relative overflow-hidden rounded-2xl transition-all duration-500 
-                  hover:shadow-lg hover:shadow-orange-600 hover:-translate-y-1 min-h-[200px]"
+                  hover:shadow-lg hover:shadow-brand-strong hover:-translate-y-1 min-h-[200px]"
               >
                 <div
                   className={`relative aspect-video ${feature.bgColor} overflow-hidden`}
@@ -213,7 +213,7 @@ export default function TryDemo() {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <Button
-              className="bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700"
+              className="bg-brand-strong text-white px-6 py-3 rounded-lg hover:bg-brand-strong"
               onClick={() => setShowMore(true)}
             >
               See More

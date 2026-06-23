@@ -66,7 +66,7 @@ export default function Footer() {
 
             <Link
               href="/#home"
-              className="mt-8 px-8 py-3 bg-orange-600 text-black rounded-full font-bold hover:bg-gray-700 transition-colors duration-300 inline-flex items-center group"
+              className="mt-8 px-8 py-3 bg-brand text-brand-foreground rounded-full font-bold hover:bg-gray-700 transition-colors duration-300 inline-flex items-center group"
             >
               Try Our Demo
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -84,7 +84,7 @@ export default function Footer() {
             <div className="flex flex-col space-y-4">
               <Link
                 href="/#home"
-                className="flex items-center gap-3 text-2xl font-bold text-orange-600 transition-colors"
+                className="flex items-center gap-3 text-2xl font-bold text-brand transition-colors"
               >
                 <Image
                   src="/logo.png"
@@ -106,7 +106,7 @@ export default function Footer() {
                   href="https://x.com/MrAlaminH"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 text-white hover:bg-orange-600 hover:text-black transition-colors"
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 text-white hover:bg-brand hover:text-black transition-colors"
                   aria-label="Twitter"
                 >
                   <Twitter className="h-4 w-4" />
@@ -115,7 +115,7 @@ export default function Footer() {
                   href="https://www.linkedin.com/company/fusion-calling/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 text-white hover:bg-orange-600 hover:text-black transition-colors"
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 text-white hover:bg-brand hover:text-black transition-colors"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="h-4 w-4" />
@@ -124,7 +124,7 @@ export default function Footer() {
                   href="https://facebook.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 text-white hover:bg-orange-600 hover:text-black transition-colors"
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 text-white hover:bg-brand hover:text-black transition-colors"
                   aria-label="Facebook"
                 >
                   <Facebook className="h-4 w-4" />
@@ -140,7 +140,7 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-gray-400 hover:text-orange-600 transition-colors"
+                      className="text-sm text-gray-400 hover:text-brand transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -157,7 +157,7 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-gray-400 hover:text-orange-600 transition-colors"
+                      className="text-sm text-gray-400 hover:text-brand transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -177,14 +177,14 @@ export default function Footer() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-gray-400 hover:text-orange-600 transition-colors"
+                        className="text-sm text-gray-400 hover:text-brand transition-colors"
                       >
                         {link.label}
                       </a>
                     ) : (
                       <Link
                         href={link.href}
-                        className="text-sm text-gray-400 hover:text-orange-600 transition-colors"
+                        className="text-sm text-gray-400 hover:text-brand transition-colors"
                       >
                         {link.label}
                       </Link>
@@ -197,14 +197,14 @@ export default function Footer() {
               <div className="mt-6 space-y-3">
                 <Link
                   href="mailto:hello@fusioncalling.com"
-                  className="flex items-start gap-3 text-sm text-gray-400 hover:text-orange-600 transition-colors"
+                  className="flex items-start gap-3 text-sm text-gray-400 hover:text-brand transition-colors"
                 >
                   <Mail className="h-5 w-5 flex-shrink-0 mt-0.5" />
                   <span>hello@fusioncalling.com</span>
                 </Link>
                 <Link
                   href="tel:+19146394069"
-                  className="flex items-start gap-3 text-sm text-gray-400 hover:text-orange-600 transition-colors"
+                  className="flex items-start gap-3 text-sm text-gray-400 hover:text-brand transition-colors"
                 >
                   <Phone className="h-5 w-5 flex-shrink-0 mt-0.5" />
                   <span>+1 (914) 639-4069</span>
@@ -223,19 +223,19 @@ export default function Footer() {
               <div className="flex items-center gap-6">
                 <Link
                   href="/privacy"
-                  className="text-sm text-gray-500 hover:text-orange-600 transition-colors"
+                  className="text-sm text-gray-500 hover:text-brand transition-colors"
                 >
                   Privacy Policy
                 </Link>
                 <Link
                   href="/terms"
-                  className="text-sm text-gray-500 hover:text-orange-600 transition-colors"
+                  className="text-sm text-gray-500 hover:text-brand transition-colors"
                 >
                   Terms of Service
                 </Link>
                 <Link
                   href="/docs"
-                  className="text-sm text-gray-500 hover:text-orange-600 transition-colors"
+                  className="text-sm text-gray-500 hover:text-brand transition-colors"
                 >
                   Docs
                 </Link>

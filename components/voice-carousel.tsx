@@ -46,7 +46,7 @@ export default function VoiceCarousel() {
         <motion.div variants={itemVariants} className="text-center mb-16">
           <motion.h1
             variants={itemVariants}
-            className="text-3xl md:text-4xl font-bold tracking-tighter text-orange-600 mb-4"
+            className="text-3xl md:text-4xl font-bold tracking-tighter text-brand-strong mb-4"
           >
             Test Out Some Used Voices
           </motion.h1>
@@ -75,7 +75,7 @@ export default function VoiceCarousel() {
                   voice={voice}
                   onMouseEnter={() => {}}
                   onMouseLeave={() => {}}
-                  className="transition-colors duration-300 hover:bg-orange-600 mx-2"
+                  className="transition-colors duration-300 hover:bg-brand-strong mx-2"
                 />
               ))}
             </Marquee>
@@ -100,7 +100,7 @@ export default function VoiceCarousel() {
                   voice={voice}
                   onMouseEnter={() => {}}
                   onMouseLeave={() => {}}
-                  className="transition-colors duration-300 hover:bg-orange-600 mx-2"
+                  className="transition-colors duration-300 hover:bg-brand-strong mx-2"
                 />
               ))}
             </Marquee>

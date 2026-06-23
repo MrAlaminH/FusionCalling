@@ -78,13 +78,13 @@ export default function FAQ() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <div className="flex items-center justify-center gap-3 mb-4 sm:mb-6">
-            <div className="w-14 h-14 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center">
-              <HelpCircle className="w-7 h-7 text-orange-500" />
+            <div className="w-14 h-14 rounded-full bg-brand/10 border border-brand/30 flex items-center justify-center">
+              <HelpCircle className="w-7 h-7 text-brand" />
             </div>
           </div>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 tracking-tight">
             Frequently Asked
-            <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 text-transparent bg-clip-text">
+            <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
               {" "}
               Questions
             </span>
@@ -106,7 +106,7 @@ export default function FAQ() {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="glass-light border border-orange-500/20 rounded-xl px-6 md:px-8 hover:border-orange-500/40 transition-all duration-300"
+                className="glass-light border border-brand/20 rounded-xl px-6 md:px-8 hover:border-brand/40 transition-all duration-300"
               >
                 <AccordionTrigger className="text-white text-left hover:no-underline py-5 md:py-6">
                   <span className="font-body text-base sm:text-lg md:text-xl font-medium">
@@ -133,7 +133,7 @@ export default function FAQ() {
           </p>
           <motion.a
             href="#cta"
-            className="inline-flex items-center rounded-2xl bg-gradient-to-r from-orange-500 to-orange-600 px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 text-sm sm:text-base font-semibold text-white transition-all shadow-premium hover:shadow-premium-lg hover:from-orange-600 hover:to-orange-700 hover:scale-105"
+            className="inline-flex items-center rounded-2xl bg-gradient-to-r from-brand to-brand-strong px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 text-sm sm:text-base font-semibold text-white transition-all shadow-premium hover:shadow-premium-lg hover:from-brand-strong hover:to-orange-700 hover:scale-105"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.98 }}
           >

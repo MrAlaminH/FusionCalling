@@ -137,13 +137,13 @@ export default function RetellAIBlogPost() {
         <div className="mb-12">
           <Link
             href="/blog"
-            className="inline-flex items-center text-orange-400 hover:text-orange-300 mb-8 transition-colors"
+            className="inline-flex items-center text-brand-light hover:text-brand-light mb-8 transition-colors"
           >
             ← Back to Blog
           </Link>
 
           <div className="flex items-center gap-3 mb-4">
-            <span className="px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full text-sm font-semibold text-white">
+            <span className="px-4 py-2 bg-gradient-to-r from-brand to-brand-strong rounded-full text-sm font-semibold text-white">
               Business Strategy
             </span>
             <span className="text-gray-500 text-sm">7 min read</span>
@@ -152,7 +152,7 @@ export default function RetellAIBlogPost() {
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
             Retell AI White Label Reseller Program:
             <br />
-            <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong bg-clip-text text-transparent">
               The Fusion Calling Alternative
             </span>
           </h1>
@@ -170,8 +170,8 @@ export default function RetellAIBlogPost() {
         </div>
 
         {/* Featured Image Placeholder */}
-        <div className="mb-12 rounded-3xl overflow-hidden border border-orange-500/20">
-          <div className="aspect-video bg-gradient-to-br from-orange-500/10 to-orange-600/5 flex items-center justify-center">
+        <div className="mb-12 rounded-3xl overflow-hidden border border-brand/20">
+          <div className="aspect-video bg-gradient-to-br from-brand/10 to-brand-strong/5 flex items-center justify-center">
             <div className="text-center">
               <div className="text-6xl mb-4">📊</div>
               <div className="text-lg text-gray-500">Retell AI vs Fusion Calling Economics</div>
@@ -183,7 +183,7 @@ export default function RetellAIBlogPost() {
         <div className="prose prose-lg prose-invert max-w-none">
           <div className="space-y-8">
             {/* Introduction */}
-            <div className="glass-light rounded-2xl p-8 border border-orange-500/20">
+            <div className="glass-light rounded-2xl p-8 border border-brand/20">
               <h2 className="text-2xl font-bold text-white mb-4">
                 The Retell AI Dilemma for Agencies
               </h2>
@@ -192,7 +192,7 @@ export default function RetellAIBlogPost() {
                 model lets us build a true SaaS business with predictable recurring
                 revenue instead of complicated minute tracking.&quot;
               </p>
-              <p className="text-orange-400 text-lg font-semibold">
+              <p className="text-brand-light text-lg font-semibold">
                 Retell AI doesn&apos;t offer a true white-label reseller program.
               </p>
             </div>
@@ -208,24 +208,24 @@ export default function RetellAIBlogPost() {
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="glass-light rounded-xl p-6 border border-orange-500/20">
-                  <h3 className="text-lg font-bold text-orange-400 mb-3">
+                <div className="glass-light rounded-xl p-6 border border-brand/20">
+                  <h3 className="text-lg font-bold text-brand-light mb-3">
                     Complete Brand Control
                   </h3>
                   <p className="text-gray-400 text-sm">
                     No visible Retell branding - only your agency's identity
                   </p>
                 </div>
-                <div className="glass-light rounded-xl p-6 border border-orange-500/20">
-                  <h3 className="text-lg font-bold text-orange-400 mb-3">
+                <div className="glass-light rounded-xl p-6 border border-brand/20">
+                  <h3 className="text-lg font-bold text-brand-light mb-3">
                     Pricing Freedom
                   </h3>
                   <p className="text-gray-400 text-sm">
                     Set your own margins without complex per-minute calculations
                   </p>
                 </div>
-                <div className="glass-light rounded-xl p-6 border border-orange-500/20">
-                  <h3 className="text-lg font-bold text-orange-400 mb-3">
+                <div className="glass-light rounded-xl p-6 border border-brand/20">
+                  <h3 className="text-lg font-bold text-brand-light mb-3">
                     Client Ownership
                   </h3>
                   <p className="text-gray-400 text-sm">
@@ -236,7 +236,7 @@ export default function RetellAIBlogPost() {
             </div>
 
             {/* How Fusion Calling Solves This */}
-            <div className="glass rounded-2xl p-8 border border-orange-500/20">
+            <div className="glass rounded-2xl p-8 border border-brand/20">
               <h2 className="text-3xl font-bold text-white mb-6">
                 How Fusion Calling Solves This
               </h2>
@@ -245,23 +245,23 @@ export default function RetellAIBlogPost() {
                 Fusion Calling offers:
               </p>
 
-              <div className="bg-gradient-to-r from-orange-500/10 to-orange-600/5 rounded-xl p-6 border border-orange-500/30 mb-6">
-                <h3 className="text-xl font-bold text-orange-400 mb-4">
+              <div className="bg-gradient-to-r from-brand/10 to-brand-strong/5 rounded-xl p-6 border border-brand/30 mb-6">
+                <h3 className="text-xl font-bold text-brand-light mb-4">
                   Simple Partnership Model
                 </h3>
                 <ul className="space-y-3 text-gray-300">
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0" />
+                    <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                     <span>
                       Fixed monthly platform fees ($99-499/month based on tier)
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0" />
+                    <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                     <span>You set client pricing and keep 100% of revenue</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0" />
+                    <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                     <span>No complicated per-minute math or billing surprises</span>
                   </li>
                 </ul>
@@ -322,7 +322,7 @@ export default function RetellAIBlogPost() {
             </div>
 
             {/* The Business Case */}
-            <div className="glass rounded-2xl p-8 border border-orange-500/20">
+            <div className="glass rounded-2xl p-8 border border-brand/20">
               <h2 className="text-3xl font-bold text-white mb-6">
                 The Business Case for White-Label Voice AI
               </h2>
@@ -402,13 +402,13 @@ export default function RetellAIBlogPost() {
             </div>
 
             {/* Agency Quote */}
-            <div className="glass-light rounded-2xl p-8 border border-orange-500/20 italic">
+            <div className="glass-light rounded-2xl p-8 border border-brand/20 italic">
               <p className="text-gray-300 text-lg leading-relaxed mb-4">
                 "We evaluated Retell AI extensively, but Fusion Calling's white-label
                 model lets us build a true SaaS business with predictable recurring
                 revenue instead of complicated minute tracking."
               </p>
-              <p className="text-orange-400">— Agency Partner</p>
+              <p className="text-brand-light">— Agency Partner</p>
             </div>
 
             {/* Integration Flexibility */}
@@ -423,7 +423,7 @@ export default function RetellAIBlogPost() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
                     <span className="text-2xl">🔄</span>
                   </div>
                   <div>
@@ -435,7 +435,7 @@ export default function RetellAIBlogPost() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
                     <span className="text-2xl">🛡️</span>
                   </div>
                   <div>
@@ -447,7 +447,7 @@ export default function RetellAIBlogPost() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
                     <span className="text-2xl">💰</span>
                   </div>
                   <div>
@@ -459,7 +459,7 @@ export default function RetellAIBlogPost() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
                     <span className="text-2xl">🚀</span>
                   </div>
                   <div>
@@ -473,7 +473,7 @@ export default function RetellAIBlogPost() {
             </div>
 
             {/* Conclusion */}
-            <div className="glass-light rounded-2xl p-8 border border-orange-500/30">
+            <div className="glass-light rounded-2xl p-8 border border-brand/30">
               <h2 className="text-3xl font-bold text-white mb-6">
                 Don't Let Retell AI's Model Limit Your Growth
               </h2>
@@ -484,26 +484,26 @@ export default function RetellAIBlogPost() {
 
               <ul className="space-y-3 text-gray-300 mb-8">
                 <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0" />
+                  <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                   <span>Build a branded voice AI practice</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0" />
+                  <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                   <span>Create predictable recurring revenue</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0" />
+                  <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                   <span>Scale without technical complexity</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 flex-shrink-0" />
+                  <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                   <span>Own your client relationships</span>
                 </li>
               </ul>
 
               <Link
                 href="/whitelabel"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all shadow-premium hover:shadow-premium-lg hover:scale-105"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition-all shadow-premium hover:shadow-premium-lg hover:scale-105"
               >
                 Apply for Our Partner Program Today
                 <span className="ml-2">→</span>
@@ -518,9 +518,9 @@ export default function RetellAIBlogPost() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Link
                   href="/blog/vapi-white-label-platform"
-                  className="glass-light rounded-xl p-6 border border-orange-500/20 hover:border-orange-500/40 transition-all group"
+                  className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition-all group"
                 >
-                  <h3 className="text-white font-bold mb-2 group-hover:text-orange-400 transition-colors">
+                  <h3 className="text-white font-bold mb-2 group-hover:text-brand-light transition-colors">
                     Vapi White Label Platform Comparison
                   </h3>
                   <p className="text-gray-400 text-sm">
@@ -530,9 +530,9 @@ export default function RetellAIBlogPost() {
                 </Link>
                 <Link
                   href="/blog/gohighlevel-white-label-voice"
-                  className="glass-light rounded-xl p-6 border border-orange-500/20 hover:border-orange-500/40 transition-all group"
+                  className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition-all group"
                 >
-                  <h3 className="text-white font-bold mb-2 group-hover:text-orange-400 transition-colors">
+                  <h3 className="text-white font-bold mb-2 group-hover:text-brand-light transition-colors">
                     GoHighLevel Voice AI Comparison
                   </h3>
                   <p className="text-gray-400 text-sm">

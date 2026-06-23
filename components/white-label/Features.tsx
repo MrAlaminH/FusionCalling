@@ -137,7 +137,7 @@ export default function Features() {
         >
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 tracking-tight">
             Complete White-label
-            <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 text-transparent bg-clip-text">
+            <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
               {" "}
               Solution
             </span>
@@ -190,14 +190,14 @@ export default function Features() {
                   >
                     {/* Icon - Slightly smaller */}
                     <motion.div
-                      className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-orange-500/20 via-orange-600/10 to-orange-500/5 border border-orange-500/30 shadow-premium"
+                      className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-brand/20 via-brand-strong/10 to-brand/5 border border-brand/30 shadow-premium"
                       whileHover={{ scale: 1.05, rotate: 2 }}
                       transition={{
                         duration: 0.3,
                         ease: [0.25, 0.1, 0.25, 1.0],
                       }}
                     >
-                      <Icon className="w-7 h-7 md:w-9 md:h-9 text-orange-500" />
+                      <Icon className="w-7 h-7 md:w-9 md:h-9 text-brand" />
                     </motion.div>
 
                     {/* Title - Slightly reduced for better balance */}
@@ -227,7 +227,7 @@ export default function Features() {
                             ease: [0.25, 0.1, 0.25, 1.0],
                           }}
                         >
-                          <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 mt-2 md:mt-2.5 flex-shrink-0 shadow-premium" />
+                          <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-gradient-to-br from-brand to-brand-strong mt-2 md:mt-2.5 flex-shrink-0 shadow-premium" />
                           <span className="font-body text-sm md:text-base">
                             {item}
                           </span>
@@ -242,7 +242,7 @@ export default function Features() {
                         return (
                           <motion.div
                             key={idx}
-                            className="flex items-center gap-2 md:gap-2.5 px-3.5 py-1.5 md:px-4 md:py-2 rounded-xl glass-light border border-orange-500/20 hover:border-orange-500/40 transition-premium-fast"
+                            className="flex items-center gap-2 md:gap-2.5 px-3.5 py-1.5 md:px-4 md:py-2 rounded-xl glass-light border border-brand/20 hover:border-brand/40 transition-premium-fast"
                             whileHover={{ scale: 1.05, y: -2 }}
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
@@ -252,7 +252,7 @@ export default function Features() {
                               ease: [0.25, 0.1, 0.25, 1.0],
                             }}
                           >
-                            <HighlightIcon className="w-3.5 h-3.5 md:w-4 md:h-4 text-orange-500" />
+                            <HighlightIcon className="w-3.5 h-3.5 md:w-4 md:h-4 text-brand" />
                             <span className="font-body text-xs md:text-sm text-gray-300 font-medium">
                               {highlight.text}
                             </span>
@@ -281,13 +281,13 @@ export default function Features() {
                     className="relative group"
                   >
                     {/* Multi-layer glow system - Enhanced for larger images */}
-                    <div className="absolute -inset-6 bg-gradient-to-br from-orange-500/25 via-orange-600/10 to-transparent rounded-3xl blur-3xl opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
-                    <div className="absolute -inset-4 bg-gradient-to-br from-orange-400/15 via-transparent to-transparent rounded-3xl blur-2xl opacity-40 group-hover:opacity-70 transition-opacity duration-700" />
+                    <div className="absolute -inset-6 bg-gradient-to-br from-brand/25 via-brand-strong/10 to-transparent rounded-3xl blur-3xl opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
+                    <div className="absolute -inset-4 bg-gradient-to-br from-brand-light/15 via-transparent to-transparent rounded-3xl blur-2xl opacity-40 group-hover:opacity-70 transition-opacity duration-700" />
 
                     {/* Image Container with glassmorphism - Larger and more prominent */}
-                    <div className="relative rounded-3xl overflow-hidden border border-orange-500/20 bg-gradient-to-br from-gray-900 via-gray-800/50 to-gray-900 shadow-premium-lg">
+                    <div className="relative rounded-3xl overflow-hidden border border-brand/20 bg-gradient-to-br from-gray-900 via-gray-800/50 to-gray-900 shadow-premium-lg">
                       {/* Decorative top gradient bar */}
-                      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-70" />
+                      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand to-transparent opacity-70" />
 
                       {/* Browser window controls */}
                       <div className="absolute top-4 left-4 flex gap-2 z-20">
@@ -339,14 +339,14 @@ export default function Features() {
         >
           <motion.a
             href="#cta"
-            className="inline-flex items-center gap-3 px-8 py-4 md:px-10 md:py-5 rounded-2xl glass-light border border-orange-500/30 hover:border-orange-500/50 transition-premium cursor-pointer group shadow-premium"
+            className="inline-flex items-center gap-3 px-8 py-4 md:px-10 md:py-5 rounded-2xl glass-light border border-brand/30 hover:border-brand/50 transition-premium cursor-pointer group shadow-premium"
             whileHover={{ scale: 1.05, y: -4 }}
             whileTap={{ scale: 0.98 }}
           >
             <span className="font-display text-white font-semibold text-lg md:text-xl">
               Ready to start your white-label journey?
             </span>
-            <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-orange-500 group-hover:translate-x-2 transition-transform duration-300" />
+            <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-brand group-hover:translate-x-2 transition-transform duration-300" />
           </motion.a>
         </motion.div>
       </div>

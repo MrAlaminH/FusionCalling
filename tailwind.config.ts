@@ -12,6 +12,11 @@ const config: Config = {
   		screens: {
   			xxs: '360px'
   		},
+  		fontFamily: {
+  			display: ['var(--font-outfit)', 'Outfit', 'sans-serif'],
+  			body: ['var(--font-jakarta)', '"Plus Jakarta Sans"', 'sans-serif'],
+  			sans: ['var(--font-jakarta)', '"Plus Jakarta Sans"', 'sans-serif']
+  		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -39,11 +44,17 @@ const config: Config = {
   				DEFAULT: 'hsl(var(--accent))',
   				foreground: 'hsl(var(--accent-foreground))'
   			},
-  			destructive: {
-  				DEFAULT: 'hsl(var(--destructive))',
-  				foreground: 'hsl(var(--destructive-foreground))'
-  			},
-  			border: 'hsl(var(--border))',
+   			destructive: {
+   				DEFAULT: 'hsl(var(--destructive))',
+   				foreground: 'hsl(var(--destructive-foreground))'
+   			},
+   			brand: {
+   				DEFAULT: 'hsl(var(--brand))',
+   				foreground: 'hsl(var(--brand-foreground))',
+   				strong: 'hsl(var(--brand-strong))',
+   				light: 'hsl(var(--brand-light))'
+   			},
+   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
   			chart: {
@@ -54,11 +65,14 @@ const config: Config = {
   				'5': 'hsl(var(--chart-5))'
   			}
   		},
-  		borderRadius: {
-  			lg: 'var(--radius)',
-  			md: 'calc(var(--radius) - 2px)',
-  			sm: 'calc(var(--radius) - 4px)'
-  		},
+   		borderRadius: {
+   			lg: 'var(--radius)',
+   			md: 'calc(var(--radius) - 2px)',
+   			sm: 'calc(var(--radius) - 4px)',
+   			card: '1rem',
+   			btn: '0.75rem',
+   			pill: '9999px'
+   		},
   		keyframes: {
   			'logo-cloud': {
   				from: {

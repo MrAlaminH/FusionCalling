@@ -2,18 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
-
 body {
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-jakarta), "Plus Jakarta Sans", sans-serif;
 }
 
 .font-display {
-  font-family: "Outfit", sans-serif;
+  font-family: var(--font-outfit), "Outfit", sans-serif;
 }
 
 .font-body {
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: var(--font-jakarta), "Plus Jakarta Sans", sans-serif;
 }
 
 @layer utilities {
@@ -49,6 +47,12 @@ body {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+
+    /* Brand (orange) — single source of truth for the brand color. */
+    --brand: 25 95% 51%; /* ~ orange-500 (#f97316) */
+    --brand-strong: 21 92% 48%; /* ~ orange-600 (#ea580c) */
+    --brand-light: 25 95% 61%; /* ~ orange-400 (#fb923c) */
+    --brand-foreground: 0 0% 100%; /* white text on brand */
     --chat--color-primary: #1e90ff; /* Adjusted to match website theme */
     --chat--color-secondary: #db942a;
     --chat--color-white: #ffffff;

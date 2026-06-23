@@ -1,0 +1,45 @@
+# Fusion Calling
+
+> Fusion Calling is a white-label AI voice automation platform. It deploys human-like AI phone agents that handle inbound and outbound calls — appointment scheduling, lead qualification, FAQ handling, voicemails, and 24/7 receptionist coverage — and lets agencies resell the entire platform under their own brand.
+
+Fusion Calling serves two audiences:
+
+1. **End businesses** — dental practices, real estate, insurance, and service companies that want AI agents answering and placing their calls.
+2. **Agencies and resellers (primary focus)** — who white-label the platform, host it on their own domain, set their own pricing, and keep the margin between their client price and Fusion Calling's wholesale rate.
+
+The platform integrates with leading voice-AI providers. Agencies can bring existing agent configurations from **Vapi**, **Retell AI**, and the **GoHighLevel** ecosystem into Fusion Calling and resell them through a fully branded dashboard — no need to rebuild agents from scratch.
+
+## White-Label Partner Program
+
+- [Partner Program](https://www.fusioncalling.com/whitelabel): Resell AI voice agents under your own agency brand. Full brand control, custom domain (e.g. app.youragency.com), white-label dashboard, and API access.
+- [Partner Pricing & Tiers](https://www.fusioncalling.com/whitelabel#pricing): Starter, Pro, and Enterprise partner tiers with commission rates from 20% to 40% based on client volume.
+- [Revenue Calculator](https://www.fusioncalling.com/calculator): Estimate recurring partner earnings based on clients, pricing, and commission tier.
+- [Partner Benefits](https://www.fusioncalling.com/whitelabel#benefits): How It Works, onboarding, support levels, and earnings model.
+- [Book a Demo](https://cal.com/mralamin/discovery-call): Schedule a discovery/partner call.
+
+## Bring Your Own Agent (Migration & Import)
+
+- [Vapi Comparison & Migration](https://www.fusioncalling.com/blog/vapi-white-label-platform): How agencies move from direct Vapi integration to a white-labeled, resellable platform — and what they save.
+- [Retell AI Comparison & Migration](https://www.fusioncalling.com/blog/retell-ai-white-label): Migrating Retell AI agent configurations into a branded, resellable solution.
+- [GoHighLevel Comparison](https://www.fusioncalling.com/blog/gohighlevel-white-label-voice): Adding white-label AI voice to a GoHighLevel-based agency stack.
+- [Provider Integration Docs](https://www.fusioncalling.com/docs/lead-management): Configure agents using existing Vapi or Retell API keys and agent/assistant IDs; standard and custom lead fields are passed to the agent automatically.
+
+## Product
+
+- [Home](https://www.fusioncalling.com/): AI phone call automation overview with a live demo.
+- [Pricing](https://www.fusioncalling.com/#pricing): Starter, Pro, and Enterprise plans with monthly/yearly billing.
+- [Live Demo](https://www.fusioncalling.com/#show-case): Try an outbound or inbound AI call instantly.
+
+## Documentation
+
+- [Docs Home](https://www.fusioncalling.com/docs): Admin, agent configuration, lead management, SMS messaging, and API reference.
+- [API Reference](https://www.fusioncalling.com/docs/api-reference)
+- [Agent Configuration](https://www.fusioncalling.com/docs/agent-configuration)
+- [Lead Management](https://www.fusioncalling.com/docs/lead-management)
+- [SMS Messaging](https://www.fusioncalling.com/docs/sms-messaging)
+
+## Optional
+
+- [Blog](https://www.fusioncalling.com/blog)
+- [Privacy Policy](https://www.fusioncalling.com/privacy)
+- [Terms of Service](https://www.fusioncalling.com/terms)

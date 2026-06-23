@@ -48,7 +48,7 @@ export default function HowItWorks() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5 }}
-            className="text-orange-600 text-center font-bold text-3xl md:text-4xl pb-4"
+            className="text-brand-strong text-center font-bold text-3xl md:text-4xl pb-4"
           >
             How It Works
           </motion.h1>
@@ -78,17 +78,17 @@ export default function HowItWorks() {
               onHoverEnd={() => setHoveredStep(null)}
             >
               <div
-                className={`bg-black border-orange-500/20 rounded-lg p-6 h-full  border-2 transition-all duration-300 hover:shadow-lg hover:shadow-orange-600 hover:-translate-y-1 min-h-[200px] ${
+                className={`bg-black border-brand/20 rounded-lg p-6 h-full  border-2 transition-all duration-300 hover:shadow-lg hover:shadow-brand-strong hover:-translate-y-1 min-h-[200px] ${
                   hoveredStep === index
-                    ? " hover:shadow-lg hover:shadow-orange-600 hover:-translate-y-1 min-h-[200px]"
-                    : "border-orange-500/20"
+                    ? " hover:shadow-lg hover:shadow-brand-strong hover:-translate-y-1 min-h-[200px]"
+                    : "border-brand/20"
                 }`}
               >
                 <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 rounded-full bg-orange-600 flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 rounded-full bg-brand-strong flex items-center justify-center mr-4">
                     <step.icon className="w-6 h-6 text-black" />
                   </div>
-                  <div className="text-2xl font-bold text-orange-600">
+                  <div className="text-2xl font-bold text-brand-strong">
                     Step {step.number}
                   </div>
                 </div>
@@ -103,7 +103,7 @@ export default function HowItWorks() {
                 {index < steps.length - 1 && (
                   <>
                     {/* Horizontal arrow for desktop */}
-                    <div className="hidden lg:block absolute top-1/2 left-full w-6 -translate-y-1/2 text-orange-600">
+                    <div className="hidden lg:block absolute top-1/2 left-full w-6 -translate-y-1/2 text-brand-strong">
                       <motion.div
                         initial={{ x: -10, opacity: 0 }}
                         animate={{
@@ -113,13 +113,13 @@ export default function HowItWorks() {
                         transition={{ duration: 0.3 }}
                         className="flex items-center"
                       >
-                        <div className="h-0.5 w-full bg-orange-600"></div>
+                        <div className="h-0.5 w-full bg-brand-strong"></div>
                         <ArrowRight className="w-6 h-6 absolute -right-3" />
                       </motion.div>
                     </div>
 
                     {/* Vertical arrow for mobile/tablet */}
-                    <div className="lg:hidden absolute -bottom-6 left-1/2 -translate-x-1/2 text-orange-600">
+                    <div className="lg:hidden absolute -bottom-6 left-1/2 -translate-x-1/2 text-brand-strong">
                       <motion.div
                         initial={{ y: -10, opacity: 0 }}
                         animate={{
@@ -129,7 +129,7 @@ export default function HowItWorks() {
                         transition={{ duration: 0.3 }}
                         className="flex flex-col items-center"
                       >
-                        <div className="w-0.5 h-6 bg-orange-600"></div>
+                        <div className="w-0.5 h-6 bg-brand-strong"></div>
                         <ArrowRight className="w-6 h-6 rotate-90 absolute -bottom-3" />
                       </motion.div>
                     </div>

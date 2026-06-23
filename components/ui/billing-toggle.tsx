@@ -23,7 +23,7 @@ export function BillingToggle({
       >
         {/* Sliding pill — animated via `left` (rigid body, no overlap/squeeze). */}
         <motion.div
-          className="absolute top-1.5 bottom-1.5 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 shadow-lg shadow-orange-500/40 ring-1 ring-orange-400/30"
+          className="absolute top-1.5 bottom-1.5 rounded-full bg-gradient-to-r from-brand to-brand-strong shadow-lg shadow-brand/40 ring-1 ring-brand/30"
           initial={false}
           animate={{ left: value === "monthly" ? "0.375rem" : "50%" }}
           transition={{ type: "spring", stiffness: 380, damping: 30 }}
@@ -53,9 +53,9 @@ export function BillingToggle({
                     "rounded-full px-2 py-0.5 text-[10px] font-extrabold uppercase leading-none tracking-wider transition-colors duration-200",
                     active
                       ? // On the orange slider: invert to dark pill for contrast
-                        "bg-black/90 text-orange-300 ring-1 ring-inset ring-orange-400/60"
+                        "bg-black/90 text-brand ring-1 ring-inset ring-brand/60"
                       : // On the dark side: pop with an orange gradient
-                        "bg-gradient-to-r from-orange-400 to-orange-600 text-black ring-1 ring-inset ring-orange-300/40"
+                        "bg-gradient-to-r from-brand to-brand-strong text-black ring-1 ring-inset ring-brand/40"
                   )}
                 >
                   Save 10%

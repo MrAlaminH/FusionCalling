@@ -21,7 +21,7 @@ export default function CTA() {
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
             Ready to Start Your
-            <span className="bg-gradient-to-r from-orange-500 to-orange-600 text-transparent bg-clip-text">
+            <span className="bg-gradient-to-r from-brand to-brand-strong text-transparent bg-clip-text">
               {" "}
               Partnership?
             </span>
@@ -49,7 +49,7 @@ export default function CTA() {
           className="max-w-4xl mx-auto mt-8 text-center"
         >
           <p className="text-gray-400 text-sm sm:text-base">
-            <strong className="text-orange-500">Pro Tip:</strong> Schedule a call to get personalized guidance on setting up your white-label solution and maximizing your revenue.
+            <strong className="text-brand">Pro Tip:</strong> Schedule a call to get personalized guidance on setting up your white-label solution and maximizing your revenue.
           </p>
         </motion.div>
 
@@ -66,14 +66,14 @@ export default function CTA() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8">
             <a
               href="mailto:partners@fusioncalling.com"
-              className="flex items-center gap-2 text-orange-500 hover:text-orange-400 transition-colors text-sm sm:text-base"
+              className="flex items-center gap-2 text-brand hover:text-brand-light transition-colors text-sm sm:text-base"
             >
               <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
               partners@fusioncalling.com
             </a>
             <a
               href="tel:+19146394069"
-              className="flex items-center gap-2 text-orange-500 hover:text-orange-400 transition-colors text-sm sm:text-base"
+              className="flex items-center gap-2 text-brand hover:text-brand-light transition-colors text-sm sm:text-base"
             >
               <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
               +1 (914) 639-4069

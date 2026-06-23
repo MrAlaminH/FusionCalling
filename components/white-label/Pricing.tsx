@@ -148,7 +148,7 @@ export default function Pricing() {
               {/* Glow effect for popular plan */}
               {plan.popular && (
                 <motion.div
-                  className="absolute -inset-4 bg-gradient-to-br from-orange-500/30 via-orange-600/20 to-transparent rounded-3xl blur-3xl -z-10"
+                  className="absolute -inset-4 bg-gradient-to-br from-brand/30 via-brand-strong/20 to-transparent rounded-3xl blur-3xl -z-10"
                   animate={{
                     opacity: [0.4, 0.6, 0.4],
                     scale: [1, 1.05, 1],
@@ -164,8 +164,8 @@ export default function Pricing() {
               <div
                 className={`h-full rounded-2xl md:rounded-3xl p-6 md:p-8 border-2 transition-all duration-500 ${
                   plan.popular
-                    ? "glass border-orange-500/40 shadow-premium-lg"
-                    : "glass-light border-gray-800/50 hover:border-orange-500/30 shadow-premium"
+                    ? "glass border-brand/40 shadow-premium-lg"
+                    : "glass-light border-gray-800/50 hover:border-brand/30 shadow-premium"
                 }`}
               >
                 {/* Popular Badge */}
@@ -181,7 +181,7 @@ export default function Pricing() {
                     className="absolute -top-4 -right-4 md:-top-5 md:-right-5"
                   >
                     <div className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center">
-                      <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full shadow-premium-lg animate-pulse" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-brand to-brand-strong rounded-full shadow-premium-lg animate-pulse" />
                       <Star
                         viewBox="0 0 24 24"
                         className="w-6 h-6 md:w-7 md:h-7 text-white fill-white z-10 relative"
@@ -196,7 +196,7 @@ export default function Pricing() {
                     {plan.name}
                   </h3>
                   <p
-                    className={`text-sm md:text-base mb-4 ${plan.popular ? "text-orange-200" : "text-gray-400"}`}
+                    className={`text-sm md:text-base mb-4 ${plan.popular ? "text-brand-light" : "text-gray-400"}`}
                   >
                     {plan.description}
                   </p>
@@ -208,12 +208,12 @@ export default function Pricing() {
                         </span>
                       )}
                       <span
-                        className={`font-display text-4xl md:text-5xl lg:text-6xl font-bold ${plan.popular ? "text-white" : "text-orange-500"}`}
+                        className={`font-display text-4xl md:text-5xl lg:text-6xl font-bold ${plan.popular ? "text-white" : "text-brand"}`}
                       >
                         ${billing === "yearly" ? plan.priceYearly : plan.priceMonthly}
                       </span>
                       <span
-                        className={`text-sm md:text-base ${plan.popular ? "text-orange-200" : "text-gray-400"}`}
+                        className={`text-sm md:text-base ${plan.popular ? "text-brand-light" : "text-gray-400"}`}
                       >
                         /month
                       </span>
@@ -227,7 +227,7 @@ export default function Pricing() {
                           transition={{ duration: 0.2 }}
                           className="flex flex-wrap items-center gap-2"
                         >
-                          <span className="text-xs md:text-sm text-orange-300/80">
+                          <span className="text-xs md:text-sm text-brand-light/80">
                             billed annually
                           </span>
                           <span className="rounded-full bg-green-500/15 px-2 py-0.5 text-[10px] md:text-xs font-semibold text-green-400 ring-1 ring-inset ring-green-500/30">
@@ -259,7 +259,7 @@ export default function Pricing() {
                       <div
                         className={`min-w-5 min-h-5 md:min-w-6 md:min-h-6 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0 ${
                           plan.popular
-                            ? "bg-gradient-to-br from-orange-500 to-orange-600"
+                            ? "bg-gradient-to-br from-brand to-brand-strong"
                             : "bg-green-500"
                         } shadow-premium`}
                       >
@@ -279,7 +279,7 @@ export default function Pricing() {
                   href="#cta"
                   className={`block w-full text-center rounded-xl py-3 md:py-4 text-sm md:text-base font-semibold transition-all duration-300 shadow-premium ${
                     plan.popular
-                      ? "bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700"
+                      ? "bg-gradient-to-r from-brand to-brand-strong text-white hover:from-brand-strong hover:to-orange-700"
                       : "bg-white/10 text-white hover:bg-white/20 border border-white/20"
                   }`}
                   whileHover={{ scale: 1.05, y: -2 }}
@@ -307,7 +307,7 @@ export default function Pricing() {
           {/* Single unified card with compact info */}
           <div className="max-w-3xl mx-auto">
             <motion.div
-              className="glass rounded-2xl p-6 md:p-8 border border-orange-500/20"
+              className="glass rounded-2xl p-6 md:p-8 border border-brand/20"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
@@ -339,7 +339,7 @@ export default function Pricing() {
                 ].map((item, idx) => (
                   <motion.div
                     key={idx}
-                    className="flex items-center gap-2 px-4 py-2 md:px-5 md:py-2.5 rounded-xl bg-gradient-to-br from-orange-500/10 to-orange-600/5 border border-orange-500/20 hover:border-orange-500/40 transition-premium-fast"
+                    className="flex items-center gap-2 px-4 py-2 md:px-5 md:py-2.5 rounded-xl bg-gradient-to-br from-brand/10 to-brand-strong/5 border border-brand/20 hover:border-brand/40 transition-premium-fast"
                     whileHover={{ scale: 1.05, y: -2 }}
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -351,7 +351,7 @@ export default function Pricing() {
                   >
                     <span className="text-lg md:text-xl">{item.icon}</span>
                     <div className="flex items-baseline gap-1.5">
-                      <span className="font-display text-base md:text-lg font-bold text-orange-500">
+                      <span className="font-display text-base md:text-lg font-bold text-brand">
                         {item.value}
                       </span>
                       <span className="font-body text-xs md:text-sm text-gray-400">

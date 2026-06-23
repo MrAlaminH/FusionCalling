@@ -97,7 +97,7 @@ export default function TestimonialsSection() {
           className="flex flex-col items-center justify-center space-y-4 text-center"
         >
           <h2 className="text-3xl font-bold tracking-tighter sm:text-3xl md:text-4xl whitespace-nowrap">
-            <span className="text-orange-600">Customer</span>{" "}
+            <span className="text-brand-strong">Customer</span>{" "}
             <span className="text-white">Success Stories</span>
           </h2>
           <p className="text-gray-400 text-center md:text-xl mb-8">
@@ -127,14 +127,14 @@ export default function TestimonialsSection() {
             {/* Navigation controls for desktop */}
             <button
               onClick={scrollPrev}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-black border border-orange-500 rounded-full p-2 text-orange-500 hover:bg-orange-500 hover:text-black transition-all z-10"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-black border border-brand rounded-full p-2 text-brand hover:bg-brand hover:text-black transition-all z-10"
               aria-label="Previous slide"
             >
               <ChevronLeft className="h-6 w-6" />
             </button>
             <button
               onClick={scrollNext}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-black border border-orange-500 rounded-full p-2 text-orange-500 hover:bg-orange-500 hover:text-black transition-all z-10"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-black border border-brand rounded-full p-2 text-brand hover:bg-brand hover:text-black transition-all z-10"
               aria-label="Next slide"
             >
               <ChevronRight className="h-6 w-6" />
@@ -163,16 +163,16 @@ export default function TestimonialsSection() {
 // Extracted Card component for reuse
 function TestimonialCard({ testimonial }: { testimonial: TestimonialProps }) {
   return (
-    <Card className="bg-black border-orange-500/20 group relative overflow-hidden transition-all duration-500 hover:shadow-lg hover:shadow-orange-600 hover:-translate-y-1 min-h-[420px] h-full w-full max-w-sm mx-auto">
+    <Card className="bg-black border-brand/20 group relative overflow-hidden transition-all duration-500 hover:shadow-lg hover:shadow-brand-strong hover:-translate-y-1 min-h-[420px] h-full w-full max-w-sm mx-auto">
       <div className="p-6 flex flex-col h-full">
-        <div className="text-orange-600 mb-4 text-4xl font-extrabold">
+        <div className="text-brand-strong mb-4 text-4xl font-extrabold">
           <Quote />
         </div>
         <h3 className="text-xl font-bold text-white mb-4">
           {testimonial.heading}
         </h3>
         <p className="text-zinc-400 mb-6 flex-grow">{testimonial.content}</p>
-        <div className="h-px bg-orange-800 w-full mb-6" />
+        <div className="h-px bg-brand-strong/40 w-full mb-6" />
         <div className="flex items-center space-x-4 mt-auto">
           <Image
             alt={`${testimonial.name}'s profile picture`}
@@ -197,7 +197,7 @@ function TestimonialCard({ testimonial }: { testimonial: TestimonialProps }) {
               .map((_, i) => (
                 <Star
                   key={i}
-                  className="w-4 h-4 fill-orange-500 text-orange-600"
+                  className="w-4 h-4 fill-brand text-brand-strong"
                 />
               ))}
           </div>

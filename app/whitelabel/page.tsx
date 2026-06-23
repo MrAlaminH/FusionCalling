@@ -8,6 +8,7 @@ import Pricing from "@/components/white-label/Pricing";
 import Benefits from "@/components/white-label/Benefits";
 import FAQ from "@/components/white-label/FAQ";
 import CTA from "@/components/white-label/CTA";
+import StickyMobileCta from "@/components/sticky-mobile-cta";
 import type { Metadata } from "next";
 import Script from "next/script";
 
@@ -231,33 +232,34 @@ export default function WhiteLabelPage() {
           }),
         }}
       />
-      <main className="min-h-screen w-full bg-black">
+      <main id="main" className="min-h-screen w-full bg-black">
       <WhiteLabelNavbar />
-      <section id="hero">
+      <section id="hero" className="scroll-mt-24">
         <Hero />
       </section>
-      <section id="value-prop">
+      <section id="value-prop" className="scroll-mt-24">
         <ValueProp />
       </section>
-      <section id="features">
+      <section id="features" className="scroll-mt-24">
         <Features />
       </section>
-      <section id="how-it-works">
+      <section id="how-it-works" className="scroll-mt-24">
         <HowItWorks />
       </section>
-      <section id="pricing">
+      <section id="pricing" className="scroll-mt-24">
         <Pricing />
       </section>
-      <section id="benefits">
+      <section id="benefits" className="scroll-mt-24">
         <Benefits />
       </section>
-      <section id="faq">
+      <section id="faq" className="scroll-mt-24">
         <FAQ />
       </section>
-      <section id="cta">
+      <section id="cta" className="scroll-mt-24">
         <CTA />
       </section>
       <Footer />
+      <StickyMobileCta href="#cta" label="Book a Demo" />
     </main>
     </>
   );

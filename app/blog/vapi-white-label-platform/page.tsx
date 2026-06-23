@@ -137,13 +137,13 @@ export default function VapiWhiteLabelBlogPost() {
         <div className="mb-12">
           <Link
             href="/blog"
-            className="inline-flex items-center text-orange-400 hover:text-orange-300 mb-8 transition-colors"
+            className="inline-flex items-center text-brand-light hover:text-brand-light mb-8 transition-colors"
           >
             ← Back to Blog
           </Link>
 
           <div className="flex items-center gap-3 mb-4">
-            <span className="px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full text-sm font-semibold text-white">
+            <span className="px-4 py-2 bg-gradient-to-r from-brand to-brand-strong rounded-full text-sm font-semibold text-white">
               Platform Comparison
             </span>
             <span className="text-gray-500 text-sm">8 min read</span>
@@ -152,7 +152,7 @@ export default function VapiWhiteLabelBlogPost() {
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
             Vapi White Label Platform: Why Fusion Calling is the Smarter Choice
             <br />
-            <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong bg-clip-text text-transparent">
               for Agencies
             </span>
           </h1>
@@ -171,8 +171,8 @@ export default function VapiWhiteLabelBlogPost() {
         </div>
 
         {/* Featured Image Placeholder */}
-        <div className="mb-12 rounded-3xl overflow-hidden border border-orange-500/20">
-          <div className="aspect-video bg-gradient-to-br from-orange-500/10 to-orange-600/5 flex items-center justify-center">
+        <div className="mb-12 rounded-3xl overflow-hidden border border-brand/20">
+          <div className="aspect-video bg-gradient-to-br from-brand/10 to-brand-strong/5 flex items-center justify-center">
             <div className="text-center">
               <div className="text-6xl mb-4">🎯</div>
               <div className="text-lg text-gray-500">Vapi vs Fusion Calling Comparison</div>
@@ -184,7 +184,7 @@ export default function VapiWhiteLabelBlogPost() {
         <div className="prose prose-lg prose-invert max-w-none">
           <div className="space-y-8">
             {/* Introduction */}
-            <div className="glass-light rounded-2xl p-8 border border-orange-500/20">
+            <div className="glass-light rounded-2xl p-8 border border-brand/20">
               <h2 className="text-2xl font-bold text-white mb-4">
                 The Hidden Problem with Direct Vapi Integration
               </h2>
@@ -193,7 +193,7 @@ export default function VapiWhiteLabelBlogPost() {
                 Series B funding and enterprise-grade voice AI, Vapi has built an
                 exceptional platform. But there's a critical gap that most agencies
                 discover too late:
-                <strong className="text-orange-400">
+                <strong className="text-brand-light">
                   {" "}
                   Vapi doesn&apos;t offer white-label solutions.
                 </strong>
@@ -235,34 +235,34 @@ export default function VapiWhiteLabelBlogPost() {
               </h2>
               <p className="text-gray-300 leading-relaxed mb-6">
                 Fusion Calling isn't just another voice AI platform. We're a{" "}
-                <strong className="text-orange-400">
+                <strong className="text-brand-light">
                   white-label enabler
                 </strong>{" "}
                 that lets you:
               </p>
               <ul className="space-y-3 text-gray-300">
                 <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 mt-2 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex-shrink-0" />
+                  <div className="w-2 h-2 mt-2 rounded-full bg-gradient-to-br from-brand to-brand-strong flex-shrink-0" />
                   <span>
                     <strong>Input your Vapi credentials</strong> into our platform
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 mt-2 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex-shrink-0" />
+                  <div className="w-2 h-2 mt-2 rounded-full bg-gradient-to-br from-brand to-brand-strong flex-shrink-0" />
                   <span>
                     <strong>Apply your complete branding</strong> (logo, colors,
                     domain)
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 mt-2 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex-shrink-0" />
+                  <div className="w-2 h-2 mt-2 rounded-full bg-gradient-to-br from-brand to-brand-strong flex-shrink-0" />
                   <span>
                     <strong>Set your own pricing</strong> and keep 100% of the
                     revenue
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 mt-2 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex-shrink-0" />
+                  <div className="w-2 h-2 mt-2 rounded-full bg-gradient-to-br from-brand to-brand-strong flex-shrink-0" />
                   <span>
                     <strong>Launch in 7 days</strong> without writing code
                   </span>
@@ -271,7 +271,7 @@ export default function VapiWhiteLabelBlogPost() {
             </div>
 
             {/* Economics Comparison */}
-            <div className="glass rounded-2xl p-8 border border-orange-500/20">
+            <div className="glass rounded-2xl p-8 border border-brand/20">
               <h2 className="text-3xl font-bold text-white mb-6">
                 The Economics: Vapi Direct vs. Fusion Calling White-Label
               </h2>
@@ -318,13 +318,13 @@ export default function VapiWhiteLabelBlogPost() {
             </div>
 
             {/* Agency Quote */}
-            <div className="glass-light rounded-2xl p-8 border border-orange-500/20 italic">
+            <div className="glass-light rounded-2xl p-8 border border-brand/20 italic">
               <p className="text-gray-300 text-lg leading-relaxed mb-4">
                 "We were initially going to build directly on Vapi, but Fusion Calling's
                 white-label solution saved us $45K in development costs and got us to
                 market in weeks instead of months."
               </p>
-              <p className="text-orange-400">— Agency Partner</p>
+              <p className="text-brand-light">— Agency Partner</p>
             </div>
 
             {/* Technical Advantage */}
@@ -334,12 +334,12 @@ export default function VapiWhiteLabelBlogPost() {
               </h2>
               <p className="text-gray-300 leading-relaxed mb-6">
                 Fusion Calling doesn't compete with Vapi - we{" "}
-                <strong className="text-orange-400">enhance</strong> it. Our platform:
+                <strong className="text-brand-light">enhance</strong> it. Our platform:
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
                     <span className="text-2xl">⚡</span>
                   </div>
                   <div>
@@ -353,7 +353,7 @@ export default function VapiWhiteLabelBlogPost() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
                     <span className="text-2xl">🏗️</span>
                   </div>
                   <div>
@@ -367,7 +367,7 @@ export default function VapiWhiteLabelBlogPost() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
                     <span className="text-2xl">🔒</span>
                   </div>
                   <div>
@@ -379,7 +379,7 @@ export default function VapiWhiteLabelBlogPost() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/30 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
                     <span className="text-2xl">🎧</span>
                   </div>
                   <div>
@@ -393,7 +393,7 @@ export default function VapiWhiteLabelBlogPost() {
             </div>
 
             {/* Making the Switch */}
-            <div className="glass rounded-2xl p-8 border border-orange-500/20">
+            <div className="glass rounded-2xl p-8 border border-brand/20">
               <h2 className="text-3xl font-bold text-white mb-6">
                 Making the Switch to Fusion Calling
               </h2>
@@ -402,7 +402,7 @@ export default function VapiWhiteLabelBlogPost() {
               </p>
               <ol className="space-y-4 text-gray-300">
                 <li className="flex items-start gap-4">
-                  <span className="w-8 h-8 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center flex-shrink-0 font-bold text-white">
+                  <span className="w-8 h-8 rounded-full bg-gradient-to-br from-brand to-brand-strong flex items-center justify-center flex-shrink-0 font-bold text-white">
                     1
                   </span>
                   <span className="pt-1">
@@ -411,7 +411,7 @@ export default function VapiWhiteLabelBlogPost() {
                   </span>
                 </li>
                 <li className="flex items-start gap-4">
-                  <span className="w-8 h-8 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center flex-shrink-0 font-bold text-white">
+                  <span className="w-8 h-8 rounded-full bg-gradient-to-br from-brand to-brand-strong flex items-center justify-center flex-shrink-0 font-bold text-white">
                     2
                   </span>
                   <span className="pt-1">
@@ -419,7 +419,7 @@ export default function VapiWhiteLabelBlogPost() {
                   </span>
                 </li>
                 <li className="flex items-start gap-4">
-                  <span className="w-8 h-8 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center flex-shrink-0 font-bold text-white">
+                  <span className="w-8 h-8 rounded-full bg-gradient-to-br from-brand to-brand-strong flex items-center justify-center flex-shrink-0 font-bold text-white">
                     3
                   </span>
                   <span className="pt-1">
@@ -427,7 +427,7 @@ export default function VapiWhiteLabelBlogPost() {
                   </span>
                 </li>
                 <li className="flex items-start gap-4">
-                  <span className="w-8 h-8 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center flex-shrink-0 font-bold text-white">
+                  <span className="w-8 h-8 rounded-full bg-gradient-to-br from-brand to-brand-strong flex items-center justify-center flex-shrink-0 font-bold text-white">
                     4
                   </span>
                   <span className="pt-1">
@@ -438,7 +438,7 @@ export default function VapiWhiteLabelBlogPost() {
             </div>
 
             {/* Conclusion */}
-            <div className="glass-light rounded-2xl p-8 border border-orange-500/30">
+            <div className="glass-light rounded-2xl p-8 border border-brand/30">
               <h2 className="text-3xl font-bold text-white mb-6">
                 The Bottom Line: Vapi Technology + Fusion Calling Business Model
               </h2>
@@ -453,7 +453,7 @@ export default function VapiWhiteLabelBlogPost() {
               </p>
               <Link
                 href="/whitelabel"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all shadow-premium hover:shadow-premium-lg hover:scale-105"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition-all shadow-premium hover:shadow-premium-lg hover:scale-105"
               >
                 Apply to Become a Fusion Calling Partner
                 <span className="ml-2">→</span>
@@ -468,9 +468,9 @@ export default function VapiWhiteLabelBlogPost() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Link
                   href="/blog/retell-ai-white-label"
-                  className="glass-light rounded-xl p-6 border border-orange-500/20 hover:border-orange-500/40 transition-all group"
+                  className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition-all group"
                 >
-                  <h3 className="text-white font-bold mb-2 group-hover:text-orange-400 transition-colors">
+                  <h3 className="text-white font-bold mb-2 group-hover:text-brand-light transition-colors">
                     Retell AI White Label Reseller Program Comparison
                   </h3>
                   <p className="text-gray-400 text-sm">
@@ -480,9 +480,9 @@ export default function VapiWhiteLabelBlogPost() {
                 </Link>
                 <Link
                   href="/blog/gohighlevel-white-label-voice"
-                  className="glass-light rounded-xl p-6 border border-orange-500/20 hover:border-orange-500/40 transition-all group"
+                  className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition-all group"
                 >
-                  <h3 className="text-white font-bold mb-2 group-hover:text-orange-400 transition-colors">
+                  <h3 className="text-white font-bold mb-2 group-hover:text-brand-light transition-colors">
                     GoHighLevel Voice AI Comparison
                   </h3>
                   <p className="text-gray-400 text-sm">
