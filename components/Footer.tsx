@@ -13,6 +13,7 @@ import {
 
 // Single source of truth for footer links — keeps things DRY and easy to maintain.
 const productLinks = [
+  { label: "Partner Program", href: "/whitelabel" },
   { label: "Features", href: "/#features" },
   { label: "Pricing", href: "/#pricing" },
   { label: "ROI Calculator", href: "/calculator" },
@@ -24,12 +25,9 @@ const resourceLinks = [
   { label: "Platform Comparisons", href: "/compare" },
   { label: "Industries", href: "/industries" },
   { label: "Glossary", href: "/glossary" },
-  { label: "Vapi Comparison", href: "/blog/vapi-white-label-platform" },
-  { label: "Retell AI Comparison", href: "/blog/retell-ai-white-label" },
-  {
-    label: "GoHighLevel Comparison",
-    href: "/blog/gohighlevel-white-label-voice",
-  },
+  { label: "Vapi Integration", href: "/blog/vapi-white-label-platform" },
+  { label: "Retell AI Integration", href: "/blog/retell-ai-white-label" },
+  { label: "GoHighLevel Integration", href: "/blog/gohighlevel-white-label-voice" },
 ];
 
 const companyLinks = [

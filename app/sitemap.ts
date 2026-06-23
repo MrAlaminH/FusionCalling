@@ -30,6 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog/how-to-start-a-voice-ai-agency",
     "/blog/vapi-vs-retell-vs-elevenlabs",
     "/blog/ai-voice-agents-for-small-business",
+    "/blog/gohighlevel-alternative-for-voice-ai",
     "/compare",
     "/compare/chatdash-alternative",
     "/compare/vapify-alternative",

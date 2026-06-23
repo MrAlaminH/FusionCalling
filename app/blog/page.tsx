@@ -23,6 +23,16 @@ const blogPosts = [
     image: "/blog/start-voice-ai-agency.jpg",
   },
   {
+    slug: "gohighlevel-alternative-for-voice-ai",
+    title: "GoHighLevel Alternative for Voice AI: Built-In CRM + Voice Agents",
+    description:
+      "For voice-first agencies, Fusion Calling bundles AI voice agents with a built-in CRM, so you don't need an expensive GoHighLevel subscription just to run a voice AI agency.",
+    date: "2025-02-16",
+    category: "Buyer's Guide",
+    readTime: "9 min read",
+    image: "/blog/ghl-alternative-voice-ai.jpg",
+  },
+  {
     slug: "vapi-vs-retell-vs-elevenlabs",
     title: "Vapi vs Retell vs ElevenLabs: Choosing the Right Voice AI Provider",
     description:

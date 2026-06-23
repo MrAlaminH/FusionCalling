@@ -205,6 +205,11 @@ export default function GoHighLevelBlogPost() {
                 Keep GoHighLevel as your CRM; add Fusion Calling as your dedicated,
                 white-label voice AI layer.
               </p>
+              <p className="text-gray-300 leading-relaxed">
+                And if you don&apos;t use GoHighLevel yet, Fusion Calling includes a
+                built-in CRM of its own — so you can start a voice AI agency without
+                paying for a separate, expensive CRM.
+              </p>
             </div>
 
             {/* Where Voice AI Fits in a GHL Agency */}
@@ -373,6 +378,56 @@ export default function GoHighLevelBlogPost() {
                   <p className="text-gray-400 text-sm">
                     Launch your first client&apos;s voice AI in about 7 days with
                     guided, done-with-you onboarding.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Don't have GoHighLevel? Built-in CRM */}
+            <div>
+              <h2 className="text-3xl font-bold text-white mb-6">
+                Don&apos;t Have GoHighLevel Yet? Fusion Calling Includes a CRM
+              </h2>
+              <p className="text-gray-300 leading-relaxed mb-6">
+                Everything above assumes you already run on GoHighLevel. But many
+                agencies are just starting out, and GoHighLevel&apos;s higher tiers
+                the ones you need to white-label client sub-accounts, are a real
+                expense before you&apos;ve landed a single voice AI client. Here&apos;s
+                the part most agencies miss:
+              </p>
+              <p className="text-brand-light text-lg font-semibold mb-6">
+                Fusion Calling includes its own built-in CRM (lead management), so
+                you don&apos;t need a separate CRM to run a voice AI agency.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="glass-light rounded-xl p-6 border border-brand/20">
+                  <h3 className="text-lg font-bold text-brand-light mb-3">📇 Leads Captured Automatically</h3>
+                  <p className="text-gray-400 text-sm">
+                    Every inbound call and outbound campaign feeds leads straight
+                    into the built-in CRM — contacts, call history, and lead status,
+                    with no extra integration to build.
+                  </p>
+                </div>
+                <div className="glass-light rounded-xl p-6 border border-brand/20">
+                  <h3 className="text-lg font-bold text-brand-light mb-3">💰 One Subscription, Not Two</h3>
+                  <p className="text-gray-400 text-sm">
+                    Voice agents and the CRM come together in one platform, so you
+                    skip paying for a separate CRM on top of your voice tool.
+                  </p>
+                </div>
+                <div className="glass-light rounded-xl p-6 border border-brand/20">
+                  <h3 className="text-lg font-bold text-brand-light mb-3">🧩 Easier to Maintain</h3>
+                  <p className="text-gray-400 text-sm">
+                    One login, one bill, one support team. Less to integrate, sync,
+                    and troubleshoot across separate tools.
+                  </p>
+                </div>
+                <div className="glass-light rounded-xl p-6 border border-brand/20">
+                  <h3 className="text-lg font-bold text-brand-light mb-3">🔗 Still Connects to GHL If You Want</h3>
+                  <p className="text-gray-400 text-sm">
+                    If a client already uses GoHighLevel, Fusion Calling syncs to it
+                    via API and webhooks — use the built-in CRM for new clients and
+                    GHL for existing ones, all from one platform.
                   </p>
                 </div>
               </div>
