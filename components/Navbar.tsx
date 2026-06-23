@@ -68,47 +68,98 @@ const Navbar = () => {
             isMenuOpen ? "block" : "hidden"
           } w-full lg:block lg:w-auto transition-all duration-300 ease-in-out`}
         >
-          <ul className="flex flex-col p-4 mt-4 space-y-3 lg:space-y-0 border border-orange-600/50 rounded-lg lg:flex-row lg:space-x-6 xl:space-x-8 lg:mt-0 lg:border-0 lg:bg-transparent">
-            {["Home", "Show Case", "Features", "Pricing", "FAQs"].map(
-              (item) => {
-                const href =
-                  item === "Home"
-                    ? "/"
-                    : `/#${item.toLowerCase().replace(" ", "-")}`;
-                return (
-                  <li key={item}>
-                    <Link
-                      href={href}
-                      className={`block py-2.5 px-4 rounded-lg ${
-                        item === "Home" ? "text-yellow-400" : "text-gray-200"
-                      } hover:bg-orange-600 hover:text-white font-medium transition duration-300 transform hover:-translate-y-1`}
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                );
-              }
-            )}
+          <ul className="flex flex-col p-4 mt-4 space-y-3 lg:space-y-0 border border-orange-600/50 rounded-lg lg:flex-row lg:space-x-5 xl:space-x-7 lg:mt-0 lg:border-0 lg:bg-transparent">
+            <li>
+              <Link
+                href="/"
+                className="block py-2.5 px-4 rounded-lg text-yellow-400 hover:bg-orange-600 hover:text-white font-medium transition duration-300 transform hover:-translate-y-1"
+              >
+                Home
+              </Link>
+            </li>
+            <li className="hidden lg:block">
+              <Link
+                href="/#show-case"
+                className="block py-2.5 px-4 rounded-lg text-gray-200 hover:bg-orange-600 hover:text-white font-medium transition duration-300 transform hover:-translate-y-1"
+              >
+                Show Case
+              </Link>
+            </li>
+            <li className="hidden lg:block">
+              <Link
+                href="/#features"
+                className="block py-2.5 px-4 rounded-lg text-gray-200 hover:bg-orange-600 hover:text-white font-medium transition duration-300 transform hover:-translate-y-1"
+              >
+                Features
+              </Link>
+            </li>
+            <li className="hidden lg:block">
+              <Link
+                href="/#pricing"
+                className="block py-2.5 px-4 rounded-lg text-gray-200 hover:bg-orange-600 hover:text-white font-medium transition duration-300 transform hover:-translate-y-1"
+              >
+                Pricing
+              </Link>
+            </li>
+            <li className="hidden lg:block">
+              <Link
+                href="/#faqs"
+                className="block py-2.5 px-4 rounded-lg text-gray-200 hover:bg-orange-600 hover:text-white font-medium transition duration-300 transform hover:-translate-y-1"
+              >
+                FAQs
+              </Link>
+            </li>
+            
+            {/* Mobile menu only items */}
+            <li className="lg:hidden mt-4 !border-t border-orange-600/30 pt-4">
+              <Link
+                href="/#show-case"
+                className="block py-3 px-4 rounded-lg text-gray-200 hover:bg-orange-600 hover:text-white font-medium transition duration-300 transform hover:-translate-y-1"
+              >
+                Show Case
+              </Link>
+            </li>
+            <li className="lg:hidden">
+              <Link
+                href="/#features"
+                className="block py-3 px-4 rounded-lg text-gray-200 hover:bg-orange-600 hover:text-white font-medium transition duration-300 transform hover:-translate-y-1"
+              >
+                Features
+              </Link>
+            </li>
+            <li className="lg:hidden">
+              <Link
+                href="/#pricing"
+                className="block py-3 px-4 rounded-lg text-gray-200 hover:bg-orange-600 hover:text-white font-medium transition duration-300 transform hover:-translate-y-1"
+              >
+                Pricing
+              </Link>
+            </li>
+            <li className="lg:hidden">
+              <Link
+                href="/#faqs"
+                className="block py-3 px-4 rounded-lg text-gray-200 hover:bg-orange-600 hover:text-white font-medium transition duration-300 transform hover:-translate-y-1"
+              >
+                FAQs
+              </Link>
+            </li>
+            <li className="lg:hidden mt-4 !border-t border-orange-600/30 pt-4">
+              <Link
+                href="/whitelabel"
+                className="block py-3 px-4 rounded-lg text-gray-200 hover:bg-orange-600 hover:text-white font-medium transition duration-300 transform hover:-translate-y-1"
+              >
+                Partner Program
+              </Link>
+            </li>
             <li className="lg:hidden mt-4 !border-t border-orange-600/30 pt-4">
               <a
                 href="https://cal.com/mralamin/discovery-call"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block py-3 px-4 rounded-lg text-white bg-orange-600 hover:bg-orange-700 text-center font-semibold shadow-lg shadow-orange-600/30 transition duration-300 transform hover:-translate-y-1"
+                className="flex items-center justify-center gap-2 py-3 px-4 rounded-lg text-white bg-orange-600 hover:bg-orange-700 text-center font-semibold shadow-lg shadow-orange-600/30 transition duration-300 transform hover:-translate-y-1"
               >
                 Contact Us
               </a>
-            </li>
-            <li className="lg:hidden">
-              <Link
-                href="/whitelabel"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 py-3 px-4 rounded-lg text-white bg-transparent border-2 border-orange-600 hover:bg-orange-600/20 text-center font-semibold transition duration-300 transform hover:-translate-y-1"
-              >
-                Partner
-                <ExternalLink className="w-4 h-4" />
-              </Link>
             </li>
           </ul>
         </div>
@@ -124,11 +175,9 @@ const Navbar = () => {
           </Link>
           <Link
             href="/whitelabel"
-            target="_blank"
-            rel="noopener noreferrer"
             className="inline-flex h-10 sm:h-11 lg:h-12 items-center justify-center gap-2 rounded-xl border-2 border-orange-600 bg-transparent px-4 sm:px-5 lg:px-6 font-medium text-white hover:bg-orange-600/20 transition duration-300 transform hover:-translate-y-1"
           >
-            Partner
+            Partner Program
             <ExternalLink className="w-4 h-4" />
           </Link>
         </div>

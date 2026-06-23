@@ -3,6 +3,7 @@ import Breadcrumbs from "@/components/docs/breadcrumbs";
 import OnThisPage from "@/components/docs/on-this-page";
 import SectionHeader from "@/components/docs/section-header";
 import type { Metadata } from "next";
+import Script from "next/script";
 import { OverviewSection } from "./components/overview";
 import { GettingStartedSection } from "./components/getting-started";
 import { ConfigurationTabsSection } from "./components/configuration-tabs";
@@ -37,7 +38,91 @@ const breadcrumbs = [
 
 export default function AgentConfigurationPage() {
   return (
-    <div className="min-h-screen bg-black text-white pt-20">
+    <>
+      <Script
+        id="agent-config-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  {
+                    "@type": "ListItem",
+                    position: 1,
+                    name: "Home",
+                    item: "https://www.fusioncalling.com/",
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 2,
+                    name: "Documentation",
+                    item: "https://www.fusioncalling.com/docs",
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 3,
+                    name: "Agent Configuration",
+                    item: "https://www.fusioncalling.com/docs/agent-configuration",
+                  },
+                ],
+              },
+              {
+                "@type": "HowTo",
+                "@id": "https://www.fusioncalling.com/docs/agent-configuration#howto",
+                name: "How to Configure AI Phone Agents",
+                description:
+                  "Complete guide to creating and configuring AI phone agents: agent setup, configuration tabs, best practices, common use cases, and troubleshooting.",
+                step: [
+                  {
+                    "@type": "HowToStep",
+                    name: "Create Your First Agent",
+                    text: "Navigate to the Agents section and click 'Create New Agent' to start the configuration process.",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    name: "Configure Agent Settings",
+                    text: "Set up agent name, description, voice, and behavior in the configuration tabs.",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    name: "Define Call Flow",
+                    text: "Create the conversation flow and script for your AI agent using natural language.",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    name: "Test Your Agent",
+                    text: "Test your agent with sample calls to ensure it behaves as expected.",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    name: "Deploy and Optimize",
+                    text: "Deploy your agent and monitor performance, making adjustments as needed.",
+                  },
+                ],
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://www.fusioncalling.com/docs/agent-configuration#webpage",
+                url: "https://www.fusioncalling.com/docs/agent-configuration",
+                name: "Agent Configuration Guide",
+                description:
+                  "Complete guide to creating and configuring AI phone agents: agent setup, configuration tabs, best practices, common use cases, and troubleshooting.",
+                inLanguage: "en-US",
+                isPartOf: {
+                  "@id": "https://www.fusioncalling.com/#website",
+                },
+                about: {
+                  "@id": "https://www.fusioncalling.com/#product",
+                },
+              },
+            ],
+          }),
+        }}
+      />
+      <div className="min-h-screen bg-black text-white pt-20">
       <div className="flex relative">
         <SidebarNav items={navItems} />
 
@@ -66,5 +151,6 @@ export default function AgentConfigurationPage() {
         <OnThisPage />
       </div>
     </div>
+    </>
   );
 }

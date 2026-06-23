@@ -3,6 +3,7 @@ import Breadcrumbs from "@/components/docs/breadcrumbs";
 import OnThisPage from "@/components/docs/on-this-page";
 import SectionHeader from "@/components/docs/section-header";
 import type { Metadata } from "next";
+import Script from "next/script";
 import { IntroductionSection } from "./components/introduction";
 import { ClientManagementSection } from "./components/client-management";
 import { UserManagementSection } from "./components/user-management";
@@ -43,7 +44,91 @@ const breadcrumbs = [
 
 export default function AdminSectionPage() {
   return (
-    <div className="min-h-screen bg-black text-white pt-20">
+    <>
+      <Script
+        id="admin-section-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  {
+                    "@type": "ListItem",
+                    position: 1,
+                    name: "Home",
+                    item: "https://www.fusioncalling.com/",
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 2,
+                    name: "Documentation",
+                    item: "https://www.fusioncalling.com/docs",
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 3,
+                    name: "Admin Section",
+                    item: "https://www.fusioncalling.com/docs/admin-section",
+                  },
+                ],
+              },
+              {
+                "@type": "HowTo",
+                "@id": "https://www.fusioncalling.com/docs/admin-section#howto",
+                name: "How to Manage Fusion Calling Admin Section",
+                description:
+                  "Complete guide for agency owners to manage Fusion Calling: client management, user management, AI provider configuration, branding, credits, subscriptions, and best practices.",
+                step: [
+                  {
+                    "@type": "HowToStep",
+                    name: "Manage Clients",
+                    text: "Add, edit, and manage client accounts from the admin dashboard.",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    name: "Configure Users",
+                    text: "Create and manage user accounts with appropriate permissions.",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    name: "Set Up AI Providers",
+                    text: "Configure AI credentials for Retell, Vapi, or other voice providers.",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    name: "Customize Branding",
+                    text: "Apply your agency's branding to the platform.",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    name: "Manage Credits and Subscriptions",
+                    text: "Monitor and allocate credits, and manage subscription plans.",
+                  },
+                ],
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://www.fusioncalling.com/docs/admin-section#webpage",
+                url: "https://www.fusioncalling.com/docs/admin-section",
+                name: "Admin Section Guide",
+                description:
+                  "Complete guide for agency owners to manage Fusion Calling: client management, user management, AI provider configuration, branding, credits, subscriptions, and best practices.",
+                inLanguage: "en-US",
+                isPartOf: {
+                  "@id": "https://www.fusioncalling.com/#website",
+                },
+                about: {
+                  "@id": "https://www.fusioncalling.com/#product",
+                },
+              },
+            ],
+          }),
+        }}
+      />
+      <div className="min-h-screen bg-black text-white pt-20">
       <div className="flex relative">
         <SidebarNav items={navItems} />
 
@@ -75,5 +160,6 @@ export default function AdminSectionPage() {
         <OnThisPage />
       </div>
     </div>
+    </>
   );
 }

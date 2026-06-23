@@ -113,11 +113,9 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/whitelabel"
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="text-sm text-gray-400 hover:text-orange-600 transition-colors"
                   >
-                    White-label Solution
+                    Partner Program
                   </Link>
                 </li>
                 <li>
@@ -139,11 +137,9 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/docs"
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="text-sm text-gray-400 hover:text-orange-600 transition-colors"
                   >
-                    API Documentation
+                    Documentation
                   </Link>
                 </li>
               </ul>

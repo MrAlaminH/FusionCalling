@@ -3,6 +3,7 @@ import Breadcrumbs from "@/components/docs/breadcrumbs";
 import OnThisPage from "@/components/docs/on-this-page";
 import SectionHeader from "@/components/docs/section-header";
 import type { Metadata } from "next";
+import Script from "next/script";
 import { OverviewSection } from "./components/overview";
 import { GettingStartedSection } from "./components/getting-started";
 import { StatusesSection } from "./components/statuses";
@@ -52,7 +53,91 @@ const breadcrumbs = [
 
 export default function LeadManagementDocsPage() {
   return (
-    <div className="min-h-screen bg-black text-white pt-20">
+    <>
+      <Script
+        id="lead-management-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  {
+                    "@type": "ListItem",
+                    position: 1,
+                    name: "Home",
+                    item: "https://www.fusioncalling.com/",
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 2,
+                    name: "Documentation",
+                    item: "https://www.fusioncalling.com/docs",
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 3,
+                    name: "Lead Management",
+                    item: "https://www.fusioncalling.com/docs/lead-management",
+                  },
+                ],
+              },
+              {
+                "@type": "HowTo",
+                "@id": "https://www.fusioncalling.com/docs/lead-management#howto",
+                name: "How to Manage Leads with AI Phone Call Automation",
+                description:
+                  "Complete guide to managing leads in Fusion Calling: adding leads, understanding statuses, configuring providers, custom fields, retry system, and best practices.",
+                step: [
+                  {
+                    "@type": "HowToStep",
+                    name: "Add Your Leads",
+                    text: "Upload your lead list manually or via CSV to start automated calling campaigns.",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    name: "Understand Lead Statuses",
+                    text: "Learn the different lead statuses and what they mean for your calling campaigns.",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    name: "Configure Voice Providers",
+                    text: "Set up and configure Retell or Vapi as your voice provider for AI calls.",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    name: "Customize Fields",
+                    text: "Add custom fields to track additional information about your leads.",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    name: "Enable Retry System",
+                    text: "Configure automatic retry logic for failed or unanswered calls.",
+                  },
+                ],
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://www.fusioncalling.com/docs/lead-management#webpage",
+                url: "https://www.fusioncalling.com/docs/lead-management",
+                name: "Lead Management User Guide",
+                description:
+                  "Complete guide to managing leads in Fusion Calling: adding leads, understanding statuses, configuring providers, custom fields, retry system, and best practices.",
+                inLanguage: "en-US",
+                isPartOf: {
+                  "@id": "https://www.fusioncalling.com/#website",
+                },
+                about: {
+                  "@id": "https://www.fusioncalling.com/#product",
+                },
+              },
+            ],
+          }),
+        }}
+      />
+      <div className="min-h-screen bg-black text-white pt-20">
       <div className="flex relative">
         <SidebarNav items={navItems} />
 
@@ -85,5 +170,6 @@ export default function LeadManagementDocsPage() {
         <OnThisPage />
       </div>
     </div>
+    </>
   );
 }

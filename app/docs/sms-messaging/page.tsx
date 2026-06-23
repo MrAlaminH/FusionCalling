@@ -3,6 +3,7 @@ import Breadcrumbs from "@/components/docs/breadcrumbs";
 import OnThisPage from "@/components/docs/on-this-page";
 import SectionHeader from "@/components/docs/section-header";
 import type { Metadata } from "next";
+import Script from "next/script";
 import { OverviewSection } from "./components/overview";
 import { GettingStartedSection } from "./components/getting-started";
 import { TwilioSetupSection } from "./components/twilio-setup";
@@ -54,7 +55,91 @@ const breadcrumbs = [
 
 export default function SmsMessagingDocsPage() {
   return (
-    <div className="min-h-screen bg-black text-white pt-20">
+    <>
+      <Script
+        id="sms-messaging-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  {
+                    "@type": "ListItem",
+                    position: 1,
+                    name: "Home",
+                    item: "https://www.fusioncalling.com/",
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 2,
+                    name: "Documentation",
+                    item: "https://www.fusioncalling.com/docs",
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 3,
+                    name: "SMS & Messages",
+                    item: "https://www.fusioncalling.com/docs/sms-messaging",
+                  },
+                ],
+              },
+              {
+                "@type": "HowTo",
+                "@id": "https://www.fusioncalling.com/docs/sms-messaging#howto",
+                name: "How to Send SMS Messages with AI Phone Call Automation",
+                description:
+                  "Complete guide to sending SMS messages, managing conversations, setting up Twilio integration, creating automated SMS campaigns, and handling inbound replies with Fusion Calling.",
+                step: [
+                  {
+                    "@type": "HowToStep",
+                    name: "Connect Twilio",
+                    text: "Connect your Twilio account to Fusion Calling to enable SMS messaging capabilities.",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    name: "Set Up Inbound Texts",
+                    text: "Configure your Twilio phone number to receive inbound SMS messages in Fusion Calling.",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    name: "Use Messages Inbox",
+                    text: "Manage all your SMS conversations from the centralized Messages Inbox.",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    name: "Create SMS Campaigns",
+                    text: "Build automated SMS campaigns to send bulk messages to your leads.",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    name: "Enable Auto SMS",
+                    text: "Turn on automatic SMS follow-ups based on lead status and call outcomes.",
+                  },
+                ],
+              },
+              {
+                "@type": "WebPage",
+                "@id": "https://www.fusioncalling.com/docs/sms-messaging#webpage",
+                url: "https://www.fusioncalling.com/docs/sms-messaging",
+                name: "SMS & Messages User Guide",
+                description:
+                  "Complete guide to SMS and messaging in Fusion Call: send texts, manage conversations, set up Twilio, create automated SMS campaigns, and handle inbound replies.",
+                inLanguage: "en-US",
+                isPartOf: {
+                  "@id": "https://www.fusioncalling.com/#website",
+                },
+                about: {
+                  "@id": "https://www.fusioncalling.com/#product",
+                },
+              },
+            ],
+          }),
+        }}
+      />
+      <div className="min-h-screen bg-black text-white pt-20">
       <div className="flex relative">
         <SidebarNav items={navItems} />
 
@@ -86,5 +171,6 @@ export default function SmsMessagingDocsPage() {
         <OnThisPage />
       </div>
     </div>
+    </>
   );
 }

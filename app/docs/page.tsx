@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import Script from "next/script";
 
 interface DocSection {
   id: string;
@@ -149,7 +150,51 @@ export default function DocsPage() {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-black to-gray-900 text-white pt-32 pb-20">
+    <>
+      <Script
+        id="docs-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  {
+                    "@type": "ListItem",
+                    position: 1,
+                    name: "Home",
+                    item: "https://www.fusioncalling.com/",
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 2,
+                    name: "Documentation",
+                    item: "https://www.fusioncalling.com/docs",
+                  },
+                ],
+              },
+              {
+                "@type": "CollectionPage",
+                "@id": "https://www.fusioncalling.com/docs#collectionpage",
+                url: "https://www.fusioncalling.com/docs",
+                name: "Documentation Hub",
+                description:
+                  "Complete documentation for Fusion Calling: API Reference, Lead Management, Agent Configuration, Admin Section Guide, and SMS & Messages.",
+                inLanguage: "en-US",
+                isPartOf: {
+                  "@id": "https://www.fusioncalling.com/#website",
+                },
+                about: {
+                  "@id": "https://www.fusioncalling.com/#product",
+                },
+              },
+            ],
+          }),
+        }}
+      />
+      <div className="min-h-screen bg-gradient-to-b from-black via-black to-gray-900 text-white pt-32 pb-20">
       {/* Hero Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
         <div className="text-center mb-12">
@@ -309,5 +354,6 @@ export default function DocsPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }
