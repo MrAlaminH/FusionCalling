@@ -87,6 +87,18 @@ export const ENDPOINTS: Endpoint[] = [
       "start_time": "2025-12-15T14:30:00.000Z",
       "end_time": "2025-12-15T16:00:00.000Z",
       "all_day": false,
+      "google_meet_enabled": true,
+      "meet_link": "https://meet.google.com/abc-defg-hij",
+      "zoom_enabled": false,
+      "zoom_meeting_id": null,
+      "zoom_join_url": null,
+      "attendees": [
+        {
+          "email": "john@example.com",
+          "display_name": "John Doe",
+          "response_status": "accepted"
+        }
+      ],
       "source": "local",
       "created_at": "2025-12-10T10:00:00.000Z",
       "updated_at": "2025-12-10T10:00:00.000Z"
@@ -129,6 +141,18 @@ export const ENDPOINTS: Endpoint[] = [
     "start_time": "2025-12-15T14:30:00.000Z",
     "end_time": "2025-12-15T16:00:00.000Z",
     "all_day": false,
+    "google_meet_enabled": true,
+    "meet_link": "https://meet.google.com/abc-defg-hij",
+    "zoom_enabled": false,
+    "zoom_meeting_id": null,
+    "zoom_join_url": null,
+    "attendees": [
+      {
+        "email": "john@example.com",
+        "display_name": "John Doe",
+        "response_status": "accepted"
+      }
+    ],
     "source": "local",
     "created_at": "2025-12-10T10:00:00.000Z",
     "updated_at": "2025-12-10T10:00:00.000Z"
@@ -147,9 +171,13 @@ export const ENDPOINTS: Endpoint[] = [
     method: "POST",
     path: "/api/calendar/external/v1/events",
     summary: "Create an event",
-    description: "Create a new calendar event.",
+    description: "Create a new calendar event with optional Google Meet / Zoom link generation and attendees.",
     priority: "essential",
-    useCases: ["Book a meeting from a web form", "Create events triggered by automations"],
+    useCases: [
+      "Book a meeting from a web form",
+      "Create events triggered by automations",
+      "Generate a Zoom or Google Meet link for a scheduled call",
+    ],
     bodyParams: [
       {
         name: "title",
@@ -191,7 +219,7 @@ export const ENDPOINTS: Endpoint[] = [
         type: "boolean",
         kind: "boolean",
         required: false,
-        description: "Whether the event is all-day. Must be a boolean, not a string.",
+        description: "Whether the event is all-day. Must be a boolean, not a string. Video conferencing cannot be enabled for all-day events.",
         example: "false",
         default: "false",
       },
@@ -200,9 +228,27 @@ export const ENDPOINTS: Endpoint[] = [
         type: "boolean",
         kind: "boolean",
         required: false,
-        description: "Enable Google Meet (requires Google Calendar connected).",
+        description: "Enable Google Meet link generation (requires Google Calendar connected). Mutually exclusive with zoom_enabled.",
+        example: "false",
+        default: "false",
+      },
+      {
+        name: "zoom_enabled",
+        type: "boolean",
+        kind: "boolean",
+        required: false,
+        description: "Enable Zoom meeting link generation (requires Zoom connected in Settings → Integrations). Mutually exclusive with google_meet_enabled.",
         example: "true",
         default: "true",
+      },
+      {
+        name: "attendees",
+        type: "array<object>",
+        kind: "array",
+        required: false,
+        description: "List of attendees (max 50). Each has email, optional display_name, and optional response_status. Duplicates are removed automatically.",
+        example: '[{"email":"client@example.com","display_name":"Client Rep"}]',
+        default: '[{"email":"client@example.com","display_name":"Client Rep"}]',
       },
     ],
     responseStatus: 201,
@@ -215,8 +261,18 @@ export const ENDPOINTS: Endpoint[] = [
     "start_time": "2025-12-15T14:30:00.000Z",
     "end_time": "2025-12-15T16:00:00.000Z",
     "all_day": false,
-    "google_meet_enabled": true,
-    "meet_link": "https://meet.google.com/abc-defg-hij",
+    "google_meet_enabled": false,
+    "meet_link": null,
+    "zoom_enabled": true,
+    "zoom_meeting_id": 123456789,
+    "zoom_join_url": "https://zoom.us/j/123456789",
+    "attendees": [
+      {
+        "email": "client@example.com",
+        "display_name": "Client Rep",
+        "response_status": "needsAction"
+      }
+    ],
     "source": "local",
     "created_at": "2025-12-11T10:00:00.000Z",
     "updated_at": "2025-12-11T10:00:00.000Z"
@@ -224,7 +280,7 @@ export const ENDPOINTS: Endpoint[] = [
 }`,
     statusCodes: [
       { code: 201, description: "Event created successfully" },
-      { code: 400, description: "Validation error (see error details)" },
+      { code: 400, description: "Validation error or conference conflict (see error details)" },
       { code: 401, description: "Invalid or missing API key" },
       { code: 500, description: "Server error" },
     ],
@@ -232,6 +288,9 @@ export const ENDPOINTS: Endpoint[] = [
       { code: 400, condition: "Expected boolean, received string", solution: "Send true/false without quotes: all_day: true, not \"true\"." },
       { code: 400, condition: "End time must be after start time", solution: "Ensure end_time is later than start_time." },
       { code: 400, condition: "Invalid datetime format", solution: "Use a supported format, e.g. 2025-12-15T14:30:00." },
+      { code: 400, condition: "Only one video conference (Google Meet or Zoom) can be enabled per event", solution: "Enable only google_meet_enabled OR zoom_enabled, not both." },
+      { code: 400, condition: "Video conferencing cannot be enabled for all-day events", solution: "Set all_day: false when enabling google_meet_enabled or zoom_enabled." },
+      { code: 400, condition: "Maximum 50 guests allowed", solution: "Reduce the attendees array to 50 or fewer entries." },
     ],
   },
   {
@@ -240,7 +299,7 @@ export const ENDPOINTS: Endpoint[] = [
     method: "PATCH",
     path: "/api/calendar/external/v1/events/{id}",
     summary: "Update an event",
-    description: "Update an existing event. Only provided fields are updated.",
+    description: "Update an existing event. Only provided fields are updated. Enable/switch/disable Google Meet or Zoom, or replace the attendees list.",
     priority: "frequent",
     pathParams: [
       {
@@ -287,6 +346,38 @@ export const ENDPOINTS: Endpoint[] = [
         description: "Event end time (flexible datetime format).",
         example: "2025-12-15T17:00:00",
       },
+      {
+        name: "all_day",
+        type: "boolean",
+        kind: "boolean",
+        required: false,
+        description: "Whether the event is all-day. Must be a boolean. Video conferencing cannot be enabled for all-day events.",
+        example: "false",
+      },
+      {
+        name: "google_meet_enabled",
+        type: "boolean",
+        kind: "boolean",
+        required: false,
+        description: "Enable/disable Google Meet. Disabling deletes the existing Meet. Mutually exclusive with zoom_enabled.",
+        example: "false",
+      },
+      {
+        name: "zoom_enabled",
+        type: "boolean",
+        kind: "boolean",
+        required: false,
+        description: "Enable/disable Zoom. Disabling deletes the existing Zoom meeting. Mutually exclusive with google_meet_enabled.",
+        example: "true",
+      },
+      {
+        name: "attendees",
+        type: "array<object>",
+        kind: "array",
+        required: false,
+        description: "Replaces the entire attendees list (max 50). Duplicates are removed automatically.",
+        example: '[{"email":"client@example.com","display_name":"Client Rep"}]',
+      },
     ],
     responseStatus: 200,
     responseExample: `{
@@ -298,6 +389,18 @@ export const ENDPOINTS: Endpoint[] = [
     "start_time": "2025-12-15T15:00:00.000Z",
     "end_time": "2025-12-15T17:00:00.000Z",
     "all_day": false,
+    "google_meet_enabled": false,
+    "meet_link": null,
+    "zoom_enabled": true,
+    "zoom_meeting_id": 987654321,
+    "zoom_join_url": "https://zoom.us/j/987654321",
+    "attendees": [
+      {
+        "email": "client@example.com",
+        "display_name": "Client Rep",
+        "response_status": "needsAction"
+      }
+    ],
     "source": "local",
     "created_at": "2025-12-10T10:00:00.000Z",
     "updated_at": "2025-12-11T11:30:00.000Z"
@@ -305,10 +408,14 @@ export const ENDPOINTS: Endpoint[] = [
 }`,
     statusCodes: [
       { code: 200, description: "Event updated successfully" },
-      { code: 400, description: "Validation error or end_time <= start_time" },
+      { code: 400, description: "Validation error, conference conflict, or end_time <= start_time" },
       { code: 401, description: "Invalid or missing API key" },
       { code: 404, description: "Event not found or doesn't belong to your account" },
       { code: 500, description: "Server error" },
+    ],
+    commonErrors: [
+      { code: 400, condition: "Only one video conference (Google Meet or Zoom) can be enabled per event", solution: "Disable one before enabling the other: { google_meet_enabled: false, zoom_enabled: true }." },
+      { code: 400, condition: "Video conferencing cannot be enabled for all-day events", solution: "Set all_day: false when enabling google_meet_enabled or zoom_enabled." },
     ],
   },
   {
