@@ -11,6 +11,32 @@ import {
   ArrowRight,
 } from "lucide-react";
 
+// Single source of truth for footer links — keeps things DRY and easy to maintain.
+const productLinks = [
+  { label: "Features", href: "/#features" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "ROI Calculator", href: "/calculator" },
+  { label: "Documentation", href: "/docs" },
+  { label: "Partner Program", href: "/whitelabel" },
+];
+
+const resourceLinks = [
+  { label: "Blog", href: "/blog" },
+  { label: "Vapi Comparison", href: "/blog/vapi-white-label-platform" },
+  { label: "Retell AI Comparison", href: "/blog/retell-ai-white-label" },
+  {
+    label: "GoHighLevel Comparison",
+    href: "/blog/gohighlevel-white-label-voice",
+  },
+];
+
+const companyLinks = [
+  { label: "About Us", href: "/#about" },
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Terms of Service", href: "/terms" },
+  { label: "Book a Call", href: "https://cal.com/mralamin/discovery-call" },
+];
+
 export default function Footer() {
   return (
     <>
@@ -39,7 +65,7 @@ export default function Footer() {
             </h2>
 
             <Link
-              href="#home"
+              href="/#home"
               className="mt-8 px-8 py-3 bg-orange-600 text-black rounded-full font-bold hover:bg-gray-700 transition-colors duration-300 inline-flex items-center group"
             >
               Try Our Demo
@@ -52,12 +78,12 @@ export default function Footer() {
       {/* Main Footer */}
       <footer className="w-full bg-black pt-16 pb-8">
         <div className="container mx-auto px-4">
-          {/* Footer Columns */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-            {/* Company Info */}
+          {/* Footer Columns — 4 columns to match lg:grid-cols-4 */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+            {/* Brand + Socials */}
             <div className="flex flex-col space-y-4">
               <Link
-                href="#home"
+                href="/#home"
                 className="flex items-center gap-3 text-2xl font-bold text-orange-600 transition-colors"
               >
                 <Image
@@ -106,109 +132,84 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Product Links */}
+            {/* Product */}
             <div>
               <h3 className="text-white font-semibold mb-4">Product</h3>
               <ul className="space-y-3">
-                <li>
-                  <Link
-                    href="/whitelabel"
-                    className="text-sm text-gray-400 hover:text-orange-600 transition-colors"
-                  >
-                    Partner Program
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#features"
-                    className="text-sm text-gray-400 hover:text-orange-600 transition-colors"
-                  >
-                    Features
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#pricing"
-                    className="text-sm text-gray-400 hover:text-orange-600 transition-colors"
-                  >
-                    Pricing
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/docs"
-                    className="text-sm text-gray-400 hover:text-orange-600 transition-colors"
-                  >
-                    Documentation
-                  </Link>
-                </li>
+                {productLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-gray-400 hover:text-orange-600 transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
-            {/* Company Links */}
+            {/* Resources */}
+            <div>
+              <h3 className="text-white font-semibold mb-4">Resources</h3>
+              <ul className="space-y-3">
+                {resourceLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-gray-400 hover:text-orange-600 transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Company + Contact */}
             <div>
               <h3 className="text-white font-semibold mb-4">Company</h3>
               <ul className="space-y-3">
-                <li>
-                  <Link
-                    href="#about"
-                    className="text-sm text-gray-400 hover:text-orange-600 transition-colors"
-                  >
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#blog"
-                    className="text-sm text-gray-400 hover:text-orange-600 transition-colors"
-                  >
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#careers"
-                    className="text-sm text-gray-400 hover:text-orange-600 transition-colors"
-                  >
-                    Careers
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/whitelabel"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-gray-400 hover:text-orange-600 transition-colors"
-                  >
-                    Partner Program
-                  </Link>
-                </li>
+                {companyLinks.map((link, idx) => (
+                  <li key={`${link.href}-${idx}`}>
+                    {link.href.startsWith("http") ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-gray-400 hover:text-orange-600 transition-colors"
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="text-sm text-gray-400 hover:text-orange-600 transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    )}
+                  </li>
+                ))}
               </ul>
-            </div>
 
-            {/* Contact Info */}
-            <div>
-              <h3 className="text-white font-semibold mb-4">Contact</h3>
-              <ul className="space-y-4">
-                <li>
-                  <Link
-                    href="mailto:hello@fusioncalling.com"
-                    className="flex items-start gap-3 text-sm text-gray-400 hover:text-orange-600 transition-colors"
-                  >
-                    <Mail className="h-5 w-5 flex-shrink-0 mt-0.5" />
-                    <span>hello@fusioncalling.com</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="tel:+19146394069"
-                    className="flex items-start gap-3 text-sm text-gray-400 hover:text-orange-600 transition-colors"
-                  >
-                    <Phone className="h-5 w-5 flex-shrink-0 mt-0.5" />
-                    <span>+1 (914) 639-4069</span>
-                  </Link>
-                </li>
-              </ul>
+              {/* Contact details */}
+              <div className="mt-6 space-y-3">
+                <Link
+                  href="mailto:hello@fusioncalling.com"
+                  className="flex items-start gap-3 text-sm text-gray-400 hover:text-orange-600 transition-colors"
+                >
+                  <Mail className="h-5 w-5 flex-shrink-0 mt-0.5" />
+                  <span>hello@fusioncalling.com</span>
+                </Link>
+                <Link
+                  href="tel:+19146394069"
+                  className="flex items-start gap-3 text-sm text-gray-400 hover:text-orange-600 transition-colors"
+                >
+                  <Phone className="h-5 w-5 flex-shrink-0 mt-0.5" />
+                  <span>+1 (914) 639-4069</span>
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -221,25 +222,19 @@ export default function Footer() {
               </p>
               <div className="flex items-center gap-6">
                 <Link
-                  href="/Privacy"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/privacy"
                   className="text-sm text-gray-500 hover:text-orange-600 transition-colors"
                 >
                   Privacy Policy
                 </Link>
                 <Link
-                  href="/Terms"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/terms"
                   className="text-sm text-gray-500 hover:text-orange-600 transition-colors"
                 >
                   Terms of Service
                 </Link>
                 <Link
                   href="/docs"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="text-sm text-gray-500 hover:text-orange-600 transition-colors"
                 >
                   Docs

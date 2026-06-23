@@ -29,6 +29,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/calculator",
     "/privacy",
     "/terms",
+    "/blog",
+    "/blog/vapi-white-label-platform",
+    "/blog/retell-ai-white-label",
+    "/blog/gohighlevel-white-label-voice",
   ] as const;
 
   return paths.map((path) => {
