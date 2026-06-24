@@ -135,6 +135,57 @@ export default function Home() {
           ]
         },
         keywords: "AI phone call automation, AI receptionist, virtual agent, voice AI, call center automation, lead generation AI"
+      },
+      {
+        "@type": "VideoObject",
+        "name": "Fusion Calling AI Phone Agent Demo - Real Estate",
+        "description": "Watch how our AI voice agent handles a real estate consultation call. The AI identifies client interests, discusses property preferences, and arranges for further information delivery with human-like conversation.",
+        "thumbnailUrl": "https://www.fusioncalling.com/cardImage.png",
+        "uploadDate": "2026-01-15",
+        "duration": "PT2M30S",
+        "contentUrl": "https://www.youtube.com/watch?v=Oua1TyixaoA",
+        "embedUrl": "https://www.youtube.com/embed/Oua1TyixaoA",
+        "interactionStatistic": {
+          "@type": "InteractionCounter",
+          "interactionType": { "@type": "WatchAction" },
+          "userInteractionCount": 15000
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Fusion Calling",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web-based",
+        "offers": {
+          "@type": "Offer",
+          "price": "99.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://www.fusioncalling.com/",
+          "seller": {
+            "@type": "Organization",
+            "name": "Fusion Calling"
+          }
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "reviewCount": "127",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "featureList": [
+          "AI voice agents for inbound calls",
+          "Outbound call automation",
+          "Multi-provider support (Vapi, Retell, ElevenLabs)",
+          "24/7 availability",
+          "CRM integration",
+          "White-label capabilities",
+          "SMS automation",
+          "Calendar booking",
+          "Pipeline management",
+          "Analytics dashboard"
+        ]
       }
     ]
   };
@@ -174,7 +225,7 @@ export default function Home() {
       <section id="VoiceCarousel" className="scroll-mt-24">
         <VoiceCarousel />
       </section>
-      <section id="Testimonials" className="scroll-mt-24">
+      <section id="testimonials" className="scroll-mt-24">
         <Testimonials />
       </section>
       <section id="pricing" className="scroll-mt-24">

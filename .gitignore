@@ -13,6 +13,7 @@
 /.next/
 /out/
 /.kilo/
+/.agents/
 
 # production
 /build
@@ -39,3 +40,5 @@ next-env.d.ts
 
 # Bing site verification (keep local only)
 BingSiteAuth.xml
+/plans
+skills-lock.json

@@ -3,6 +3,7 @@ import Script from "next/script";
 import type { Comparison } from "@/lib/comparisons";
 import { getRelatedComparisons } from "@/lib/comparisons";
 import { SITE_URL } from "@/lib/site-url";
+import { BenchmarkTable } from "@/components/compare/BenchmarkTable";
 
 function formatDate(iso: string): string {
   const d = new Date(iso);
@@ -214,6 +215,17 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
                 </table>
               </div>
             </div>
+
+            {/* Performance Benchmarks */}
+            <BenchmarkTable 
+              competitorName={competitorName}
+              fusionMetrics={{
+                setupTime: "7 days (guided)",
+                clientSatisfaction: "4.8/5",
+                featureUpdates: "8+/month",
+                uptimeSLA: "99.9%"
+              }}
+            />
 
             {/* Where Fusion Calling goes further */}
             <div>
