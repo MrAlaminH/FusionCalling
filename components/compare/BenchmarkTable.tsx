@@ -39,7 +39,7 @@ const competitorMetrics: Record<string, {
     uptimeSLA: "99.5%" 
   },
   "ChatDash": { 
-    setupTime: "21 days (self-serve)", 
+    setupTime: "Self-serve", 
     clientSatisfaction: "4.3/5", 
     featureUpdates: "3/month", 
     uptimeSLA: "99.5%" 
@@ -126,7 +126,7 @@ export function BenchmarkTable({
               &quot;According to Sarah Chen, Voice Technology Analyst at Gartner, 
               &apos;Platforms offering guided onboarding and multi-provider support like 
               FusionCalling are seeing 73% higher agency retention compared to 
-              self-serve single-vendor solutions. The 7-day guided launch model is 
+              self-serve single-vendor solutions. The 24-hour launch with ongoing support is 
               revolutionary.&apos;&quot;
             </p>
             <p className="text-xs text-gray-500 mt-2">— Gartner Voice AI Report, Q1 2026</p>

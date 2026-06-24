@@ -220,7 +220,7 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
             <BenchmarkTable 
               competitorName={competitorName}
               fusionMetrics={{
-                setupTime: "7 days (guided)",
+                setupTime: "24 hours + 30-day support",
                 clientSatisfaction: "4.8/5",
                 featureUpdates: "8+/month",
                 uptimeSLA: "99.9%"

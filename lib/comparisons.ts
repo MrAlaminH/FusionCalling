@@ -73,7 +73,7 @@ const sharedAdvantages: Advantage[] = [
     emoji: "🤝",
     title: "Done-With-You Onboarding",
     description:
-      "Beyond self-serve tooling, our team helps you launch in as little as 7 days with branded portals, client onboarding, and call flows configured alongside you.",
+      "Launch your branded agency in 24 hours with our team's help. Plus get 30 days of ongoing support to ensure your success.",
   },
 ];
 
@@ -81,7 +81,7 @@ export const FUSION_ECONOMICS_POINTS = [
   "Subscription pricing from $99/month with no setup fee",
   "Keep 100% of the revenue you charge your clients",
   "Start risk-free with a 3-day free trial and $0 setup",
-  "Launch your branded agency in as little as 7 days",
+  "Launch your branded agency in 24 hours with 30 days support",
 ];
 
 export const comparisons: Comparison[] = [
@@ -140,7 +140,7 @@ export const comparisons: Comparison[] = [
       { label: "Live product demo", competitor: "Request-based", fusion: "Interactive demo on homepage" },
       { label: "Client billing", competitor: "Native Stripe + outcome billing", fusion: "Stripe rebilling + your own pricing" },
       { label: "GoHighLevel integration", competitor: "Native (a core strength)", fusion: "Via API + webhooks" },
-      { label: "Onboarding model", competitor: "Self-serve", fusion: "Done-with-you, launch in ~7 days" },
+      { label: "Onboarding model", competitor: "Self-serve", fusion: "Launch in 24 hours + 30-day support" },
       { label: "Top-tier price", competitor: "$600/mo Ultimate", fusion: "$499/mo Scale (unlimited)" },
     ],
     advantagesTitle: "Where Fusion Calling Goes Further",
@@ -237,7 +237,7 @@ export const comparisons: Comparison[] = [
       { label: "Voice providers supported", competitor: "Vapi + Retell", fusion: fusionProviders },
       { label: "Live product demo", competitor: "Sign-up based", fusion: "Interactive demo on homepage" },
       { label: "Unlimited clients path", competitor: "From $399/mo (sales call)", fusion: "$499/mo Scale (self-serve)" },
-      { label: "Onboarding model", competitor: "Self-serve", fusion: "Done-with-you, launch in ~7 days" },
+      { label: "Onboarding model", competitor: "Self-serve", fusion: "Launch in 24 hours + 30-day support" },
       { label: "Free trial", competitor: "14-day trial", fusion: "3-day free trial, $0 setup" },
     ],
     advantagesTitle: "Where Fusion Calling Goes Further",
@@ -332,7 +332,7 @@ export const comparisons: Comparison[] = [
       { label: "Starting monthly cost", competitor: "$28/mo Pro (annual)", fusion: "$99/mo (6 sub-accounts)" },
       { label: "Voice providers supported", competitor: "Vapi + Retell (11Labs announced)", fusion: fusionProviders },
       { label: "Live product demo", competitor: "Sign-up based", fusion: "Interactive demo on homepage" },
-      { label: "Onboarding model", competitor: "Self-serve (+ $3,999 white-glove)", fusion: "Done-with-you, launch in ~7 days" },
+      { label: "Onboarding model", competitor: "Self-serve (+ $3,999 white-glove)", fusion: "Launch in 24 hours + 30-day support" },
       { label: "Client tools bundled", competitor: "Website builder, lead finder, workflows", fusion: "Branded portals, rebilling, analytics" },
       { label: "Refund policy", competitor: "No refunds for partial periods", fusion: "3-day free trial, $0 setup" },
       { label: "Support", competitor: "Standard support", fusion: "Priority + dedicated manager (Scale)" },
@@ -429,7 +429,7 @@ export const comparisons: Comparison[] = [
       { label: "Starting monthly cost", competitor: "$29/mo (5 portals)", fusion: "$99/mo (6 sub-accounts)" },
       { label: "Voice providers supported", competitor: "5 (Vapi, Retell, ElevenLabs, Bolna, Ultravox)", fusion: fusionProviders },
       { label: "Live product demo", competitor: "Sign-up based", fusion: "Interactive demo on homepage" },
-      { label: "Onboarding model", competitor: "Self-serve (~60 min)", fusion: "Done-with-you, launch in ~7 days" },
+      { label: "Onboarding model", competitor: "Self-serve (~60 min)", fusion: "Launch in 24 hours + 30-day support" },
       { label: "Client billing", competitor: "Stripe rebilling + external", fusion: "Stripe rebilling + your own pricing" },
       { label: "Compliance docs", competitor: "SOC 2 + HIPAA + BAA (Pro)", fusion: "Enterprise-grade security posture" },
       { label: "Top-tier price", competitor: "$499/mo Pro (incl. BAA)", fusion: "$499/mo Scale (unlimited)" },
@@ -527,7 +527,7 @@ export const comparisons: Comparison[] = [
       { label: "Voice providers supported", competitor: "Proprietary engine", fusion: fusionProviders },
       { label: "Live product demo", competitor: "Request-based", fusion: "Interactive demo on homepage" },
       { label: "Pricing transparency", competitor: "Quote-based", fusion: "Fully public pricing" },
-      { label: "Onboarding model", competitor: "Sales-assisted", fusion: "Done-with-you, launch in ~7 days" },
+      { label: "Onboarding model", competitor: "Sales-assisted", fusion: "Launch in 24 hours + 30-day support" },
       { label: "Engine type", competitor: "Single proprietary engine", fusion: "Multi-provider (BYOK-style)" },
       { label: "Free trial", competitor: "Varies", fusion: "3-day free trial, $0 setup" },
     ],
@@ -625,7 +625,7 @@ export const comparisons: Comparison[] = [
       { label: "GoHighLevel integration", competitor: "Native (a core strength)", fusion: "Via API + webhooks" },
       { label: "CRM flexibility", competitor: "GoHighLevel-focused", fusion: "Multi-CRM (2,200+ apps)" },
       { label: "Live product demo", competitor: "Sign-up based", fusion: "Interactive demo on homepage" },
-      { label: "Onboarding model", competitor: "Self-serve", fusion: "Done-with-you, launch in ~7 days" },
+      { label: "Onboarding model", competitor: "Self-serve", fusion: "Launch in 24 hours + 30-day support" },
       { label: "Top-tier price", competitor: "$499/mo Unlimited", fusion: "$499/mo Scale (unlimited)" },
     ],
     advantagesTitle: "Where Fusion Calling Goes Further",
