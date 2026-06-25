@@ -13,7 +13,6 @@ import Footer from "@/components/Footer";
 import PricingSection from "@/components/pricing-section";
 import Calendar from "@/components/calendar";
 import StatisticsComponent from "@/components/stats";
-import StickyMobileCta from "@/components/sticky-mobile-cta";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -260,7 +259,6 @@ export default function Home() {
       </section>
 
       <Footer />
-      <StickyMobileCta href="#calendar" />
     </main>
     </>
   );

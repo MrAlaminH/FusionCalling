@@ -99,6 +99,8 @@ export const ENDPOINTS: Endpoint[] = [
           "response_status": "accepted"
         }
       ],
+      "caller_phone": null,
+      "caller_name": null,
       "source": "local",
       "created_at": "2025-12-10T10:00:00.000Z",
       "updated_at": "2025-12-10T10:00:00.000Z"
@@ -153,6 +155,8 @@ export const ENDPOINTS: Endpoint[] = [
         "response_status": "accepted"
       }
     ],
+    "caller_phone": null,
+    "caller_name": null,
     "source": "local",
     "created_at": "2025-12-10T10:00:00.000Z",
     "updated_at": "2025-12-10T10:00:00.000Z"
@@ -250,6 +254,22 @@ export const ENDPOINTS: Endpoint[] = [
         example: '[{"email":"client@example.com","display_name":"Client Rep"}]',
         default: '[{"email":"client@example.com","display_name":"Client Rep"}]',
       },
+      {
+        name: "caller_phone",
+        type: "string",
+        kind: "string",
+        required: false,
+        description: "Caller's phone number in E.164 format (e.g. +15551234567). Used for call-log link and SMS confirmation.",
+        example: "+15551234567",
+      },
+      {
+        name: "caller_name",
+        type: "string",
+        kind: "string",
+        required: false,
+        description: "Caller's display name (max 200 characters). Used in SMS template and for display.",
+        example: "Jane Doe",
+      },
     ],
     responseStatus: 201,
     responseExample: `{
@@ -273,6 +293,8 @@ export const ENDPOINTS: Endpoint[] = [
         "response_status": "needsAction"
       }
     ],
+    "caller_phone": "+15551234567",
+    "caller_name": "Jane Doe",
     "source": "local",
     "created_at": "2025-12-11T10:00:00.000Z",
     "updated_at": "2025-12-11T10:00:00.000Z"
@@ -378,6 +400,22 @@ export const ENDPOINTS: Endpoint[] = [
         description: "Replaces the entire attendees list (max 50). Duplicates are removed automatically.",
         example: '[{"email":"client@example.com","display_name":"Client Rep"}]',
       },
+      {
+        name: "caller_phone",
+        type: "string",
+        kind: "string",
+        required: false,
+        description: "Caller's phone number in E.164 format (e.g. +15551234567). Used for call-log link and SMS confirmation.",
+        example: "+15551234567",
+      },
+      {
+        name: "caller_name",
+        type: "string",
+        kind: "string",
+        required: false,
+        description: "Caller's display name (max 200 characters). Used in SMS template and for display.",
+        example: "Jane Doe",
+      },
     ],
     responseStatus: 200,
     responseExample: `{
@@ -401,6 +439,8 @@ export const ENDPOINTS: Endpoint[] = [
         "response_status": "needsAction"
       }
     ],
+    "caller_phone": "+15551234567",
+    "caller_name": "Jane Doe",
     "source": "local",
     "created_at": "2025-12-10T10:00:00.000Z",
     "updated_at": "2025-12-11T11:30:00.000Z"

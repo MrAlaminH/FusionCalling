@@ -230,6 +230,8 @@ export default function CalendarApiSection() {
     "display_name": "string",
     "response_status": "needsAction|accepted|declined|tentative"
   }],
+  "caller_phone": "string|null",   // optional, E.164 format
+  "caller_name": "string|null",    // optional, max 200 chars
   "source": "local|google",        // response-only
   "created_at": "ISO 8601",        // response-only
   "updated_at": "ISO 8601"         // response-only

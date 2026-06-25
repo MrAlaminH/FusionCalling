@@ -8,7 +8,6 @@ import Pricing from "@/components/white-label/Pricing";
 import Benefits from "@/components/white-label/Benefits";
 import FAQ from "@/components/white-label/FAQ";
 import CTA from "@/components/white-label/CTA";
-import StickyMobileCta from "@/components/sticky-mobile-cta";
 import type { Metadata } from "next";
 import Script from "next/script";
 
@@ -287,7 +286,6 @@ export default function WhiteLabelPage() {
         <CTA />
       </section>
       <Footer />
-      <StickyMobileCta href="#cta" label="Book a Demo" />
     </main>
     </>
   );
