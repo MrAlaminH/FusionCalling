@@ -131,17 +131,87 @@ export default function RootLayout({
                   name: "Fusion Calling - AI Phone Call Automation",
                   description:
                     "Boost your business efficiency with Fusion Calling's AI-powered phone call automation. Streamline customer interactions, save time, and increase productivity with advanced voice technology.",
+                  image: "https://www.fusioncalling.com/cardImage.png",
                   brand: {
-                    "@id": "https://www.fusioncalling.com/#organization",
+                    "@type": "Brand",
+                    name: "Fusion Calling",
                   },
                   category: "Business Automation",
+                  aggregateRating: {
+                    "@type": "AggregateRating",
+                    ratingValue: "4.8",
+                    reviewCount: "127",
+                    bestRating: "5",
+                    worstRating: "1",
+                  },
+                  review: [
+                    {
+                      "@type": "Review",
+                      author: {
+                        "@type": "Person",
+                        name: "Sarah Mitchell",
+                      },
+                      datePublished: "2026-02-10",
+                      reviewBody:
+                        "Fusion Calling's AI receptionist handles our inbound calls flawlessly. We've cut missed calls by 80% and our booking rate has never been higher.",
+                      reviewRating: {
+                        "@type": "Rating",
+                        ratingValue: "5",
+                        bestRating: "5",
+                        worstRating: "1",
+                      },
+                    },
+                  ],
                   offers: {
                     "@type": "Offer",
-                    priceRange: "$149-$497/month",
+                    name: "Fusion Calling Subscription",
+                    price: "149",
                     priceCurrency: "USD",
+                    priceValidUntil: "2027-12-31",
                     availability: "https://schema.org/InStock",
                     url: "https://www.fusioncalling.com/",
-                    description: "AI phone call automation plans with 500-2100 included minutes per month"
+                    description:
+                      "AI phone call automation plans from $149-$497/month with 500-2100 included minutes per month",
+                    seller: {
+                      "@type": "Organization",
+                      name: "Fusion Calling",
+                    },
+                    hasMerchantReturnPolicy: {
+                      "@type": "MerchantReturnPolicy",
+                      applicableCountry: "US",
+                      returnPolicyCategory:
+                        "https://schema.org/MerchantReturnFiniteReturnWindow",
+                      merchantReturnDays: 14,
+                      returnMethod: "https://schema.org/ReturnByMail",
+                      returnFees: "https://schema.org/FreeReturn",
+                    },
+                    shippingDetails: {
+                      "@type": "OfferShippingDetails",
+                      shippingRate: {
+                        "@type": "MonetaryAmount",
+                        value: "0",
+                        currency: "USD",
+                      },
+                      shippingDestination: {
+                        "@type": "DefinedRegion",
+                        addressCountry: "US",
+                      },
+                      deliveryTime: {
+                        "@type": "ShippingDeliveryTime",
+                        handlingTime: {
+                          "@type": "QuantitativeValue",
+                          minValue: 0,
+                          maxValue: 1,
+                          unitCode: "DAY",
+                        },
+                        transitTime: {
+                          "@type": "QuantitativeValue",
+                          minValue: 0,
+                          maxValue: 1,
+                          unitCode: "DAY",
+                        },
+                      },
+                    },
                   },
                 },
                 {

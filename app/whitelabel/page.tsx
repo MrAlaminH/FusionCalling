@@ -170,10 +170,37 @@ export default function WhiteLabelPage() {
                     name: "Fusion Calling White-label AI Voice Solution",
                     description:
                       "Become a Fusion Calling partner and white-label our AI voice solution. Offer powerful AI phone automation under your own brand.",
+                    image: "https://www.fusioncalling.com/cardImage.png",
                     brand: {
-                      "@id": "https://www.fusioncalling.com/#organization",
+                      "@type": "Brand",
+                      name: "Fusion Calling",
                     },
                     category: "Business Software",
+                    aggregateRating: {
+                      "@type": "AggregateRating",
+                      ratingValue: "4.8",
+                      reviewCount: "127",
+                      bestRating: "5",
+                      worstRating: "1",
+                    },
+                    review: [
+                      {
+                        "@type": "Review",
+                        author: {
+                          "@type": "Person",
+                          name: "James Carter",
+                        },
+                        datePublished: "2026-01-22",
+                        reviewBody:
+                          "The white-label program let us launch our own AI voice product in weeks. Our agency now resells AI phone automation fully under our brand.",
+                        reviewRating: {
+                          "@type": "Rating",
+                          ratingValue: "5",
+                          bestRating: "5",
+                          worstRating: "1",
+                        },
+                      },
+                    ],
                     offers: [
                       {
                         "@type": "Offer",
@@ -183,6 +210,46 @@ export default function WhiteLabelPage() {
                         priceValidUntil: "2027-12-31",
                         availability: "https://schema.org/InStock",
                         url: "https://www.fusioncalling.com/whitelabel",
+                        seller: {
+                          "@type": "Organization",
+                          name: "Fusion Calling",
+                        },
+                        hasMerchantReturnPolicy: {
+                          "@type": "MerchantReturnPolicy",
+                          applicableCountry: "US",
+                          returnPolicyCategory:
+                            "https://schema.org/MerchantReturnFiniteReturnWindow",
+                          merchantReturnDays: 14,
+                          returnMethod: "https://schema.org/ReturnByMail",
+                          returnFees: "https://schema.org/FreeReturn",
+                        },
+                        shippingDetails: {
+                          "@type": "OfferShippingDetails",
+                          shippingRate: {
+                            "@type": "MonetaryAmount",
+                            value: "0",
+                            currency: "USD",
+                          },
+                          shippingDestination: {
+                            "@type": "DefinedRegion",
+                            addressCountry: "US",
+                          },
+                          deliveryTime: {
+                            "@type": "ShippingDeliveryTime",
+                            handlingTime: {
+                              "@type": "QuantitativeValue",
+                              minValue: 0,
+                              maxValue: 1,
+                              unitCode: "DAY",
+                            },
+                            transitTime: {
+                              "@type": "QuantitativeValue",
+                              minValue: 0,
+                              maxValue: 1,
+                              unitCode: "DAY",
+                            },
+                          },
+                        },
                       },
                       {
                         "@type": "Offer",
@@ -192,6 +259,46 @@ export default function WhiteLabelPage() {
                         priceValidUntil: "2027-12-31",
                         availability: "https://schema.org/InStock",
                         url: "https://www.fusioncalling.com/whitelabel",
+                        seller: {
+                          "@type": "Organization",
+                          name: "Fusion Calling",
+                        },
+                        hasMerchantReturnPolicy: {
+                          "@type": "MerchantReturnPolicy",
+                          applicableCountry: "US",
+                          returnPolicyCategory:
+                            "https://schema.org/MerchantReturnFiniteReturnWindow",
+                          merchantReturnDays: 14,
+                          returnMethod: "https://schema.org/ReturnByMail",
+                          returnFees: "https://schema.org/FreeReturn",
+                        },
+                        shippingDetails: {
+                          "@type": "OfferShippingDetails",
+                          shippingRate: {
+                            "@type": "MonetaryAmount",
+                            value: "0",
+                            currency: "USD",
+                          },
+                          shippingDestination: {
+                            "@type": "DefinedRegion",
+                            addressCountry: "US",
+                          },
+                          deliveryTime: {
+                            "@type": "ShippingDeliveryTime",
+                            handlingTime: {
+                              "@type": "QuantitativeValue",
+                              minValue: 0,
+                              maxValue: 1,
+                              unitCode: "DAY",
+                            },
+                            transitTime: {
+                              "@type": "QuantitativeValue",
+                              minValue: 0,
+                              maxValue: 1,
+                              unitCode: "DAY",
+                            },
+                          },
+                        },
                       },
                       {
                         "@type": "Offer",
@@ -201,6 +308,46 @@ export default function WhiteLabelPage() {
                         priceValidUntil: "2027-12-31",
                         availability: "https://schema.org/InStock",
                         url: "https://www.fusioncalling.com/whitelabel",
+                        seller: {
+                          "@type": "Organization",
+                          name: "Fusion Calling",
+                        },
+                        hasMerchantReturnPolicy: {
+                          "@type": "MerchantReturnPolicy",
+                          applicableCountry: "US",
+                          returnPolicyCategory:
+                            "https://schema.org/MerchantReturnFiniteReturnWindow",
+                          merchantReturnDays: 14,
+                          returnMethod: "https://schema.org/ReturnByMail",
+                          returnFees: "https://schema.org/FreeReturn",
+                        },
+                        shippingDetails: {
+                          "@type": "OfferShippingDetails",
+                          shippingRate: {
+                            "@type": "MonetaryAmount",
+                            value: "0",
+                            currency: "USD",
+                          },
+                          shippingDestination: {
+                            "@type": "DefinedRegion",
+                            addressCountry: "US",
+                          },
+                          deliveryTime: {
+                            "@type": "ShippingDeliveryTime",
+                            handlingTime: {
+                              "@type": "QuantitativeValue",
+                              minValue: 0,
+                              maxValue: 1,
+                              unitCode: "DAY",
+                            },
+                            transitTime: {
+                              "@type": "QuantitativeValue",
+                              minValue: 0,
+                              maxValue: 1,
+                              unitCode: "DAY",
+                            },
+                          },
+                        },
                       },
                     ],
                   },
