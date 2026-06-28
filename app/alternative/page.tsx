@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import Script from "next/script";
+import Image from "next/image";
 import { comparisons } from "@/lib/comparisons";
 
 export const metadata: Metadata = {
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Side-by-side comparisons of the top white-label voice AI platforms for agencies. Compare Fusion Calling against ChatDash, Vapify, Voicerr, VoiceAIWrapper, Synthflow, and Thinkrr.",
   alternates: {
-    canonical: "/compare",
+    canonical: "/alternative",
   },
   keywords: [
     "white label voice ai comparison",
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     title: "White-Label Voice AI Comparisons | Fusion Calling",
     description:
       "Side-by-side comparisons of the top white-label voice AI platforms for agencies.",
-    url: "https://www.fusioncalling.com/compare",
+    url: "https://www.fusioncalling.com/alternative",
     siteName: "Fusion Calling",
     type: "website",
   },
@@ -49,7 +50,7 @@ export default function CompareHubPage() {
   return (
     <>
       <Script
-        id="compare-index-schema"
+        id="alternative-index-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -67,15 +68,15 @@ export default function CompareHubPage() {
                   {
                     "@type": "ListItem",
                     position: 2,
-                    name: "Compare",
-                    item: "https://www.fusioncalling.com/compare",
+                    name: "Alternative",
+                    item: "https://www.fusioncalling.com/alternative",
                   },
                 ],
               },
               {
                 "@type": "CollectionPage",
                 "@id": "https://www.fusioncalling.com/compare#collectionpage",
-                url: "https://www.fusioncalling.com/compare",
+    url: "https://www.fusioncalling.com/alternative",
                 name: "White-Label Voice AI Platform Comparisons",
                 description:
                   "Side-by-side comparisons of the top white-label voice AI platforms for agencies.",
@@ -134,7 +135,7 @@ export default function CompareHubPage() {
                     <tr key={row.slug} className="border-b border-gray-800/60">
                       <td className="py-4 px-4">
                         <Link
-                          href={`/compare/${row.slug}`}
+                          href={`/alternative/${row.slug}`}
                           className="flex items-center gap-3 text-white hover:text-brand-light transition-colors"
                         >
                           <span className="text-xl">{row.emoji}</span>
@@ -182,37 +183,63 @@ export default function CompareHubPage() {
               {comparisons.map((post) => (
                 <Link
                   key={post.slug}
-                  href={`/compare/${post.slug}`}
-                  className="group"
+                  href={`/alternative/${post.slug}`}
+                  className="group block"
                 >
-                  <div className="glass-light h-full rounded-2xl p-6 border border-brand/20 hover:border-brand/40 transition-all duration-500 hover:shadow-premium">
-                    <div className="aspect-video bg-gradient-to-br from-brand/10 to-brand-strong/5 rounded-xl mb-6 overflow-hidden border border-brand/10 group-hover:border-brand/30 transition-all duration-300 flex items-center justify-center">
-                      <div className="text-5xl">{post.heroEmoji}</div>
-                    </div>
-
-                    <div className="space-y-4">
-                      <div className="flex items-center gap-3 text-sm">
-                        <span className="px-3 py-1 bg-orange-500/10 text-orange-400 rounded-full border border-orange-500/20">
+                  <div className="glass-light h-full rounded-2xl overflow-hidden border border-brand/20 hover:border-brand/40 transition-all duration-500 hover:shadow-premium hover:shadow-premium-lg">
+                    {/* Image Section */}
+                    <div className="relative aspect-video overflow-hidden">
+                      <Image
+                        src={post.heroImage}
+                        alt={`${post.competitorName} vs Fusion Calling comparison - ${post.subtitle}`}
+                        title={`Best ${post.competitorName} Alternatives for AI Phone Call Agents`}
+                        fill
+                        className="object-cover transform group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
+                      
+                      {/* Category Badge */}
+                      <div className="absolute top-4 left-4">
+                        <span className="px-4 py-2 bg-black/60 backdrop-blur-sm text-white text-sm font-semibold rounded-full border border-white/20">
                           {post.category}
                         </span>
-                        <span className="text-gray-500">{post.readTime}</span>
                       </div>
+                    </div>
 
+                    {/* Content Section */}
+                    <div className="p-6 space-y-4">
+                      {/* Title */}
                       <h3 className="text-xl font-bold text-white group-hover:text-brand-light transition-colors leading-tight">
-                        {post.competitorName} vs Fusion Calling
+                        {post.h1}
                       </h3>
 
-                      <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">
+                      {/* Description */}
+                      <p className="text-gray-400 text-sm leading-relaxed line-clamp-2">
                         {post.subtitle}
                       </p>
 
+                      {/* Quick Stats */}
+                      <div className="grid grid-cols-2 gap-3 pt-3">
+                        <div className="flex items-center gap-2">
+                          <div className="w-2 h-2 rounded-full bg-green-500" />
+                          <span className="text-xs text-gray-400">{post.readTime}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <div className="w-2 h-2 rounded-full bg-brand" />
+                          <span className="text-xs text-gray-400">2026 Updated</span>
+                        </div>
+                      </div>
+
+                      {/* CTA Section */}
                       <div className="flex items-center justify-between pt-4 border-t border-gray-800">
-                        <span className="text-gray-500 text-sm">
-                          {post.competitorBestFor.split(".")[0].slice(0, 40)}…
+                        <span className="text-gray-500 text-xs">
+                          {post.competitorBestFor.split(".")[0].slice(0, 35)}…
                         </span>
-                        <span className="text-orange-400 text-sm group-hover:translate-x-2 transition-transform">
-                          →
-                        </span>
+                        <div className="flex items-center gap-2 text-brand-light group-hover:text-brand transition-colors">
+                          <span className="text-sm font-semibold">Read More</span>
+                          <span className="group-hover:translate-x-1 transition-transform">→</span>
+                        </div>
                       </div>
                     </div>
                   </div>

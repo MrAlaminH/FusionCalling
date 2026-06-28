@@ -22,7 +22,7 @@ const productLinks = [
 
 const resourceLinks = [
   { label: "Blog", href: "/blog" },
-  { label: "Platform Comparisons", href: "/compare" },
+  { label: "Platform Comparisons", href: "/alternative" },
   { label: "Industries", href: "/industries" },
   { label: "Glossary", href: "/glossary" },
   { label: "Vapi Integration", href: "/blog/vapi-white-label-platform" },

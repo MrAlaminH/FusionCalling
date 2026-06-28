@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Honest, side-by-side comparisons of the leading white-label voice AI platforms for agencies. Compare Fusion Calling against ChatDash, Vapify, Voicerr, VoiceAIWrapper, and more.",
   alternates: {
-    canonical: "/compare",
+    canonical: "/alternative",
   },
 };
 

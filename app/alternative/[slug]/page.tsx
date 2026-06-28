@@ -18,14 +18,14 @@ export function generateMetadata({
     return { title: "Comparison Not Found" };
   }
 
-  const url = `${SITE_URL}/compare/${comparison.slug}`;
+  const url = `${SITE_URL}/alternative/${comparison.slug}`;
 
   return {
     title: comparison.metaTitle,
     description: comparison.metaDescription,
     keywords: comparison.keywords,
     alternates: {
-      canonical: `/compare/${comparison.slug}`,
+      canonical: `/alternative/${comparison.slug}`,
     },
     openGraph: {
       title: comparison.metaTitle,
@@ -34,10 +34,10 @@ export function generateMetadata({
       siteName: "Fusion Calling",
       images: [
         {
-          url: `/compare/${comparison.slug}.jpg`,
+          url: comparison.heroImage,
           width: 1200,
           height: 630,
-          alt: `${comparison.competitorName} vs Fusion Calling`,
+          alt: `${comparison.competitorName} vs Fusion Calling - Best ${comparison.competitorName} Alternative`,
         },
       ],
       locale: "en_US",

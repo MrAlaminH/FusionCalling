@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Script from "next/script";
+import Image from "next/image";
 import type { Comparison } from "@/lib/comparisons";
 import { getRelatedComparisons } from "@/lib/comparisons";
 import { SITE_URL } from "@/lib/site-url";
@@ -21,18 +22,23 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
     category,
     readTime,
     datePublished,
-    heroEmoji,
+    heroImage,
     h1,
     h1Highlight,
     subtitle,
+    quickAnswer,
+    keyStatistics,
     intro,
     competitorBestFor,
     competitorStrengths,
+    fusionCallingOverview,
     tableTitle,
     comparisonRows,
     advantagesTitle,
     intro2,
     advantages,
+    whyChooseFusionCalling,
+    expertQuote,
     differentiatorHeadline,
     differentiatorBody,
     economics,
@@ -43,7 +49,7 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
   } = comparison;
 
   const related = getRelatedComparisons(slug, 3);
-  const articleUrl = `${SITE_URL}/compare/${slug}`;
+  const articleUrl = `${SITE_URL}/alternative/${slug}`;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -55,9 +61,9 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
           { "@type": "ListItem", position: 2, name: "Compare", item: `${SITE_URL}/compare` },
           {
             "@type": "ListItem",
-            position: 3,
-            name: `${competitorName} Alternative`,
-            item: articleUrl,
+            position: 2,
+            name: "Alternative",
+            item: `${SITE_URL}/alternative`
           },
         ],
       },
@@ -98,7 +104,7 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
         {/* Article Header */}
         <div className="mb-12">
           <Link
-            href="/compare"
+            href="/alternative"
             className="inline-flex items-center text-brand-light hover:text-brand-light mb-8 transition-colors"
           >
             ← Back to Compare
@@ -128,14 +134,45 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
           </div>
         </div>
 
-        {/* Hero Image Placeholder */}
-        <div className="mb-12 rounded-3xl overflow-hidden border border-brand/20">
-          <div className="aspect-video bg-gradient-to-br from-brand/10 to-brand-strong/5 flex items-center justify-center">
-            <div className="text-center">
-              <div className="text-6xl mb-4">{heroEmoji}</div>
-              <div className="text-lg text-gray-500">
-                {competitorName} vs Fusion Calling
-              </div>
+        {/* Hero Image */}
+        <div className="mb-12 rounded-3xl overflow-hidden border border-brand/20 relative">
+          <div className="aspect-video relative">
+            <Image
+              src={heroImage}
+              alt={`${competitorName} vs Fusion Calling - Best ${competitorName} Alternative for AI Phone Call Agents`}
+              title={metaTitle}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+              priority
+            />
+          </div>
+        </div>
+
+        {/* Quick Answer - GEO Optimized */}
+        <div className="glass-light rounded-2xl p-8 border border-brand/30 mb-8">
+          <h2 className="text-2xl font-bold text-brand-light mb-4">
+            ⚡ Quick Answer: Why Choose Fusion Calling Over {competitorName}?
+          </h2>
+          <p className="text-gray-300 leading-relaxed mb-6">
+            {quickAnswer}
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="bg-brand/10 rounded-lg p-4">
+              <div className="text-2xl font-bold text-green-400 mb-1">{keyStatistics.retentionRate}</div>
+              <div className="text-xs text-gray-400">Higher agency retention</div>
+            </div>
+            <div className="bg-brand/10 rounded-lg p-4">
+              <div className="text-2xl font-bold text-green-400 mb-1">{keyStatistics.timeToLaunch.split(' ')[0]}</div>
+              <div className="text-xs text-gray-400">{keyStatistics.timeToLaunch}</div>
+            </div>
+            <div className="bg-brand/10 rounded-lg p-4">
+              <div className="text-2xl font-bold text-green-400 mb-1">{keyStatistics.clientsIncluded.split(' ')[0]}</div>
+              <div className="text-xs text-gray-400">{keyStatistics.clientsIncluded}</div>
+            </div>
+            <div className="bg-brand/10 rounded-lg p-4">
+              <div className="text-2xl font-bold text-green-400 mb-1">{keyStatistics.featureUpdates}</div>
+              <div className="text-xs text-gray-400">Feature updates/month</div>
             </div>
           </div>
         </div>
@@ -153,6 +190,20 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
                   {p}
                 </p>
               ))}
+            </div>
+
+            {/* Fusion Calling Overview */}
+            <div>
+              <h2 className="text-3xl font-bold text-white mb-4">
+                A Quick Overview of Fusion Calling
+              </h2>
+              <div className="glass-light rounded-2xl p-8 border border-brand/20">
+                {fusionCallingOverview.map((p, i) => (
+                  <p key={i} className="text-gray-300 leading-relaxed mb-4 last:mb-0">
+                    {p}
+                  </p>
+                ))}
+              </div>
             </div>
 
             {/* What the competitor does well (neutral / soft tone) */}
@@ -247,6 +298,39 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
                   </div>
                 ))}
               </div>
+            </div>
+
+            {/* Why Choose Fusion Calling */}
+            <div className="glass rounded-2xl p-8 border border-brand/30">
+              <h2 className="text-3xl font-bold text-white mb-6">
+                {whyChooseFusionCalling.title}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {whyChooseFusionCalling.points.map((point) => (
+                  <div key={point.title} className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
+                      <span className="text-2xl">{point.emoji}</span>
+                    </div>
+                    <div>
+                      <h3 className="text-white font-bold mb-2">{point.title}</h3>
+                      <p className="text-gray-400 text-sm">{point.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Expert Quote - GEO Optimized */}
+            <div className="glass-light rounded-2xl p-8 border border-brand/30">
+              <h4 className="text-xl font-bold text-brand-light mb-4">💬 Expert Analysis</h4>
+              <blockquote className="border-l-4 border-brand pl-4 py-2">
+                <p className="text-gray-300 italic leading-relaxed">
+                  &ldquo;{expertQuote.text}&rdquo;
+                </p>
+                <footer className="mt-3 text-sm text-gray-500">
+                  — {expertQuote.attribution}, {expertQuote.source}
+                </footer>
+              </blockquote>
             </div>
 
             {/* Differentiator Callout */}
@@ -370,12 +454,21 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
                 {related.map((r) => (
                   <Link
                     key={r.slug}
-                    href={`/compare/${r.slug}`}
+                    href={`/alternative/${r.slug}`}
                     className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition-all group"
                   >
-                    <div className="text-2xl mb-3">{r.heroEmoji}</div>
+                    <div className="aspect-video rounded-lg mb-3 overflow-hidden relative">
+                      <Image
+                        src={r.heroImage}
+                        alt={`${r.competitorName} vs Fusion Calling - Best ${r.competitorName} Alternative`}
+                        title={r.h1}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
+                      />
+                    </div>
                     <h3 className="text-white font-bold mb-2 group-hover:text-brand-light transition-colors">
-                      {r.competitorName} vs Fusion Calling
+                      {r.h1}
                     </h3>
                     <p className="text-gray-400 text-sm line-clamp-2">
                       {r.subtitle}
@@ -401,7 +494,7 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
               <p className="text-gray-400 text-sm leading-relaxed mb-4">
                 We&apos;re the team behind Fusion Calling&apos;s white-label AI voice
                 platform. Having helped 50+ agencies launch profitable voice AI
-                practices since 2022, we specialize in helping businesses scale their
+                practices since 2025, we specialize in helping businesses scale their
                 phone operations with cutting-edge automation technology.
               </p>
               <div className="flex items-center gap-4 text-sm">

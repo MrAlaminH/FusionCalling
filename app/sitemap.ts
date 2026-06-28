@@ -31,13 +31,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog/vapi-vs-retell-vs-elevenlabs",
     "/blog/ai-voice-agents-for-small-business",
     "/blog/gohighlevel-alternative-for-voice-ai",
-    "/compare",
-    "/compare/chatdash-alternative",
-    "/compare/vapify-alternative",
-    "/compare/voicerr-alternative",
-    "/compare/voiceaiwrapper-alternative",
-    "/compare/synthflow-alternative",
-    "/compare/thinkrr-alternative",
+    "/alternative",
+    "/alternative/chatdash",
+    "/alternative/vapify",
+    "/alternative/voicerr",
+    "/alternative/voiceaiwrapper",
+    "/alternative/synthflow",
+    "/alternative/thinkrr",
     "/industries",
     "/industries/ai-voice-for-real-estate",
     "/industries/ai-voice-for-dental",
@@ -56,8 +56,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
                     path.startsWith("/docs/") ? 0.8 :
                     path === "/docs" ? 0.9 :
                     path === "/pricing" || path === "/whitelabel" ? 0.8 :
-                    path === "/compare" || path === "/industries" || path === "/glossary" ? 0.8 :
-                    path.startsWith("/compare/") || path.startsWith("/industries/") ? 0.7 :
+                    path === "/alternative" || path === "/industries" || path === "/glossary" ? 0.8 :
+                    path.startsWith("/alternative/") || path.startsWith("/industries/") ? 0.7 :
                     path.startsWith("/glossary/") ? 0.6 : 0.7;
     const changeFrequency = path === "/" ? "weekly" :
                           path.startsWith("/docs/") ? "monthly" :
