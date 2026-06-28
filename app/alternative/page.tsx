@@ -172,11 +172,12 @@ export default function CompareHubPage() {
           {/* Detailed comparison cards */}
           <div className="mb-16">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 text-center">
-              Full Breakdowns
+              Comprehensive Platform Comparisons
             </h2>
             <p className="text-gray-400 text-center mb-10 max-w-2xl mx-auto">
-              Each comparison is a balanced look at what the platform does well and
-              where Fusion Calling offers something different.
+              Explore detailed comparisons of the top white-label voice AI platforms. 
+              Each analysis covers features, pricing, onboarding, and why Fusion Calling 
+              is the superior choice for growing agencies.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -198,13 +199,6 @@ export default function CompareHubPage() {
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
-                      
-                      {/* Category Badge */}
-                      <div className="absolute top-4 left-4">
-                        <span className="px-4 py-2 bg-black/60 backdrop-blur-sm text-white text-sm font-semibold rounded-full border border-white/20">
-                          {post.category}
-                        </span>
-                      </div>
                     </div>
 
                     {/* Content Section */}
@@ -233,12 +227,13 @@ export default function CompareHubPage() {
 
                       {/* CTA Section */}
                       <div className="flex items-center justify-between pt-4 border-t border-gray-800">
-                        <span className="text-gray-500 text-xs">
-                          {post.competitorBestFor.split(".")[0].slice(0, 35)}…
+                        {/* Category Badge */}
+                        <span className="px-2 py-1 bg-brand/10 text-brand text-[10px] font-medium rounded-full border border-brand/30">
+                          {post.category}
                         </span>
-                        <div className="flex items-center gap-2 text-brand-light group-hover:text-brand transition-colors">
-                          <span className="text-sm font-semibold">Read More</span>
-                          <span className="group-hover:translate-x-1 transition-transform">→</span>
+                        <div className="flex items-center gap-1 text-brand-light group-hover:text-brand transition-colors">
+                          <span className="text-xs font-medium">Read More</span>
+                          <span className="group-hover:translate-x-1 transition-transform text-xs">→</span>
                         </div>
                       </div>
                     </div>
@@ -250,53 +245,55 @@ export default function CompareHubPage() {
 
           {/* What makes Fusion Calling different */}
           <div className="glass rounded-3xl p-8 md:p-12 border border-brand/30 mb-16">
-            <div className="text-center mb-10">
+            <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 What Makes Fusion Calling Different
               </h2>
               <p className="text-gray-400 max-w-2xl mx-auto">
                 Every platform above is a capable option. Fusion Calling is the
-                only one that combines these four things.
+                only one that combines these four competitive advantages.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 {
-                  emoji: "💎",
+                  icon: "●",
                   title: "Full Brand Ownership",
-                  body: "Everything under your own domain, logo, and pricing — your clients only ever see your brand.",
+                  body: "Everything under your own domain, logo, and pricing. Your clients only ever see your brand.",
                 },
                 {
-                  emoji: "🎙️",
+                  icon: "◆",
                   title: "Live Demo",
-                  body: "Prospects hear real AI calls on your site before they ever sign up.",
+                  body: "Prospects hear real AI calls on your site before they ever sign up. Try before you buy.",
                 },
                 {
-                  emoji: "🔄",
+                  icon: "✦",
                   title: "Multi-Provider",
-                  body: "Vapi, Retell, and ElevenLabs supported, so each client gets the best engine.",
+                  body: "Vapi, Retell, and ElevenLabs supported. Each client gets the best engine for their needs.",
                 },
                 {
-                  emoji: "🤝",
+                  icon: "●",
                   title: "Guided Launch",
-                  body: "Done-with-you onboarding gets your branded agency live in about 7 days.",
+                  body: "Done-with-you onboarding gets your branded agency live in 24 hours with 30 days of support.",
                 },
               ].map((f) => (
                 <div
                   key={f.title}
-                  className="glass-light rounded-2xl p-6 border border-brand/20 text-center"
+                  className="glass-light rounded-2xl p-6 border border-brand/20 hover:border-brand/40 transition-all duration-300 group"
                 >
-                  <div className="text-4xl mb-4">{f.emoji}</div>
-                  <h3 className="text-lg font-bold text-brand-light mb-2">
+                  <div className="text-3xl mb-4 text-brand-light group-hover:text-brand transition-colors">
+                    {f.icon}
+                  </div>
+                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-brand-light transition-colors">
                     {f.title}
                   </h3>
-                  <p className="text-gray-400 text-sm">{f.body}</p>
+                  <p className="text-gray-400 text-sm leading-relaxed">{f.body}</p>
                 </div>
               ))}
             </div>
 
-            <div className="text-center mt-10">
+            <div className="text-center mt-12">
               <Link
                 href="/whitelabel"
                 className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition-all shadow-premium hover:shadow-premium-lg hover:scale-105"

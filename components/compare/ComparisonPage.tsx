@@ -221,7 +221,6 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
                     key={s.title}
                     className="glass-light rounded-xl p-6 border border-brand/20"
                   >
-                    <div className="text-3xl mb-3">{s.emoji}</div>
                     <h3 className="text-lg font-bold text-brand-light mb-3">
                       {s.title}
                     </h3>
@@ -288,9 +287,6 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {advantages.map((a) => (
                   <div key={a.title} className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
-                      <span className="text-2xl">{a.emoji}</span>
-                    </div>
                     <div>
                       <h3 className="text-white font-bold mb-2">{a.title}</h3>
                       <p className="text-gray-400 text-sm">{a.description}</p>
@@ -308,9 +304,6 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {whyChooseFusionCalling.points.map((point) => (
                   <div key={point.title} className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
-                      <span className="text-2xl">{point.emoji}</span>
-                    </div>
                     <div>
                       <h3 className="text-white font-bold mb-2">{point.title}</h3>
                       <p className="text-gray-400 text-sm">{point.description}</p>
@@ -322,7 +315,9 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
 
             {/* Expert Quote - GEO Optimized */}
             <div className="glass-light rounded-2xl p-8 border border-brand/30">
-              <h4 className="text-xl font-bold text-brand-light mb-4">💬 Expert Analysis</h4>
+              <h4 className="text-xl font-bold text-brand-light mb-4">
+                Expert Analysis
+              </h4>
               <blockquote className="border-l-4 border-brand pl-4 py-2">
                 <p className="text-gray-300 italic leading-relaxed">
                   &ldquo;{expertQuote.text}&rdquo;
