@@ -1,9 +1,14 @@
 import { Metadata } from "next";
 import VoiceCalculator from "./VoiceCalculator";
+import { buildOpenGraph } from "@/lib/seo";
+
+const title = "Voice Throughput Calculator | AI Call Capacity Planning";
+const description =
+  "Calculate your AI voice call throughput capacity. Plan lead processing, forecast call volumes, and optimize infrastructure for Vapi and Retell AI platforms.";
 
 export const metadata: Metadata = {
-  title: "Voice Throughput Calculator | AI Call Capacity Planning",
-  description: "Calculate your AI voice call throughput capacity. Plan lead processing, forecast call volumes, and optimize infrastructure for Vapi and Retell AI platforms.",
+  title,
+  description,
   keywords: [
     "voice throughput calculator",
     "AI call capacity planning",
@@ -14,16 +19,7 @@ export const metadata: Metadata = {
     "call center capacity",
     "AI voice forecasting"
   ],
-  alternates: {
-    canonical: "/calculator",
-  },
-  openGraph: {
-    title: "Voice Throughput Calculator | AI Call Capacity Planning",
-    description: "Calculate your AI voice call throughput capacity. Plan lead processing, forecast call volumes, and optimize infrastructure.",
-    url: "https://www.fusioncalling.com/calculator",
-    siteName: "Fusion Calling",
-    type: "website",
-  },
+  ...buildOpenGraph({ title, description, path: "/calculator" }),
 };
 
 export default function CalculatorPage() {

@@ -2,14 +2,15 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Script from "next/script";
 import { glossaryTerms, glossaryCategories, slugifyTerm } from "@/lib/glossary";
+import { buildOpenGraph } from "@/lib/seo";
+
+const title = "Voice AI Glossary | Fusion Calling";
+const description =
+  "A complete glossary of voice AI terms for agencies. Plain-English definitions for ASR, TTS, latency, HIPAA, white-label, and more, to help you build and sell voice AI.";
 
 export const metadata: Metadata = {
-  title: "Voice AI Glossary | Fusion Calling",
-  description:
-    "A complete glossary of voice AI terms for agencies. Plain-English definitions for ASR, TTS, latency, HIPAA, white-label, and more, to help you build and sell voice AI.",
-  alternates: {
-    canonical: "/glossary",
-  },
+  title,
+  description,
   keywords: [
     "voice ai glossary",
     "ai voice terminology",
@@ -18,14 +19,7 @@ export const metadata: Metadata = {
     "white label voice ai",
     "voice ai definitions",
   ],
-  openGraph: {
-    title: "Voice AI Glossary | Fusion Calling",
-    description:
-      "A complete glossary of voice AI terms for agencies, with plain-English definitions.",
-    url: "https://www.fusioncalling.com/glossary",
-    siteName: "Fusion Calling",
-    type: "website",
-  },
+  ...buildOpenGraph({ title, description, path: "/glossary" }),
 };
 
 export default function GlossaryHubPage() {

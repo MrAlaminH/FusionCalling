@@ -1,13 +1,15 @@
 import React from "react";
 import type { Metadata } from "next";
+import { buildOpenGraph } from "@/lib/seo";
+
+const title = "Terms of Service";
+const description =
+  "Fusion Calling terms of service describing acceptable use, billing, privacy, and platform obligations.";
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
-  description:
-    "Fusion Calling terms of service describing acceptable use, billing, privacy, and platform obligations.",
-  alternates: {
-    canonical: "/terms",
-  },
+  title,
+  description,
+  ...buildOpenGraph({ title: `Fusion Calling ${title}`, description, path: "/terms" }),
 };
 
 export default function TermsOfUse() {

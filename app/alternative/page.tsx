@@ -3,14 +3,15 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import Image from "next/image";
 import { comparisons } from "@/lib/comparisons";
+import { buildOpenGraph } from "@/lib/seo";
+
+const title = "White-Label Voice AI Comparisons | Fusion Calling";
+const description =
+  "Side-by-side comparisons of the top white-label voice AI platforms for agencies. Compare Fusion Calling against ChatDash, Vapify, Voicerr, VoiceAIWrapper, Synthflow, and Thinkrr.";
 
 export const metadata: Metadata = {
-  title: "White-Label Voice AI Comparisons | Fusion Calling",
-  description:
-    "Side-by-side comparisons of the top white-label voice AI platforms for agencies. Compare Fusion Calling against ChatDash, Vapify, Voicerr, VoiceAIWrapper, Synthflow, and Thinkrr.",
-  alternates: {
-    canonical: "/alternative",
-  },
+  title,
+  description,
   keywords: [
     "white label voice ai comparison",
     "voice ai platform comparison",
@@ -19,14 +20,7 @@ export const metadata: Metadata = {
     "voice ai agency platform",
     "ai voice reseller program",
   ],
-  openGraph: {
-    title: "White-Label Voice AI Comparisons | Fusion Calling",
-    description:
-      "Side-by-side comparisons of the top white-label voice AI platforms for agencies.",
-    url: "https://www.fusioncalling.com/alternative",
-    siteName: "Fusion Calling",
-    type: "website",
-  },
+  ...buildOpenGraph({ title, description, path: "/alternative" }),
 };
 
 // Compact at-a-glance matrix values per competitor (kept short for the table).

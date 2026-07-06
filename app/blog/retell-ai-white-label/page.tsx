@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "Fusion Calling",
     images: [
       {
-        url: "/blog/retell-comparison.jpg",
+        url: "/opengraph-image.png",
         width: 1200,
         height: 630,
         alt: "White-Labeling Retell AI with Fusion Calling",

@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "openapi:gen": "npx --yes tsx scripts/generate-openapi.ts"
+    "openapi:gen": "npx --yes tsx scripts/generate-openapi.ts",
+    "indexnow:submit": "npx --yes tsx scripts/indexnow-submit.ts"
   },
   "dependencies": {
     "@calcom/embed-react": "^1.5.2",

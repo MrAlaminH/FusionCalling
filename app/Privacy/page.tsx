@@ -1,13 +1,15 @@
 import React from "react";
 import type { Metadata } from "next";
+import { buildOpenGraph } from "@/lib/seo";
+
+const title = "Privacy Policy";
+const description =
+  "Fusion Calling privacy policy covering data collection, usage, retention, security, and your rights.";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description:
-    "Fusion Calling privacy policy covering data collection, usage, retention, security, and your rights.",
-  alternates: {
-    canonical: "/privacy",
-  },
+  title,
+  description,
+  ...buildOpenGraph({ title: `Fusion Calling ${title}`, description, path: "/privacy" }),
 };
 
 export default function PrivacyPolicy() {

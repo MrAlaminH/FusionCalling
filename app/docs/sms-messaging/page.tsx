@@ -13,14 +13,16 @@ import { SmsCampaignsSection } from "./components/sms-campaigns";
 import { QuickReferenceSection } from "./components/quick-reference";
 import { FaqSection } from "./components/faq";
 import { ComplianceSection, GettingHelpSection } from "./components/compliance";
+import { buildOpenGraph } from "@/lib/seo";
+
+const title = "SMS & Messages User Guide";
+const description =
+  "Complete guide to SMS and messaging in Fusion Calling: send texts, manage conversations, set up Twilio, create automated SMS campaigns, and handle inbound replies.";
 
 export const metadata: Metadata = {
-  title: "SMS & Messages User Guide",
-  description:
-    "Complete guide to SMS and messaging in Fusion Call: send texts, manage conversations, set up Twilio, create automated SMS campaigns, and handle inbound replies.",
-  alternates: {
-    canonical: "/docs/sms-messaging",
-  },
+  title,
+  description,
+  ...buildOpenGraph({ title, description, path: "/docs/sms-messaging" }),
 };
 
 const navItems = [

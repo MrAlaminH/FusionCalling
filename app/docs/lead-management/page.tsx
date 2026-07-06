@@ -15,14 +15,16 @@ import { BestPracticesSection } from "./components/best-practices";
 import { TroubleshootingSection } from "./components/troubleshooting";
 import { QuickReferenceSection } from "./components/quick-reference";
 import { ErrorClassificationSection } from "./components/error-classification";
+import { buildOpenGraph } from "@/lib/seo";
+
+const title = "Lead Management User Guide";
+const description =
+  "Complete guide to managing leads in Fusion Calling: adding leads, understanding statuses, configuring providers, custom fields, retry system, and best practices.";
 
 export const metadata: Metadata = {
-  title: "Lead Management User Guide",
-  description:
-    "Complete guide to managing leads in Fusion Calling: adding leads, understanding statuses, configuring providers, custom fields, retry system, and best practices.",
-  alternates: {
-    canonical: "/docs/lead-management",
-  },
+  title,
+  description,
+  ...buildOpenGraph({ title, description, path: "/docs/lead-management" }),
 };
 
 const navItems = [

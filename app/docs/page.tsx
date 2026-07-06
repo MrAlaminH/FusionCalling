@@ -1,9 +1,14 @@
 import { Metadata } from "next";
 import DocsHub from "./DocsHub";
+import { buildOpenGraph } from "@/lib/seo";
+
+const title = "Fusion Calling Documentation | API & Setup Guides";
+const description =
+  "Complete documentation for Fusion Calling AI voice automation. Learn API integration, agent configuration, lead management, SMS messaging, and admin setup.";
 
 export const metadata: Metadata = {
-  title: "Fusion Calling Documentation | API & Setup Guides",
-  description: "Complete documentation for Fusion Calling AI voice automation. Learn API integration, agent configuration, lead management, SMS messaging, and admin setup.",
+  title,
+  description,
   keywords: [
     "Fusion Calling documentation",
     "AI voice API docs",
@@ -12,16 +17,7 @@ export const metadata: Metadata = {
     "SMS integration docs",
     "voice automation setup"
   ],
-  alternates: {
-    canonical: "/docs",
-  },
-  openGraph: {
-    title: "Fusion Calling Documentation | API & Setup Guides",
-    description: "Complete documentation for Fusion Calling AI voice automation platform",
-    url: "https://www.fusioncalling.com/docs",
-    siteName: "Fusion Calling",
-    type: "website",
-  },
+  ...buildOpenGraph({ title, description, path: "/docs" }),
 };
 
 export default function DocsPage() {

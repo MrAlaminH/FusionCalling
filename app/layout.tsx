@@ -95,14 +95,17 @@ export default function RootLayout({
                   logo: {
                     "@type": "ImageObject",
                     url: "https://www.fusioncalling.com/logo.png",
+                    width: 512,
+                    height: 512,
                   },
                   description:
                     "AI-powered phone call automation for businesses. Streamline customer interactions, save time, and increase productivity with advanced voice technology.",
                   sameAs: ["https://twitter.com/fusioncalling"],
                   contactPoint: {
                     "@type": "ContactPoint",
-                    telephone: "+1-800-FUSION",
+                    telephone: "+1-202-998-3591",
                     contactType: "sales",
+                    areaServed: "US",
                     availableLanguage: "English",
                   },
                 },
@@ -115,14 +118,6 @@ export default function RootLayout({
                     "AI-powered phone call automation for businesses",
                   publisher: {
                     "@id": "https://www.fusioncalling.com/#organization",
-                  },
-                  potentialAction: {
-                    "@type": "SearchAction",
-                    target: {
-                      "@type": "EntryPoint",
-                      urlTemplate: "https://www.fusioncalling.com/search?q={search_term_string}",
-                    },
-                    "query-input": "required name=search_term_string",
                   },
                 },
                 {

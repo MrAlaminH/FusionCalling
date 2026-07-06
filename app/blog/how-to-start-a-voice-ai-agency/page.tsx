@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "Fusion Calling",
     images: [
       {
-        url: "/blog/start-voice-ai-agency.jpg",
+        url: "/opengraph-image.png",
         width: 1200,
         height: 630,
         alt: "How to Start a Voice AI Agency in 2025",

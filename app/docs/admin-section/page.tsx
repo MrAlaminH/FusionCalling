@@ -14,14 +14,16 @@ import { SubscriptionsManagementSection } from "./components/subscriptions-manag
 import { BestPracticesSection } from "./components/best-practices";
 import { CommonWorkflowsSection } from "./components/common-workflows";
 import { QuickReferenceSection } from "./components/quick-reference";
+import { buildOpenGraph } from "@/lib/seo";
+
+const title = "Admin Section Guide";
+const description =
+  "Complete guide for agency owners to manage Fusion Calling: client management, user management, AI provider configuration, branding, credits, subscriptions, and best practices.";
 
 export const metadata: Metadata = {
-  title: "Admin Section Guide",
-  description:
-    "Complete guide for agency owners to manage Fusion Calling: client management, user management, AI provider configuration, branding, credits, subscriptions, and best practices.",
-  alternates: {
-    canonical: "/docs/admin-section",
-  },
+  title,
+  description,
+  ...buildOpenGraph({ title, description, path: "/docs/admin-section" }),
 };
 
 const navItems = [

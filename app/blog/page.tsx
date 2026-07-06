@@ -20,7 +20,7 @@ const blogPosts = [
     date: "2025-02-13",
     category: "Agency Growth",
     readTime: "9 min read",
-    image: "/blog/start-voice-ai-agency.jpg",
+    image: "/opengraph-image.png",
   },
   {
     slug: "gohighlevel-alternative-for-voice-ai",
@@ -30,7 +30,7 @@ const blogPosts = [
     date: "2025-02-16",
     category: "Buyer's Guide",
     readTime: "9 min read",
-    image: "/blog/ghl-alternative-voice-ai.jpg",
+    image: "/opengraph-image.png",
   },
   {
     slug: "vapi-vs-retell-vs-elevenlabs",
@@ -40,7 +40,7 @@ const blogPosts = [
     date: "2025-02-14",
     category: "Buyer's Guide",
     readTime: "8 min read",
-    image: "/blog/vapi-vs-retell-vs-elevenlabs.jpg",
+    image: "/opengraph-image.png",
   },
   {
     slug: "ai-voice-agents-for-small-business",
@@ -50,7 +50,7 @@ const blogPosts = [
     date: "2025-02-15",
     category: "Use Cases",
     readTime: "8 min read",
-    image: "/blog/ai-voice-small-business.jpg",
+    image: "/opengraph-image.png",
   },
   {
     slug: "vapi-white-label-platform",
@@ -60,7 +60,7 @@ const blogPosts = [
     date: "2025-02-10",
     category: "Integration Guide",
     readTime: "7 min read",
-    image: "/blog/vapi-comparison.jpg",
+    image: "/opengraph-image.png",
   },
   {
     slug: "retell-ai-white-label",
@@ -70,7 +70,7 @@ const blogPosts = [
     date: "2025-02-11",
     category: "Integration Guide",
     readTime: "7 min read",
-    image: "/blog/retell-comparison.jpg",
+    image: "/opengraph-image.png",
   },
   {
     slug: "gohighlevel-white-label-voice",
@@ -80,7 +80,7 @@ const blogPosts = [
     date: "2025-02-12",
     category: "Integration Guide",
     readTime: "8 min read",
-    image: "/blog/gohighlevel-comparison.jpg",
+    image: "/opengraph-image.png",
   },
 ];
 

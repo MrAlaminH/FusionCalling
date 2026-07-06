@@ -7,14 +7,16 @@ import LeadsApiSection from "./sections/leads-api";
 import IntegrationGuidesSection from "./sections/integration-guides";
 import ReferenceSection from "./sections/reference";
 import DocFooter from "@/components/docs/doc-footer";
+import { buildOpenGraph } from "@/lib/seo";
+
+const title = "AI Voice API Reference & Integration Docs";
+const description =
+  "Complete Fusion Calling API reference: authentication, Calendar API, Leads API, endpoints, and integration guides for building AI voice agents with Vapi and Retell.";
 
 export const metadata: Metadata = {
-  title: "API Reference - Fusion Calling",
-  description:
-    "Complete API documentation for Fusion Calling: Calendar API, Leads API, authentication, endpoints, and integration guides.",
-  alternates: {
-    canonical: "/docs/api-reference",
-  },
+  title,
+  description,
+  ...buildOpenGraph({ title, description, path: "/docs/api-reference" }),
 };
 
 const navItems = [

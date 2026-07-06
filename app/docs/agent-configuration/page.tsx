@@ -11,14 +11,16 @@ import { BestPracticesSection } from "./components/best-practices";
 import { CommonUseCasesSection } from "./components/common-use-cases";
 import { TroubleshootingSection } from "./components/troubleshooting";
 import { QuickReferenceSection } from "./components/quick-reference";
+import { buildOpenGraph } from "@/lib/seo";
+
+const title = "Agent Configuration Guide";
+const description =
+  "Complete guide to creating and configuring AI phone agents: agent setup, configuration tabs, best practices, common use cases, and troubleshooting.";
 
 export const metadata: Metadata = {
-  title: "Agent Configuration Guide",
-  description:
-    "Complete guide to creating and configuring AI phone agents: agent setup, configuration tabs, best practices, common use cases, and troubleshooting.",
-  alternates: {
-    canonical: "/docs/agent-configuration",
-  },
+  title,
+  description,
+  ...buildOpenGraph({ title, description, path: "/docs/agent-configuration" }),
 };
 
 const navItems = [

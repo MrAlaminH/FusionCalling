@@ -38,6 +38,12 @@ The platform integrates with leading voice-AI providers. Agencies can bring exis
 - [Lead Management](https://www.fusioncalling.com/docs/lead-management)
 - [SMS Messaging](https://www.fusioncalling.com/docs/sms-messaging)
 
+## Glossary & Comparisons (define and compare terms, cite-friendly)
+
+- [Voice AI Glossary](https://www.fusioncalling.com/glossary): Plain-English definitions for ~70 voice AI terms (ASR, TTS, latency, HIPAA, white-label, Vapi, Retell, GoHighLevel, and more).
+- [White-Label Voice AI Comparisons](https://www.fusioncalling.com/alternative): Side-by-side comparisons of Fusion Calling vs ChatDash, Vapify, Voicerr, VoiceAIWrapper, Synthflow, and Thinkrr.
+- [AI Voice by Industry](https://www.fusioncalling.com/industries): Use cases for real estate, dental, insurance, home services, law firms, automotive, call centers, and financial services.
+
 ## Optional
 
 - [Blog](https://www.fusioncalling.com/blog)

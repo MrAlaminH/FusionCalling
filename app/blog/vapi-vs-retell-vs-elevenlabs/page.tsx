@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "Fusion Calling",
     images: [
       {
-        url: "/blog/vapi-vs-retell-vs-elevenlabs.jpg",
+        url: "/opengraph-image.png",
         width: 1200,
         height: 630,
         alt: "Vapi vs Retell vs ElevenLabs Voice AI Provider Comparison",

@@ -2,14 +2,15 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Script from "next/script";
 import { industries } from "@/lib/industries";
+import { buildOpenGraph } from "@/lib/seo";
+
+const title = "AI Voice by Industry | Fusion Calling";
+const description =
+  "Explore how white-label AI voice agents serve every industry, from real estate and dental to insurance, home services, legal, automotive, call centers, and financial services.";
 
 export const metadata: Metadata = {
-  title: "AI Voice by Industry | Fusion Calling",
-  description:
-    "Explore how white-label AI voice agents serve every industry, from real estate and dental to insurance, home services, legal, automotive, call centers, and financial services.",
-  alternates: {
-    canonical: "/industries",
-  },
+  title,
+  description,
   keywords: [
     "ai voice by industry",
     "ai voice use cases",
@@ -18,14 +19,7 @@ export const metadata: Metadata = {
     "industry voice automation",
     "voice ai for agencies",
   ],
-  openGraph: {
-    title: "AI Voice by Industry | Fusion Calling",
-    description:
-      "Explore how white-label AI voice agents serve every industry, from real estate and dental to insurance and financial services.",
-    url: "https://www.fusioncalling.com/industries",
-    siteName: "Fusion Calling",
-    type: "website",
-  },
+  ...buildOpenGraph({ title, description, path: "/industries" }),
 };
 
 export default function IndustriesHubPage() {

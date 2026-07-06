@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "Fusion Calling",
     images: [
       {
-        url: "/blog/gohighlevel-comparison.jpg",
+        url: "/opengraph-image.png",
         width: 1200,
         height: 630,
         alt: "Adding Voice AI to Your GoHighLevel Agency",
