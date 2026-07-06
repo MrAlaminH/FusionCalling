@@ -3,20 +3,22 @@ import type { Param } from "../data/endpoints";
 import EndpointCard from "@/components/docs/endpoint-card";
 import EndpointSummaryGrid from "@/components/docs/endpoint-summary-grid";
 import ParamTable from "@/components/docs/param-table";
+import CodeBlock from "@/components/docs/code-block";
 import Callout from "@/components/docs/callout";
 import FaqItem from "./faq-item";
 
 const REQUIRED_FIELDS: Param[] = [
   { name: "name", type: "string", required: true, description: "Lead's full name (2-100 characters).", example: "John Doe" },
-  { name: "phone", type: "string", required: true, description: "10-15 digits after normalization; +, spaces, -, () allowed.", example: "5551234567 or +1 234 567 8900" },
+  { name: "phone", type: "string", required: true, description: "10-25 characters raw, normalized to 10-15 digit E.164. +, spaces, -, () allowed.", example: "5551234567 or +1 234 567 8900" },
 ];
 
 const OPTIONAL_FIELDS: Param[] = [
-  { name: "email", type: "string", required: false, description: "Valid email address.", example: "john@example.com" },
-  { name: "company", type: "string", required: false, description: "Company name (up to 100 characters).", example: "Acme Corp" },
-  { name: "tags", type: "array<string>", kind: "array", required: false, description: "Up to 20 tags.", example: '["vip","website-lead"]' },
-  { name: "campaign_id", type: "UUID", required: false, description: "Target campaign UUID. Omit to use the Default Feed.", example: "omit → Default Feed" },
-  { name: "kind", type: "enum", required: false, description: "Optional validation; must match the target campaign kind.", enum: ["call", "sms"] },
+  { name: "email", type: "string", required: false, description: "Valid email address (max 254 characters). Nullable.", example: "john@example.com" },
+  { name: "company", type: "string", required: false, description: "Company name (max 100 characters). Nullable.", example: "Acme Corp" },
+  { name: "tags", type: "array<string>", kind: "array", required: false, description: "Up to 20 tags. Each matches /^[a-zA-Z0-9_-]+$/ (1-50 chars). Nullable.", example: '["vip","website-lead"]' },
+  { name: "custom_fields", type: "object", kind: "object", required: false, description: "Up to 20 keys (/^[a-zA-Z0-9_-]+$/). Values: string (max 1000), number, boolean, or null.", example: '{"source":"website","score":8}' },
+  { name: "campaign_id", type: "UUID", required: false, description: "Target campaign UUID. Omit to use the Default Feed (call-only).", example: "omit → Default Feed" },
+  { name: "kind", type: "enum", required: false, description: "Lead kind; must match the target campaign. 'sms' requires a campaign_id.", enum: ["call", "sms"] },
 ];
 
 const META = [
@@ -37,7 +39,7 @@ const FAQ = [
   },
   {
     q: "Can I update existing leads?",
-    a: "Yes. Use PATCH /api/leads/external/v1/leads with the lead's phone number and any updatable field.",
+    a: "Yes. Use PATCH /api/leads/external/v1/leads with the lead's phone number as the lookup key and any updatable field. The phone number itself cannot be changed, and custom_fields are merged (not replaced).",
   },
   {
     q: "What's the difference between the Leads and Calendar APIs?",
@@ -101,6 +103,26 @@ export default function LeadsApiSection() {
           <code className="text-orange-400">campaign_id</code>, leads now route to the{" "}
           <strong>Default Feed</strong> instead of your oldest campaign.
         </Callout>
+
+        <Callout type="info" className="mt-4">
+          <strong>Status is system-managed:</strong> every externally-created lead is created with{" "}
+          <code className="text-orange-400">status: &quot;pending&quot;</code> and{" "}
+          <code className="text-orange-400">call_attempts: 0</code>. The <code className="text-orange-400">status</code>{" "}
+          field is <strong>not</strong> settable through the external API — it progresses as the platform processes the lead.
+        </Callout>
+
+        <Callout type="warning" className="mt-4">
+          <strong>SMS leads need a campaign:</strong> <code className="text-orange-400">kind: &quot;sms&quot;</code>{" "}
+          <strong>requires</strong> a <code className="text-orange-400">campaign_id</code>. The Default Feed is call-only,
+          so sending an SMS lead without a campaign returns a validation error.
+        </Callout>
+
+        <Callout type="info" className="mt-4">
+          <strong>Private fields are never accepted or returned:</strong> the API strips and never exposes{" "}
+          <code className="text-orange-400">account_id</code>, <code className="text-orange-400">user_id</code>,{" "}
+          <code className="text-orange-400">phone_normalized</code>, <code className="text-orange-400">failure_reason</code>,{" "}
+          <code className="text-orange-400">cost</code>, and <code className="text-orange-400">sms_marketing_opt_out</code>.
+        </Callout>
       </div>
 
       {/* Endpoints */}
@@ -113,6 +135,44 @@ export default function LeadsApiSection() {
         {LEADS_ENDPOINTS.map((e) => (
           <EndpointCard key={e.id} endpoint={e} />
         ))}
+      </div>
+
+      {/* Lead object */}
+      <div id="leads-object" className="scroll-mt-28 mb-12">
+        <h3 className="text-lg font-semibold text-white mb-1">Lead Object</h3>
+        <p className="text-sm text-gray-400 mb-4">
+          The shape returned for a single lead. GET-by-ID and PATCH wrap it under{" "}
+          <code className="text-orange-400">data.lead</code>; phone lookup wraps it under{" "}
+          <code className="text-orange-400">data.lead</code> with a{" "}
+          <code className="text-orange-400">lookup: &quot;phone&quot;</code> marker.
+        </p>
+        <CodeBlock
+          code={`{
+  "id": "uuid",                       // always present
+  "name": "string",                   // always present
+  "phone": "string",                  // normalized E.164
+  "email": "string|null",
+  "company": "string|null",
+  "status": "pending",                // always "pending" on external create
+  "campaign_id": "uuid",
+  "campaign_name": "string",
+  "tags": ["string"]|null,            // present if set
+  "custom_fields": { ... }|null,      // present if set
+  "call_attempts": 0,                 // present if set
+  "last_called_at": "ISO 8601|null",  // present if set
+  "created_at": "ISO 8601",
+  "updated_at": "ISO 8601"            // present if set
+}`}
+          language="json"
+        />
+        <p className="mt-3 text-xs text-gray-500">
+          Note: <code className="text-orange-300">account_id</code>,{" "}
+          <code className="text-orange-300">user_id</code>,{" "}
+          <code className="text-orange-300">phone_normalized</code>,{" "}
+          <code className="text-orange-300">failure_reason</code>,{" "}
+          <code className="text-orange-300">cost</code>, and{" "}
+          <code className="text-orange-300">sms_marketing_opt_out</code> are never returned.
+        </p>
       </div>
 
       {/* FAQ */}

@@ -60,6 +60,7 @@ const navItems = [
       { id: "leads-list", label: "• List Leads" },
       { id: "leads-get-by-id", label: "• Get by ID" },
       { id: "leads-update", label: "• Update Lead" },
+      { id: "leads-object", label: "Lead Object" },
       { id: "leads-faq", label: "FAQ" },
     ],
   },

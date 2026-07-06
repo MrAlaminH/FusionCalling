@@ -175,8 +175,10 @@ export default function CalendarApiSection() {
       <div id="cal-attendees" className="scroll-mt-28 mb-12">
         <h3 className="text-lg font-semibold text-white mb-1">Attendees</h3>
         <p className="text-sm text-gray-400 mb-4">
-          Pass an <code className="text-orange-400">attendees</code> array (max 50) on create or update. On update the
-          entire list is replaced. Duplicate emails are removed automatically.
+          Pass an <code className="text-orange-400">attendees</code> array (max 50) on create or update. On update (PATCH)
+          the new attendees are <strong>merged</strong> with the stored list — duplicate emails (matched case-insensitively)
+          are removed, and stored <code className="text-orange-400">display_name</code> /{" "}
+          <code className="text-orange-400">response_status</code> are preserved unless you override them.
         </p>
         <CodeBlock
           code={`{
@@ -238,6 +240,13 @@ export default function CalendarApiSection() {
 }`}
           language="json"
         />
+        <Callout type="warning" className="mt-4">
+          <code className="text-orange-400">caller_phone</code> and{" "}
+          <code className="text-orange-400">caller_name</code> are <strong>create-only (POST)</strong> — they cannot be
+          changed via PATCH. When <code className="text-orange-400">caller_phone</code> is set on create, it triggers an
+          appointment SMS. Internal delivery fields (<code className="text-orange-400">sms_sent</code>,{" "}
+          <code className="text-orange-400">sms_sent_at</code>) exist on the record but are never returned by the external API.
+        </Callout>
       </div>
     </section>
   );

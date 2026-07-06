@@ -12,6 +12,20 @@ const ERROR_CODES = [
 
 const CHANGELOG = [
   {
+    version: "External API Hardening",
+    date: "July 2026",
+    tone: "green" as const,
+    items: [
+      "custom_fields support on lead create/update (merged on PATCH)",
+      "updated_since + sort filters added to List Leads",
+      "Writable-fields allowlist — sensitive columns never accepted or returned",
+      "Attendees now merge (not replace) on event PATCH",
+      "caller_phone / caller_name are create-only; caller_phone triggers an appointment SMS",
+      "Stricter Authorization header parsing; documented 401 vs validation error shapes",
+      "429 response body + default 12/min fallback documented",
+    ],
+  },
+  {
     version: "Leads API v1.2",
     date: "February 2026",
     tone: "blue" as const,
@@ -38,6 +52,7 @@ const CHANGELOG = [
 const TONE: Record<string, string> = {
   blue: "bg-blue-500/15 text-blue-300 ring-blue-500/30",
   orange: "bg-orange-500/15 text-orange-300 ring-orange-500/30",
+  green: "bg-emerald-500/15 text-emerald-300 ring-emerald-500/30",
 };
 
 export default function ReferenceSection() {

@@ -1,4 +1,5 @@
 import Callout from "@/components/docs/callout";
+import CodeBlock from "@/components/docs/code-block";
 
 interface RateLimitConfig {
   name: string;
@@ -23,6 +24,12 @@ const defaultRateLimits: RateLimitConfig[] = [
     limit: "100 requests per minute",
     window: "Sliding window (last 60 seconds)",
     scope: "Per API key (each batch counts as 1 request)",
+  },
+  {
+    name: "Default (any other route)",
+    limit: "12 requests per minute",
+    window: "Sliding window (last 60 seconds)",
+    scope: "Per API key",
   },
 ];
 
@@ -103,6 +110,23 @@ export default function ApiRateLimiting({ apis = defaultRateLimits }: RateLimitP
             </tr>
           </tbody>
         </table>
+      </div>
+
+      <h4 className="text-lg font-semibold mb-3 text-white">429 Response Body</h4>
+      <p className="text-gray-300 mb-3 text-sm">
+        When the limit is exceeded, the JSON body echoes the same values as the headers so you can read either:
+      </p>
+      <div className="mb-6">
+        <CodeBlock
+          code={`{
+  "error": "Rate limit exceeded",
+  "message": "Too many requests...",
+  "retryAfter": 47,
+  "limit": 100,
+  "remaining": 0
+}`}
+          language="json"
+        />
       </div>
 
       <h4 className="text-lg font-semibold mb-3 text-white">Handling Rate Limits</h4>
