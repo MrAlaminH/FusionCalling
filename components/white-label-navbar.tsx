@@ -1,139 +1,224 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+const NAV_LINKS = [
+  { label: "Home", href: "/whitelabel" },
+  { label: "Features", href: "/whitelabel#features" },
+  { label: "Pricing", href: "/whitelabel#pricing" },
+  { label: "Benefits", href: "/whitelabel#benefits" },
+  { label: "FAQs", href: "/whitelabel#faq" },
+];
+
+const CONTACT_URL = "https://cal.com/mralamin/discovery-call";
+const APP_URL = "https://app.fusioncalling.com/";
 
 const WhiteLabelNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const firstItemRef = useRef<HTMLAnchorElement>(null);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = () => setIsMenuOpen((v) => !v);
+
+  // Lock body scroll while the mobile menu is open.
+  useEffect(() => {
+    if (isMenuOpen) {
+      const prev = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = prev;
+      };
+    }
+  }, [isMenuOpen]);
+
+  // Close on Escape + click-outside + focus management.
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsMenuOpen(false);
+        toggleRef.current?.focus();
+      }
+    };
+
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(e.target as Node) &&
+        toggleRef.current &&
+        !toggleRef.current.contains(e.target as Node)
+      ) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("mousedown", handleClickOutside);
+    const t = setTimeout(() => firstItemRef.current?.focus(), 50);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("mousedown", handleClickOutside);
+      clearTimeout(t);
+    };
+  }, [isMenuOpen]);
 
   return (
-    <nav className="bg-[#03001417] backdrop-blur-md shadow-lg shadow-brand-strong/50 fixed w-full z-50 top-0">
-      <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between p-2 px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center">
-          <Link href="/whitelabel" className="flex items-center">
-            <Image
-              src="/logo.png"
-              alt="logo"
-              width={40}
-              height={40}
-              className="cursor-pointer hover:animate-slowspin sm:w-[45px] sm:h-[45px] lg:w-[50px] lg:h-[50px]"
-            />
-          </Link>
-          <div className="flex flex-col ml-3 mt-3">
-            <span className="text-lg sm:text-xl text-brand-strong font-extrabold">
+    <nav className="bg-[#03001417] backdrop-blur-md shadow-lg shadow-brand-strong/50 fixed inset-x-0 top-0 z-50">
+      <div className="mx-auto flex max-w-screen-xl items-center justify-between gap-4 px-4 py-2 sm:px-6 lg:px-8">
+        {/* Brand */}
+        <Link
+          href="/whitelabel"
+          className="flex flex-shrink-0 items-center gap-2.5"
+          aria-label="Fusion Calling Labs — home"
+        >
+          <Image
+            src="/logo.png"
+            alt="Fusion Calling logo"
+            width={40}
+            height={40}
+            className="cursor-pointer transition-transform hover:scale-105 sm:h-[45px] sm:w-[45px] lg:h-[50px] lg:w-[50px]"
+          />
+          <span className="flex flex-col leading-tight">
+            <span className="text-lg font-extrabold text-brand-strong sm:text-xl">
               Fusion Calling
             </span>
-            <span className="text-[#FF4500] text-[10px] self-end mr-[8px] -mt-1 font-bold">
+            <span className="-mt-0.5 self-end text-[10px] font-bold text-[#FF4500]">
               Labs
             </span>
-          </div>
-        </div>
+          </span>
+        </Link>
 
-        <div className="flex lg:hidden">
-          <button
-            type="button"
-            className="inline-flex items-center p-2 text-gray-200 hover:bg-brand-strong/20 rounded-lg focus:outline-none"
-            onClick={toggleMenu}
+        {/* Desktop nav */}
+        <ul className="hidden items-center gap-1 lg:flex xl:gap-2">
+          {NAV_LINKS.map((item) => (
+            <li key={item.label}>
+              <Link
+                href={item.href}
+                className={cn(
+                  "block rounded-lg px-3 py-2 text-sm font-medium transition duration-300 hover:-translate-y-0.5 hover:bg-brand-strong hover:text-white",
+                  item.label === "Home"
+                    ? "text-yellow-400"
+                    : "text-gray-200"
+                )}
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        {/* Desktop CTAs */}
+        <div className="hidden items-center gap-3 lg:flex">
+          <a
+            href={CONTACT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-10 items-center justify-center rounded-xl border border-brand-strong bg-brand-strong px-4 font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:bg-orange-700 lg:px-5"
           >
-            <span className="sr-only">Open main menu</span>
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d={
-                  isMenuOpen
-                    ? "M6 18L18 6M6 6l12 12"
-                    : "M4 6h16M4 12h16M4 18h16"
-                }
-              />
-            </svg>
-          </button>
+            Contact Us
+          </a>
+          <Link
+            href={APP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-10 items-center justify-center gap-2 rounded-xl border-2 border-brand-strong bg-transparent px-4 font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:bg-brand-strong/20 lg:px-5"
+          >
+            Open app
+            <ExternalLink className="h-4 w-4" />
+          </Link>
         </div>
 
-        <div
-          className={`${
-            isMenuOpen ? "block" : "hidden"
-          } w-full lg:block lg:w-auto transition-all duration-300 ease-in-out`}
+        {/* Mobile toggle */}
+        <button
+          ref={toggleRef}
+          type="button"
+          className="inline-flex items-center justify-center rounded-lg p-2.5 text-gray-200 transition-colors hover:bg-brand-strong/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand lg:hidden"
+          aria-controls="wl-mobile-menu"
+          aria-expanded={isMenuOpen}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          onClick={toggleMenu}
         >
-          <ul className="flex flex-col p-4 mt-4 space-y-3 lg:space-y-0 border border-brand-strong/50 rounded-lg lg:flex-row lg:space-x-6 xl:space-x-8 lg:mt-0 lg:border-0 lg:bg-transparent">
-            {[
-              { label: "Home", href: "/whitelabel" },
-              { label: "Features", href: "/whitelabel#features" },
-              { label: "Pricing", href: "/whitelabel#pricing" },
-               { label: "Benefits", href: "/whitelabel#benefits" },
-               { label: "GoHighLevel", href: "/whitelabel/gohighlevel" },
-               { label: "FAQs", href: "/whitelabel#faq" },
-            ].map((item) => {
-              return (
+          <svg
+            className="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d={
+                isMenuOpen
+                  ? "M6 18L18 6M6 6l12 12"
+                  : "M4 6h16M4 12h16M4 18h16"
+              }
+            />
+          </svg>
+        </button>
+      </div>
+
+      {/* Mobile dropdown */}
+      {isMenuOpen && (
+        <div
+          ref={menuRef}
+          id="wl-mobile-menu"
+          className="border-t border-brand-strong/30 bg-[#03001417] backdrop-blur-md lg:hidden"
+        >
+          <div className="mx-auto max-w-screen-xl px-4 py-4 sm:px-6">
+            <ul className="flex flex-col space-y-1">
+              {NAV_LINKS.map((item, i) => (
                 <li key={item.label}>
                   <Link
+                    ref={i === 0 ? firstItemRef : undefined}
                     href={item.href}
-                    className={`block py-2.5 px-4 rounded-lg ${
-                      item.label === "Home" ? "text-yellow-400" : "text-gray-200"
-                    } hover:bg-brand-strong hover:text-white font-medium transition duration-300 transform hover:-translate-y-1`}
+                    onClick={() => setIsMenuOpen(false)}
+                    className={cn(
+                      "block rounded-lg px-4 py-3 font-medium transition duration-300 hover:bg-brand-strong hover:text-white",
+                      item.label === "Home"
+                        ? "text-yellow-400"
+                        : "text-gray-200"
+                    )}
                   >
                     {item.label}
                   </Link>
                 </li>
-              );
-            })}
-            <li className="lg:hidden mt-4 !border-t border-brand-strong/30 pt-4">
+              ))}
+            </ul>
+
+            <div className="mt-4 flex flex-col gap-3 border-t border-brand-strong/30 pt-4">
               <a
-                href="https://cal.com/mralamin/discovery-call"
+                href={CONTACT_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block py-3 px-4 rounded-lg text-white bg-brand-strong hover:bg-orange-700 text-center font-semibold shadow-lg shadow-brand-strong/30 transition duration-300 transform hover:-translate-y-1"
+                onClick={() => setIsMenuOpen(false)}
+                className="inline-flex items-center justify-center rounded-xl bg-brand-strong px-4 py-3 text-center font-semibold text-white shadow-lg shadow-brand-strong/30 transition duration-300 hover:bg-orange-700"
               >
                 Contact Us
               </a>
-            </li>
-            <li className="lg:hidden">
               <Link
-                href="https://app.fusioncalling.com/"
+                href={APP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 py-3 px-4 rounded-lg text-white bg-transparent border-2 border-brand-strong hover:bg-brand-strong/20 text-center font-semibold transition duration-300 transform hover:-translate-y-1"
+                onClick={() => setIsMenuOpen(false)}
+                className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-brand-strong px-4 py-3 text-center font-semibold text-white transition duration-300 hover:bg-brand-strong/20"
               >
                 Open app
-                <ExternalLink className="w-4 h-4" />
+                <ExternalLink className="h-4 w-4" />
               </Link>
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
-
-        <div className="hidden lg:flex items-center gap-3">
-          <Link
-            href="https://cal.com/mralamin/discovery-call"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex h-10 sm:h-11 lg:h-12 items-center justify-center rounded-xl border border-brand-strong bg-brand-strong px-4 sm:px-5 lg:px-6 font-medium text-white hover:bg-gray-800 transition duration-300 transform hover:-translate-y-1"
-          >
-            Contact Us
-          </Link>
-          <Link
-            href="https://app.fusioncalling.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex h-10 sm:h-11 lg:h-12 items-center justify-center gap-2 rounded-xl border-2 border-brand-strong bg-transparent px-4 sm:px-5 lg:px-6 font-medium text-white hover:bg-brand-strong/20 transition duration-300 transform hover:-translate-y-1"
-          >
-            Open app
-            <ExternalLink className="w-4 h-4" />
-          </Link>
-        </div>
-      </div>
+      )}
     </nav>
   );
 };

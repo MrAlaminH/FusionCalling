@@ -14,6 +14,7 @@ import {
 // Single source of truth for footer links — keeps things DRY and easy to maintain.
 const productLinks = [
   { label: "Partner Program", href: "/whitelabel" },
+  { label: "GoHighLevel Integration", href: "/whitelabel/gohighlevel" },
   { label: "Features", href: "/#features" },
   { label: "Pricing", href: "/#pricing" },
   { label: "ROI Calculator", href: "/calculator" },

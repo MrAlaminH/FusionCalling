@@ -111,7 +111,7 @@ export default function FAQSection() {
                 Answers reflect Fusion Calling&apos;s platform capabilities and
                 industry standards. See our{" "}
                 <a
-                  href="/#sources"
+                  href="/ai-phone-call-automation#sources"
                   className="text-brand-strong hover:text-brand transition-colors underline-offset-2 hover:underline"
                 >
                   Sources &amp; References

@@ -3,8 +3,6 @@ import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Tools from "@/components/Tools";
 import Footer from "@/components/Footer";
-import DefinitionBlock from "@/components/definition-block";
-import Sources from "@/components/sources";
 import type { Metadata } from "next";
 
 // Below-the-fold sections are code-split so their JavaScript is not part of
@@ -279,7 +277,6 @@ export default function Home() {
       <section id="home" className="scroll-mt-24">
         <Hero />
       </section>
-      <DefinitionBlock />
       <section id="tools" className="scroll-mt-24">
         <Tools />
       </section>
@@ -313,7 +310,6 @@ export default function Home() {
       <section id="faqs" className="scroll-mt-24">
         <FAQSection />
       </section>
-      <Sources />
       <section id="calendar" className="w-full bg-black py-16 sm:py-20 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           {/* Header */}
