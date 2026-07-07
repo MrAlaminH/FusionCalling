@@ -16,6 +16,7 @@ const STATIC_PATHS = [
   "/docs/admin-section",
   "/docs/sms-messaging",
   "/whitelabel",
+  "/whitelabel/gohighlevel",
   "/calculator",
   "/privacy",
   "/terms",

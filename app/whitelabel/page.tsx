@@ -10,11 +10,12 @@ import FAQ from "@/components/white-label/FAQ";
 import CTA from "@/components/white-label/CTA";
 import type { Metadata } from "next";
 import Script from "next/script";
+import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
 
 export const metadata: Metadata = {
-  title: "White-label AI Voice Solution | Fusion Calling Partner Program",
+  title: "White-Label AI Voice Agents (Vapi, Retell, ElevenLabs) | Fusion Calling Partner Program",
   description:
-    "Become a Fusion Calling partner and white-label our AI voice solution. Offer powerful AI phone automation under your own brand. Full branding, custom voice training, and dashboard included.",
+    "Resell AI voice agents under your own brand with Fusion Calling's white-label partner program. Import your Vapi, Retell & ElevenLabs agents, set your pricing, and keep 100% of the revenue.",
   keywords: [
     "white-label AI voice solution",
     "resell AI phone automation",
@@ -23,17 +24,19 @@ export const metadata: Metadata = {
     "white-label call center AI",
     "agency SaaS partnership",
     "AI voice reseller program",
-    "white label call center software",
-    "agency AI partnership pricing",
     "B2B voice automation platform",
+    "import Vapi agents white label",
+    "bring your own Retell agent",
+    "multi-provider voice AI white label",
+    "resell ElevenLabs voice white label",
   ],
   alternates: {
     canonical: "/whitelabel",
   },
   openGraph: {
-    title: "White-label AI Voice Solution | Fusion Calling Partner Program",
+    title: "White-Label AI Voice Agents (Vapi, Retell, ElevenLabs) | Fusion Calling Partner Program",
     description:
-      "Become a Fusion Calling partner and white-label our AI voice solution. Offer powerful AI phone automation under your own brand.",
+      "Resell AI voice agents under your own brand. Import your Vapi, Retell & ElevenLabs agents and keep 100% of the revenue.",
     url: "https://www.fusioncalling.com/whitelabel",
     siteName: "Fusion Calling",
     images: [
@@ -160,10 +163,10 @@ export default function WhiteLabelPage() {
                       "@type": "Audience",
                       audienceType: "Marketing agencies, call centers, SaaS resellers, consultants"
                     },
-                    keywords: "white-label AI voice, agency partnership, AI reseller, voice AI platform, call center white-label"
                   },
                   {
                     "@type": "BreadcrumbList",
+                    "@id": "https://www.fusioncalling.com/whitelabel#breadcrumb",
                     itemListElement: [
                       {
                         "@type": "ListItem",
@@ -178,6 +181,21 @@ export default function WhiteLabelPage() {
                         item: "https://www.fusioncalling.com/whitelabel",
                       },
                     ],
+                  },
+                  {
+                    "@type": "WebPage",
+                    "@id": "https://www.fusioncalling.com/whitelabel#webpage",
+                    url: "https://www.fusioncalling.com/whitelabel",
+                    name: "White-label AI Voice Solution | Fusion Calling Partner Program",
+                    description: "Become a Fusion Calling partner and white-label our AI voice solution. Offer powerful AI phone automation under your own brand.",
+                    inLanguage: "en-US",
+                    isPartOf: { "@id": "https://www.fusioncalling.com/#website" },
+                    dateModified: CONTENT_LAST_UPDATED,
+                    breadcrumb: { "@id": "https://www.fusioncalling.com/whitelabel#breadcrumb" },
+                    speakable: {
+                      "@type": "SpeakableSpecification",
+                      cssSelector: ["h1", "h2", "p"]
+                    }
                   },
                   {
                     "@type": "Product",

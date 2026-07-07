@@ -5,3 +5,8 @@ export const SITE_URL = (() => {
   const url = raw && raw.length > 0 ? raw : FALLBACK_SITE_URL;
   return url.replace(/\/+$/, "");
 })();
+
+// Editorial "last updated" date used as the `dateModified` signal across
+// content pages (industries, comparisons, etc.) where the source data only
+// carries a `datePublished` value. Keeps structured-data freshness honest.
+export const CONTENT_LAST_UPDATED = "2026-07-07";

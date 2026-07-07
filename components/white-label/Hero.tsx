@@ -151,7 +151,7 @@ export default function Hero() {
           className="max-w-4xl mx-auto text-center mb-8 sm:mb-10 lg:mb-12 px-2 sm:px-4 md:px-6"
         >
           <p className="font-body text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-400 leading-relaxed">
-            Fusion Calling&apos;s white-label partner program lets agencies and resellers offer AI phone automation under their own brand. You get a fully customizable dashboard, flexible pricing structures, and complete control over client relationships—we handle the technology while you capture 100% of the revenue.
+            Fusion Calling&apos;s white-label partner program lets agencies and resellers offer AI phone automation under their own brand. Bring your existing Vapi, Retell, or ElevenLabs agents and resell them under your logo—we handle the technology while you capture 100% of the revenue.
           </p>
         </motion.div>
 

@@ -73,8 +73,9 @@ const WhiteLabelNavbar = () => {
               { label: "Home", href: "/whitelabel" },
               { label: "Features", href: "/whitelabel#features" },
               { label: "Pricing", href: "/whitelabel#pricing" },
-              { label: "Benefits", href: "/whitelabel#benefits" },
-              { label: "FAQs", href: "/whitelabel#faq" },
+               { label: "Benefits", href: "/whitelabel#benefits" },
+               { label: "GoHighLevel", href: "/whitelabel/gohighlevel" },
+               { label: "FAQs", href: "/whitelabel#faq" },
             ].map((item) => {
               return (
                 <li key={item.label}>

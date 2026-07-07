@@ -14,6 +14,11 @@ export type GlossaryTerm = {
   related?: string[];
 };
 
+// Date the glossary entries were last editorially reviewed/updated. Used as the
+// `dateModified`/`datePublished` signal in the Article schema on each term page
+// so AI and traditional search engines see a freshness signal.
+export const GLOSSARY_LAST_UPDATED = "2026-07-07";
+
 export function slugifyTerm(term: string): string {
   return term
     .toLowerCase()

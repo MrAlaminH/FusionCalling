@@ -20,21 +20,28 @@ export function generateMetadata({
 
   const url = `${SITE_URL}/industries/${industry.slug}`;
 
+  const agencyDescription = `Offer white-label AI voice agents for ${industry.name} businesses. Resell 24/7 call handling, appointment booking, and lead qualification under your own agency brand with Fusion Calling.`;
+
   return {
     title: industry.metaTitle,
-    description: industry.metaDescription,
-    keywords: industry.keywords,
+    description: agencyDescription,
+    keywords: [
+      ...industry.keywords,
+      `white-label AI voice ${industry.name}`,
+      `AI voice reseller ${industry.name}`,
+      `${industry.name} agency AI voice`,
+    ],
     alternates: {
       canonical: `/industries/${industry.slug}`,
     },
     openGraph: {
       title: industry.metaTitle,
-      description: industry.metaDescription,
+      description: agencyDescription,
       url,
       siteName: "Fusion Calling",
       images: [
         {
-          url: `/industries/${industry.slug}.jpg`,
+          url: `/opengraph-image.png`,
           width: 1200,
           height: 630,
           alt: `AI Voice for ${industry.name}`,

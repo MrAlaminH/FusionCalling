@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import Script from "next/script";
+import { SITE_URL } from "@/lib/site-url";
 
 export const metadata: Metadata = {
   title: "About Fusion Calling | AI Phone Call Automation Company",
@@ -19,9 +21,59 @@ export const metadata: Metadata = {
   },
 };
 
+const aboutJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": `${SITE_URL}/about#webpage`,
+      url: `${SITE_URL}/about`,
+      name: "About Fusion Calling",
+      description:
+        "Fusion Calling builds human-like AI voice agents that automate inbound and outbound business calls. Learn about our team, our mission, and why 50+ agencies trust us since 2022.",
+      inLanguage: "en-US",
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: `${SITE_URL}/`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "About",
+            item: `${SITE_URL}/about`,
+          },
+        ],
+      },
+    },
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}/about#founder`,
+      name: "Alamin",
+      jobTitle: "Founder",
+      worksFor: { "@id": `${SITE_URL}/#organization` },
+      sameAs: [
+        "https://x.com/MrAlaminH",
+        "https://www.linkedin.com/company/fusion-calling/",
+      ],
+    },
+  ],
+};
+
 export default function AboutPage() {
   return (
-    <main className="min-h-screen w-full bg-black text-white">
+    <>
+      <Script
+        id="about-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }}
+      />
+      <main className="min-h-screen w-full bg-black text-white">
       {/* Hero */}
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl pt-28 pb-12 md:pt-36 md:pb-16">
         <p className="text-brand-strong text-sm font-semibold uppercase tracking-wider mb-3">
@@ -150,5 +202,6 @@ export default function AboutPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

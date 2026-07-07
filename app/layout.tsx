@@ -81,6 +81,27 @@ export default function RootLayout({
     >
       <head>
         <link rel="icon" href="/favicon.ico" />
+        {/* Search-engine verification tags. Rendered only when the matching
+            env var is provided, so deploying without them is harmless. The user
+            pastes their Google Search Console / Bing WMT codes into env. */}
+        {process.env.NEXT_PUBLIC_GSC_VERIFICATION ? (
+          <meta
+            name="google-site-verification"
+            content={process.env.NEXT_PUBLIC_GSC_VERIFICATION}
+          />
+        ) : null}
+        {process.env.NEXT_PUBLIC_BING_VERIFICATION ? (
+          <meta
+            name="msvalidate.01"
+            content={process.env.NEXT_PUBLIC_BING_VERIFICATION}
+          />
+        ) : null}
+        {process.env.NEXT_PUBLIC_YANDEX_VERIFICATION ? (
+          <meta
+            name="yandex-verification"
+            content={process.env.NEXT_PUBLIC_YANDEX_VERIFICATION}
+          />
+        ) : null}
         {/* Resource hints for third-party origins used on the page */}
         <link rel="preconnect" href="https://cal.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://n8n.deployify.xyz" />
@@ -214,52 +235,6 @@ export default function RootLayout({
                       },
                     },
                   },
-                },
-                {
-                  "@type": "FAQPage",
-                  "@id": "https://www.fusioncalling.com/#faqpage",
-                  mainEntity: [
-                    {
-                      "@type": "Question",
-                      name: "What is AI phone call automation?",
-                      acceptedAnswer: {
-                        "@type": "Answer",
-                        text: "AI phone call automation uses artificial intelligence to handle inbound and outbound voice calls without human intervention. It combines speech recognition, natural language processing, and text-to-speech technology to conduct natural conversations that can book appointments, answer questions, qualify leads, and provide customer service 24/7.",
-                      },
-                    },
-                    {
-                      "@type": "Question",
-                      name: "How much does Fusion Calling cost?",
-                      acceptedAnswer: {
-                        "@type": "Answer",
-                        text:                   "Fusion Calling offers three pricing plans: Starter at $149/month (500 minutes), Pro at $249/month (1,050 minutes), and Enterprise at $497/month (2,100 minutes). All plans include custom voice training, calendar integrations, SMS capabilities, and dedicated support.",
-                      },
-                    },
-                    {
-                      "@type": "Question",
-                      name: "How realistic do AI voice agents sound?",
-                      acceptedAnswer: {
-                        "@type": "Answer",
-                        text: "Our AI voice agents are 95% indistinguishable from human speakers. We use advanced text-to-speech technology from providers like ElevenLabs and offer voice customization options, including the ability to clone your own voice or choose from our library of natural-sounding voices in multiple languages and accents.",
-                      },
-                    },
-                    {
-                      "@type": "Question",
-                      name: "How long does deployment take?",
-                      acceptedAnswer: {
-                        "@type": "Answer",
-                        text: "Most AI agents go live within 4 weeks after proposal approval. The timeline includes: Week 1-2 for discovery and workflow design, Week 3 for AI training and integration, Week 4 for testing and optimization. Simple implementations can be done in as little as 2 weeks, while complex multi-system integrations may take 6-8 weeks.",
-                      },
-                    },
-                    {
-                      "@type": "Question",
-                      name: "Can AI agents handle complex conversations?",
-                      acceptedAnswer: {
-                        "@type": "Answer",
-                        text: "Yes, our AI agents can handle multi-turn conversations, context switching, and complex scenarios. They're trained on your specific business knowledge, can access information in real-time (like checking calendars or databases), and know when to transfer to a human agent for situations requiring human judgment or empathy.",
-                      },
-                    },
-                  ],
                 },
               ],
             }),

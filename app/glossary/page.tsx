@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import Script from "next/script";
-import { glossaryTerms, glossaryCategories, slugifyTerm } from "@/lib/glossary";
+import { glossaryTerms, glossaryCategories, slugifyTerm, GLOSSARY_LAST_UPDATED } from "@/lib/glossary";
 import { buildOpenGraph } from "@/lib/seo";
 
 const title = "Voice AI Glossary | Fusion Calling";
@@ -65,6 +65,7 @@ export default function GlossaryHubPage() {
         description:
           "A complete glossary of voice AI terms for agencies, with plain-English definitions.",
         inLanguage: "en-US",
+        dateModified: GLOSSARY_LAST_UPDATED,
         isPartOf: { "@id": "https://www.fusioncalling.com/#website" },
       },
       {

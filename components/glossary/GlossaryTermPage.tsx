@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Script from "next/script";
 import type { GlossaryTerm } from "@/lib/glossary";
-import { slugifyTerm, getRelatedTerms } from "@/lib/glossary";
+import { slugifyTerm, getRelatedTerms, GLOSSARY_LAST_UPDATED } from "@/lib/glossary";
 import { SITE_URL } from "@/lib/site-url";
 
 export default function GlossaryTermPage({ term }: { term: GlossaryTerm }) {
@@ -35,9 +35,13 @@ export default function GlossaryTermPage({ term }: { term: GlossaryTerm }) {
         headline: `${term.term} - Voice AI Term Explained`,
         description: term.definition,
         inLanguage: "en-US",
+        articleSection: term.category,
         isPartOf: { "@id": `${SITE_URL}/#website` },
+        mainEntity: { "@id": `${articleUrl}#term` },
         author: { "@type": "Organization", name: "Fusion Calling", url: `${SITE_URL}/` },
         publisher: { "@id": `${SITE_URL}/#organization` },
+        datePublished: GLOSSARY_LAST_UPDATED,
+        dateModified: GLOSSARY_LAST_UPDATED,
       },
     ],
   };

@@ -97,6 +97,10 @@ export default function GhlAlternativeBlogPost() {
                 publisher: {
                   "@id": "https://www.fusioncalling.com/#organization",
                 },
+                speakable: {
+                  "@type": "SpeakableSpecification",
+                  cssSelector: ["h1", ".prose"]
+                },
               },
               {
                 "@type": "FAQPage",

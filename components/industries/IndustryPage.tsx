@@ -2,7 +2,7 @@ import Link from "next/link";
 import Script from "next/script";
 import type { Industry } from "@/lib/industries";
 import { getRelatedIndustries } from "@/lib/industries";
-import { SITE_URL } from "@/lib/site-url";
+import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { generateIndustryStats, generateIndustryExpertQuote } from "@/lib/industry-seo";
 
 function formatDate(iso: string): string {
@@ -63,9 +63,13 @@ export default function IndustryPage({ industry }: { industry: Industry }) {
         inLanguage: "en-US",
         isPartOf: { "@id": `${SITE_URL}/#website` },
         datePublished,
-        dateModified: datePublished,
+        dateModified: CONTENT_LAST_UPDATED,
         author: { "@type": "Organization", name: "Fusion Calling", url: `${SITE_URL}/` },
         publisher: { "@id": `${SITE_URL}/#organization` },
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", ".prose"]
+        },
       },
       {
         "@type": "FAQPage",

@@ -90,23 +90,35 @@ export default function FAQSection() {
               </h2>
             </div>
 
-            <Accordion type="single" collapsible defaultValue="item-0" className="w-full space-y-4">
-              {faqItems.map((item, index) => (
-                <AccordionItem
-                  key={index}
-                  value={`item-${index}`}
-                  className="border border-gray-800 rounded-lg overflow-hidden "
+              <Accordion type="single" collapsible defaultValue="item-0" className="w-full space-y-4">
+                {faqItems.map((item, index) => (
+                  <AccordionItem
+                    key={index}
+                    value={`item-${index}`}
+                    className="border border-gray-800 rounded-lg overflow-hidden "
+                  >
+                    <AccordionTrigger className="px-6 py-4 hover:bg-brand-strong text-white [&[data-state=open]>svg]:rotate-45 ">
+                      <span className="text-left">{item.question}</span>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-6 pb-4 text-gray-400">
+                      {item.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+
+              <p className="mt-6 text-sm text-gray-500">
+                Answers reflect Fusion Calling&apos;s platform capabilities and
+                industry standards. See our{" "}
+                <a
+                  href="/#sources"
+                  className="text-brand-strong hover:text-brand transition-colors underline-offset-2 hover:underline"
                 >
-                  <AccordionTrigger className="px-6 py-4 hover:bg-brand-strong text-white [&[data-state=open]>svg]:rotate-45 ">
-                    <span className="text-left">{item.question}</span>
-                  </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-4 text-gray-400">
-                    {item.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
+                  Sources &amp; References
+                </a>{" "}
+                for the authoritative bodies and providers behind these claims.
+              </p>
+            </div>
         </div>
       </div>
     </div>

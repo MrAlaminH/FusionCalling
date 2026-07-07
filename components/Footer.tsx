@@ -138,14 +138,12 @@ export default function Footer() {
               <ul className="space-y-3">
                 {productLinks.map((link) => (
                   <li key={link.href}>
-        <a
-          href={link.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm text-gray-400 hover:text-brand transition-colors"
-        >
-          {link.label}
-        </a>
+          <Link
+            href={link.href}
+            className="text-sm text-gray-400 hover:text-brand transition-colors"
+          >
+            {link.label}
+          </Link>
                   </li>
                 ))}
               </ul>
@@ -157,14 +155,12 @@ export default function Footer() {
               <ul className="space-y-3">
                 {resourceLinks.map((link) => (
                   <li key={link.href}>
-        <a
-          href={link.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm text-gray-400 hover:text-brand transition-colors"
-        >
-          {link.label}
-        </a>
+          <Link
+            href={link.href}
+            className="text-sm text-gray-400 hover:text-brand transition-colors"
+          >
+            {link.label}
+          </Link>
                   </li>
                 ))}
               </ul>

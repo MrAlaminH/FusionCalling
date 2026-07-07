@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Tools from "@/components/Tools";
 import Footer from "@/components/Footer";
 import DefinitionBlock from "@/components/definition-block";
+import Sources from "@/components/sources";
 import type { Metadata } from "next";
 
 // Below-the-fold sections are code-split so their JavaScript is not part of
@@ -51,6 +52,33 @@ export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://www.fusioncalling.com/#webpage",
+        url: "https://www.fusioncalling.com/",
+        name: "Fusion Calling | AI Phone Call Automation for Businesses",
+        description: "AI-powered phone call automation for businesses. Streamline customer interactions, save time, and increase productivity with advanced voice technology.",
+        isPartOf: {
+          "@id": "https://www.fusioncalling.com/#website"
+        },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: "https://www.fusioncalling.com/opengraph-image.png"
+        },
+        dateModified: "2026-07-07",
+        inLanguage: "en-US",
+        breadcrumb: {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://www.fusioncalling.com/"
+            }
+          ]
+        }
+      },
       {
         "@type": "LocalBusiness",
         "@id": "https://www.fusioncalling.com/#localbusiness",
@@ -138,8 +166,7 @@ export default function Home() {
               description: "2,100 minutes/month"
             }
           ]
-        },
-        keywords: "AI phone call automation, AI receptionist, virtual agent, voice AI, call center automation, lead generation AI"
+        }
       },
       {
         "@type": "VideoObject",
@@ -191,6 +218,52 @@ export default function Home() {
           "Pipeline management",
           "Analytics dashboard"
         ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.fusioncalling.com/#faqpage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "What is AI phone call automation?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "AI phone call automation uses artificial intelligence to handle inbound and outbound voice calls without human intervention. It combines speech recognition, natural language processing, and text-to-speech technology to conduct natural conversations that can book appointments, answer questions, qualify leads, and provide customer service 24/7.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How much does Fusion Calling cost?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Fusion Calling offers three pricing plans: Starter at $149/month (500 minutes), Pro at $249/month (1,050 minutes), and Enterprise at $497/month (2,100 minutes). All plans include custom voice training, calendar integrations, SMS capabilities, and dedicated support.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How realistic do AI voice agents sound?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Our AI voice agents are 95% indistinguishable from human speakers. We use advanced text-to-speech technology from providers like ElevenLabs and offer voice customization options, including the ability to clone your own voice or choose from our library of natural-sounding voices in multiple languages and accents.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How long does deployment take?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Most AI agents go live within 4 weeks after proposal approval. The timeline includes: Week 1-2 for discovery and workflow design, Week 3 for AI training and integration, Week 4 for testing and optimization. Simple implementations can be done in as little as 2 weeks, while complex multi-system integrations may take 6-8 weeks.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Can AI agents handle complex conversations?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes, our AI agents can handle multi-turn conversations, context switching, and complex scenarios. They're trained on your specific business knowledge, can access information in real-time (like checking calendars or databases), and know when to transfer to a human agent for situations requiring human judgment or empathy.",
+            },
+          },
+        ],
       }
     ]
   };
@@ -240,6 +313,7 @@ export default function Home() {
       <section id="faqs" className="scroll-mt-24">
         <FAQSection />
       </section>
+      <Sources />
       <section id="calendar" className="w-full bg-black py-16 sm:py-20 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           {/* Header */}

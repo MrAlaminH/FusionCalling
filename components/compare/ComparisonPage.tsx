@@ -3,7 +3,7 @@ import Script from "next/script";
 import Image from "next/image";
 import type { Comparison } from "@/lib/comparisons";
 import { getRelatedComparisons } from "@/lib/comparisons";
-import { SITE_URL } from "@/lib/site-url";
+import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { BenchmarkTable } from "@/components/compare/BenchmarkTable";
 
 function formatDate(iso: string): string {
@@ -58,12 +58,17 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
-          { "@type": "ListItem", position: 2, name: "Compare", item: `${SITE_URL}/compare` },
           {
             "@type": "ListItem",
             position: 2,
             name: "Alternative",
             item: `${SITE_URL}/alternative`
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: competitorName,
+            item: articleUrl
           },
         ],
       },
@@ -77,9 +82,13 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
         inLanguage: "en-US",
         isPartOf: { "@id": `${SITE_URL}/#website` },
         datePublished,
-        dateModified: datePublished,
+        dateModified: CONTENT_LAST_UPDATED,
         author: { "@type": "Organization", name: "Fusion Calling", url: `${SITE_URL}/` },
         publisher: { "@id": `${SITE_URL}/#organization` },
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", ".prose"]
+        },
       },
       {
         "@type": "FAQPage",

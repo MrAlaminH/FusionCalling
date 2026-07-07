@@ -5,9 +5,9 @@ import Script from "next/script";
 /* eslint-disable react/no-unescaped-entities */
 
 export const metadata: Metadata = {
-  title: "White-Labeling Vapi with Fusion Calling: A Guide for Agencies",
+  title: "White-Label Vapi: Why Vapi Alone Isn't Resellable (and the Fix)",
   description:
-    "Fusion Calling is the white-label agency layer built to work with Vapi. Add branding, client portals, multi-client management, and billing so you can resell Vapi under your own brand.",
+    "Vapi is excellent voice AI infrastructure, but it has no native white-label — you can't resell it under your brand out of the box. Fusion Calling is the white-label layer that adds branding, client portals, and billing so agencies can resell Vapi in about 7 days.",
   keywords: [
     "vapi white label",
     "white label vapi",
@@ -15,14 +15,18 @@ export const metadata: Metadata = {
     "vapi agency partner",
     "vapi white-label platform",
     "voice AI white label",
+    "vapi has no white-label",
+    "vapi not resellable",
+    "vapi white label alternative",
+    "why vapi isn't white label",
   ],
   alternates: {
     canonical: "/blog/vapi-white-label-platform",
   },
   openGraph: {
-    title: "White-Labeling Vapi with Fusion Calling: A Guide for Agencies",
+    title: "White-Label Vapi: Why Vapi Alone Isn't Resellable (and the Fix)",
     description:
-      "Fusion Calling is the white-label agency layer built to work with Vapi. Add branding, client portals, multi-client management, and billing to resell Vapi under your own brand.",
+      "Vapi is excellent voice AI infrastructure, but it has no native white-label. Fusion Calling is the white-label layer that lets agencies resell Vapi under their own brand.",
     url: "https://www.fusioncalling.com/blog/vapi-white-label-platform",
     siteName: "Fusion Calling",
     images: [
@@ -96,6 +100,10 @@ export default function VapiWhiteLabelBlogPost() {
                 },
                 publisher: {
                   "@id": "https://www.fusioncalling.com/#organization",
+                },
+                speakable: {
+                  "@type": "SpeakableSpecification",
+                  cssSelector: ["h1", ".prose"]
                 },
               },
               {
