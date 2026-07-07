@@ -27,8 +27,8 @@ const logos: Logo[] = [
     url: "/tools/whatsapp.png",
   },
   {
-    name: "Gmail",
-    url: "/tools/gmail.png",
+    name: "Twilio",
+    url: "/tools/Twilio.png",
   },
   {
     name: "GoHighLevel",
@@ -68,6 +68,7 @@ const Tools = () => {
                         alt={`${logo.name} logo`}
                         title={logo.name}
                         fill
+                        sizes="60px"
                         className="absolute w-full h-full transition-all duration-300 ease-in-out object-contain opacity-75 hover:opacity-100 [filter:drop-shadow(0_0_4px_rgba(59,130,246,0.3))] hover:[filter:drop-shadow(0_0_6px_rgba(59,130,246,0.5))]"
                       />
                     </div>

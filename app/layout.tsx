@@ -7,7 +7,7 @@ import SuspendedPostHogPageView from "./PostHogPageView";
 
 const outfit = Outfit({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["500", "600", "700"],
   variable: "--font-outfit",
   display: "swap",
 });
@@ -81,6 +81,9 @@ export default function RootLayout({
     >
       <head>
         <link rel="icon" href="/favicon.ico" />
+        {/* Resource hints for third-party origins used on the page */}
+        <link rel="preconnect" href="https://cal.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://n8n.deployify.xyz" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

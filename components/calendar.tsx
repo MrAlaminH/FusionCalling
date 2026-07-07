@@ -1,7 +1,7 @@
 "use client";
 
 import Cal from "@calcom/embed-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface CalendarProps {
   calUsername: string;
@@ -11,6 +11,30 @@ interface CalendarProps {
 
 const Calendar = ({ calUsername, eventSlug, showHeader = true }: CalendarProps) => {
   const [isMobile, setIsMobile] = useState(false);
+  const [ready, setReady] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Defer the cal.com embed (script + iframe) until the calendar scrolls near
+  // the viewport so it never competes with initial page load.
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    if (typeof IntersectionObserver === "undefined") {
+      setReady(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setReady(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "300px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -38,26 +62,33 @@ const Calendar = ({ calUsername, eventSlug, showHeader = true }: CalendarProps) 
           </p>
         </div>
       )}
-      <div className="calendar-container">
-        <Cal
-          calLink={`${calUsername}/${eventSlug}`}
-          style={{
-            width: "100%",
-            height: "100%",
-            minHeight: isMobile ? "550px" : "500px",
-            borderRadius: "16px",
-            overflow: "auto",
-            WebkitOverflowScrolling: "touch",
-          }}
-          config={{
-            theme: "dark",
-            layout: "month_view",
-            hideEventTypeDetails: "true",
-            layout_mobile: "month_view",
-            hideRangeSelection: "true",
-            hideTimeZoneSwitcher: "true",
-          }}
-        />
+      <div className="calendar-container" ref={containerRef}>
+        {ready ? (
+          <Cal
+            calLink={`${calUsername}/${eventSlug}`}
+            style={{
+              width: "100%",
+              height: "100%",
+              minHeight: isMobile ? "550px" : "500px",
+              borderRadius: "16px",
+              overflow: "auto",
+              WebkitOverflowScrolling: "touch",
+            }}
+            config={{
+              theme: "dark",
+              layout: "month_view",
+              hideEventTypeDetails: "true",
+              layout_mobile: "month_view",
+              hideRangeSelection: "true",
+              hideTimeZoneSwitcher: "true",
+            }}
+          />
+        ) : (
+          <div
+            aria-busy="true"
+            style={{ minHeight: isMobile ? "550px" : "500px" }}
+          />
+        )}
       </div>
       <style jsx>{`
         .calendar-wrapper {

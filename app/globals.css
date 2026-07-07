@@ -129,6 +129,22 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Respect users who prefer reduced motion: freeze all non-essential
+   animations/transitions. This lowers main-thread load and is a PageSpeed
+   accessibility best practice. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 .PhoneInput {
   display: flex !important;
   align-items: center !important;

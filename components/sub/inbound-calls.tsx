@@ -92,7 +92,6 @@ export default function InboundCalls() {
                       className="transition-transform duration-300 transform hover:scale-110"
                       fill
                       sizes="(max-width: 768px) 100vw, 33vw"
-                      priority
                       style={{
                         objectFit: "contain",
                       }}

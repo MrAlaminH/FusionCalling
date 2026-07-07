@@ -66,7 +66,6 @@ export default function Features() {
                     className="rounded-lg object-cover transition-transform duration-500 group-hover:scale-110"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                    priority
                   />
                 </div>
               </CardContent>
@@ -120,7 +119,6 @@ export default function Features() {
                     className="rounded-lg object-cover transition-transform duration-500 group-hover:scale-110"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                    priority
                   />
                 </div>
               </CardContent>

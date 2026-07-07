@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { Sparkles } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { NeonGradientCard } from "@/components/ui/neon-gradient-card";
@@ -7,10 +8,16 @@ import Image from "next/image";
 import { BorderBeam } from "@/components/ui/border-beam";
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import { cn } from "@/lib/utils";
-import PhoneInputComponent from "@/components/sub/PhoneInput";
-import SlideToCall from "@/components/sub/SlideToCall";
 import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
+
+// react-phone-number-input bundles every country flag (~50 KB). Code-split it
+// so that weight is not in the initial render-blocking bundle. ssr:true keeps
+// the form in the server HTML (no layout shift); the chunk hydrates on load.
+const PhoneInputComponent = dynamic(
+  () => import("@/components/sub/PhoneInput"),
+);
+const SlideToCall = dynamic(() => import("@/components/sub/SlideToCall"));
 
 export default function Component() {
   const [name, setName] = useState("");
@@ -105,7 +112,7 @@ export default function Component() {
           className="flex justify-center mb-4 sm:mb-6 lg:mb-8"
         >
           <Link
-            href="#"
+            href="#show-case"
             className={cn(
               "group inline-flex items-center rounded-full bg-white/10 px-2.5 sm:px-3 md:px-4 py-1 sm:py-1.5 text-[10px] xxs:text-xs sm:text-sm transition-colors hover:bg-white/20",
             )}
@@ -122,7 +129,7 @@ export default function Component() {
 
         {/* Main heading */}
         <motion.div
-          initial={reduce ? false : { opacity: 0, y: -20 }}
+          initial={reduce ? false : { opacity: 1, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-center mb-3 sm:mb-4 md:mb-6 px-2 sm:px-4 md:px-6"
@@ -300,8 +307,8 @@ export default function Component() {
                       <Image
                         src="/logo.png"
                         alt="Fusion Calling logo"
-                        width={500}
-                        height={500}
+                        width={48}
+                        height={48}
                       />
                     </div>
                     <div>

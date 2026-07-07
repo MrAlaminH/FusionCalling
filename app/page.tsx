@@ -1,19 +1,24 @@
+import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
-import TryDemo from "@/components/Try-Demo";
-import Features from "@/components/Features";
-import FAQSection from "@/components/FAQs";
-import SlideText from "@/components/Slide-Text";
-import VoiceCarousel from "@/components/voice-carousel";
 import Tools from "@/components/Tools";
-import HowItWorks from "@/components/steps";
-import EndlessUseCases from "@/components/endless-use-cases";
-import Testimonials from "@/components/Testimonial";
 import Footer from "@/components/Footer";
-import PricingSection from "@/components/pricing-section";
-import Calendar from "@/components/calendar";
-import StatisticsComponent from "@/components/stats";
 import type { Metadata } from "next";
+
+// Below-the-fold sections are code-split so their JavaScript is not part of
+// the initial page bundle. They still render server-side (default ssr:true)
+// for SEO and content, except Calendar which is a client-only cal.com widget.
+const TryDemo = dynamic(() => import("@/components/Try-Demo"));
+const Features = dynamic(() => import("@/components/Features"));
+const SlideText = dynamic(() => import("@/components/Slide-Text"));
+const StatisticsComponent = dynamic(() => import("@/components/stats"));
+const HowItWorks = dynamic(() => import("@/components/steps"));
+const EndlessUseCases = dynamic(() => import("@/components/endless-use-cases"));
+const VoiceCarousel = dynamic(() => import("@/components/voice-carousel"));
+const Testimonials = dynamic(() => import("@/components/Testimonial"));
+const PricingSection = dynamic(() => import("@/components/pricing-section"));
+const FAQSection = dynamic(() => import("@/components/FAQs"));
+const Calendar = dynamic(() => import("@/components/calendar"), { ssr: false });
 
 export const metadata: Metadata = {
   title: "AI Phone Call Automation & AI Receptionist | Fusion Calling",
