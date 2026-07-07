@@ -7,7 +7,7 @@ import { buildOpenGraph } from "@/lib/seo";
 
 const title = "White-Label Voice AI Comparisons | Fusion Calling";
 const description =
-  "Side-by-side comparisons of the top white-label voice AI platforms for agencies. Compare Fusion Calling against ChatDash, Vapify, Voicerr, VoiceAIWrapper, Synthflow, and Thinkrr.";
+  "Side-by-side comparisons of the top white-label voice AI platforms for agencies. Compare Fusion Calling against ChatDash, Vapify, Voicerr, VoiceAIWrapper, Synthflow, Thinkrr, Bland AI, and Air AI.";
 
 export const metadata: Metadata = {
   title,

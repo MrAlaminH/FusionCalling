@@ -3,18 +3,20 @@
 import { useEffect, useRef, useState } from "react";
 
 const AnimatedStatistics = () => {
-  const [counters, setCounters] = useState({
-    projects: 0,
-    satisfaction: 0,
-    hours: 0,
-    calls: 0,
-  });
-
   const targets = useRef({
     projects: 60,
     satisfaction: 99,
     hours: 40,
     calls: 12,
+  });
+
+  // Initialize to the final values so search-engine crawlers and no-JS clients
+  // see the real numbers in the server-rendered HTML (not "0+ / 0% / 0h / 0k").
+  const [counters, setCounters] = useState({
+    projects: targets.current.projects,
+    satisfaction: targets.current.satisfaction,
+    hours: targets.current.hours,
+    calls: targets.current.calls,
   });
 
   const sectionRef = useRef<HTMLElement>(null);
@@ -45,6 +47,8 @@ const AnimatedStatistics = () => {
   }, []);
 
   const startAnimation = () => {
+    // Reset to zero so the count-up animation still plays on first view.
+    setCounters({ projects: 0, satisfaction: 0, hours: 0, calls: 0 });
     const duration = 1500;
     const start = performance.now();
 

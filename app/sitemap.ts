@@ -8,6 +8,7 @@ import { glossaryTerms, slugifyTerm } from "@/lib/glossary";
 // intentionally NOT a standalone sitemap entry.
 const STATIC_PATHS = [
   "/",
+  "/about",
   "/docs",
   "/docs/api-reference",
   "/docs/lead-management",
@@ -33,6 +34,8 @@ const STATIC_PATHS = [
   "/alternative/voiceaiwrapper",
   "/alternative/synthflow",
   "/alternative/thinkrr",
+  "/alternative/bland-ai",
+  "/alternative/air-ai",
   "/industries",
   "/industries/ai-voice-for-real-estate",
   "/industries/ai-voice-for-dental",
@@ -42,6 +45,9 @@ const STATIC_PATHS = [
   "/industries/ai-voice-for-automotive",
   "/industries/ai-voice-for-call-centers",
   "/industries/ai-voice-for-financial-services",
+  "/industries/ai-voice-for-ecommerce-retail",
+  "/industries/ai-voice-for-education-tutoring",
+  "/industries/ai-voice-for-restaurants-hospitality",
   "/glossary",
 ] as const;
 

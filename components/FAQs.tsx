@@ -90,7 +90,7 @@ export default function FAQSection() {
               </h2>
             </div>
 
-            <Accordion type="single" collapsible className="w-full space-y-4">
+            <Accordion type="single" collapsible defaultValue="item-0" className="w-full space-y-4">
               {faqItems.map((item, index) => (
                 <AccordionItem
                   key={index}
@@ -140,7 +140,7 @@ const faqItems = [
   {
     question: "How much does Fusion Calling cost?",
     answer:
-      "Fusion Calling offers three pricing plans: Starter at $149/month (500 minutes, 2 AI agents), Growth at $297/month (1,200 minutes, 5 AI agents), and Scale at $497/month (2,100 minutes, unlimited AI agents). All plans include custom voice training, calendar integrations, SMS capabilities, and dedicated support.",
+      "Fusion Calling offers three pricing plans: Starter at $149/month (500 minutes), Pro at $249/month (1,050 minutes), and Enterprise at $497/month (2,100 minutes). All plans include custom voice training, calendar integrations, SMS capabilities, and dedicated support.",
   },
   {
     question: "How realistic do AI voice agents sound?",

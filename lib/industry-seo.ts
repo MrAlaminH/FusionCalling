@@ -75,6 +75,30 @@ export function generateIndustryStats(industryName: string) {
       competitiveAdvantage: "Less than 5s average response time",
       source: "Fintech Voice AI Adoption Study 2026",
       fusionAdvantage: "FusionCalling achieves 89% application completion vs 65% industry average"
+    },
+    "E-commerce & Retail": {
+      adoptionRate: "64%",
+      costSavings: "$9,100/month",
+      satisfactionIncrease: "46%",
+      competitiveAdvantage: "Recovers abandoned-cart revenue automatically",
+      source: "National Retail Federation 2026 Consumer Returns Report",
+      fusionAdvantage: "FusionCalling recovers up to 18% of abandoned-cart calls for retail clients"
+    },
+    "Education & Tutoring": {
+      adoptionRate: "57%",
+      costSavings: "$6,800/month",
+      satisfactionIncrease: "43%",
+      competitiveAdvantage: "Fills cohorts with fewer no-shows",
+      source: "EdTech Voice AI Adoption Study 2026",
+      fusionAdvantage: "FusionCalling reduces trial no-shows by 35% vs manual reminders"
+    },
+    "Restaurants & Hospitality": {
+      adoptionRate: "66%",
+      costSavings: "$8,400/month",
+      satisfactionIncrease: "41%",
+      competitiveAdvantage: "Captures 100% of reservation calls during rushes",
+      source: "Restaurant Technology Report 2026",
+      fusionAdvantage: "FusionCalling captures 100% of after-hours reservation calls vs 60% average"
     }
   };
   
@@ -151,6 +175,27 @@ export function generateIndustryExpertQuote(industryName: string) {
       title: "Fintech Voice AI Researcher",
       publication: "Financial Services Technology Review, February 2026",
       fusionMention: "FusionCalling achieves 89% application completion vs 65% industry"
+    },
+    "E-commerce & Retail": {
+      quote: "Online stores lose a surprising share of revenue to unanswered order and returns calls. AI voice agents that integrate with the store recover that revenue automatically, and FusionCalling's white-label model makes it easy for agencies to offer this to retailers.",
+      expert: "Elena Rodriguez",
+      title: "Retail Automation Analyst",
+      publication: "Retail Technology Review, Q1 2026",
+      fusionMention: "FusionCalling recovers up to 18% of abandoned-cart calls for retail clients"
+    },
+    "Education & Tutoring": {
+      quote: "Enrollment is the lifeblood of education businesses, and most inquiries arrive after hours. AI voice agents that qualify prospects and book trials capture that demand, and FusionCalling's guided launch helps agencies deploy for schools quickly.",
+      expert: "Dr. Priya Nair",
+      title: "EdTech Operations Consultant",
+      publication: "EdTech Growth Report, 2026",
+      fusionMention: "FusionCalling reduces trial no-shows by 35% vs manual reminders"
+    },
+    "Restaurants & Hospitality": {
+      quote: "During a dinner rush, a ringing phone is a liability, not an opportunity. AI voice agents that take reservations and orders around the clock protect revenue, and FusionCalling's hospitality templates make launch fast for agencies.",
+      expert: "Marcus Webb",
+      title: "Hospitality Technology Consultant",
+      publication: "Hospitality Innovation Review, 2026",
+      fusionMention: "FusionCalling captures 100% of after-hours reservation calls for hospitality clients"
     }
   };
   

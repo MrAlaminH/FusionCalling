@@ -126,9 +126,9 @@ export function VoiceCard({
           className="w-12 h-12 rounded-full object-cover ring-2 ring-orange-500/20 group-hover:ring-orange-500/40"
         />
         <div className="flex flex-col">
-          <h3 className="text-white text-lg font-medium group-hover:text-white">
+          <p className="text-white text-lg font-medium group-hover:text-white">
             {voice.name}
-          </h3>
+          </p>
           <span className="text-gray-400 text-sm group-hover:text-white/90">
             {voice.gender}
           </span>

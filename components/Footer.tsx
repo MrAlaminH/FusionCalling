@@ -31,7 +31,7 @@ const resourceLinks = [
 ];
 
 const companyLinks = [
-  { label: "About Us", href: "/#about" },
+  { label: "About Us", href: "/about" },
   { label: "Privacy Policy", href: "/privacy" },
   { label: "Terms of Service", href: "/terms" },
   { label: "Book a Call", href: "https://cal.com/mralamin/discovery-call" },

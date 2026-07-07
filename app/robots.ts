@@ -10,6 +10,9 @@ function getSiteUrl(): string {
 
 export default function robots(): MetadataRoute.Robots {
   const baseUrl = getSiteUrl();
+  // RFC 9309: the `Host` directive takes a bare hostname (no scheme/path).
+  // Googlebot ignores it if a scheme like https:// is included.
+  const host = baseUrl.replace(/^https?:\/\//, "");
 
   const disallow = ["/api/", "/admin/"];
 
@@ -72,7 +75,7 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
-    host: baseUrl,
+    host,
   };
 }
 

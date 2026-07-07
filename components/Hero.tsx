@@ -140,7 +140,7 @@ export default function Component() {
             <span className="whitespace-nowrap"> </span>
             with{" "}
             <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
-              AI Phone call Automation
+              AI Phone Call Automation
             </span>
           </h1>
         </motion.div>

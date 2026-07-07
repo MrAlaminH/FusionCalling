@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Tools from "@/components/Tools";
 import Footer from "@/components/Footer";
+import DefinitionBlock from "@/components/definition-block";
 import type { Metadata } from "next";
 
 // Below-the-fold sections are code-split so their JavaScript is not part of
@@ -114,27 +115,27 @@ export default function Home() {
               },
               price: "149",
               priceCurrency: "USD",
-              description: "500 minutes/month, 2 AI agents"
+              description: "500 minutes/month"
             },
             {
               "@type": "Offer",
               itemOffered: {
                 "@type": "Service",
-                name: "Growth Plan"
+                name: "Pro Plan"
               },
-              price: "297",
+              price: "249",
               priceCurrency: "USD",
-              description: "1200 minutes/month, 5 AI agents"
+              description: "1,050 minutes/month"
             },
             {
               "@type": "Offer",
               itemOffered: {
                 "@type": "Service",
-                name: "Scale Plan"
+                name: "Enterprise Plan"
               },
               price: "497",
               priceCurrency: "USD",
-              description: "2100 minutes/month, unlimited AI agents"
+              description: "2,100 minutes/month"
             }
           ]
         },
@@ -162,7 +163,7 @@ export default function Home() {
         "operatingSystem": "Web-based",
         "offers": {
           "@type": "Offer",
-          "price": "99.00",
+          "price": "149.00",
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
           "url": "https://www.fusioncalling.com/",
@@ -205,6 +206,7 @@ export default function Home() {
       <section id="home" className="scroll-mt-24">
         <Hero />
       </section>
+      <DefinitionBlock />
       <section id="tools" className="scroll-mt-24">
         <Tools />
       </section>

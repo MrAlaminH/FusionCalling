@@ -103,7 +103,10 @@ export default function RootLayout({
                   },
                   description:
                     "AI-powered phone call automation for businesses. Streamline customer interactions, save time, and increase productivity with advanced voice technology.",
-                  sameAs: ["https://twitter.com/fusioncalling"],
+                  sameAs: [
+                    "https://twitter.com/fusioncalling",
+                    "https://www.linkedin.com/company/fusion-calling/",
+                  ],
                   contactPoint: {
                     "@type": "ContactPoint",
                     telephone: "+1-202-998-3591",
@@ -147,7 +150,7 @@ export default function RootLayout({
                       "@type": "Review",
                       author: {
                         "@type": "Person",
-                        name: "Sarah Mitchell",
+                        name: "Lisa Chen",
                       },
                       datePublished: "2026-02-10",
                       reviewBody:
@@ -229,7 +232,7 @@ export default function RootLayout({
                       name: "How much does Fusion Calling cost?",
                       acceptedAnswer: {
                         "@type": "Answer",
-                        text: "Fusion Calling offers three pricing plans: Starter at $149/month (500 minutes, 2 AI agents), Growth at $297/month (1,200 minutes, 5 AI agents), and Scale at $497/month (2,100 minutes, unlimited AI agents). All plans include custom voice training, calendar integrations, SMS capabilities, and dedicated support.",
+                        text:                   "Fusion Calling offers three pricing plans: Starter at $149/month (500 minutes), Pro at $249/month (1,050 minutes), and Enterprise at $497/month (2,100 minutes). All plans include custom voice training, calendar integrations, SMS capabilities, and dedicated support.",
                       },
                     },
                     {

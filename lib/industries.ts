@@ -748,6 +748,261 @@ export const industries: Industry[] = [
       },
     ],
   },
+  {
+    slug: "ai-voice-for-ecommerce-retail",
+    name: "E-commerce & Retail",
+    emoji: "🛒",
+    category: "Industry Use Case",
+    readTime: "7 min read",
+    datePublished: "2025-02-09T00:00:00Z",
+    productSupported: true,
+    metaTitle: "AI Voice for E-commerce & Retail: Support, Orders & Returns",
+    metaDescription:
+      "Recover lost sales with AI voice agents for e-commerce and retail. Automate order status, returns, and support calls 24/7. See use cases, ROI, and how agencies white-label it.",
+    keywords: [
+      "ai voice ecommerce",
+      "ai voice retail",
+      "ecommerce order status ai",
+      "retail customer support ai",
+      "ai receptionist retail",
+      "white label voice ai",
+    ],
+    h1: "AI Voice for",
+    h1Highlight: "E-commerce & Retail",
+    subtitle:
+      "Every abandoned-cart follow-up and 'where is my order' call is revenue at risk. An AI agent recovers sales and deflects support volume around the clock.",
+    intro: [
+      "Online stores generate a constant stream of routine phone calls: order status, returns, exchanges, and delivery questions. These calls arrive after hours and during peaks, when support teams are overwhelmed or offline, and each one is a chance to lose a customer or a sale.",
+      "Fusion Calling lets retailers, and the agencies serving them, deploy a branded AI voice agent that answers order questions, processes returns and exchanges, and triggers abandoned-cart and back-in-stock follow-up calls automatically.",
+    ],
+    useCases: [
+      {
+        emoji: "📦",
+        title: "Order Status & Tracking",
+        description:
+          "Answer 'where is my order' instantly by pulling live status from your store or fulfillment system.",
+      },
+      {
+        emoji: "↩️",
+        title: "Returns & Exchanges",
+        description:
+          "Walk customers through return eligibility, start the label, and book exchanges without a human agent.",
+      },
+      {
+        emoji: "🛒",
+        title: "Cart Recovery Calls",
+        description:
+          "Automatically re-engage shoppers who abandoned carts with a friendly, conversational reminder.",
+      },
+      {
+        emoji: "🚚",
+        title: "Restock & Back-in-Stock",
+        description:
+          "Call customers when wished-for items return to stock and guide them straight to checkout.",
+      },
+    ],
+    stats: [
+      { value: "24/7", label: "support coverage without adding headcount" },
+      { value: "<5s", label: "average response to order questions" },
+      { value: "100%", label: "of routine support calls deflected" },
+    ],
+    agencyAngle:
+      "E-commerce is a massive, recurring-pain market where every recovered call is directly measurable revenue, making it an easy retainer to sell.",
+    agencyPoints: [
+      "Store owners feel support volume spikes around every sale event",
+      "Order-status and returns calls are highly repetitive and automatable",
+      "Cart-recovery calls produce immediate, attributable revenue",
+      "Integrations with Shopify and WooCommerce make launch fast",
+    ],
+    whyFusion: sharedWhyFusion,
+    faqs: [
+      {
+        question: "Can an AI voice agent handle e-commerce support?",
+        answer:
+          "Yes. A Fusion Calling agent answers order-status, returns, and exchange questions by connecting to your store or fulfillment system, and can trigger follow-up calls for abandoned carts and restocks. Complex issues transfer to a human agent with context.",
+      },
+      {
+        question: "Does it integrate with Shopify or WooCommerce?",
+        answer:
+          "Fusion Calling connects via API and webhooks to 2,200+ apps including Shopify and WooCommerce, so order data and follow-up actions flow into the tools your store already uses.",
+      },
+      {
+        question: "Can my agency white-label this for retail clients?",
+        answer:
+          "Yes. White-label partners deploy a branded AI agent for each retail client, set their own pricing, and keep 100% of the revenue.",
+      },
+    ],
+  },
+  {
+    slug: "ai-voice-for-education-tutoring",
+    name: "Education & Tutoring",
+    emoji: "🎓",
+    category: "Industry Use Case",
+    readTime: "7 min read",
+    datePublished: "2025-02-10T00:00:00Z",
+    productSupported: false,
+    metaTitle: "AI Voice for Education & Tutoring: Enrollment & Scheduling",
+    metaDescription:
+      "Fill cohorts and reduce no-shows with AI voice agents for tutoring centers, schools, and edtech. Automate enrollment calls, scheduling, and parent comms 24/7.",
+    keywords: [
+      "ai voice education",
+      "ai voice tutoring",
+      "tutoring enrollment ai",
+      "education intake ai",
+      "parent communication ai",
+      "white label voice ai",
+    ],
+    h1: "AI Voice for",
+    h1Highlight: "Education & Tutoring",
+    subtitle:
+      "Capture every prospective student and parent, schedule trials, and reduce no-shows with an AI agent that works around the academic calendar.",
+    intro: [
+      "Tutoring centers, bootcamps, and edtech programs live on enrollment calls and trial-booking, but inquiries spike after school hours and during campaigns when staff are teaching. Missed calls mean missed cohorts and lost tuition.",
+      "Fusion Calling helps education providers, and the agencies serving them, deploy a branded AI voice agent that qualifies prospective students, books trial sessions, sends reminders, and follows up with parents, automatically.",
+    ],
+    useCases: [
+      {
+        emoji: "📝",
+        title: "Enrollment Qualification",
+        description:
+          "Capture subject, grade level, goals, and availability for each inquiry and route warm leads to admissions.",
+      },
+      {
+        emoji: "📅",
+        title: "Trial & Class Scheduling",
+        description:
+          "Book trial lessons and classes directly into the calendar, even after hours and on weekends.",
+      },
+      {
+        emoji: "🔔",
+        title: "Reminders & No-Show Reduction",
+        description:
+          "Automated reminder calls reduce no-shows and keep cohorts full.",
+      },
+      {
+        emoji: "👪",
+        title: "Parent Communication",
+        description:
+          "Answer common parent questions about curriculum, schedules, and pricing consistently.",
+      },
+    ],
+    stats: [
+      { value: "100%", label: "of after-hours inquiries captured" },
+      { value: "24/7", label: "enrollment coverage during campaigns" },
+      { value: "<5s", label: "average time to first response" },
+    ],
+    agencyAngle:
+      "Education and tutoring providers have predictable enrollment cycles and clear ROI from filled cohorts, making them ideal, recurring agency clients.",
+    agencyPoints: [
+      "Inquiries peak outside teaching hours when staff are busy",
+      "Filled cohorts and fewer no-shows are directly dollarized",
+      "Recurring terms and cohorts justify a monthly retainer",
+      "Pre-built education flows let you launch a client in days",
+    ],
+    whyFusion: sharedWhyFusion,
+    faqs: [
+      {
+        question: "How can AI voice help a tutoring or education business?",
+        answer:
+          "It captures every inquiry, qualifies prospective students, books trial sessions, and runs reminder and follow-up calls, so admissions teams focus on converting warm leads instead of answering routine questions.",
+      },
+      {
+        question: "Does it integrate with scheduling and CRM tools?",
+        answer:
+          "Fusion Calling integrates with calendars and 2,200+ apps, so trial bookings and lead details flow into the systems your education client already uses.",
+      },
+      {
+        question: "Can my agency offer this to education clients?",
+        answer:
+          "Yes. White-label partners deploy a branded AI agent for each education client, control pricing, and keep 100% of revenue.",
+      },
+    ],
+  },
+  {
+    slug: "ai-voice-for-restaurants-hospitality",
+    name: "Restaurants & Hospitality",
+    emoji: "🍽️",
+    category: "Industry Use Case",
+    readTime: "7 min read",
+    datePublished: "2025-02-11T00:00:00Z",
+    productSupported: false,
+    metaTitle: "AI Voice for Restaurants & Hospitality: Reservations & Orders",
+    metaDescription:
+      "Never miss a reservation or phone order. AI voice agents for restaurants and hotels handle bookings, takeout, and catering calls 24/7. See use cases and ROI.",
+    keywords: [
+      "ai voice restaurant",
+      "ai reservation agent",
+      "restaurant phone order ai",
+      "hotel concierge ai",
+      "hospitality voice ai",
+      "white label voice ai",
+    ],
+    h1: "AI Voice for",
+    h1Highlight: "Restaurants & Hospitality",
+    subtitle:
+      "A ringing phone during a rush means a lost reservation or a dropped order. An AI agent answers every call, even at the peak of service.",
+    intro: [
+      "Restaurants and hotels lose business every time the phone rings unanswered during a rush, late night, or off-hours. Reservations go to competitors, takeout orders are abandoned, and catering leads go cold.",
+      "Fusion Calling gives hospitality businesses, and the agencies serving them, a branded AI voice agent that takes reservations, processes phone orders, handles catering inquiries, and answers guest questions, automatically and around the clock.",
+    ],
+    useCases: [
+      {
+        emoji: "📅",
+        title: "Reservations",
+        description:
+          "Book, modify, and cancel reservations directly into the reservation system, even at peak times.",
+      },
+      {
+        emoji: "🥡",
+        title: "Takeout & Phone Orders",
+        description:
+          "Capture takeout and delivery orders accurately and send them to the kitchen or POS without a staffed line.",
+      },
+      {
+        emoji: "🍰",
+        title: "Catering Inquiries",
+        description:
+          "Qualify catering leads, collect event details, and route them to the right person for follow-up.",
+      },
+      {
+        emoji: "🏨",
+        title: "Hotel Guest Services",
+        description:
+          "Answer guest questions about amenities, check-in, and local recommendations, and route requests to the front desk.",
+      },
+    ],
+    stats: [
+      { value: "100%", label: "of incoming reservation calls answered" },
+      { value: "24/7", label: "coverage through late-night and off-peak" },
+      { value: "0", label: "missed orders during the dinner rush" },
+    ],
+    agencyAngle:
+      "Hospitality is a high-call-volume, thin-margin industry where every answered call protects revenue, making voice AI an easy, sticky sell.",
+    agencyPoints: [
+      "Phones ring constantly during service when staff can't answer",
+      "Lost reservations and orders are immediate, visible revenue loss",
+      "Takeout and catering are high-margin, repeatable use cases",
+      "Pre-built hospitality flows launch a client in days",
+    ],
+    whyFusion: sharedWhyFusion,
+    faqs: [
+      {
+        question: "Can an AI voice agent take restaurant reservations and orders?",
+        answer:
+          "Yes. The agent books and modifies reservations in your system, captures takeout and catering orders accurately, and answers common guest questions, freeing staff during the rush. Complex or special requests transfer to a person.",
+      },
+      {
+        question: "Does it work for hotels as well as restaurants?",
+        answer:
+          "Yes. Fusion Calling agents are configured per venue, so a hotel can use the same platform for guest services, concierge questions, and reservation handling while a restaurant uses it for orders and bookings.",
+      },
+      {
+        question: "Can I sell this to hospitality clients under my brand?",
+        answer:
+          "Yes. White-label partners deploy a branded AI agent for each venue, set their own pricing, and keep 100% of the revenue.",
+      },
+    ],
+  },
 ];
 
 export function getIndustry(slug: string): Industry | undefined {

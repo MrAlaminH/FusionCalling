@@ -69,7 +69,7 @@ export default function VoiceCarousel() {
               pauseOnHover
               repeat={3}
             >
-              {[...FEMALE_VOICES, ...FEMALE_VOICES].map((voice, index) => (
+              {FEMALE_VOICES.map((voice, index) => (
                 <VoiceCard
                   key={`${voice.id}-${index}`}
                   voice={voice}
@@ -94,7 +94,7 @@ export default function VoiceCarousel() {
               reverse
               repeat={3}
             >
-              {[...MALE_VOICES, ...MALE_VOICES].map((voice, index) => (
+              {MALE_VOICES.map((voice, index) => (
                 <VoiceCard
                   key={`${voice.id}-${index}`}
                   voice={voice}
