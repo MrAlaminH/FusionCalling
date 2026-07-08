@@ -88,7 +88,7 @@ export default function Footer() {
                 className="flex items-center gap-3 text-2xl font-bold text-brand transition-colors"
               >
                 <Image
-                  src="/logo.png"
+                  src="/logo.webp"
                   alt="Fusion Calling Logo"
                   width={32}
                   height={32}

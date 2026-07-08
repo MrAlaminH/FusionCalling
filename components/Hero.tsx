@@ -305,7 +305,7 @@ export default function Component() {
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-12 h-12 rounded-full flex items-center justify-center">
                       <Image
-                        src="/logo.png"
+                        src="/logo.webp"
                         alt="Fusion Calling logo"
                         width={48}
                         height={48}

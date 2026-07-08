@@ -79,7 +79,7 @@ const WhiteLabelNavbar = () => {
           aria-label="Fusion Calling Labs — home"
         >
           <Image
-            src="/logo.png"
+            src="/logo.webp"
             alt="Fusion Calling logo"
             width={40}
             height={40}

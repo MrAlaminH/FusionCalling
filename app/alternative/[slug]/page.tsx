@@ -35,8 +35,8 @@ export function generateMetadata({
       images: [
         {
           url: comparison.heroImage,
-          width: 1200,
-          height: 630,
+          width: 1376,
+          height: 768,
           alt: `${comparison.competitorName} vs Fusion Calling - Best ${comparison.competitorName} Alternative`,
         },
       ],

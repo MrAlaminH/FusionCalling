@@ -75,7 +75,7 @@ const Navbar = () => {
         <div className="flex items-center">
           <Link href="/" className="flex items-center gap-2.5">
             <Image
-              src="/logo.png"
+              src="/logo.webp"
               alt="Fusion Calling logo"
               width={36}
               height={36}

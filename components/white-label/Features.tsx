@@ -29,7 +29,7 @@ export default function Features() {
         "White-label domain setup",
         "Custom email templates & notifications",
       ],
-      image: "/feature/feature1.png",
+      image: "/feature/feature1.webp",
       highlights: [
         { icon: Zap, text: "Setup in minutes" },
         { icon: Shield, text: "No code required" },
@@ -46,7 +46,7 @@ export default function Features() {
         "Client access management & permissions",
         "Real-time analytics & reporting",
       ],
-      image: "/feature/feature2.png",
+      image: "/feature/feature2.webp",
       highlights: [
         { icon: Smartphone, text: "Mobile responsive" },
         { icon: Zap, text: "Instant updates" },
@@ -63,7 +63,7 @@ export default function Features() {
         "Dynamic conversation adaptation",
         "CRM integration & data sync",
       ],
-      image: "/feature/feature3.png",
+      image: "/feature/feature3.webp",
       highlights: [
         { icon: Shield, text: "Enterprise ready" },
         { icon: Zap, text: "Scale effortlessly" },

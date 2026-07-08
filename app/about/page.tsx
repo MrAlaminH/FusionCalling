@@ -144,7 +144,7 @@ export default function AboutPage() {
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl py-10 md:py-14">
         <div className="rounded-2xl border border-brand/20 bg-black/40 p-6 md:p-8 flex flex-col sm:flex-row gap-6 items-start">
           <Image
-            src="/logo.png"
+            src="/logo.webp"
             alt="Fusion Calling founder"
             width={80}
             height={80}

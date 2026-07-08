@@ -246,7 +246,7 @@ export default function Hero() {
                         <div
                           className="absolute inset-0 bg-cover bg-center cursor-pointer group rounded-[27px] transition-transform duration-700 group-hover:scale-[1.02]"
                           style={{
-                            backgroundImage: "url(/hero-thambnail.png)",
+                            backgroundImage: "url(/hero-thumbnail.jpg)",
                           }}
                           onClick={() => setIsVideoPlaying(true)}
                         >

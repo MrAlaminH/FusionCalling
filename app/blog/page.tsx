@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import Script from "next/script";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Blog | White-Label Voice AI Insights",
@@ -20,7 +21,7 @@ const blogPosts = [
     date: "2025-02-13",
     category: "Agency Growth",
     readTime: "9 min read",
-    image: "/opengraph-image.png",
+    image: "/blog/blog1.webp",
   },
   {
     slug: "gohighlevel-alternative-for-voice-ai",
@@ -30,7 +31,7 @@ const blogPosts = [
     date: "2025-02-16",
     category: "Buyer's Guide",
     readTime: "9 min read",
-    image: "/opengraph-image.png",
+    image: "/blog/blog2.webp",
   },
   {
     slug: "vapi-vs-retell-vs-elevenlabs",
@@ -40,7 +41,7 @@ const blogPosts = [
     date: "2025-02-14",
     category: "Buyer's Guide",
     readTime: "8 min read",
-    image: "/opengraph-image.png",
+    image: "/blog/blog3.webp",
   },
   {
     slug: "ai-voice-agents-for-small-business",
@@ -50,7 +51,7 @@ const blogPosts = [
     date: "2025-02-15",
     category: "Use Cases",
     readTime: "8 min read",
-    image: "/opengraph-image.png",
+    image: "/blog/blog4.webp",
   },
   {
     slug: "vapi-white-label-platform",
@@ -60,7 +61,7 @@ const blogPosts = [
     date: "2025-02-10",
     category: "Integration Guide",
     readTime: "7 min read",
-    image: "/opengraph-image.png",
+    image: "/blog/blog5.webp",
   },
   {
     slug: "retell-ai-white-label",
@@ -70,7 +71,7 @@ const blogPosts = [
     date: "2025-02-11",
     category: "Integration Guide",
     readTime: "7 min read",
-    image: "/opengraph-image.png",
+    image: "/blog/blog6.webp",
   },
   {
     slug: "gohighlevel-white-label-voice",
@@ -80,7 +81,7 @@ const blogPosts = [
     date: "2025-02-12",
     category: "Integration Guide",
     readTime: "8 min read",
-    image: "/opengraph-image.png",
+    image: "/blog/blog7.webp",
   },
 ];
 
@@ -207,14 +208,15 @@ export default function BlogPage() {
                 className="group"
               >
                 <div className="glass-light h-full rounded-2xl p-6 border border-orange-500/20 hover:border-orange-500/40 transition-all duration-500 hover:shadow-premium">
-                  {/* Post Image Placeholder */}
-                  <div className="aspect-video bg-gradient-to-br from-orange-500/10 to-orange-600/5 rounded-xl mb-6 overflow-hidden border border-orange-500/10 group-hover:border-orange-500/30 transition-all duration-300">
-                    <div className="w-full h-full flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="text-4xl mb-2">🎯</div>
-                        <div className="text-sm text-gray-500">Blog Post Image</div>
-                      </div>
-                    </div>
+                  {/* Post Image */}
+                  <div className="relative aspect-video rounded-xl mb-6 overflow-hidden border border-orange-500/10 group-hover:border-orange-500/30 transition-all duration-300">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
                   </div>
 
                   {/* Post Content */}

@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: "Fusion Calling",
     images: [
       {
-        url: "/og.png",
+        url: "/og.jpg",
         width: 1200,
         height: 630,
         alt: "Fusion Calling - White-label AI Voice Solution",
@@ -109,7 +109,7 @@ export default function WhiteLabelPage() {
                     "@type": "LocalBusiness",
                     "@id": "https://www.fusioncalling.com/whitelabel#localbusiness",
                     name: "Fusion Calling White-label Partner Program",
-                    image: "https://www.fusioncalling.com/logo.png",
+                    image: "https://www.fusioncalling.com/logo.webp",
                     description: "White-label AI voice solution for agencies and resellers. Offer AI phone automation under your own brand with full customization and pricing you control.",
                     url: "https://www.fusioncalling.com/whitelabel",
                     telephone: "+1-202-998-3591",
@@ -203,7 +203,7 @@ export default function WhiteLabelPage() {
                     name: "Fusion Calling White-label AI Voice Solution",
                     description:
                       "Become a Fusion Calling partner and white-label our AI voice solution. Offer powerful AI phone automation under your own brand.",
-                    image: "https://www.fusioncalling.com/cardImage.png",
+                    image: "https://www.fusioncalling.com/cardImage.jpg",
                     brand: {
                       "@type": "Brand",
                       name: "Fusion Calling",
@@ -432,7 +432,7 @@ export default function WhiteLabelPage() {
                     description:
                       "See the Fusion Calling white-label AI voice platform in action: branded dashboard, sub-account management, and live AI phone agents under your own domain.",
                     thumbnailUrl:
-                      "https://www.fusioncalling.com/hero-thambnail.png",
+                      "https://www.fusioncalling.com/hero-thumbnail.jpg",
                     uploadDate: "2026-01-15",
                     duration: "PT2M0S",
                     contentUrl: "https://vimeo.com/1155684546",

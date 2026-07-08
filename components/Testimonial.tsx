@@ -21,7 +21,7 @@ const testimonials: TestimonialProps[] = [
     content:
       "Implementing AI phone call automation has drastically reduced our response time and improved customer satisfaction. The system is seamless and incredibly effective.",
     heading: "Drastically improved customer satisfaction",
-    image: "/testimonial/testimonial1.jpg",
+    image: "/testimonial/testimonial1.webp",
   },
   {
     name: "Mark Johnson",
@@ -29,7 +29,7 @@ const testimonials: TestimonialProps[] = [
     content:
       "The AI-powered voice assistants have transformed how we handle outbound calls, saving us hours daily while maintaining a personal touch with our clients.",
     heading: "Saved hours daily with outbound automation",
-    image: "/testimonial/testimonial2.jpg",
+    image: "/testimonial/testimonial2.webp",
   },
   {
     name: "Emily Davis",
@@ -37,7 +37,7 @@ const testimonials: TestimonialProps[] = [
     content:
       "Scaling inbound calls with AI has been a game-changer for our business. It's effortless to manage high call volumes without compromising on quality really super cool.",
     heading: "Effortlessly scaled inbound call management",
-    image: "/testimonial/testimonial3.jpg",
+    image: "/testimonial/testimonial3.webp",
   },
   {
     name: "Robert Patel",
@@ -45,7 +45,7 @@ const testimonials: TestimonialProps[] = [
     content:
       "The integration process was surprisingly smooth. Their AI call system adapted to our existing infrastructure with minimal downtime and immediately improved our response metrics.",
     heading: "Seamless integration with existing systems",
-    image: "/testimonial/testimonial4.png",
+    image: "/testimonial/testimonial4.webp",
   },
   {
     name: "Sarah Williams",
@@ -53,7 +53,7 @@ const testimonials: TestimonialProps[] = [
     content:
       "Using their AI solution for market research calls has given us insights we would have missed otherwise. The sentiment analysis feature helps us understand customer needs on a deeper level.",
     heading: "Incredible insights from call analysis",
-    image: "/testimonial/testimonial6.png",
+    image: "/testimonial/testimonial6.webp",
   },
   {
     name: "James Thompson",
@@ -61,7 +61,7 @@ const testimonials: TestimonialProps[] = [
     content:
       "As someone running a small team, I couldn't afford a full call center. This AI solution lets us provide 24/7 customer service without expanding our staff. It paid for itself within months.",
     heading: "Perfect solution for small businesses",
-    image: "/testimonial/testimonial5.png",
+    image: "/testimonial/testimonial5.webp",
   },
 ];
 

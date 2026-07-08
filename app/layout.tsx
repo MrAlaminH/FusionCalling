@@ -118,7 +118,7 @@ export default function RootLayout({
                   url: "https://www.fusioncalling.com/",
                   logo: {
                     "@type": "ImageObject",
-                    url: "https://www.fusioncalling.com/logo.png",
+                    url: "https://www.fusioncalling.com/logo.webp",
                     width: 512,
                     height: 512,
                   },
@@ -153,7 +153,7 @@ export default function RootLayout({
                   name: "Fusion Calling - AI Phone Call Automation",
                   description:
                     "Boost your business efficiency with Fusion Calling's AI-powered phone call automation. Streamline customer interactions, save time, and increase productivity with advanced voice technology.",
-                  image: "https://www.fusioncalling.com/cardImage.png",
+                  image: "https://www.fusioncalling.com/cardImage.jpg",
                   brand: {
                     "@type": "Brand",
                     name: "Fusion Calling",

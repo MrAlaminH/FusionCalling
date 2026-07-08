@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import Script from "next/script";
+import Image from "next/image";
 
 /* eslint-disable react/no-unescaped-entities */
 
@@ -27,9 +28,9 @@ export const metadata: Metadata = {
     siteName: "Fusion Calling",
     images: [
       {
-        url: "/opengraph-image.png",
-        width: 1200,
-        height: 630,
+        url: "/blog/blog7.webp",
+        width: 1376,
+        height: 768,
         alt: "Adding Voice AI to Your GoHighLevel Agency",
       },
     ],
@@ -84,6 +85,7 @@ export default function GoHighLevelBlogPost() {
                 description:
                   "A partnership guide for GoHighLevel agencies. Keep GHL as your CRM and add a dedicated, white-label voice AI layer with Fusion Calling via API and webhooks.",
                 inLanguage: "en-US",
+                image: "https://www.fusioncalling.com/blog/blog7.webp",
                 isPartOf: {
                   "@id": "https://www.fusioncalling.com/#website",
                 },
@@ -173,14 +175,16 @@ export default function GoHighLevelBlogPost() {
           </div>
         </div>
 
-        {/* Featured Image Placeholder */}
-        <div className="mb-12 rounded-3xl overflow-hidden border border-brand/20">
-          <div className="aspect-video bg-gradient-to-br from-brand/10 to-brand-strong/5 flex items-center justify-center">
-            <div className="text-center">
-              <div className="text-6xl mb-4">🤝</div>
-              <div className="text-lg text-gray-500">Fusion Calling + GoHighLevel Integration Guide</div>
-            </div>
-          </div>
+        {/* Featured Image */}
+        <div className="relative mb-12 rounded-3xl overflow-hidden border border-brand/20">
+          <Image
+            src="/blog/blog7.webp"
+            alt="Adding Voice AI to Your GoHighLevel Agency"
+            fill
+            priority
+            className="object-cover"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+          />
         </div>
 
         {/* Article Content */}
@@ -586,7 +590,7 @@ export default function GoHighLevelBlogPost() {
                    <strong className="text-brand-strong">Fusion Calling Team</strong>
                  </p>
                  <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                   We're the team behind Fusion Calling's white-label AI voice platform. Having helped 50+ agencies launch profitable voice AI practices since 2022, we specialize in helping businesses scale their phone operations with cutting-edge automation technology.
+                   We're the team behind Fusion Calling's white-label AI voice platform. Having helped 50+ agencies launch profitable voice AI practices since 2025, we specialize in helping businesses scale their phone operations with cutting-edge automation technology.
                  </p>
                  <div className="flex items-center gap-4 text-sm">
                    <a

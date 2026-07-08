@@ -110,7 +110,7 @@ export const comparisons: Comparison[] = [
     readTime: "8 min read",
     datePublished: "2025-01-20T00:00:00Z",
     heroEmoji: "💬",
-    heroImage: "/alternative/alternative1.png",
+    heroImage: "/alternative/alternative1.webp",
     metaTitle: "ChatDash Alternatives for Voice AI Agencies",
     metaDescription:
       "Fusion Calling vs ChatDash: the better white-label voice AI for agencies. More sub-accounts, multi-provider support, a live demo, and guided 24-hour onboarding.",
@@ -260,7 +260,7 @@ export const comparisons: Comparison[] = [
     readTime: "7 min read",
     datePublished: "2025-01-21T00:00:00Z",
     heroEmoji: "⚡",
-    heroImage: "/alternative/alternative2.png",
+    heroImage: "/alternative/alternative2.webp",
     metaTitle: "Vapify Alternatives for Voice AI Agencies",
     metaDescription:
       "Fusion Calling vs Vapify: the white-label voice AI with 6x the sub-accounts at entry, multi-provider support, a live demo, and guided onboarding.",
@@ -410,7 +410,7 @@ export const comparisons: Comparison[] = [
     readTime: "7 min read",
     datePublished: "2025-01-22T00:00:00Z",
     heroEmoji: "📞",
-    heroImage: "/alternative/alternative3.png",
+    heroImage: "/alternative/alternative3.webp",
     metaTitle: "Voicerr AI Alternatives for Voice Agencies",
     metaDescription:
       "Fusion Calling vs Voicerr AI: white-label voice AI for agencies with guided onboarding, multi-provider support, a live demo, and 30 days of help.",
@@ -560,7 +560,7 @@ export const comparisons: Comparison[] = [
     readTime: "8 min read",
     datePublished: "2025-01-23T00:00:00Z",
     heroEmoji: "🎚️",
-    heroImage: "/alternative/alternative4.png",
+    heroImage: "/alternative/alternative4.webp",
     metaTitle: "VoiceAIWrapper Alternatives for Voice Agencies",
     metaDescription:
       "Fusion Calling vs VoiceAIWrapper: multi-provider white-label voice AI for agencies. Guided onboarding, a live demo, and a partnership that helps you scale.",
@@ -710,7 +710,7 @@ export const comparisons: Comparison[] = [
     readTime: "7 min read",
     datePublished: "2025-01-24T00:00:00Z",
     heroEmoji: "🌊",
-    heroImage: "/alternative/alternative5.png",
+    heroImage: "/alternative/alternative5.webp",
     metaTitle: "Synthflow Alternatives for Voice AI Agencies",
     metaDescription:
       "Fusion Calling vs Synthflow: white-label voice AI with public pricing, no sales calls, multi-provider support, a live demo, and guided 24-hour launch.",
@@ -860,7 +860,7 @@ export const comparisons: Comparison[] = [
     readTime: "7 min read",
     datePublished: "2025-01-25T00:00:00Z",
     heroEmoji: "🧠",
-    heroImage: "/alternative/alternative6.png",
+    heroImage: "/alternative/alternative6.webp",
     metaTitle: "Thinkrr Alternatives for Voice AI Agencies",
     metaDescription:
       "Fusion Calling vs Thinkrr: white-label voice AI for multi-CRM agencies. Connects to 2,200+ apps, multi-provider support, a live demo, guided onboarding.",
@@ -1010,7 +1010,7 @@ export const comparisons: Comparison[] = [
     readTime: "7 min read",
     datePublished: "2025-01-26T00:00:00Z",
     heroEmoji: "🔁",
-    heroImage: "/opengraph-image.png",
+    heroImage: "/alternative/alternative7.webp",
     metaTitle: "Bland AI Alternatives for Voice Agencies",
     metaDescription:
       "Fusion Calling vs Bland AI: the white-label voice AI built for agencies. Full branding, multi-provider support, a live demo, and guided 24-hour onboarding.",
@@ -1159,7 +1159,7 @@ export const comparisons: Comparison[] = [
     readTime: "7 min read",
     datePublished: "2025-01-27T00:00:00Z",
     heroEmoji: "🌬️",
-    heroImage: "/opengraph-image.png",
+    heroImage: "/alternative/alternative8.webp",
     metaTitle: "Air AI Alternatives for Voice Agencies",
     metaDescription:
       "Fusion Calling vs Air AI: white-label voice AI for agencies to resell. Full branding, multi-provider support, a live demo, and guided 24-hour onboarding.",

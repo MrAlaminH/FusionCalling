@@ -18,7 +18,7 @@ export default function TryDemo() {
         "This call demonstrates an AI assistant handling an initial consultation for real estate investments. The AI identifies client interests, discusses property preferences, and arranges for further information delivery.",
       bgColor: "bg-brand/10",
       video: "https://www.youtube.com/embed/Oua1TyixaoA",
-      image: "/cardImage.png",
+      image: "/cardImage.jpg",
     },
     {
       title: "Dental lab customer service Agent",
@@ -26,7 +26,7 @@ export default function TryDemo() {
         "Listen to a customer calling a dental lab with booking appointment and handeling questions. Hear how the dental lab handles the inquiry and provides information.",
       bgColor: "bg-pink-100",
       video: "https://www.youtube.com/embed/14XOsfBKzLg",
-      image: "/cardImage.png",
+      image: "/cardImage.jpg",
     },
     {
       title: "Insurance Lead Qualification Agent",
@@ -34,7 +34,7 @@ export default function TryDemo() {
         "Listen to an AI agent qualifying a lead for insurance services. Hear how the agent gathers information, addresses concerns, and sets up a follow-up with a human agent.",
       bgColor: "bg-pink-100",
       video: "https://www.youtube.com/embed/1WisbZE1AEc",
-      image: "/cardImage.png",
+      image: "/cardImage.jpg",
     },
     {
       title: "Appointment Booking Agent",
@@ -42,7 +42,7 @@ export default function TryDemo() {
         "Automate scheduling with natural conversation. Check availability, offer options, confirm details, and update calendars, boosting efficiency and customer convenience.",
       bgColor: "bg-pink-100",
       video: "https://www.youtube.com/embed/yGUVPSFZcSE",
-      image: "/cardImage.png",
+      image: "/cardImage.jpg",
     },
     {
       title: "Restaurant Reservations Agent",
@@ -50,7 +50,7 @@ export default function TryDemo() {
         "Listen to a customer, calling to make a restaurant reservation. Hear how the restaurant handles the booking process and checks for availability.",
       bgColor: "bg-blue-100",
       video: "https://www.youtube.com/embed/IS_kRLY3_zc",
-      image: "/cardImage.png",
+      image: "/cardImage.jpg",
     },
     {
       title: "Credit Repair Service Inquiry Agent",
@@ -58,7 +58,7 @@ export default function TryDemo() {
         "Listen to a potential client call Credit Repair Company to learn about their credit repair services and costs. Focus on the initial information provided.",
       bgColor: "bg-green-100",
       video: "https://www.youtube.com/embed/NaZ_pXdLu4I",
-      image: "/cardImage.png",
+      image: "/cardImage.jpg",
     },
   ];
 
@@ -69,7 +69,7 @@ export default function TryDemo() {
         "Watch a demo of AI taking a customer's food order over the phone. See how AI streamlines restaurant order taking, improves efficiency, and enhances customer convenience.",
       bgColor: "bg-purple-100",
       video: "https://www.youtube.com/embed/9OwEH18xYdc",
-      image: "/cardImage.png",
+      image: "/cardImage.jpg",
     },
     {
       title: "Cold Call Lead Generation Agent",
@@ -77,7 +77,7 @@ export default function TryDemo() {
         "Listen to a cold call offering a local business a free SEO service to rank higher on Google. Learn about the initial pitch and value proposition",
       bgColor: "bg-brand/10",
       video: "https://www.youtube.com/embed/rkoGhVMIH10",
-      image: "/cardImage.png",
+      image: "/cardImage.jpg",
     },
     {
       title: "Trading System Offering Agent",
@@ -85,7 +85,7 @@ export default function TryDemo() {
         "Listen to a discussion about a system designed to automate and simplify Forex trading. Discover how AI can potentially manage trades and aim for profitable outcomes without constant user monitoring",
       bgColor: "bg-yellow-100",
       video: "https://www.youtube.com/embed/mr6TUF16KIA",
-      image: "/cardImage.png",
+      image: "/cardImage.jpg",
     },
   ];
 

@@ -8,31 +8,31 @@ interface Logo {
 const logos: Logo[] = [
   {
     name: "ChatGPT",
-    url: "/tools/chatgpt.png",
+    url: "/tools/chatgpt.webp",
   },
   {
     name: "Gmail",
-    url: "/tools/gmail.png",
+    url: "/tools/gmail.webp",
   },
   {
     name: "Facebook",
-    url: "/tools/facebook.png",
+    url: "/tools/facebook.webp",
   },
   {
     name: "Google Calendar",
-    url: "/tools/google-calendar.png",
+    url: "/tools/google-calendar.webp",
   },
   {
     name: "WhatsApp",
-    url: "/tools/whatsapp.png",
+    url: "/tools/whatsapp.webp",
   },
   {
     name: "Twilio",
-    url: "/tools/Twilio.png",
+    url: "/tools/twilio.webp",
   },
   {
     name: "GoHighLevel",
-    url: "/tools/gohighlevel.jpg",
+    url: "/tools/gohighlevel.webp",
   },
 ];
 

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import Script from "next/script";
+import Image from "next/image";
 
 /* eslint-disable react/no-unescaped-entities */
 
@@ -27,9 +28,9 @@ export const metadata: Metadata = {
     siteName: "Fusion Calling",
     images: [
       {
-        url: "/opengraph-image.png",
-        width: 1200,
-        height: 630,
+        url: "/blog/blog3.webp",
+        width: 1376,
+        height: 768,
         alt: "Vapi vs Retell vs ElevenLabs Voice AI Provider Comparison",
       },
     ],
@@ -84,6 +85,7 @@ export default function VapiVsRetellVsElevenLabsBlogPost() {
                 description:
                   "A neutral, practical comparison of Vapi, Retell AI, and ElevenLabs for voice AI agencies — their strengths, best use cases, and how Fusion Calling unifies all three under one white-label dashboard.",
                 inLanguage: "en-US",
+                image: "https://www.fusioncalling.com/blog/blog3.webp",
                 isPartOf: {
                   "@id": "https://www.fusioncalling.com/#website",
                 },
@@ -174,16 +176,16 @@ export default function VapiVsRetellVsElevenLabsBlogPost() {
           </div>
         </div>
 
-        {/* Featured Image Placeholder */}
-        <div className="mb-12 rounded-3xl overflow-hidden border border-brand/20">
-          <div className="aspect-video bg-gradient-to-br from-brand/10 to-brand-strong/5 flex items-center justify-center">
-            <div className="text-center">
-              <div className="text-6xl mb-4">🎙️</div>
-              <div className="text-lg text-gray-500">
-                Choosing the Right Voice AI Provider
-              </div>
-            </div>
-          </div>
+        {/* Featured Image */}
+        <div className="relative mb-12 rounded-3xl overflow-hidden border border-brand/20">
+          <Image
+            src="/blog/blog3.webp"
+            alt="Vapi vs Retell vs ElevenLabs Voice AI Provider Comparison"
+            fill
+            priority
+            className="object-cover"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+          />
         </div>
 
         {/* Article Content */}
@@ -623,7 +625,7 @@ export default function VapiVsRetellVsElevenLabsBlogPost() {
                 <strong className="text-brand-strong">Fusion Calling Team</strong>
               </p>
               <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                We're the team behind Fusion Calling's white-label AI voice platform. Having helped 50+ agencies launch profitable voice AI practices since 2022, we specialize in helping businesses scale their phone operations with cutting-edge automation technology.
+                We're the team behind Fusion Calling's white-label AI voice platform. Having helped 50+ agencies launch profitable voice AI practices since 2025, we specialize in helping businesses scale their phone operations with cutting-edge automation technology.
               </p>
               <div className="flex items-center gap-4 text-sm">
                 <a

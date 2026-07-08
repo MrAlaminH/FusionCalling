@@ -112,7 +112,7 @@ const ghlschema = {
       name: "Fusion Calling White-label AI Voice Solution",
       description:
         "Become a Fusion Calling partner and white-label our AI voice solution. Offer powerful AI phone automation under your own brand.",
-      image: "https://www.fusioncalling.com/cardImage.png",
+      image: "https://www.fusioncalling.com/cardImage.jpg",
       brand: { "@type": "Brand", name: "Fusion Calling" },
       category: "Business Software",
       aggregateRating: {
@@ -147,7 +147,7 @@ export const metadata: Metadata = {
     siteName: "Fusion Calling",
     images: [
       {
-        url: "/og.png",
+        url: "/og.jpg",
         width: 1200,
         height: 630,
         alt: "Fusion Calling - White-label AI Voice for GoHighLevel",

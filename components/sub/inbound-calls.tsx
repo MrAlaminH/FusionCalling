@@ -87,7 +87,7 @@ export default function InboundCalls() {
                 >
                   <div className="absolute inset-0">
                     <Image
-                      src="/agent.jpg"
+                      src="/agent.webp"
                       alt="Satellite dish illustration"
                       className="transition-transform duration-300 transform hover:scale-110"
                       fill
