@@ -1,9 +1,9 @@
 export function OverviewSection() {
   return (
     <section id="overview" className="mb-16 scroll-mt-24">
-      <h1 className="text-4xl font-bold mb-4 text-white">
+      <h2 className="text-4xl font-bold mb-4 text-white">
         SMS & Messages User Guide
-      </h1>
+      </h2>
       <p className="text-gray-300 text-lg mb-6">
         This guide is for everyday users of Fusion Call. You do not need to be
         technical. Follow the steps in order the first time you set up texting.

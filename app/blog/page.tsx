@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Blog | Fusion Calling - White-Label Voice AI Insights",
+  title: "Blog | White-Label Voice AI Insights",
   description:
     "Expert insights on white-label AI voice platforms, agency growth strategies, and voice automation trends. Learn how to build profitable AI voice businesses.",
   alternates: {

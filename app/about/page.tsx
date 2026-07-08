@@ -1,18 +1,36 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import Script from "next/script";
 import { SITE_URL } from "@/lib/site-url";
+import Footer from "@/components/Footer";
+
+const aboutFaqs = [
+  {
+    question: "What does Fusion Calling do?",
+    answer:
+      "Fusion Calling provides AI voice agents that automate inbound and outbound business calls 24/7 — booking appointments, qualifying leads, answering customer questions, and scaling phone operations without adding headcount.",
+  },
+  {
+    question: "When was Fusion Calling founded?",
+    answer:
+      "Fusion Calling was founded in 2022 by Alamin, a voice-AI engineer, and has since helped 50+ agencies and businesses launch profitable voice-AI practices.",
+  },
+  {
+    question: "Which industries use Fusion Calling?",
+    answer:
+      "Teams across real estate, dental, insurance, home services, legal, and automotive use Fusion Calling to automate phone operations with human-like voice agents.",
+  },
+];
 
 export const metadata: Metadata = {
-  title: "About Fusion Calling | AI Phone Call Automation Company",
+  title: "About Fusion Calling | AI Voice Agents",
   description:
     "Fusion Calling builds human-like AI voice agents that automate inbound and outbound business calls. Learn about our team, our mission, and why 50+ agencies trust us since 2022.",
   alternates: {
     canonical: "/about",
   },
   openGraph: {
-    title: "About Fusion Calling | AI Phone Call Automation Company",
+  title: "About Fusion Calling | Our Mission",
     description:
       "We help businesses and agencies automate phone calls with human-like AI voice agents. 50+ agencies served since 2022.",
     url: "https://www.fusioncalling.com/about",
@@ -62,14 +80,24 @@ const aboutJsonLd = {
         "https://www.linkedin.com/company/fusion-calling/",
       ],
     },
+    {
+      "@type": "FAQPage",
+      mainEntity: aboutFaqs.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: f.answer,
+        },
+      })),
+    },
   ],
 };
 
 export default function AboutPage() {
   return (
     <>
-      <Script
-        id="about-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }}
       />
@@ -176,6 +204,26 @@ export default function AboutPage() {
         </ul>
       </section>
 
+      {/* FAQ */}
+      <section className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl py-10 md:py-14">
+        <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
+          Frequently asked questions
+        </h2>
+        <div className="space-y-4">
+          {aboutFaqs.map((f) => (
+            <div
+              key={f.question}
+              className="rounded-2xl border border-brand/20 bg-black/40 p-6"
+            >
+              <h3 className="text-lg font-semibold text-white mb-2">
+                {f.question}
+              </h3>
+              <p className="text-gray-400 leading-relaxed">{f.answer}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl py-12 md:py-16 text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
@@ -202,6 +250,7 @@ export default function AboutPage() {
         </div>
       </section>
     </main>
+    <Footer />
     </>
   );
 }

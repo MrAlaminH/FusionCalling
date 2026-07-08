@@ -5,7 +5,7 @@ import Script from "next/script";
 /* eslint-disable react/no-unescaped-entities */
 
 export const metadata: Metadata = {
-  title: "Vapi vs Retell vs ElevenLabs: Choosing the Right Voice AI Provider",
+  title: "Vapi vs Retell vs ElevenLabs: Which Is Best?",
   description:
     "A neutral, practical comparison of Vapi, Retell AI, and ElevenLabs for voice AI agencies — their strengths, best use cases, and how Fusion Calling unifies all three under one white-label dashboard.",
   keywords: [
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     canonical: "/blog/vapi-vs-retell-vs-elevenlabs",
   },
   openGraph: {
-    title: "Vapi vs Retell vs ElevenLabs: Choosing the Right Voice AI Provider",
+    title: "Vapi vs Retell vs ElevenLabs: Choosing a Voice AI Provider",
     description:
       "A neutral, practical comparison of Vapi, Retell AI, and ElevenLabs for voice AI agencies — their strengths, best use cases, and how Fusion Calling unifies all three.",
     url: "https://www.fusioncalling.com/blog/vapi-vs-retell-vs-elevenlabs",

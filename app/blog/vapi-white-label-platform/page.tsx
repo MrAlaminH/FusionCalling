@@ -5,7 +5,7 @@ import Script from "next/script";
 /* eslint-disable react/no-unescaped-entities */
 
 export const metadata: Metadata = {
-  title: "White-Label Vapi: Why Vapi Alone Isn't Resellable (and the Fix)",
+  title: "White-Label Vapi: Vapi Alone Isn't Resellable",
   description:
     "Vapi is excellent voice AI infrastructure, but it has no native white-label — you can't resell it under your brand out of the box. Fusion Calling is the white-label layer that adds branding, client portals, and billing so agencies can resell Vapi in about 7 days.",
   keywords: [
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     canonical: "/blog/vapi-white-label-platform",
   },
   openGraph: {
-    title: "White-Label Vapi: Why Vapi Alone Isn't Resellable (and the Fix)",
+    title: "White-Label Vapi: Why Vapi Alone Isn't Resellable",
     description:
       "Vapi is excellent voice AI infrastructure, but it has no native white-label. Fusion Calling is the white-label layer that lets agencies resell Vapi under their own brand.",
     url: "https://www.fusioncalling.com/blog/vapi-white-label-platform",

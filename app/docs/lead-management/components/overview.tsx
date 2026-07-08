@@ -1,9 +1,9 @@
 export function OverviewSection() {
   return (
     <section id="overview" className="mb-16 scroll-mt-24">
-      <h1 className="text-4xl font-bold mb-4 text-white">
+      <h2 className="text-4xl font-bold mb-4 text-white">
         Lead Management User Guide
-      </h1>
+      </h2>
       <p className="text-gray-300 text-lg mb-6">
         The Lead Management system allows you to upload, organize, and
         automatically call leads using AI-powered calling agents. This guide

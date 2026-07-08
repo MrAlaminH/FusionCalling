@@ -13,7 +13,7 @@ import Script from "next/script";
 import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
 
 export const metadata: Metadata = {
-  title: "White-Label AI Voice Agents (Vapi, Retell, ElevenLabs) | Fusion Calling Partner Program",
+  title: "White-Label AI Voice Agents (Vapi, Retell)",
   description:
     "Resell AI voice agents under your own brand with Fusion Calling's white-label partner program. Import your Vapi, Retell & ElevenLabs agents, set your pricing, and keep 100% of the revenue.",
   keywords: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     canonical: "/whitelabel",
   },
   openGraph: {
-    title: "White-Label AI Voice Agents (Vapi, Retell, ElevenLabs) | Fusion Calling Partner Program",
+    title: "White-Label AI Voice Agents",
     description:
       "Resell AI voice agents under your own brand. Import your Vapi, Retell & ElevenLabs agents and keep 100% of the revenue.",
     url: "https://www.fusioncalling.com/whitelabel",

@@ -1,3 +1,5 @@
+import { GEO_SOURCES, type GeoCitation } from "@/lib/seo";
+
 export type GlossaryCategory =
   | "Core AI & Voice"
   | "Speech Technology"
@@ -5,6 +7,31 @@ export type GlossaryCategory =
   | "Conversational Design"
   | "Compliance & Security"
   | "Business & Operations";
+
+// Authoritative external references cited on each glossary term page. GEO
+// citations (+40% AI-answer visibility) require linking to real sources.
+export const GLOSSARY_CITATIONS: Record<GlossaryCategory, GeoCitation[]> = {
+  "Core AI & Voice": [GEO_SOURCES.schema, GEO_SOURCES.googleAi],
+  "Speech Technology": [
+    GEO_SOURCES.schemaDefinedTerm,
+    GEO_SOURCES.w3cVoice,
+    GEO_SOURCES.elevenLabs,
+  ],
+  Telephony: [GEO_SOURCES.twilio, GEO_SOURCES.fccTcpa],
+  "Conversational Design": [GEO_SOURCES.schema, GEO_SOURCES.googleAi],
+  "Compliance & Security": [
+    GEO_SOURCES.nistAi,
+    GEO_SOURCES.fccTcpa,
+    GEO_SOURCES.schema,
+  ],
+  "Business & Operations": [GEO_SOURCES.schema, GEO_SOURCES.fusionApi],
+};
+
+export function getGlossaryCitations(
+  category: GlossaryCategory
+): GeoCitation[] {
+  return GLOSSARY_CITATIONS[category] ?? [];
+}
 
 export type GlossaryTerm = {
   term: string;

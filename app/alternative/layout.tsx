@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Voice AI Platform Comparisons | Fusion Calling",
+  title: "Voice AI Platform Comparisons",
   description:
     "Honest, side-by-side comparisons of the leading white-label voice AI platforms for agencies. Compare Fusion Calling against ChatDash, Vapify, Voicerr, VoiceAIWrapper, and more.",
   alternates: {

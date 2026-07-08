@@ -8,7 +8,7 @@ import Sources from "@/components/sources";
 import { buildOpenGraph } from "@/lib/seo";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 
-const title = "What Is AI Phone Call Automation? | Fusion Calling";
+const title = "What Is AI Phone Call Automation?";
 const description =
   "A plain-English explainer on AI phone call automation: how AI voice agents place and answer calls, the technology behind them, real-world results, and the standards Fusion Calling follows.";
 

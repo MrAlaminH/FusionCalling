@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.fusioncalling.com/"),
   title: {
     default: "Fusion Calling | AI Phone Call Automation for Businesses",
-    template: "%s | Fusion Calling - AI Phone Call Automation",
+    template: "%s | Fusion Calling",
   },
   description:
     "Boost business efficiency with Fusion Calling's AI-powered phone call automation. Streamline customer interactions, save time, and increase productivity.",

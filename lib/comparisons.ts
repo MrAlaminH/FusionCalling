@@ -111,7 +111,7 @@ export const comparisons: Comparison[] = [
     datePublished: "2025-01-20T00:00:00Z",
     heroEmoji: "💬",
     heroImage: "/alternative/alternative1.png",
-    metaTitle: "Best ChatDash Alternatives for AI Phone Call Agents | Fusion Calling",
+    metaTitle: "ChatDash Alternatives for Voice AI Agencies",
     metaDescription:
       "Looking for ChatDash alternatives? Compare Fusion Calling vs ChatDash for white-label voice AI agencies. Better provider support, more clients included, faster onboarding, and transparent pricing.",
     keywords: [
@@ -261,7 +261,7 @@ export const comparisons: Comparison[] = [
     datePublished: "2025-01-21T00:00:00Z",
     heroEmoji: "⚡",
     heroImage: "/alternative/alternative2.png",
-    metaTitle: "Best Vapify Alternatives for White-Label AI Call Agents | Fusion Calling",
+    metaTitle: "Vapify Alternatives for Voice AI Agencies",
     metaDescription:
       "Searching for Vapify alternatives? Fusion Calling offers 6x the sub-accounts at entry, multi-provider support, guided onboarding, and a live demo. Compare the best white-label voice AI platforms.",
     keywords: [
@@ -411,7 +411,7 @@ export const comparisons: Comparison[] = [
     datePublished: "2025-01-22T00:00:00Z",
     heroEmoji: "📞",
     heroImage: "/alternative/alternative3.png",
-    metaTitle: "Best Voicerr AI Alternatives for Voice AI Platforms | Fusion Calling",
+    metaTitle: "Voicerr AI Alternatives for Voice Agencies",
     metaDescription:
       "Looking for Voicerr AI alternatives? Fusion Calling offers guided onboarding, multi-provider support, and a live demo. Compare the best voice AI platforms for agencies and resellers.",
     keywords: [
@@ -561,7 +561,7 @@ export const comparisons: Comparison[] = [
     datePublished: "2025-01-23T00:00:00Z",
     heroEmoji: "🎚️",
     heroImage: "/alternative/alternative4.png",
-    metaTitle: "Best VoiceAIWrapper Alternatives for Multi-Provider Voice AI | Fusion Calling",
+    metaTitle: "VoiceAIWrapper Alternatives for Voice Agencies",
     metaDescription:
       "Searching for VoiceAIWrapper alternatives? Fusion Calling offers guided onboarding, a live demo, and partnership model. Compare the best multi-provider voice AI platforms for agencies.",
     keywords: [
@@ -711,7 +711,7 @@ export const comparisons: Comparison[] = [
     datePublished: "2025-01-24T00:00:00Z",
     heroEmoji: "🌊",
     heroImage: "/alternative/alternative5.png",
-    metaTitle: "Best Synthflow Alternatives for Transparent Voice AI Pricing | Fusion Calling",
+    metaTitle: "Synthflow Alternatives for Voice AI Agencies",
     metaDescription:
       "Looking for Synthflow alternatives? Fusion Calling offers transparent public pricing, no sales calls, multi-provider support, and guided onboarding. Compare the best voice AI platforms for agencies.",
     keywords: [
@@ -861,7 +861,7 @@ export const comparisons: Comparison[] = [
     datePublished: "2025-01-25T00:00:00Z",
     heroEmoji: "🧠",
     heroImage: "/alternative/alternative6.png",
-    metaTitle: "Best Thinkrr Alternatives for Multi-CRM Voice AI | Fusion Calling",
+    metaTitle: "Thinkrr Alternatives for Voice AI Agencies",
     metaDescription:
       "Searching for Thinkrr alternatives? Fusion Calling supports 2,200+ apps, multi-provider flexibility, and guided onboarding. Compare the best voice AI platforms for multi-CRM agencies.",
     keywords: [
@@ -1011,7 +1011,7 @@ export const comparisons: Comparison[] = [
     datePublished: "2025-01-26T00:00:00Z",
     heroEmoji: "🔁",
     heroImage: "/opengraph-image.png",
-    metaTitle: "Best Bland AI Alternatives for White-Label Voice Agencies | Fusion Calling",
+    metaTitle: "Bland AI Alternatives for Voice Agencies",
     metaDescription:
       "Looking for Bland AI alternatives? Fusion Calling offers white-label branding, guided onboarding, and a live demo. Compare the best voice AI platforms for agencies.",
     keywords: [
@@ -1160,7 +1160,7 @@ export const comparisons: Comparison[] = [
     datePublished: "2025-01-27T00:00:00Z",
     heroEmoji: "🌬️",
     heroImage: "/opengraph-image.png",
-    metaTitle: "Best Air AI Alternatives for White-Label Voice Agencies | Fusion Calling",
+    metaTitle: "Air AI Alternatives for Voice Agencies",
     metaDescription:
       "Searching for Air AI alternatives? Fusion Calling offers white-label branding, multi-provider support, and guided onboarding. Compare the best voice AI platforms for agencies.",
     keywords: [

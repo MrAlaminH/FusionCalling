@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import DocsHub from "./DocsHub";
 import { buildOpenGraph } from "@/lib/seo";
 
-const title = "Fusion Calling Documentation | API & Setup Guides";
+const title = "Fusion Calling Docs & API Reference";
 const description =
   "Complete documentation for Fusion Calling AI voice automation. Learn API integration, agent configuration, lead management, SMS messaging, and admin setup.";
 

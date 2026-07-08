@@ -1,6 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 import { buildOpenGraph } from "@/lib/seo";
+import Footer from "@/components/Footer";
 
 const title = "Terms of Service";
 const description =
@@ -521,7 +522,53 @@ export default function TermsOfUse() {
             agreement between you and Fusion Calling regarding the Service.
           </p>
         </section>
+
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4 text-white">
+            Legal references
+          </h2>
+          <p className="mb-4 text-gray-300">
+            These Terms reference the following authoritative regulations and
+            standards:
+          </p>
+          <ul className="list-disc pl-6 space-y-2 text-gray-300">
+            <li>
+              <a
+                href="https://eur-lex.europa.eu/eli/reg/2016/679/oj"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-brand hover:underline"
+              >
+                General Data Protection Regulation (GDPR)
+              </a>{" "}
+              — EU Regulation 2016/679.
+            </li>
+            <li>
+              <a
+                href="https://cppa.ca.gov/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-brand hover:underline"
+              >
+                California Consumer Privacy Act (CCPA)
+              </a>{" "}
+              — administered by the California Privacy Protection Agency.
+            </li>
+            <li>
+              <a
+                href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-brand hover:underline"
+              >
+                EU AI Act
+              </a>{" "}
+              — the European regulatory framework for artificial intelligence.
+            </li>
+          </ul>
+        </section>
       </div>
+      <Footer />
     </div>
   );
 }

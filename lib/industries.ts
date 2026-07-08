@@ -756,7 +756,7 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2025-02-09T00:00:00Z",
     productSupported: true,
-    metaTitle: "AI Voice for E-commerce & Retail: Support, Orders & Returns",
+    metaTitle: "AI Voice for E-commerce & Retail: Support & Orders",
     metaDescription:
       "Recover lost sales with AI voice agents for e-commerce and retail. Automate order status, returns, and support calls 24/7. See use cases, ROI, and how agencies white-label it.",
     keywords: [
@@ -841,7 +841,7 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2025-02-10T00:00:00Z",
     productSupported: false,
-    metaTitle: "AI Voice for Education & Tutoring: Enrollment & Scheduling",
+    metaTitle: "AI Voice for Education & Tutoring: Enroll & Schedule",
     metaDescription:
       "Fill cohorts and reduce no-shows with AI voice agents for tutoring centers, schools, and edtech. Automate enrollment calls, scheduling, and parent comms 24/7.",
     keywords: [
@@ -926,7 +926,7 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2025-02-11T00:00:00Z",
     productSupported: false,
-    metaTitle: "AI Voice for Restaurants & Hospitality: Reservations & Orders",
+    metaTitle: "AI Voice for Restaurants & Hospitality: Booking & Orders",
     metaDescription:
       "Never miss a reservation or phone order. AI voice agents for restaurants and hotels handle bookings, takeout, and catering calls 24/7. See use cases and ROI.",
     keywords: [

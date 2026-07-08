@@ -1,13 +1,38 @@
 import Link from "next/link";
-import Script from "next/script";
 import type { GlossaryTerm } from "@/lib/glossary";
-import { slugifyTerm, getRelatedTerms, GLOSSARY_LAST_UPDATED } from "@/lib/glossary";
+import {
+  slugifyTerm,
+  getRelatedTerms,
+  getGlossaryCitations,
+  GLOSSARY_LAST_UPDATED,
+} from "@/lib/glossary";
 import { SITE_URL } from "@/lib/site-url";
 
 export default function GlossaryTermPage({ term }: { term: GlossaryTerm }) {
   const slug = slugifyTerm(term.term);
   const related = getRelatedTerms(term, 6);
+  const sources = getGlossaryCitations(term.category);
   const articleUrl = `${SITE_URL}/glossary/${slug}`;
+
+  // Answer-first FAQ derived from the term's own definition + related terms.
+  // Emitted as FAQPage schema (a top GEO signal) and rendered for readers.
+  const relatedNames = related.map((r) => r.term);
+  const faqs = [
+    {
+      question: `What is ${term.term}?`,
+      answer: term.definition,
+    },
+    {
+      question: `Why does ${term.term} matter for AI voice agents?`,
+      answer: term.whyItMatters,
+    },
+    {
+      question: `How is ${term.term} used in AI phone call automation?`,
+      answer: `In AI phone call automation, ${term.term} is part of the ${term.category} foundation. ${term.whyItMatters} It connects closely to related concepts like ${relatedNames
+        .slice(0, 3)
+        .join(", ")}, which together shape how a voice agent understands callers and completes real tasks such as booking appointments and qualifying leads.`,
+    },
+  ];
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -43,13 +68,23 @@ export default function GlossaryTermPage({ term }: { term: GlossaryTerm }) {
         datePublished: GLOSSARY_LAST_UPDATED,
         dateModified: GLOSSARY_LAST_UPDATED,
       },
+      {
+        "@type": "FAQPage",
+        mainEntity: faqs.map((f) => ({
+          "@type": "Question",
+          name: f.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: f.answer,
+          },
+        })),
+      },
     ],
   };
 
   return (
     <>
-      <Script
-        id={`${slug}-schema`}
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
@@ -95,6 +130,26 @@ export default function GlossaryTermPage({ term }: { term: GlossaryTerm }) {
           </div>
         </div>
 
+        {/* FAQ — answer-first, also emitted as FAQPage schema */}
+        <div className="mb-10">
+          <h2 className="text-2xl font-bold text-white mb-6">
+            Frequently asked questions
+          </h2>
+          <div className="space-y-4">
+            {faqs.map((f) => (
+              <div
+                key={f.question}
+                className="glass rounded-2xl p-6 border border-brand/20"
+              >
+                <h3 className="text-lg font-semibold text-white mb-2">
+                  {f.question}
+                </h3>
+                <p className="text-gray-300 leading-relaxed">{f.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Related terms */}
         {related.length > 0 && (
           <div className="mb-10">
@@ -110,6 +165,32 @@ export default function GlossaryTermPage({ term }: { term: GlossaryTerm }) {
                 </Link>
               ))}
             </div>
+          </div>
+        )}
+
+        {/* Authoritative sources — GEO citations */}
+        {sources.length > 0 && (
+          <div className="mb-10">
+            <h2 className="text-2xl font-bold text-white mb-4">Sources</h2>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              Definitions and claims on this page are grounded in the following
+              authoritative external references.
+            </p>
+            <ul className="flex flex-wrap gap-3">
+              {sources.map((s) => (
+                <li key={s.url}>
+                  <a
+                    href={s.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 glass-light rounded-full px-5 py-2.5 border border-brand/20 hover:border-brand/40 transition-all text-gray-300 hover:text-brand-light text-sm font-medium"
+                  >
+                    {s.label}
+                    <span aria-hidden className="text-brand-light">↗</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         )}
 

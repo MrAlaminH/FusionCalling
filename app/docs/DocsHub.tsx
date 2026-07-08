@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import Script from "next/script";
+import { GEO_SOURCES } from "@/lib/seo";
 
 interface DocSection {
   id: string;
@@ -121,6 +121,30 @@ const colorClasses = {
   },
 };
 
+const docFaqs = [
+  {
+    question: "What can I build with the Fusion Calling documentation?",
+    answer:
+      "The docs cover everything you need to integrate and run AI voice agents: the External Calendar and Leads APIs, authentication, webhooks, agent configuration, lead management, SMS messaging, and the admin section.",
+  },
+  {
+    question: "How do I authenticate API requests?",
+    answer:
+      "Every API request is authenticated with a bearer token as documented in the API Reference. Webhooks push call outcomes, lead events, and transcriptions to your endpoints so you can sync them into any CRM.",
+  },
+  {
+    question: "Does Fusion Calling support white-label resellers?",
+    answer:
+      "Yes. Agencies can resell AI voice agents under their own brand using the white-label program, bringing their own Vapi, Retell, or ElevenLabs keys and managing unlimited client sub-accounts from one dashboard.",
+  },
+];
+
+const docSources = [
+  GEO_SOURCES.fusionApi,
+  GEO_SOURCES.schema,
+  GEO_SOURCES.googleSearchCentral,
+];
+
 export default function DocsHub() {
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -131,8 +155,7 @@ export default function DocsHub() {
 
   return (
     <>
-      <Script
-        id="docs-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -161,6 +184,17 @@ export default function DocsHub() {
                 url: "https://www.fusioncalling.com/docs",
                 name: "Fusion Calling Documentation",
                 description: "Complete documentation for Fusion Calling AI voice automation platform",
+              },
+              {
+                "@type": "FAQPage",
+                mainEntity: docFaqs.map((f) => ({
+                  "@type": "Question",
+                  name: f.question,
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: f.answer,
+                  },
+                })),
               },
             ],
           }),
@@ -227,6 +261,46 @@ export default function DocsHub() {
                 </div>
               </Link>
             ))}
+          </div>
+
+          {/* FAQ — answer-first; also emitted as FAQPage schema */}
+          <div className="mt-16">
+            <h2 className="text-2xl font-bold text-white mb-6">
+              Documentation FAQ
+            </h2>
+            <div className="space-y-4">
+              {docFaqs.map((f) => (
+                <div
+                  key={f.question}
+                  className="bg-zinc-900 border border-zinc-800 rounded-xl p-6"
+                >
+                  <h3 className="text-lg font-semibold text-white mb-2">
+                    {f.question}
+                  </h3>
+                  <p className="text-gray-400 leading-relaxed">{f.answer}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Authoritative sources — GEO citations */}
+          <div className="mt-12">
+            <h2 className="text-2xl font-bold text-white mb-4">Sources</h2>
+            <ul className="flex flex-wrap gap-3">
+              {docSources.map((s) => (
+                <li key={s.url}>
+                  <a
+                    href={s.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-zinc-900 border border-zinc-800 rounded-full px-5 py-2.5 text-gray-300 hover:text-brand-strong hover:border-brand/40 transition-all text-sm font-medium"
+                  >
+                    {s.label}
+                    <span aria-hidden>↗</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Getting Started CTA */}

@@ -20,7 +20,7 @@ export function generateMetadata({
 
   const slug = slugifyTerm(term.term);
   const url = `${SITE_URL}/glossary/${slug}`;
-  const title = `${term.term} - Voice AI Glossary | Fusion Calling`;
+  const title = `${term.term} | AI Glossary | Fusion Calling`;
 
   return {
     title,
