@@ -9,7 +9,7 @@ import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 const title =
   "White-Label AI Voice for GoHighLevel";
 const description =
-  "Deploy white-label AI voice agents directly inside your GoHighLevel client sub-accounts. Import your Vapi, Retell & ElevenLabs agents, deliver 24/7 call handling, and keep 100% of the revenue.";
+  "Deploy white-label AI voice agents in GoHighLevel client sub-accounts. Import Vapi, Retell & ElevenLabs agents, deliver 24/7 calls, keep 100% of revenue.";
 
 const ghlfaqs = [
   {

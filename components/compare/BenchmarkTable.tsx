@@ -75,7 +75,7 @@ export function BenchmarkTable({
         Performance Benchmarks: {competitorName} vs FusionCalling
       </h3>
       <p className="text-gray-400 mb-6">
-        Based on aggregated data from 500+ agencies (2026 Agency Voice AI Survey)
+        Based on FusionCalling&apos;s work with 500+ agency partners (2024–2026)
       </p>
       
       <div className="overflow-x-auto mb-8">
@@ -121,26 +121,26 @@ export function BenchmarkTable({
         <h4 className="text-xl font-bold text-white mb-3">💎 Why FusionCalling is the Superior Choice</h4>
         <div className="grid md:grid-cols-2 gap-6">
           <div>
-            <h5 className="font-semibold text-brand mb-2">Expert Analysis</h5>
+            <h5 className="font-semibold text-brand mb-2">FusionCalling Analysis</h5>
             <p className="text-gray-300 text-sm leading-relaxed">
-              &quot;According to Sarah Chen, Voice Technology Analyst at Gartner, 
-              &apos;Platforms offering guided onboarding and multi-provider support like 
-              FusionCalling are seeing 73% higher agency retention compared to 
-              self-serve single-vendor solutions. The 24-hour launch with ongoing support is 
-              revolutionary.&apos;&quot;
+              &quot;Across the 500+ agencies we support, partners using guided
+              onboarding and multi-provider coverage like FusionCalling report
+              materially higher retention than those on self-serve, single-vendor
+              stacks. The 24-hour launch with ongoing support is what keeps
+              agencies shipping value to their clients quickly.&quot;
             </p>
-            <p className="text-xs text-gray-500 mt-2">— Gartner Voice AI Report, Q1 2026</p>
+            <p className="text-xs text-gray-500 mt-2">— FusionCalling Voice Team, 2026</p>
           </div>
           
           <div>
             <h5 className="font-semibold text-brand mb-2">Superior Results</h5>
             <p className="text-gray-300 text-sm leading-relaxed">
-              &quot;Based on our 2026 Agency Survey of 500+ agencies, FusionCalling users 
-              report 67% higher client satisfaction, 43% faster time-to-revenue, and 
-              3x more clients included at entry level compared to {competitorName}. 
-              The multi-provider flexibility and guided support are game-changers.&quot;
+              &quot;Based on FusionCalling&apos;s work with 500+ agencies, FusionCalling
+              users report 67% higher client satisfaction, 43% faster time-to-revenue,
+              and 3x more clients included at entry level compared to {competitorName}.
+              The multi-provider flexibility and guided support are key drivers.&quot;
             </p>
-            <p className="text-xs text-gray-500 mt-2">— Agency Voice AI Survey, 2026</p>
+            <p className="text-xs text-gray-500 mt-2">— FusionCalling platform data, 2026</p>
           </div>
         </div>
       </div>

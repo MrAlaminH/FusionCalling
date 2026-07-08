@@ -7,7 +7,7 @@ import Script from "next/script";
 export const metadata: Metadata = {
   title: "GoHighLevel Alternative for Voice AI: Built-In CRM + Voice Agents",
   description:
-    "GoHighLevel is a powerful CRM and marketing suite — but for a voice-first agency, paying for the full platform just to get a CRM is expensive overhead. Fusion Calling bundles AI voice agents together with a built-in CRM, client portals, and white-label in one platform.",
+    "GoHighLevel is a powerful CRM, but voice-first agencies pay for unused features. Fusion Calling bundles AI voice agents, a built-in CRM, portals, and white-label in one.",
   keywords: [
     "gohighlevel alternative",
     "crm for voice ai agencies",

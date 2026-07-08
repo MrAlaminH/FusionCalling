@@ -18,7 +18,7 @@ import { buildOpenGraph } from "@/lib/seo";
 
 const title = "Admin Section Guide";
 const description =
-  "Complete guide for agency owners to manage Fusion Calling: client management, user management, AI provider configuration, branding, credits, subscriptions, and best practices.";
+  "Complete guide for agency owners to manage Fusion Calling: client and user management, AI provider setup, branding, credits, subscriptions, and best practices.";
 
 export const metadata: Metadata = {
   title,

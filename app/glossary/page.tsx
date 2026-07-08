@@ -6,7 +6,7 @@ import { buildOpenGraph } from "@/lib/seo";
 
 const title = "Voice AI Glossary | Fusion Calling";
 const description =
-  "A complete glossary of voice AI terms for agencies. Plain-English definitions for ASR, TTS, latency, HIPAA, white-label, and more, to help you build and sell voice AI.";
+  "A complete glossary of voice AI terms for agencies & resellers, with plain-English definitions of ASR, TTS, latency, HIPAA, white-label, and more.";
 
 export const metadata: Metadata = {
   title,

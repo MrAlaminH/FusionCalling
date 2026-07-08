@@ -7,7 +7,7 @@ import Script from "next/script";
 export const metadata: Metadata = {
   title: "White-Labeling Retell AI with Fusion Calling",
   description:
-    "Retell AI powers great conversations. Fusion Calling adds the white-label agency layer — branding, client portals, multi-client management, and client billing — so you can resell Retell under your own brand.",
+    "Retell AI powers conversations. Fusion Calling adds the white-label agency layer: branding, client portals, and billing, so you can resell Retell under your own brand.",
   keywords: [
     "retell ai white label",
     "white label retell ai",

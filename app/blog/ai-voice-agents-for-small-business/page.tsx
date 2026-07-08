@@ -7,7 +7,7 @@ import Script from "next/script";
 export const metadata: Metadata = {
   title: "AI Voice Agents for Small Business: Use Cases & ROI",
   description:
-    "Missed calls cost small businesses real revenue. This practical guide covers AI voice agent use cases — missed-call recovery, 24/7 booking, lead capture — and the ROI math behind deploying one with Fusion Calling.",
+    "Missed calls cost small businesses revenue. This guide covers AI voice agent use cases — 24/7 booking, missed-call recovery, lead capture — with Fusion Calling.",
   keywords: [
     "ai voice agents for small business",
     "ai voice agent use cases",

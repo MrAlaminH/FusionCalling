@@ -6,7 +6,7 @@ import { buildOpenGraph } from "@/lib/seo";
 
 const title = "AI Voice by Industry | Fusion Calling";
 const description =
-  "Explore how white-label AI voice agents serve every industry, from real estate and dental to insurance, home services, legal, automotive, call centers, and financial services.";
+  "Explore how white-label AI voice agents serve every industry: real estate, dental, insurance, home services, legal, automotive, call centers, finance.";
 
 export const metadata: Metadata = {
   title,

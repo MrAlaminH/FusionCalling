@@ -25,7 +25,7 @@ const aboutFaqs = [
 export const metadata: Metadata = {
   title: "About Fusion Calling | AI Voice Agents",
   description:
-    "Fusion Calling builds human-like AI voice agents that automate inbound and outbound business calls. Learn about our team, our mission, and why 50+ agencies trust us since 2022.",
+    "Fusion Calling builds human-like AI voice agents that automate inbound and outbound calls. Learn our mission and why 50+ agencies trust us since 2022.",
   alternates: {
     canonical: "/about",
   },

@@ -113,7 +113,7 @@ export const comparisons: Comparison[] = [
     heroImage: "/alternative/alternative1.png",
     metaTitle: "ChatDash Alternatives for Voice AI Agencies",
     metaDescription:
-      "Looking for ChatDash alternatives? Compare Fusion Calling vs ChatDash for white-label voice AI agencies. Better provider support, more clients included, faster onboarding, and transparent pricing.",
+      "Fusion Calling vs ChatDash: the better white-label voice AI for agencies. More sub-accounts, multi-provider support, a live demo, and guided 24-hour onboarding.",
     keywords: [
       "best chatdash alternatives",
       "chatdash alternative for ai phone call agents",
@@ -215,8 +215,8 @@ export const comparisons: Comparison[] = [
     },
     expertQuote: {
       text: "Platforms offering guided onboarding and multi-provider support like Fusion Calling are seeing 73% higher agency retention compared to self-serve single-vendor solutions. The 24-hour launch with ongoing support is revolutionary for agency growth.",
-      attribution: "Sarah Chen, Voice Technology Analyst",
-      source: "Gartner Voice AI Report, Q1 2026"
+      attribution: "FusionCalling Voice Team",
+      source: "FusionCalling"
     },
     differentiatorHeadline:
       "A guided launch, a live demo, and a lower entry price",
@@ -263,7 +263,7 @@ export const comparisons: Comparison[] = [
     heroImage: "/alternative/alternative2.png",
     metaTitle: "Vapify Alternatives for Voice AI Agencies",
     metaDescription:
-      "Searching for Vapify alternatives? Fusion Calling offers 6x the sub-accounts at entry, multi-provider support, guided onboarding, and a live demo. Compare the best white-label voice AI platforms.",
+      "Fusion Calling vs Vapify: the white-label voice AI with 6x the sub-accounts at entry, multi-provider support, a live demo, and guided onboarding.",
     keywords: [
       "best vapify alternatives",
       "vapify alternative for white label ai call agents",
@@ -365,8 +365,8 @@ export const comparisons: Comparison[] = [
     },
     expertQuote: {
       text: "Agencies choosing platforms based solely on entry price often face 3x more migration costs when scaling. Fusion Calling's 6-client entry tier eliminates the need to re-platform as you grow, saving agencies an average of $12,000 in transition costs.",
-      attribution: "Michael Torres, Agency Growth Consultant",
-      source: "2026 Voice AI Agency Benchmark Report"
+      attribution: "FusionCalling Voice Team",
+      source: "FusionCalling"
     },
     differentiatorHeadline:
       "Built for agencies that grow past a single client",
@@ -413,7 +413,7 @@ export const comparisons: Comparison[] = [
     heroImage: "/alternative/alternative3.png",
     metaTitle: "Voicerr AI Alternatives for Voice Agencies",
     metaDescription:
-      "Looking for Voicerr AI alternatives? Fusion Calling offers guided onboarding, multi-provider support, and a live demo. Compare the best voice AI platforms for agencies and resellers.",
+      "Fusion Calling vs Voicerr AI: white-label voice AI for agencies with guided onboarding, multi-provider support, a live demo, and 30 days of help.",
     keywords: [
       "best voicerr alternatives",
       "voicerr ai alternative for voice ai platforms",
@@ -515,8 +515,8 @@ export const comparisons: Comparison[] = [
     },
     expertQuote: {
       text: "Agencies that choose platforms based on bundled features often struggle with shallow implementation. Fusion Calling's focused approach on core voice AI capabilities—combined with hands-on partnership—results in 67% higher client satisfaction and 43% faster time-to-revenue.",
-      attribution: "Jennifer Walsh, Voice Technology Strategist",
-      source: "Agency Voice AI Survey, 2026"
+      attribution: "FusionCalling Voice Team",
+      source: "FusionCalling"
     },
     differentiatorHeadline:
       "A guided launch and a live demo, not just a lower monthly fee",
@@ -563,7 +563,7 @@ export const comparisons: Comparison[] = [
     heroImage: "/alternative/alternative4.png",
     metaTitle: "VoiceAIWrapper Alternatives for Voice Agencies",
     metaDescription:
-      "Searching for VoiceAIWrapper alternatives? Fusion Calling offers guided onboarding, a live demo, and partnership model. Compare the best multi-provider voice AI platforms for agencies.",
+      "Fusion Calling vs VoiceAIWrapper: multi-provider white-label voice AI for agencies. Guided onboarding, a live demo, and a partnership that helps you scale.",
     keywords: [
       "best voiceaiwrapper alternatives",
       "voiceaiwrapper alternative for multi provider voice ai",
@@ -665,8 +665,8 @@ export const comparisons: Comparison[] = [
     },
     expertQuote: {
       text: "The hidden cost of self-serve platforms isn't in the setup time—it's in the ongoing optimization. Agencies with guided onboarding see 73% higher retention because they implement best practices from day one rather than learning through trial and error.",
-      attribution: "David Kim, Voice AI Operations Director",
-      source: "Voice AI Agency Success Study, 2026"
+      attribution: "FusionCalling Voice Team",
+      source: "FusionCalling"
     },
     differentiatorHeadline:
       "A guided launch and a live demo, head to head with self-serve flexibility",
@@ -713,7 +713,7 @@ export const comparisons: Comparison[] = [
     heroImage: "/alternative/alternative5.png",
     metaTitle: "Synthflow Alternatives for Voice AI Agencies",
     metaDescription:
-      "Looking for Synthflow alternatives? Fusion Calling offers transparent public pricing, no sales calls, multi-provider support, and guided onboarding. Compare the best voice AI platforms for agencies.",
+      "Fusion Calling vs Synthflow: white-label voice AI with public pricing, no sales calls, multi-provider support, a live demo, and guided 24-hour launch.",
     keywords: [
       "best synthflow alternatives",
       "synthflow alternative for transparent voice ai pricing",
@@ -815,8 +815,8 @@ export const comparisons: Comparison[] = [
     },
     expertQuote: {
       text: "Sales-led procurement is the biggest killer of agency momentum. Our research shows that platforms requiring custom pricing extend sales cycles by 6-8 weeks, resulting in 43% longer time-to-revenue. Fusion Calling's transparent pricing eliminates this friction entirely.",
-      attribution: "Amanda Foster, SaaS Growth Analyst",
-      source: "B2B Procurement Friction Report, Q1 2026"
+      attribution: "FusionCalling Voice Team",
+      source: "FusionCalling"
     },
     differentiatorHeadline:
       "Transparent pricing and a guided launch, instead of a quote",
@@ -863,7 +863,7 @@ export const comparisons: Comparison[] = [
     heroImage: "/alternative/alternative6.png",
     metaTitle: "Thinkrr Alternatives for Voice AI Agencies",
     metaDescription:
-      "Searching for Thinkrr alternatives? Fusion Calling supports 2,200+ apps, multi-provider flexibility, and guided onboarding. Compare the best voice AI platforms for multi-CRM agencies.",
+      "Fusion Calling vs Thinkrr: white-label voice AI for multi-CRM agencies. Connects to 2,200+ apps, multi-provider support, a live demo, guided onboarding.",
     keywords: [
       "best thinkrr alternatives",
       "thinkrr alternative for multi crm voice ai",
@@ -965,8 +965,8 @@ export const comparisons: Comparison[] = [
     },
     expertQuote: {
       text: "Agencies locked into single-ecosystem platforms like GoHighLevel face 3x higher client acquisition costs because they can't serve prospects outside that ecosystem. Multi-CRM flexibility isn't just convenient—it's essential for sustainable agency growth.",
-      attribution: "Robert Chen, Agency Revenue Strategist",
-      source: "Multi-CRM Agency Study, 2026"
+      attribution: "FusionCalling Voice Team",
+      source: "FusionCalling"
     },
     differentiatorHeadline:
       "Multi-CRM flexibility and a guided launch, beyond a single ecosystem",
@@ -1013,7 +1013,7 @@ export const comparisons: Comparison[] = [
     heroImage: "/opengraph-image.png",
     metaTitle: "Bland AI Alternatives for Voice Agencies",
     metaDescription:
-      "Looking for Bland AI alternatives? Fusion Calling offers white-label branding, guided onboarding, and a live demo. Compare the best voice AI platforms for agencies.",
+      "Fusion Calling vs Bland AI: the white-label voice AI built for agencies. Full branding, multi-provider support, a live demo, and guided 24-hour onboarding.",
     keywords: [
       "best bland ai alternatives",
       "bland ai alternative for voice agencies",
@@ -1114,8 +1114,8 @@ export const comparisons: Comparison[] = [
     },
     expertQuote: {
       text: "Agencies that try to white-label a developer platform spend 4-6 weeks on branding and billing plumbing before their first sale. Purpose-built agency platforms like Fusion Calling collapse that to 24 hours, dramatically improving time-to-revenue.",
-      attribution: "Sarah Chen, Voice Technology Analyst",
-      source: "Gartner Voice AI Report, Q1 2026",
+      attribution: "FusionCalling Voice Team",
+      source: "FusionCalling",
     },
     differentiatorHeadline:
       "A resell-ready, white-label platform instead of a developer toolkit",
@@ -1162,7 +1162,7 @@ export const comparisons: Comparison[] = [
     heroImage: "/opengraph-image.png",
     metaTitle: "Air AI Alternatives for Voice Agencies",
     metaDescription:
-      "Searching for Air AI alternatives? Fusion Calling offers white-label branding, multi-provider support, and guided onboarding. Compare the best voice AI platforms for agencies.",
+      "Fusion Calling vs Air AI: white-label voice AI for agencies to resell. Full branding, multi-provider support, a live demo, and guided 24-hour onboarding.",
     keywords: [
       "best air ai alternatives",
       "air ai alternative for voice agencies",
@@ -1263,8 +1263,8 @@ export const comparisons: Comparison[] = [
     },
     expertQuote: {
       text: "Autonomous agent platforms are great for end-users, but agencies need resell infrastructure: sub-accounts, rebilling, and white-label branding. Platforms built for that model see 73% higher agency retention.",
-      attribution: "Michael Torres, Agency Growth Consultant",
-      source: "2026 Voice AI Agency Benchmark Report",
+      attribution: "FusionCalling Voice Team",
+      source: "FusionCalling",
     },
     differentiatorHeadline:
       "A resell-ready platform instead of a single-seat AI employee",

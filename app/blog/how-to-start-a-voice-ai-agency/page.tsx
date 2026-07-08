@@ -7,7 +7,7 @@ import Script from "next/script";
 export const metadata: Metadata = {
   title: "How to Start a Voice AI Agency in 2025: A Step-by-Step Guide",
   description:
-    "Learn how to start a profitable voice AI agency in 2025 by partnering with a white-label platform. Keep 100% of client revenue, launch in 7 days, and scale with Vapi, Retell, and ElevenLabs.",
+    "Learn how to start a voice AI agency with a white-label platform. Keep 100% of client revenue, launch in 7 days, scale with Vapi, Retell and ElevenLabs.",
   keywords: [
     "start a voice AI agency",
     "voice AI agency 2025",

@@ -15,7 +15,7 @@ import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
 export const metadata: Metadata = {
   title: "White-Label AI Voice Agents (Vapi, Retell)",
   description:
-    "Resell AI voice agents under your own brand with Fusion Calling's white-label partner program. Import your Vapi, Retell & ElevenLabs agents, set your pricing, and keep 100% of the revenue.",
+    "Resell AI voice agents under your brand via Fusion Calling white-label program. Import Vapi, Retell and ElevenLabs agents, set pricing, keep 100% of revenue.",
   keywords: [
     "white-label AI voice solution",
     "resell AI phone automation",

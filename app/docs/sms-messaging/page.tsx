@@ -17,7 +17,7 @@ import { buildOpenGraph } from "@/lib/seo";
 
 const title = "SMS & Messages User Guide";
 const description =
-  "Complete guide to SMS and messaging in Fusion Calling: send texts, manage conversations, set up Twilio, create automated SMS campaigns, and handle inbound replies.";
+  "Complete guide to SMS and messaging in Fusion Calling: send texts, manage conversations, set up Twilio, build automated campaigns, and handle inbound replies.";
 
 export const metadata: Metadata = {
   title,

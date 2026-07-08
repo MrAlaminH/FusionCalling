@@ -19,7 +19,7 @@ import { buildOpenGraph } from "@/lib/seo";
 
 const title = "Lead Management User Guide";
 const description =
-  "Complete guide to managing leads in Fusion Calling: adding leads, understanding statuses, configuring providers, custom fields, retry system, and best practices.";
+  "Complete guide to managing leads in Fusion Calling: adding leads, statuses, configuring providers, custom fields, retry system, and best practices.";
 
 export const metadata: Metadata = {
   title,

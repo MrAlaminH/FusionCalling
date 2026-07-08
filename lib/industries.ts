@@ -78,7 +78,7 @@ export const industries: Industry[] = [
     productSupported: true,
     metaTitle: "AI Voice for Real Estate: Automate Leads & Showings",
     metaDescription:
-      "How AI voice agents help real estate teams capture every lead, schedule showings, and follow up automatically. See use cases, ROI, and how agencies white-label it.",
+      "AI voice agents help real estate teams capture leads, book showings, and follow up 24/7. Launch a white-label AI calling agent for your agency.",
     keywords: [
       "ai voice real estate",
       "ai calling agent real estate",
@@ -163,7 +163,7 @@ export const industries: Industry[] = [
     productSupported: true,
     metaTitle: "AI Voice for Dental & Healthcare: Booking & Recall",
     metaDescription:
-      "Reduce no-shows and fill the schedule with AI voice agents for dental and healthcare practices. See use cases, ROI, and how agencies white-label it.",
+      "AI voice agents for dental & healthcare book appointments, run recalls, and cut no-shows 24/7. White-label the AI receptionist for your agency.",
     keywords: [
       "ai voice dental",
       "ai receptionist dental office",
@@ -248,7 +248,7 @@ export const industries: Industry[] = [
     productSupported: true,
     metaTitle: "AI Voice for Insurance Agencies: Quotes & Renewals",
     metaDescription:
-      "AI voice agents for insurance agencies: capture quotes faster, follow up on claims, and retain renewals automatically. See use cases, ROI, and white-label options.",
+      "AI voice agents for insurance agencies capture quotes, retain renewals, and qualify leads 24/7. White-label voice AI for your agency clients.",
     keywords: [
       "ai voice insurance",
       "ai calling agent insurance",
@@ -333,7 +333,7 @@ export const industries: Industry[] = [
     productSupported: false,
     metaTitle: "AI Voice for Home Services: HVAC, Plumbing & Roofing",
     metaDescription:
-      "Never miss an emergency call. AI voice agents for home services handle dispatch, booking, and follow-up for HVAC, plumbing, roofing, and electrical businesses.",
+      "AI voice agents for home services answer every call 24/7 — dispatch, book HVAC/plumbing/roofing jobs, and follow up. White-label for contractors.",
     keywords: [
       "ai voice home services",
       "ai receptionist hvac",
@@ -418,7 +418,7 @@ export const industries: Industry[] = [
     productSupported: false,
     metaTitle: "AI Voice for Law Firms: Intake & Consultations",
     metaDescription:
-      "Capture every potential client with AI voice agents for law firms. Automate intake, qualify cases, and schedule consultations around the clock.",
+      "AI voice agents for law firms capture every case, qualify leads, and book consultations 24/7. White-label legal intake for your agency.",
     keywords: [
       "ai voice law firm",
       "ai legal intake",
@@ -503,7 +503,7 @@ export const industries: Industry[] = [
     productSupported: false,
     metaTitle: "AI Voice for Auto Dealers & Service: Booking & Recall",
     metaDescription:
-      "AI voice agents for automotive dealerships and service centers. Book service appointments, manage recalls, and qualify sales leads around the clock.",
+      "AI voice agents for auto dealers & service centers book appointments, run recalls, and qualify sales leads 24/7. White-label for agencies.",
     keywords: [
       "ai voice automotive",
       "ai dealer receptionist",
@@ -588,7 +588,7 @@ export const industries: Industry[] = [
     productSupported: false,
     metaTitle: "AI Voice for Call Centers & BPOs: Scale & Cut Costs",
     metaDescription:
-      "AI voice agents for call centers and BPOs. Handle high-volume inbound and outbound calls, triage tier-1 queries, and scale without growing headcount.",
+      "AI voice agents for call centers & BPOs handle high-volume inbound/outbound calls, triage tier-1, and scale. White-label AI capacity for agencies.",
     keywords: [
       "ai voice call center",
       "ai bpo",
@@ -673,7 +673,7 @@ export const industries: Industry[] = [
     productSupported: false,
     metaTitle: "AI Voice for Financial Services: Advising & Scheduling",
     metaDescription:
-      "AI voice agents for financial advisors, lenders, and fintechs. Qualify leads, schedule appointments, and follow up consistently and professionally.",
+      "AI voice agents for financial advisors, lenders & fintechs qualify leads, book meetings, and follow up 24/7. White-label for your agency.",
     keywords: [
       "ai voice financial services",
       "ai advisor scheduling",
@@ -758,7 +758,7 @@ export const industries: Industry[] = [
     productSupported: true,
     metaTitle: "AI Voice for E-commerce & Retail: Support & Orders",
     metaDescription:
-      "Recover lost sales with AI voice agents for e-commerce and retail. Automate order status, returns, and support calls 24/7. See use cases, ROI, and how agencies white-label it.",
+      "AI voice agents for e-commerce & retail answer order status, returns, and support 24/7, and recover carts. White-label voice AI for agencies.",
     keywords: [
       "ai voice ecommerce",
       "ai voice retail",
@@ -843,7 +843,7 @@ export const industries: Industry[] = [
     productSupported: false,
     metaTitle: "AI Voice for Education & Tutoring: Enroll & Schedule",
     metaDescription:
-      "Fill cohorts and reduce no-shows with AI voice agents for tutoring centers, schools, and edtech. Automate enrollment calls, scheduling, and parent comms 24/7.",
+      "AI voice agents for tutoring, schools & edtech enroll students, book trials, and cut no-shows 24/7. White-label education voice AI for agencies.",
     keywords: [
       "ai voice education",
       "ai voice tutoring",
@@ -928,7 +928,7 @@ export const industries: Industry[] = [
     productSupported: false,
     metaTitle: "AI Voice for Restaurants & Hospitality: Booking & Orders",
     metaDescription:
-      "Never miss a reservation or phone order. AI voice agents for restaurants and hotels handle bookings, takeout, and catering calls 24/7. See use cases and ROI.",
+      "AI voice agents for restaurants & hotels take reservations, phone orders, and catering calls 24/7. White-label hospitality voice AI for agencies.",
     keywords: [
       "ai voice restaurant",
       "ai reservation agent",

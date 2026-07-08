@@ -11,7 +11,7 @@ import { buildOpenGraph } from "@/lib/seo";
 
 const title = "AI Voice API Reference & Integration Docs";
 const description =
-  "Complete Fusion Calling API reference: authentication, Calendar API, Leads API, endpoints, and integration guides for building AI voice agents with Vapi and Retell.";
+  "Fusion Calling API reference: authentication, Calendar API, Leads API, endpoints, and integration guides for building AI voice agents with Vapi and Retell.";
 
 export const metadata: Metadata = {
   title,

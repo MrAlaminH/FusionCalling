@@ -20,7 +20,7 @@ export function generateMetadata({
 
   const url = `${SITE_URL}/industries/${industry.slug}`;
 
-  const agencyDescription = `Offer white-label AI voice agents for ${industry.name} businesses. Resell 24/7 call handling, appointment booking, and lead qualification under your own agency brand with Fusion Calling.`;
+  const agencyDescription = `White-label AI voice agents for ${industry.name}: 24/7 calls, booking, lead qualification you resell with Fusion Calling.`;
 
   return {
     title: industry.metaTitle,

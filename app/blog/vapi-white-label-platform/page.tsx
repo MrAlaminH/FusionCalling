@@ -7,7 +7,7 @@ import Script from "next/script";
 export const metadata: Metadata = {
   title: "White-Label Vapi: Vapi Alone Isn't Resellable",
   description:
-    "Vapi is excellent voice AI infrastructure, but it has no native white-label — you can't resell it under your brand out of the box. Fusion Calling is the white-label layer that adds branding, client portals, and billing so agencies can resell Vapi in about 7 days.",
+    "Vapi is great voice AI but has no native white-label: you can't resell it under your brand. Fusion Calling adds branding, portals, and billing to resell Vapi.",
   keywords: [
     "vapi white label",
     "white label vapi",

@@ -7,7 +7,7 @@ import Script from "next/script";
 export const metadata: Metadata = {
   title: "Vapi vs Retell vs ElevenLabs: Which Is Best?",
   description:
-    "A neutral, practical comparison of Vapi, Retell AI, and ElevenLabs for voice AI agencies — their strengths, best use cases, and how Fusion Calling unifies all three under one white-label dashboard.",
+    "Compare Vapi, Retell AI, and ElevenLabs for voice AI agencies: strengths, best use cases, and how Fusion Calling unifies all three in one white-label dashboard.",
   keywords: [
     "vapi vs retell ai",
     "elevenlabs voice AI",

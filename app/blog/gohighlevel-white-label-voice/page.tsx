@@ -7,7 +7,7 @@ import Script from "next/script";
 export const metadata: Metadata = {
   title: "Adding White-Label Voice AI to Your GoHighLevel Agency",
   description:
-    "A partnership guide for GoHighLevel agencies. Keep GHL as your CRM and add a dedicated, white-label voice AI layer with Fusion Calling. Integrates via API and webhooks.",
+    "GoHighLevel agencies: keep GHL as your CRM and add a dedicated white-label voice AI layer with Fusion Calling. Integrates via API and webhooks.",
   keywords: [
     "go high level white label",
     "voice AI white label",

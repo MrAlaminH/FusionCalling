@@ -93,7 +93,7 @@ for (const f of files) {
   const uniqueExt = [...new Set(extLinks)];
 
   // Images alt
-  const imgTags = grabAll(html, /<img[^>]*>/gi);
+  const imgTags = html.match(/<img[^>]*>/gi) || [];
   const imgsNoAlt = imgTags.filter((t) => !/\salt=/.test(t)).length;
   const imgsTotal = imgTags.length;
 
