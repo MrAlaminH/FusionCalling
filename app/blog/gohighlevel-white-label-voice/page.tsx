@@ -90,12 +90,8 @@ export default function GoHighLevelBlogPost() {
                   "@id": "https://www.fusioncalling.com/#website",
                 },
                 datePublished: "2025-02-12T00:00:00Z",
-                dateModified: "2025-02-12T00:00:00Z",
-                author: {
-                  "@type": "Organization",
-                  name: "Fusion Calling",
-                  url: "https://www.fusioncalling.com/",
-                },
+                dateModified: "2026-07-07T00:00:00Z",
+                author: { "@id": "https://www.fusioncalling.com/team/voice-team#person" },
                 publisher: {
                   "@id": "https://www.fusioncalling.com/#organization",
                 },
@@ -129,6 +125,38 @@ export default function GoHighLevelBlogPost() {
                     acceptedAnswer: {
                       "@type": "Answer",
                       text: "Yes. Fusion Calling connects to GoHighLevel through API and webhooks, so call outcomes, captured leads, and appointment activity flow back into your GHL CRM and automations for follow-up.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Can I use Fusion Calling's built-in CRM instead of GoHighLevel?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Yes. Fusion Calling includes a built-in lead management CRM on every plan — contacts, call logs, transcripts, lead statuses, notes, and pipeline — with no separate GHL subscription required for voice-first agencies.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "What data syncs between Fusion Calling and GoHighLevel?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Inbound/outbound call logs, recordings, transcripts, captured lead data (name, phone, email, custom fields), appointment bookings, call outcomes (qualified, booked, voicemail, etc.), and lead status changes.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Does this work with GHL sub-accounts for my clients?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Yes. Each Fusion Calling sub-account can webhook into a corresponding GHL sub-account, so your clients see their voice AI activity in their own GHL workspace while you manage everything centrally.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "How long does the integration take to set up?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "API + webhook configuration typically takes 1-2 hours. Our team provides done-with-you setup guidance as part of the 7-day guided onboarding.",
                     },
                   },
                 ],

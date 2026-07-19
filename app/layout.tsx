@@ -111,31 +111,55 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@graph": [
-                {
-                  "@type": "Organization",
-                  "@id": "https://www.fusioncalling.com/#organization",
-                  name: "Fusion Calling",
-                  url: "https://www.fusioncalling.com/",
-                  logo: {
-                    "@type": "ImageObject",
-                    url: "https://www.fusioncalling.com/logo.webp",
-                    width: 512,
-                    height: 512,
+{
+                    "@type": "Organization",
+                    "@id": "https://www.fusioncalling.com/#organization",
+                    name: "Fusion Calling",
+                    url: "https://www.fusioncalling.com/",
+                    logo: {
+                      "@type": "ImageObject",
+                      url: "https://www.fusioncalling.com/logo.webp",
+                      width: 512,
+                      height: 512,
+                    },
+                    description:
+                      "AI-powered phone call automation for businesses. Streamline customer interactions, save time, and increase productivity with advanced voice technology.",
+                    sameAs: [
+                      "https://twitter.com/fusioncalling",
+                      "https://www.linkedin.com/company/fusion-calling/",
+                    ],
+                    contactPoint: {
+                      "@type": "ContactPoint",
+                      telephone: "+1-202-998-3591",
+                      contactType: "sales",
+                      areaServed: "US",
+                      availableLanguage: "English",
+                    },
                   },
-                  description:
-                    "AI-powered phone call automation for businesses. Streamline customer interactions, save time, and increase productivity with advanced voice technology.",
-                  sameAs: [
-                    "https://twitter.com/fusioncalling",
-                    "https://www.linkedin.com/company/fusion-calling/",
-                  ],
-                  contactPoint: {
-                    "@type": "ContactPoint",
-                    telephone: "+1-202-998-3591",
-                    contactType: "sales",
-                    areaServed: "US",
-                    availableLanguage: "English",
+                  {
+                    "@type": "Person",
+                    "@id": "https://www.fusioncalling.com/team/voice-team#person",
+                    name: "Fusion Calling Voice Team",
+                    url: "https://www.fusioncalling.com/team/fusioncalling-team",
+                    jobTitle: "Product & Voice Engineering",
+                    worksFor: {
+                      "@id": "https://www.fusioncalling.com/#organization",
+                    },
+                    description: "The team behind Fusion Calling's voice AI platform. 500+ agencies, millions of calls automated.",
+                    image: "https://www.fusioncalling.com/avatars/team.webp",
+                    sameAs: [
+                      "https://www.linkedin.com/company/fusion-calling/",
+                      "https://twitter.com/fusioncalling",
+                    ],
+                    email: "team@fusioncalling.com",
+                    knowsAbout: [
+                      "Voice AI",
+                      "Conversational AI",
+                      "White-label SaaS",
+                      "Agency Growth",
+                      "AI Phone Automation",
+                    ],
                   },
-                },
                 {
                   "@type": "WebSite",
                   "@id": "https://www.fusioncalling.com/#website",

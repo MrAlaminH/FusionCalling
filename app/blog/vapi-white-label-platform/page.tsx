@@ -94,12 +94,8 @@ export default function VapiWhiteLabelBlogPost() {
                   "@id": "https://www.fusioncalling.com/#website",
                 },
                 datePublished: "2025-02-10T00:00:00Z",
-                dateModified: "2025-02-10T00:00:00Z",
-                author: {
-                  "@type": "Organization",
-                  name: "Fusion Calling",
-                  url: "https://www.fusioncalling.com/",
-                },
+                dateModified: "2026-07-07T00:00:00Z",
+                author: { "@id": "https://www.fusioncalling.com/team/voice-team#person" },
                 publisher: {
                   "@id": "https://www.fusioncalling.com/#organization",
                 },
@@ -133,6 +129,38 @@ export default function VapiWhiteLabelBlogPost() {
                     acceptedAnswer: {
                       "@type": "Answer",
                       text: "Most partners launch in about 7 days thanks to our done-with-you onboarding. Instead of spending months building a custom $45K white-label app, you connect your Vapi account, apply your branding, and start reselling in roughly a week.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Can I use other providers alongside Vapi?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Yes. Fusion Calling supports Vapi, Retell AI, and ElevenLabs simultaneously. You can assign different providers to different clients based on their needs — all managed from one white-label dashboard.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Does Fusion Calling mark up Vapi's per-minute costs?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "No. You bring your own Vapi API key and pay Vapi directly for usage. Fusion Calling charges a flat monthly platform fee ($99-$499/mo) with no markup on voice minutes.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Can I migrate existing Vapi agents to Fusion Calling?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Yes. Your Vapi assistants, phone numbers, and configurations remain in your Vapi account. Fusion Calling manages the client-facing layer — branding, portals, billing — while Vapi continues to power the actual calls.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "What happens if Vapi changes their API?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Fusion Calling maintains the integration layer and updates it proactively when providers release API changes. Your white-label operation stays stable without you needing to rewrite code.",
                     },
                   },
                 ],

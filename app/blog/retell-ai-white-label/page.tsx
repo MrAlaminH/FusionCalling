@@ -90,12 +90,8 @@ export default function RetellAIBlogPost() {
                   "@id": "https://www.fusioncalling.com/#website",
                 },
                 datePublished: "2025-02-11T00:00:00Z",
-                dateModified: "2025-02-11T00:00:00Z",
-                author: {
-                  "@type": "Organization",
-                  name: "Fusion Calling",
-                  url: "https://www.fusioncalling.com/",
-                },
+                dateModified: "2026-07-07T00:00:00Z",
+                author: { "@id": "https://www.fusioncalling.com/team/voice-team#person" },
                 publisher: {
                   "@id": "https://www.fusioncalling.com/#organization",
                 },
@@ -129,6 +125,38 @@ export default function RetellAIBlogPost() {
                     acceptedAnswer: {
                       "@type": "Answer",
                       text: "Yes. Fusion Calling works with Vapi, Retell AI, and ElevenLabs. You can choose the best provider per client or use case without rebuilding your white-label setup.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Can I migrate existing Retell agents to Fusion Calling?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Yes. Your Retell assistants and configurations remain in your Retell account. Fusion Calling manages the client-facing layer — branding, portals, billing — while Retell continues to power the actual conversations.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Does Fusion Calling mark up Retell's per-minute costs?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "No. You bring your own Retell API key and pay Retell directly for usage. Fusion Calling charges a flat monthly platform fee ($99-$499/mo) with no markup on voice minutes.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "How long does it take to white-label my Retell setup?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Most partners launch in about 7 days with our done-with-you onboarding. Connect your Retell API key, apply your branding, and start reselling Retell under your own brand.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Can I use Retell for some clients and Vapi for others?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Absolutely. Fusion Calling unifies Vapi, Retell AI, and ElevenLabs under one white-label dashboard. Assign the best engine per client — Retell for natural support flows, Vapi for cost-sensitive outbound, ElevenLabs for premium voices.",
                     },
                   },
                 ],

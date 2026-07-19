@@ -90,12 +90,8 @@ export default function GhlAlternativeBlogPost() {
                   "@id": "https://www.fusioncalling.com/#website",
                 },
                 datePublished: "2025-02-16T00:00:00Z",
-                dateModified: "2025-02-16T00:00:00Z",
-                author: {
-                  "@type": "Organization",
-                  name: "Fusion Calling",
-                  url: "https://www.fusioncalling.com/",
-                },
+                dateModified: "2026-07-07T00:00:00Z",
+                author: { "@id": "https://www.fusioncalling.com/team/voice-team#person" },
                 publisher: {
                   "@id": "https://www.fusioncalling.com/#organization",
                 },
@@ -129,6 +125,38 @@ export default function GhlAlternativeBlogPost() {
                     acceptedAnswer: {
                       "@type": "Answer",
                       text: "Yes. Contacts can be imported into the Fusion Calling CRM directly, or you can keep GoHighLevel and sync data back and forth using Fusion Calling's API and webhooks, which connect to 2,200+ apps.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "What's the cost difference vs GoHighLevel?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "GoHighLevel starts at $297/mo for agencies. Fusion Calling starts at $99/mo with voice AI, CRM, portals, and white-label included — no per-feature upsells. Voice-first agencies typically save 60%+ by consolidating.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Does the built-in CRM support pipelines and automations?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "The Fusion Calling CRM includes lead pipelines, status tracking, notes, and webhook-based automations. For advanced marketing automations (email sequences, SMS drips), you can layer GoHighLevel on top via integration.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Can I use Fusion Calling alongside GoHighLevel?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Yes. Many agencies use Fusion Calling for voice AI + CRM and keep GoHighLevel for marketing automations. Webhooks sync calls, leads, and appointments bidirectionally.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Is the CRM white-labeled too?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Yes. The entire Fusion Calling platform — voice agents, CRM, client portals, billing — is white-labeled under your agency brand. Your clients see your logo, your domain, your pricing.",
                     },
                   },
                 ],

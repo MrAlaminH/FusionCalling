@@ -83,7 +83,7 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
         isPartOf: { "@id": `${SITE_URL}/#website` },
         datePublished,
         dateModified: CONTENT_LAST_UPDATED,
-        author: { "@type": "Organization", name: "Fusion Calling", url: `${SITE_URL}/` },
+        author: { "@id": "https://www.fusioncalling.com/team/voice-team#person" },
         publisher: { "@id": `${SITE_URL}/#organization` },
         speakable: {
           "@type": "SpeakableSpecification",

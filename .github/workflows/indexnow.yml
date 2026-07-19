@@ -1,0 +1,45 @@
+name: IndexNow Submit
+
+on:
+  workflow_dispatch:
+  # Uncomment to auto-run after deployment (requires Vercel or custom deploy webhook)
+  # workflow_run:
+  #   workflows: ["Deploy to Vercel"]
+  #   types: [completed]
+  #   branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  submit:
+    name: Submit URLs to IndexNow
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      SITE_URL: https://www.fusioncalling.com
+      INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Submit to IndexNow
+        run: npm run indexnow:submit
+        env:
+          SITE_URL: https://www.fusioncalling.com
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+
+      - name: Verify key file is accessible
+        run: |
+          KEY_FILE="${INDEXNOW_KEY}.txt"
+          curl -sf "https://www.fusioncalling.com/${KEY_FILE}" > /dev/null
+          echo "✅ Key file verified at https://www.fusioncalling.com/${KEY_FILE}"

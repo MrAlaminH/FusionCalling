@@ -90,12 +90,8 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
                   "@id": "https://www.fusioncalling.com/#website",
                 },
                 datePublished: "2025-02-15T00:00:00Z",
-                dateModified: "2025-02-15T00:00:00Z",
-                author: {
-                  "@type": "Organization",
-                  name: "Fusion Calling",
-                  url: "https://www.fusioncalling.com/",
-                },
+                dateModified: "2026-07-07T00:00:00Z",
+                author: { "@id": "https://www.fusioncalling.com/team/voice-team#person" },
                 publisher: {
                   "@id": "https://www.fusioncalling.com/#organization",
                 },
@@ -129,6 +125,46 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
                     acceptedAnswer: {
                       "@type": "Answer",
                       text: "Yes. You can white-label Fusion Calling under your own brand and offer voice AI to your small-business clients — and you keep 100% of what you charge them.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "What's the ROI for a typical small business?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "A 5-person HVAC company missing 15 calls/week at $500 avg job value = $390K/year in lost revenue. At $149/mo, AI agents capturing 90%+ = $350K+ recovered. ROI often exceeds 2000%.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Which industries benefit most from AI voice agents?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Home services (HVAC, plumbing, roofing), dental/healthcare, legal, real estate, automotive, and any business where missed calls = lost revenue. These verticals have high call volumes, after-hours inquiries, and clear ROI per captured lead.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Can AI agents book appointments into my calendar?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Yes. Fusion Calling agents check real-time calendar availability (Google Calendar, Outlook, Cal.com) and book appointments directly. They can also reschedule, cancel, and send confirmations via SMS.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "What happens if the AI can't handle a call?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "The agent gracefully transfers to a human with full context — call summary, captured details, and the reason for transfer. You set the escalation rules (complex questions, emotional callers, specific keywords).",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "How quickly can a small business deploy an AI voice agent?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "With Fusion Calling's done-with-you onboarding, most small businesses go live in 7-14 days. Pick a template, customize the script, connect a number, and test. No engineering required.",
                     },
                   },
                 ],

@@ -90,12 +90,8 @@ export default function StartVoiceAIAgencyBlogPost() {
                   "@id": "https://www.fusioncalling.com/#website",
                 },
                 datePublished: "2025-02-13T00:00:00Z",
-                dateModified: "2025-02-13T00:00:00Z",
-                author: {
-                  "@type": "Organization",
-                  name: "Fusion Calling",
-                  url: "https://www.fusioncalling.com/",
-                },
+                dateModified: "2026-07-07",
+                author: { "@id": "https://www.fusioncalling.com/team/voice-team#person" },
                 publisher: {
                   "@id": "https://www.fusioncalling.com/#organization",
                 },
@@ -129,6 +125,46 @@ export default function StartVoiceAIAgencyBlogPost() {
                     acceptedAnswer: {
                       "@type": "Answer",
                       text: "Through Fusion Calling you can offer Vapi, Retell AI, and ElevenLabs. The multi-provider platform lets you match each client with the best voice engine for their use case, all under your own brand.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "How long does it take to launch my first client?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Most partners get a production-ready agent live in about 7 days with done-with-you onboarding. No code required — just pick a niche template, customize the greeting and qualification questions, connect a number, and test.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "What niche should I pick for my voice AI agency?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "The highest-ROI verticals are real estate, dental/healthcare, insurance, home services (HVAC, plumbing), and legal. These industries have high call volumes, clear pain points (missed calls = lost revenue), and budget for automation.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Can I white-label the entire platform including the client portal?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Yes. Fusion Calling provides a fully white-label dashboard, client portals, custom domain (app.youragency.com), your logo, and your pricing. Your clients never see the Fusion Calling brand.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "How do I bill my clients?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Fusion Calling includes Stripe rebilling so you set your own pricing, create packages, and bill clients directly. You keep 100% of client revenue — the platform only charges your flat monthly subscription.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "What if a client needs GoHighLevel integration?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Fusion Calling integrates with GoHighLevel via API and webhooks. Calls, leads, and appointments sync back into your client's GHL sub-account so their workflows continue uninterrupted.",
                     },
                   },
                 ],
