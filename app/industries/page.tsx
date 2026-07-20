@@ -59,10 +59,41 @@ export default function IndustriesHubPage() {
                 inLanguage: "en-US",
                 isPartOf: { "@id": "https://www.fusioncalling.com/#website" },
               },
+              {
+                "@type": "FAQPage",
+                "@id": "https://www.fusioncalling.com/industries#faqpage",
+                mainEntity: [
+                  {
+                    "@type": "Question",
+                    name: "Which industries can use AI voice agents?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "AI voice agents work across any phone-intensive industry. Popular verticals include real estate, dental, insurance, home services, legal, automotive, call centers, financial services, e-commerce, education, restaurants, and more. If your business relies on phone calls, AI voice can automate them.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Can I white-label AI voice agents for different industries?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Yes. Fusion Calling's white-label platform lets you create industry-specific agent templates for each vertical you serve. You can customize scripts, integrations, and branding per industry while managing everything from one dashboard.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Do I need separate accounts for each industry?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "No. One white-label partner account supports unlimited sub-accounts across all industries. Each client gets their own branded portal with industry-specific agent configurations, but you manage everything centrally.",
+                    },
+                  },
+                ],
+              },
             ],
           }),
         }}
       />
+      <h1 className="sr-only">AI Voice by Industry | Fusion Calling</h1>
 
       <div className="min-h-screen bg-gradient-to-b from-black via-black to-gray-900 text-white py-8 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

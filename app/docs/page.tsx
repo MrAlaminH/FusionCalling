@@ -21,5 +21,10 @@ export const metadata: Metadata = {
 };
 
 export default function DocsPage() {
-  return <DocsHub />;
+  return (
+    <>
+      <h1 className="sr-only">Fusion Calling Docs & API Reference | Fusion Calling</h1>
+      <DocsHub />
+    </>
+  );
 }

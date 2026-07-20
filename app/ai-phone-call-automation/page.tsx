@@ -99,6 +99,7 @@ export default function AiPhoneCallAutomationPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <h1 className="sr-only">What Is AI Phone Call Automation? | Fusion Calling</h1>
       <main id="main" className="min-h-screen w-full bg-black">
         <Navbar />
 

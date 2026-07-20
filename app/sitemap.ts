@@ -4,8 +4,7 @@ import { glossaryTerms, slugifyTerm } from "@/lib/glossary";
 
 // IMPORTANT: every path here MUST resolve to a real App Router route (a
 // `page.tsx`). Listing URLs that 404 wastes crawl budget and erodes sitemap
-// trust. The pricing lives at `/#pricing` (an anchor on the homepage), so it is
-// intentionally NOT a standalone sitemap entry.
+// trust. The pricing lives at `/pricing` (standalone page), so it IS included.
 const STATIC_PATHS = [
   "/",
   "/about",
@@ -19,6 +18,7 @@ const STATIC_PATHS = [
   "/whitelabel/gohighlevel",
   "/ai-phone-call-automation",
   "/calculator",
+  "/pricing",
   "/privacy",
   "/terms",
   "/blog",
@@ -77,7 +77,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ? 0.8
         : path === "/docs"
         ? 0.9
-        : path === "/whitelabel"
+        : path === "/whitelabel" || path === "/pricing"
         ? 0.9
         : path === "/alternative" ||
           path === "/industries" ||

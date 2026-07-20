@@ -101,6 +101,7 @@ export default function AboutPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }}
       />
+      <h1 className="sr-only">About Fusion Calling | AI Voice Agents</h1>
       <main className="min-h-screen w-full bg-black text-white">
       {/* Hero */}
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl pt-28 pb-12 md:pt-36 md:pb-16">

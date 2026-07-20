@@ -454,6 +454,7 @@ export default function WhiteLabelPage() {
           />
       <main id="main" className="min-h-screen w-full bg-black">
       <WhiteLabelNavbar />
+      <h1 className="sr-only">White-Label AI Voice Agents (Vapi, Retell) | Fusion Calling</h1>
       <section id="hero" className="scroll-mt-24">
         <Hero />
       </section>

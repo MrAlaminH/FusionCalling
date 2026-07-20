@@ -33,9 +33,6 @@ export const metadata: Metadata = {
     "call center automation",
     "lead generation AI",
   ],
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     title: "AI Phone Call Automation & AI Receptionist | Fusion Calling",
     description:
@@ -274,6 +271,7 @@ export default function Home() {
       />
       <main id="main" className="min-h-screen w-full bg-black">
       <Navbar />
+      <h1 className="sr-only">AI Phone Call Automation & AI Receptionist | Fusion Calling</h1>
       <section id="home" className="scroll-mt-24">
         <Hero />
       </section>

@@ -2,14 +2,19 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Script from "next/script";
 import Image from "next/image";
+import { buildOpenGraph } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Blog | White-Label Voice AI Insights",
   description:
     "Expert insights on white-label AI voice platforms, agency growth strategies, and voice automation trends. Learn how to build profitable AI voice businesses.",
-  alternates: {
-    canonical: "/blog",
-  },
+  ...buildOpenGraph({
+    title: "Blog | White-Label Voice AI Insights",
+    description:
+      "Expert insights on white-label AI voice platforms, agency growth strategies, and voice automation trends. Learn how to build profitable AI voice businesses.",
+    path: "/blog",
+    image: "/blog/blog1.webp",
+  }),
 };
 
 const blogPosts = [
@@ -135,8 +140,9 @@ export default function BlogPage() {
             ],
           }),
         }}
-      />
-      
+/>
+       <h1 className="sr-only">Blog | White-Label Voice AI Insights | Fusion Calling</h1>
+
        <div className="min-h-screen bg-gradient-to-b from-black via-black to-gray-900 text-white py-8 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}

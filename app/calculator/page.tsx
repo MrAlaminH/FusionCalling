@@ -95,6 +95,7 @@ export default function CalculatorPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(calculatorJsonLd) }}
       />
+      <h1 className="sr-only">Voice Throughput Calculator | Fusion Calling</h1>
       <section className="bg-black text-white border-b border-brand/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl py-14">
           <h2 className="text-sm font-bold uppercase tracking-wider text-brand-light mb-3">
