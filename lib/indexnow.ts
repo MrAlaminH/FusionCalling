@@ -9,7 +9,7 @@
  * Ownership is proven by serving the key file; we then POST our URLs to the
  * IndexNow API (see `scripts/indexnow-submit.ts`).
  */
-export const INDEXNOW_KEY = "da3e5e7c0ca0ccfa43b0b970a6e0f080af1798f89d2d4b29d45ac932cf906db9";
+export const INDEXNOW_KEY = "fc9b2a4e7d1c8350a6e9f2b4c7d8e1a3";
 
 /** IndexNow API endpoints (any one will propagate to the others). */
 export const INDEXNOW_ENDPOINTS = [
