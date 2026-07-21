@@ -69,7 +69,7 @@ export default function CompareHubPage() {
               },
               {
                 "@type": "CollectionPage",
-                "@id": "https://www.fusioncalling.com/compare#collectionpage",
+                "@id": "https://www.fusioncalling.com/alternative#collectionpage",
                 url: "https://www.fusioncalling.com/alternative",
                 name: "White-Label Voice AI Platform Comparisons",
                 description:
@@ -111,7 +111,6 @@ export default function CompareHubPage() {
           }),
         }}
       />
-      <h1 className="sr-only">White-Label Voice AI Comparisons | Fusion Calling</h1>
 
       <div className="min-h-screen bg-gradient-to-b from-black via-black to-gray-900 text-white py-8 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

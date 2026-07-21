@@ -10,6 +10,9 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
+  // Legal pages: keep indexable (brand SERP completeness, user trust) but
+  // explicitly signal low priority to crawlers.
+  robots: { index: true, follow: true },
   ...buildOpenGraph({ title: `Fusion Calling ${title}`, description, path: "/privacy" }),
 };
 

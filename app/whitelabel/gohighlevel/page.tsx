@@ -115,13 +115,6 @@ const ghlschema = {
       image: "https://www.fusioncalling.com/cardImage.jpg",
       brand: { "@type": "Brand", name: "Fusion Calling" },
       category: "Business Software",
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: "4.8",
-        reviewCount: "127",
-        bestRating: "5",
-        worstRating: "1",
-      },
     },
   ],
 };

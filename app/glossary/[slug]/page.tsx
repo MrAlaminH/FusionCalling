@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import GlossaryTermPage from "@/components/glossary/GlossaryTermPage";
 import { glossaryTerms, getTermBySlug, slugifyTerm } from "@/lib/glossary";
 import { SITE_URL } from "@/lib/site-url";
+import { truncateAtWord } from "@/lib/utils";
 
 export function generateStaticParams() {
   return glossaryTerms.map((t) => ({ slug: slugifyTerm(t.term) }));
@@ -21,16 +22,19 @@ export function generateMetadata({
   const slug = slugifyTerm(term.term);
   const url = `${SITE_URL}/glossary/${slug}`;
   const title = `${term.term} | AI Glossary | Fusion Calling`;
+  // Word-boundary-truncated so we never ship a meta description that ends
+  // mid-word (e.g. "...real-time transcri").
+  const description = truncateAtWord(term.definition, 155);
 
   return {
     title,
-    description: term.definition.slice(0, 155),
+    description,
     alternates: {
       canonical: `/glossary/${slug}`,
     },
     openGraph: {
       title,
-      description: term.definition.slice(0, 155),
+      description,
       url,
       siteName: "Fusion Calling",
       type: "article",

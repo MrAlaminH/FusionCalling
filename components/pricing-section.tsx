@@ -192,16 +192,24 @@ function PricingCard({
   );
 }
 
-export default function PricingSection() {
+export default function PricingSection({
+  headingLevel = "h2",
+}: {
+  // The pricing page renders this section as the page's primary heading.
+  // Everywhere else (e.g. the homepage #pricing anchor) it must stay an H2 so
+  // it doesn't compete with the host page's own H1.
+  headingLevel?: "h1" | "h2";
+}) {
   const [billing, setBilling] = useState<BillingCycle>("monthly");
+  const Heading = headingLevel;
   return (
     <section className="w-full section-spacing bg-black text-gray-200">
       <div className="container mx-auto px-4 md:px-6 max-w-6xl">
         {/* Title Header */}
         <div className="text-center mb-8 md:mb-10">
-          <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-brand mb-2">
+          <Heading className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-brand mb-2">
             Simple, Fair Pricing
-          </h2>
+          </Heading>
           <p className="text-xs text-gray-400 md:text-sm max-w-xl mx-auto">
             Choose the perfect plan for your business needs. Scale effortlessly
             as you grow.

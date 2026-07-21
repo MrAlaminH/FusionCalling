@@ -170,6 +170,15 @@ export default function RootLayout({
                   publisher: {
                     "@id": "https://www.fusioncalling.com/#organization",
                   },
+                  potentialAction: {
+                    "@type": "SearchAction",
+                    target: {
+                      "@type": "EntryPoint",
+                      urlTemplate:
+                        "https://www.fusioncalling.com/search?q={search_term_string}",
+                    },
+                    "query-input": "required name=search_term_string",
+                  },
                 },
                 {
                   "@type": "Product",
@@ -183,31 +192,6 @@ export default function RootLayout({
                     name: "Fusion Calling",
                   },
                   category: "Business Automation",
-                  aggregateRating: {
-                    "@type": "AggregateRating",
-                    ratingValue: "4.8",
-                    reviewCount: "127",
-                    bestRating: "5",
-                    worstRating: "1",
-                  },
-                  review: [
-                    {
-                      "@type": "Review",
-                      author: {
-                        "@type": "Person",
-                        name: "Lisa Chen",
-                      },
-                      datePublished: "2026-02-10",
-                      reviewBody:
-                        "Fusion Calling's AI receptionist handles our inbound calls flawlessly. We've cut missed calls by 80% and our booking rate has never been higher.",
-                      reviewRating: {
-                        "@type": "Rating",
-                        ratingValue: "5",
-                        bestRating: "5",
-                        worstRating: "1",
-                      },
-                    },
-                  ],
                   offers: {
                     "@type": "Offer",
                     name: "Fusion Calling Subscription",

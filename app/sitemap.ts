@@ -87,6 +87,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ? 0.7
         : path.startsWith("/glossary/")
         ? 0.6
+        : path === "/terms" || path === "/privacy"
+        ? 0.3
         : 0.7;
     const changeFrequency =
       path === "/"

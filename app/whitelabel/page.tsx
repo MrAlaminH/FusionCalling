@@ -209,31 +209,6 @@ export default function WhiteLabelPage() {
                       name: "Fusion Calling",
                     },
                     category: "Business Software",
-                    aggregateRating: {
-                      "@type": "AggregateRating",
-                      ratingValue: "4.8",
-                      reviewCount: "127",
-                      bestRating: "5",
-                      worstRating: "1",
-                    },
-                    review: [
-                      {
-                        "@type": "Review",
-                        author: {
-                          "@type": "Person",
-                          name: "James Carter",
-                        },
-                        datePublished: "2026-01-22",
-                        reviewBody:
-                          "The white-label program let us launch our own AI voice product in weeks. Our agency now resells AI phone automation fully under our brand.",
-                        reviewRating: {
-                          "@type": "Rating",
-                          ratingValue: "5",
-                          bestRating: "5",
-                          worstRating: "1",
-                        },
-                      },
-                    ],
                     offers: [
                       {
                         "@type": "Offer",

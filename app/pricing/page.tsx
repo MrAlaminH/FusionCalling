@@ -192,8 +192,7 @@ export default function PricingPage() {
       />
       <main id="main" className="min-h-screen w-full bg-black">
         <Navbar />
-        <h1 className="sr-only">Pricing | AI Phone Call Automation Plans</h1>
-        <PricingSection />
+        <PricingSection headingLevel="h1" />
         <section id="pricing-faq" className="w-full section-spacing bg-black text-gray-200" aria-labelledby="pricing-faq-heading">
           <div className="container mx-auto px-4 md:px-6 max-w-4xl">
             <h2 id="pricing-faq-heading" className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-brand mb-8 md:mb-10 text-center">

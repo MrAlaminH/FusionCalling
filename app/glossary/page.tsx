@@ -89,7 +89,6 @@ export default function GlossaryHubPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <h1 className="sr-only">Voice AI Glossary | Fusion Calling</h1>
 
       <div className="min-h-screen bg-gradient-to-b from-black via-black to-gray-900 text-white py-8 md:py-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

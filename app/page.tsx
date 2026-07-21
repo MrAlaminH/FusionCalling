@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Tools from "@/components/Tools";
 import Footer from "@/components/Footer";
 import type { Metadata } from "next";
+import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
 
 // Below-the-fold sections are code-split so their JavaScript is not part of
 // the initial page bundle. They still render server-side (default ssr:true)
@@ -60,7 +61,7 @@ export default function Home() {
           "@type": "ImageObject",
           url: "https://www.fusioncalling.com/opengraph-image.png"
         },
-        dateModified: "2026-07-07",
+        dateModified: CONTENT_LAST_UPDATED,
         inLanguage: "en-US",
         breadcrumb: {
           "@type": "BreadcrumbList",
@@ -194,13 +195,6 @@ export default function Home() {
             "name": "Fusion Calling"
           }
         },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.8",
-          "reviewCount": "127",
-          "bestRating": "5",
-          "worstRating": "1"
-        },
         "featureList": [
           "AI voice agents for inbound calls",
           "Outbound call automation",
@@ -271,7 +265,6 @@ export default function Home() {
       />
       <main id="main" className="min-h-screen w-full bg-black">
       <Navbar />
-      <h1 className="sr-only">AI Phone Call Automation & AI Receptionist | Fusion Calling</h1>
       <section id="home" className="scroll-mt-24">
         <Hero />
       </section>
