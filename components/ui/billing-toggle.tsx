@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export type BillingCycle = "monthly" | "yearly";
@@ -14,6 +14,7 @@ export function BillingToggle({
   onChange: (value: BillingCycle) => void;
   className?: string;
 }) {
+  const reduce = useReducedMotion();
   return (
     <div className={cn("flex items-center justify-center", className)}>
       <div
@@ -26,7 +27,7 @@ export function BillingToggle({
           className="absolute top-1.5 bottom-1.5 rounded-full bg-gradient-to-r from-brand to-brand-strong shadow-lg shadow-brand/40 ring-1 ring-brand/30"
           initial={false}
           animate={{ left: value === "monthly" ? "0.375rem" : "50%" }}
-          transition={{ type: "spring", stiffness: 380, damping: 30 }}
+          transition={reduce ? {} : { type: "spring", stiffness: 380, damping: 30 }}
           style={{ width: "calc(50% - 0.375rem)" }}
         />
 

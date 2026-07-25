@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import GlossaryTermPage from "@/components/glossary/GlossaryTermPage";
+
+export const revalidate = 86400;
 import { glossaryTerms, getTermBySlug, slugifyTerm } from "@/lib/glossary";
 import { SITE_URL } from "@/lib/site-url";
 import { truncateAtWord } from "@/lib/utils";

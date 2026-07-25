@@ -1,13 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Card } from "@/components/ui/card";
 import InboundCalls from "./sub/inbound-calls";
 import OutboundCalls from "./sub/outbound-calls";
 
 export default function EndlessUseCases() {
+  const reduce = useReducedMotion();
   const [activeTab, setActiveTab] = useState<"outbound" | "inbound">(
     "outbound"
   );
@@ -63,7 +64,7 @@ export default function EndlessUseCases() {
             {/* Outbound Tab */}
             <motion.button
               variants={tabButtonVariants}
-              initial="rest"
+              initial={reduce ? false : "rest"}
               whileHover="hover"
               whileTap="tap"
               onClick={() => setActiveTab("outbound")}
@@ -80,7 +81,7 @@ export default function EndlessUseCases() {
             {/* Inbound Tab */}
             <motion.button
               variants={tabButtonVariants}
-              initial="rest"
+              initial={reduce ? false : "rest"}
               whileHover="hover"
               whileTap="tap"
               onClick={() => setActiveTab("inbound")}
@@ -101,7 +102,7 @@ export default function EndlessUseCases() {
           <motion.div
             key={activeTab}
             variants={tabVariants}
-            initial="initial"
+            initial={reduce ? false : "initial"}
             animate="animate"
             exit="exit"
           >

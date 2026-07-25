@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import IndustryPage from "@/components/industries/IndustryPage";
+
+export const revalidate = 86400;
 import { industries, getIndustry } from "@/lib/industries";
 import { SITE_URL } from "@/lib/site-url";
 

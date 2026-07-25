@@ -5,6 +5,7 @@ import {
   motion,
   useAnimationFrame,
   useMotionValue,
+  useReducedMotion,
   useScroll,
   useSpring,
   useTransform,
@@ -35,6 +36,25 @@ export function VelocityScroll({
   default_velocity = 5,
   className,
 }: VelocityScrollProps) {
+  const reduce = useReducedMotion();
+
+  if (reduce) {
+    return (
+      <section className="relative w-full space-y-6">
+        <div className="w-full overflow-hidden whitespace-nowrap relative">
+          <div className={cn("inline-block", className)}>
+            <span>{text} </span>
+          </div>
+        </div>
+        <div className="w-full overflow-hidden whitespace-nowrap relative">
+          <div className={cn("inline-block", className)}>
+            <span>{text} </span>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   function ParallaxText({
     children,
     baseVelocity = 100,

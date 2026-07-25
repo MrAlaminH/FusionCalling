@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView, AnimatePresence } from "framer-motion";
+import { motion, useInView, AnimatePresence, useReducedMotion } from "framer-motion";
 import { useRef, useState } from "react";
 import { Check, Star, ArrowRight } from "lucide-react";
 import { BillingToggle, type BillingCycle } from "@/components/ui/billing-toggle";
@@ -8,6 +8,7 @@ import { BillingToggle, type BillingCycle } from "@/components/ui/billing-toggle
 export default function Pricing() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const reduce = useReducedMotion();
   const [billing, setBilling] = useState<BillingCycle>("monthly");
 
   const plans = [
@@ -66,7 +67,7 @@ export default function Pricing() {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           className="particle"
-          initial={{ opacity: 0 }}
+          initial={reduce ? false : { opacity: 0 }}
           animate={{ opacity: [0.05, 0.1, 0.05] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
           style={{
@@ -78,7 +79,7 @@ export default function Pricing() {
         />
         <motion.div
           className="particle"
-          initial={{ opacity: 0 }}
+          initial={reduce ? false : { opacity: 0 }}
           animate={{ opacity: [0.04, 0.08, 0.04] }}
           transition={{
             duration: 12,
@@ -99,7 +100,7 @@ export default function Pricing() {
         {/* Header */}
         <motion.div
           className="text-center mb-12 md:mb-16 lg:mb-20"
-          initial={{ opacity: 0, y: -30 }}
+          initial={reduce ? false : { opacity: 0, y: -30 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -30 }}
           transition={{
             duration: 0.8,
@@ -121,7 +122,7 @@ export default function Pricing() {
         {/* Billing Cycle Toggle */}
         <motion.div
           className="flex justify-center mb-10 md:mb-14"
-          initial={{ opacity: 0, y: -10 }}
+          initial={reduce ? false : { opacity: 0, y: -10 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -10 }}
           transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 0.1, 0.25, 1.0] }}
         >
@@ -133,7 +134,7 @@ export default function Pricing() {
           {plans.map((plan, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              initial={reduce ? false : { opacity: 0, y: 40, scale: 0.95 }}
               animate={{
                 opacity: isInView ? 1 : 0,
                 y: isInView ? 0 : 40,
@@ -173,7 +174,7 @@ export default function Pricing() {
                 {/* Popular Badge */}
                 {plan.popular && (
                   <motion.div
-                    initial={{ scale: 0 }}
+                    initial={reduce ? false : { scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{
                       delay: 0.5 + index * 0.1,
@@ -223,7 +224,7 @@ export default function Pricing() {
                     <AnimatePresence initial={false}>
                       {billing === "yearly" && (
                         <motion.div
-                          initial={{ opacity: 0 }}
+                          initial={reduce ? false : { opacity: 0 }}
                           animate={{ opacity: 1 }}
                           exit={{ opacity: 0 }}
                           transition={{ duration: 0.2 }}
@@ -247,7 +248,7 @@ export default function Pricing() {
                     <motion.li
                       key={idx}
                       className="flex items-start gap-3"
-                      initial={{ opacity: 0, x: -10 }}
+                      initial={reduce ? false : { opacity: 0, x: -10 }}
                       animate={{
                         opacity: isInView ? 1 : 0,
                         x: isInView ? 0 : -10,
@@ -297,7 +298,7 @@ export default function Pricing() {
 
         {/* Bottom Info - Redesigned Compact Version */}
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={reduce ? false : { opacity: 0 }}
           animate={{ opacity: isInView ? 1 : 0 }}
           transition={{
             duration: 0.8,
@@ -310,7 +311,7 @@ export default function Pricing() {
           <div className="max-w-3xl mx-auto">
             <motion.div
               className="glass rounded-2xl p-6 md:p-8 border border-brand/20"
-              initial={{ opacity: 0, y: 20 }}
+              initial={reduce ? false : { opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
                 duration: 0.6,
@@ -343,7 +344,7 @@ export default function Pricing() {
                     key={idx}
                     className="flex items-center gap-2 px-4 py-2 md:px-5 md:py-2.5 rounded-xl bg-gradient-to-br from-brand/10 to-brand-strong/5 border border-brand/20 hover:border-brand/40 transition-premium-fast"
                     whileHover={{ scale: 1.05, y: -2 }}
-                    initial={{ opacity: 0, scale: 0.9 }}
+                    initial={reduce ? false : { opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{
                       delay: 1.1 + idx * 0.1,

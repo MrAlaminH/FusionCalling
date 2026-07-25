@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import Image from "next/image";
 import { authors } from "@/lib/authors";
+
+export const revalidate = 86400;
 import { SITE_URL } from "@/lib/site-url";
 
 const title = "Our Team | Fusion Calling";

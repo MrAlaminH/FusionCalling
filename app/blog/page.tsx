@@ -4,6 +4,8 @@ import Script from "next/script";
 import Image from "next/image";
 import { buildOpenGraph } from "@/lib/seo";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Blog | White-Label Voice AI Insights",
   description:

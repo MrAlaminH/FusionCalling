@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Play, XIcon } from "lucide-react";
 import Image from "next/image";
 
@@ -76,6 +76,7 @@ export default function HeroVideoDialog({
   className,
 }: HeroVideoProps) {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const reduce = useReducedMotion();
   const selectedAnimation = animationVariants[animationStyle];
 
   return (
@@ -110,15 +111,15 @@ export default function HeroVideoDialog({
       <AnimatePresence>
         {isVideoOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
+            initial={reduce ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
             onClick={() => setIsVideoOpen(false)}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-md"
           >
             <motion.div
-              {...selectedAnimation}
-              transition={{ type: "spring", damping: 30, stiffness: 300 }}
+              {...(reduce ? {} : selectedAnimation)}
+              transition={reduce ? {} : { type: "spring", damping: 30, stiffness: 300 }}
               className="relative w-full max-w-4xl aspect-video mx-4 md:mx-0"
             >
               <motion.button className="absolute -top-16 right-0 text-white text-xl bg-neutral-900/50 ring-1 backdrop-blur-md rounded-full p-2 dark:bg-neutral-100/50 dark:text-black">

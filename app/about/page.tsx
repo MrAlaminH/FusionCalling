@@ -4,6 +4,8 @@ import Image from "next/image";
 import { SITE_URL } from "@/lib/site-url";
 import Footer from "@/components/Footer";
 
+export const revalidate = 86400;
+
 const aboutFaqs = [
   {
     question: "What does Fusion Calling do?",

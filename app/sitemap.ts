@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/site-url";
 import { glossaryTerms, slugifyTerm } from "@/lib/glossary";
+import { whitelabelCaseStudies } from "@/lib/whitelabel-case-studies";
+import { whitelabelLocations } from "@/lib/whitelabel-locations";
 
 // IMPORTANT: every path here MUST resolve to a real App Router route (a
 // `page.tsx`). Listing URLs that 404 wastes crawl budget and erodes sitemap
@@ -16,6 +18,12 @@ const STATIC_PATHS = [
   "/docs/sms-messaging",
   "/whitelabel",
   "/whitelabel/gohighlevel",
+  "/whitelabel/vapi",
+  "/whitelabel/retell",
+  "/whitelabel/elevenlabs",
+  "/whitelabel/compare",
+  "/whitelabel/case-studies",
+  "/whitelabel/locations",
   "/ai-phone-call-automation",
   "/calculator",
   "/pricing",
@@ -54,12 +62,19 @@ const STATIC_PATHS = [
 ] as const;
 
 const GLOSSARY_PATHS = glossaryTerms.map((t) => `/glossary/${slugifyTerm(t.term)}`);
+const CASE_STUDY_PATHS = whitelabelCaseStudies.map((cs) => `/whitelabel/case-studies/${cs.slug}`);
+const LOCATION_PATHS = whitelabelLocations.map((loc) => `/whitelabel/locations/${loc.slug}`);
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = SITE_URL;
   const lastModified = new Date();
 
-  const paths: readonly string[] = [...STATIC_PATHS, ...GLOSSARY_PATHS];
+  const paths: readonly string[] = [
+    ...STATIC_PATHS,
+    ...GLOSSARY_PATHS,
+    ...CASE_STUDY_PATHS,
+    ...LOCATION_PATHS,
+  ];
 
   // Guard: never emit duplicate or empty URLs into the sitemap.
   const seen = new Set<string>();
@@ -77,13 +92,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ? 0.8
         : path === "/docs"
         ? 0.9
-        : path === "/whitelabel" || path === "/pricing"
+        : path === "/whitelabel" ||
+          path === "/whitelabel/vapi" ||
+          path === "/whitelabel/retell" ||
+          path === "/whitelabel/elevenlabs" ||
+          path === "/pricing"
         ? 0.9
-        : path === "/alternative" ||
+        : path === "/whitelabel/compare" ||
+          path === "/whitelabel/case-studies" ||
+          path === "/whitelabel/locations" ||
+          path === "/alternative" ||
           path === "/industries" ||
           path === "/glossary"
         ? 0.8
-        : path.startsWith("/alternative/") || path.startsWith("/industries/")
+        : path.startsWith("/whitelabel/case-studies/") ||
+          path.startsWith("/whitelabel/locations/") ||
+          path.startsWith("/alternative/") ||
+          path.startsWith("/industries/")
         ? 0.7
         : path.startsWith("/glossary/")
         ? 0.6

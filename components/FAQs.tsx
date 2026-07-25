@@ -1,11 +1,3 @@
-"use client";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-
 export default function FAQSection() {
   return (
     <div className="w-full bg-black py-16 p-4 md:p-8 lg:p-12">
@@ -90,22 +82,30 @@ export default function FAQSection() {
               </h2>
             </div>
 
-              <Accordion type="single" collapsible defaultValue="item-0" className="w-full space-y-4">
-                {faqItems.map((item, index) => (
-                  <AccordionItem
-                    key={index}
-                    value={`item-${index}`}
-                    className="border border-gray-800 rounded-lg overflow-hidden "
-                  >
-                    <AccordionTrigger className="px-6 py-4 hover:bg-brand-strong text-white [&[data-state=open]>svg]:rotate-45 ">
-                      <span className="text-left">{item.question}</span>
-                    </AccordionTrigger>
-                    <AccordionContent className="px-6 pb-4 text-gray-400">
-                      {item.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
+            <div className="w-full space-y-4">
+              {faqItems.map((item, index) => (
+                <details
+                  key={index}
+                  className="group border border-gray-800 rounded-lg overflow-hidden"
+                >
+                  <summary className="px-6 py-4 hover:bg-brand-strong text-white cursor-pointer list-none flex items-center justify-between transition-colors">
+                    <span className="text-left text-sm sm:text-base">{item.question}</span>
+                    <svg
+                      className="w-4 h-4 text-brand-strong flex-shrink-0 ml-4 transition-transform duration-200 group-open:rotate-45"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 5v14M5 12h14" />
+                    </svg>
+                  </summary>
+                  <div className="px-6 pb-4 text-gray-400 text-sm sm:text-base">
+                    {item.answer}
+                  </div>
+                </details>
+              ))}
+            </div>
 
               <p className="mt-6 text-sm text-gray-500">
                 Answers reflect Fusion Calling&apos;s platform capabilities and

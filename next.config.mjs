@@ -57,6 +57,15 @@ const nextConfig = {
         source: "/:path*",
         headers: securityHeaders,
       },
+      {
+        // Immutable caching for static assets — content-addressed by webpack,
+        // so the hash in the filename guarantees freshness.
+        source: "/:all*(svg|jpg|jpeg|png|webp|avif|gif|ico|woff2|woff|ttf|eot|otf|css|js)",
+        locale: false,
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+        ],
+      },
     ];
   },
 };

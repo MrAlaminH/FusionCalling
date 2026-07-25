@@ -2,7 +2,7 @@
 import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { Card } from "@/components/ui/card";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useRef, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 
@@ -68,6 +68,7 @@ const testimonials: TestimonialProps[] = [
 export default function TestimonialsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const reduce = useReducedMotion();
 
   // Properly initialize embla carousel
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -91,7 +92,7 @@ export default function TestimonialsSection() {
       <div className="container px-4 md:px-6 mx-auto">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: -20 }}
+          initial={reduce ? false : { opacity: 0, y: -20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-col items-center justify-center space-y-4 text-center"
@@ -113,7 +114,7 @@ export default function TestimonialsSection() {
                 {testimonials.map((testimonial, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, y: 10 }}
+                    initial={reduce ? false : { opacity: 0, y: 10 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.8, delay: index * 0.4 }}
                     className="flex-none w-full md:w-1/2 lg:w-1/3"
@@ -146,7 +147,7 @@ export default function TestimonialsSection() {
             {testimonials.slice(0, 3).map((testimonial, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 10 }}
+                initial={reduce ? false : { opacity: 0, y: 10 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: index * 0.5 }}
               >

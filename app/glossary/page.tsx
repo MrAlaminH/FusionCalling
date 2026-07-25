@@ -4,6 +4,8 @@ import Script from "next/script";
 import { glossaryTerms, glossaryCategories, slugifyTerm, GLOSSARY_LAST_UPDATED } from "@/lib/glossary";
 import { buildOpenGraph } from "@/lib/seo";
 
+export const revalidate = 86400;
+
 const title = "Voice AI Glossary | Fusion Calling";
 const description =
   "A complete glossary of voice AI terms for agencies & resellers, with plain-English definitions of ASR, TTS, latency, HIPAA, white-label, and more.";

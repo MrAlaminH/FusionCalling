@@ -15,6 +15,9 @@ import {
 const productLinks = [
   { label: "Partner Program", href: "/whitelabel" },
   { label: "GoHighLevel Integration", href: "/whitelabel/gohighlevel" },
+  { label: "Vapi White-Label", href: "/whitelabel/vapi" },
+  { label: "Retell AI White-Label", href: "/whitelabel/retell" },
+  { label: "ElevenLabs White-Label", href: "/whitelabel/elevenlabs" },
   { label: "Features", href: "/#features" },
   { label: "Pricing", href: "/#pricing" },
   { label: "ROI Calculator", href: "/calculator" },
@@ -23,6 +26,9 @@ const productLinks = [
 
 const resourceLinks = [
   { label: "Blog", href: "/blog" },
+  { label: "Case Studies", href: "/whitelabel/case-studies" },
+  { label: "Compare Partner Plans", href: "/whitelabel/compare" },
+  { label: "Locations", href: "/whitelabel/locations" },
   { label: "Platform Comparisons", href: "/alternative" },
   { label: "Industries", href: "/industries" },
   { label: "Glossary", href: "/glossary" },
