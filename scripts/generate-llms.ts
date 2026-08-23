@@ -11,6 +11,9 @@ import { industries } from "../lib/industries";
 import { comparisons } from "../lib/comparisons";
 import { glossaryTerms } from "../lib/glossary";
 import { blogPosts } from "../lib/blog-posts";
+import { whitelabelCaseStudies } from "../lib/whitelabel-case-studies";
+import { whitelabelLocations } from "../lib/whitelabel-locations";
+import { whitelabelProviders } from "../lib/whitelabel-providers";
 
 const PAGES: { path: string; title: string; content: string }[] = [
   {
@@ -108,6 +111,91 @@ Comparison criteria: starting price, sub-accounts included, voice providers supp
     title: "Our Team | Fusion Calling",
     content: `Meet the team behind Fusion Calling — founders, voice AI engineers, and agency growth experts building the future of white-label voice automation. 500+ agencies launched.`,
   },
+  {
+    path: "/pricing",
+    title: "Pricing | AI Phone Call Automation | Fusion Calling",
+    content: `Simple, fair pricing for AI phone call automation. Starter $149/mo (500 min, 0 setup fee, full portal, all integrations), Pro $249/mo (1050 min, $799 setup, inbound/outbound handling, Slack support, custom LLM), Enterprise $497/mo (2100 min, $1250 setup, custom voice, dedicated support). All plans month-to-month, 14-day money-back guarantee. Additional minutes: Starter $0.30, Pro $0.25, Enterprise $0.20. 99.9% uptime guarantee. FAQs: What is included in each plan, setup fee, overage, plan changes, contract, free trial. Compare at https://www.fusioncalling.com/pricing.`,
+  },
+  {
+    path: "/about",
+    title: "About Fusion Calling | AI Voice Agents",
+    content: `Fusion Calling builds human-like AI voice agents that automate inbound and outbound calls. Since 2022, 50+ agencies trust us for real estate, dental, insurance, home services, legal, automotive. Founder Alamin, voice-AI engineer. Mission: no call goes unanswered. GDPR & EU AI Act aligned, encryption for audio/transcripts, 99.9% uptime.`,
+  },
+  {
+    path: "/ai-phone-call-automation",
+    title: "What Is AI Phone Call Automation? | Fusion Calling",
+    content: `Plain-English explainer on AI phone call automation: how AI voice agents answer and place calls, the tech behind them, and results with Fusion Calling. Covers ASR, LLM, TTS, telephony, and deployment in 4 weeks.`,
+  },
+  {
+    path: "/privacy",
+    title: "Privacy Policy | Fusion Calling",
+    content: `Privacy Policy for Fusion Calling at https://www.fusioncalling.com/privacy. Covers data collection, usage, and rights.`,
+  },
+  {
+    path: "/terms",
+    title: "Terms of Service | Fusion Calling",
+    content: `Terms of Service for Fusion Calling at https://www.fusioncalling.com/terms. Covers acceptable use, billing, and liabilities.`,
+  },
+   ...whitelabelProviders.map((p) => ({
+    path: `/whitelabel/${p.slug}`,
+    title: p.title,
+    content: `${p.description} Features: ${p.features.map((f) => `${f.title}: ${f.description}`).join(" ")} FAQs: ${p.faqs.map((f) => `Q: ${f.question} A: ${f.answer}`).join(" ")}`,
+  })),
+  {
+    path: "/whitelabel/gohighlevel",
+    title: "White-Label AI Voice for GoHighLevel | Fusion Calling",
+    content: `Deploy white-label AI voice agents in GoHighLevel client sub-accounts. Import Vapi, Retell & ElevenLabs agents, deliver 24/7 calls, keep 100% of revenue. GoHighLevel agencies: launch in GoHighLevel stack under own brand, multi-tenant control, bring existing agent configurations, full white-label (logo, domain, colors), minute rebilling, centralized dashboard.`,
+  },
+  {
+    path: "/whitelabel/compare",
+    title: "Best White-Label AI Voice Platforms Compared | Fusion Calling",
+    content: `Side-by-side comparison of Fusion Calling vs Vapify vs Voicerr vs VoiceAIWrapper vs Synthflow vs Thinkrr vs Bland AI vs Air AI. Criteria: starting price, sub-accounts, voice providers (Vapi, Retell, ElevenLabs), live demo, onboarding, Stripe rebilling, 2200+ apps. Fusion $99-$499, guided launch 24h.`,
+  },
+  {
+    path: "/whitelabel/case-studies",
+    title: "White-Label Case Studies | Fusion Calling",
+    content: `Agency success stories reselling white-label AI voice via Fusion Calling. Real results, timelines, and playbooks.`,
+  },
+  ...whitelabelCaseStudies.map((cs) => ({
+    path: `/whitelabel/case-studies/${cs.slug}`,
+    title: cs.metaTitle,
+    content: `${cs.metaDescription} Story: ${cs.story.join(" ")} Results: ${cs.results.map((r) => `${r.title}: ${r.description}`).join(" ")} Testimonial: "${cs.testimonial.quote}" — ${cs.testimonial.attribution}, ${cs.testimonial.role}`,
+  })),
+  {
+    path: "/whitelabel/locations",
+    title: "White-Label AI Voice by Location | Fusion Calling",
+    content: `White-label AI voice agents by state. Fusion Calling helps agencies in California, Texas, Florida, New York, Illinois, Pennsylvania, Georgia, Arizona, Colorado, Washington and nationwide launch branded voice AI practices.`,
+  },
+  ...whitelabelLocations.map((loc) => ({
+    path: `/whitelabel/locations/${loc.slug}`,
+    title: loc.metaTitle,
+    content: `${loc.metaDescription} Top industries: ${loc.topIndustries.join(", ")}. Features: ${loc.features.map((f) => `${f.title}: ${f.description}`).join(" ")} FAQs: ${loc.faqs.map((f) => `Q: ${f.question} A: ${f.answer}`).join(" ")}`,
+  })),
+  {
+    path: "/docs/api-reference",
+    title: "API Reference | Fusion Calling Docs",
+    content: `Fusion Calling API Reference: REST endpoints for agents, leads, calls, and webhooks. Auth via API key, base URL, rate limits, and examples for Vapi/Retell integration.`,
+  },
+  {
+    path: "/docs/agent-configuration",
+    title: "Agent Configuration | Fusion Calling Docs",
+    content: `Configure AI voice agents: prompts, voices (ElevenLabs), provider credentials (Vapi, Retell), telephony, intents, and handoff rules. Includes quick-reference and troubleshooting.`,
+  },
+  {
+    path: "/docs/lead-management",
+    title: "Lead Management | Fusion Calling Docs",
+    content: `Manage leads end-to-end: ingestion, retry system, status flow, error classification, provider guides, custom fields, and best practices. Standard & custom fields passed to agents.`,
+  },
+  {
+    path: "/docs/admin-section",
+    title: "Admin Section | Fusion Calling Docs",
+    content: `Admin docs: user management, AI credentials, common workflows, and quick-reference for Fusion Calling platform administration.`,
+  },
+  {
+    path: "/docs/sms-messaging",
+    title: "SMS Messaging | Fusion Calling Docs",
+    content: `SMS docs: Twilio setup, inbound setup, campaigns, inbox, compliance (TCPA), getting started, and quick-reference for voice + SMS automation.`,
+  },
 ];
 
 function generateLLMS(): string {
@@ -138,10 +226,10 @@ function generateLLMS(): string {
     `- [GoHighLevel Comparison](${SITE_URL}/blog/gohighlevel-white-label-voice): Adding white-label AI voice to a GoHighLevel-based agency stack.`,
     `- [Provider Integration Docs](${SITE_URL}/docs/lead-management): Configure agents using existing Vapi or Retell API keys and agent/assistant IDs; standard and custom lead fields are passed to the agent automatically.`,
     ``,
-    `## Product`,
-    ``,
+  `## Product`,
+
     `- [Home](${SITE_URL}/): AI phone call automation overview with a live demo.`,
-    `- [Pricing](${SITE_URL}/#pricing): Starter, Pro, and Enterprise plans with monthly/yearly billing.`,
+    `- [Pricing](${SITE_URL}/pricing): Starter $149/mo, Pro $249/mo, Enterprise $497/mo — month-to-month, 14-day guarantee.`,
     `- [Live Demo](${SITE_URL}/#show-case): Try an outbound or inbound AI call instantly.`,
     ``,
     `## Documentation`,

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import Script from "next/script";
 import { glossaryTerms, slugifyTerm } from "@/lib/glossary";
 import { industries } from "@/lib/industries";
 import { comparisons } from "@/lib/comparisons";
@@ -153,7 +152,7 @@ export default function SearchPage({
 
   return (
     <>
-      <Script
+      <script
         id="search-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

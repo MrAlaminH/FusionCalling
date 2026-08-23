@@ -1,6 +1,5 @@
 import dynamic from "next/dynamic";
 import type { Metadata } from "next";
-import Script from "next/script";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
@@ -77,18 +76,37 @@ const pricingJsonLd = {
       "@id": `${SITE_URL}/pricing#starter`,
       name: "Fusion Calling Starter Plan",
       description: "Perfect for small teams. Includes 500 minutes/month, full portal access, all integrations, CRM and lead routing, auto-tagging, 24/7 performance.",
+      image: `${SITE_URL}/cardImage.jpg`,
       brand: { "@type": "Brand", name: "Fusion Calling" },
       category: "Business Automation",
       offers: {
         "@type": "Offer",
         name: "Starter Plan - Monthly",
-        price: "149",
+        price: "149.00",
         priceCurrency: "USD",
         priceValidUntil: "2027-12-31",
         availability: "https://schema.org/InStock",
         url: `${SITE_URL}/pricing`,
         description: "500 minutes/month, full portal access, all integrations, CRM & lead routing, auto-tagging & logging",
         seller: { "@type": "Organization", name: "Fusion Calling", "@id": `${SITE_URL}/#organization` },
+        hasMerchantReturnPolicy: {
+          "@type": "MerchantReturnPolicy",
+          applicableCountry: "US",
+          returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+          merchantReturnDays: 14,
+          returnMethod: "https://schema.org/ReturnByMail",
+          returnFees: "https://schema.org/FreeReturn",
+        },
+        shippingDetails: {
+          "@type": "OfferShippingDetails",
+          shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "USD" },
+          shippingDestination: { "@type": "DefinedRegion", addressCountry: "US" },
+          deliveryTime: {
+            "@type": "ShippingDeliveryTime",
+            handlingTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 1, unitCode: "DAY" },
+            transitTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 1, unitCode: "DAY" },
+          },
+        },
       },
     },
     {
@@ -96,18 +114,37 @@ const pricingJsonLd = {
       "@id": `${SITE_URL}/pricing#pro`,
       name: "Fusion Calling Pro Plan",
       description: "For growing businesses. Includes 1,050 minutes/month, everything in Starter, inbound/outbound call handling, outbound routing, private Slack support, advanced FAQ handling, custom LLM integration.",
+      image: `${SITE_URL}/cardImage.jpg`,
       brand: { "@type": "Brand", name: "Fusion Calling" },
       category: "Business Automation",
       offers: {
         "@type": "Offer",
         name: "Pro Plan - Monthly",
-        price: "249",
+        price: "249.00",
         priceCurrency: "USD",
         priceValidUntil: "2027-12-31",
         availability: "https://schema.org/InStock",
         url: `${SITE_URL}/pricing`,
         description: "1,050 minutes/month, inbound/outbound handling, outbound routing, private Slack support, advanced FAQ, custom LLM",
         seller: { "@type": "Organization", name: "Fusion Calling", "@id": `${SITE_URL}/#organization` },
+        hasMerchantReturnPolicy: {
+          "@type": "MerchantReturnPolicy",
+          applicableCountry: "US",
+          returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+          merchantReturnDays: 14,
+          returnMethod: "https://schema.org/ReturnByMail",
+          returnFees: "https://schema.org/FreeReturn",
+        },
+        shippingDetails: {
+          "@type": "OfferShippingDetails",
+          shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "USD" },
+          shippingDestination: { "@type": "DefinedRegion", addressCountry: "US" },
+          deliveryTime: {
+            "@type": "ShippingDeliveryTime",
+            handlingTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 1, unitCode: "DAY" },
+            transitTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 1, unitCode: "DAY" },
+          },
+        },
       },
     },
     {
@@ -115,18 +152,37 @@ const pricingJsonLd = {
       "@id": `${SITE_URL}/pricing#enterprise`,
       name: "Fusion Calling Enterprise Plan",
       description: "For large organizations. Includes 2,100 minutes/month, everything in Pro, custom trained voice, dedicated support and developer, extensive scripting, extensive testing.",
+      image: `${SITE_URL}/cardImage.jpg`,
       brand: { "@type": "Brand", name: "Fusion Calling" },
       category: "Business Automation",
       offers: {
         "@type": "Offer",
         name: "Enterprise Plan - Monthly",
-        price: "497",
+        price: "497.00",
         priceCurrency: "USD",
         priceValidUntil: "2027-12-31",
         availability: "https://schema.org/InStock",
         url: `${SITE_URL}/pricing`,
         description: "2,100 minutes/month, custom trained voice, dedicated support & developer, extensive scripting & testing",
         seller: { "@type": "Organization", name: "Fusion Calling", "@id": `${SITE_URL}/#organization` },
+        hasMerchantReturnPolicy: {
+          "@type": "MerchantReturnPolicy",
+          applicableCountry: "US",
+          returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+          merchantReturnDays: 14,
+          returnMethod: "https://schema.org/ReturnByMail",
+          returnFees: "https://schema.org/FreeReturn",
+        },
+        shippingDetails: {
+          "@type": "OfferShippingDetails",
+          shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "USD" },
+          shippingDestination: { "@type": "DefinedRegion", addressCountry: "US" },
+          deliveryTime: {
+            "@type": "ShippingDeliveryTime",
+            handlingTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 1, unitCode: "DAY" },
+            transitTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 1, unitCode: "DAY" },
+          },
+        },
       },
     },
     {
@@ -185,8 +241,7 @@ export const metadata: Metadata = {
 export default function PricingPage() {
   return (
     <>
-      <Script
-        id="pricing-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingJsonLd) }}
       />

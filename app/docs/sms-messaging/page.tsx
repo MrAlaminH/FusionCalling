@@ -3,7 +3,6 @@ import Breadcrumbs from "@/components/docs/breadcrumbs";
 import OnThisPage from "@/components/docs/on-this-page";
 import SectionHeader from "@/components/docs/section-header";
 import type { Metadata } from "next";
-import Script from "next/script";
 import { OverviewSection } from "./components/overview";
 import { GettingStartedSection } from "./components/getting-started";
 import { TwilioSetupSection } from "./components/twilio-setup";
@@ -58,7 +57,7 @@ const breadcrumbs = [
 export default function SmsMessagingDocsPage() {
   return (
     <>
-      <Script
+      <script
         id="sms-messaging-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{

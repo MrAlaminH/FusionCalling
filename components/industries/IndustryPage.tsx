@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Script from "next/script";
 import type { Industry } from "@/lib/industries";
 import { getRelatedIndustries } from "@/lib/industries";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
@@ -60,6 +59,7 @@ export default function IndustryPage({ industry }: { industry: Industry }) {
         name: metaTitle,
         headline: `${h1} ${h1Highlight}`,
         description: metaDescription,
+        image: `${SITE_URL}/cardImage.jpg`,
         inLanguage: "en-US",
         isPartOf: { "@id": `${SITE_URL}/#website` },
         datePublished,
@@ -84,8 +84,7 @@ export default function IndustryPage({ industry }: { industry: Industry }) {
 
   return (
     <>
-      <Script
-        id={`${slug}-schema`}
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />

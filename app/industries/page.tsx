@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import Script from "next/script";
 import { industries } from "@/lib/industries";
 import { buildOpenGraph } from "@/lib/seo";
 
@@ -25,7 +24,7 @@ export const metadata: Metadata = {
 export default function IndustriesHubPage() {
   return (
     <>
-      <Script
+      <script
         id="industries-index-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{

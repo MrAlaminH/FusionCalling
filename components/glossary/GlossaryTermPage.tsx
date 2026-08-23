@@ -59,6 +59,7 @@ export default function GlossaryTermPage({ term }: { term: GlossaryTerm }) {
         url: articleUrl,
         headline: `${term.term} - Voice AI Term Explained`,
         description: term.definition,
+        image: `${SITE_URL}/cardImage.jpg`,
         inLanguage: "en-US",
         articleSection: term.category,
         isPartOf: { "@id": `${SITE_URL}/#website` },

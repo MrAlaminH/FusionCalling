@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Script from "next/script";
 import WhiteLabelNavbar from "@/components/white-label-navbar";
 import Footer from "@/components/Footer";
 import CTA from "@/components/white-label/CTA";
@@ -99,7 +98,7 @@ export default function WhitelabelLocationsHub() {
 
   return (
     <>
-      <Script
+      <script
         id="locations-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}

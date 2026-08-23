@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import WhiteLabelNavbar from "@/components/white-label-navbar";
 import Footer from "@/components/Footer";
 import Pricing from "@/components/white-label/Pricing";
@@ -74,16 +73,6 @@ const schema = {
         acceptedAnswer: { "@type": "Answer", text: f.answer },
       })),
     },
-    {
-      "@type": "Product",
-      "@id": "https://www.fusioncalling.com/whitelabel#product",
-      name: "Fusion Calling White-label AI Voice Solution",
-      description:
-        "Become a Fusion Calling partner and white-label our AI voice solution. Offer powerful AI phone automation under your own brand.",
-      image: "https://www.fusioncalling.com/cardImage.jpg",
-      brand: { "@type": "Brand", name: "Fusion Calling" },
-      category: "Business Software",
-    },
   ],
 };
 
@@ -113,7 +102,7 @@ export const metadata: Metadata = {
 export default function VapiWhiteLabelPage() {
   return (
     <>
-      <Script
+      <script
         id="vapi-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}

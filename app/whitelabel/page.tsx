@@ -9,7 +9,6 @@ import Benefits from "@/components/white-label/Benefits";
 import FAQ from "@/components/white-label/FAQ";
 import CTA from "@/components/white-label/CTA";
 import type { Metadata } from "next";
-import Script from "next/script";
 import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
 
 export const metadata: Metadata = {
@@ -98,7 +97,7 @@ export default function WhiteLabelPage() {
 
   return (
     <>
-          <Script
+          <script
             id="whitelabel-schema"
             type="application/ld+json"
             dangerouslySetInnerHTML={{
@@ -134,7 +133,7 @@ export default function WhiteLabelPage() {
                       {
                         "@type": "Offer",
                         name: "Starter Partner Plan",
-                        price: "99",
+                        price: "99.00",
                         priceCurrency: "USD",
                         description: "6 sub-accounts, complete white-labeling, client portal access",
                         availability: "https://schema.org/InStock",
@@ -143,7 +142,7 @@ export default function WhiteLabelPage() {
                       {
                         "@type": "Offer",
                         name: "Growth Partner Plan",
-                        price: "299",
+                        price: "299.00",
                         priceCurrency: "USD",
                         description: "20 sub-accounts, priority support, advanced analytics",
                         availability: "https://schema.org/InStock",
@@ -152,7 +151,7 @@ export default function WhiteLabelPage() {
                       {
                         "@type": "Offer",
                         name: "Scale Partner Plan",
-                        price: "499",
+                        price: "499.00",
                         priceCurrency: "USD",
                         description: "Unlimited sub-accounts, dedicated account manager, API access",
                         availability: "https://schema.org/InStock",
@@ -204,6 +203,7 @@ export default function WhiteLabelPage() {
                     description:
                       "Become a Fusion Calling partner and white-label our AI voice solution. Offer powerful AI phone automation under your own brand.",
                     image: "https://www.fusioncalling.com/cardImage.jpg",
+                    sku: "FC-WHITELABEL-001",
                     brand: {
                       "@type": "Brand",
                       name: "Fusion Calling",
@@ -213,7 +213,7 @@ export default function WhiteLabelPage() {
                       {
                         "@type": "Offer",
                         name: "Starter Plan",
-                        price: "99",
+                        price: "99.00",
                         priceCurrency: "USD",
                         priceValidUntil: "2027-12-31",
                         availability: "https://schema.org/InStock",
@@ -235,7 +235,7 @@ export default function WhiteLabelPage() {
                           "@type": "OfferShippingDetails",
                           shippingRate: {
                             "@type": "MonetaryAmount",
-                            value: "0",
+                            value: "0.00",
                             currency: "USD",
                           },
                           shippingDestination: {
@@ -262,7 +262,7 @@ export default function WhiteLabelPage() {
                       {
                         "@type": "Offer",
                         name: "Growth Plan",
-                        price: "299",
+                        price: "299.00",
                         priceCurrency: "USD",
                         priceValidUntil: "2027-12-31",
                         availability: "https://schema.org/InStock",
@@ -284,7 +284,7 @@ export default function WhiteLabelPage() {
                           "@type": "OfferShippingDetails",
                           shippingRate: {
                             "@type": "MonetaryAmount",
-                            value: "0",
+                            value: "0.00",
                             currency: "USD",
                           },
                           shippingDestination: {
@@ -311,7 +311,7 @@ export default function WhiteLabelPage() {
                       {
                         "@type": "Offer",
                         name: "Scale Plan",
-                        price: "499",
+                        price: "499.00",
                         priceCurrency: "USD",
                         priceValidUntil: "2027-12-31",
                         availability: "https://schema.org/InStock",
@@ -333,7 +333,7 @@ export default function WhiteLabelPage() {
                           "@type": "OfferShippingDetails",
                           shippingRate: {
                             "@type": "MonetaryAmount",
-                            value: "0",
+                            value: "0.00",
                             currency: "USD",
                           },
                           shippingDestination: {

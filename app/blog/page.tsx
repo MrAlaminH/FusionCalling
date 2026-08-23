@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import Script from "next/script";
 import Image from "next/image";
 import { buildOpenGraph } from "@/lib/seo";
 
@@ -103,7 +102,7 @@ const categories = [
 export default function BlogPage() {
   return (
     <>
-      <Script
+      <script
         id="blog-index-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{

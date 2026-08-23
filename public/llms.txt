@@ -25,9 +25,8 @@ The platform integrates with leading voice-AI providers. Agencies can bring exis
 - [Provider Integration Docs](https://www.fusioncalling.com/docs/lead-management): Configure agents using existing Vapi or Retell API keys and agent/assistant IDs; standard and custom lead fields are passed to the agent automatically.
 
 ## Product
-
 - [Home](https://www.fusioncalling.com/): AI phone call automation overview with a live demo.
-- [Pricing](https://www.fusioncalling.com/#pricing): Starter, Pro, and Enterprise plans with monthly/yearly billing.
+- [Pricing](https://www.fusioncalling.com/pricing): Starter $149/mo, Pro $249/mo, Enterprise $497/mo — month-to-month, 14-day guarantee.
 - [Live Demo](https://www.fusioncalling.com/#show-case): Try an outbound or inbound AI call instantly.
 
 ## Documentation

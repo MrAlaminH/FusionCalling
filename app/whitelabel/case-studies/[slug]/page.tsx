@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Script from "next/script";
 import WhiteLabelNavbar from "@/components/white-label-navbar";
 import Footer from "@/components/Footer";
 import CTA from "@/components/white-label/CTA";
@@ -59,7 +58,7 @@ export default function CaseStudyDetailPage({
 
   return (
     <>
-      <Script
+      <script
         id="case-study-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(buildSchema(cs)) }}

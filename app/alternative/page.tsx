@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import Script from "next/script";
 import Image from "next/image";
 import { comparisons } from "@/lib/comparisons";
 import { buildOpenGraph } from "@/lib/seo";
@@ -43,7 +42,7 @@ const matrixRows = comparisons.map((c) => {
 export default function CompareHubPage() {
   return (
     <>
-<Script
+<script
         id="alternative-index-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{

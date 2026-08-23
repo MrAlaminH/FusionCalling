@@ -6,8 +6,6 @@ import Breadcrumbs from "@/components/docs/breadcrumbs";
 import OnThisPage from "@/components/docs/on-this-page";
 import CommandPalette from "@/components/docs/search/command-palette";
 import { LanguageProvider } from "@/components/docs/language-context";
-import Script from "next/script";
-
 interface NavItem {
   id: string;
   label: string;
@@ -29,7 +27,7 @@ export default function ApiReferenceShell({
   return (
     <LanguageProvider>
       <CommandPalette />
-      <Script
+      <script
         id="api-reference-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{

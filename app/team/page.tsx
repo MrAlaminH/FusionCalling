@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import Script from "next/script";
 import Image from "next/image";
 import { authors } from "@/lib/authors";
 
@@ -75,7 +74,7 @@ export default function TeamPage() {
 
   return (
     <>
-      <Script
+      <script
         id="team-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

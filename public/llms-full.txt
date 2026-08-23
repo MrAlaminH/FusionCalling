@@ -1,7 +1,7 @@
 # Fusion Calling - Full Content for AI Crawlers
 # Generated at build time. Contains all indexable page content.
 # Source: https://www.fusioncalling.com
-# Last updated: 2026-07-25
+# Last updated: 2026-08-23
 
 ## AI Phone Call Automation & AI Receptionist | Fusion Calling
 URL: https://www.fusioncalling.com/
@@ -888,5 +888,215 @@ Developer docs for Fusion Calling: admin section, agent configuration, lead mana
 URL: https://www.fusioncalling.com/team
 
 Meet the team behind Fusion Calling — founders, voice AI engineers, and agency growth experts building the future of white-label voice automation. 500+ agencies launched.
+
+---
+
+## Pricing | AI Phone Call Automation | Fusion Calling
+URL: https://www.fusioncalling.com/pricing
+
+Simple, fair pricing for AI phone call automation. Starter $149/mo (500 min, 0 setup fee, full portal, all integrations), Pro $249/mo (1050 min, $799 setup, inbound/outbound handling, Slack support, custom LLM), Enterprise $497/mo (2100 min, $1250 setup, custom voice, dedicated support). All plans month-to-month, 14-day money-back guarantee. Additional minutes: Starter $0.30, Pro $0.25, Enterprise $0.20. 99.9% uptime guarantee. FAQs: What is included in each plan, setup fee, overage, plan changes, contract, free trial. Compare at https://www.fusioncalling.com/pricing.
+
+---
+
+## About Fusion Calling | AI Voice Agents
+URL: https://www.fusioncalling.com/about
+
+Fusion Calling builds human-like AI voice agents that automate inbound and outbound calls. Since 2022, 50+ agencies trust us for real estate, dental, insurance, home services, legal, automotive. Founder Alamin, voice-AI engineer. Mission: no call goes unanswered. GDPR & EU AI Act aligned, encryption for audio/transcripts, 99.9% uptime.
+
+---
+
+## What Is AI Phone Call Automation? | Fusion Calling
+URL: https://www.fusioncalling.com/ai-phone-call-automation
+
+Plain-English explainer on AI phone call automation: how AI voice agents answer and place calls, the tech behind them, and results with Fusion Calling. Covers ASR, LLM, TTS, telephony, and deployment in 4 weeks.
+
+---
+
+## Privacy Policy | Fusion Calling
+URL: https://www.fusioncalling.com/privacy
+
+Privacy Policy for Fusion Calling at https://www.fusioncalling.com/privacy. Covers data collection, usage, and rights.
+
+---
+
+## Terms of Service | Fusion Calling
+URL: https://www.fusioncalling.com/terms
+
+Terms of Service for Fusion Calling at https://www.fusioncalling.com/terms. Covers acceptable use, billing, and liabilities.
+
+---
+
+## White-Label Vapi AI Voice Agents
+URL: https://www.fusioncalling.com/whitelabel/vapi
+
+Resell Vapi AI voice agents under your own brand via Fusion Calling. Import your existing Vapi agent configurations and API keys, set your pricing, and keep 100% of revenue — with full white-label dashboard, client portals, and rebilling. Features: Import existing Vapi agents: Bring your Vapi agent configurations and API keys directly. Fusion Calling layers white-label branding, client portals, lead management, and rebilling on top — no agent rebuild required. 100% white-label: Your clients see only your logo, domain, colors, and pricing. Vapi and Fusion Calling stay completely invisible. Full brand control from dashboard to client portal. Set your own pricing: Keep 100% of what you charge your clients. Plans start at $99/month wholesale for 6 sub-accounts, with minute rebilling so you control margin on every client. Multi-tenant sub-account management: Manage every client's Vapi agents, minutes, and billing from one centralized dashboard. Onboard new clients in minutes, not days. 24/7 AI call handling: Deploy Vapi-powered AI agents across every client for round-the-clock call handling, lead qualification, and booking — no missed calls, no staffing. Pre-built integration ecosystem: Connect Vapi agents to GoHighLevel, HubSpot, Salesforce, Zapier (2,200+ apps), and more. Your clients get seamless CRM and workflow integration out of the box. FAQs: Q: Can I import my existing Vapi agents into Fusion Calling's white-label platform? A: Yes. Fusion Calling is purpose-built for multi-provider white-label reselling. You bring your existing Vapi agent configurations and API keys. We layer white-label branding, client portals, lead management, and rebilling on top so you resell your Vapi agents under one branded dashboard — no agent rebuild needed. Q: Will my clients see Vapi branding anywhere? A: No. The platform is 100% white-labeled with your logo, colors, domain, and email. Your clients experience a fully branded AI voice product and never see Vapi or Fusion Calling unless you explicitly tell them. Q: How does Vapi white-label pricing work? A: You pay a wholesale monthly rate to Fusion Calling (starting at $99/month for 6 sub-accounts, $299 for 20, $499 for unlimited) and keep 100% of what you charge your clients. Minute rebilling lets you control margin on every client. Your Vapi API usage costs are separate and handled through your Vapi account. Q: Can I use Vapi's full feature set through the white-label platform? A: Yes. You maintain your Vapi account with full access to Vapi's features, tools, and settings. Fusion Calling adds white-label branding, client management, billing, and lead management on top — it does not restrict or limit Vapi's native capabilities. Q: Do I need technical expertise to white-label Vapi? A: No technical expertise required. Importing your Vapi agents takes minutes. We provide a fully managed white-label solution so you focus on sales and client relationships while we handle integrations, updates, and maintenance.
+
+---
+
+## White-Label Retell AI Voice Agents
+URL: https://www.fusioncalling.com/whitelabel/retell
+
+Resell Retell AI voice agents under your own brand via Fusion Calling. Bring your existing Retell agent configurations and API keys, set your pricing, and keep 100% of the revenue — with full white-label dashboard, client management, and rebilling. Features: Import existing Retell agents: Bring your Retell AI agent configurations and API keys directly. Fusion Calling adds white-label branding, client portals, lead management, and rebilling — no agent rebuild required. 100% white-label: Your clients see only your brand — logo, domain, colors, and pricing. Retell AI stays completely invisible. Full brand control from the partner dashboard to every client portal. Set your own pricing: Keep 100% of what you charge your clients. Wholesale plans start at $99/month for 6 sub-accounts with minute rebilling so you control margin on every client. Centralized multi-tenant dashboard: Manage every client's Retell agents, minutes, and billing from one dashboard. Onboard new clients in minutes — no separate logins, no manual setup. 24/7 AI call handling: Deploy Retell AI-powered voice agents across all your clients for round-the-clock call handling, lead qualification, and booking — no missed calls, no staffing costs. Seamless CRM & workflow integrations: Connect Retell agents to GoHighLevel, HubSpot, Salesforce, Zapier (2,200+ apps), and more. Out-of-the-box integrations for every client workflow. FAQs: Q: Can I import my existing Retell AI agents into Fusion Calling's white-label platform? A: Yes. Fusion Calling supports Retell AI out of the box. Bring your existing Retell agent configurations and API keys. We layer white-label branding, client portals, lead management, and rebilling on top — so you resell under one branded dashboard with zero agent rebuild. Q: Will my clients see Retell AI branding anywhere? A: No. The platform is 100% white-labeled with your logo, colors, domain, and email. Your clients never see Retell AI or Fusion Calling unless you tell them. Complete brand control. Q: How does Retell AI white-label pricing work? A: You pay a wholesale monthly rate to Fusion Calling (starting at $99/month for 6 sub-accounts, $299 for 20, $499 for unlimited) and keep 100% of what you charge your clients. Minute rebilling lets you control margin on every client. Your Retell API usage costs remain separate through your Retell account. Q: Can I still use Retell AI's full capabilities through the white-label platform? A: Absolutely. You retain full access to Retell AI's features and tools through your Retell account. Fusion Calling adds white-label branding, client management, billing, and lead management without restricting Retell AI's native capabilities. Q: Do I need technical expertise to white-label Retell AI? A: No. Importing your Retell agents takes minutes with guided setup. We handle all technical aspects — integrations, updates, and maintenance — so you focus on selling and growing your agency.
+
+---
+
+## White-Label ElevenLabs Voice Agents
+URL: https://www.fusioncalling.com/whitelabel/elevenlabs
+
+Resell ElevenLabs voice agents under your own brand via Fusion Calling. Bring your existing ElevenLabs agent configurations and API keys, set your pricing, and keep 100% of the revenue — with full white-label dashboard, client portals, and rebilling. Features: Import existing ElevenLabs agents: Bring your ElevenLabs agent configurations and API keys directly. Fusion Calling adds white-label branding, client portals, lead management, and rebilling — no agent rebuild required. 100% white-label: Your clients see only your brand — logo, domain, colors, and pricing. ElevenLabs stays completely invisible. Full brand control from dashboard to client portal. Set your own pricing: Keep 100% of what you charge your clients. Wholesale plans start at $99/month for 6 sub-accounts with minute rebilling so you control margin on every client. Multi-tenant client management: Manage every client's ElevenLabs agents, minutes, and billing from one centralized dashboard. Onboard new clients in minutes, not days. Premium voice quality: Leverage ElevenLabs' industry-leading voice synthesis and agent capabilities, delivered under your own brand. Your clients get the best voice AI on the market. Seamless workflow integrations: Connect ElevenLabs agents to GoHighLevel, HubSpot, Salesforce, Zapier (2,200+ apps), and more. Out-of-the-box integrations for every client workflow. FAQs: Q: Can I import my existing ElevenLabs agents into Fusion Calling's white-label platform? A: Yes. Fusion Calling supports ElevenLabs out of the box. Bring your existing ElevenLabs agent configurations and API keys. We add white-label branding, client portals, lead management, and rebilling — zero agent rebuild needed. Q: Will my clients see ElevenLabs branding anywhere? A: No. The platform is 100% white-labeled with your logo, colors, domain, and email. Your clients never see ElevenLabs or Fusion Calling unless you explicitly tell them. Q: How does ElevenLabs white-label pricing work? A: You pay a wholesale monthly rate to Fusion Calling (starting at $99/month for 6 sub-accounts, $299 for 20, $499 for unlimited) and keep 100% of what you charge your clients. Minute rebilling lets you control margin. Your ElevenLabs API usage costs remain separate through your ElevenLabs account. Q: Can I use ElevenLabs' full feature set through the white-label platform? A: Yes. You retain full access to ElevenLabs' features, tools, and settings through your ElevenLabs account. Fusion Calling adds white-label branding, client management, billing, and lead management without restricting ElevenLabs' native capabilities. Q: Do I need technical expertise to white-label ElevenLabs? A: No. Importing your ElevenLabs agents takes minutes with guided setup. We handle all technical aspects — integrations, updates, and maintenance — so you focus on selling and growing your agency.
+
+---
+
+## White-Label AI Voice for GoHighLevel | Fusion Calling
+URL: https://www.fusioncalling.com/whitelabel/gohighlevel
+
+Deploy white-label AI voice agents in GoHighLevel client sub-accounts. Import Vapi, Retell & ElevenLabs agents, deliver 24/7 calls, keep 100% of revenue. GoHighLevel agencies: launch in GoHighLevel stack under own brand, multi-tenant control, bring existing agent configurations, full white-label (logo, domain, colors), minute rebilling, centralized dashboard.
+
+---
+
+## Best White-Label AI Voice Platforms Compared | Fusion Calling
+URL: https://www.fusioncalling.com/whitelabel/compare
+
+Side-by-side comparison of Fusion Calling vs Vapify vs Voicerr vs VoiceAIWrapper vs Synthflow vs Thinkrr vs Bland AI vs Air AI. Criteria: starting price, sub-accounts, voice providers (Vapi, Retell, ElevenLabs), live demo, onboarding, Stripe rebilling, 2200+ apps. Fusion $99-$499, guided launch 24h.
+
+---
+
+## White-Label Case Studies | Fusion Calling
+URL: https://www.fusioncalling.com/whitelabel/case-studies
+
+Agency success stories reselling white-label AI voice via Fusion Calling. Real results, timelines, and playbooks.
+
+---
+
+## How VoiceWave Marketing Makes $12K/Month Reselling White-Label AI Voice | Fusion Calling
+URL: https://www.fusioncalling.com/whitelabel/case-studies/voicewave-marketing
+
+Read how VoiceWave Marketing used Fusion Calling to launch a white-label AI voice practice. 15 clients, $12K/month recurring, launched in 7 days. Story: VoiceWave Marketing had been running a traditional digital agency for 3 years — SEO, paid ads, and web design for local service businesses. Every client asked about phone call handling, but VoiceWave had no good answer. Offshoring was unreliable; virtual receptionist services had thin margins. When founder Marcus Chen discovered Fusion Calling's white-label program, he saw an immediate opportunity. 'I realized I could offer AI voice agents under my own brand and charge what I wanted. No technology to build, no staff to hire.' Within 7 days of applying, VoiceWave had their branded AI voice dashboard live with custom pricing tiers. Marcus started by offering AI voice as an upsell to his 3 best clients at $497/month each. All 3 said yes within the first week. Three months in, VoiceWave has 15 clients on white-label AI voice plans ranging from $297 to $997/month. Their total monthly recurring revenue from AI voice: $12,400. The margins are significantly better than their traditional services because there's zero delivery overhead per client. 'This changed our business model entirely,' Marcus says. 'We went from trading time for money to selling a productized service with infrastructure margins. Every new client we onboard takes 15 minutes of setup and generates $500+ a month.' Results: 4x Revenue Per Client: AI voice upsells increased average client value from $1,500 to $6,000+ annually. 7-Day Launch: From application to first paying client in 7 days — no technical development needed. 94% Client Retention: Clients stay because the service is invisible, reliable, and generates real ROI for their business. Testimonial: "Fusion Calling let us launch a whole new revenue stream in a week. Our clients love having their own branded AI receptionist, and we love the recurring revenue with no extra headcount." — Marcus Chen, Founder, VoiceWave Marketing
+
+---
+
+## How CallFlow Solutions Built an AI Voice Reselling Business | Fusion Calling
+URL: https://www.fusioncalling.com/whitelabel/case-studies/callflow-solutions
+
+A call center company pivoted to white-label AI voice with Fusion Calling. Now serving 22 clients with $18K/month in recurring revenue and 40% higher margins. Story: CallFlow Solutions started as a traditional call center BPO serving small-to-medium businesses in the Midwest. With 12 agents handling overflow and after-hours calls, margins were tight and scaling required hiring more people. CEO Sarah Kline had been watching AI voice technology for two years. 'I knew AI was coming for our industry. I decided to get in front of it rather than be disrupted by it.' She found Fusion Calling and saw the white-label opportunity: she could offer AI voice to her existing client base under her own brand. The transition took 2 weeks. CallFlow kept their brand, moved their best clients to AI voice plans, and gradually reduced their human agent headcount as natural attrition occurred. 'We didn't fire anyone — we retrained. Some agents became AI voice specialists who customize and monitor the AI agents for clients.' After 2 years on the platform, CallFlow serves 22 clients with white-label AI voice plans. Their monthly recurring revenue is $18,200. Margins on AI voice are 40% higher than their traditional call center services because there's no per-call staffing cost. 'The question isn't whether AI will replace call centers,' Sarah reflects. 'It's which call centers will own the AI relationship with their clients. We own ours through Fusion Calling.' Results: $18K/Month Recurring: Predictable monthly revenue from white-label AI voice subscriptions across 22 clients. 40% Higher Margins: AI voice delivery costs are fixed; every additional client drops straight to the bottom line. Full Business Pivot: From traditional call center to AI voice reseller without losing existing clients or brand equity. Testimonial: "We didn't just add AI voice to our offerings — we transformed our entire business model. Our clients get better service, we get better margins, and everyone wins." — Sarah Kline, CEO, CallFlow Solutions
+
+---
+
+## How Apex Realty Group Generates 40+ Real Estate Leads/Month with AI Voice | Fusion Calling
+URL: https://www.fusioncalling.com/whitelabel/case-studies/apex-realty-group
+
+A real estate team uses white-label AI voice to capture, qualify, and book leads 24/7. 40+ monthly leads, 10-minute setup per property, and a 3x ROI in 60 days. Story: Apex Realty Group is a 12-agent real estate team in Miami handling luxury residential and commercial properties. Their biggest challenge: every property listing generated calls at all hours, and they were missing 60% of after-hours leads. They tried a traditional answering service — $1,200/month for limited hours and scripted responses that couldn't answer property-specific questions. 'It was better than nothing, but barely,' says broker-owner James Torres. Through their marketing agency (who is a Fusion Calling partner), Apex was set up with a white-label AI voice solution branded as 'Apex AI Concierge.' The AI agent knows every listing's details — price, square footage, HOA fees, open house dates — and can qualify leads, schedule showings, and transfer hot leads directly to agents. Setup took 10 minutes per property. Within 60 days, Apex was capturing 40+ qualified leads per month from calls that previously went to voicemail. The AI books an average of 8 showings per week automatically. 'Our clients love it because their property is answered 24/7 with full knowledge. Our agents love it because they only talk to qualified buyers. And we love the ROI — it paid for itself in the first 2 weeks,' James says. Results: 40+ Leads/Month: Qualified leads captured per month from calls that previously went to voicemail or were missed. 10-Minute Setup Per Property: AI agent configured with every listing detail in under 10 minutes. Scalable across the entire portfolio. 3x ROI in 60 Days: The white-label AI voice solution paid for itself within 2 weeks and delivered 3x return in 60 days. Testimonial: "AI Concierge changed how we handle inbound calls. We went from missing 60% of after-hours leads to capturing every single one, qualified and scheduled." — James Torres, Broker-Owner, Apex Realty Group
+
+---
+
+## White-Label AI Voice by Location | Fusion Calling
+URL: https://www.fusioncalling.com/whitelabel/locations
+
+White-label AI voice agents by state. Fusion Calling helps agencies in California, Texas, Florida, New York, Illinois, Pennsylvania, Georgia, Arizona, Colorado, Washington and nationwide launch branded voice AI practices.
+
+---
+
+## White-Label AI Voice Agents for Agencies in California | Fusion Calling
+URL: https://www.fusioncalling.com/whitelabel/locations/california
+
+California agencies: offer white-label AI voice agents under your own brand. Import Vapi, Retell & ElevenLabs agents. Keep 100% of revenue. Start at $99/mo. Top industries: Real Estate, Legal, Healthcare, Technology, E-commerce. Features: Serve California's diverse business landscape: From Silicon Valley tech startups to LA real estate and San Diego healthcare — offer AI voice under your brand across the state's largest industries. CPRA-compliant AI voice: California agencies can confidently serve clients knowing Fusion Calling supports CPRA compliance requirements for AI voice call handling and data processing. Multi-language Spanish & English support: Serve California's bilingual market. AI voice agents handle calls in English and Spanish seamlessly, switching languages mid-conversation when needed. Scalable agency infrastructure: Start with 6 sub-accounts on the Starter plan and scale to unlimited on Scale. California's market demands growth — your white-label platform scales with you. FAQs: Q: Can I offer white-label AI voice to California real estate clients? A: Yes. California real estate agents are increasingly using AI voice for 24/7 property inquiry handling, showing scheduling, and lead qualification. As a Fusion Calling partner, you can offer this under your own brand with California-specific listing knowledge built into each AI agent. Q: Does Fusion Calling support California's privacy regulations (CPRA)? A: Yes. Fusion Calling's platform infrastructure supports CPRA compliance requirements. California agencies can confidently resell AI voice services knowing call data handling aligns with state regulations. Q: How quickly can I launch my white-label AI voice business in California? A: Most California partners are live within 1-2 days of approval. The Starter plan at $99/month with 6 sub-accounts is ideal for testing the market, with the ability to scale up as you acquire clients.
+
+---
+
+## White-Label AI Voice Agents for Agencies in Texas | Fusion Calling
+URL: https://www.fusioncalling.com/whitelabel/locations/texas
+
+Texas agencies: resell AI voice agents under your brand. Serve home services, real estate & healthcare clients across Dallas, Houston, Austin & San Antonio. Start at $99/mo. Top industries: Home Services, Real Estate, Healthcare, Legal, Energy. Features: Texas home services market dominance: Home services (HVAC, plumbing, electrical) is Texas's largest AI voice market. Offer 24/7 call handling and booking for service businesses under your brand. Cover all major Texas metros: Serve clients in Dallas-Fort Worth, Houston, San Antonio, Austin, and El Paso from one white-label dashboard. Your clients get local AI receptionists without local overhead. Rapid scalability for growing agencies: Texas agencies can start small and scale to unlimited sub-accounts. The Growth plan ($299/mo, 20 sub-accounts) is the sweet spot for established Texas agencies. Bilingual English & Spanish: Texas's diverse population demands bilingual support. AI voice agents handle both languages fluently, switching seamlessly mid-conversation. FAQs: Q: What industries in Texas are best for white-label AI voice? A: Home services (HVAC, plumbing, roofing) is the biggest opportunity in Texas — these businesses need 24/7 call handling and book jobs round the clock. Real estate is also strong in Austin, Dallas, and Houston markets. Healthcare, legal, and energy sectors are growing fast. Q: Can I serve clients across multiple Texas cities from one dashboard? A: Absolutely. The Fusion Calling white-label dashboard is centralized — you manage all clients across Dallas, Houston, Austin, San Antonio, and beyond from one login. Each client gets their own branded portal and AI agents. Q: What's the fastest way to start in Texas? A: Apply for the Starter plan ($99/month, 6 sub-accounts). Most Texas partners launch their first client within 1-2 days. Pick one industry vertical (e.g., home services or real estate) to focus your sales efforts initially.
+
+---
+
+## White-Label AI Voice for Agencies in Florida | Fusion Calling
+URL: https://www.fusioncalling.com/whitelabel/locations/florida
+
+Florida agencies: resell AI voice agents under your own brand. Serve real estate, tourism, healthcare & more across Miami, Orlando, Tampa & Jacksonville. Keep 100% revenue. Top industries: Real Estate, Tourism & Hospitality, Healthcare, Home Services, Legal. Features: Florida real estate and tourism focus: Two of Florida's biggest industries — real estate and hospitality — are perfect for AI voice. Offer 24/7 property inquiry and booking handling under your brand. Serve Miami, Orlando, Tampa, and Jacksonville: Florida's major metros each have unique business needs. Your white-label dashboard lets you serve clients across the state from one platform. Multi-language support for diverse markets: Florida's international business community is well-served by AI voice agents that handle English, Spanish, and Portuguese — critical for South Florida markets. Seasonal scalability: Tourism and seasonal real estate markets need flexible scaling. Fusion Calling's tiered plans let you scale sub-accounts up and down as client demand fluctuates. FAQs: Q: How does white-label AI voice help Florida real estate agencies? A: Florida's competitive real estate market means buyers and sellers expect instant responses. AI voice agents handle 24/7 property inquiries, schedule showings, and qualify leads — all under your agency's brand. Your agents only talk to serious buyers. Q: Can I serve tourism and hospitality clients? A: Yes. Hotels, vacation rentals, and tourism businesses in Florida need round-the-clock reservation and inquiry handling. As a Fusion Calling partner, you offer this as a branded service with your pricing. Q: What support does Fusion Calling provide for Florida partners? A: All Florida partners get guided setup, agent template libraries, and ongoing support. Scale plan partners get a dedicated account manager for growth strategy and technical support.
+
+---
+
+## White-Label AI Voice for Agencies in New York | Fusion Calling
+URL: https://www.fusioncalling.com/whitelabel/locations/new-york
+
+New York agencies: offer white-label AI voice agents under your brand. Serve legal, real estate, healthcare & finance clients across NYC, Buffalo & Albany. Start at $99/mo. Top industries: Legal, Real Estate, Financial Services, Healthcare, Technology. Features: NY legal and financial services expertise: New York's largest industries require professional, compliant call handling. Offer branded AI voice for law firms and financial advisors who need 24/7 client intake. New York City metro + statewide coverage: Serve the dense NYC market and expand to Buffalo, Rochester, Albany, and Syracuse — all from one white-label dashboard with client-specific AI agents. Compliance-ready for regulated industries: Financial services and legal call handling have strict compliance requirements. Fusion Calling's platform supports the recording, retention, and data handling that NY firms need. High-value client acquisition: NY agencies typically charge premium rates. White-label AI voice at $497-$997/month per client is standard, giving NY partners strong per-client margins. FAQs: Q: Can I use white-label AI voice for New York law firms? A: Yes. Law firms in New York need 24/7 intake handling for potential clients. AI voice agents can qualify leads, collect case details, schedule consultations, and transfer to attorneys — all under your agency's brand with compliance-friendly recording. Q: What's the pricing opportunity for New York agencies? A: New York agencies typically charge premium rates. The wholesale cost ($99-$499/month) is the same regardless of location. Many NY partners charge $497-$997/month per client, keeping the full margin. Q: How do I compete with established NYC agencies? A: White-label AI voice is still an emerging category. By offering it early with a branded solution, you differentiate from agencies that haven't added AI voice yet. The technical infrastructure is identical whether you're a 1-person shop or a 50-person agency.
+
+---
+
+## White-Label AI Voice for Agencies in Illinois | Fusion Calling
+URL: https://www.fusioncalling.com/whitelabel/locations/illinois
+
+Illinois agencies: resell AI voice under your brand. Serve Chicago's real estate, healthcare & legal markets plus downstate businesses. Keep 100% of revenue. Top industries: Healthcare, Real Estate, Legal, Financial Services, Manufacturing. Features: Chicago market + statewide reach: Serve Chicago's dense business market plus downstate Illinois — all from one white-label platform. Each client gets their own branded AI voice agents. Healthcare-focused AI voice: Illinois has a strong healthcare sector. Offer branded AI receptionists for medical and dental practices that handle appointment scheduling, patient intake, and FAQ answering. Manufacturing and professional services: Beyond Chicago's core industries, Illinois has a strong manufacturing base. AI voice handles supplier calls, shift inquiries, and after-hours customer support under your brand. Competitive advantage in Chicago: Chicago's agency market is competitive. Adding white-label AI voice to your service stack differentiates your agency and increases per-client revenue. FAQs: Q: What's the best industry to target in Illinois? A: Healthcare and real estate are the strongest entry points in Illinois. Medical practices need reliable appointment handling, and Chicago's real estate market runs on immediate lead response. Both industries convert well to AI voice services. Q: Can I start with just one or two clients? A: Yes. The Starter plan at $99/month includes 6 sub-accounts — more than enough to test the market with your best Illinois clients. Scale to Growth ($299/mo) or Scale ($499/mo) as you add clients.
+
+---
+
+## White-Label AI Voice for Agencies in Georgia | Fusion Calling
+URL: https://www.fusioncalling.com/whitelabel/locations/georgia
+
+Georgia agencies: offer white-label AI voice under your brand. Serve Atlanta's real estate, home services & legal markets. Keep 100% of revenue. Start at $99/mo. Top industries: Home Services, Real Estate, Legal, Healthcare, Logistics. Features: Atlanta metro + statewide coverage: Georgia's businesses are concentrated in Atlanta but spread statewide. Serve them all from one white-label dashboard with client-specific AI agents and branding. Home services sweet spot: Home services (HVAC, plumbing, roofing) is Georgia's largest opportunity for AI voice. These businesses need 24/7 call handling and book jobs around the clock. Logistics and supply chain: Georgia's logistics hub means transportation and warehousing companies need reliable call handling. Offer branded AI voice for dispatch, customer inquiries, and after-hours support. Rapid partner onboarding: Georgia partners typically launch their first client within 1-2 days. The Atlanta market moves fast — your white-label platform should too. FAQs: Q: How do Georgia home services businesses use AI voice? A: HVAC, plumbing, and roofing companies in Georgia need to capture every call — especially during extreme weather seasons. AI voice agents handle emergency calls, schedule service appointments, and qualify leads 24/7 under your brand. Q: Can I serve Atlanta real estate clients? A: Yes. Atlanta's growing real estate market needs instant lead response. Offer branded AI voice agents that qualify buyers, schedule showings, and answer property-specific questions around the clock.
+
+---
+
+## White-Label AI Voice for Agencies in Colorado | Fusion Calling
+URL: https://www.fusioncalling.com/whitelabel/locations/colorado
+
+Colorado agencies: resell AI voice under your brand. Serve Denver's real estate, legal & outdoor industries plus mountain resort businesses. Keep 100% revenue. Top industries: Real Estate, Outdoor & Recreation, Legal, Healthcare, Technology. Features: Denver + mountain resort coverage: Serve Denver's growing business market and Colorado's mountain resort communities. From real estate in Boulder to hospitality in Vail — all from one white-label dashboard. Outdoor recreation and hospitality: Colorado's ski resorts, outdoor adventure companies, and hospitality businesses need 24/7 booking and inquiry handling. Offer this as a branded service to your clients. Real estate in a competitive market: Colorado's competitive real estate market demands immediate lead response. Help real estate clients capture every inquiry with branded AI voice agents that qualify and schedule 24/7. Progressive business ecosystem: Colorado's forward-thinking business culture makes it an ideal market for AI voice adoption. Position your agency as the technology partner local businesses trust. FAQs: Q: What makes Colorado a good market for white-label AI voice? A: Colorado has a high concentration of small businesses in real estate, hospitality, and outdoor recreation that need 24/7 call handling. The state's tech-savvy culture means business owners are open to AI solutions, and the mountain resort economy needs off-hours coverage. Q: Can I serve both Denver metro and mountain businesses? A: Absolutely. The platform is fully remote — you can serve a real estate agency in Denver and a ski resort booking office in Breckenridge from the same dashboard. Each client gets their own branded portal and AI agents.
+
+---
+
+## White-Label AI Voice for Agencies in Arizona | Fusion Calling
+URL: https://www.fusioncalling.com/whitelabel/locations/arizona
+
+Arizona agencies: offer AI voice agents under your brand. Serve Phoenix's real estate, healthcare & home services markets. Keep 100% revenue. Start at $99/mo. Top industries: Real Estate, Home Services, Healthcare, Legal, Tourism. Features: Phoenix metro + statewide coverage: Serve Arizona's businesses from Phoenix to Tucson to Flagstaff — all from one white-label platform. Each client gets branded AI agents customized for their business. Real estate in a growing market: Arizona's booming real estate market demands instant lead response. Help real estate clients capture every inquiry with branded AI voice agents that schedule showings and qualify buyers 24/7. Home services year-round demand: Arizona's climate means HVAC and home service businesses run year-round. Offer 24/7 call handling and booking that keeps these businesses connected to customers around the clock. Senior care and healthcare opportunity: Arizona's large retiree population creates demand for healthcare and senior care call handling. Offer branded AI voice for appointment scheduling, medication inquiries, and family communication. FAQs: Q: Why is Arizona a strong market for AI voice? A: Arizona's rapid population growth means more businesses competing for customer attention. Real estate, home services, and healthcare all need 24/7 call coverage. As a Fusion Calling partner, you can offer this under your brand and capture the growing demand. Q: What's the best pricing strategy for Arizona clients? A: Arizona businesses typically pay $297-$697/month for white-label AI voice. The wholesale cost is just $99-$499/month regardless of what you charge. Most partners find the sweet spot at $497/month per client with 3-6 month commitments.
+
+---
+
+## White-Label AI Voice for Agencies in Washington | Fusion Calling
+URL: https://www.fusioncalling.com/whitelabel/locations/washington
+
+Washington agencies: resell AI voice under your brand. Serve Seattle's tech, real estate & healthcare markets. WPA-compliant. Keep 100% of revenue. Start at $99/mo. Top industries: Technology, Real Estate, Healthcare, Legal, Retail. Features: Seattle tech + statewide business: Serve Washington's diverse business ecosystem — from Seattle tech startups to Spokane healthcare and Tacoma real estate — all from one white-label dashboard. WPA-compliant infrastructure: Washington agencies can confidently serve clients knowing Fusion Calling's platform infrastructure supports Washington's privacy requirements for call data handling. Technology-forward market: Washington's tech-savvy business culture is ideal for AI voice adoption. Position your agency as the innovative partner that leading Washington businesses trust. Retail and e-commerce support: Washington's strong retail and e-commerce sector needs 24/7 customer support call handling. Offer branded AI voice that handles order inquiries, returns, and FAQs for retail clients. FAQs: Q: How can Washington agencies use white-label AI voice? A: The biggest opportunities are technology (customer support and lead handling for SaaS companies), real estate (24/7 property inquiry handling across Seattle's competitive market), and healthcare (appointment scheduling and patient intake for medical practices). Q: Is Fusion Calling compliant with Washington privacy laws? A: Fusion Calling's platform infrastructure supports call recording, data retention, and processing practices that align with Washington state privacy requirements. Consult with your legal advisor for your specific compliance needs.
+
+---
+
+## White-Label AI Voice for Agencies in Pennsylvania | Fusion Calling
+URL: https://www.fusioncalling.com/whitelabel/locations/pennsylvania
+
+Pennsylvania agencies: offer white-label AI voice under your brand. Serve Philadelphia's healthcare, legal & real estate markets plus statewide businesses. Keep 100% revenue. Top industries: Healthcare, Legal, Real Estate, Financial Services, Education. Features: Philadelphia + Pittsburgh + statewide: Serve Pennsylvania's major metros and everything in between — from Philadelphia legal firms to Pittsburgh healthcare and Harrisburg government contractors. Healthcare and legal expertise: Pennsylvania's strong healthcare and legal sectors need professional, compliant call handling. Offer branded AI voice for appointment scheduling, client intake, and 24/7 inquiry management. Education sector opportunity: Pennsylvania's universities and educational institutions need call handling for admissions, student services, and parent communications. Offer branded AI voice for the education sector. Manufacturing and logistics: Pennsylvania's manufacturing base needs reliable call handling for supply chain communications, shift inquiries, and after-hours customer support. All under your brand. FAQs: Q: What industries work best in Pennsylvania? A: Healthcare is the largest opportunity — Pennsylvania has a strong medical sector that needs 24/7 appointment handling. Legal and real estate are also strong, especially in Philadelphia. Education (universities and colleges) is a growing niche. Q: How do I compete with Philadelphia agencies? A: AI voice is still early in adoption. Most Philadelphia agencies don't offer it yet. By adding white-label AI voice to your services, you differentiate immediately and increase per-client revenue without adding headcount.
+
+---
+
+## API Reference | Fusion Calling Docs
+URL: https://www.fusioncalling.com/docs/api-reference
+
+Fusion Calling API Reference: REST endpoints for agents, leads, calls, and webhooks. Auth via API key, base URL, rate limits, and examples for Vapi/Retell integration.
+
+---
+
+## Agent Configuration | Fusion Calling Docs
+URL: https://www.fusioncalling.com/docs/agent-configuration
+
+Configure AI voice agents: prompts, voices (ElevenLabs), provider credentials (Vapi, Retell), telephony, intents, and handoff rules. Includes quick-reference and troubleshooting.
+
+---
+
+## Lead Management | Fusion Calling Docs
+URL: https://www.fusioncalling.com/docs/lead-management
+
+Manage leads end-to-end: ingestion, retry system, status flow, error classification, provider guides, custom fields, and best practices. Standard & custom fields passed to agents.
+
+---
+
+## Admin Section | Fusion Calling Docs
+URL: https://www.fusioncalling.com/docs/admin-section
+
+Admin docs: user management, AI credentials, common workflows, and quick-reference for Fusion Calling platform administration.
+
+---
+
+## SMS Messaging | Fusion Calling Docs
+URL: https://www.fusioncalling.com/docs/sms-messaging
+
+SMS docs: Twilio setup, inbound setup, campaigns, inbox, compliance (TCPA), getting started, and quick-reference for voice + SMS automation.
 
 ---

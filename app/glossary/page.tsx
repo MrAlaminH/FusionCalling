@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import Script from "next/script";
 import { glossaryTerms, glossaryCategories, slugifyTerm, GLOSSARY_LAST_UPDATED } from "@/lib/glossary";
 import { buildOpenGraph } from "@/lib/seo";
 
@@ -86,7 +85,7 @@ export default function GlossaryHubPage() {
 
   return (
     <>
-      <Script
+      <script
         id="glossary-index-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

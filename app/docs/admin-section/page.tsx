@@ -3,7 +3,6 @@ import Breadcrumbs from "@/components/docs/breadcrumbs";
 import OnThisPage from "@/components/docs/on-this-page";
 import SectionHeader from "@/components/docs/section-header";
 import type { Metadata } from "next";
-import Script from "next/script";
 import { IntroductionSection } from "./components/introduction";
 import { ClientManagementSection } from "./components/client-management";
 import { UserManagementSection } from "./components/user-management";
@@ -47,7 +46,7 @@ const breadcrumbs = [
 export default function AdminSectionPage() {
   return (
     <>
-      <Script
+      <script
         id="admin-section-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{

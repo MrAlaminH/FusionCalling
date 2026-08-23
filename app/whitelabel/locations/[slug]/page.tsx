@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Script from "next/script";
 import WhiteLabelNavbar from "@/components/white-label-navbar";
 import Footer from "@/components/Footer";
 import Pricing from "@/components/white-label/Pricing";
@@ -60,7 +59,7 @@ export default function LocationDetailPage({
 
   return (
     <>
-      <Script
+      <script
         id="location-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(buildSchema(loc)) }}

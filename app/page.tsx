@@ -34,6 +34,9 @@ export const metadata: Metadata = {
     "call center automation",
     "lead generation AI",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "AI Phone Call Automation & AI Receptionist | Fusion Calling",
     description:

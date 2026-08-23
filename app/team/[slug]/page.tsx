@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Script from "next/script";
 import Image from "next/image";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 
@@ -176,7 +175,7 @@ export default function TeamMemberPage({
 
   return (
     <>
-      <Script
+      <script
         id={`${author.slug}-schema`}
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

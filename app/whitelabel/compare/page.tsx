@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import WhiteLabelNavbar from "@/components/white-label-navbar";
 import Footer from "@/components/Footer";
 import CTA from "@/components/white-label/CTA";
@@ -241,7 +240,7 @@ export default function WhitelabelComparePage() {
 
   return (
     <>
-      <Script
+      <script
         id="compare-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}

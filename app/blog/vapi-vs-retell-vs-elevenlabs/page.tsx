@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import Script from "next/script";
 import Image from "next/image";
 
 /* eslint-disable react/no-unescaped-entities */
@@ -45,7 +44,7 @@ export const metadata: Metadata = {
 export default function VapiVsRetellVsElevenLabsBlogPost() {
   return (
     <>
-      <Script
+      <script
         id="provider-guide-blog-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{

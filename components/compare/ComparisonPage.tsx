@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Script from "next/script";
 import Image from "next/image";
 import type { Comparison } from "@/lib/comparisons";
 import { getRelatedComparisons } from "@/lib/comparisons";
@@ -79,6 +78,7 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
         name: metaTitle,
         headline: `${h1} ${h1Highlight}`,
         description: metaDescription,
+        image: heroImage ? `${SITE_URL}${heroImage}` : `${SITE_URL}/cardImage.jpg`,
         inLanguage: "en-US",
         isPartOf: { "@id": `${SITE_URL}/#website` },
         datePublished,
@@ -103,8 +103,7 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
 
   return (
     <>
-      <Script
-        id={`${slug}-schema`}
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />

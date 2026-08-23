@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Script from "next/script";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DefinitionBlock from "@/components/definition-block";
@@ -94,7 +93,7 @@ export default function AiPhoneCallAutomationPage() {
 
   return (
     <>
-      <Script
+      <script
         id="ai-phone-call-automation-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
