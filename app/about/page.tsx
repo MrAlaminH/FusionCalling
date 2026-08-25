@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { SITE_URL } from "@/lib/site-url";
+import { buildOpenGraph } from "@/lib/seo";
 import Footer from "@/components/Footer";
 
 export const revalidate = 86400;
@@ -28,17 +29,13 @@ export const metadata: Metadata = {
   title: "About Fusion Calling | AI Voice Agents",
   description:
     "Fusion Calling builds human-like AI voice agents that automate inbound and outbound calls. Learn our mission and why 50+ agencies trust us since 2022.",
-  alternates: {
-    canonical: "/about",
-  },
-  openGraph: {
-  title: "About Fusion Calling | Our Mission",
+  ...buildOpenGraph({
+    title: "About Fusion Calling | Our Mission",
     description:
       "We help businesses and agencies automate phone calls with human-like AI voice agents. 50+ agencies served since 2022.",
-    url: "https://www.fusioncalling.com/about",
-    siteName: "Fusion Calling",
+    path: "/about",
     type: "website",
-  },
+  }),
 };
 
 const aboutJsonLd = {

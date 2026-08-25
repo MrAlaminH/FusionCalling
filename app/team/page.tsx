@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { authors } from "@/lib/authors";
 import { SITE_URL } from "@/lib/site-url";
+import { buildOpenGraph } from "@/lib/seo";
 
 export const revalidate = 86400;
 
@@ -12,15 +13,12 @@ const description = "Meet the team behind Fusion Calling — founders, voice AI 
 export const metadata: Metadata = {
   title,
   description,
-  alternates: { canonical: "/team" },
-  openGraph: {
+  ...buildOpenGraph({
     title,
     description,
-    url: `${SITE_URL}/team`,
-    siteName: "Fusion Calling",
+    path: "/team",
     type: "website",
-    images: [{ url: "/opengraph-image.png", width: 1200, height: 630 }],
-  },
+  }),
 };
 
 export default function TeamPage() {
@@ -56,7 +54,7 @@ export default function TeamPage() {
         name: author.name,
         url: `${SITE_URL}/team/${author.slug}`,
         jobTitle: author.role,
-        worksFor: { "@id": "https://www.fusioncalling.com/#organization" },
+        worksFor: { "@id": `${SITE_URL}/#organization` },
         description: author.shortBio,
         image: `${SITE_URL}${author.avatar}`,
         sameAs: [author.linkedin, author.twitter].filter(Boolean) as string[],

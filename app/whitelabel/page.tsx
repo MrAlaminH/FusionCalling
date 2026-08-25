@@ -1,3 +1,4 @@
+import { SITE_URL } from "@/lib/site-url";
 import WhiteLabelNavbar from "@/components/white-label-navbar";
 import Footer from "@/components/Footer";
 import Hero from "@/components/white-label/Hero";
@@ -80,15 +81,15 @@ export default function WhiteLabelPage() {
                 "@graph": [
                   {
                     "@type": "LocalBusiness",
-                    "@id": "https://www.fusioncalling.com/whitelabel#localbusiness",
+                    "@id": `${SITE_URL}/whitelabel#localbusiness`,
                     name: "Fusion Calling White-label Partner Program",
-                    image: "https://www.fusioncalling.com/logo.webp",
+                    image: `${SITE_URL}/logo.webp`,
                     description: "White-label AI voice solution for agencies and resellers. Offer AI phone automation under your own brand with full customization and pricing you control.",
-                    url: "https://www.fusioncalling.com/whitelabel",
+                    url: `${SITE_URL}/whitelabel`,
                     telephone: "+1-914-639-4069",
                     email: "hello@fusioncalling.com",
                     parentOrganization: {
-                      "@id": "https://www.fusioncalling.com/#organization"
+                      "@id": `${SITE_URL}/#organization`
                     },
                     areaServed: {
                       "@type": "Country",
@@ -97,11 +98,11 @@ export default function WhiteLabelPage() {
                   },
                   {
                     "@type": "Service",
-                    "@id": "https://www.fusioncalling.com/whitelabel#service",
+                    "@id": `${SITE_URL}/whitelabel#service`,
                     name: "White-label AI Voice Solution",
                     description: "Partner program allowing agencies and resellers to offer AI phone call automation under their own brand. Includes full white-label dashboard, custom voice training, and subscription-based pricing you control.",
                     provider: {
-                      "@id": "https://www.fusioncalling.com/#organization"
+                      "@id": `${SITE_URL}/#organization`
                     },
                     offers: [
                       {
@@ -111,7 +112,7 @@ export default function WhiteLabelPage() {
                         priceCurrency: "USD",
                         description: "6 sub-accounts, complete white-labeling, client portal access",
                         availability: "https://schema.org/InStock",
-                        url: "https://www.fusioncalling.com/whitelabel"
+                        url: `${SITE_URL}/whitelabel`
                       },
                       {
                         "@type": "Offer",
@@ -120,7 +121,7 @@ export default function WhiteLabelPage() {
                         priceCurrency: "USD",
                         description: "20 sub-accounts, priority support, advanced analytics",
                         availability: "https://schema.org/InStock",
-                        url: "https://www.fusioncalling.com/whitelabel"
+                        url: `${SITE_URL}/whitelabel`
                       },
                       {
                         "@type": "Offer",
@@ -129,7 +130,7 @@ export default function WhiteLabelPage() {
                         priceCurrency: "USD",
                         description: "Unlimited sub-accounts, dedicated account manager, API access",
                         availability: "https://schema.org/InStock",
-                        url: "https://www.fusioncalling.com/whitelabel"
+                        url: `${SITE_URL}/whitelabel`
                       }
                     ],
                     audience: {
@@ -139,32 +140,32 @@ export default function WhiteLabelPage() {
                   },
                   {
                     "@type": "BreadcrumbList",
-                    "@id": "https://www.fusioncalling.com/whitelabel#breadcrumb",
+                    "@id": `${SITE_URL}/whitelabel#breadcrumb`,
                     itemListElement: [
                       {
                         "@type": "ListItem",
                         position: 1,
                         name: "Home",
-                        item: "https://www.fusioncalling.com/",
+                        item: `${SITE_URL}/`,
                       },
                       {
                         "@type": "ListItem",
                         position: 2,
                         name: "White-label Partner Program",
-                        item: "https://www.fusioncalling.com/whitelabel",
+                        item: `${SITE_URL}/whitelabel`,
                       },
                     ],
                   },
                   {
                     "@type": "WebPage",
-                    "@id": "https://www.fusioncalling.com/whitelabel#webpage",
-                    url: "https://www.fusioncalling.com/whitelabel",
+                    "@id": `${SITE_URL}/whitelabel#webpage`,
+                    url: `${SITE_URL}/whitelabel`,
                     name: "White-label AI Voice Solution | Fusion Calling Partner Program",
                     description: "Become a Fusion Calling partner and white-label our AI voice solution. Offer powerful AI phone automation under your own brand.",
                     inLanguage: "en-US",
-                    isPartOf: { "@id": "https://www.fusioncalling.com/#website" },
+                    isPartOf: { "@id": `${SITE_URL}/#website` },
                     dateModified: CONTENT_LAST_UPDATED,
-                    breadcrumb: { "@id": "https://www.fusioncalling.com/whitelabel#breadcrumb" },
+                    breadcrumb: { "@id": `${SITE_URL}/whitelabel#breadcrumb` },
                     speakable: {
                       "@type": "SpeakableSpecification",
                       cssSelector: ["h1", "h2", "p"]
@@ -172,11 +173,11 @@ export default function WhiteLabelPage() {
                   },
                   {
                     "@type": "Product",
-                    "@id": "https://www.fusioncalling.com/whitelabel#product",
+                    "@id": `${SITE_URL}/whitelabel#product`,
                     name: "Fusion Calling White-label AI Voice Solution",
                     description:
                       "Become a Fusion Calling partner and white-label our AI voice solution. Offer powerful AI phone automation under your own brand.",
-                    image: "https://www.fusioncalling.com/cardImage.jpg",
+                    image: `${SITE_URL}/cardImage.jpg`,
                     sku: "FC-WHITELABEL-001",
                     brand: {
                       "@type": "Brand",
@@ -191,46 +192,10 @@ export default function WhiteLabelPage() {
                         priceCurrency: "USD",
                         priceValidUntil: "2027-12-31",
                         availability: "https://schema.org/InStock",
-                        url: "https://www.fusioncalling.com/whitelabel",
+                        url: `${SITE_URL}/whitelabel`,
                         seller: {
                           "@type": "Organization",
                           name: "Fusion Calling",
-                        },
-                        hasMerchantReturnPolicy: {
-                          "@type": "MerchantReturnPolicy",
-                          applicableCountry: "US",
-                          returnPolicyCategory:
-                            "https://schema.org/MerchantReturnFiniteReturnWindow",
-                          merchantReturnDays: 14,
-                          returnMethod: "https://schema.org/ReturnByMail",
-                          returnFees: "https://schema.org/FreeReturn",
-                        },
-                        shippingDetails: {
-                          "@type": "OfferShippingDetails",
-                          shippingRate: {
-                            "@type": "MonetaryAmount",
-                            value: "0.00",
-                            currency: "USD",
-                          },
-                          shippingDestination: {
-                            "@type": "DefinedRegion",
-                            addressCountry: "US",
-                          },
-                          deliveryTime: {
-                            "@type": "ShippingDeliveryTime",
-                            handlingTime: {
-                              "@type": "QuantitativeValue",
-                              minValue: 0,
-                              maxValue: 1,
-                              unitCode: "DAY",
-                            },
-                            transitTime: {
-                              "@type": "QuantitativeValue",
-                              minValue: 0,
-                              maxValue: 1,
-                              unitCode: "DAY",
-                            },
-                          },
                         },
                       },
                       {
@@ -240,46 +205,10 @@ export default function WhiteLabelPage() {
                         priceCurrency: "USD",
                         priceValidUntil: "2027-12-31",
                         availability: "https://schema.org/InStock",
-                        url: "https://www.fusioncalling.com/whitelabel",
+                        url: `${SITE_URL}/whitelabel`,
                         seller: {
                           "@type": "Organization",
                           name: "Fusion Calling",
-                        },
-                        hasMerchantReturnPolicy: {
-                          "@type": "MerchantReturnPolicy",
-                          applicableCountry: "US",
-                          returnPolicyCategory:
-                            "https://schema.org/MerchantReturnFiniteReturnWindow",
-                          merchantReturnDays: 14,
-                          returnMethod: "https://schema.org/ReturnByMail",
-                          returnFees: "https://schema.org/FreeReturn",
-                        },
-                        shippingDetails: {
-                          "@type": "OfferShippingDetails",
-                          shippingRate: {
-                            "@type": "MonetaryAmount",
-                            value: "0.00",
-                            currency: "USD",
-                          },
-                          shippingDestination: {
-                            "@type": "DefinedRegion",
-                            addressCountry: "US",
-                          },
-                          deliveryTime: {
-                            "@type": "ShippingDeliveryTime",
-                            handlingTime: {
-                              "@type": "QuantitativeValue",
-                              minValue: 0,
-                              maxValue: 1,
-                              unitCode: "DAY",
-                            },
-                            transitTime: {
-                              "@type": "QuantitativeValue",
-                              minValue: 0,
-                              maxValue: 1,
-                              unitCode: "DAY",
-                            },
-                          },
                         },
                       },
                       {
@@ -289,53 +218,17 @@ export default function WhiteLabelPage() {
                         priceCurrency: "USD",
                         priceValidUntil: "2027-12-31",
                         availability: "https://schema.org/InStock",
-                        url: "https://www.fusioncalling.com/whitelabel",
+                        url: `${SITE_URL}/whitelabel`,
                         seller: {
                           "@type": "Organization",
                           name: "Fusion Calling",
-                        },
-                        hasMerchantReturnPolicy: {
-                          "@type": "MerchantReturnPolicy",
-                          applicableCountry: "US",
-                          returnPolicyCategory:
-                            "https://schema.org/MerchantReturnFiniteReturnWindow",
-                          merchantReturnDays: 14,
-                          returnMethod: "https://schema.org/ReturnByMail",
-                          returnFees: "https://schema.org/FreeReturn",
-                        },
-                        shippingDetails: {
-                          "@type": "OfferShippingDetails",
-                          shippingRate: {
-                            "@type": "MonetaryAmount",
-                            value: "0.00",
-                            currency: "USD",
-                          },
-                          shippingDestination: {
-                            "@type": "DefinedRegion",
-                            addressCountry: "US",
-                          },
-                          deliveryTime: {
-                            "@type": "ShippingDeliveryTime",
-                            handlingTime: {
-                              "@type": "QuantitativeValue",
-                              minValue: 0,
-                              maxValue: 1,
-                              unitCode: "DAY",
-                            },
-                            transitTime: {
-                              "@type": "QuantitativeValue",
-                              minValue: 0,
-                              maxValue: 1,
-                              unitCode: "DAY",
-                            },
-                          },
                         },
                       },
                     ],
                   },
                   {
                     "@type": "FAQPage",
-                    "@id": "https://www.fusioncalling.com/whitelabel#faqpage",
+                    "@id": `${SITE_URL}/whitelabel#faqpage`,
                     mainEntity: faqs.map((faq) => ({
                       "@type": "Question",
                       name: faq.question,
@@ -347,7 +240,7 @@ export default function WhiteLabelPage() {
                   },
                   {
                     "@type": "HowTo",
-                    "@id": "https://www.fusioncalling.com/whitelabel#howto",
+                    "@id": `${SITE_URL}/whitelabel#howto`,
                     name: "How to Launch Your White-label AI Voice Business",
                     description:
                       "From application to first sale in as little as one week. We handle the technology, you focus on growing your agency.",
@@ -376,12 +269,12 @@ export default function WhiteLabelPage() {
                   },
                   {
                     "@type": "VideoObject",
-                    "@id": "https://www.fusioncalling.com/whitelabel#video",
+                    "@id": `${SITE_URL}/whitelabel#video`,
                     name: "Fusion Calling White-label AI Voice Demo",
                     description:
                       "See the Fusion Calling white-label AI voice platform in action: branded dashboard, sub-account management, and live AI phone agents under your own domain.",
                     thumbnailUrl:
-                      "https://www.fusioncalling.com/hero-thumbnail.jpg",
+                      `${SITE_URL}/hero-thumbnail.jpg`,
                     uploadDate: "2026-01-15",
                     duration: "PT2M0S",
                     contentUrl: "https://vimeo.com/1155684546",
@@ -389,12 +282,7 @@ export default function WhiteLabelPage() {
                     regionsAllowed: ["US", "CA", "GB", "AU"],
                     isFamilyFriendly: true,
                     publisher: {
-                      "@id": "https://www.fusioncalling.com/#organization",
-                    },
-                    interactionStatistic: {
-                      "@type": "InteractionCounter",
-                      interactionType: { "@type": "WatchAction" },
-                      userInteractionCount: 5200,
+                      "@id": `${SITE_URL}/#organization`,
                     },
                   },
                 ],

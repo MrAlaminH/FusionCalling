@@ -1,3 +1,4 @@
+import { SITE_URL } from "@/lib/site-url";
 import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -38,26 +39,26 @@ export default function BlogPage() {
                     "@type": "ListItem",
                     position: 1,
                     name: "Home",
-                    item: "https://www.fusioncalling.com/",
+                    item: `${SITE_URL}/`,
                   },
                   {
                     "@type": "ListItem",
                     position: 2,
                     name: "Blog",
-                    item: "https://www.fusioncalling.com/blog",
+                    item: `${SITE_URL}/blog`,
                   },
                 ],
               },
               {
                 "@type": "CollectionPage",
-                "@id": "https://www.fusioncalling.com/blog#collectionpage",
-                url: "https://www.fusioncalling.com/blog",
+                "@id": `${SITE_URL}/blog#collectionpage`,
+                url: `${SITE_URL}/blog`,
                 name: "Fusion Calling Blog",
                 description:
                   "Expert insights on white-label AI voice platforms, agency growth strategies, and voice automation trends.",
                 inLanguage: "en-US",
                 isPartOf: {
-                  "@id": "https://www.fusioncalling.com/#website",
+                  "@id": `${SITE_URL}/#website`,
                 },
               },
             ],

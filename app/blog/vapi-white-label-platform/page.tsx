@@ -1,8 +1,9 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
-import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { getTeamAuthor } from "@/lib/authors";
+import { buildOpenGraph } from "@/lib/seo";
 
 /* eslint-disable react/no-unescaped-entities */
 
@@ -12,29 +13,17 @@ export const metadata: Metadata = {
   title: "White-Label Vapi: Vapi Alone Isn't Resellable",
   description:
     "Vapi is great voice AI but has no native white-label: you can't resell it under your brand. Fusion Calling adds branding, portals, and billing to resell Vapi.",
-  alternates: {
-    canonical: "/blog/vapi-white-label-platform",
-  },
-  openGraph: {
-    title: "White-Label Vapi: Why Vapi Alone Isn't Resellable",
+  ...buildOpenGraph({
+    title: "White-Label Vapi: Vapi Alone Isn't Resellable",
     description:
       "Vapi is excellent voice AI infrastructure, but it has no native white-label. Fusion Calling is the white-label layer that lets agencies resell Vapi under their own brand.",
-    url: "https://www.fusioncalling.com/blog/vapi-white-label-platform",
-    siteName: "Fusion Calling",
-    images: [
-      {
-        url: "/blog/blog5.webp",
-        width: 1376,
-        height: 768,
-        alt: "White-Labeling Vapi with Fusion Calling",
-      },
-    ],
-    locale: "en_US",
+    path: "/blog/vapi-white-label-platform",
+    image: "/blog/blog5.webp",
     type: "article",
     publishedTime: "2025-02-10T00:00:00Z",
     modifiedTime: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
     authors: ["Fusion Calling"],
-  },
+  }),
 };
 
 export default function VapiWhiteLabelBlogPost() {
@@ -54,41 +43,41 @@ export default function VapiWhiteLabelBlogPost() {
                     "@type": "ListItem",
                     position: 1,
                     name: "Home",
-                    item: "https://www.fusioncalling.com/",
+                    item: `${SITE_URL}/`,
                   },
                   {
                     "@type": "ListItem",
                     position: 2,
                     name: "Blog",
-                    item: "https://www.fusioncalling.com/blog",
+                    item: `${SITE_URL}/blog`,
                   },
                   {
                     "@type": "ListItem",
                     position: 3,
                     name: "White-Labeling Vapi with Fusion Calling",
-                    item: "https://www.fusioncalling.com/blog/vapi-white-label-platform",
+                    item: `${SITE_URL}/blog/vapi-white-label-platform`,
                   },
                 ],
               },
               {
                 "@type": "Article",
-                "@id": "https://www.fusioncalling.com/blog/vapi-white-label-platform#article",
-                url: "https://www.fusioncalling.com/blog/vapi-white-label-platform",
+                "@id": `${SITE_URL}/blog/vapi-white-label-platform#article`,
+                url: `${SITE_URL}/blog/vapi-white-label-platform`,
                 name: "White-Labeling Vapi with Fusion Calling: A Guide for Agencies",
                 headline:
                   "White-Labeling Vapi with Fusion Calling: A Guide for Agencies",
                 description:
                   "Fusion Calling is the white-label agency layer built to work with Vapi. Add branding, client portals, multi-client management, and billing so you can resell Vapi under your own brand.",
                 inLanguage: "en-US",
-                image: "https://www.fusioncalling.com/blog/blog5.webp",
+                image: `${SITE_URL}/blog/blog5.webp`,
                 isPartOf: {
-                  "@id": "https://www.fusioncalling.com/#website",
+                  "@id": `${SITE_URL}/#website`,
                 },
                 datePublished: "2025-02-10T00:00:00Z",
                 dateModified: "2026-07-07T00:00:00Z",
-                author: { "@id": "https://www.fusioncalling.com/team/voice-team#person" },
+                author: { "@id": `${SITE_URL}/team/voice-team#person` },
                 publisher: {
-                  "@id": "https://www.fusioncalling.com/#organization",
+                  "@id": `${SITE_URL}/#organization`,
                 },
                 speakable: {
                   "@type": "SpeakableSpecification",

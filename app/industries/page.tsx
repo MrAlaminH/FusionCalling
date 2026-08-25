@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { industries } from "@/lib/industries";
+import { SITE_URL } from "@/lib/site-url";
 import { buildOpenGraph } from "@/lib/seo";
 
 // No hardcoded "| Fusion Calling" — the root layout title template appends it.
@@ -31,29 +32,29 @@ export default function IndustriesHubPage() {
                     "@type": "ListItem",
                     position: 1,
                     name: "Home",
-                    item: "https://www.fusioncalling.com/",
+                    item: `${SITE_URL}/`,
                   },
                   {
                     "@type": "ListItem",
                     position: 2,
                     name: "Industries",
-                    item: "https://www.fusioncalling.com/industries",
+                    item: `${SITE_URL}/industries`,
                   },
                 ],
               },
               {
                 "@type": "CollectionPage",
-                "@id": "https://www.fusioncalling.com/industries#collectionpage",
-                url: "https://www.fusioncalling.com/industries",
+                "@id": `${SITE_URL}/industries#collectionpage`,
+                url: `${SITE_URL}/industries`,
                 name: "AI Voice by Industry",
                 description:
                   "Explore how white-label AI voice agents serve every industry.",
                 inLanguage: "en-US",
-                isPartOf: { "@id": "https://www.fusioncalling.com/#website" },
+                isPartOf: { "@id": `${SITE_URL}/#website` },
               },
               {
                 "@type": "FAQPage",
-                "@id": "https://www.fusioncalling.com/industries#faqpage",
+                "@id": `${SITE_URL}/industries#faqpage`,
                 mainEntity: [
                   {
                     "@type": "Question",

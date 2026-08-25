@@ -1,8 +1,9 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
-import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { getTeamAuthor } from "@/lib/authors";
+import { buildOpenGraph } from "@/lib/seo";
 
 /* eslint-disable react/no-unescaped-entities */
 
@@ -12,29 +13,17 @@ export const metadata: Metadata = {
   title: "GoHighLevel Alternative for Voice AI: Built-In CRM + Voice Agents",
   description:
     "GoHighLevel is a powerful CRM, but voice-first agencies pay for unused features. Fusion Calling bundles AI voice agents, a built-in CRM, portals, and white-label in one.",
-  alternates: {
-    canonical: "/blog/gohighlevel-alternative-for-voice-ai",
-  },
-  openGraph: {
+  ...buildOpenGraph({
     title: "GoHighLevel Alternative for Voice AI: Built-In CRM + Voice Agents",
     description:
       "GoHighLevel is a powerful CRM and marketing suite — but for a voice-first agency, paying for the full platform just to get a CRM is expensive overhead. Fusion Calling bundles AI voice agents together with a built-in CRM, client portals, and white-label in one platform.",
-    url: "https://www.fusioncalling.com/blog/gohighlevel-alternative-for-voice-ai",
-    siteName: "Fusion Calling",
-    images: [
-      {
-        url: "/blog/blog2.webp",
-        width: 1376,
-        height: 768,
-        alt: "GoHighLevel Alternative for Voice AI Agencies",
-      },
-    ],
-    locale: "en_US",
+    path: "/blog/gohighlevel-alternative-for-voice-ai",
+    image: "/blog/blog2.webp",
     type: "article",
     publishedTime: "2025-02-16T00:00:00Z",
     modifiedTime: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
     authors: ["Fusion Calling"],
-  },
+  }),
 };
 
 export default function GhlAlternativeBlogPost() {
@@ -54,41 +43,41 @@ export default function GhlAlternativeBlogPost() {
                     "@type": "ListItem",
                     position: 1,
                     name: "Home",
-                    item: "https://www.fusioncalling.com/",
+                    item: `${SITE_URL}/`,
                   },
                   {
                     "@type": "ListItem",
                     position: 2,
                     name: "Blog",
-                    item: "https://www.fusioncalling.com/blog",
+                    item: `${SITE_URL}/blog`,
                   },
                   {
                     "@type": "ListItem",
                     position: 3,
                     name: "GoHighLevel Alternative for Voice AI: Built-In CRM + Voice Agents",
-                    item: "https://www.fusioncalling.com/blog/gohighlevel-alternative-for-voice-ai",
+                    item: `${SITE_URL}/blog/gohighlevel-alternative-for-voice-ai`,
                   },
                 ],
               },
               {
                 "@type": "Article",
-                "@id": "https://www.fusioncalling.com/blog/gohighlevel-alternative-for-voice-ai#article",
-                url: "https://www.fusioncalling.com/blog/gohighlevel-alternative-for-voice-ai",
+                "@id": `${SITE_URL}/blog/gohighlevel-alternative-for-voice-ai#article`,
+                url: `${SITE_URL}/blog/gohighlevel-alternative-for-voice-ai`,
                 name: "GoHighLevel Alternative for Voice AI: Built-In CRM + Voice Agents",
                 headline:
                   "GoHighLevel Alternative for Voice AI: Built-In CRM + Voice Agents",
                 description:
                   "GoHighLevel is a powerful CRM and marketing suite — but for a voice-first agency, paying for the full platform just to get a CRM is expensive overhead. Fusion Calling bundles AI voice agents together with a built-in CRM, client portals, and white-label in one platform.",
                 inLanguage: "en-US",
-                image: "https://www.fusioncalling.com/blog/blog2.webp",
+                image: `${SITE_URL}/blog/blog2.webp`,
                 isPartOf: {
-                  "@id": "https://www.fusioncalling.com/#website",
+                  "@id": `${SITE_URL}/#website`,
                 },
                 datePublished: "2025-02-16T00:00:00Z",
                 dateModified: "2026-07-07T00:00:00Z",
-                author: { "@id": "https://www.fusioncalling.com/team/voice-team#person" },
+                author: { "@id": `${SITE_URL}/team/voice-team#person` },
                 publisher: {
-                  "@id": "https://www.fusioncalling.com/#organization",
+                  "@id": `${SITE_URL}/#organization`,
                 },
                 speakable: {
                   "@type": "SpeakableSpecification",

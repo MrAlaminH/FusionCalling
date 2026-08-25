@@ -81,9 +81,13 @@ const PLANS: Plan[] = [
 function PricingCard({
   plan,
   billing,
+  nameHeading: NameHeading,
+  featureListHeading: FeatureListHeading,
 }: {
   plan: Plan;
   billing: BillingCycle;
+  nameHeading: "h2" | "h3";
+  featureListHeading: "h3" | "h4";
 }) {
   const { monthly, yearly } = prices[plan.id];
   const activePrice = billing === "yearly" ? yearly : monthly;
@@ -108,9 +112,9 @@ function PricingCard({
 
       {/* Header */}
       <div className="mb-4 md:mb-5">
-        <h3 className="text-base md:text-lg font-semibold font-display">
+        <NameHeading className="text-base md:text-lg font-semibold font-display">
           {plan.name}
-        </h3>
+        </NameHeading>
         <p className="text-xs opacity-80">{plan.tagline}</p>
       </div>
 
@@ -171,7 +175,7 @@ function PricingCard({
           popular ? "border-brand/60" : "border-gray-700"
         )}
       >
-        <h4 className="mb-3 text-xs md:text-sm font-medium">What you will get</h4>
+        <FeatureListHeading className="mb-3 text-xs md:text-sm font-medium">What you will get</FeatureListHeading>
         <ul className="space-y-2">
           {plan.features.map((item) => (
             <li key={item} className="flex items-start gap-2">
@@ -202,13 +206,18 @@ export default function PricingSection({
 }) {
   const [billing, setBilling] = useState<BillingCycle>("monthly");
   const Heading = headingLevel;
+  // Keep the heading outline gap-free on both usages:
+  // - /pricing renders the section title as H1 → plan names H2, features H3
+  // - homepage anchor keeps the section title as H2 → plan names H3, features H4
+  const cardNameLevel = headingLevel === "h1" ? "h2" : "h3";
+  const featureListLevel = headingLevel === "h1" ? "h3" : "h4";
   return (
     <section className="w-full section-spacing bg-black text-gray-200">
       <div className="container mx-auto px-4 md:px-6 max-w-6xl">
         {/* Title Header */}
         <div className="text-center mb-8 md:mb-10">
           <Heading className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-brand mb-2">
-            Simple, Fair Pricing
+            Simple, Fair Pricing for AI Phone Automation
           </Heading>
           <p className="text-xs text-gray-400 md:text-sm max-w-xl mx-auto">
             Choose the perfect plan for your business needs. Scale effortlessly
@@ -224,7 +233,13 @@ export default function PricingSection({
         {/* Pricing Cards Container */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 items-stretch">
           {PLANS.map((plan) => (
-            <PricingCard key={plan.id} plan={plan} billing={billing} />
+            <PricingCard
+              key={plan.id}
+              plan={plan}
+              billing={billing}
+              nameHeading={cardNameLevel}
+              featureListHeading={featureListLevel}
+            />
           ))}
         </div>
 

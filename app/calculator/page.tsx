@@ -42,7 +42,7 @@ const calculatorJsonLd = {
       ],
     },
     {
-      "@type": "WebApplication",
+      "@type": "SoftwareApplication",
       name: "Fusion Calling Voice Throughput Calculator",
       url: `${SITE_URL}/calculator`,
       description,

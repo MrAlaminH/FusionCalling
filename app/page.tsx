@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Tools from "@/components/Tools";
 import Footer from "@/components/Footer";
 import type { Metadata } from "next";
-import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { CONTENT_LAST_UPDATED, SITE_URL } from "@/lib/site-url";
 import { buildOpenGraph } from "@/lib/seo";
 
 // Below-the-fold sections are code-split so their JavaScript is not part of
@@ -41,16 +41,16 @@ export default function Home() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://www.fusioncalling.com/#webpage",
-        url: "https://www.fusioncalling.com/",
+        "@id": `${SITE_URL}/#webpage`,
+        url: `${SITE_URL}/`,
         name: "Fusion Calling | AI Phone Call Automation for Businesses",
         description: "AI-powered phone call automation for businesses. Streamline customer interactions, save time, and increase productivity with advanced voice technology.",
         isPartOf: {
-          "@id": "https://www.fusioncalling.com/#website"
+          "@id": `${SITE_URL}/#website`
         },
         primaryImageOfPage: {
           "@type": "ImageObject",
-          url: "https://www.fusioncalling.com/opengraph-image.png"
+          url: `${SITE_URL}/opengraph-image.png`
         },
         dateModified: CONTENT_LAST_UPDATED,
         inLanguage: "en-US",
@@ -61,45 +61,18 @@ export default function Home() {
               "@type": "ListItem",
               position: 1,
               name: "Home",
-              item: "https://www.fusioncalling.com/"
+              item: `${SITE_URL}/`
             }
           ]
         }
       },
       {
-        "@type": "LocalBusiness",
-        "@id": "https://www.fusioncalling.com/#localbusiness",
-        name: "Fusion Calling",
-        image: "https://www.fusioncalling.com/logo.webp",
-        description: "AI-powered phone call automation for businesses. Streamline customer interactions, save time, and increase productivity with advanced voice technology.",
-        url: "https://www.fusioncalling.com/",
-        telephone: "+1-914-639-4069",
-        email: "hello@fusioncalling.com",
-        address: {
-          "@type": "PostalAddress",
-          addressCountry: "US"
-        },
-        openingHoursSpecification: {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday"
-          ],
-          opens: "09:00",
-          closes: "18:00"
-        },
-        priceRange: "$$$"
-      },
-      {
         "@type": "Service",
-        "@id": "https://www.fusioncalling.com/#service",
+        "@id": `${SITE_URL}/#service`,
         name: "AI Phone Call Automation",
         description: "Automate inbound and outbound phone calls with human-like AI voice agents. Our AI receptionist handles customer service, lead qualification, appointment booking, and more 24/7.",
         provider: {
-          "@id": "https://www.fusioncalling.com/#organization"
+          "@id": `${SITE_URL}/#organization`
         },
         offers: {
           "@type": "Offer",
@@ -107,7 +80,7 @@ export default function Home() {
           priceRange: "$149-$497/month",
           priceCurrency: "USD",
           availability: "https://schema.org/InStock",
-          url: "https://www.fusioncalling.com/",
+          url: `${SITE_URL}/`,
           description: "Plans include 500-2100 minutes per month with unlimited AI agents, custom voice training, and dedicated support"
         },
         areaServed: {
@@ -159,16 +132,11 @@ export default function Home() {
         "@type": "VideoObject",
         "name": "Fusion Calling AI Phone Agent Demo - Real Estate",
         "description": "Watch how our AI voice agent handles a real estate consultation call. The AI identifies client interests, discusses property preferences, and arranges for further information delivery with human-like conversation.",
-        "thumbnailUrl": "https://www.fusioncalling.com/cardImage.jpg",
+        "thumbnailUrl": `${SITE_URL}/cardImage.jpg`,
         "uploadDate": "2026-01-15",
         "duration": "PT2M30S",
         "contentUrl": "https://www.youtube.com/watch?v=Oua1TyixaoA",
-        "embedUrl": "https://www.youtube.com/embed/Oua1TyixaoA",
-        "interactionStatistic": {
-          "@type": "InteractionCounter",
-          "interactionType": { "@type": "WatchAction" },
-          "userInteractionCount": 15000
-        }
+        "embedUrl": "https://www.youtube.com/embed/Oua1TyixaoA"
       },
       {
         "@type": "SoftwareApplication",
@@ -180,7 +148,7 @@ export default function Home() {
           "price": "149.00",
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
-          "url": "https://www.fusioncalling.com/",
+          "url": `${SITE_URL}/`,
           "seller": {
             "@type": "Organization",
             "name": "Fusion Calling"
@@ -201,7 +169,7 @@ export default function Home() {
       },
       {
         "@type": "FAQPage",
-        "@id": "https://www.fusioncalling.com/#faqpage",
+        "@id": `${SITE_URL}/#faqpage`,
         mainEntity: [
           {
             "@type": "Question",

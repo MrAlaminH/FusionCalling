@@ -7,7 +7,7 @@ import IndustryPage from "@/components/industries/IndustryPage";
 export const revalidate = 86400;
 import { industries, getIndustry } from "@/lib/industries";
 import { glossaryTerms, slugifyTerm } from "@/lib/glossary";
-import { SITE_URL } from "@/lib/site-url";
+import { buildOpenGraph } from "@/lib/seo";
 
 export function generateStaticParams() {
   return industries.map((i) => ({ slug: i.slug }));
@@ -23,35 +23,20 @@ export function generateMetadata({
     return { title: "Industry Not Found" };
   }
 
-  const url = `${SITE_URL}/industries/${industry.slug}`;
-
   const agencyDescription = `White-label AI voice agents for ${industry.name}: 24/7 calls, booking, lead qualification you resell with Fusion Calling.`;
 
   return {
     title: industry.metaTitle,
     description: agencyDescription,
-    alternates: {
-      canonical: `/industries/${industry.slug}`,
-    },
-    openGraph: {
+    ...buildOpenGraph({
       title: industry.metaTitle,
       description: agencyDescription,
-      url,
-      siteName: "Fusion Calling",
-      images: [
-        {
-          url: `/opengraph-image.png`,
-          width: 1200,
-          height: 630,
-          alt: `AI Voice for ${industry.name}`,
-        },
-      ],
-      locale: "en_US",
+      path: `/industries/${industry.slug}`,
       type: "article",
       publishedTime: industry.datePublished,
       modifiedTime: industry.datePublished,
       authors: ["Fusion Calling"],
-    },
+    }),
   };
 }
 

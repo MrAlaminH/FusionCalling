@@ -20,7 +20,7 @@ export const whitelabelLocations: WhiteLabelLocation[] = [
     stateName: "California",
     abbreviation: "CA",
     metaTitle:
-      "White-Label AI Voice Agents for Agencies in California | Fusion Calling",
+      "White-Label AI Voice Agents for Agencies in California",
     metaDescription:
       "California agencies: offer white-label AI voice agents under your own brand. Import Vapi, Retell & ElevenLabs agents. Keep 100% of revenue. Start at $99/mo.",
     keywords: [
@@ -78,7 +78,7 @@ export const whitelabelLocations: WhiteLabelLocation[] = [
     abbreviation: "TX",
     agencyCount: "45+",
     metaTitle:
-      "White-Label AI Voice Agents for Agencies in Texas | Fusion Calling",
+      "White-Label AI Voice Agents for Agencies in Texas",
     metaDescription:
       "Texas agencies: resell AI voice agents under your brand. Serve home services, real estate & healthcare clients across Dallas, Houston, Austin & San Antonio. Start at $99/mo.",
     keywords: [
@@ -135,7 +135,7 @@ export const whitelabelLocations: WhiteLabelLocation[] = [
     abbreviation: "FL",
     agencyCount: "35+",
     metaTitle:
-      "White-Label AI Voice for Agencies in Florida | Fusion Calling",
+      "White-Label AI Voice for Agencies in Florida",
     metaDescription:
       "Florida agencies: resell AI voice agents under your own brand. Serve real estate, tourism, healthcare & more across Miami, Orlando, Tampa & Jacksonville. Keep 100% revenue.",
     keywords: [
@@ -192,7 +192,7 @@ export const whitelabelLocations: WhiteLabelLocation[] = [
     abbreviation: "NY",
     agencyCount: "30+",
     metaTitle:
-      "White-Label AI Voice for Agencies in New York | Fusion Calling",
+      "White-Label AI Voice for Agencies in New York",
     metaDescription:
       "New York agencies: offer white-label AI voice agents under your brand. Serve legal, real estate, healthcare & finance clients across NYC, Buffalo & Albany. Start at $99/mo.",
     keywords: [
@@ -249,7 +249,7 @@ export const whitelabelLocations: WhiteLabelLocation[] = [
     abbreviation: "IL",
     agencyCount: "25+",
     metaTitle:
-      "White-Label AI Voice for Agencies in Illinois | Fusion Calling",
+      "White-Label AI Voice for Agencies in Illinois",
     metaDescription:
       "Illinois agencies: resell AI voice under your brand. Serve Chicago's real estate, healthcare & legal markets plus downstate businesses. Keep 100% of revenue.",
     keywords: [
@@ -301,7 +301,7 @@ export const whitelabelLocations: WhiteLabelLocation[] = [
     abbreviation: "GA",
     agencyCount: "25+",
     metaTitle:
-      "White-Label AI Voice for Agencies in Georgia | Fusion Calling",
+      "White-Label AI Voice for Agencies in Georgia",
     metaDescription:
       "Georgia agencies: offer white-label AI voice under your brand. Serve Atlanta's real estate, home services & legal markets. Keep 100% of revenue. Start at $99/mo.",
     keywords: [
@@ -353,7 +353,7 @@ export const whitelabelLocations: WhiteLabelLocation[] = [
     abbreviation: "CO",
     agencyCount: "20+",
     metaTitle:
-      "White-Label AI Voice for Agencies in Colorado | Fusion Calling",
+      "White-Label AI Voice for Agencies in Colorado",
     metaDescription:
       "Colorado agencies: resell AI voice under your brand. Serve Denver's real estate, legal & outdoor industries plus mountain resort businesses. Keep 100% revenue.",
     keywords: [
@@ -405,7 +405,7 @@ export const whitelabelLocations: WhiteLabelLocation[] = [
     abbreviation: "AZ",
     agencyCount: "20+",
     metaTitle:
-      "White-Label AI Voice for Agencies in Arizona | Fusion Calling",
+      "White-Label AI Voice for Agencies in Arizona",
     metaDescription:
       "Arizona agencies: offer AI voice agents under your brand. Serve Phoenix's real estate, healthcare & home services markets. Keep 100% revenue. Start at $99/mo.",
     keywords: [
@@ -457,7 +457,7 @@ export const whitelabelLocations: WhiteLabelLocation[] = [
     abbreviation: "WA",
     agencyCount: "20+",
     metaTitle:
-      "White-Label AI Voice for Agencies in Washington | Fusion Calling",
+      "White-Label AI Voice for Agencies in Washington",
     metaDescription:
       "Washington agencies: resell AI voice under your brand. Serve Seattle's tech, real estate & healthcare markets. WPA-compliant. Keep 100% of revenue. Start at $99/mo.",
     keywords: [
@@ -509,7 +509,7 @@ export const whitelabelLocations: WhiteLabelLocation[] = [
     abbreviation: "PA",
     agencyCount: "20+",
     metaTitle:
-      "White-Label AI Voice for Agencies in Pennsylvania | Fusion Calling",
+      "White-Label AI Voice for Agencies in Pennsylvania",
     metaDescription:
       "Pennsylvania agencies: offer white-label AI voice under your brand. Serve Philadelphia's healthcare, legal & real estate markets plus statewide businesses. Keep 100% revenue.",
     keywords: [

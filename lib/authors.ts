@@ -1,3 +1,5 @@
+import { SITE_URL } from "@/lib/site-url";
+
 export type Author = {
   slug: string;
   name: string;
@@ -23,9 +25,9 @@ export const authors: Author[] = [
       "Founder of Fusion Calling. Building the infrastructure for 500+ agencies to launch white-label voice AI businesses. Previously scaled B2B SaaS to 7-figures ARR.",
     avatar: "/avatars/male_avatar.svg",
     linkedin: "https://www.linkedin.com/in/alamin",
-    twitter: "https://twitter.com/fusioncalling",
+    twitter: "https://x.com/MrAlaminH",
     email: "alamin@fusioncalling.com",
-    authorSchemaId: "https://www.fusioncalling.com/team/alamin#person",
+    authorSchemaId: `${SITE_URL}/team/alamin#person`,
     longBio: [
       "Alamin founded Fusion Calling in 2022 after recognizing that agencies wanted to sell voice AI but lacked the infrastructure to white-label, manage multi-provider deployments, and bill clients under their own brand.",
       "Before Fusion Calling, he built and exited a B2B SaaS platform serving 2,000+ SMB customers. He brings deep experience in agency business models, recurring revenue architecture, and voice AI technology stacks.",
@@ -48,9 +50,9 @@ export const authors: Author[] = [
       "The engineering and voice AI team behind Fusion Calling's multi-provider platform. Experts in Vapi, Retell, ElevenLabs integration, conversation design, and production voice deployments.",
     avatar: "/avatars/female_avatar.svg",
     linkedin: "https://www.linkedin.com/company/fusion-calling/",
-    twitter: "https://twitter.com/fusioncalling",
+    twitter: "https://x.com/MrAlaminH",
     email: "team@fusioncalling.com",
-    authorSchemaId: "https://www.fusioncalling.com/team/voice-team#person",
+    authorSchemaId: `${SITE_URL}/team/voice-team#person`,
     longBio: [
       "The Fusion Calling Voice Team comprises conversation designers, voice engineers, and platform architects who have collectively deployed 10,000+ AI voice agents across real estate, healthcare, insurance, home services, and legal verticals.",
       "They specialize in optimizing latency, barge-in handling, endpointing accuracy, and multi-turn conversation flows. The team maintains direct partnerships with Vapi, Retell, and ElevenLabs engineering teams to ensure Fusion Calling customers get early access to new features and priority support.",

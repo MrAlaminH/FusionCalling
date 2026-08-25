@@ -29,7 +29,7 @@ app/                    # App Router pages (route segments = folders)
 components/             # Shared UI components (Radix + custom)
 lib/                    # Utilities, helpers, constants
 scripts/                # Build-time / CI scripts (analyze, optimize-images, openapi, indexnow)
-public/                 # Static assets (large opengraph-image.png at root)
+public/                 # Static assets (opengraph-image.png at root)
 styles/                 # globals.css only (Tailwind imports)
 ```
 
@@ -59,7 +59,7 @@ styles/                 # globals.css only (Tailwind imports)
 
 ## Gotchas
 
-- **Large opengraph-image.png** (135KB) at `app/opengraph-image.png` — optimize before replacing
+- **OG image** lives at `public/opengraph-image.png` (~40KB) — keep it under ~100KB if replacing
 - **PostHog** key loaded from env (`NEXT_PUBLIC_POSTHOG_KEY`) — required for analytics
 - **Cal.com embed** via `@calcom/embed-react` — configured in components using it
 - **No test runner configured** — add Vitest/Jest if needed

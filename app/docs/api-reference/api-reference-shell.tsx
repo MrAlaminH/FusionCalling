@@ -6,6 +6,7 @@ import Breadcrumbs from "@/components/docs/breadcrumbs";
 import OnThisPage from "@/components/docs/on-this-page";
 import CommandPalette from "@/components/docs/search/command-palette";
 import { LanguageProvider } from "@/components/docs/language-context";
+import { SITE_URL } from "@/lib/site-url";
 interface NavItem {
   id: string;
   label: string;
@@ -41,40 +42,40 @@ export default function ApiReferenceShell({
                     "@type": "ListItem",
                     position: 1,
                     name: "Home",
-                    item: "https://www.fusioncalling.com/",
+                    item: `${SITE_URL}/`,
                   },
                   {
                     "@type": "ListItem",
                     position: 2,
                     name: "Documentation",
-                    item: "https://www.fusioncalling.com/docs",
+                    item: `${SITE_URL}/docs`,
                   },
                   {
                     "@type": "ListItem",
                     position: 3,
                     name: "API Reference",
-                    item: "https://www.fusioncalling.com/docs/api-reference",
+                    item: `${SITE_URL}/docs/api-reference`,
                   },
                 ],
               },
               {
                 "@type": "TechArticle",
-                "@id": "https://www.fusioncalling.com/docs/api-reference#techarticle",
-                url: "https://www.fusioncalling.com/docs/api-reference",
+                "@id": `${SITE_URL}/docs/api-reference#techarticle`,
+                url: `${SITE_URL}/docs/api-reference`,
                 name: "API Reference - Fusion Calling",
                 description:
                   "Complete API documentation for Fusion Calling: Calendar API, Leads API, authentication, endpoints, and integration guides.",
                 inLanguage: "en-US",
                 isPartOf: {
-                  "@id": "https://www.fusioncalling.com/#website",
+                  "@id": `${SITE_URL}/#website`,
                 },
                 about: {
-                  "@id": "https://www.fusioncalling.com/#product",
+                  "@id": `${SITE_URL}/#product`,
                 },
                 author: {
                   "@type": "Organization",
                   name: "Fusion Calling",
-                  url: "https://www.fusioncalling.com/",
+                  url: `${SITE_URL}/`,
                 },
                 proficiencyLevel: "Beginner to Advanced",
                 dependencies: "API key, HTTP client",

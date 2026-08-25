@@ -1,3 +1,4 @@
+import { SITE_URL } from "@/lib/site-url";
 import type { Metadata } from "next";
 import Link from "next/link";
 import WhiteLabelNavbar from "@/components/white-label-navbar";
@@ -24,15 +25,15 @@ const schema = {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": "https://www.fusioncalling.com/whitelabel/elevenlabs#webpage",
-      url: "https://www.fusioncalling.com/whitelabel/elevenlabs",
+      "@id": `${SITE_URL}/whitelabel/elevenlabs#webpage`,
+      url: `${SITE_URL}/whitelabel/elevenlabs`,
       name: title,
       description,
       inLanguage: "en-US",
-      isPartOf: { "@id": "https://www.fusioncalling.com/#website" },
+      isPartOf: { "@id": `${SITE_URL}/#website` },
       dateModified: CONTENT_LAST_UPDATED,
       breadcrumb: {
-        "@id": "https://www.fusioncalling.com/whitelabel/elevenlabs#breadcrumb",
+        "@id": `${SITE_URL}/whitelabel/elevenlabs#breadcrumb`,
       },
       speakable: {
         "@type": "SpeakableSpecification",
@@ -41,10 +42,10 @@ const schema = {
     },
     {
       "@type": "Service",
-      "@id": "https://www.fusioncalling.com/whitelabel/elevenlabs#service",
+      "@id": `${SITE_URL}/whitelabel/elevenlabs#service`,
       name: "White-label AI Voice Agents for ElevenLabs",
       description,
-      provider: { "@id": "https://www.fusioncalling.com/#organization" },
+      provider: { "@id": `${SITE_URL}/#organization` },
       areaServed: { "@type": "Country", name: "United States" },
       audience: {
         "@type": "Audience",
@@ -54,31 +55,31 @@ const schema = {
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://www.fusioncalling.com/whitelabel/elevenlabs#breadcrumb",
+      "@id": `${SITE_URL}/whitelabel/elevenlabs#breadcrumb`,
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://www.fusioncalling.com/",
+          item: `${SITE_URL}/`,
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "White-label Partner Program",
-          item: "https://www.fusioncalling.com/whitelabel",
+          item: `${SITE_URL}/whitelabel`,
         },
         {
           "@type": "ListItem",
           position: 3,
           name: "ElevenLabs",
-          item: "https://www.fusioncalling.com/whitelabel/elevenlabs",
+          item: `${SITE_URL}/whitelabel/elevenlabs`,
         },
       ],
     },
     {
       "@type": "FAQPage",
-      "@id": "https://www.fusioncalling.com/whitelabel/elevenlabs#faqpage",
+      "@id": `${SITE_URL}/whitelabel/elevenlabs#faqpage`,
       mainEntity: provider.faqs.map((f) => ({
         "@type": "Question",
         name: f.question,

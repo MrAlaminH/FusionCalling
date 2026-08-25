@@ -1,8 +1,9 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
-import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { getTeamAuthor } from "@/lib/authors";
+import { buildOpenGraph } from "@/lib/seo";
 
 /* eslint-disable react/no-unescaped-entities */
 
@@ -12,29 +13,17 @@ export const metadata: Metadata = {
   title: "Adding White-Label Voice AI to Your GoHighLevel Agency",
   description:
     "GoHighLevel agencies: keep GHL as your CRM and add a dedicated white-label voice AI layer with Fusion Calling. Integrates via API and webhooks.",
-  alternates: {
-    canonical: "/blog/gohighlevel-white-label-voice",
-  },
-  openGraph: {
+  ...buildOpenGraph({
     title: "Adding White-Label Voice AI to Your GoHighLevel Agency",
     description:
       "A partnership guide for GoHighLevel agencies. Keep GHL as your CRM and add a dedicated, white-label voice AI layer with Fusion Calling via API and webhooks.",
-    url: "https://www.fusioncalling.com/blog/gohighlevel-white-label-voice",
-    siteName: "Fusion Calling",
-    images: [
-      {
-        url: "/blog/blog7.webp",
-        width: 1376,
-        height: 768,
-        alt: "Adding Voice AI to Your GoHighLevel Agency",
-      },
-    ],
-    locale: "en_US",
+    path: "/blog/gohighlevel-white-label-voice",
+    image: "/blog/blog7.webp",
     type: "article",
     publishedTime: "2025-02-12T00:00:00Z",
     modifiedTime: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
     authors: ["Fusion Calling"],
-  },
+  }),
 };
 
 export default function GoHighLevelBlogPost() {
@@ -54,41 +43,41 @@ export default function GoHighLevelBlogPost() {
                     "@type": "ListItem",
                     position: 1,
                     name: "Home",
-                    item: "https://www.fusioncalling.com/",
+                    item: `${SITE_URL}/`,
                   },
                   {
                     "@type": "ListItem",
                     position: 2,
                     name: "Blog",
-                    item: "https://www.fusioncalling.com/blog",
+                    item: `${SITE_URL}/blog`,
                   },
                   {
                     "@type": "ListItem",
                     position: 3,
                     name: "Adding Voice AI to Your GoHighLevel Agency",
-                    item: "https://www.fusioncalling.com/blog/gohighlevel-white-label-voice",
+                    item: `${SITE_URL}/blog/gohighlevel-white-label-voice`,
                   },
                 ],
               },
               {
                 "@type": "Article",
-                "@id": "https://www.fusioncalling.com/blog/gohighlevel-white-label-voice#article",
-                url: "https://www.fusioncalling.com/blog/gohighlevel-white-label-voice",
+                "@id": `${SITE_URL}/blog/gohighlevel-white-label-voice#article`,
+                url: `${SITE_URL}/blog/gohighlevel-white-label-voice`,
                 name: "Adding White-Label Voice AI to Your GoHighLevel Agency",
                 headline:
                   "Adding White-Label Voice AI to Your GoHighLevel Agency: An Integration Guide",
                 description:
                   "A partnership guide for GoHighLevel agencies. Keep GHL as your CRM and add a dedicated, white-label voice AI layer with Fusion Calling via API and webhooks.",
                 inLanguage: "en-US",
-                image: "https://www.fusioncalling.com/blog/blog7.webp",
+                image: `${SITE_URL}/blog/blog7.webp`,
                 isPartOf: {
-                  "@id": "https://www.fusioncalling.com/#website",
+                  "@id": `${SITE_URL}/#website`,
                 },
                 datePublished: "2025-02-12T00:00:00Z",
                 dateModified: "2026-07-07T00:00:00Z",
-                author: { "@id": "https://www.fusioncalling.com/team/voice-team#person" },
+                author: { "@id": `${SITE_URL}/team/voice-team#person` },
                 publisher: {
-                  "@id": "https://www.fusioncalling.com/#organization",
+                  "@id": `${SITE_URL}/#organization`,
                 },
                 speakable: {
                   "@type": "SpeakableSpecification",

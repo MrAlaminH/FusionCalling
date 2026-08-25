@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
@@ -11,6 +11,8 @@ const NAV_LINKS = [
   { label: "Showcase", href: "/#show-case" },
   { label: "Features", href: "/#features" },
   { label: "Pricing", href: "/pricing" },
+  { label: "Blog", href: "/blog" },
+  { label: "Docs", href: "/docs" },
   { label: "FAQs", href: "/#faqs" },
 ];
 
@@ -146,12 +148,10 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-2">
           <Link
             href="/whitelabel"
-            target="_blank"
-            rel="noopener noreferrer"
             className="hidden lg:inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-transparent px-4 py-2 text-sm font-medium text-white transition-all duration-300 hover:bg-white/5"
           >
             Partner Program
-            <ExternalLink className="h-3.5 w-3.5" />
+            <ArrowRight className="h-3.5 w-3.5" />
           </Link>
           <Link
             href={CONTACT_URL}
@@ -192,13 +192,11 @@ const Navbar = () => {
             <li className="mt-4 space-y-2 border-t border-white/10 pt-4">
               <Link
                 href="/whitelabel"
-                target="_blank"
-                rel="noopener noreferrer"
                 onClick={() => setIsMenuOpen(false)}
                 className="flex items-center justify-center gap-2 rounded-xl border border-white/15 px-4 py-3 font-medium text-white transition-all duration-300 hover:bg-white/5"
               >
                 Partner Program
-                <ExternalLink className="h-4 w-4" />
+                <ArrowRight className="h-4 w-4" />
               </Link>
               <a
                 href={CONTACT_URL}

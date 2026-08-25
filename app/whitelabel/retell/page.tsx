@@ -1,3 +1,4 @@
+import { SITE_URL } from "@/lib/site-url";
 import type { Metadata } from "next";
 import Link from "next/link";
 import WhiteLabelNavbar from "@/components/white-label-navbar";
@@ -23,15 +24,15 @@ const retellschema = {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": "https://www.fusioncalling.com/whitelabel/retell#webpage",
-      url: "https://www.fusioncalling.com/whitelabel/retell",
+      "@id": `${SITE_URL}/whitelabel/retell#webpage`,
+      url: `${SITE_URL}/whitelabel/retell`,
       name: provider.title,
       description: provider.description,
       inLanguage: "en-US",
-      isPartOf: { "@id": "https://www.fusioncalling.com/#website" },
+      isPartOf: { "@id": `${SITE_URL}/#website` },
       dateModified: CONTENT_LAST_UPDATED,
       breadcrumb: {
-        "@id": "https://www.fusioncalling.com/whitelabel/retell#breadcrumb",
+        "@id": `${SITE_URL}/whitelabel/retell#breadcrumb`,
       },
       speakable: {
         "@type": "SpeakableSpecification",
@@ -40,10 +41,10 @@ const retellschema = {
     },
     {
       "@type": "Service",
-      "@id": "https://www.fusioncalling.com/whitelabel/retell#service",
+      "@id": `${SITE_URL}/whitelabel/retell#service`,
       name: "White-label AI Voice Agents for Retell AI",
       description: provider.description,
-      provider: { "@id": "https://www.fusioncalling.com/#organization" },
+      provider: { "@id": `${SITE_URL}/#organization` },
       areaServed: { "@type": "Country", name: "United States" },
       audience: {
         "@type": "Audience",
@@ -53,31 +54,31 @@ const retellschema = {
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://www.fusioncalling.com/whitelabel/retell#breadcrumb",
+      "@id": `${SITE_URL}/whitelabel/retell#breadcrumb`,
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://www.fusioncalling.com/",
+          item: `${SITE_URL}/`,
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "White-label Partner Program",
-          item: "https://www.fusioncalling.com/whitelabel",
+          item: `${SITE_URL}/whitelabel`,
         },
         {
           "@type": "ListItem",
           position: 3,
           name: "Retell AI",
-          item: "https://www.fusioncalling.com/whitelabel/retell",
+          item: `${SITE_URL}/whitelabel/retell`,
         },
       ],
     },
     {
       "@type": "FAQPage",
-      "@id": "https://www.fusioncalling.com/whitelabel/retell#faqpage",
+      "@id": `${SITE_URL}/whitelabel/retell#faqpage`,
       mainEntity: faqs.map((f) => ({
         "@type": "Question",
         name: f.question,

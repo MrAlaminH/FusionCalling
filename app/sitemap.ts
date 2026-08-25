@@ -4,11 +4,15 @@ import { glossaryTerms, slugifyTerm, GLOSSARY_LAST_UPDATED } from "@/lib/glossar
 import { blogPosts } from "@/lib/blog-posts";
 import { whitelabelCaseStudies } from "@/lib/whitelabel-case-studies";
 import { whitelabelLocations } from "@/lib/whitelabel-locations";
+import { whitelabelProviders } from "@/lib/whitelabel-providers";
+import { authors } from "@/lib/authors";
+import { comparisons } from "@/lib/comparisons";
+import { industries } from "@/lib/industries";
 
 // IMPORTANT: every path here MUST resolve to a real App Router route (a
 // `page.tsx`). Listing URLs that 404 wastes crawl budget and erodes sitemap
 // trust. The pricing lives at `/pricing` (standalone page), so it IS included.
-const STATIC_PATHS = [
+const STATIC_PATHS: string[] = [
   "/",
   "/about",
   "/docs",
@@ -18,10 +22,7 @@ const STATIC_PATHS = [
   "/docs/admin-section",
   "/docs/sms-messaging",
   "/whitelabel",
-  "/whitelabel/gohighlevel",
-  "/whitelabel/vapi",
-  "/whitelabel/retell",
-  "/whitelabel/elevenlabs",
+  ...whitelabelProviders.map((p) => `/whitelabel/${p.slug}`),
   "/whitelabel/compare",
   "/whitelabel/case-studies",
   "/whitelabel/locations",
@@ -32,31 +33,13 @@ const STATIC_PATHS = [
   "/terms",
   "/blog",
   "/team",
-  "/team/alamin",
-  "/team/voice-team",
+  ...authors.map((a) => `/team/${a.slug}`),
   "/alternative",
-  "/alternative/chatdash",
-  "/alternative/vapify",
-  "/alternative/voicerr",
-  "/alternative/voiceaiwrapper",
-  "/alternative/synthflow",
-  "/alternative/thinkrr",
-  "/alternative/bland-ai",
-  "/alternative/air-ai",
+  ...comparisons.map((c) => `/alternative/${c.slug}`),
   "/industries",
-  "/industries/ai-voice-for-real-estate",
-  "/industries/ai-voice-for-dental",
-  "/industries/ai-voice-for-insurance",
-  "/industries/ai-voice-for-home-services",
-  "/industries/ai-voice-for-law-firms",
-  "/industries/ai-voice-for-automotive",
-  "/industries/ai-voice-for-call-centers",
-  "/industries/ai-voice-for-financial-services",
-  "/industries/ai-voice-for-ecommerce-retail",
-  "/industries/ai-voice-for-education-tutoring",
-  "/industries/ai-voice-for-restaurants-hospitality",
+  ...industries.map((i) => `/industries/${i.slug}`),
   "/glossary",
-] as const;
+];
 
 const GLOSSARY_PATHS = glossaryTerms.map((t) => `/glossary/${slugifyTerm(t.term)}`);
 const CASE_STUDY_PATHS = whitelabelCaseStudies.map((cs) => `/whitelabel/case-studies/${cs.slug}`);
@@ -127,12 +110,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         : path.startsWith("/team")
         ? 0.5
         : 0.7;
-    const changeFrequency =
-      path === "/"
-        ? "weekly"
-        : path.startsWith("/docs/")
-        ? "monthly"
-        : "monthly";
+    const changeFrequency = path === "/" ? "weekly" : "monthly";
 
     return {
       url: `${baseUrl}${path}`,

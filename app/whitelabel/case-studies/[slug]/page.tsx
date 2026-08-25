@@ -229,11 +229,7 @@ function buildSchema(cs: WhiteLabelCaseStudy) {
           "@type": "Organization",
           name: cs.agencyName,
         },
-        publisher: {
-          "@type": "Organization",
-          name: "Fusion Calling",
-          url: SITE_URL,
-        },
+        publisher: { "@id": `${SITE_URL}/#organization` },
         datePublished: cs.datePublished,
         dateModified: CONTENT_LAST_UPDATED,
         mainEntityOfPage: {

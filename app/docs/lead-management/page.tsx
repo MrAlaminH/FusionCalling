@@ -15,6 +15,7 @@ import { TroubleshootingSection } from "./components/troubleshooting";
 import { QuickReferenceSection } from "./components/quick-reference";
 import { ErrorClassificationSection } from "./components/error-classification";
 import { buildOpenGraph } from "@/lib/seo";
+import { SITE_URL } from "@/lib/site-url";
 
 const title = "Lead Management User Guide";
 const description =
@@ -69,25 +70,25 @@ export default function LeadManagementDocsPage() {
                     "@type": "ListItem",
                     position: 1,
                     name: "Home",
-                    item: "https://www.fusioncalling.com/",
+                    item: `${SITE_URL}/`,
                   },
                   {
                     "@type": "ListItem",
                     position: 2,
                     name: "Documentation",
-                    item: "https://www.fusioncalling.com/docs",
+                    item: `${SITE_URL}/docs`,
                   },
                   {
                     "@type": "ListItem",
                     position: 3,
                     name: "Lead Management",
-                    item: "https://www.fusioncalling.com/docs/lead-management",
+                    item: `${SITE_URL}/docs/lead-management`,
                   },
                 ],
               },
               {
                 "@type": "HowTo",
-                "@id": "https://www.fusioncalling.com/docs/lead-management#howto",
+                "@id": `${SITE_URL}/docs/lead-management#howto`,
                 name: "How to Manage Leads with AI Phone Call Automation",
                 description:
                   "Complete guide to managing leads in Fusion Calling: adding leads, understanding statuses, configuring providers, custom fields, retry system, and best practices.",
@@ -121,17 +122,17 @@ export default function LeadManagementDocsPage() {
               },
               {
                 "@type": "WebPage",
-                "@id": "https://www.fusioncalling.com/docs/lead-management#webpage",
-                url: "https://www.fusioncalling.com/docs/lead-management",
+                "@id": `${SITE_URL}/docs/lead-management#webpage`,
+                url: `${SITE_URL}/docs/lead-management`,
                 name: "Lead Management User Guide",
                 description:
                   "Complete guide to managing leads in Fusion Calling: adding leads, understanding statuses, configuring providers, custom fields, retry system, and best practices.",
                 inLanguage: "en-US",
                 isPartOf: {
-                  "@id": "https://www.fusioncalling.com/#website",
+                  "@id": `${SITE_URL}/#website`,
                 },
                 about: {
-                  "@id": "https://www.fusioncalling.com/#product",
+                  "@id": `${SITE_URL}/#product`,
                 },
               },
             ],

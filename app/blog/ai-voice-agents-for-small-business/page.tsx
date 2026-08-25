@@ -1,40 +1,29 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
-import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
-import { getTeamAuthor } from "@/lib/authors";
+import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { getAuthor } from "@/lib/authors";
+import { buildOpenGraph } from "@/lib/seo";
 
 /* eslint-disable react/no-unescaped-entities */
 
-const teamAuthor = getTeamAuthor();
+const teamAuthor = getAuthor("alamin")!;
 
 export const metadata: Metadata = {
   title: "AI Voice Agents for Small Business: Use Cases & ROI",
   description:
     "Missed calls cost small businesses revenue. This guide covers AI voice agent use cases — 24/7 booking, missed-call recovery, lead capture — with Fusion Calling.",
-  alternates: {
-    canonical: "/blog/ai-voice-agents-for-small-business",
-  },
-  openGraph: {
+  ...buildOpenGraph({
     title: "AI Voice Agents for Small Business: Use Cases & ROI",
     description:
       "Missed calls cost small businesses real revenue. This practical guide covers AI voice agent use cases — missed-call recovery, 24/7 booking, lead capture — and the ROI math behind deploying one with Fusion Calling.",
-    url: "https://www.fusioncalling.com/blog/ai-voice-agents-for-small-business",
-    siteName: "Fusion Calling",
-    images: [
-      {
-        url: "/blog/blog4.webp",
-        width: 1376,
-        height: 768,
-        alt: "AI Voice Agents for Small Business: Use Cases & ROI",
-      },
-    ],
-    locale: "en_US",
+    path: "/blog/ai-voice-agents-for-small-business",
+    image: "/blog/blog4.webp",
     type: "article",
     publishedTime: "2025-02-15T00:00:00Z",
     modifiedTime: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
     authors: ["Fusion Calling"],
-  },
+  }),
 };
 
 export default function SmallBusinessVoiceAgentsBlogPost() {
@@ -54,41 +43,41 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
                     "@type": "ListItem",
                     position: 1,
                     name: "Home",
-                    item: "https://www.fusioncalling.com/",
+                    item: `${SITE_URL}/`,
                   },
                   {
                     "@type": "ListItem",
                     position: 2,
                     name: "Blog",
-                    item: "https://www.fusioncalling.com/blog",
+                    item: `${SITE_URL}/blog`,
                   },
                   {
                     "@type": "ListItem",
                     position: 3,
                     name: "AI Voice Agents for Small Business: Use Cases & ROI",
-                    item: "https://www.fusioncalling.com/blog/ai-voice-agents-for-small-business",
+                    item: `${SITE_URL}/blog/ai-voice-agents-for-small-business`,
                   },
                 ],
               },
               {
                 "@type": "Article",
-                "@id": "https://www.fusioncalling.com/blog/ai-voice-agents-for-small-business#article",
-                url: "https://www.fusioncalling.com/blog/ai-voice-agents-for-small-business",
+                "@id": `${SITE_URL}/blog/ai-voice-agents-for-small-business#article`,
+                url: `${SITE_URL}/blog/ai-voice-agents-for-small-business`,
                 name: "AI Voice Agents for Small Business: Use Cases & ROI",
                 headline:
                   "AI Voice Agents for Small Business: Use Cases & ROI",
                 description:
                   "Missed calls cost small businesses real revenue. This practical guide covers AI voice agent use cases — missed-call recovery, 24/7 booking, lead capture — and the ROI math behind deploying one with Fusion Calling.",
                 inLanguage: "en-US",
-                image: "https://www.fusioncalling.com/blog/blog4.webp",
+                image: `${SITE_URL}/blog/blog4.webp`,
                 isPartOf: {
-                  "@id": "https://www.fusioncalling.com/#website",
+                  "@id": `${SITE_URL}/#website`,
                 },
                 datePublished: "2025-02-15T00:00:00Z",
                 dateModified: "2026-07-07T00:00:00Z",
-                author: { "@id": "https://www.fusioncalling.com/team/voice-team#person" },
+                author: { "@id": `${SITE_URL}/team/alamin#person` },
                 publisher: {
-                  "@id": "https://www.fusioncalling.com/#organization",
+                  "@id": `${SITE_URL}/#organization`,
                 },
                 speakable: {
                   "@type": "SpeakableSpecification",
@@ -325,8 +314,12 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
                     <h3 className="text-white font-bold mb-2">Missed-Call Recovery</h3>
                     <p className="text-gray-400 text-sm">
                       Every call gets answered, qualified, and routed or booked
-                      so revenue stops leaking to voicemail. This is the core
-                      pitch for{" "}
+                      so revenue stops leaking to voicemail. New to the
+                      concept? Start with our{" "}
+                      <Link href="/ai-phone-call-automation" className="text-brand-light hover:text-brand transition-colors">
+                        guide to AI phone call automation
+                      </Link>
+                      . This is the core pitch for{" "}
                       <Link href="/industries/ai-voice-for-home-services" className="text-brand-light hover:text-brand transition-colors">
                         home services
                       </Link>{" "}

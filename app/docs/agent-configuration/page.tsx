@@ -11,6 +11,7 @@ import { CommonUseCasesSection } from "./components/common-use-cases";
 import { TroubleshootingSection } from "./components/troubleshooting";
 import { QuickReferenceSection } from "./components/quick-reference";
 import { buildOpenGraph } from "@/lib/seo";
+import { SITE_URL } from "@/lib/site-url";
 
 const title = "Agent Configuration Guide";
 const description =
@@ -54,25 +55,25 @@ export default function AgentConfigurationPage() {
                     "@type": "ListItem",
                     position: 1,
                     name: "Home",
-                    item: "https://www.fusioncalling.com/",
+                    item: `${SITE_URL}/`,
                   },
                   {
                     "@type": "ListItem",
                     position: 2,
                     name: "Documentation",
-                    item: "https://www.fusioncalling.com/docs",
+                    item: `${SITE_URL}/docs`,
                   },
                   {
                     "@type": "ListItem",
                     position: 3,
                     name: "Agent Configuration",
-                    item: "https://www.fusioncalling.com/docs/agent-configuration",
+                    item: `${SITE_URL}/docs/agent-configuration`,
                   },
                 ],
               },
               {
                 "@type": "HowTo",
-                "@id": "https://www.fusioncalling.com/docs/agent-configuration#howto",
+                "@id": `${SITE_URL}/docs/agent-configuration#howto`,
                 name: "How to Configure AI Phone Agents",
                 description:
                   "Complete guide to creating and configuring AI phone agents: agent setup, configuration tabs, best practices, common use cases, and troubleshooting.",
@@ -106,17 +107,17 @@ export default function AgentConfigurationPage() {
               },
               {
                 "@type": "WebPage",
-                "@id": "https://www.fusioncalling.com/docs/agent-configuration#webpage",
-                url: "https://www.fusioncalling.com/docs/agent-configuration",
+                "@id": `${SITE_URL}/docs/agent-configuration#webpage`,
+                url: `${SITE_URL}/docs/agent-configuration`,
                 name: "Agent Configuration Guide",
                 description:
                   "Complete guide to creating and configuring AI phone agents: agent setup, configuration tabs, best practices, common use cases, and troubleshooting.",
                 inLanguage: "en-US",
                 isPartOf: {
-                  "@id": "https://www.fusioncalling.com/#website",
+                  "@id": `${SITE_URL}/#website`,
                 },
                 about: {
-                  "@id": "https://www.fusioncalling.com/#product",
+                  "@id": `${SITE_URL}/#product`,
                 },
               },
             ],

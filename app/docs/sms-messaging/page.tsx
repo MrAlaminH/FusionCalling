@@ -13,6 +13,7 @@ import { QuickReferenceSection } from "./components/quick-reference";
 import { FaqSection } from "./components/faq";
 import { ComplianceSection, GettingHelpSection } from "./components/compliance";
 import { buildOpenGraph } from "@/lib/seo";
+import { SITE_URL } from "@/lib/site-url";
 
 const title = "SMS & Messages User Guide";
 const description =
@@ -71,25 +72,25 @@ export default function SmsMessagingDocsPage() {
                     "@type": "ListItem",
                     position: 1,
                     name: "Home",
-                    item: "https://www.fusioncalling.com/",
+                    item: `${SITE_URL}/`,
                   },
                   {
                     "@type": "ListItem",
                     position: 2,
                     name: "Documentation",
-                    item: "https://www.fusioncalling.com/docs",
+                    item: `${SITE_URL}/docs`,
                   },
                   {
                     "@type": "ListItem",
                     position: 3,
                     name: "SMS & Messages",
-                    item: "https://www.fusioncalling.com/docs/sms-messaging",
+                    item: `${SITE_URL}/docs/sms-messaging`,
                   },
                 ],
               },
               {
                 "@type": "HowTo",
-                "@id": "https://www.fusioncalling.com/docs/sms-messaging#howto",
+                "@id": `${SITE_URL}/docs/sms-messaging#howto`,
                 name: "How to Send SMS Messages with AI Phone Call Automation",
                 description:
                   "Complete guide to sending SMS messages, managing conversations, setting up Twilio integration, creating automated SMS campaigns, and handling inbound replies with Fusion Calling.",
@@ -123,17 +124,17 @@ export default function SmsMessagingDocsPage() {
               },
               {
                 "@type": "WebPage",
-                "@id": "https://www.fusioncalling.com/docs/sms-messaging#webpage",
-                url: "https://www.fusioncalling.com/docs/sms-messaging",
+                "@id": `${SITE_URL}/docs/sms-messaging#webpage`,
+                url: `${SITE_URL}/docs/sms-messaging`,
                 name: "SMS & Messages User Guide",
                 description:
                   "Complete guide to SMS and messaging in Fusion Call: send texts, manage conversations, set up Twilio, create automated SMS campaigns, and handle inbound replies.",
                 inLanguage: "en-US",
                 isPartOf: {
-                  "@id": "https://www.fusioncalling.com/#website",
+                  "@id": `${SITE_URL}/#website`,
                 },
                 about: {
-                  "@id": "https://www.fusioncalling.com/#product",
+                  "@id": `${SITE_URL}/#product`,
                 },
               },
             ],

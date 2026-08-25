@@ -1,3 +1,4 @@
+import { SITE_URL } from "@/lib/site-url";
 import type { Metadata } from "next";
 import Link from "next/link";
 import WhiteLabelNavbar from "@/components/white-label-navbar";
@@ -50,15 +51,15 @@ const ghlschema = {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": "https://www.fusioncalling.com/whitelabel/gohighlevel#webpage",
-      url: "https://www.fusioncalling.com/whitelabel/gohighlevel",
+      "@id": `${SITE_URL}/whitelabel/gohighlevel#webpage`,
+      url: `${SITE_URL}/whitelabel/gohighlevel`,
       name: title,
       description,
       inLanguage: "en-US",
-      isPartOf: { "@id": "https://www.fusioncalling.com/#website" },
+      isPartOf: { "@id": `${SITE_URL}/#website` },
       dateModified: CONTENT_LAST_UPDATED,
       breadcrumb: {
-        "@id": "https://www.fusioncalling.com/whitelabel/gohighlevel#breadcrumb",
+        "@id": `${SITE_URL}/whitelabel/gohighlevel#breadcrumb`,
       },
       speakable: {
         "@type": "SpeakableSpecification",
@@ -67,10 +68,10 @@ const ghlschema = {
     },
     {
       "@type": "Service",
-      "@id": "https://www.fusioncalling.com/whitelabel/gohighlevel#service",
+      "@id": `${SITE_URL}/whitelabel/gohighlevel#service`,
       name: "White-label AI Voice Agents for GoHighLevel",
       description,
-      provider: { "@id": "https://www.fusioncalling.com/#organization" },
+      provider: { "@id": `${SITE_URL}/#organization` },
       areaServed: { "@type": "Country", name: "United States" },
       audience: {
         "@type": "Audience",
@@ -80,31 +81,31 @@ const ghlschema = {
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://www.fusioncalling.com/whitelabel/gohighlevel#breadcrumb",
+      "@id": `${SITE_URL}/whitelabel/gohighlevel#breadcrumb`,
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://www.fusioncalling.com/",
+          item: `${SITE_URL}/`,
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "White-label Partner Program",
-          item: "https://www.fusioncalling.com/whitelabel",
+          item: `${SITE_URL}/whitelabel`,
         },
         {
           "@type": "ListItem",
           position: 3,
           name: "GoHighLevel",
-          item: "https://www.fusioncalling.com/whitelabel/gohighlevel",
+          item: `${SITE_URL}/whitelabel/gohighlevel`,
         },
       ],
     },
     {
       "@type": "FAQPage",
-      "@id": "https://www.fusioncalling.com/whitelabel/gohighlevel#faqpage",
+      "@id": `${SITE_URL}/whitelabel/gohighlevel#faqpage`,
       mainEntity: ghlfaqs.map((f) => ({
         "@type": "Question",
         name: f.question,

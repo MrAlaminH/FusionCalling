@@ -14,6 +14,7 @@ import { BestPracticesSection } from "./components/best-practices";
 import { CommonWorkflowsSection } from "./components/common-workflows";
 import { QuickReferenceSection } from "./components/quick-reference";
 import { buildOpenGraph } from "@/lib/seo";
+import { SITE_URL } from "@/lib/site-url";
 
 const title = "Admin Section Guide";
 const description =
@@ -60,25 +61,25 @@ export default function AdminSectionPage() {
                     "@type": "ListItem",
                     position: 1,
                     name: "Home",
-                    item: "https://www.fusioncalling.com/",
+                    item: `${SITE_URL}/`,
                   },
                   {
                     "@type": "ListItem",
                     position: 2,
                     name: "Documentation",
-                    item: "https://www.fusioncalling.com/docs",
+                    item: `${SITE_URL}/docs`,
                   },
                   {
                     "@type": "ListItem",
                     position: 3,
                     name: "Admin Section",
-                    item: "https://www.fusioncalling.com/docs/admin-section",
+                    item: `${SITE_URL}/docs/admin-section`,
                   },
                 ],
               },
               {
                 "@type": "HowTo",
-                "@id": "https://www.fusioncalling.com/docs/admin-section#howto",
+                "@id": `${SITE_URL}/docs/admin-section#howto`,
                 name: "How to Manage Fusion Calling Admin Section",
                 description:
                   "Complete guide for agency owners to manage Fusion Calling: client management, user management, AI provider configuration, branding, credits, subscriptions, and best practices.",
@@ -112,17 +113,17 @@ export default function AdminSectionPage() {
               },
               {
                 "@type": "WebPage",
-                "@id": "https://www.fusioncalling.com/docs/admin-section#webpage",
-                url: "https://www.fusioncalling.com/docs/admin-section",
+                "@id": `${SITE_URL}/docs/admin-section#webpage`,
+                url: `${SITE_URL}/docs/admin-section`,
                 name: "Admin Section Guide",
                 description:
                   "Complete guide for agency owners to manage Fusion Calling: client management, user management, AI provider configuration, branding, credits, subscriptions, and best practices.",
                 inLanguage: "en-US",
                 isPartOf: {
-                  "@id": "https://www.fusioncalling.com/#website",
+                  "@id": `${SITE_URL}/#website`,
                 },
                 about: {
-                  "@id": "https://www.fusioncalling.com/#product",
+                  "@id": `${SITE_URL}/#product`,
                 },
               },
             ],

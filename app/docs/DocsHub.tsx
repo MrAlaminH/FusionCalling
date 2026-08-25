@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { GEO_SOURCES } from "@/lib/seo";
+import { SITE_URL } from "@/lib/site-url";
 import DocsSearchInput from "./docs-search-input";
 import DocsGrid from "./docs-grid";
 
@@ -43,20 +44,20 @@ export default function DocsHub() {
                     "@type": "ListItem",
                     position: 1,
                     name: "Home",
-                    item: "https://www.fusioncalling.com/",
+                    item: `${SITE_URL}/`,
                   },
                   {
                     "@type": "ListItem",
                     position: 2,
                     name: "Documentation",
-                    item: "https://www.fusioncalling.com/docs",
+                    item: `${SITE_URL}/docs`,
                   },
                 ],
               },
               {
                 "@type": "CollectionPage",
-                "@id": "https://www.fusioncalling.com/docs#collectionpage",
-                url: "https://www.fusioncalling.com/docs",
+                "@id": `${SITE_URL}/docs#collectionpage`,
+                url: `${SITE_URL}/docs`,
                 name: "Fusion Calling Documentation",
                 description:
                   "Complete documentation for Fusion Calling AI voice automation platform",

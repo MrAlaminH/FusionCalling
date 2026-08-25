@@ -64,7 +64,7 @@ export default function GlossaryTermPage({ term }: { term: GlossaryTerm }) {
         articleSection: term.category,
         isPartOf: { "@id": `${SITE_URL}/#website` },
         mainEntity: { "@id": `${articleUrl}#term` },
-        author: { "@id": "https://www.fusioncalling.com/team/voice-team#person" },
+        author: { "@id": `${SITE_URL}/team/voice-team#person` },
         publisher: { "@id": `${SITE_URL}/#organization` },
         datePublished: GLOSSARY_LAST_UPDATED,
         dateModified: GLOSSARY_LAST_UPDATED,

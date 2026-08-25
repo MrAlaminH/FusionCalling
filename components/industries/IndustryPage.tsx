@@ -64,7 +64,7 @@ export default function IndustryPage({ industry }: { industry: Industry }) {
         isPartOf: { "@id": `${SITE_URL}/#website` },
         datePublished,
         dateModified: CONTENT_LAST_UPDATED,
-        author: { "@id": "https://www.fusioncalling.com/team/voice-team#person" },
+        author: { "@id": `${SITE_URL}/team/voice-team#person` },
         publisher: { "@id": `${SITE_URL}/#organization` },
         speakable: {
           "@type": "SpeakableSpecification",
@@ -404,7 +404,7 @@ export default function IndustryPage({ industry }: { industry: Industry }) {
               </p>
               <div className="flex items-center gap-4 text-sm">
                 <a
-                  href="https://www.fusioncalling.com"
+                  href={SITE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-brand-strong hover:text-brand transition-colors"

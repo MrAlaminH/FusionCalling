@@ -1,15 +1,8 @@
 import type { MetadataRoute } from "next";
-
-const FALLBACK_SITE_URL = "https://www.fusioncalling.com";
-
-function getSiteUrl(): string {
-  const raw = process.env.NEXT_PUBLIC_SITE_URL?.trim();
-  const siteUrl = raw && raw.length > 0 ? raw : FALLBACK_SITE_URL;
-  return siteUrl.replace(/\/+$/, "");
-}
+import { SITE_URL } from "@/lib/site-url";
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = getSiteUrl();
+  const baseUrl = SITE_URL;
   // RFC 9309: the `Host` directive takes a bare hostname (no scheme/path).
   // Googlebot ignores it if a scheme like https:// is included.
   const host = baseUrl.replace(/^https?:\/\//, "");

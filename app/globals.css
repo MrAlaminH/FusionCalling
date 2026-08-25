@@ -303,3 +303,15 @@ html {
   animation: float 8s ease-in-out infinite;
   pointer-events: none;
 }
+
+/* Performance guards for decorative effects:
+   - The full-viewport feTurbulence grain layer and blurred animated particles
+     are expensive to composite on low-end mobile GPUs. Hide both below md.
+   - prefers-reduced-motion already freezes the float animation globally
+     (see the media query above). */
+@media (max-width: 767px) {
+  .grain-overlay,
+  .particle {
+    display: none;
+  }
+}

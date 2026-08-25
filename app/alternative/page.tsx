@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { comparisons } from "@/lib/comparisons";
+import { SITE_URL } from "@/lib/site-url";
 import { buildOpenGraph } from "@/lib/seo";
 
 const title = "White-Label Voice AI Comparisons";
@@ -48,29 +49,29 @@ export default function CompareHubPage() {
                     "@type": "ListItem",
                     position: 1,
                     name: "Home",
-                    item: "https://www.fusioncalling.com/",
+                    item: `${SITE_URL}/`,
                   },
                   {
                     "@type": "ListItem",
                     position: 2,
                     name: "Alternative",
-                    item: "https://www.fusioncalling.com/alternative",
+                    item: `${SITE_URL}/alternative`,
                   },
                 ],
               },
               {
                 "@type": "CollectionPage",
-                "@id": "https://www.fusioncalling.com/alternative#collectionpage",
-                url: "https://www.fusioncalling.com/alternative",
+                "@id": `${SITE_URL}/alternative#collectionpage`,
+                url: `${SITE_URL}/alternative`,
                 name: "White-Label Voice AI Platform Comparisons",
                 description:
                   "Side-by-side comparisons of the top white-label voice AI platforms for agencies.",
                 inLanguage: "en-US",
-                isPartOf: { "@id": "https://www.fusioncalling.com/#website" },
+                isPartOf: { "@id": `${SITE_URL}/#website` },
               },
               {
                 "@type": "FAQPage",
-                "@id": "https://www.fusioncalling.com/alternative#faqpage",
+                "@id": `${SITE_URL}/alternative#faqpage`,
                 mainEntity: [
                   {
                     "@type": "Question",
@@ -247,7 +248,9 @@ export default function CompareHubPage() {
                           {post.category}
                         </span>
                         <div className="flex items-center gap-1 text-brand-light group-hover:text-brand transition-colors">
-                          <span className="text-xs font-medium">Read More</span>
+                          <span className="text-xs font-medium">
+                            Compare {post.competitorName} vs Fusion Calling
+                          </span>
                           <span className="group-hover:translate-x-1 transition-transform text-xs">→</span>
                         </div>
                       </div>

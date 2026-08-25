@@ -30,10 +30,10 @@ export const metadata: Metadata = {
     "Boost business efficiency with Fusion Calling's AI-powered phone call automation. Streamline customer interactions, save time, and increase productivity.",
   twitter: {
     card: "summary_large_image",
-    site: "@fusioncalling",
+    site: "@MrAlaminH",
     title: "Fusion Calling | AI Phone Call Automation for Businesses",
     description:
-      "Launch a white-label AI voice agency with Fusion Calling. Streamline customer interactions, save time, and increase productivity with advanced voice AI.",
+      "Boost business efficiency with Fusion Calling's AI-powered phone call automation. Streamline customer interactions, save time, and increase productivity.",
     images: ["/opengraph-image.png"],
   },
   openGraph: {
@@ -110,7 +110,7 @@ export default function RootLayout({
                   description:
                     "AI-powered phone call automation for businesses. Streamline customer interactions, save time, and increase productivity with advanced voice technology.",
                   sameAs: [
-                    "https://twitter.com/fusioncalling",
+                    "https://x.com/MrAlaminH",
                     "https://www.linkedin.com/company/fusion-calling/",
                   ],
                   contactPoint: {
@@ -136,7 +136,7 @@ export default function RootLayout({
                   image: `${SITE_URL}/avatars/team.webp`,
                   sameAs: [
                     "https://www.linkedin.com/company/fusion-calling/",
-                    "https://twitter.com/fusioncalling",
+                    "https://x.com/MrAlaminH",
                   ],
                   email: "team@fusioncalling.com",
                   knowsAbout: [
@@ -156,6 +156,14 @@ export default function RootLayout({
                     "AI-powered phone call automation for businesses",
                   publisher: {
                     "@id": `${SITE_URL}/#organization`,
+                  },
+                  potentialAction: {
+                    "@type": "SearchAction",
+                    target: {
+                      "@type": "EntryPoint",
+                      urlTemplate: `${SITE_URL}/search?q={search_term_string}`,
+                    },
+                    "query-input": "required name=search_term_string",
                   },
                 },
               ],

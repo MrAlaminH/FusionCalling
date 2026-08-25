@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import ComparisonPage from "@/components/compare/ComparisonPage";
 import { comparisons, getComparison } from "@/lib/comparisons";
 import { glossaryTerms, slugifyTerm } from "@/lib/glossary";
-import { SITE_URL } from "@/lib/site-url";
+import { buildOpenGraph } from "@/lib/seo";
 
 export function generateStaticParams() {
   return comparisons.map((c) => ({ slug: c.slug }));
@@ -21,33 +21,21 @@ export function generateMetadata({
     return { title: "Comparison Not Found" };
   }
 
-  const url = `${SITE_URL}/alternative/${comparison.slug}`;
-
   return {
     title: comparison.metaTitle,
     description: comparison.metaDescription,
-    alternates: {
-      canonical: `/alternative/${comparison.slug}`,
-    },
-    openGraph: {
+    ...buildOpenGraph({
       title: comparison.metaTitle,
       description: comparison.metaDescription,
-      url,
-      siteName: "Fusion Calling",
-      images: [
-        {
-          url: comparison.heroImage,
-          width: 1376,
-          height: 768,
-          alt: `${comparison.competitorName} vs Fusion Calling - Best ${comparison.competitorName} Alternative`,
-        },
-      ],
-      locale: "en_US",
+      path: `/alternative/${comparison.slug}`,
+      image: comparison.heroImage,
+      imageWidth: 1376,
+      imageHeight: 768,
       type: "article",
       publishedTime: comparison.datePublished,
       modifiedTime: comparison.datePublished,
       authors: ["Fusion Calling"],
-    },
+    }),
   };
 }
 

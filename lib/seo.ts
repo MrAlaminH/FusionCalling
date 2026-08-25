@@ -34,7 +34,7 @@ export const GEO_SOURCES = {
   twilio: { label: "Twilio Docs", url: "https://www.twilio.com/docs" },
   fusionApi: {
     label: "Fusion Calling API Reference",
-    url: "https://www.fusioncalling.com/docs/api-reference",
+    url: `${SITE_URL}/docs/api-reference`,
   },
 } as const;
 
@@ -43,7 +43,7 @@ export type GeoCitation = { label: string; url: string };
 export const BRAND = {
   name: "Fusion Calling",
   siteName: "Fusion Calling",
-  twitter: "@fusioncalling",
+  twitter: "@MrAlaminH",
   locale: "en_US",
   defaultOgImage: "/opengraph-image.png",
 } as const;
@@ -54,6 +54,16 @@ type BuildOgArgs = {
   path: string; // e.g. "/whitelabel"
   image?: string; // path or absolute URL
   type?: "website" | "article";
+  /** Article-only: ISO publish date (emitted as openGraph.publishedTime). */
+  publishedTime?: string;
+  /** Article-only: ISO last-modified date (emitted as openGraph.modifiedTime). */
+  modifiedTime?: string;
+  /** Article-only: author names (emitted as openGraph.authors). */
+  authors?: string[];
+  /** Intrinsic width of the OG image (defaults to 1200). */
+  imageWidth?: number;
+  /** Intrinsic height of the OG image (defaults to 630). */
+  imageHeight?: number;
 };
 
 /**
@@ -67,6 +77,11 @@ export function buildOpenGraph({
   path,
   image = BRAND.defaultOgImage,
   type = "website",
+  publishedTime,
+  modifiedTime,
+  authors,
+  imageWidth = 1200,
+  imageHeight = 630,
 }: BuildOgArgs) {
   const url = `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
   const imageUrl = image.startsWith("http")
@@ -80,11 +95,16 @@ export function buildOpenGraph({
       siteName: BRAND.siteName,
       locale: BRAND.locale,
       type,
+      ...(type === "article" && publishedTime
+        ? { publishedTime }
+        : {}),
+      ...(type === "article" && modifiedTime ? { modifiedTime } : {}),
+      ...(type === "article" && authors?.length ? { authors } : {}),
       images: [
         {
           url: imageUrl,
-          width: 1200,
-          height: 630,
+          width: imageWidth,
+          height: imageHeight,
           alt: title,
         },
       ],

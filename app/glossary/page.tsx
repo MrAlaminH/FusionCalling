@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { glossaryTerms, glossaryCategories, slugifyTerm, GLOSSARY_LAST_UPDATED } from "@/lib/glossary";
+import { SITE_URL } from "@/lib/site-url";
 import { buildOpenGraph } from "@/lib/seo";
 
 export const revalidate = 86400;
@@ -41,36 +42,36 @@ export default function GlossaryHubPage() {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://www.fusioncalling.com/",
+            item: `${SITE_URL}/`,
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Glossary",
-            item: "https://www.fusioncalling.com/glossary",
+            item: `${SITE_URL}/glossary`,
           },
         ],
       },
       {
         "@type": "CollectionPage",
-        "@id": "https://www.fusioncalling.com/glossary#collectionpage",
-        url: "https://www.fusioncalling.com/glossary",
+        "@id": `${SITE_URL}/glossary#collectionpage`,
+        url: `${SITE_URL}/glossary`,
         name: "Voice AI Glossary",
         description:
           "A complete glossary of voice AI terms for agencies, with plain-English definitions.",
         inLanguage: "en-US",
         dateModified: GLOSSARY_LAST_UPDATED,
-        isPartOf: { "@id": "https://www.fusioncalling.com/#website" },
+        isPartOf: { "@id": `${SITE_URL}/#website` },
       },
       {
         "@type": "DefinedTermSet",
-        "@id": "https://www.fusioncalling.com/glossary#termset",
+        "@id": `${SITE_URL}/glossary#termset`,
         name: "Voice AI Glossary",
         hasDefinedTerm: sorted.map((t) => ({
           "@type": "DefinedTerm",
           name: t.term,
           description: t.definition,
-          url: `https://www.fusioncalling.com/glossary/${slugifyTerm(t.term)}`,
+          url: `${SITE_URL}/glossary/${slugifyTerm(t.term)}`,
         })),
       },
     ],

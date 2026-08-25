@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import {
-  Facebook,
   Linkedin,
   Mail,
   Phone,
@@ -26,6 +25,7 @@ const productLinks = [
 
 const resourceLinks = [
   { label: "Blog", href: "/blog" },
+  { label: "AI Phone Call Automation Guide", href: "/ai-phone-call-automation" },
   { label: "Case Studies", href: "/whitelabel/case-studies" },
   { label: "Compare Partner Plans", href: "/whitelabel/compare" },
   { label: "Locations", href: "/whitelabel/locations" },
@@ -39,6 +39,7 @@ const resourceLinks = [
 
 const companyLinks = [
   { label: "About Us", href: "/about" },
+  { label: "Team", href: "/team" },
   { label: "Privacy Policy", href: "/privacy" },
   { label: "Terms of Service", href: "/terms" },
   { label: "Book a Call", href: "https://cal.com/mralamin/discovery-call" },
@@ -72,7 +73,7 @@ export default function Footer() {
             </h2>
 
             <Link
-              href="/#home"
+              href="/#show-case"
               className="mt-8 px-8 py-3 bg-brand text-brand-foreground rounded-full font-bold hover:bg-gray-700 transition-colors duration-300 inline-flex items-center group"
             >
               Try Our Demo
@@ -126,15 +127,6 @@ export default function Footer() {
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="h-4 w-4" />
-                </Link>
-                <Link
-                  href="https://facebook.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 text-white hover:bg-brand hover:text-black transition-colors"
-                  aria-label="Facebook"
-                >
-                  <Facebook className="h-4 w-4" />
                 </Link>
               </div>
             </div>

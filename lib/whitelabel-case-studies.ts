@@ -20,7 +20,7 @@ export const whitelabelCaseStudies: WhiteLabelCaseStudy[] = [
     slug: "voicewave-marketing",
     agencyName: "VoiceWave Marketing",
     metaTitle:
-      "How VoiceWave Marketing Makes $12K/Month Reselling White-Label AI Voice | Fusion Calling",
+      "How VoiceWave Marketing Makes $12K/Month Reselling White-Label AI Voice",
     metaDescription:
       "Read how VoiceWave Marketing used Fusion Calling to launch a white-label AI voice practice. 15 clients, $12K/month recurring, launched in 7 days.",
     keywords: [
@@ -79,7 +79,7 @@ export const whitelabelCaseStudies: WhiteLabelCaseStudy[] = [
     slug: "callflow-solutions",
     agencyName: "CallFlow Solutions",
     metaTitle:
-      "How CallFlow Solutions Built an AI Voice Reselling Business | Fusion Calling",
+      "How CallFlow Solutions Built an AI Voice Reselling Business",
     metaDescription:
       "A call center company pivoted to white-label AI voice with Fusion Calling. Now serving 22 clients with $18K/month in recurring revenue and 40% higher margins.",
     keywords: [
@@ -138,7 +138,7 @@ export const whitelabelCaseStudies: WhiteLabelCaseStudy[] = [
     slug: "apex-realty-group",
     agencyName: "Apex Realty Group",
     metaTitle:
-      "How Apex Realty Group Generates 40+ Real Estate Leads/Month with AI Voice | Fusion Calling",
+      "How Apex Realty Group Generates 40+ Real Estate Leads/Month with AI Voice",
     metaDescription:
       "A real estate team uses white-label AI voice to capture, qualify, and book leads 24/7. 40+ monthly leads, 10-minute setup per property, and a 3x ROI in 60 days.",
     keywords: [

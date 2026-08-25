@@ -1,8 +1,9 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
-import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { getTeamAuthor } from "@/lib/authors";
+import { buildOpenGraph } from "@/lib/seo";
 
 /* eslint-disable react/no-unescaped-entities */
 
@@ -12,29 +13,17 @@ export const metadata: Metadata = {
   title: "White-Labeling Retell AI with Fusion Calling",
   description:
     "Retell AI powers conversations. Fusion Calling adds the white-label agency layer: branding, client portals, and billing, so you can resell Retell under your own brand.",
-  alternates: {
-    canonical: "/blog/retell-ai-white-label",
-  },
-  openGraph: {
+  ...buildOpenGraph({
     title: "White-Labeling Retell AI with Fusion Calling",
     description:
       "Retell AI powers great conversations. Fusion Calling adds the white-label agency layer — branding, client portals, multi-client management, and client billing — so you can resell Retell under your own brand.",
-    url: "https://www.fusioncalling.com/blog/retell-ai-white-label",
-    siteName: "Fusion Calling",
-    images: [
-      {
-        url: "/blog/blog6.webp",
-        width: 1376,
-        height: 768,
-        alt: "White-Labeling Retell AI with Fusion Calling",
-      },
-    ],
-    locale: "en_US",
+    path: "/blog/retell-ai-white-label",
+    image: "/blog/blog6.webp",
     type: "article",
     publishedTime: "2025-02-11T00:00:00Z",
     modifiedTime: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
     authors: ["Fusion Calling"],
-  },
+  }),
 };
 
 export default function RetellAIBlogPost() {
@@ -54,41 +43,41 @@ export default function RetellAIBlogPost() {
                     "@type": "ListItem",
                     position: 1,
                     name: "Home",
-                    item: "https://www.fusioncalling.com/",
+                    item: `${SITE_URL}/`,
                   },
                   {
                     "@type": "ListItem",
                     position: 2,
                     name: "Blog",
-                    item: "https://www.fusioncalling.com/blog",
+                    item: `${SITE_URL}/blog`,
                   },
                   {
                     "@type": "ListItem",
                     position: 3,
                     name: "White-Labeling Retell AI with Fusion Calling",
-                    item: "https://www.fusioncalling.com/blog/retell-ai-white-label",
+                    item: `${SITE_URL}/blog/retell-ai-white-label`,
                   },
                 ],
               },
               {
                 "@type": "Article",
-                "@id": "https://www.fusioncalling.com/blog/retell-ai-white-label#article",
-                url: "https://www.fusioncalling.com/blog/retell-ai-white-label",
+                "@id": `${SITE_URL}/blog/retell-ai-white-label#article`,
+                url: `${SITE_URL}/blog/retell-ai-white-label`,
                 name: "White-Labeling Retell AI with Fusion Calling",
                 headline:
                   "White-Labeling Retell AI with Fusion Calling",
                 description:
                   "Retell AI powers great conversations. Fusion Calling adds the white-label agency layer — branding, client portals, multi-client management, and client billing — so you can resell Retell under your own brand.",
                 inLanguage: "en-US",
-                image: "https://www.fusioncalling.com/blog/blog6.webp",
+                image: `${SITE_URL}/blog/blog6.webp`,
                 isPartOf: {
-                  "@id": "https://www.fusioncalling.com/#website",
+                  "@id": `${SITE_URL}/#website`,
                 },
                 datePublished: "2025-02-11T00:00:00Z",
                 dateModified: "2026-07-07T00:00:00Z",
-                author: { "@id": "https://www.fusioncalling.com/team/voice-team#person" },
+                author: { "@id": `${SITE_URL}/team/voice-team#person` },
                 publisher: {
-                  "@id": "https://www.fusioncalling.com/#organization",
+                  "@id": `${SITE_URL}/#organization`,
                 },
                 speakable: {
                   "@type": "SpeakableSpecification",

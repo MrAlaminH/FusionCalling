@@ -89,24 +89,6 @@ const pricingJsonLd = {
         url: `${SITE_URL}/pricing`,
         description: "500 minutes/month, full portal access, all integrations, CRM & lead routing, auto-tagging & logging",
         seller: { "@type": "Organization", name: "Fusion Calling", "@id": `${SITE_URL}/#organization` },
-        hasMerchantReturnPolicy: {
-          "@type": "MerchantReturnPolicy",
-          applicableCountry: "US",
-          returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-          merchantReturnDays: 14,
-          returnMethod: "https://schema.org/ReturnByMail",
-          returnFees: "https://schema.org/FreeReturn",
-        },
-        shippingDetails: {
-          "@type": "OfferShippingDetails",
-          shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "USD" },
-          shippingDestination: { "@type": "DefinedRegion", addressCountry: "US" },
-          deliveryTime: {
-            "@type": "ShippingDeliveryTime",
-            handlingTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 1, unitCode: "DAY" },
-            transitTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 1, unitCode: "DAY" },
-          },
-        },
       },
     },
     {
@@ -127,24 +109,6 @@ const pricingJsonLd = {
         url: `${SITE_URL}/pricing`,
         description: "1,050 minutes/month, inbound/outbound handling, outbound routing, private Slack support, advanced FAQ, custom LLM",
         seller: { "@type": "Organization", name: "Fusion Calling", "@id": `${SITE_URL}/#organization` },
-        hasMerchantReturnPolicy: {
-          "@type": "MerchantReturnPolicy",
-          applicableCountry: "US",
-          returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-          merchantReturnDays: 14,
-          returnMethod: "https://schema.org/ReturnByMail",
-          returnFees: "https://schema.org/FreeReturn",
-        },
-        shippingDetails: {
-          "@type": "OfferShippingDetails",
-          shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "USD" },
-          shippingDestination: { "@type": "DefinedRegion", addressCountry: "US" },
-          deliveryTime: {
-            "@type": "ShippingDeliveryTime",
-            handlingTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 1, unitCode: "DAY" },
-            transitTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 1, unitCode: "DAY" },
-          },
-        },
       },
     },
     {
@@ -165,24 +129,6 @@ const pricingJsonLd = {
         url: `${SITE_URL}/pricing`,
         description: "2,100 minutes/month, custom trained voice, dedicated support & developer, extensive scripting & testing",
         seller: { "@type": "Organization", name: "Fusion Calling", "@id": `${SITE_URL}/#organization` },
-        hasMerchantReturnPolicy: {
-          "@type": "MerchantReturnPolicy",
-          applicableCountry: "US",
-          returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-          merchantReturnDays: 14,
-          returnMethod: "https://schema.org/ReturnByMail",
-          returnFees: "https://schema.org/FreeReturn",
-        },
-        shippingDetails: {
-          "@type": "OfferShippingDetails",
-          shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "USD" },
-          shippingDestination: { "@type": "DefinedRegion", addressCountry: "US" },
-          deliveryTime: {
-            "@type": "ShippingDeliveryTime",
-            handlingTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 1, unitCode: "DAY" },
-            transitTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 1, unitCode: "DAY" },
-          },
-        },
       },
     },
     {
@@ -223,7 +169,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@fusioncalling",
+    site: "@MrAlaminH",
     title: "Pricing | Fusion Calling",
     description: "Simple, fair pricing for AI phone call automation. Plans from $149/month.",
     images: [`${SITE_URL}/opengraph-image.png`],

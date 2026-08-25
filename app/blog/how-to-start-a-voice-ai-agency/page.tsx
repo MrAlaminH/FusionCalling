@@ -1,40 +1,29 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
-import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
-import { getTeamAuthor } from "@/lib/authors";
+import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { getAuthor } from "@/lib/authors";
+import { buildOpenGraph } from "@/lib/seo";
 
 /* eslint-disable react/no-unescaped-entities */
 
-const teamAuthor = getTeamAuthor();
+const teamAuthor = getAuthor("alamin")!;
 
 export const metadata: Metadata = {
   title: "How to Start a Voice AI Agency in 2026: A Step-by-Step Guide",
   description:
     "Learn how to start a voice AI agency with a white-label platform. Keep 100% of client revenue, launch in 7 days, scale with Vapi, Retell and ElevenLabs.",
-  alternates: {
-    canonical: "/blog/how-to-start-a-voice-ai-agency",
-  },
-  openGraph: {
+  ...buildOpenGraph({
     title: "How to Start a Voice AI Agency in 2026: A Step-by-Step Guide",
     description:
       "Learn how to start a profitable voice AI agency in 2026 by partnering with a white-label platform. Keep 100% of client revenue, launch in 7 days.",
-    url: "https://www.fusioncalling.com/blog/how-to-start-a-voice-ai-agency",
-    siteName: "Fusion Calling",
-    images: [
-      {
-        url: "/blog/blog1.webp",
-        width: 1672,
-        height: 941,
-        alt: "How to Start a Voice AI Agency in 2026",
-      },
-    ],
-    locale: "en_US",
+    path: "/blog/how-to-start-a-voice-ai-agency",
+    image: "/blog/blog1.webp",
     type: "article",
     publishedTime: "2025-02-13T00:00:00Z",
     modifiedTime: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
     authors: ["Fusion Calling"],
-  },
+  }),
 };
 
 export default function StartVoiceAIAgencyBlogPost() {
@@ -54,41 +43,41 @@ export default function StartVoiceAIAgencyBlogPost() {
                     "@type": "ListItem",
                     position: 1,
                     name: "Home",
-                    item: "https://www.fusioncalling.com/",
+                    item: `${SITE_URL}/`,
                   },
                   {
                     "@type": "ListItem",
                     position: 2,
                     name: "Blog",
-                    item: "https://www.fusioncalling.com/blog",
+                    item: `${SITE_URL}/blog`,
                   },
                   {
                     "@type": "ListItem",
                     position: 3,
                     name: "How to Start a Voice AI Agency in 2026",
-                    item: "https://www.fusioncalling.com/blog/how-to-start-a-voice-ai-agency",
+                    item: `${SITE_URL}/blog/how-to-start-a-voice-ai-agency`,
                   },
                 ],
               },
               {
                 "@type": "Article",
-                "@id": "https://www.fusioncalling.com/blog/how-to-start-a-voice-ai-agency#article",
-                url: "https://www.fusioncalling.com/blog/how-to-start-a-voice-ai-agency",
+                "@id": `${SITE_URL}/blog/how-to-start-a-voice-ai-agency#article`,
+                url: `${SITE_URL}/blog/how-to-start-a-voice-ai-agency`,
                 name: "How to Start a Voice AI Agency in 2026: A Step-by-Step Guide",
                 headline:
                   "How to Start a Voice AI Agency in 2026: A Step-by-Step Guide",
                 description:
                   "Learn how to start a profitable voice AI agency in 2026 by partnering with a white-label platform. Keep 100% of client revenue, launch in 7 days, and scale with Vapi, Retell, and ElevenLabs.",
                 inLanguage: "en-US",
-                image: "https://www.fusioncalling.com/blog/blog1.webp",
+                image: `${SITE_URL}/blog/blog1.webp`,
                 isPartOf: {
-                  "@id": "https://www.fusioncalling.com/#website",
+                  "@id": `${SITE_URL}/#website`,
                 },
                 datePublished: "2025-02-13T00:00:00Z",
                 dateModified: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
-                author: { "@id": "https://www.fusioncalling.com/team/voice-team#person" },
+                author: { "@id": `${SITE_URL}/team/alamin#person` },
                 publisher: {
-                  "@id": "https://www.fusioncalling.com/#organization",
+                  "@id": `${SITE_URL}/#organization`,
                 },
                 speakable: {
                   "@type": "SpeakableSpecification",

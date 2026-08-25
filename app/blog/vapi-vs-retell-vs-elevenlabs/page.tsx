@@ -1,8 +1,9 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
-import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { getTeamAuthor } from "@/lib/authors";
+import { buildOpenGraph } from "@/lib/seo";
 
 /* eslint-disable react/no-unescaped-entities */
 
@@ -12,29 +13,17 @@ export const metadata: Metadata = {
   title: "Vapi vs Retell vs ElevenLabs: Which Is Best?",
   description:
     "Compare Vapi, Retell AI, and ElevenLabs for voice AI agencies: strengths, best use cases, and how Fusion Calling unifies all three in one white-label dashboard.",
-  alternates: {
-    canonical: "/blog/vapi-vs-retell-vs-elevenlabs",
-  },
-  openGraph: {
-    title: "Vapi vs Retell vs ElevenLabs: Choosing a Voice AI Provider",
+  ...buildOpenGraph({
+    title: "Vapi vs Retell vs ElevenLabs: Which Is Best?",
     description:
       "A neutral, practical comparison of Vapi, Retell AI, and ElevenLabs for voice AI agencies — their strengths, best use cases, and how Fusion Calling unifies all three.",
-    url: "https://www.fusioncalling.com/blog/vapi-vs-retell-vs-elevenlabs",
-    siteName: "Fusion Calling",
-    images: [
-      {
-        url: "/blog/blog3.webp",
-        width: 1376,
-        height: 768,
-        alt: "Vapi vs Retell vs ElevenLabs Voice AI Provider Comparison",
-      },
-    ],
-    locale: "en_US",
+    path: "/blog/vapi-vs-retell-vs-elevenlabs",
+    image: "/blog/blog3.webp",
     type: "article",
     publishedTime: "2025-02-14T00:00:00Z",
     modifiedTime: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
     authors: ["Fusion Calling"],
-  },
+  }),
 };
 
 export default function VapiVsRetellVsElevenLabsBlogPost() {
@@ -54,43 +43,43 @@ export default function VapiVsRetellVsElevenLabsBlogPost() {
                     "@type": "ListItem",
                     position: 1,
                     name: "Home",
-                    item: "https://www.fusioncalling.com/",
+                    item: `${SITE_URL}/`,
                   },
                   {
                     "@type": "ListItem",
                     position: 2,
                     name: "Blog",
-                    item: "https://www.fusioncalling.com/blog",
+                    item: `${SITE_URL}/blog`,
                   },
                   {
                     "@type": "ListItem",
                     position: 3,
                     name: "Vapi vs Retell vs ElevenLabs: Choosing the Right Voice AI Provider",
-                    item: "https://www.fusioncalling.com/blog/vapi-vs-retell-vs-elevenlabs",
+                    item: `${SITE_URL}/blog/vapi-vs-retell-vs-elevenlabs`,
                   },
                 ],
               },
               {
                 "@type": "Article",
-                "@id": "https://www.fusioncalling.com/blog/vapi-vs-retell-vs-elevenlabs#article",
-                url: "https://www.fusioncalling.com/blog/vapi-vs-retell-vs-elevenlabs",
+                "@id": `${SITE_URL}/blog/vapi-vs-retell-vs-elevenlabs#article`,
+                url: `${SITE_URL}/blog/vapi-vs-retell-vs-elevenlabs`,
                 name: "Vapi vs Retell vs ElevenLabs: Choosing the Right Voice AI Provider",
                 headline:
                   "Vapi vs Retell vs ElevenLabs: Choosing the Right Voice AI Provider",
                 description:
                   "A neutral, practical comparison of Vapi, Retell AI, and ElevenLabs for voice AI agencies — their strengths, best use cases, and how Fusion Calling unifies all three under one white-label dashboard.",
                 inLanguage: "en-US",
-                image: "https://www.fusioncalling.com/blog/blog3.webp",
+                image: `${SITE_URL}/blog/blog3.webp`,
                 isPartOf: {
-                  "@id": "https://www.fusioncalling.com/#website",
+                  "@id": `${SITE_URL}/#website`,
                 },
                 datePublished: "2025-02-14T00:00:00Z",
                 dateModified: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
                 author: {
-                  "@id": "https://www.fusioncalling.com/team/voice-team#person"
+                  "@id": `${SITE_URL}/team/voice-team#person`
                 },
                 publisher: {
-                  "@id": "https://www.fusioncalling.com/#organization",
+                  "@id": `${SITE_URL}/#organization`,
                 },
                 speakable: {
                   "@type": "SpeakableSpecification",
