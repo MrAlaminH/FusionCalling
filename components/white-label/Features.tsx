@@ -230,7 +230,7 @@ export default function Features() {
 
                       {/* Shimmer effect on hover (CSS-only) */}
                       <div className="absolute inset-0 overflow-hidden z-40 pointer-events-none rounded-b-none">
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-[1500ms] ease-in-out" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform [transition-duration:1500ms] ease-in-out" />
                       </div>
                     </div>
                   </Reveal>
