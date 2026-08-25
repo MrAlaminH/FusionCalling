@@ -1,14 +1,11 @@
 "use client";
 
-import { motion, useInView, AnimatePresence, useReducedMotion } from "framer-motion";
-import { useRef, useState } from "react";
+import { useState } from "react";
+import { Reveal } from "@/components/ui/reveal";
 import { Check, Star, ArrowRight } from "lucide-react";
 import { BillingToggle, type BillingCycle } from "@/components/ui/billing-toggle";
 
 export default function Pricing() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-  const reduce = useReducedMotion();
   const [billing, setBilling] = useState<BillingCycle>("monthly");
 
   const plans = [
@@ -62,14 +59,11 @@ export default function Pricing() {
   ];
 
   return (
-    <section className="w-full bg-black relative section-spacing" ref={ref}>
+    <section className="w-full bg-black relative section-spacing">
       {/* Background effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="particle"
-          initial={reduce ? false : { opacity: 0 }}
-          animate={{ opacity: [0.05, 0.1, 0.05] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        <div
+          className="particle [animation-duration:10s]"
           style={{
             width: "300px",
             height: "300px",
@@ -77,16 +71,8 @@ export default function Pricing() {
             left: "20%",
           }}
         />
-        <motion.div
-          className="particle"
-          initial={reduce ? false : { opacity: 0 }}
-          animate={{ opacity: [0.04, 0.08, 0.04] }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2,
-          }}
+        <div
+          className="particle [animation-duration:12s] [animation-delay:2s]"
           style={{
             width: "250px",
             height: "250px",
@@ -98,16 +84,7 @@ export default function Pricing() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Header */}
-        <motion.div
-          className="text-center mb-12 md:mb-16 lg:mb-20"
-          initial={reduce ? false : { opacity: 0, y: -30 }}
-          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -30 }}
-          transition={{
-            duration: 0.8,
-            delay: 0.2,
-            ease: [0.25, 0.1, 0.25, 1.0],
-          }}
-        >
+        <Reveal animation="animate-fade-in-up" className="text-center mb-12 md:mb-16 lg:mb-20">
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-6 tracking-tight">
             <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
               Pricing Plans
@@ -117,51 +94,25 @@ export default function Pricing() {
             Choose the plan that fits your agency&apos;s needs. Scale up as you
             grow.
           </p>
-        </motion.div>
+        </Reveal>
 
         {/* Billing Cycle Toggle */}
-        <motion.div
-          className="flex justify-center mb-10 md:mb-14"
-          initial={reduce ? false : { opacity: 0, y: -10 }}
-          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -10 }}
-          transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 0.1, 0.25, 1.0] }}
-        >
+        <Reveal animation="animate-fade-in-up" delay={0.15} className="flex justify-center mb-10 md:mb-14">
           <BillingToggle value={billing} onChange={setBilling} />
-        </motion.div>
+        </Reveal>
 
         {/* Pricing Cards with Glassmorphism */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
           {plans.map((plan, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={reduce ? false : { opacity: 0, y: 40, scale: 0.95 }}
-              animate={{
-                opacity: isInView ? 1 : 0,
-                y: isInView ? 0 : 40,
-                scale: isInView ? 1 : 0.95,
-              }}
-              transition={{
-                duration: 0.6,
-                delay: 0.3 + index * 0.1,
-                ease: [0.25, 0.1, 0.25, 1.0],
-              }}
-              className={`relative ${plan.popular ? "md:-translate-y-4 md:scale-105" : ""}`}
-              whileHover={{ y: -8 }}
+              className={`relative transition-transform duration-300 hover:-translate-y-2 ${
+                plan.popular ? "md:-translate-y-4 md:scale-105" : ""
+              }`}
             >
-              {/* Glow effect for popular plan */}
+              {/* Glow effect for popular plan (CSS-only pulse) */}
               {plan.popular && (
-                <motion.div
-                  className="absolute -inset-4 bg-gradient-to-br from-brand/30 via-brand-strong/20 to-transparent rounded-3xl blur-3xl -z-10"
-                  animate={{
-                    opacity: [0.4, 0.6, 0.4],
-                    scale: [1, 1.05, 1],
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                />
+                <div className="absolute -inset-4 bg-gradient-to-br from-brand/30 via-brand-strong/20 to-transparent rounded-3xl blur-3xl -z-10 animate-pulse [animation-duration:4s]" />
               )}
 
               <div
@@ -173,16 +124,7 @@ export default function Pricing() {
               >
                 {/* Popular Badge */}
                 {plan.popular && (
-                  <motion.div
-                    initial={reduce ? false : { scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{
-                      delay: 0.5 + index * 0.1,
-                      type: "spring",
-                      stiffness: 200,
-                    }}
-                    className="absolute -top-4 -right-4 md:-top-5 md:-right-5"
-                  >
+                  <div className="absolute -top-4 -right-4 md:-top-5 md:-right-5">
                     <div className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center">
                       <div className="absolute inset-0 bg-gradient-to-br from-brand to-brand-strong rounded-full shadow-premium-lg animate-pulse" />
                       <Star
@@ -190,7 +132,7 @@ export default function Pricing() {
                         className="w-6 h-6 md:w-7 md:h-7 text-white fill-white z-10 relative"
                       />
                     </div>
-                  </motion.div>
+                  </div>
                 )}
 
                 {/* Plan Header */}
@@ -221,43 +163,25 @@ export default function Pricing() {
                         /month
                       </span>
                     </div>
-                    <AnimatePresence initial={false}>
-                      {billing === "yearly" && (
-                        <motion.div
-                          initial={reduce ? false : { opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
-                          transition={{ duration: 0.2 }}
-                          className="flex flex-wrap items-center gap-2"
-                        >
+                    {billing === "yearly" && (
+                        <div className="flex flex-wrap items-center gap-2 animate-in fade-in duration-300">
                           <span className="text-xs md:text-sm text-brand-light/80">
                             billed annually
                           </span>
                           <span className="rounded-full bg-green-500/15 px-2 py-0.5 text-[10px] md:text-xs font-semibold text-green-400 ring-1 ring-inset ring-green-500/30">
                             Save ${(plan.priceMonthly - plan.priceYearly) * 12}/yr
                           </span>
-                        </motion.div>
+                        </div>
                       )}
-                    </AnimatePresence>
                   </div>
                 </div>
 
                 {/* Features */}
                 <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8 flex-grow">
                   {plan.features.map((feature, idx) => (
-                    <motion.li
+                    <li
                       key={idx}
                       className="flex items-start gap-3"
-                      initial={reduce ? false : { opacity: 0, x: -10 }}
-                      animate={{
-                        opacity: isInView ? 1 : 0,
-                        x: isInView ? 0 : -10,
-                      }}
-                      transition={{
-                        duration: 0.4,
-                        delay: 0.5 + index * 0.1 + idx * 0.05,
-                        ease: [0.25, 0.1, 0.25, 1.0],
-                      }}
                     >
                       <div
                         className={`min-w-5 min-h-5 md:min-w-6 md:min-h-6 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0 ${
@@ -273,52 +197,32 @@ export default function Pricing() {
                       >
                         {feature}
                       </span>
-                    </motion.li>
+                    </li>
                   ))}
                 </ul>
 
                 {/* CTA Button */}
-                <motion.a
+                <a
                   href="#cta"
-                  className={`block w-full text-center rounded-xl py-3 md:py-4 text-sm md:text-base font-semibold transition-all duration-300 shadow-premium ${
+                  className={`block w-full text-center rounded-xl py-3 md:py-4 text-sm md:text-base font-semibold transition-all duration-300 shadow-premium hover:scale-105 hover:-translate-y-0.5 active:scale-[0.98] ${
                     plan.popular
                       ? "bg-gradient-to-r from-brand to-brand-strong text-white hover:from-brand-strong hover:to-orange-700"
                       : "bg-white/10 text-white hover:bg-white/20 border border-white/20"
                   }`}
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
                 >
                   {plan.cta}
                   <ArrowRight className="inline ml-2 w-4 h-4" />
-                </motion.a>
+                </a>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Bottom Info - Redesigned Compact Version */}
-        <motion.div
-          initial={reduce ? false : { opacity: 0 }}
-          animate={{ opacity: isInView ? 1 : 0 }}
-          transition={{
-            duration: 0.8,
-            delay: 0.8,
-            ease: [0.25, 0.1, 0.25, 1.0],
-          }}
-          className="mt-12 md:mt-16 lg:mt-20"
-        >
+        <div className="mt-12 md:mt-16 lg:mt-20">
           {/* Single unified card with compact info */}
           <div className="max-w-3xl mx-auto">
-            <motion.div
-              className="glass rounded-2xl p-6 md:p-8 border border-brand/20"
-              initial={reduce ? false : { opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.6,
-                delay: 1,
-                ease: [0.25, 0.1, 0.25, 1.0],
-              }}
-            >
+            <div className="glass rounded-2xl p-6 md:p-8 border border-brand/20">
               {/* Header */}
               <div className="text-center mb-6 md:mb-8">
                 <p className="font-display text-white text-lg md:text-xl font-semibold mb-2">
@@ -340,17 +244,9 @@ export default function Pricing() {
                     icon: "🔓",
                   },
                 ].map((item, idx) => (
-                  <motion.div
+                  <div
                     key={idx}
-                    className="flex items-center gap-2 px-4 py-2 md:px-5 md:py-2.5 rounded-xl bg-gradient-to-br from-brand/10 to-brand-strong/5 border border-brand/20 hover:border-brand/40 transition-premium-fast"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    initial={reduce ? false : { opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{
-                      delay: 1.1 + idx * 0.1,
-                      duration: 0.4,
-                      ease: [0.25, 0.1, 0.25, 1.0],
-                    }}
+                    className="flex items-center gap-2 px-4 py-2 md:px-5 md:py-2.5 rounded-xl bg-gradient-to-br from-brand/10 to-brand-strong/5 border border-brand/20 hover:border-brand/40 hover:-translate-y-0.5 hover:scale-[1.05] transition-premium-fast"
                   >
                     <span className="text-lg md:text-xl">{item.icon}</span>
                     <div className="flex items-baseline gap-1.5">
@@ -361,12 +257,12 @@ export default function Pricing() {
                         {item.label}
                       </span>
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

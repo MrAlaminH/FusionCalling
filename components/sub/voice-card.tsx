@@ -21,82 +21,72 @@ export function VoiceCard({
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const progressRef = useRef<NodeJS.Timeout>();
 
+  // The Audio object is created lazily on first play so the ~300KB sample
+  // MP3 is never prefetched on page load.
+  const getAudio = () => {
+    if (!audioRef.current) {
+      const audio = new Audio(voice.audioUrl);
+
+      audio.addEventListener("loadedmetadata", () => {
+        setDuration(audio.duration);
+      });
+      audio.addEventListener("error", () => {
+        console.error("Error loading audio file");
+        setIsPlaying(false);
+      });
+      audio.addEventListener("ended", () => {
+        setIsPlaying(false);
+        setProgress(0);
+        audio.currentTime = 0;
+      });
+
+      audioRef.current = audio;
+    }
+    return audioRef.current;
+  };
+
+  // Cleanup on unmount
   useEffect(() => {
-    const audio = new Audio(voice.audioUrl);
-    audioRef.current = audio;
-
-    const handleLoadedMetadata = () => {
-      setDuration(audio.duration);
-      setIsLoading(false);
-    };
-
-    const handleError = () => {
-      console.error("Error loading audio file");
-      setIsLoading(false);
-    };
-
-    audio.addEventListener("loadedmetadata", handleLoadedMetadata);
-    audio.addEventListener("error", handleError);
-
     return () => {
       if (progressRef.current) {
         clearInterval(progressRef.current);
       }
-      audio.removeEventListener("loadedmetadata", handleLoadedMetadata);
-      audio.removeEventListener("error", handleError);
-      audio.pause();
-      audio.remove();
+      audioRef.current?.pause();
+      audioRef.current?.remove();
     };
-  }, [voice.audioUrl]);
+  }, []);
 
   useEffect(() => {
     const audio = audioRef.current;
-    if (!audio) return;
 
-    const updateProgress = () => {
-      if (audio.duration) {
-        setProgress((audio.currentTime / audio.duration) * 100);
-      }
-    };
-
-    if (isPlaying) {
+    if (isPlaying && audio) {
+      const updateProgress = () => {
+        if (audio.duration) {
+          setProgress((audio.currentTime / audio.duration) * 100);
+        }
+      };
       progressRef.current = setInterval(updateProgress, 100);
-    } else if (progressRef.current) {
-      clearInterval(progressRef.current);
     }
-
-    const handleEnded = () => {
-      setIsPlaying(false);
-      setProgress(0);
-      if (progressRef.current) {
-        clearInterval(progressRef.current);
-      }
-      audio.currentTime = 0;
-    };
-
-    audio.addEventListener("ended", handleEnded);
 
     return () => {
       if (progressRef.current) {
         clearInterval(progressRef.current);
       }
-      audio.removeEventListener("ended", handleEnded);
     };
   }, [isPlaying]);
 
   const togglePlay = async () => {
-    if (!audioRef.current || isLoading) return;
+    const audio = getAudio();
 
     try {
       if (isPlaying) {
-        audioRef.current.pause();
+        audio.pause();
         setIsPlaying(false);
       } else {
-        await audioRef.current.play();
+        await audio.play();
         setIsPlaying(true);
       }
     } catch (error) {
@@ -139,12 +129,9 @@ export function VoiceCard({
       </p>
       <div className="flex items-center gap-3">
         <button
-          className={`text-orange-600 hover:text-orange-600 transition-colors group-hover:text-white ${
-            isLoading ? "opacity-50 cursor-not-allowed" : ""
-          }`}
+          className="text-orange-600 hover:text-orange-600 transition-colors group-hover:text-white"
           aria-label={isPlaying ? "Pause sample" : "Play sample"}
           onClick={togglePlay}
-          disabled={isLoading}
         >
           {isPlaying ? (
             <Pause className="w-5 h-5" fill="currentColor" />

@@ -51,7 +51,7 @@ export default function ShareMenu() {
   };
 
   const openSpec = () => {
-    window.open("/api/docs/openapi.json", "_blank", "noopener,noreferrer");
+    window.open("/openapi.json", "_blank", "noopener,noreferrer");
   };
 
   return (

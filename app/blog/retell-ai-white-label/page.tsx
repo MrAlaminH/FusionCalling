@@ -1,21 +1,17 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
+import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { getTeamAuthor } from "@/lib/authors";
 
 /* eslint-disable react/no-unescaped-entities */
+
+const teamAuthor = getTeamAuthor();
 
 export const metadata: Metadata = {
   title: "White-Labeling Retell AI with Fusion Calling",
   description:
     "Retell AI powers conversations. Fusion Calling adds the white-label agency layer: branding, client portals, and billing, so you can resell Retell under your own brand.",
-  keywords: [
-    "retell ai white label",
-    "white label retell ai",
-    "retell ai integration",
-    "resell retell ai",
-    "white label voice AI",
-    "agency voice platform",
-  ],
   alternates: {
     canonical: "/blog/retell-ai-white-label",
   },
@@ -36,7 +32,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "article",
     publishedTime: "2025-02-11T00:00:00Z",
-    modifiedTime: "2025-02-11T00:00:00Z",
+    modifiedTime: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
     authors: ["Fusion Calling"],
   },
 };
@@ -197,11 +193,33 @@ export default function RetellAIBlogPost() {
             under your own brand.
           </p>
 
-          <div className="flex items-center gap-6 text-sm text-gray-500">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-500 mb-8">
             <span>February 11, 2025</span>
             <span>•</span>
-            <span>By Fusion Calling Team</span>
+            <Link
+              href={`/team/${teamAuthor.slug}`}
+              className="flex items-center gap-2 hover:text-brand-light transition-colors"
+            >
+              <Image
+                src={teamAuthor.avatar}
+                alt={teamAuthor.name}
+                width={24}
+                height={24}
+                className="w-6 h-6 rounded-full object-cover"
+              />
+              <span>By {teamAuthor.name}</span>
+            </Link>
+            <span>•</span>
+            <span>Last updated: July 7, 2026</span>
           </div>
+
+          <p className="text-brand-light font-semibold mb-8">
+            Ready to resell Retell under your brand?{" "}
+            <Link href="/whitelabel/retell" className="underline hover:text-brand transition-colors">
+              See our white-label Retell platform
+            </Link>
+            .
+          </p>
         </div>
 
         {/* Featured Image */}
@@ -225,7 +243,10 @@ export default function RetellAIBlogPost() {
                 A Great Voice Engine, Now a Sellable Product
               </h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Retell AI has earned its reputation for a reason. Its conversational
+                <Link href="/glossary/retell-ai" className="text-brand-light hover:text-brand transition-colors">
+                  Retell AI
+                </Link>{" "}
+                has earned its reputation for a reason. Its conversational
                 quality, low-latency responses, and flexible agent configuration make it
                 one of the strongest voice engines available for building natural-sounding
                 AI calls. If you are already building on Retell, you have made a smart
@@ -240,7 +261,11 @@ export default function RetellAIBlogPost() {
                 to charge for it.
               </p>
               <p className="text-brand-light text-lg font-semibold">
-                That is the layer Fusion Calling is built to provide — alongside Retell,
+                That is the{" "}
+                <Link href="/glossary/white-label" className="underline hover:text-brand transition-colors">
+                  white-label
+                </Link>{" "}
+                layer Fusion Calling is built to provide — alongside Retell,
                 not against it.
               </p>
             </div>
@@ -329,8 +354,11 @@ export default function RetellAIBlogPost() {
                   <div>
                     <h3 className="text-white font-bold mb-2">Connect Retell</h3>
                     <p className="text-gray-400 text-sm">
-                      Link your existing Retell account with a single API key — no migration
-                      required.
+                      Link your existing Retell account with a single API key — a{" "}
+                      <Link href="/glossary/bring-your-own-key" className="text-brand-light hover:text-brand transition-colors">
+                        bring-your-own-key
+                      </Link>{" "}
+                      setup, no migration required.
                     </p>
                   </div>
                 </div>
@@ -403,7 +431,11 @@ export default function RetellAIBlogPost() {
                 Fusion Calling is a subscription, not a take of your revenue. You set the
                 price you charge clients, and you keep{" "}
                 <strong className="text-brand-light">100% of that client revenue</strong>.
-                The only cost is your Fusion Calling plan:
+                The only cost is your Fusion Calling plan (full details on our{" "}
+                <Link href="/pricing" className="text-brand-light hover:text-brand transition-colors">
+                  pricing page
+                </Link>
+                ):
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
@@ -460,8 +492,11 @@ export default function RetellAIBlogPost() {
                 AI business in about 7 days.
               </p>
               <p className="text-gray-300 leading-relaxed mb-8">
-                Want to see it in action? There is a live demo on the homepage, or you can
-                apply to start white-labeling Retell today.
+                Want to see it in action? There is a{" "}
+                <Link href="/#show-case" className="text-brand-light hover:text-brand transition-colors">
+                  live demo on the homepage
+                </Link>
+                , or you can apply to start white-labeling Retell today.
               </p>
 
               <Link
@@ -510,25 +545,32 @@ export default function RetellAIBlogPost() {
           {/* Author Bio */}
           <div className="mt-12 pt-8 border-t border-brand/20">
             <div className="flex items-start gap-6">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-brand to-brand-strong flex items-center justify-center flex-shrink-0">
-                <span className="text-2xl font-bold text-white">FC</span>
-              </div>
+              <Image
+                src={teamAuthor.avatar}
+                alt={teamAuthor.name}
+                width={64}
+                height={64}
+                className="w-16 h-16 rounded-full object-cover border border-brand/30 flex-shrink-0"
+              />
               <div className="flex-1">
                 <h3 className="text-lg font-bold text-white mb-2">About the Author</h3>
                 <p className="text-gray-400 text-sm mb-3">
-                  <strong className="text-brand-strong">Fusion Calling Team</strong>
+                  <Link
+                    href={`/team/${teamAuthor.slug}`}
+                    className="text-brand-strong hover:text-brand transition-colors"
+                  >
+                    <strong>{teamAuthor.name}</strong>
+                  </Link>
                 </p>
                 <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                  We're the team behind Fusion Calling's white-label AI voice platform. Having helped 50+ agencies launch profitable voice AI practices since 2025, we specialize in helping businesses scale their phone operations with cutting-edge automation technology.
+                  {teamAuthor.shortBio}
                 </p>
                 <div className="flex items-center gap-4 text-sm">
                   <a
-                    href="https://www.fusioncalling.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={`mailto:${teamAuthor.email}`}
                     className="text-brand-strong hover:text-brand transition-colors"
                   >
-                    Website →
+                    Email →
                   </a>
                   <a
                     href="/whitelabel"

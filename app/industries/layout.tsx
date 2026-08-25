@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "AI Voice by Industry | Fusion Calling",
+  title: "AI Voice by Industry",
   description:
     "Explore how white-label AI voice agents serve every industry, from real estate and dental to insurance, home services, legal, and financial services.",
   alternates: {

@@ -3,21 +3,14 @@ import type { Metadata } from "next";
 import { industries } from "@/lib/industries";
 import { buildOpenGraph } from "@/lib/seo";
 
-const title = "AI Voice by Industry | Fusion Calling";
+// No hardcoded "| Fusion Calling" — the root layout title template appends it.
+const title = "AI Voice by Industry";
 const description =
   "Explore how white-label AI voice agents serve every industry: real estate, dental, insurance, home services, legal, automotive, call centers, finance.";
 
 export const metadata: Metadata = {
   title,
   description,
-  keywords: [
-    "ai voice by industry",
-    "ai voice use cases",
-    "white label voice ai",
-    "ai calling agent",
-    "industry voice automation",
-    "voice ai for agencies",
-  ],
   ...buildOpenGraph({ title, description, path: "/industries" }),
 };
 
@@ -128,9 +121,9 @@ export default function IndustriesHubPage() {
                       <span className="text-gray-500">{industry.readTime}</span>
                     </div>
 
-                    <h3 className="text-xl font-bold text-white group-hover:text-brand-light transition-colors leading-tight">
+                    <h2 className="text-xl font-bold text-white group-hover:text-brand-light transition-colors leading-tight">
                       AI Voice for {industry.name}
-                    </h3>
+                    </h2>
 
                     <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">
                       {industry.subtitle}

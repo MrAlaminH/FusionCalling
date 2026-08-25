@@ -1,15 +1,23 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import WhiteLabelNavbar from "@/components/white-label-navbar";
 import Footer from "@/components/Footer";
 import Pricing from "@/components/white-label/Pricing";
 import CTA from "@/components/white-label/CTA";
 import { whitelabelProviders } from "@/lib/whitelabel-providers";
-import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { whitelabelCaseStudies } from "@/lib/whitelabel-case-studies";
+import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { buildOpenGraph } from "@/lib/seo";
+import { truncateAtWord } from "@/lib/utils";
 
 const provider = whitelabelProviders.find((p) => p.slug === "elevenlabs")!;
+const metaDescription = truncateAtWord(provider.description, 158);
+const relatedCaseStudies = whitelabelCaseStudies.filter((cs) =>
+  provider.relatedCaseStudySlugs?.includes(cs.slug),
+);
 
 const title = provider.title;
-const description = provider.description;
+const description = metaDescription;
 
 const schema = {
   "@context": "https://schema.org",
@@ -83,26 +91,11 @@ const schema = {
 export const metadata: Metadata = {
   title,
   description,
-  keywords: provider.keywords,
-  alternates: {
-    canonical: "/whitelabel/elevenlabs",
-  },
-  openGraph: {
+  ...buildOpenGraph({
     title,
     description,
-    url: `${SITE_URL}/whitelabel/elevenlabs`,
-    siteName: "Fusion Calling",
-    images: [
-      {
-        url: "/og.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Fusion Calling - White-label AI Voice for ElevenLabs",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
+    path: "/whitelabel/elevenlabs",
+  }),
 };
 
 export default function ElevenLabsWhiteLabelPage() {
@@ -217,6 +210,46 @@ export default function ElevenLabsWhiteLabelPage() {
                   </p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Resources & cross-links */}
+        <section id="elevenlabs-resources" className="w-full bg-black section-spacing">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+            <div className="text-center mb-10 md:mb-12">
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
+                Learn more about white-labeling{" "}
+                <span className="bg-gradient-to-r from-brand to-brand-strong text-transparent bg-clip-text">
+                  {provider.name}
+                </span>
+              </h2>
+              <p className="text-gray-400 text-base sm:text-lg">
+                Real partner results with white-label AI voice.
+              </p>
+            </div>
+            <div className="space-y-4">
+              {relatedCaseStudies.map((cs) => (
+                <Link
+                  key={cs.slug}
+                  href={`/whitelabel/case-studies/${cs.slug}`}
+                  className="block glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition-premium"
+                >
+                  <h3 className="text-lg font-bold text-brand-light mb-1">
+                    Case study: How {cs.agencyName} built a white-label AI voice
+                    practice ({cs.heroStats[0]?.value}/month)
+                  </h3>
+                  <p className="text-sm text-gray-400">{cs.metaDescription}</p>
+                </Link>
+              ))}
+              <p className="text-center pt-4">
+                <Link
+                  href="/whitelabel/case-studies"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors"
+                >
+                  Browse all partner case studies &rarr;
+                </Link>
+              </p>
             </div>
           </div>
         </section>

@@ -5,40 +5,20 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/white-label/CTA";
 import { whitelabelCaseStudies } from "@/lib/whitelabel-case-studies";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { buildOpenGraph } from "@/lib/seo";
 
-const title = "White-Label AI Voice Partner Case Studies | Fusion Calling";
+const title = "White-Label AI Voice Partner Case Studies";
 const description =
   "Real agencies building recurring revenue with white-label AI voice. See how partners generate $12K–$18K/month reselling AI voice agents under their own brand.";
 
 export const metadata: Metadata = {
   title,
   description,
-  keywords: [
-    "white-label AI voice case studies",
-    "AI voice reseller success stories",
-    "agency AI voice revenue",
-    "white-label voice AI partner results",
-    "AI voice agency case study",
-  ],
-  alternates: {
-    canonical: "/whitelabel/case-studies",
-  },
-  openGraph: {
-    title,
+  ...buildOpenGraph({
+    title: `${title} | Fusion Calling`,
     description,
-    url: `${SITE_URL}/whitelabel/case-studies`,
-    siteName: "Fusion Calling",
-    images: [
-      {
-        url: "/og.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Fusion Calling - Partner Case Studies",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
+    path: "/whitelabel/case-studies",
+  }),
 };
 
 export default function WhitelabelCaseStudiesHub() {

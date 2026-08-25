@@ -1,14 +1,8 @@
 import { NextResponse } from "next/server";
-import { generateOpenAPI } from "@/app/docs/api-reference/lib/openapi";
+import type { NextRequest } from "next/server";
 
-export const dynamic = "force-static";
-
-export async function GET() {
-  return NextResponse.json(generateOpenAPI(), {
-    headers: {
-      "Content-Type": "application/json; charset=utf-8",
-      "Cache-Control": "public, max-age=3600, s-maxage=86400",
-      "Access-Control-Allow-Origin": "*",
-    },
-  });
+// `/openapi.json` (static file in public/) is the canonical spec URL.
+// This legacy route redirects there with a permanent 301.
+export async function GET(request: NextRequest) {
+  return NextResponse.redirect(new URL("/openapi.json", request.url), 301);
 }

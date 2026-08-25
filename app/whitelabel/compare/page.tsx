@@ -4,42 +4,21 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/white-label/CTA";
 import { comparisons } from "@/lib/comparisons";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { buildOpenGraph } from "@/lib/seo";
+import { truncateAtWord } from "@/lib/utils";
 
-const title = "Best White-Label AI Voice Platforms Compared | Fusion Calling";
+const title = "Best White-Label AI Voice Platforms Compared";
 const description =
   "Compare the top white-label AI voice platforms side-by-side: Fusion Calling vs Vapify vs Voicerr vs VoiceAIWrapper vs Synthflow vs Thinkrr vs Bland AI vs Air AI. Pricing, features, sub-accounts, and more.";
 
 export const metadata: Metadata = {
   title,
   description,
-  keywords: [
-    "best white-label AI voice platform",
-    "white-label voice AI comparison",
-    "Fusion Calling vs Vapify vs Voicerr",
-    "white-label AI voice pricing comparison",
-    "best AI voice reseller platform",
-    "compare white-label voice providers",
-    "white-label AI voice platform features",
-  ],
-  alternates: {
-    canonical: "/whitelabel/compare",
-  },
-  openGraph: {
-    title,
-    description,
-    url: `${SITE_URL}/whitelabel/compare`,
-    siteName: "Fusion Calling",
-    images: [
-      {
-        url: "/og.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Best White-Label AI Voice Platforms Compared",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
+  ...buildOpenGraph({
+    title: `${title} | Fusion Calling`,
+    description: truncateAtWord(description, 158),
+    path: "/whitelabel/compare",
+  }),
 };
 
 const WHITELABEL_COMPARISON_ROWS = [

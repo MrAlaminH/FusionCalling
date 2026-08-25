@@ -19,7 +19,7 @@ const productLinks = [
   { label: "Retell AI White-Label", href: "/whitelabel/retell" },
   { label: "ElevenLabs White-Label", href: "/whitelabel/elevenlabs" },
   { label: "Features", href: "/#features" },
-  { label: "Pricing", href: "/#pricing" },
+  { label: "Pricing", href: "/pricing" },
   { label: "ROI Calculator", href: "/calculator" },
   { label: "Documentation", href: "/docs" },
 ];

@@ -1,15 +1,5 @@
-import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
-export const metadata: Metadata = {
-  title: "Voice AI Blog & Insights",
-  description:
-    "Expert insights on white-label AI voice platforms, agency growth strategies, and voice automation trends. Learn how to build profitable AI voice businesses.",
-  alternates: {
-    canonical: "/blog",
-  },
-};
 
 export default function BlogLayout({
   children,

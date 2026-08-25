@@ -74,16 +74,6 @@ const calculatorJsonLd = {
 export const metadata: Metadata = {
   title,
   description,
-  keywords: [
-    "voice throughput calculator",
-    "AI call capacity planning",
-    "lead processing calculator",
-    "voice automation scaling",
-    "Vapi calculator",
-    "Retell AI calculator",
-    "call center capacity",
-    "AI voice forecasting"
-  ],
   ...buildOpenGraph({ title, description, path: "/calculator" }),
 };
 
@@ -95,12 +85,11 @@ export default function CalculatorPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(calculatorJsonLd) }}
       />
-      <h1 className="sr-only">Voice Throughput Calculator | Fusion Calling</h1>
       <section className="bg-black text-white border-b border-brand/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl py-14">
-          <h2 className="text-sm font-bold uppercase tracking-wider text-brand-light mb-3">
+          <p className="text-sm font-bold uppercase tracking-wider text-brand-light mb-3">
             AI Call Capacity Planning
-          </h2>
+          </p>
           <p className="text-lg text-gray-300 leading-relaxed">
             Use the calculator below to estimate how many leads your AI voice
             agents can handle. Throughput depends on how many calls run in

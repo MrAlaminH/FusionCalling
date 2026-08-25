@@ -10,6 +10,9 @@ import {
   type WhiteLabelLocation,
 } from "@/lib/whitelabel-locations";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { buildOpenGraph } from "@/lib/seo";
+import { truncateAtWord } from "@/lib/utils";
+
 
 export function generateStaticParams() {
   return whitelabelLocations.map((loc) => ({ slug: loc.slug }));
@@ -25,27 +28,12 @@ export function generateMetadata({
 
   return {
     title: loc.metaTitle,
-    description: loc.metaDescription,
-    keywords: loc.keywords,
-    alternates: {
-      canonical: `/whitelabel/locations/${loc.slug}`,
-    },
-    openGraph: {
+    description: truncateAtWord(loc.metaDescription, 158),
+    ...buildOpenGraph({
       title: loc.metaTitle,
-      description: loc.metaDescription,
-      url: `${SITE_URL}/whitelabel/locations/${loc.slug}`,
-      siteName: "Fusion Calling",
-      images: [
-        {
-          url: "/og.jpg",
-          width: 1200,
-          height: 630,
-          alt: `Fusion Calling - White-Label AI Voice for ${loc.stateName}`,
-        },
-      ],
-      locale: "en_US",
-      type: "website",
-    },
+      description: truncateAtWord(loc.metaDescription, 158),
+      path: `/whitelabel/locations/${loc.slug}`,
+    }),
   };
 }
 

@@ -1,7 +1,3 @@
-"use client";
-
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
 import {
   Code2,
   GraduationCap,
@@ -13,10 +9,9 @@ import {
   Users,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Reveal } from "@/components/ui/reveal";
 
 export default function Benefits() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   const benefits = [
     {
@@ -70,14 +65,11 @@ export default function Benefits() {
   ];
 
   return (
-    <section className="w-full bg-black relative section-spacing" ref={ref}>
+    <section className="w-full bg-black relative section-spacing">
       {/* Subtle background effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="particle"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: [0.05, 0.1, 0.05] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        <div
+          className="particle [animation-duration:10s]"
           style={{
             width: "250px",
             height: "250px",
@@ -85,16 +77,8 @@ export default function Benefits() {
             right: "15%",
           }}
         />
-        <motion.div
-          className="particle"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: [0.04, 0.08, 0.04] }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 3,
-          }}
+        <div
+          className="particle [animation-duration:12s] [animation-delay:3s]"
           style={{
             width: "200px",
             height: "200px",
@@ -106,16 +90,7 @@ export default function Benefits() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Header */}
-        <motion.div
-          className="text-center mb-12 md:mb-16 lg:mb-20"
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -30 }}
-          transition={{
-            duration: 0.8,
-            delay: 0.2,
-            ease: [0.25, 0.1, 0.25, 1.0],
-          }}
-        >
+        <Reveal animation="animate-fade-in-up" className="text-center mb-12 md:mb-16 lg:mb-20">
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">
             Partner
             <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
@@ -127,7 +102,7 @@ export default function Benefits() {
             Everything you need to succeed as a Fusion Calling partner. From
             training materials to dedicated support, we&apos;ve got you covered.
           </p>
-        </motion.div>
+        </Reveal>
 
         {/* Benefits Grid - Asymmetric layout */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
@@ -135,21 +110,12 @@ export default function Benefits() {
             const Icon = benefit.icon;
 
             return (
-              <motion.div
+              <Reveal
                 key={index}
-                initial={{ opacity: 0, y: 40, scale: 0.95 }}
-                animate={{
-                  opacity: isInView ? 1 : 0,
-                  y: isInView ? 0 : 40,
-                  scale: isInView ? 1 : 0.95,
-                }}
-                transition={{
-                  duration: 0.6,
-                  delay: 0.3 + index * 0.08,
-                  ease: [0.25, 0.1, 0.25, 1.0],
-                }}
-                whileHover={{ y: -8, scale: 1.02 }}
-                className="relative group"
+                animation="animate-fade-in-up"
+                duration={0.6}
+                delay={index * 0.08}
+                className="relative group transition-transform duration-300 hover:-translate-y-2 hover:scale-[1.02]"
               >
                 {/* Glow effect on hover */}
                 <div className="absolute -inset-3 bg-gradient-to-br from-brand/20 via-transparent to-transparent rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
@@ -157,12 +123,9 @@ export default function Benefits() {
                 <Card className="glass-light h-full transition-premium border-gray-800/50 hover:border-brand/40">
                   <CardContent className="p-6 md:p-8 space-y-4 md:space-y-5 flex flex-col h-full">
                     {/* Icon with enhanced styling */}
-                    <motion.div
-                      className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-brand/15 to-brand-strong/5 border border-brand/25 flex items-center justify-center flex-shrink-0 group-hover:border-brand/50 transition-premium-fast shadow-premium"
-                      whileHover={{ rotate: 5, scale: 1.1 }}
-                    >
+                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-brand/15 to-brand-strong/5 border border-brand/25 flex items-center justify-center flex-shrink-0 group-hover:border-brand/50 group-hover:rotate-6 group-hover:scale-110 transition-premium-fast shadow-premium">
                       <Icon className="w-6 h-6 md:w-7 md:h-7 text-brand" />
-                    </motion.div>
+                    </div>
 
                     {/* Content */}
                     <div className="flex-grow">
@@ -178,34 +141,23 @@ export default function Benefits() {
                     <div className="w-12 h-1 rounded-full bg-gradient-to-r from-brand/50 to-brand-strong/50 group-hover:w-full transition-all duration-500 ease-out" />
                   </CardContent>
                 </Card>
-              </motion.div>
+              </Reveal>
             );
           })}
         </div>
 
         {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 30 }}
-          transition={{
-            duration: 0.8,
-            delay: 1.0,
-            ease: [0.25, 0.1, 0.25, 1.0],
-          }}
-          className="mt-12 md:mt-16 lg:mt-20 text-center"
-        >
+        <div className="mt-12 md:mt-16 lg:mt-20 text-center">
           <p className="font-body text-gray-400 text-base md:text-lg lg:text-xl mb-6 md:mb-8">
             Ready to experience these benefits?
           </p>
-          <motion.a
+          <a
             href="#cta"
-            className="inline-flex items-center rounded-2xl bg-gradient-to-r from-brand to-brand-strong px-8 md:px-10 lg:px-12 py-3.5 md:py-4 lg:py-5 text-sm md:text-base font-medium text-white transition-premium shadow-premium hover:shadow-premium-lg"
-            whileHover={{ scale: 1.05, y: -3 }}
-            whileTap={{ scale: 0.98 }}
+            className="inline-flex items-center rounded-2xl bg-gradient-to-r from-brand to-brand-strong px-8 md:px-10 lg:px-12 py-3.5 md:py-4 lg:py-5 text-sm md:text-base font-medium text-white transition-premium shadow-premium hover:shadow-premium-lg hover:scale-105 hover:-translate-y-1 active:scale-[0.98]"
           >
             Apply to Become a Partner
-          </motion.a>
-        </motion.div>
+          </a>
+        </div>
       </div>
     </section>
   );

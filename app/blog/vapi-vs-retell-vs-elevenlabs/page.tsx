@@ -1,21 +1,17 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
+import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { getTeamAuthor } from "@/lib/authors";
 
 /* eslint-disable react/no-unescaped-entities */
+
+const teamAuthor = getTeamAuthor();
 
 export const metadata: Metadata = {
   title: "Vapi vs Retell vs ElevenLabs: Which Is Best?",
   description:
     "Compare Vapi, Retell AI, and ElevenLabs for voice AI agencies: strengths, best use cases, and how Fusion Calling unifies all three in one white-label dashboard.",
-  keywords: [
-    "vapi vs retell ai",
-    "elevenlabs voice AI",
-    "voice AI provider comparison",
-    "best voice AI platform",
-    "retell ai vs elevenlabs",
-    "white label voice AI",
-  ],
   alternates: {
     canonical: "/blog/vapi-vs-retell-vs-elevenlabs",
   },
@@ -36,7 +32,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "article",
     publishedTime: "2025-02-14T00:00:00Z",
-    modifiedTime: "2025-02-14T00:00:00Z",
+    modifiedTime: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
     authors: ["Fusion Calling"],
   },
 };
@@ -89,7 +85,7 @@ export default function VapiVsRetellVsElevenLabsBlogPost() {
                   "@id": "https://www.fusioncalling.com/#website",
                 },
                 datePublished: "2025-02-14T00:00:00Z",
-                dateModified: "2025-07-07T00:00:00Z",
+                dateModified: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
                 author: {
                   "@id": "https://www.fusioncalling.com/team/voice-team#person"
                 },
@@ -198,10 +194,24 @@ export default function VapiVsRetellVsElevenLabsBlogPost() {
             unifies all three under one white-label dashboard.
           </p>
 
-          <div className="flex items-center gap-6 text-sm text-gray-500">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-500">
             <span>February 14, 2025</span>
             <span>•</span>
-            <span>By Fusion Calling Team</span>
+            <Link
+              href={`/team/${teamAuthor.slug}`}
+              className="flex items-center gap-2 hover:text-brand-light transition-colors"
+            >
+              <Image
+                src={teamAuthor.avatar}
+                alt={teamAuthor.name}
+                width={24}
+                height={24}
+                className="w-6 h-6 rounded-full object-cover"
+              />
+              <span>By {teamAuthor.name}</span>
+            </Link>
+            <span>•</span>
+            <span>Last updated: July 7, 2026</span>
           </div>
         </div>
 
@@ -235,7 +245,11 @@ export default function VapiVsRetellVsElevenLabsBlogPost() {
               </p>
               <p className="text-gray-300 leading-relaxed mb-4">
                 That means the provider you build on matters. Each of the three
-                leading platforms — Vapi, Retell AI, and ElevenLabs — has genuine
+                leading platforms —{" "}
+                <Link href="/glossary/vapi" className="text-brand-light hover:text-brand transition-colors">Vapi</Link>,{" "}
+                <Link href="/glossary/retell-ai" className="text-brand-light hover:text-brand transition-colors">Retell AI</Link>, and{" "}
+                <Link href="/glossary/elevenlabs" className="text-brand-light hover:text-brand transition-colors">ElevenLabs</Link>{" "}
+                — has genuine
                 strengths, and the &quot;best&quot; choice depends on what you're
                 building, who the client is, and what trade-offs you can accept.
               </p>
@@ -263,7 +277,12 @@ export default function VapiVsRetellVsElevenLabsBlogPost() {
                   <p className="text-gray-400 text-sm mb-3">
                     A flexible developer platform with broad tooling for building
                     custom voice agents. Popular for teams that want deep control
-                    over call flows, tools, and integrations.
+                    over call flows, tools, and integrations. Building on it? See
+                    how{" "}
+                    <Link href="/whitelabel/vapi" className="text-brand-light hover:text-brand transition-colors">
+                      white-labeling Vapi
+                    </Link>{" "}
+                    works.
                   </p>
                   <ul className="space-y-2 text-gray-400 text-sm">
                     <li className="flex items-start gap-2">
@@ -294,7 +313,12 @@ export default function VapiVsRetellVsElevenLabsBlogPost() {
                   <ul className="space-y-2 text-gray-400 text-sm">
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 mt-2 rounded-full bg-brand flex-shrink-0" />
-                      <span>Low-latency real-time conversation</span>
+                      <span>
+                        <Link href="/glossary/latency" className="text-brand-light hover:text-brand transition-colors">
+                          Low-latency
+                        </Link>{" "}
+                        real-time conversation
+                      </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 mt-2 rounded-full bg-brand flex-shrink-0" />
@@ -495,7 +519,11 @@ export default function VapiVsRetellVsElevenLabsBlogPost() {
               </h2>
               <p className="text-gray-300 leading-relaxed mb-6">
                 Fusion Calling keeps the model simple. Your only platform cost is
-                a flat monthly subscription — and you keep 100% of the revenue you
+                a flat monthly subscription (see the{" "}
+                <Link href="/pricing" className="text-brand-light hover:text-brand transition-colors">
+                  pricing breakdown
+                </Link>
+                ) — and you keep 100% of the revenue you
                 charge your clients.
               </p>
 
@@ -594,8 +622,11 @@ export default function VapiVsRetellVsElevenLabsBlogPost() {
                 Fusion Calling is the white-label layer that makes that possible —
                 unifying all three providers under one branded dashboard so you
                 keep full control, keep 100% of your client revenue, and launch in
-                about a week. You can hear it for yourself on our live homepage
-                demo, then decide which engines fit your clients best.
+                about a week. You can hear it for yourself on our{" "}
+                <Link href="/#show-case" className="text-brand-light hover:text-brand transition-colors">
+                  live homepage demo
+                </Link>
+                , then decide which engines fit your clients best.
               </p>
 
               <Link
@@ -645,25 +676,32 @@ export default function VapiVsRetellVsElevenLabsBlogPost() {
         {/* Author Bio */}
         <div className="mt-12 pt-8 border-t border-brand/20">
           <div className="flex items-start gap-6">
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-brand to-brand-strong flex items-center justify-center flex-shrink-0">
-              <span className="text-2xl font-bold text-white">FC</span>
-            </div>
+            <Image
+              src={teamAuthor.avatar}
+              alt={teamAuthor.name}
+              width={64}
+              height={64}
+              className="w-16 h-16 rounded-full object-cover border border-brand/30 flex-shrink-0"
+            />
             <div className="flex-1">
               <h3 className="text-lg font-bold text-white mb-2">About the Author</h3>
               <p className="text-gray-400 text-sm mb-3">
-                <strong className="text-brand-strong">Fusion Calling Team</strong>
+                <Link
+                  href={`/team/${teamAuthor.slug}`}
+                  className="text-brand-strong hover:text-brand transition-colors"
+                >
+                  <strong>{teamAuthor.name}</strong>
+                </Link>
               </p>
               <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                We're the team behind Fusion Calling's white-label AI voice platform. Having helped 50+ agencies launch profitable voice AI practices since 2025, we specialize in helping businesses scale their phone operations with cutting-edge automation technology.
+                {teamAuthor.shortBio}
               </p>
               <div className="flex items-center gap-4 text-sm">
                 <a
-                  href="https://www.fusioncalling.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={`mailto:${teamAuthor.email}`}
                   className="text-brand-strong hover:text-brand transition-colors"
                 >
-                  Website →
+                  Email →
                 </a>
                 <a
                   href="/whitelabel"

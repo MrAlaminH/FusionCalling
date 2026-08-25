@@ -5,11 +5,11 @@ import { cn } from "@/lib/utils";
 
 interface RevealProps {
   children: ReactNode;
-  /** Tailwind animation class — one of the custom entrance animations. */
+  /** Entrance direction. Defaults to a fade-up. */
   animation?: "animate-fade-in-up" | "animate-fade-in-left" | "animate-fade-in-right" | "animate-scale-in";
-  /** Delay in seconds before the animation starts. */
+  /** Delay in seconds before the transition starts. */
   delay?: number;
-  /** Animation duration in seconds. Appended as a style; the CSS default is 0.8s. */
+  /** Transition duration in seconds. */
   duration?: number;
   /** Additional classes on the wrapper element. */
   className?: string;
@@ -21,9 +21,10 @@ interface RevealProps {
 
 /**
  * Lightweight scroll-triggered entrance animation.
- * Replaces framer-motion `useInView` + `motion.div` with CSS-only animations.
+ * Replaces framer-motion `useInView` + `motion.div` with CSS-only
+ * opacity/transform transitions (no keyframes or JS animation needed).
  *
- * Uses IntersectionObserver to apply the animation class when the element
+ * Uses IntersectionObserver to toggle the visible classes when the element
  * scrolls into view. Respects `prefers-reduced-motion` via the global CSS rule.
  *
  * @example
@@ -65,17 +66,27 @@ export function Reveal({
     return () => observer.disconnect();
   }, [once]);
 
+  // Hidden state per direction; when visible, all offsets reset to zero.
+  const hiddenOffset =
+    animation === "animate-fade-in-left"
+      ? "-translate-x-5"
+      : animation === "animate-fade-in-right"
+        ? "translate-x-5"
+        : animation === "animate-scale-in"
+          ? "scale-95"
+          : "translate-y-5";
+
   return (
     <Tag
       ref={ref}
       className={cn(
-        "opacity-0", // hidden until triggered
-        isVisible && animation,
+        "transition-[opacity,transform] duration-700 ease-out",
+        isVisible ? "opacity-100 translate-x-0 translate-y-0 scale-100" : cn("opacity-0", hiddenOffset),
         className,
       )}
       style={{
-        animationDelay: delay > 0 ? `${delay}s` : undefined,
-        animationDuration: duration ? `${duration}s` : undefined,
+        transitionDelay: delay > 0 ? `${delay}s` : undefined,
+        transitionDuration: duration ? `${duration}s` : undefined,
       }}
     >
       {children}

@@ -103,7 +103,6 @@ export default function AboutPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }}
       />
-      <h1 className="sr-only">About Fusion Calling | AI Voice Agents</h1>
       <main className="min-h-screen w-full bg-black text-white">
       {/* Hero */}
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl pt-28 pb-12 md:pt-36 md:pb-16">
@@ -140,6 +139,13 @@ export default function AboutPage() {
           profitable voice-AI practices, and we&apos;ve shipped white-label
           infrastructure used across real estate, dental, insurance, home
           services, legal, and automotive teams.
+        </p>
+        <p className="text-gray-400 leading-relaxed">
+          Curious what it costs?{" "}
+          <Link href="/pricing" className="text-brand hover:underline">
+            view pricing
+          </Link>{" "}
+          for transparent plans on every tier.
         </p>
       </section>
 
@@ -237,7 +243,7 @@ export default function AboutPage() {
         </p>
         <div className="flex flex-wrap items-center justify-center gap-3">
           <Link
-            href="/#pricing"
+            href="/pricing"
             className="rounded-full bg-brand px-6 py-3 text-sm font-medium text-brand-foreground hover:bg-brand-strong transition-colors"
           >
             See pricing

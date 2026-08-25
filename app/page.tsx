@@ -1,10 +1,12 @@
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Tools from "@/components/Tools";
 import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { buildOpenGraph } from "@/lib/seo";
 
 // Below-the-fold sections are code-split so their JavaScript is not part of
 // the initial page bundle. They still render server-side (default ssr:true)
@@ -22,29 +24,15 @@ const FAQSection = dynamic(() => import("@/components/FAQs"));
 const Calendar = dynamic(() => import("@/components/calendar"), { ssr: false });
 
 export const metadata: Metadata = {
-  title: "AI Phone Call Automation & AI Receptionist | Fusion Calling",
+  title: "AI Phone Call Automation & AI Receptionist",
   description:
     "Fusion Calling AI voice agents handle inbound and outbound calls 24/7: book appointments, qualify leads, and automate customer interactions with voice AI.",
-  keywords: [
-    "AI phone call automation",
-    "AI receptionist",
-    "virtual agent",
-    "automated calls",
-    "voice AI",
-    "call center automation",
-    "lead generation AI",
-  ],
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
+  ...buildOpenGraph({
     title: "AI Phone Call Automation & AI Receptionist | Fusion Calling",
     description:
       "Automate inbound & outbound calls with human-like AI voice agents. Book appointments, qualify leads, and scale your phone operations 24/7.",
-    url: "https://www.fusioncalling.com/",
-    siteName: "Fusion Calling",
-    type: "website",
-  },
+    path: "/",
+  }),
 };
 
 export default function Home() {
@@ -85,8 +73,8 @@ export default function Home() {
         image: "https://www.fusioncalling.com/logo.webp",
         description: "AI-powered phone call automation for businesses. Streamline customer interactions, save time, and increase productivity with advanced voice technology.",
         url: "https://www.fusioncalling.com/",
-        telephone: "+1-202-998-3591",
-        email: "contact@fusioncalling.com",
+        telephone: "+1-914-639-4069",
+        email: "hello@fusioncalling.com",
         address: {
           "@type": "PostalAddress",
           addressCountry: "US"
@@ -300,6 +288,16 @@ export default function Home() {
       </section>
       <section id="pricing" className="scroll-mt-24">
         <PricingSection />
+        <p className="text-center text-gray-400 text-sm sm:text-base pb-8">
+          Want the full breakdown?{" "}
+          <Link
+            href="/pricing"
+            className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors"
+          >
+            See pricing details for every plan
+          </Link>
+          .
+        </p>
       </section>
       <section id="faqs" className="scroll-mt-24">
         <FAQSection />
@@ -318,7 +316,14 @@ export default function Home() {
               Call
             </h2>
             <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-3xl mx-auto">
-              Book a convenient time slot for us to discuss your needs and how we can help you succeed.
+              Book a convenient time slot for us to discuss your needs and how we can help you succeed. Not sure which plan fits?{" "}
+              <Link
+                href="/pricing"
+                className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors"
+              >
+                Compare pricing first
+              </Link>
+              .
             </p>
           </div>
 

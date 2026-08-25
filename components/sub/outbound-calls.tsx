@@ -1,8 +1,5 @@
-"use client";
-
-import { useEffect, useRef } from "react";
 import Image from "next/image";
-import { motion, useAnimation, useInView } from "framer-motion";
+import { Reveal } from "@/components/ui/reveal";
 import { Card } from "@/components/ui/card";
 import {
   ShoppingCart,
@@ -21,28 +18,9 @@ type FeatureCardProps = {
   description: string;
 };
 
-const FeatureCard = ({ icon: Icon, title, description }: FeatureCardProps) => {
-  const controls = useAnimation();
-  const ref = useRef(null);
-  const inView = useInView(ref);
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
+function FeatureCard({ icon: Icon, title, description }: FeatureCardProps) {
   return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={controls}
-      variants={{
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0 },
-      }}
-      transition={{ duration: 0.5 }}
-    >
+    <Reveal animation="animate-fade-in-up" duration={0.5}>
       <Card className="p-6 bg-gradient-to-br from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 transition-all duration-300 h-full">
         <div className="w-12 h-12 rounded-full bg-white/10 mb-4 flex items-center justify-center">
           <Icon className="text-white" width={24} height={24} />
@@ -50,33 +28,14 @@ const FeatureCard = ({ icon: Icon, title, description }: FeatureCardProps) => {
         <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
         <p className="text-white/90 text-sm">{description}</p>
       </Card>
-    </motion.div>
+    </Reveal>
   );
-};
+}
 
 export default function OutboundCalls() {
-  const controls = useAnimation();
-  const ref = useRef(null);
-  const inView = useInView(ref);
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
   return (
     <div className="container mx-auto px-1 py-12 space-y-12">
-      <motion.div
-        ref={ref}
-        initial="hidden"
-        animate={controls}
-        variants={{
-          hidden: { opacity: 0, y: 50 },
-          visible: { opacity: 1, y: 0 },
-        }}
-        transition={{ duration: 0.5 }}
-      >
+      <Reveal animation="animate-fade-in-up" duration={0.5}>
         <Card className="w-full p-8 bg-black border-orange-500/20 group relative overflow-hidden transition-all duration-500 hover:shadow-lg hover:shadow-orange-600 hover:-translate-y-1 min-h-[200px]">
           <div className="flex flex-col lg:flex-row gap-8">
             <div className="flex-shrink-0 rounded-lg overflow-hidden lg:w-1/3">
@@ -120,7 +79,7 @@ export default function OutboundCalls() {
             </div>
           </div>
         </Card>
-      </motion.div>
+      </Reveal>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <FeatureCard

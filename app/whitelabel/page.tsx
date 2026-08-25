@@ -9,46 +9,20 @@ import Benefits from "@/components/white-label/Benefits";
 import FAQ from "@/components/white-label/FAQ";
 import CTA from "@/components/white-label/CTA";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { buildOpenGraph } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "White-Label AI Voice Agents (Vapi, Retell)",
   description:
     "Resell AI voice agents under your brand via Fusion Calling white-label program. Import Vapi, Retell and ElevenLabs agents, set pricing, keep 100% of revenue.",
-  keywords: [
-    "white-label AI voice solution",
-    "resell AI phone automation",
-    "agency partnership program",
-    "AI voice reseller",
-    "white-label call center AI",
-    "agency SaaS partnership",
-    "AI voice reseller program",
-    "B2B voice automation platform",
-    "import Vapi agents white label",
-    "bring your own Retell agent",
-    "multi-provider voice AI white label",
-    "resell ElevenLabs voice white label",
-  ],
-  alternates: {
-    canonical: "/whitelabel",
-  },
-  openGraph: {
-    title: "White-Label AI Voice Agents",
+  ...buildOpenGraph({
+    title: "White-Label AI Voice Agents (Vapi, Retell) | Fusion Calling",
     description:
       "Resell AI voice agents under your own brand. Import your Vapi, Retell & ElevenLabs agents and keep 100% of the revenue.",
-    url: "https://www.fusioncalling.com/whitelabel",
-    siteName: "Fusion Calling",
-    images: [
-      {
-        url: "/og.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Fusion Calling - White-label AI Voice Solution",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
+    path: "/whitelabel",
+  }),
 };
 
 export default function WhiteLabelPage() {
@@ -111,8 +85,8 @@ export default function WhiteLabelPage() {
                     image: "https://www.fusioncalling.com/logo.webp",
                     description: "White-label AI voice solution for agencies and resellers. Offer AI phone automation under your own brand with full customization and pricing you control.",
                     url: "https://www.fusioncalling.com/whitelabel",
-                    telephone: "+1-202-998-3591",
-                    email: "partners@fusioncalling.com",
+                    telephone: "+1-914-639-4069",
+                    email: "hello@fusioncalling.com",
                     parentOrganization: {
                       "@id": "https://www.fusioncalling.com/#organization"
                     },
@@ -429,7 +403,6 @@ export default function WhiteLabelPage() {
           />
       <main id="main" className="min-h-screen w-full bg-black">
       <WhiteLabelNavbar />
-      <h1 className="sr-only">White-Label AI Voice Agents (Vapi, Retell) | Fusion Calling</h1>
       <section id="hero" className="scroll-mt-24">
         <Hero />
       </section>
@@ -451,6 +424,25 @@ export default function WhiteLabelPage() {
       <section id="faq" className="scroll-mt-16">
         <FAQ />
       </section>
+      <div className="text-center px-4 pb-4">
+        <p className="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto">
+          Comparing platforms?{" "}
+          <Link
+            href="/whitelabel/compare"
+            className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors"
+          >
+            See how we compare
+          </Link>{" "}
+          or{" "}
+          <Link
+            href="/pricing"
+            className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors"
+          >
+            see pricing details
+          </Link>
+          .
+        </p>
+      </div>
       <section id="cta" className="scroll-mt-24">
         <CTA />
       </section>

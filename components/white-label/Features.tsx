@@ -1,8 +1,5 @@
-"use client";
-
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
 import Image from "next/image";
+import { Reveal } from "@/components/ui/reveal";
 import {
   Palette,
   LayoutDashboard,
@@ -14,9 +11,6 @@ import {
 } from "lucide-react";
 
 export default function Features() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   const features = [
     {
       icon: Palette,
@@ -72,14 +66,11 @@ export default function Features() {
   ];
 
   return (
-    <section className="w-full bg-black relative section-spacing" ref={ref}>
+    <section className="w-full bg-black relative section-spacing">
       {/* Atmospheric Background Effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="particle"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: [0.08, 0.15, 0.08] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        <div
+          className="particle [animation-duration:8s]"
           style={{
             width: "300px",
             height: "300px",
@@ -87,16 +78,8 @@ export default function Features() {
             left: "5%",
           }}
         />
-        <motion.div
-          className="particle"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: [0.06, 0.12, 0.06] }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2,
-          }}
+        <div
+          className="particle [animation-duration:10s] [animation-delay:2s]"
           style={{
             width: "250px",
             height: "250px",
@@ -104,16 +87,8 @@ export default function Features() {
             right: "10%",
           }}
         />
-        <motion.div
-          className="particle"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: [0.05, 0.1, 0.05] }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 4,
-          }}
+        <div
+          className="particle [animation-duration:12s] [animation-delay:4s]"
           style={{
             width: "200px",
             height: "200px",
@@ -125,16 +100,7 @@ export default function Features() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Header */}
-        <motion.div
-          className="text-center mb-12 md:mb-16 lg:mb-20"
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -30 }}
-          transition={{
-            duration: 0.8,
-            delay: 0.2,
-            ease: [0.25, 0.1, 0.25, 1.0],
-          }}
-        >
+        <Reveal animation="animate-fade-in-up" className="text-center mb-12 md:mb-16 lg:mb-20">
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">
             Complete White-label
             <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
@@ -146,7 +112,7 @@ export default function Features() {
             Everything you need to launch and scale your AI phone automation
             business under your own brand. No technical expertise required.
           </p>
-        </motion.div>
+        </Reveal>
 
         {/* Features */}
         <div className="space-y-16 md:space-y-20 lg:space-y-24">
@@ -155,18 +121,8 @@ export default function Features() {
             const isEven = index % 2 === 0;
 
             return (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 60 }}
-                animate={{
-                  opacity: isInView ? 1 : 0,
-                  y: isInView ? 0 : 60,
-                }}
-                transition={{
-                  duration: 0.8,
-                  delay: 0.3 + index * 0.15,
-                  ease: [0.25, 0.1, 0.25, 1.0],
-                }}
                 className={`grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-center ${
                   isEven ? "" : "lg:grid-flow-col-dense"
                 }`}
@@ -175,30 +131,16 @@ export default function Features() {
                 <div
                   className={`order-1 lg:col-span-5 ${!isEven ? "lg:order-2" : ""}`}
                 >
-                  <motion.div
-                    initial={{ opacity: 0, x: isEven ? -30 : 30 }}
-                    animate={{
-                      opacity: isInView ? 1 : 0,
-                      x: isInView ? 0 : isEven ? -30 : 30,
-                    }}
-                    transition={{
-                      duration: 0.7,
-                      delay: 0.5 + index * 0.15,
-                      ease: [0.25, 0.1, 0.25, 1.0],
-                    }}
+                  <Reveal
+                    animation={isEven ? "animate-fade-in-left" : "animate-fade-in-right"}
+                    duration={0.7}
+                    delay={index * 0.15}
                     className="space-y-5 md:space-y-6 lg:space-y-7"
                   >
                     {/* Icon - Slightly smaller */}
-                    <motion.div
-                      className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-brand/20 via-brand-strong/10 to-brand/5 border border-brand/30 shadow-premium"
-                      whileHover={{ scale: 1.05, rotate: 2 }}
-                      transition={{
-                        duration: 0.3,
-                        ease: [0.25, 0.1, 0.25, 1.0],
-                      }}
-                    >
+                    <div className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-brand/20 via-brand-strong/10 to-brand/5 border border-brand/30 shadow-premium transition-transform duration-300 hover:scale-105 hover:rotate-2">
                       <Icon className="w-7 h-7 md:w-9 md:h-9 text-brand" />
-                    </motion.div>
+                    </div>
 
                     {/* Title - Slightly reduced for better balance */}
                     <h3 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
@@ -213,25 +155,15 @@ export default function Features() {
                     {/* Features List - More compact */}
                     <ul className="space-y-2 md:space-y-2.5">
                       {feature.items.map((item, idx) => (
-                        <motion.li
+                        <li
                           key={idx}
                           className="flex items-start gap-2 md:gap-2.5 text-gray-300"
-                          initial={{ opacity: 0, x: -10 }}
-                          animate={{
-                            opacity: isInView ? 1 : 0,
-                            x: isInView ? 0 : -10,
-                          }}
-                          transition={{
-                            duration: 0.5,
-                            delay: 0.7 + index * 0.15 + idx * 0.05,
-                            ease: [0.25, 0.1, 0.25, 1.0],
-                          }}
                         >
                           <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-gradient-to-br from-brand to-brand-strong mt-2 md:mt-2.5 flex-shrink-0 shadow-premium" />
                           <span className="font-body text-sm md:text-base">
                             {item}
                           </span>
-                        </motion.li>
+                        </li>
                       ))}
                     </ul>
 
@@ -240,44 +172,29 @@ export default function Features() {
                       {feature.highlights.map((highlight, idx) => {
                         const HighlightIcon = highlight.icon;
                         return (
-                          <motion.div
+                          <div
                             key={idx}
-                            className="flex items-center gap-2 md:gap-2.5 px-3.5 py-1.5 md:px-4 md:py-2 rounded-xl glass-light border border-brand/20 hover:border-brand/40 transition-premium-fast"
-                            whileHover={{ scale: 1.05, y: -2 }}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{
-                              duration: 0.5,
-                              delay: 0.9 + index * 0.15 + idx * 0.1,
-                              ease: [0.25, 0.1, 0.25, 1.0],
-                            }}
+                            className="flex items-center gap-2 md:gap-2.5 px-3.5 py-1.5 md:px-4 md:py-2 rounded-xl glass-light border border-brand/20 hover:border-brand/40 hover:-translate-y-0.5 hover:scale-[1.05] transition-premium-fast"
                           >
                             <HighlightIcon className="w-3.5 h-3.5 md:w-4 md:h-4 text-brand" />
                             <span className="font-body text-xs md:text-sm text-gray-300 font-medium">
                               {highlight.text}
                             </span>
-                          </motion.div>
+                          </div>
                         );
                       })}
                     </div>
-                  </motion.div>
+                  </Reveal>
                 </div>
 
                 {/* Image Content - 7/12 on desktop for larger, more prominent images */}
                 <div
                   className={`order-2 lg:col-span-7 ${!isEven ? "lg:order-1" : ""} relative`}
                 >
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.92 }}
-                    animate={{
-                      opacity: isInView ? 1 : 0,
-                      scale: isInView ? 1 : 0.92,
-                    }}
-                    transition={{
-                      duration: 0.9,
-                      delay: 0.4 + index * 0.15,
-                      ease: [0.25, 0.1, 0.25, 1.0],
-                    }}
+                  <Reveal
+                    animation="animate-scale-in"
+                    duration={0.9}
+                    delay={index * 0.15}
                     className="relative group"
                   >
                     {/* Multi-layer glow system - Enhanced for larger images */}
@@ -311,44 +228,30 @@ export default function Features() {
                       {/* Hover gradient overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-30" />
 
-                      {/* Shimmer effect on hover */}
-                      <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent z-40 pointer-events-none"
-                        initial={{ x: "-100%" }}
-                        whileHover={{ x: "100%" }}
-                        transition={{ duration: 1.5, ease: "easeInOut" }}
-                      />
+                      {/* Shimmer effect on hover (CSS-only) */}
+                      <div className="absolute inset-0 overflow-hidden z-40 pointer-events-none rounded-b-none">
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-[1500ms] ease-in-out" />
+                      </div>
                     </div>
-                  </motion.div>
+                  </Reveal>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>
 
         {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 40 }}
-          transition={{
-            duration: 0.8,
-            delay: 1.2,
-            ease: [0.25, 0.1, 0.25, 1.0],
-          }}
-          className="mt-16 md:mt-20 lg:mt-24 text-center"
-        >
-          <motion.a
+        <Reveal animation="animate-fade-in-up" className="mt-16 md:mt-20 lg:mt-24 text-center">
+          <a
             href="#cta"
-            className="inline-flex items-center gap-3 px-8 py-4 md:px-10 md:py-5 rounded-2xl glass-light border border-brand/30 hover:border-brand/50 transition-premium cursor-pointer group shadow-premium"
-            whileHover={{ scale: 1.05, y: -4 }}
-            whileTap={{ scale: 0.98 }}
+            className="inline-flex items-center gap-3 px-8 py-4 md:px-10 md:py-5 rounded-2xl glass-light border border-brand/30 hover:border-brand/50 hover:scale-105 hover:-translate-y-1 active:scale-[0.98] transition-premium cursor-pointer group shadow-premium"
           >
             <span className="font-display text-white font-semibold text-lg md:text-xl">
               Ready to start your white-label journey?
             </span>
             <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-brand group-hover:translate-x-2 transition-transform duration-300" />
-          </motion.a>
-        </motion.div>
+          </a>
+        </Reveal>
       </div>
     </section>
   );

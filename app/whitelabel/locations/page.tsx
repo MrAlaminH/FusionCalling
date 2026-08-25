@@ -5,40 +5,21 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/white-label/CTA";
 import { whitelabelLocations } from "@/lib/whitelabel-locations";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { buildOpenGraph } from "@/lib/seo";
+import { truncateAtWord } from "@/lib/utils";
 
-const title = "White-Label AI Voice by State | Fusion Calling Partner Program";
+const title = "White-Label AI Voice by State";
 const description =
   "White-label AI voice agents for agencies across all 50 states. Resell Vapi, Retell & ElevenLabs under your own brand. State-specific compliance support. Start at $99/mo.";
 
 export const metadata: Metadata = {
   title,
   description,
-  keywords: [
-    "white-label AI voice by state",
-    "AI voice reseller program USA",
-    "white-label voice AI agency",
-    "resell AI voice agents state-by-state",
-    "AI voice agency partnership",
-  ],
-  alternates: {
-    canonical: "/whitelabel/locations",
-  },
-  openGraph: {
-    title,
-    description,
-    url: `${SITE_URL}/whitelabel/locations`,
-    siteName: "Fusion Calling",
-    images: [
-      {
-        url: "/og.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Fusion Calling - White-Label AI Voice by State",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
+  ...buildOpenGraph({
+    title: `${title} | Fusion Calling Partner Program`,
+    description: truncateAtWord(description, 158),
+    path: "/whitelabel/locations",
+  }),
 };
 
 export default function WhitelabelLocationsHub() {

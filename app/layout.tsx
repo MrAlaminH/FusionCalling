@@ -4,6 +4,7 @@ import "./globals.css";
 import ChatWidget from "@/components/chat/ChatWidget";
 import { PostHogProvider } from "./providers";
 import SuspendedPostHogPageView from "./PostHogPageView";
+import { SITE_URL } from "@/lib/site-url";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -20,41 +21,26 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.fusioncalling.com/"),
+  metadataBase: new URL(`${SITE_URL}/`),
   title: {
     default: "Fusion Calling | AI Phone Call Automation for Businesses",
     template: "%s | Fusion Calling",
   },
   description:
     "Boost business efficiency with Fusion Calling's AI-powered phone call automation. Streamline customer interactions, save time, and increase productivity.",
-  keywords: [
-    "AI phone call automation",
-    "business automation",
-    "voice technology",
-    "customer service AI",
-    "Fusion Calling",
-    "automated calls",
-    "virtual receptionist",
-    "virtual agent",
-    "lead generation AI",
-    "ai receptionist",
-    "call center automation",
-    "automated receptionist",
-  ],
   twitter: {
     card: "summary_large_image",
     site: "@fusioncalling",
-    title:
-      "Fusion Calling | AI Phone Call Automation for Businesses | ai receptionist",
+    title: "Fusion Calling | AI Phone Call Automation for Businesses",
     description:
-      "Boost your business efficiency with Fusion Calling's AI-powered ai receptionist phone call automation. Streamline customer interactions, save time, and increase productivity with advanced voice technology.",
+      "Launch a white-label AI voice agency with Fusion Calling. Streamline customer interactions, save time, and increase productivity with advanced voice AI.",
     images: ["/opengraph-image.png"],
   },
   openGraph: {
     title: "Fusion Calling | AI Phone Call Automation for Businesses",
     description:
-      "Boost your business efficiency with Fusion Calling's AI-powered ai receptionist phone call automation. Streamline customer interactions, save time, and increase productivity with advanced voice technology.",
-    url: "https://www.fusioncalling.com/",
+      "Boost your business efficiency with Fusion Calling's AI-powered phone call automation. Streamline customer interactions, save time, and increase productivity.",
+    url: `${SITE_URL}/`,
     siteName: "Fusion Calling",
     images: [
       {
@@ -80,7 +66,6 @@ export default function RootLayout({
       className={`${outfit.variable} ${jakarta.variable} scroll-smooth`}
     >
       <head>
-        <link rel="icon" href="/favicon.ico" />
         {/* Search-engine verification tags. Rendered only when the matching
             env var is provided, so deploying without them is harmless. The user
             pastes their Google Search Console / Bing WMT codes into env. */}
@@ -111,73 +96,66 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@graph": [
-{
-                    "@type": "Organization",
-                    "@id": "https://www.fusioncalling.com/#organization",
-                    name: "Fusion Calling",
-                    url: "https://www.fusioncalling.com/",
-                    logo: {
-                      "@type": "ImageObject",
-                      url: "https://www.fusioncalling.com/logo.webp",
-                      width: 512,
-                      height: 512,
-                    },
-                    description:
-                      "AI-powered phone call automation for businesses. Streamline customer interactions, save time, and increase productivity with advanced voice technology.",
-                    sameAs: [
-                      "https://twitter.com/fusioncalling",
-                      "https://www.linkedin.com/company/fusion-calling/",
-                    ],
-                    contactPoint: {
-                      "@type": "ContactPoint",
-                      telephone: "+1-202-998-3591",
-                      contactType: "sales",
-                      areaServed: "US",
-                      availableLanguage: "English",
-                    },
+                {
+                  "@type": "Organization",
+                  "@id": `${SITE_URL}/#organization`,
+                  name: "Fusion Calling",
+                  url: `${SITE_URL}/`,
+                  logo: {
+                    "@type": "ImageObject",
+                    url: `${SITE_URL}/logo.webp`,
+                    width: 512,
+                    height: 512,
                   },
-                  {
-                    "@type": "Person",
-                    "@id": "https://www.fusioncalling.com/team/voice-team#person",
-                    name: "Fusion Calling Voice Team",
-                    url: "https://www.fusioncalling.com/team/fusioncalling-team",
-                    jobTitle: "Product & Voice Engineering",
-                    worksFor: {
-                      "@id": "https://www.fusioncalling.com/#organization",
-                    },
-                    description: "The team behind Fusion Calling's voice AI platform. 500+ agencies, millions of calls automated.",
-                    image: "https://www.fusioncalling.com/avatars/team.webp",
-                    sameAs: [
-                      "https://www.linkedin.com/company/fusion-calling/",
-                      "https://twitter.com/fusioncalling",
-                    ],
-                    email: "team@fusioncalling.com",
-                    knowsAbout: [
-                      "Voice AI",
-                      "Conversational AI",
-                      "White-label SaaS",
-                      "Agency Growth",
-                      "AI Phone Automation",
-                    ],
+                  description:
+                    "AI-powered phone call automation for businesses. Streamline customer interactions, save time, and increase productivity with advanced voice technology.",
+                  sameAs: [
+                    "https://twitter.com/fusioncalling",
+                    "https://www.linkedin.com/company/fusion-calling/",
+                  ],
+                  contactPoint: {
+                    "@type": "ContactPoint",
+                    telephone: "+1-914-639-4069",
+                    contactType: "sales",
+                    areaServed: "US",
+                    availableLanguage: "English",
+                    email: "hello@fusioncalling.com",
                   },
+                },
+                {
+                  "@type": "Person",
+                  "@id": `${SITE_URL}/team/voice-team#person`,
+                  name: "Fusion Calling Voice Team",
+                  url: `${SITE_URL}/team/voice-team`,
+                  jobTitle: "Product & Voice Engineering",
+                  worksFor: {
+                    "@id": `${SITE_URL}/#organization`,
+                  },
+                  description:
+                    "The team behind Fusion Calling's voice AI platform. 500+ agencies, millions of calls automated.",
+                  image: `${SITE_URL}/avatars/team.webp`,
+                  sameAs: [
+                    "https://www.linkedin.com/company/fusion-calling/",
+                    "https://twitter.com/fusioncalling",
+                  ],
+                  email: "team@fusioncalling.com",
+                  knowsAbout: [
+                    "Voice AI",
+                    "Conversational AI",
+                    "White-label SaaS",
+                    "Agency Growth",
+                    "AI Phone Automation",
+                  ],
+                },
                 {
                   "@type": "WebSite",
-                  "@id": "https://www.fusioncalling.com/#website",
-                  url: "https://www.fusioncalling.com/",
+                  "@id": `${SITE_URL}/#website`,
+                  url: `${SITE_URL}/`,
                   name: "Fusion Calling",
                   description:
                     "AI-powered phone call automation for businesses",
                   publisher: {
-                    "@id": "https://www.fusioncalling.com/#organization",
-                  },
-                  potentialAction: {
-                    "@type": "SearchAction",
-                    target: {
-                      "@type": "EntryPoint",
-                      urlTemplate:
-                        "https://www.fusioncalling.com/search?q={search_term_string}",
-                    },
-                    "query-input": "required name=search_term_string",
+                    "@id": `${SITE_URL}/#organization`,
                   },
                 },
               ],

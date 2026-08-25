@@ -5,21 +5,14 @@ import { buildOpenGraph } from "@/lib/seo";
 
 export const revalidate = 86400;
 
-const title = "Voice AI Glossary | Fusion Calling";
+// No hardcoded "| Fusion Calling" — the root layout title template appends it.
+const title = "Voice AI Glossary";
 const description =
   "A complete glossary of voice AI terms for agencies & resellers, with plain-English definitions of ASR, TTS, latency, HIPAA, white-label, and more.";
 
 export const metadata: Metadata = {
   title,
   description,
-  keywords: [
-    "voice ai glossary",
-    "ai voice terminology",
-    "what is asr",
-    "what is tts",
-    "white label voice ai",
-    "voice ai definitions",
-  ],
   ...buildOpenGraph({ title, description, path: "/glossary" }),
 };
 

@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { buildOpenGraph } from "@/lib/seo";
+import { blogPosts as blogPostData } from "@/lib/blog-posts";
 
 export const revalidate = 3600;
 
@@ -18,86 +19,7 @@ export const metadata: Metadata = {
   }),
 };
 
-const blogPosts = [
-  {
-    slug: "how-to-start-a-voice-ai-agency",
-    title: "How to Start a Voice AI Agency in 2025: A Step-by-Step Guide",
-    description:
-      "The smart way to launch a voice AI agency without building infrastructure: partner with a white-label platform, pick a niche, set pricing, and land your first client.",
-    date: "2025-02-13",
-    category: "Agency Growth",
-    readTime: "9 min read",
-    image: "/blog/blog1.webp",
-  },
-  {
-    slug: "gohighlevel-alternative-for-voice-ai",
-    title: "GoHighLevel Alternative for Voice AI: Built-In CRM + Voice Agents",
-    description:
-      "For voice-first agencies, Fusion Calling bundles AI voice agents with a built-in CRM, so you don't need an expensive GoHighLevel subscription just to run a voice AI agency.",
-    date: "2025-02-16",
-    category: "Buyer's Guide",
-    readTime: "9 min read",
-    image: "/blog/blog2.webp",
-  },
-  {
-    slug: "vapi-vs-retell-vs-elevenlabs",
-    title: "Vapi vs Retell vs ElevenLabs: Choosing the Right Voice AI Provider",
-    description:
-      "A fair, neutral comparison of the three leading voice AI providers, and why you don't have to pick just one when you use Fusion Calling's multi-provider layer.",
-    date: "2025-02-14",
-    category: "Buyer's Guide",
-    readTime: "8 min read",
-    image: "/blog/blog3.webp",
-  },
-  {
-    slug: "ai-voice-agents-for-small-business",
-    title: "AI Voice Agents for Small Business: Use Cases & ROI",
-    description:
-      "Every missed call is lost revenue. See how small businesses use AI voice agents to capture leads, book appointments, and stay open 24/7, plus the ROI math.",
-    date: "2025-02-15",
-    category: "Use Cases",
-    readTime: "8 min read",
-    image: "/blog/blog4.webp",
-  },
-  {
-    slug: "vapi-white-label-platform",
-    title: "White-Labeling Vapi with Fusion Calling: A Guide for Agencies",
-    description:
-      "Vapi is excellent voice AI infrastructure. Fusion Calling is the white-label agency layer built to work with it, so you can resell Vapi under your own brand.",
-    date: "2025-02-10",
-    category: "Integration Guide",
-    readTime: "7 min read",
-    image: "/blog/blog5.webp",
-  },
-  {
-    slug: "retell-ai-white-label",
-    title: "White-Labeling Retell AI with Fusion Calling",
-    description:
-      "Retell AI is a powerful conversational voice engine. Fusion Calling layers on top to add branding, client portals, and billing so agencies can resell Retell.",
-    date: "2025-02-11",
-    category: "Integration Guide",
-    readTime: "7 min read",
-    image: "/blog/blog6.webp",
-  },
-  {
-    slug: "gohighlevel-white-label-voice",
-    title: "Adding White-Label Voice AI to Your GoHighLevel Agency",
-    description:
-      "Keep GoHighLevel as your CRM and add Fusion Calling as your dedicated, white-label voice AI layer, syncing calls and leads straight back into GHL.",
-    date: "2025-02-12",
-    category: "Integration Guide",
-    readTime: "8 min read",
-    image: "/blog/blog7.webp",
-  },
-];
-
-const categories = [
-  "All",
-  "Agency Growth",
-  "Integration Guide",
-  "Buyer's Guide",
-  "Use Cases",
-];
+const blogPosts = blogPostData;
 
 export default function BlogPage() {
   return (
@@ -183,24 +105,6 @@ export default function BlogPage() {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          {/* Category Filter */}
-          <div className="mb-12">
-            <div className="flex flex-wrap gap-3 justify-center">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  className={`px-6 py-3 rounded-xl border transition-all duration-300 font-medium ${
-                    category === "All"
-                      ? "bg-gradient-to-r from-orange-500 to-orange-600 border-orange-500 text-white"
-                      : "border-orange-500/20 text-gray-400 hover:border-orange-500/40 hover:text-white"
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
             </div>
           </div>
 

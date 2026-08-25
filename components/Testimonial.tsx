@@ -2,8 +2,8 @@
 import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { Card } from "@/components/ui/card";
-import { motion, useInView, useReducedMotion } from "framer-motion";
-import { useRef, useCallback } from "react";
+import { Reveal } from "@/components/ui/reveal";
+import { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 
 interface TestimonialProps {
@@ -66,10 +66,6 @@ const testimonials: TestimonialProps[] = [
 ];
 
 export default function TestimonialsSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const reduce = useReducedMotion();
-
   // Properly initialize embla carousel
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
@@ -90,11 +86,8 @@ export default function TestimonialsSection() {
   return (
     <section className="w-full py-8 bg-black">
       <div className="container px-4 md:px-6 mx-auto">
-        <motion.div
-          ref={ref}
-          initial={reduce ? false : { opacity: 0, y: -20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
+        <Reveal
+          animation="animate-fade-in-up"
           className="flex flex-col items-center justify-center space-y-4 text-center"
         >
           <h2 className="text-3xl font-bold tracking-tighter sm:text-3xl md:text-4xl whitespace-nowrap">
@@ -104,7 +97,7 @@ export default function TestimonialsSection() {
           <p className="text-gray-400 text-center md:text-xl mb-8">
             Experience our impact through our clients words.
           </p>
-        </motion.div>
+        </Reveal>
 
         <div className="relative max-w-screen-lg mx-auto mt-12">
           {/* Desktop carousel with navigation buttons */}
@@ -112,15 +105,14 @@ export default function TestimonialsSection() {
             <div className="overflow-hidden" ref={emblaRef}>
               <div className="flex gap-4">
                 {testimonials.map((testimonial, index) => (
-                  <motion.div
+                  <Reveal
                     key={index}
-                    initial={reduce ? false : { opacity: 0, y: 10 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.8, delay: index * 0.4 }}
+                    animation="animate-fade-in-up"
+                    duration={0.5}
                     className="flex-none w-full md:w-1/2 lg:w-1/3"
                   >
                     <TestimonialCard testimonial={testimonial} />
-                  </motion.div>
+                  </Reveal>
                 ))}
               </div>
             </div>
@@ -145,14 +137,9 @@ export default function TestimonialsSection() {
           {/* Mobile grid layout (original) */}
           <div className="grid gap-4 sm:gap-6 lg:hidden md:grid-cols-2 lg:grid-cols-3">
             {testimonials.slice(0, 3).map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={reduce ? false : { opacity: 0, y: 10 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: index * 0.5 }}
-              >
+              <Reveal key={index} animation="animate-fade-in-up" duration={0.5}>
                 <TestimonialCard testimonial={testimonial} />
-              </motion.div>
+              </Reveal>
             ))}
           </div>
         </div>

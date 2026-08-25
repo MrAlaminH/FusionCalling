@@ -79,6 +79,6 @@ export function generateMarkdown(): string {
   md += apiSection("calendar", "Calendar API");
   md += apiSection("leads", "Leads API");
   md += `\n## Errors & Rate Limits\n\n| Code | Meaning | What to do |\n| --- | --- | --- |\n| \`400\` | Bad Request | Check the request format and required fields |\n| \`401\` | Unauthorized | Verify your API key |\n| \`404\` | Not Found | Verify the resource exists |\n| \`409\` | Conflict | Resource exists — use PATCH to update |\n| \`429\` | Too Many Requests | Retry with exponential backoff |\n| \`500\` | Server Error | Retry; contact support if it persists |\n\nCalendar API: 12 requests/minute · Leads API: 100 requests/minute.\n`;
-  md += `\n---\n\nOpenAPI spec: ${BASE_URL}/api/docs/openapi.json\n`;
+  md += `\n---\n\nOpenAPI spec: ${BASE_URL}/openapi.json\n`;
   return md;
 }

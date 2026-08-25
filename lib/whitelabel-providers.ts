@@ -9,6 +9,10 @@ export type WhiteLabelProvider = {
   keywords: string[];
   features: { title: string; description: string }[];
   faqs: { question: string; answer: string }[];
+  /** Blog guide for this provider (deep link for internal cross-linking). */
+  blogGuide?: { href: string; label: string };
+  /** Slugs of related case studies under /whitelabel/case-studies. */
+  relatedCaseStudySlugs?: string[];
 };
 
 export const whitelabelProviders: WhiteLabelProvider[] = [
@@ -21,6 +25,11 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
       "Resell Vapi AI voice agents under your own brand via Fusion Calling. Import your existing Vapi agent configurations and API keys, set your pricing, and keep 100% of revenue — with full white-label dashboard, client portals, and rebilling.",
     h1Prefix: "White-Label AI Voice Agents for",
     h1Highlight: "Vapi",
+    blogGuide: {
+      href: "/blog/vapi-white-label-platform",
+      label: "How to White-Label Vapi AI Voice Agents (Agency Guide)",
+    },
+    relatedCaseStudySlugs: ["voicewave-marketing", "apex-realty-group"],
     keywords: [
       "white label Vapi AI voice",
       "resell Vapi agents",
@@ -102,6 +111,11 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
       "Resell Retell AI voice agents under your own brand via Fusion Calling. Bring your existing Retell agent configurations and API keys, set your pricing, and keep 100% of the revenue — with full white-label dashboard, client management, and rebilling.",
     h1Prefix: "White-Label AI Voice Agents for",
     h1Highlight: "Retell AI",
+    blogGuide: {
+      href: "/blog/retell-ai-white-label",
+      label: "How to White-Label Retell AI Voice Agents (Agency Guide)",
+    },
+    relatedCaseStudySlugs: ["callflow-solutions"],
     keywords: [
       "white label Retell AI voice",
       "resell Retell AI agents",
@@ -183,6 +197,7 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
       "Resell ElevenLabs voice agents under your own brand via Fusion Calling. Bring your existing ElevenLabs agent configurations and API keys, set your pricing, and keep 100% of the revenue — with full white-label dashboard, client portals, and rebilling.",
     h1Prefix: "White-Label AI Voice Agents for",
     h1Highlight: "ElevenLabs",
+    relatedCaseStudySlugs: ["voicewave-marketing"],
     keywords: [
       "white label ElevenLabs voice",
       "resell ElevenLabs AI agents",

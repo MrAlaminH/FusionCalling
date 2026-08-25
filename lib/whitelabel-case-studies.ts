@@ -4,6 +4,8 @@ export type WhiteLabelCaseStudy = {
   metaTitle: string;
   metaDescription: string;
   keywords: string[];
+  /** ISO publish date, used for Article schema datePublished. */
+  datePublished: string;
   heroStats: { value: string; label: string }[];
   story: string[];
   testimonial: { quote: string; attribution: string; role: string; avatar: string };
@@ -28,6 +30,7 @@ export const whitelabelCaseStudies: WhiteLabelCaseStudy[] = [
       "white-label voice AI for agencies",
       "agency AI voice recurring revenue",
     ],
+    datePublished: "2025-09-12",
     heroStats: [
       { value: "$12K", label: "Monthly Recurring Revenue" },
       { value: "15", label: "White-Label Clients" },
@@ -86,6 +89,7 @@ export const whitelabelCaseStudies: WhiteLabelCaseStudy[] = [
       "call center to AI voice pivot",
       "AI voice recurring revenue call center",
     ],
+    datePublished: "2025-10-08",
     heroStats: [
       { value: "$18K", label: "Monthly Recurring Revenue" },
       { value: "22", label: "Active White-Label Clients" },
@@ -144,6 +148,7 @@ export const whitelabelCaseStudies: WhiteLabelCaseStudy[] = [
       "white-label AI voice real estate",
       "real estate AI receptionist",
     ],
+    datePublished: "2026-01-15",
     heroStats: [
       { value: "40+", label: "Monthly Qualified Leads" },
       { value: "10 Min", label: "Per Property Setup" },

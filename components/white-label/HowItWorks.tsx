@@ -1,7 +1,3 @@
-"use client";
-
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
 import {
   FileCheck,
   Palette,
@@ -11,10 +7,9 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Reveal } from "@/components/ui/reveal";
 
 export default function HowItWorks() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
 
   const steps = [
     {
@@ -48,19 +43,10 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section className="w-full bg-black section-spacing" ref={ref}>
+    <section className="w-full bg-black section-spacing">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Header */}
-        <motion.div
-          className="text-center mb-10 md:mb-12 lg:mb-16"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -20 }}
-          transition={{
-            duration: 0.8,
-            delay: 0.2,
-            ease: [0.25, 0.1, 0.25, 1.0],
-          }}
-        >
+        <Reveal animation="animate-fade-in-up" className="text-center mb-10 md:mb-12 lg:mb-16">
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6 tracking-tight">
             How to Launch Your
             <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
@@ -72,7 +58,7 @@ export default function HowItWorks() {
             From application to first sale in as little as one week. We handle
             the technology, you focus on growing your agency.
           </p>
-        </motion.div>
+        </Reveal>
 
         {/* Steps Timeline */}
         <div className="relative max-w-5xl mx-auto">
@@ -84,15 +70,10 @@ export default function HowItWorks() {
               const Icon = step.icon;
               const isEven = index % 2 === 0;
               return (
-                <motion.div
+                <Reveal
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-                  transition={{
-                    duration: 0.8,
-                    delay: 0.4 + index * 0.15,
-                    ease: [0.25, 0.1, 0.25, 1.0],
-                  }}
+                  animation="animate-fade-in-up"
+                  delay={index * 0.15}
                   className={`relative flex flex-col md:flex-row items-center gap-6 sm:gap-8 ${
                     isEven ? "md:flex-row" : "md:flex-row-reverse"
                   }`}
@@ -146,36 +127,25 @@ export default function HowItWorks() {
                       <ArrowDown className="w-8 h-8 text-brand" />
                     </div>
                   )}
-                </motion.div>
+                </Reveal>
               );
             })}
           </div>
         </div>
 
         {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-          transition={{
-            duration: 0.8,
-            delay: 1.2,
-            ease: [0.25, 0.1, 0.25, 1.0],
-          }}
-          className="mt-12 md:mt-16 lg:mt-20 text-center"
-        >
+        <div className="mt-12 md:mt-16 lg:mt-20 text-center">
           <p className="font-body text-gray-400 text-base sm:text-lg md:text-xl mb-4 md:mb-6">
             Ready to launch your white-label business?
           </p>
-          <motion.a
+          <a
             href="#cta"
-            className="inline-flex items-center rounded-2xl bg-gradient-to-r from-brand to-brand-strong px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 text-sm sm:text-base font-semibold text-white transition-all shadow-premium hover:shadow-premium-lg hover:from-brand-strong hover:to-orange-700 hover:scale-105"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.98 }}
+            className="inline-flex items-center rounded-2xl bg-gradient-to-r from-brand to-brand-strong px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 text-sm sm:text-base font-semibold text-white transition-all shadow-premium hover:shadow-premium-lg hover:from-brand-strong hover:to-orange-700 hover:scale-105 active:scale-[0.98]"
           >
             Apply Now
             <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
-          </motion.a>
-        </motion.div>
+          </a>
+        </div>
       </div>
     </section>
   );

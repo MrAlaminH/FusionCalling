@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
 import { Play, ArrowRight, Sparkles } from "lucide-react";
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import { BorderBeam } from "@/components/ui/border-beam";
@@ -11,7 +10,6 @@ import { cn } from "@/lib/utils";
 
 export default function Hero() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-  const reduce = useReducedMotion();
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden pt-16 sm:pt-20 md:pt-24 lg:pt-28 xl:pt-32 relative">
@@ -40,68 +38,25 @@ export default function Hero() {
         ></rect>
       </svg>
 
-      {/* Atmospheric particles */}
+      {/* Atmospheric particles (CSS-only float animation) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
+        <div
           className="particle"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: [0.08, 0.15, 0.08] }}
-          transition={{ duration: 10, repeat: reduce ? 0 : Infinity, ease: "easeInOut" }}
-          style={{
-            width: "300px",
-            height: "300px",
-            top: "20%",
-            left: "10%",
-          }}
+          style={{ width: "300px", height: "300px", top: "20%", left: "10%" }}
         />
-        <motion.div
-          className="particle"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: [0.06, 0.12, 0.06] }}
-          transition={{
-            duration: 12,
-            repeat: reduce ? 0 : Infinity,
-            ease: "easeInOut",
-            delay: 2,
-          }}
-          style={{
-            width: "250px",
-            height: "250px",
-            top: "60%",
-            right: "15%",
-          }}
+        <div
+          className="particle [animation-duration:12s] [animation-delay:2s]"
+          style={{ width: "250px", height: "250px", top: "60%", right: "15%" }}
         />
-        <motion.div
-          className="particle"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: [0.05, 0.1, 0.05] }}
-          transition={{
-            duration: 14,
-            repeat: reduce ? 0 : Infinity,
-            ease: "easeInOut",
-            delay: 4,
-          }}
-          style={{
-            width: "200px",
-            height: "200px",
-            bottom: "10%",
-            left: "40%",
-          }}
+        <div
+          className="particle [animation-duration:14s] [animation-delay:4s]"
+          style={{ width: "200px", height: "200px", bottom: "10%", left: "40%" }}
         />
       </div>
 
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl md:py-6 py-10">
         {/* Top pill button */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.8,
-            delay: 0.2,
-            ease: [0.25, 0.1, 0.25, 1.0],
-          }}
-          className="flex justify-center mb-4 sm:mb-6 lg:mb-8"
-        >
+        <div className="flex justify-center mb-4 sm:mb-6 lg:mb-8">
           <Link
             href="#pricing"
             className={cn(
@@ -116,19 +71,10 @@ export default function Hero() {
               </span>
             </AnimatedShinyText>
           </Link>
-        </motion.div>
+        </div>
 
-        {/* Main heading */}
-        <motion.div
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.8,
-            delay: 0.4,
-            ease: [0.25, 0.1, 0.25, 1.0],
-          }}
-          className="text-center mb-4 sm:mb-6 md:mb-8 px-2 sm:px-4 md:px-6"
-        >
+        {/* Main heading — rendered visible at first paint (LCP) */}
+        <div className="text-center mb-4 sm:mb-6 md:mb-8 px-2 sm:px-4 md:px-6">
           <h1 className="font-display text-2xl xxs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]">
             Scale Your Agency with,
             <br className="hidden sm:block" />
@@ -137,35 +83,17 @@ export default function Hero() {
               White-Labeled AI Voice Agents
             </span>
           </h1>
-        </motion.div>
+        </div>
 
-        {/* Subheading */}
-        <motion.div
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.8,
-            delay: 0.6,
-            ease: [0.25, 0.1, 0.25, 1.0],
-          }}
-          className="max-w-4xl mx-auto text-center mb-8 sm:mb-10 lg:mb-12 px-2 sm:px-4 md:px-6"
-        >
+        {/* Subheading — rendered visible at first paint */}
+        <div className="max-w-4xl mx-auto text-center mb-8 sm:mb-10 lg:mb-12 px-2 sm:px-4 md:px-6">
           <p className="font-body text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-400 leading-relaxed">
             Fusion Calling&apos;s white-label partner program lets agencies and resellers offer AI phone automation under their own brand. Bring your existing Vapi, Retell, or ElevenLabs agents and resell them under your logo—we handle the technology while you capture 100% of the revenue.
           </p>
-        </motion.div>
+        </div>
 
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.8,
-            delay: 0.8,
-            ease: [0.25, 0.1, 0.25, 1.0],
-          }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-14 lg:mb-16 xl:mb-20"
-        >
+        {/* CTA Buttons — rendered visible at first paint */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-14 lg:mb-16 xl:mb-20">
           <Link
             href="#cta"
             className="group inline-flex items-center rounded-2xl bg-gradient-to-r from-brand to-brand-strong px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 text-xs sm:text-sm md:text-base font-semibold text-white transition-all shadow-premium hover:shadow-premium-lg hover:from-brand-strong hover:to-orange-700 hover:scale-105 hover:-translate-y-1"
@@ -173,15 +101,10 @@ export default function Hero() {
             Book a Demo
             <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </Link>
-        </motion.div>
+        </div>
 
         {/* Video Section */}
-        <motion.div
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1, ease: [0.25, 0.1, 0.25, 1.0] }}
-          className="max-w-6xl mx-auto px-4 sm:px-6"
-        >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           {/* Outer glow container for depth */}
           <div className="relative group">
             {/* Enhanced glow effects */}
@@ -229,7 +152,8 @@ export default function Hero() {
                     />
                   </div>
 
-                  {/* Video/Thumbnail Content */}
+                  {/* Video/Thumbnail Content — click-to-play facade: the Vimeo
+                      iframe only mounts after the user clicks play */}
                   <div className="relative w-full h-full rounded-[27px] overflow-hidden z-10 bg-black">
                     {isVideoPlaying ? (
                       <iframe
@@ -238,106 +162,47 @@ export default function Hero() {
                         title="Fusion Calling White-label Demo"
                         allow="autoplay; fullscreen; picture-in-picture"
                         allowFullScreen
+                        loading="lazy"
                         referrerPolicy="strict-origin-when-cross-origin"
                       />
                     ) : (
-                      <>
-                        {/* Custom Thumbnail */}
-                        <div
-                          className="absolute inset-0 bg-cover bg-center cursor-pointer group rounded-[27px] transition-transform duration-700 group-hover:scale-[1.02]"
-                          style={{
-                            backgroundImage: "url(/hero-thumbnail.jpg)",
-                          }}
-                          onClick={() => setIsVideoPlaying(true)}
-                        >
-                          {/* Enhanced gradient overlay */}
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/50 group-hover:from-black/85 group-hover:via-black/20 group-hover:to-black/40 transition-all duration-700 rounded-[27px]"></div>
+                      <div
+                        className="absolute inset-0 bg-cover bg-center cursor-pointer group rounded-[27px] transition-transform duration-700 group-hover:scale-[1.02]"
+                        style={{
+                          backgroundImage: "url(/hero-thumbnail.jpg)",
+                        }}
+                        onClick={() => setIsVideoPlaying(true)}
+                      >
+                        {/* Enhanced gradient overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/50 group-hover:from-black/85 group-hover:via-black/20 group-hover:to-black/40 transition-all duration-700 rounded-[27px]"></div>
 
-                          {/* Play Button Container */}
-                          <div className="absolute inset-0 flex items-center justify-center z-20">
-                            <div className="relative">
-                              {/* Outer glow rings */}
-                              <motion.div
-                                className="absolute inset-0 border-2 border-brand/50 rounded-full"
-                                animate={{
-                                  scale: [1, 2.5, 1],
-                                  opacity: [0.7, 0, 0.7],
-                                }}
-                                transition={{
-                                  duration: 3,
-                                  repeat: reduce ? 0 : Infinity,
-                                  ease: "easeOut",
-                                }}
-                              />
-                              <motion.div
-                                className="absolute inset-0 border-2 border-brand-light/60 rounded-full"
-                                animate={{
-                                  scale: [1, 2.5, 1],
-                                  opacity: [0.7, 0, 0.7],
-                                }}
-                                transition={{
-                                  duration: 3,
-                                  repeat: reduce ? 0 : Infinity,
-                                  ease: "easeOut",
-                                  delay: 0.8,
-                                }}
-                              />
-                              <motion.div
-                                className="absolute inset-0 border border-brand-light/70 rounded-full"
-                                animate={{
-                                  scale: [1, 2.5, 1],
-                                  opacity: [0.5, 0, 0.5],
-                                }}
-                                transition={{
-                                  duration: 3,
-                                  repeat: reduce ? 0 : Infinity,
-                                  ease: "easeOut",
-                                  delay: 1.6,
-                                }}
-                              />
+                        {/* Play Button Container */}
+                        <div className="absolute inset-0 flex items-center justify-center z-20">
+                          <div className="relative flex items-center justify-center">
+                            {/* Outer ping rings (CSS-only) */}
+                            <span className="absolute inline-flex h-full w-full items-center justify-center">
+                              <span className="absolute inline-flex w-full aspect-square rounded-full border-2 border-brand/50 animate-ping [animation-duration:3s]" />
+                              <span className="absolute inline-flex w-full aspect-square rounded-full border-2 border-brand-light/60 animate-ping [animation-duration:3s] [animation-delay:0.8s]" />
+                              <span className="absolute inline-flex w-full aspect-square rounded-full border border-brand-light/70 animate-ping [animation-duration:3s] [animation-delay:1.6s]" />
+                            </span>
 
-                              {/* Enhanced glow backdrop */}
-                              <motion.div
-                                className="absolute inset-0 bg-gradient-to-br from-brand/40 to-brand-strong/30 rounded-full blur-3xl"
-                                animate={{
-                                  scale: [1, 1.8, 1],
-                                  opacity: [0.5, 0.8, 0.5],
-                                }}
-                                transition={{
-                                  duration: 3,
-                                  repeat: reduce ? 0 : Infinity,
-                                  ease: "easeInOut",
-                                }}
-                              />
+                            {/* Enhanced glow backdrop */}
+                            <span className="absolute -inset-4 bg-gradient-to-br from-brand/40 to-brand-strong/30 rounded-full blur-3xl animate-pulse [animation-duration:3s]" />
 
-                              {/* Play Button */}
-                              <motion.div
-                                className="relative bg-gradient-to-br from-brand to-brand-strong rounded-full p-5 sm:p-6 md:p-7 shadow-premium-lg group-hover:shadow-premium-xl transition-all duration-300"
-                                whileHover={{ scale: 1.15 }}
-                                whileTap={{ scale: 0.95 }}
-                              >
-                                <Play className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white fill-white ml-1" />
-                              </motion.div>
-                            </div>
-                          </div>
-
-                          {/* "Watch Demo" text with better styling */}
-                          <div className="absolute bottom-8 sm:bottom-10 left-0 right-0 text-center z-20">
-                            <motion.p
-                              className="font-display text-white text-base sm:text-lg md:text-xl font-semibold opacity-95 drop-shadow-lg"
-                              initial={{ opacity: 0, y: 10 }}
-                              animate={{ opacity: 0.95, y: 0 }}
-                              transition={{
-                                delay: 1.4,
-                                duration: 0.6,
-                                ease: [0.25, 0.1, 0.25, 1.0],
-                              }}
-                            >
-                              Watch Demo Video
-                            </motion.p>
+                            {/* Play Button */}
+                            <span className="relative bg-gradient-to-br from-brand to-brand-strong rounded-full p-5 sm:p-6 md:p-7 shadow-premium-lg group-hover:shadow-premium-xl group-hover:scale-110 active:scale-95 transition-all duration-300">
+                              <Play className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white fill-white ml-1" />
+                            </span>
                           </div>
                         </div>
-                      </>
+
+                        {/* "Watch Demo" text */}
+                        <div className="absolute bottom-8 sm:bottom-10 left-0 right-0 text-center z-20">
+                          <p className="font-display text-white text-base sm:text-lg md:text-xl font-semibold opacity-95 drop-shadow-lg">
+                            Watch Demo Video
+                          </p>
+                        </div>
+                      </div>
                     )}
 
                     {/* Bottom gradient fade */}
@@ -348,45 +213,28 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Trust badges with improved design */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.8,
-              delay: 1.6,
-              ease: [0.25, 0.1, 0.25, 1.0],
-            }}
-            className="mt-12 sm:mt-16 flex flex-wrap items-center justify-center gap-6 sm:gap-8 md:gap-10"
-          >
+          {/* Trust badges */}
+          <div className="mt-12 sm:mt-16 flex flex-wrap items-center justify-center gap-6 sm:gap-8 md:gap-10">
             {[
-              { label: "Full Brand Control", delay: 0 },
-              { label: "White-label Dashboard", delay: 0.1 },
-              { label: "API Access", delay: 0.2 },
-            ].map((badge) => (
-              <motion.div
-                key={badge.label}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{
-                  duration: 0.5,
-                  delay: 1.6 + badge.delay,
-                  ease: [0.25, 0.1, 0.25, 1.0],
-                }}
+              "Full Brand Control",
+              "White-label Dashboard",
+              "API Access",
+            ].map((label) => (
+              <div
+                key={label}
                 className="flex items-center gap-2.5 sm:gap-3 group cursor-default"
-                whileHover={{ scale: 1.05 }}
               >
                 <div className="relative">
                   <div className="absolute inset-0 w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500/50 blur-sm group-hover:bg-green-400/70 transition-colors"></div>
                   <div className="relative w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500 group-hover:bg-green-400 transition-colors shadow-lg shadow-green-500/50"></div>
                 </div>
                 <span className="font-body text-gray-400 text-xs sm:text-sm font-medium group-hover:text-gray-300 transition-colors">
-                  {badge.label}
+                  {label}
                 </span>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </div>
   );

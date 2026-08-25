@@ -1,21 +1,17 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
+import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { getTeamAuthor } from "@/lib/authors";
 
 /* eslint-disable react/no-unescaped-entities */
+
+const teamAuthor = getTeamAuthor();
 
 export const metadata: Metadata = {
   title: "Adding White-Label Voice AI to Your GoHighLevel Agency",
   description:
     "GoHighLevel agencies: keep GHL as your CRM and add a dedicated white-label voice AI layer with Fusion Calling. Integrates via API and webhooks.",
-  keywords: [
-    "go high level white label",
-    "voice AI white label",
-    "gohighlevel voice integration",
-    "white label voice automation",
-    "agency voice AI",
-    "gohighlevel agency voice",
-  ],
   alternates: {
     canonical: "/blog/gohighlevel-white-label-voice",
   },
@@ -36,7 +32,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "article",
     publishedTime: "2025-02-12T00:00:00Z",
-    modifiedTime: "2025-02-12T00:00:00Z",
+    modifiedTime: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
     authors: ["Fusion Calling"],
   },
 };
@@ -195,11 +191,33 @@ export default function GoHighLevelBlogPost() {
             add a dedicated, white-label voice AI layer your clients can use today.
           </p>
 
-          <div className="flex items-center gap-6 text-sm text-gray-500">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-500 mb-8">
             <span>February 12, 2025</span>
             <span>•</span>
-            <span>By Fusion Calling Team</span>
+            <Link
+              href={`/team/${teamAuthor.slug}`}
+              className="flex items-center gap-2 hover:text-brand-light transition-colors"
+            >
+              <Image
+                src={teamAuthor.avatar}
+                alt={teamAuthor.name}
+                width={24}
+                height={24}
+                className="w-6 h-6 rounded-full object-cover"
+              />
+              <span>By {teamAuthor.name}</span>
+            </Link>
+            <span>•</span>
+            <span>Last updated: July 7, 2026</span>
           </div>
+
+          <p className="text-brand-light font-semibold mb-8">
+            Running a GoHighLevel agency?{" "}
+            <Link href="/whitelabel/gohighlevel" className="underline hover:text-brand transition-colors">
+              See our white-label voice AI for GoHighLevel
+            </Link>
+            .
+          </p>
         </div>
 
         {/* Featured Image */}
@@ -232,7 +250,11 @@ export default function GoHighLevelBlogPost() {
               </p>
               <p className="text-gray-300 leading-relaxed mb-4">
                 Fusion Calling is <strong className="text-brand-light">not a competitor</strong> of
-                GoHighLevel. It&apos;s a dedicated, white-label voice AI layer that
+                GoHighLevel. It&apos;s a dedicated,{" "}
+                <Link href="/glossary/white-label" className="text-brand-light hover:text-brand transition-colors">
+                  white-label
+                </Link>{" "}
+                voice AI layer that
                 integrates with GHL to handle the calls your clients can&apos;t
                 always get to. The message is simple:
               </p>
@@ -298,9 +320,20 @@ export default function GoHighLevelBlogPost() {
                 How Fusion Calling + GoHighLevel Work Together
               </h2>
               <p className="text-gray-300 leading-relaxed mb-6">
-                Fusion Calling connects to GoHighLevel through API and webhooks, and
-                reaches 2,200+ other apps through our integration network. Here&apos;s
-                what that looks like for an agency:
+                Fusion Calling connects to GoHighLevel through{" "}
+                <Link href="/glossary/crm-integration" className="text-brand-light hover:text-brand transition-colors">
+                  CRM integration
+                </Link>{" "}
+                and{" "}
+                <Link href="/glossary/webhook" className="text-brand-light hover:text-brand transition-colors">
+                  webhooks
+                </Link>
+                , and reaches 2,200+ other apps through our integration network (the
+                full setup is covered in our{" "}
+                <Link href="/docs" className="text-brand-light hover:text-brand transition-colors">
+                  docs
+                </Link>
+                ). Here&apos;s what that looks like for an agency:
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -432,7 +465,12 @@ export default function GoHighLevelBlogPost() {
               </p>
               <p className="text-brand-light text-lg font-semibold mb-6">
                 Fusion Calling includes its own built-in CRM (lead management), so
-                you don&apos;t need a separate CRM to run a voice AI agency.
+                you don&apos;t need a separate CRM to run a voice AI agency. (For a
+                head-to-head breakdown, see our guide to the{" "}
+                <Link href="/blog/gohighlevel-alternative-for-voice-ai" className="underline hover:text-brand transition-colors">
+                  GoHighLevel alternative for voice-first agencies
+                </Link>
+                .)
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="glass-light rounded-xl p-6 border border-brand/20">
@@ -476,7 +514,11 @@ export default function GoHighLevelBlogPost() {
               <p className="text-gray-300 leading-relaxed mb-6">
                 You pay a flat monthly subscription for the Fusion Calling platform
                 and you keep 100% of what you charge your clients. Your only cost is
-                the subscription.
+                the subscription (tier details on our{" "}
+                <Link href="/pricing" className="text-brand-light hover:text-brand transition-colors">
+                  pricing page
+                </Link>
+                ):
               </p>
 
               <div className="bg-gradient-to-r from-brand/10 to-brand-strong/5 rounded-xl p-6 border border-brand/30 mb-6">
@@ -595,7 +637,7 @@ export default function GoHighLevelBlogPost() {
                   className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition-all group"
                 >
                   <h3 className="text-white font-bold mb-2 group-hover:text-brand-light transition-colors">
-                    How to Start a Voice AI Agency in 2025
+                    How to Start a Voice AI Agency in 2026
                   </h3>
                   <p className="text-gray-400 text-sm">
                     A practical playbook for launching a profitable voice AI
@@ -605,41 +647,48 @@ export default function GoHighLevelBlogPost() {
                </div>
               </div>
 
-           {/* Author Bio */}
-           <div className="mt-12 pt-8 border-t border-brand/20">
-             <div className="flex items-start gap-6">
-               <div className="w-16 h-16 rounded-full bg-gradient-to-br from-brand to-brand-strong flex items-center justify-center flex-shrink-0">
-                 <span className="text-2xl font-bold text-white">FC</span>
-               </div>
-               <div className="flex-1">
-                 <h3 className="text-lg font-bold text-white mb-2">About the Author</h3>
-                 <p className="text-gray-400 text-sm mb-3">
-                   <strong className="text-brand-strong">Fusion Calling Team</strong>
-                 </p>
-                 <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                   We're the team behind Fusion Calling's white-label AI voice platform. Having helped 50+ agencies launch profitable voice AI practices since 2025, we specialize in helping businesses scale their phone operations with cutting-edge automation technology.
-                 </p>
-                 <div className="flex items-center gap-4 text-sm">
-                   <a
-                     href="https://www.fusioncalling.com"
-                     target="_blank"
-                     rel="noopener noreferrer"
-                     className="text-brand-strong hover:text-brand transition-colors"
-                   >
-                     Website →
-                   </a>
-                   <a
-                     href="/whitelabel"
-                     className="text-brand-strong hover:text-brand transition-colors"
-                   >
-                     Partner Program →
-                   </a>
-                   </div>
-                 </div>
-               </div>
+            {/* Author Bio */}
+            <div className="mt-12 pt-8 border-t border-brand/20">
+              <div className="flex items-start gap-6">
+                <Image
+                  src={teamAuthor.avatar}
+                  alt={teamAuthor.name}
+                  width={64}
+                  height={64}
+                  className="w-16 h-16 rounded-full object-cover border border-brand/30 flex-shrink-0"
+                />
+                <div className="flex-1">
+                  <h3 className="text-lg font-bold text-white mb-2">About the Author</h3>
+                  <p className="text-gray-400 text-sm mb-3">
+                    <Link
+                      href={`/team/${teamAuthor.slug}`}
+                      className="text-brand-strong hover:text-brand transition-colors"
+                    >
+                      <strong>{teamAuthor.name}</strong>
+                    </Link>
+                  </p>
+                  <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                    {teamAuthor.shortBio}
+                  </p>
+                  <div className="flex items-center gap-4 text-sm">
+                    <a
+                      href={`mailto:${teamAuthor.email}`}
+                      className="text-brand-strong hover:text-brand transition-colors"
+                    >
+                      Email →
+                    </a>
+                    <a
+                      href="/whitelabel"
+                      className="text-brand-strong hover:text-brand transition-colors"
+                    >
+                      Partner Program →
+                    </a>
+                  </div>
+                </div>
+              </div>
              </div>
            </div>
-         </div>
+          </div>
         </article>
       </>
     );

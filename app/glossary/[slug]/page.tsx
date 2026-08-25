@@ -4,7 +4,7 @@ import GlossaryTermPage from "@/components/glossary/GlossaryTermPage";
 
 export const revalidate = 86400;
 import { glossaryTerms, getTermBySlug, slugifyTerm } from "@/lib/glossary";
-import { SITE_URL } from "@/lib/site-url";
+import { buildOpenGraph } from "@/lib/seo";
 import { truncateAtWord } from "@/lib/utils";
 
 export function generateStaticParams() {
@@ -22,8 +22,8 @@ export function generateMetadata({
   }
 
   const slug = slugifyTerm(term.term);
-  const url = `${SITE_URL}/glossary/${slug}`;
-  const title = `${term.term} | AI Glossary | Fusion Calling`;
+  // No hardcoded "| Fusion Calling" — the root layout title template appends it.
+  const title = `${term.term} | AI Glossary`;
   // Word-boundary-truncated so we never ship a meta description that ends
   // mid-word (e.g. "...real-time transcri").
   const description = truncateAtWord(term.definition, 155);
@@ -31,16 +31,12 @@ export function generateMetadata({
   return {
     title,
     description,
-    alternates: {
-      canonical: `/glossary/${slug}`,
-    },
-    openGraph: {
+    ...buildOpenGraph({
       title,
       description,
-      url,
-      siteName: "Fusion Calling",
+      path: `/glossary/${slug}`,
       type: "article",
-    },
+    }),
   };
 }
 

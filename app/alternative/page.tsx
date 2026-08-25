@@ -11,14 +11,6 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  keywords: [
-    "white label voice ai comparison",
-    "voice ai platform comparison",
-    "vapi white label alternative",
-    "best white label voice ai",
-    "voice ai agency platform",
-    "ai voice reseller program",
-  ],
   ...buildOpenGraph({ title, description, path: "/alternative" }),
 };
 

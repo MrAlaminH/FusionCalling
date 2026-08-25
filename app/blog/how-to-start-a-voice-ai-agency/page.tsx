@@ -1,28 +1,24 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
+import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { getTeamAuthor } from "@/lib/authors";
 
 /* eslint-disable react/no-unescaped-entities */
 
+const teamAuthor = getTeamAuthor();
+
 export const metadata: Metadata = {
-  title: "How to Start a Voice AI Agency in 2025: A Step-by-Step Guide",
+  title: "How to Start a Voice AI Agency in 2026: A Step-by-Step Guide",
   description:
     "Learn how to start a voice AI agency with a white-label platform. Keep 100% of client revenue, launch in 7 days, scale with Vapi, Retell and ElevenLabs.",
-  keywords: [
-    "start a voice AI agency",
-    "voice AI agency 2025",
-    "white label voice AI",
-    "AI voice reseller business",
-    "how to start an AI agency",
-    "voice AI business opportunity",
-  ],
   alternates: {
     canonical: "/blog/how-to-start-a-voice-ai-agency",
   },
   openGraph: {
-    title: "How to Start a Voice AI Agency in 2025: A Step-by-Step Guide",
+    title: "How to Start a Voice AI Agency in 2026: A Step-by-Step Guide",
     description:
-      "Learn how to start a profitable voice AI agency in 2025 by partnering with a white-label platform. Keep 100% of client revenue, launch in 7 days.",
+      "Learn how to start a profitable voice AI agency in 2026 by partnering with a white-label platform. Keep 100% of client revenue, launch in 7 days.",
     url: "https://www.fusioncalling.com/blog/how-to-start-a-voice-ai-agency",
     siteName: "Fusion Calling",
     images: [
@@ -30,13 +26,13 @@ export const metadata: Metadata = {
         url: "/blog/blog1.webp",
         width: 1672,
         height: 941,
-        alt: "How to Start a Voice AI Agency in 2025",
+        alt: "How to Start a Voice AI Agency in 2026",
       },
     ],
     locale: "en_US",
     type: "article",
     publishedTime: "2025-02-13T00:00:00Z",
-    modifiedTime: "2025-02-13T00:00:00Z",
+    modifiedTime: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
     authors: ["Fusion Calling"],
   },
 };
@@ -69,7 +65,7 @@ export default function StartVoiceAIAgencyBlogPost() {
                   {
                     "@type": "ListItem",
                     position: 3,
-                    name: "How to Start a Voice AI Agency in 2025",
+                    name: "How to Start a Voice AI Agency in 2026",
                     item: "https://www.fusioncalling.com/blog/how-to-start-a-voice-ai-agency",
                   },
                 ],
@@ -78,18 +74,18 @@ export default function StartVoiceAIAgencyBlogPost() {
                 "@type": "Article",
                 "@id": "https://www.fusioncalling.com/blog/how-to-start-a-voice-ai-agency#article",
                 url: "https://www.fusioncalling.com/blog/how-to-start-a-voice-ai-agency",
-                name: "How to Start a Voice AI Agency in 2025: A Step-by-Step Guide",
+                name: "How to Start a Voice AI Agency in 2026: A Step-by-Step Guide",
                 headline:
-                  "How to Start a Voice AI Agency in 2025: A Step-by-Step Guide",
+                  "How to Start a Voice AI Agency in 2026: A Step-by-Step Guide",
                 description:
-                  "Learn how to start a profitable voice AI agency in 2025 by partnering with a white-label platform. Keep 100% of client revenue, launch in 7 days, and scale with Vapi, Retell, and ElevenLabs.",
+                  "Learn how to start a profitable voice AI agency in 2026 by partnering with a white-label platform. Keep 100% of client revenue, launch in 7 days, and scale with Vapi, Retell, and ElevenLabs.",
                 inLanguage: "en-US",
                 image: "https://www.fusioncalling.com/blog/blog1.webp",
                 isPartOf: {
                   "@id": "https://www.fusioncalling.com/#website",
                 },
                 datePublished: "2025-02-13T00:00:00Z",
-                dateModified: "2026-07-07",
+                dateModified: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
                 author: { "@id": "https://www.fusioncalling.com/team/voice-team#person" },
                 publisher: {
                   "@id": "https://www.fusioncalling.com/#organization",
@@ -194,21 +190,38 @@ export default function StartVoiceAIAgencyBlogPost() {
             How to Start a Voice AI Agency
             <br />
             <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong bg-clip-text text-transparent">
-              in 2025
+              in 2026
             </span>
           </h1>
 
           <p className="text-xl text-gray-400 leading-relaxed mb-8">
             The smart way to launch a voice AI agency isn&apos;t to build voice
-            infrastructure from scratch &mdash; it&apos;s to partner with a white-label
+            infrastructure from scratch &mdash; it&apos;s to partner with a{" "}
+            <Link href="/glossary/white-label" className="text-brand-light hover:text-brand transition-colors">
+              white-label
+            </Link>{" "}
             platform and resell under your own brand. Here&apos;s the step-by-step
             playbook.
           </p>
 
-          <div className="flex items-center gap-6 text-sm text-gray-500">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-500">
             <span>February 13, 2025</span>
             <span>•</span>
-            <span>By Fusion Calling Team</span>
+            <Link
+              href={`/team/${teamAuthor.slug}`}
+              className="flex items-center gap-2 hover:text-brand-light transition-colors"
+            >
+              <Image
+                src={teamAuthor.avatar}
+                alt={teamAuthor.name}
+                width={24}
+                height={24}
+                className="w-6 h-6 rounded-full object-cover"
+              />
+              <span>By {teamAuthor.name}</span>
+            </Link>
+            <span>•</span>
+            <span>Last updated: July 7, 2026</span>
           </div>
         </div>
 
@@ -216,7 +229,7 @@ export default function StartVoiceAIAgencyBlogPost() {
         <div className="relative mb-12 rounded-3xl overflow-hidden border border-brand/20">
           <Image
             src="/blog/blog1.webp"
-            alt="How to Start a Voice AI Agency in 2025"
+            alt="How to Start a Voice AI Agency in 2026"
             fill
             priority
             className="object-cover"
@@ -230,7 +243,7 @@ export default function StartVoiceAIAgencyBlogPost() {
             {/* Introduction */}
             <div className="glass-light rounded-2xl p-8 border border-brand/20">
               <h2 className="text-2xl font-bold text-white mb-4">
-                Why 2025 Is the Moment for Voice AI Agencies
+                Why 2026 Is the Moment for Voice AI Agencies
               </h2>
               <p className="text-gray-300 leading-relaxed mb-4">
                 Voice AI has crossed the line from novelty to necessity. Businesses
@@ -240,7 +253,7 @@ export default function StartVoiceAIAgencyBlogPost() {
                 demand is here. The question is who captures it.
               </p>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Three forces make 2025 the breakout year to start a voice AI agency:
+                Three forces make 2026 the breakout year to start a voice AI agency:
               </p>
               <ul className="space-y-3 text-gray-300">
                 <li className="flex items-start gap-3">
@@ -269,7 +282,7 @@ export default function StartVoiceAIAgencyBlogPost() {
                 </li>
               </ul>
               <p className="text-brand-light text-lg font-semibold">
-                The winners in 2025 won&apos;t be the agencies that build voice
+                The winners in 2026 won&apos;t be the agencies that build voice
                 infrastructure &mdash; they&apos;ll be the ones that distribute it.
               </p>
             </div>
@@ -340,7 +353,11 @@ export default function StartVoiceAIAgencyBlogPost() {
                     locked in), offers done-with-you setup, and has a live interactive
                     demo you can actually sell from. Fusion Calling checks all three:
                     Vapi + Retell + ElevenLabs out of the box, hands-on onboarding,
-                    and a live demo on the homepage you can walk prospects through.
+                    and a{" "}
+                    <Link href="/#show-case" className="text-brand-light hover:text-brand transition-colors">
+                      live demo on the homepage
+                    </Link>{" "}
+                    you can walk prospects through.
                   </p>
                 </div>
 
@@ -353,8 +370,11 @@ export default function StartVoiceAIAgencyBlogPost() {
                     first &mdash; real estate, dental, home services, legal, HVAC, or
                     MedSpa are all proven. Each niche has the same pain (missed calls =
                     lost revenue) but a different script, vocabulary, and price point.
-                    Start narrow, build a repeatable template, then expand. Browse the
-                    industries we&apos;ve mapped out to find your wedge.
+                    Start narrow, build a repeatable template, then expand.{" "}
+                    <Link href="/industries" className="text-brand-light hover:text-brand transition-colors">
+                      Browse the industries we&apos;ve mapped out
+                    </Link>{" "}
+                    to find your wedge.
                   </p>
                 </div>
 
@@ -365,10 +385,18 @@ export default function StartVoiceAIAgencyBlogPost() {
                   <p className="text-gray-400 leading-relaxed">
                     This is the part traditional reseller programs get wrong. With a
                     white-label model, <strong>you keep 100% of what you charge
-                    clients</strong>. Your only cost is your platform subscription
+                    clients</strong>. Your only cost is your{" "}
+                    <Link href="/pricing" className="text-brand-light hover:text-brand transition-colors">
+                      platform subscription
+                    </Link>{" "}
                     ($99&ndash;$499/mo depending on tier). Build 2&ndash;3 packages
                     (e.g. a starter plan for solo operators, a growth plan for
                     multi-location businesses) and price by value, not by minutes.
+                    Not sure what a client is worth? Model it with the{" "}
+                    <Link href="/calculator" className="text-brand-light hover:text-brand transition-colors">
+                      voice AI ROI calculator
+                    </Link>
+                    .
                   </p>
                 </div>
 
@@ -389,8 +417,11 @@ export default function StartVoiceAIAgencyBlogPost() {
                     5. Land Your First Client
                   </h3>
                   <p className="text-gray-400 leading-relaxed">
-                    Selling voice AI is easiest when you can show, not tell. Use the
-                    live interactive demo to let a prospect actually <em>talk</em> to an
+                    Selling voice AI is easiest when you can show, not tell. Use the{" "}
+                    <Link href="/#show-case" className="text-brand-light hover:text-brand transition-colors">
+                      live interactive demo
+                    </Link>{" "}
+                    to let a prospect actually <em>talk</em> to an
                     agent on a real number. Walk them through a missed-call recovery
                     scenario for their own business. A 5-minute live demo closes more
                     deals than any slide deck.
@@ -524,7 +555,7 @@ export default function StartVoiceAIAgencyBlogPost() {
                 Start Your Voice AI Agency This Week
               </h2>
               <p className="text-gray-300 leading-relaxed mb-6">
-                2025 is the year voice AI goes mainstream &mdash; and the agencies that
+                2026 is the year voice AI goes mainstream &mdash; and the agencies that
                 move now will own the relationships. You don&apos;t need to build
                 infrastructure, raise funding, or hire engineers. You need a white-label
                 partner, a niche, and a live demo. Fusion Calling gives you the platform
@@ -596,25 +627,32 @@ export default function StartVoiceAIAgencyBlogPost() {
           {/* Author Bio */}
           <div className="mt-12 pt-8 border-t border-brand/20">
             <div className="flex items-start gap-6">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-brand to-brand-strong flex items-center justify-center flex-shrink-0">
-                <span className="text-2xl font-bold text-white">FC</span>
-              </div>
+              <Image
+                src={teamAuthor.avatar}
+                alt={teamAuthor.name}
+                width={64}
+                height={64}
+                className="w-16 h-16 rounded-full object-cover border border-brand/30 flex-shrink-0"
+              />
               <div className="flex-1">
                 <h3 className="text-lg font-bold text-white mb-2">About the Author</h3>
                 <p className="text-gray-400 text-sm mb-3">
-                  <strong className="text-brand-strong">Fusion Calling Team</strong>
+                  <Link
+                    href={`/team/${teamAuthor.slug}`}
+                    className="text-brand-strong hover:text-brand transition-colors"
+                  >
+                    <strong>{teamAuthor.name}</strong>
+                  </Link>
                 </p>
                 <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                  We're the team behind Fusion Calling's white-label AI voice platform. Having helped 50+ agencies launch profitable voice AI practices since 2025, we specialize in helping businesses scale their phone operations with cutting-edge automation technology.
+                  {teamAuthor.shortBio}
                 </p>
                 <div className="flex items-center gap-4 text-sm">
                   <a
-                    href="https://www.fusioncalling.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={`mailto:${teamAuthor.email}`}
                     className="text-brand-strong hover:text-brand transition-colors"
                   >
-                    Website →
+                    Email →
                   </a>
                   <a
                     href="/whitelabel"

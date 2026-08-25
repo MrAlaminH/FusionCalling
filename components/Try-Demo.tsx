@@ -2,8 +2,8 @@
 import Image from "next/image";
 import { Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useState } from "react";
+import { Reveal } from "@/components/ui/reveal";
 
 export default function TryDemo() {
   const [playingVideos, setPlayingVideos] = useState<{
@@ -100,45 +100,23 @@ export default function TryDemo() {
     }));
   };
 
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
   return (
-    <section
-      className="relative w-full overflow-hidden bg-transparent px-4 py-12 md:py-24"
-      ref={ref}
-    >
+    <section className="relative w-full overflow-hidden bg-transparent px-4 py-12 md:py-24">
       <div className="container relative mx-auto max-w-7xl">
         {/* Header Section */}
-        <motion.div
-          className="flex flex-col items-center"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -20 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <motion.h2 className="text-brand-strong text-center font-bold text-3xl md:text-4xl pb-2">
+        <Reveal animation="animate-fade-in-up" className="flex flex-col items-center">
+          <h2 className="text-brand-strong text-center font-bold text-3xl md:text-4xl pb-2">
             Show Case
-          </motion.h2>
+          </h2>
           <p className="text-gray-400 text-center md:text-xl mb-12">
             Check out some examples of how our AI handles calls.
           </p>
-        </motion.div>
+        </Reveal>
 
         {/* Feature Cards Grid */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {visibleFeatures.map((feature, index) => (
-            <motion.div
-              key={index}
-              className="relative"
-              initial={false}
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
+            <div key={index} className="relative transition-transform duration-300 hover:scale-[1.05]">
               <div
                 className="group relative overflow-hidden rounded-2xl transition-all duration-500 
                   hover:shadow-lg hover:shadow-brand-strong hover:-translate-y-1 min-h-[200px]"
@@ -200,25 +178,20 @@ export default function TryDemo() {
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
 
         {/* See More Button */}
         {!showMore && (
-          <motion.div
-            className="flex justify-center mt-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
+          <Reveal animation="animate-fade-in-up" className="flex justify-center mt-8">
             <Button
               className="bg-brand-strong text-white px-6 py-3 rounded-lg hover:bg-brand-strong"
               onClick={() => setShowMore(true)}
             >
               See More
             </Button>
-          </motion.div>
+          </Reveal>
         )}
       </div>
     </section>

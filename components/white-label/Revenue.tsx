@@ -1,15 +1,12 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useState } from "react";
+import { Reveal } from "@/components/ui/reveal";
 import { TrendingUp, DollarSign, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 
 export default function Revenue() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
   const [clients, setClients] = useState(10);
   const [avgPrice, setAvgPrice] = useState(299);
 
@@ -26,15 +23,10 @@ export default function Revenue() {
   const revenue = calculateRevenue();
 
   return (
-    <section className="w-full bg-black py-16 sm:py-20 md:py-24" ref={ref}>
+    <section className="w-full bg-black py-16 sm:py-20 md:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Header */}
-        <motion.div
-          className="text-center mb-12 sm:mb-16 md:mb-20"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -20 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
+        <Reveal animation="animate-fade-in-up" className="text-center mb-12 sm:mb-16 md:mb-20">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">
             Calculate Your
             <span className="bg-gradient-to-r from-brand to-brand-strong text-transparent bg-clip-text">
@@ -46,15 +38,11 @@ export default function Revenue() {
             See how much you can earn by becoming a Fusion Calling partner.
             Adjust the inputs to see your potential revenue.
           </p>
-        </motion.div>
+        </Reveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 max-w-6xl mx-auto">
           {/* Calculator Inputs */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : -20 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
+          <Reveal animation="animate-fade-in-left" delay={0.1}>
             <Card className="bg-black border-brand/20 h-full">
               <CardContent className="p-6 sm:p-8">
                 <div className="flex items-center gap-3 mb-6">
@@ -140,14 +128,10 @@ export default function Revenue() {
                 </div>
               </CardContent>
             </Card>
-          </motion.div>
+          </Reveal>
 
           {/* Revenue Results */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : 20 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
+          <Reveal animation="animate-fade-in-right" delay={0.2}>
             <Card className="bg-black border-brand/30 h-full">
               <CardContent className="p-6 sm:p-8">
                 <div className="flex items-center gap-3 mb-6">
@@ -209,21 +193,16 @@ export default function Revenue() {
                 </div>
               </CardContent>
             </Card>
-          </motion.div>
+          </Reveal>
         </div>
 
         {/* Bottom Note */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: isInView ? 1 : 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-8 sm:mt-12 text-center max-w-3xl mx-auto"
-        >
+        <Reveal animation="animate-fade-in-up" delay={0.3} className="mt-8 sm:mt-12 text-center max-w-3xl mx-auto">
           <p className="text-gray-500 text-xs sm:text-sm">
             *This is a projection based on your inputs. Actual earnings may vary
             based on client retention, pricing strategy, and market conditions.
           </p>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

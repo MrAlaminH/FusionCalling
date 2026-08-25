@@ -50,6 +50,30 @@ const nextConfig = {
     // marketing site and force the browser toward huge candidates.
     deviceSizes: [360, 414, 640, 750, 828, 1080, 1200, 1920, 2048],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    // Re-check upstream images at least this often so source changes propagate.
+    minimumCacheTTL: 3600,
+  },
+  experimental: {
+    optimizePackageImports: ["lucide-react"],
+  },
+  async redirects() {
+    return [
+      // Author-entity consolidation: the old team slug 404'd; every schema
+      // reference now points at /team/voice-team.
+      {
+        source: "/team/fusioncalling-team",
+        destination: "/team/voice-team",
+        permanent: true,
+      },
+      // Host canonicalization: serve one canonical host (www) so we never
+      // split ranking signals across apex/www if platform config drifts.
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "fusioncalling.com" }],
+        destination: "https://www.fusioncalling.com/:path*",
+        permanent: true,
+      },
+    ];
   },
   async headers() {
     return [
@@ -58,12 +82,23 @@ const nextConfig = {
         headers: securityHeaders,
       },
       {
-        // Immutable caching for static assets — content-addressed by webpack,
-        // so the hash in the filename guarantees freshness.
-        source: "/:all*(svg|jpg|jpeg|png|webp|avif|gif|ico|woff2|woff|ttf|eot|otf|css|js)",
+        // Content-hashed build assets can be cached immutably forever.
+        source: "/_next/static/:path*",
         locale: false,
         headers: [
           { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+        ],
+      },
+      {
+        // Unhashed public assets (opengraph-image.png, og.jpg, logo.webp…) get
+        // replaced without renaming, so only cache them briefly.
+        source: "/:all*(svg|jpg|jpeg|png|webp|avif|gif|ico|woff2|woff|ttf|eot|otf)",
+        locale: false,
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400, stale-while-revalidate=604800",
+          },
         ],
       },
     ];

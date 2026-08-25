@@ -9,7 +9,6 @@ import { BorderBeam } from "@/components/ui/border-beam";
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
 
 // react-phone-number-input bundles every country flag (~50 KB). Code-split it
 // so that weight is not in the initial render-blocking bundle. ssr:true keeps
@@ -32,8 +31,6 @@ export default function Component() {
     phone: boolean;
     agent: boolean;
   }>({ name: false, email: false, phone: false, agent: false });
-  const reduce = useReducedMotion();
-
   const markTouched = (field: keyof typeof touched) =>
     setTouched((t) => ({ ...t, [field]: true }));
 
@@ -71,7 +68,7 @@ export default function Component() {
 
   // Function to handle copying phone number
   const handleCopyNumber = () => {
-    navigator.clipboard.writeText("+12029983591");
+    navigator.clipboard.writeText("+19146394069");
     setCopySuccess(true);
     setTimeout(() => setCopySuccess(false), 2000);
   };
@@ -105,12 +102,7 @@ export default function Component() {
 
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl md:py-6 py-10">
         {/* Top pill button */}
-        <motion.div
-          initial={reduce ? false : { opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex justify-center mb-4 sm:mb-6 lg:mb-8"
-        >
+        <div className="flex justify-center mb-4 sm:mb-6 lg:mb-8">
           <Link
             href="#show-case"
             className={cn(
@@ -125,15 +117,10 @@ export default function Component() {
               </span>
             </AnimatedShinyText>
           </Link>
-        </motion.div>
+        </div>
 
-        {/* Main heading */}
-        <motion.div
-          initial={reduce ? false : { opacity: 1, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center mb-3 sm:mb-4 md:mb-6 px-2 sm:px-4 md:px-6"
-        >
+        {/* Main heading — rendered visible at first paint (LCP) */}
+        <div className="text-center mb-3 sm:mb-4 md:mb-6 px-2 sm:px-4 md:px-6">
           <h1 className="font-display text-2xl xxs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1]">
             Transform Your Business
             <br className="hidden sm:block" />
@@ -143,30 +130,20 @@ export default function Component() {
               AI Phone Call Automation
             </span>
           </h1>
-        </motion.div>
+        </div>
 
-        {/* Subheading */}
-        <motion.div
-          initial={reduce ? false : { opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="max-w-2xl mx-auto text-center mb-6 sm:mb-8 lg:mb-10 px-2 sm:px-4 md:px-6"
-        >
+        {/* Subheading — rendered visible at first paint */}
+        <div className="max-w-2xl mx-auto text-center mb-6 sm:mb-8 lg:mb-10 px-2 sm:px-4 md:px-6">
           <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-400 leading-relaxed">
             Fusion Calling is an AI phone automation platform that handles
             inbound and outbound calls 24/7. Our AI voice agents book
             appointments, qualify leads, answer customer questions, and scale
             your phone operations with human-like conversations
           </p>
-        </motion.div>
+        </div>
 
-        {/* CTA Button */}
-        <motion.div
-          initial={reduce ? false : { opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex justify-center mb-8 sm:mb-12 lg:mb-16 xl:mb-20"
-        >
+        {/* CTA Button — rendered visible at first paint */}
+        <div className="flex justify-center mb-8 sm:mb-12 lg:mb-16 xl:mb-20">
           <Link
             href="#show-case"
             className="inline-flex items-center rounded-md bg-white px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm md:text-base font-medium text-black transition-all hover:bg-gray-200 hover:scale-105"
@@ -174,7 +151,7 @@ export default function Component() {
             Start creating with us
             <span className="ml-1 sm:ml-1.5 md:ml-2">→</span>
           </Link>
-        </motion.div>
+        </div>
 
         {/* Demo Card Section */}
         <div className="max-w-[90rem] mx-auto relative">
@@ -183,11 +160,7 @@ export default function Component() {
           <div className="hidden md:block absolute -bottom-52 left-1/2 -translate-x-1/2 w-[200%] h-48 bg-gradient-to-t from-black to-transparent z-20 pointer-events-none" />
           <div className="hidden md:block absolute -bottom-52 left-1/2 -translate-x-1/2 w-[200%] h-48 bg-gradient-to-t from-black to-transparent z-20 pointer-events-none" />
 
-          <motion.div
-            initial={reduce ? false : { opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
-          >
+          <div>
             <NeonGradientCard
               className="w-full dark mb-6 sm:mb-12 md:mb-20 lg:mb-32 relative z-0"
               borderSize={2}
@@ -239,17 +212,17 @@ export default function Component() {
                       </div>
                       <div className="flex items-center gap-2">
                         <span className="text-xs sm:text-sm font-medium text-white">
-                          +1 (651) 427 2794
+                          +1 (914) 639-4069
                         </span>
-                        <motion.button
+                        <button
                           onClick={handleCopyNumber}
-                          className={`transition-colors ${
+                          className={cn(
+                            "transition-all active:scale-95",
                             copySuccess
                               ? "text-green-500"
-                              : "text-brand hover:text-brand"
-                          }`}
+                              : "text-brand hover:text-brand",
+                          )}
                           aria-label="Copy phone number"
-                          whileTap={{ scale: 0.95 }}
                         >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -278,7 +251,7 @@ export default function Component() {
                               </>
                             )}
                           </svg>
-                        </motion.button>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -446,7 +419,7 @@ export default function Component() {
                 </div>
               </div>
             </NeonGradientCard>
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>

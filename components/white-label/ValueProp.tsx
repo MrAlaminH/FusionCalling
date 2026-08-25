@@ -1,13 +1,8 @@
-"use client";
-
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
 import { DollarSign, Zap, Users, Shield } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Reveal } from "@/components/ui/reveal";
 
 export default function ValueProp() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   const benefits = [
     {
@@ -51,14 +46,11 @@ export default function ValueProp() {
   ];
 
   return (
-    <section className="w-full bg-black relative section-spacing" ref={ref}>
+    <section className="w-full bg-black relative section-spacing">
       {/* Atmospheric background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="particle"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: [0.06, 0.12, 0.06] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        <div
+          className="particle [animation-duration:12s]"
           style={{
             width: "350px",
             height: "350px",
@@ -66,16 +58,8 @@ export default function ValueProp() {
             right: "5%",
           }}
         />
-        <motion.div
-          className="particle"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: [0.04, 0.08, 0.04] }}
-          transition={{
-            duration: 14,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 3,
-          }}
+        <div
+          className="particle [animation-duration:14s] [animation-delay:3s]"
           style={{
             width: "280px",
             height: "280px",
@@ -87,16 +71,7 @@ export default function ValueProp() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Header */}
-        <motion.div
-          className="text-center mb-12 md:mb-16 lg:mb-20"
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -30 }}
-          transition={{
-            duration: 0.8,
-            delay: 0.2,
-            ease: [0.25, 0.1, 0.25, 1.0],
-          }}
-        >
+        <Reveal animation="animate-fade-in-up" className="text-center mb-12 md:mb-16 lg:mb-20">
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">
             Why Agencies Choose
             <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
@@ -109,7 +84,7 @@ export default function ValueProp() {
             your brand. No technical expertise required, just pure business
             growth.
           </p>
-        </motion.div>
+        </Reveal>
 
         {/* Asymmetric Benefits Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12 md:mb-16 lg:mb-20">
@@ -117,21 +92,12 @@ export default function ValueProp() {
             const Icon = benefit.icon;
 
             return (
-              <motion.div
+              <Reveal
                 key={index}
-                initial={{ opacity: 0, y: 50, scale: 0.95 }}
-                animate={{
-                  opacity: isInView ? 1 : 0,
-                  y: isInView ? 0 : 50,
-                  scale: isInView ? 1 : 0.95,
-                }}
-                transition={{
-                  duration: 0.6,
-                  delay: 0.3 + index * 0.1,
-                  ease: [0.25, 0.1, 0.25, 1.0],
-                }}
-                whileHover={{ y: -12, scale: 1.03 }}
-                className="relative group"
+                animation="animate-fade-in-up"
+                duration={0.6}
+                delay={index * 0.1}
+                className="relative group transition-transform duration-300 hover:-translate-y-2 hover:scale-[1.03]"
               >
                 {/* Glow effect */}
                 <div className="absolute -inset-4 bg-gradient-to-br from-brand/25 via-brand-strong/10 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
@@ -141,17 +107,10 @@ export default function ValueProp() {
                     {/* Decorative gradient overlay */}
                     <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-brand/10 to-transparent rounded-full blur-2xl -z-10" />
 
-                    {/* Icon with animation */}
-                    <motion.div
-                      className="w-14 h-14 md:w-16 md:h-16 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0 group-hover:border-brand/60 transition-premium-fast shadow-premium"
-                      whileHover={{ rotate: 360, scale: 1.1 }}
-                      transition={{
-                        duration: 0.6,
-                        ease: [0.25, 0.1, 0.25, 1.0],
-                      }}
-                    >
+                    {/* Icon */}
+                    <div className="w-14 h-14 md:w-16 md:h-16 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0 group-hover:border-brand/60 group-hover:scale-110 transition-premium-fast shadow-premium">
                       <Icon className="w-7 h-7 md:w-8 md:h-8 text-brand" />
-                    </motion.div>
+                    </div>
 
                     {/* Content */}
                     <div className="flex-grow space-y-3">
@@ -174,22 +133,13 @@ export default function ValueProp() {
                     </div>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </Reveal>
             );
           })}
         </div>
 
         {/* Stats Section with Enhanced Design */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 40 }}
-          transition={{
-            duration: 0.8,
-            delay: 0.8,
-            ease: [0.25, 0.1, 0.25, 1.0],
-          }}
-          className="relative"
-        >
+        <Reveal animation="animate-fade-in-up" delay={0.2} className="relative">
           <div className="glass rounded-3xl p-8 md:p-12 lg:p-16 border border-brand/20 shadow-premium-lg">
             {/* Background gradient */}
             <div className="absolute inset-0 bg-gradient-to-br from-brand/10 via-transparent to-green-500/5 rounded-3xl -z-10" />
@@ -200,17 +150,9 @@ export default function ValueProp() {
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
               {stats.map((stat, idx) => (
-                <motion.div
+                <div
                   key={idx}
-                  className="text-center"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{
-                    delay: 1 + idx * 0.15,
-                    duration: 0.5,
-                    ease: [0.25, 0.1, 0.25, 1.0],
-                  }}
-                  whileHover={{ scale: 1.1, y: -5 }}
+                  className="text-center transition-transform duration-300 hover:scale-110 hover:-translate-y-1"
                 >
                   <div className="font-display text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-br from-brand to-brand-strong text-transparent bg-clip-text mb-2">
                     {stat.value}
@@ -218,11 +160,11 @@ export default function ValueProp() {
                   <div className="font-body text-xs md:text-sm text-gray-500">
                     {stat.label}
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

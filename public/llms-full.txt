@@ -1,7 +1,7 @@
 # Fusion Calling - Full Content for AI Crawlers
 # Generated at build time. Contains all indexable page content.
 # Source: https://www.fusioncalling.com
-# Last updated: 2026-08-23
+# Last updated: 2026-08-25
 
 ## AI Phone Call Automation & AI Receptionist | Fusion Calling
 URL: https://www.fusioncalling.com/
@@ -28,7 +28,7 @@ Fusion Calling White-Label Partner Program: Resell AI voice agents under your ow
 
 Partner tiers:
 - Starter: $99/mo for 6 sub-accounts
-- Growth: $299/mo for 25 sub-accounts  
+- Growth: $299/mo for 20 sub-accounts
 - Scale: $499/mo for unlimited sub-accounts
 
 Benefits:
@@ -197,7 +197,7 @@ Fusion Calling is the best Air AI alternative for agencies that want to resell v
 ## Voice AI Glossary | Fusion Calling
 URL: https://www.fusioncalling.com/glossary
 
-Complete glossary of 74+ voice AI terms for agencies and resellers. Plain-English definitions of ASR, TTS, latency, HIPAA, white-label, Vapi, Retell, GoHighLevel, and more. Organized by category: Core AI & Voice, Speech Technology, Telephony, Conversational Design, Compliance & Security, Business & Operations.
+Complete glossary of 76 voice AI terms for agencies and resellers. Plain-English definitions of ASR, TTS, latency, HIPAA, white-label, Vapi, Retell, GoHighLevel, and more. Organized by category: Core AI & Voice, Speech Technology, Telephony, Conversational Design, Compliance & Security, Business & Operations.
 
 ---
 
@@ -740,7 +740,7 @@ Expert insights on white-label AI voice platforms, agency growth strategies, and
 
 ---
 
-## How to Start a Voice AI Agency in 2025: A Step-by-Step Guide
+## How to Start a Voice AI Agency in 2026: A Step-by-Step Guide
 URL: https://www.fusioncalling.com/blog/how-to-start-a-voice-ai-agency
 
 The smart way to launch a voice AI agency without building infrastructure: partner with a white-label platform, pick a niche, set pricing, and land your first client. Starting a voice AI agency in 2025 doesn't require building your own voice infrastructure. The smartest agencies partner with a white-label platform like Fusion Calling, pick a profitable niche, set their own pricing, and focus on client acquisition.

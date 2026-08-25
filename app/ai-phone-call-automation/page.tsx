@@ -14,15 +14,6 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  keywords: [
-    "what is ai phone call automation",
-    "ai phone call automation",
-    "ai receptionist",
-    "automated phone calls",
-    "ai voice agent",
-    "how ai calling works",
-    "voice ai explained",
-  ],
   ...buildOpenGraph({ title, description, path: "/ai-phone-call-automation" }),
 };
 
@@ -98,7 +89,6 @@ export default function AiPhoneCallAutomationPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <h1 className="sr-only">What Is AI Phone Call Automation? | Fusion Calling</h1>
       <main id="main" className="min-h-screen w-full bg-black">
         <Navbar />
 
@@ -121,7 +111,11 @@ export default function AiPhoneCallAutomationPage() {
             <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
               A complete, plain-English guide to how AI voice agents place and
               answer calls, the technology that powers them, and the results
-              businesses see — plus the standards Fusion Calling follows.
+              businesses see — plus the standards Fusion Calling follows.{" "}
+              <Link href="/pricing" className="text-brand hover:underline">
+                View pricing
+              </Link>{" "}
+              to see plans for every team size.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Link
@@ -131,7 +125,7 @@ export default function AiPhoneCallAutomationPage() {
                 See It in Action
               </Link>
               <Link
-                href="/#pricing"
+                href="/pricing"
                 className="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-white/5"
               >
                 View Pricing

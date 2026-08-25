@@ -12,7 +12,7 @@ export type BlogPost = {
 export const blogPosts: BlogPost[] = [
   {
     slug: "how-to-start-a-voice-ai-agency",
-    title: "How to Start a Voice AI Agency in 2025: A Step-by-Step Guide",
+    title: "How to Start a Voice AI Agency in 2026: A Step-by-Step Guide",
     description:
       "The smart way to launch a voice AI agency without building infrastructure: partner with a white-label platform, pick a niche, set pricing, and land your first client.",
     date: "2025-02-13",

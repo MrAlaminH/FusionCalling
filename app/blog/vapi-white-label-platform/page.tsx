@@ -1,25 +1,17 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
+import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { getTeamAuthor } from "@/lib/authors";
 
 /* eslint-disable react/no-unescaped-entities */
+
+const teamAuthor = getTeamAuthor();
 
 export const metadata: Metadata = {
   title: "White-Label Vapi: Vapi Alone Isn't Resellable",
   description:
     "Vapi is great voice AI but has no native white-label: you can't resell it under your brand. Fusion Calling adds branding, portals, and billing to resell Vapi.",
-  keywords: [
-    "vapi white label",
-    "white label vapi",
-    "resell vapi",
-    "vapi agency partner",
-    "vapi white-label platform",
-    "voice AI white label",
-    "vapi has no white-label",
-    "vapi not resellable",
-    "vapi white label alternative",
-    "why vapi isn't white label",
-  ],
   alternates: {
     canonical: "/blog/vapi-white-label-platform",
   },
@@ -40,7 +32,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "article",
     publishedTime: "2025-02-10T00:00:00Z",
-    modifiedTime: "2025-02-10T00:00:00Z",
+    modifiedTime: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
     authors: ["Fusion Calling"],
   },
 };
@@ -201,11 +193,33 @@ export default function VapiWhiteLabelBlogPost() {
             resell Vapi under their own brand.
           </p>
 
-          <div className="flex items-center gap-6 text-sm text-gray-500">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-500 mb-8">
             <span>February 10, 2025</span>
             <span>•</span>
-            <span>By Fusion Calling Team</span>
+            <Link
+              href={`/team/${teamAuthor.slug}`}
+              className="flex items-center gap-2 hover:text-brand-light transition-colors"
+            >
+              <Image
+                src={teamAuthor.avatar}
+                alt={teamAuthor.name}
+                width={24}
+                height={24}
+                className="w-6 h-6 rounded-full object-cover"
+              />
+              <span>By {teamAuthor.name}</span>
+            </Link>
+            <span>•</span>
+            <span>Last updated: July 7, 2026</span>
           </div>
+
+          <p className="text-brand-light font-semibold mb-8">
+            Looking to launch your own white-labeled Vapi agency?{" "}
+            <Link href="/whitelabel/vapi" className="underline hover:text-brand transition-colors">
+              See our white-label Vapi platform
+            </Link>
+            .
+          </p>
         </div>
 
         {/* Featured Image */}
@@ -229,7 +243,10 @@ export default function VapiWhiteLabelBlogPost() {
                 Why Agencies Love Vapi — and Where the Gap Is
               </h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Vapi has become a go-to choice for agencies building voice AI
+                <Link href="/glossary/vapi" className="text-brand-light hover:text-brand transition-colors">
+                  Vapi
+                </Link>{" "}
+                has become a go-to choice for agencies building voice AI
                 practices. It delivers fast, reliable, real-time voice
                 infrastructure that handles the hard part of conversational AI —
                 speech, latency, telephony, and model orchestration. For the
@@ -238,7 +255,10 @@ export default function VapiWhiteLabelBlogPost() {
               </p>
               <p className="text-gray-300 leading-relaxed mb-4">
                 But most agencies who build on Vapi hit the same wall: Vapi
-                alone isn&apos;t white-label or resellable. It is developer
+                alone isn&apos;t white-label or resellable. It is developer{" "}
+                <Link href="/glossary/white-label" className="text-brand-light hover:text-brand transition-colors">
+                  white-label
+                </Link>{" "}
                 infrastructure, not a sellable product. To actually turn Vapi
                 into something you can charge clients for under your own brand,
                 you need a layer on top — and that layer is what most teams try
@@ -335,8 +355,12 @@ export default function VapiWhiteLabelBlogPost() {
                   <div>
                     <h3 className="text-white font-bold mb-2">Connect your Vapi account</h3>
                     <p className="text-gray-400 text-sm">
-                      Bring your existing Vapi account and API key. One-time
-                      connection — you keep the infrastructure you already trust.
+                      Bring your existing Vapi account and API key — a{" "}
+                      <Link href="/glossary/bring-your-own-key" className="text-brand-light hover:text-brand transition-colors">
+                        bring-your-own-key
+                      </Link>{" "}
+                      model with a one-time connection. You keep the infrastructure
+                      you already trust.
                     </p>
                   </div>
                 </div>
@@ -431,7 +455,11 @@ export default function VapiWhiteLabelBlogPost() {
                 Fusion Calling is a simple, flat subscription — we don&apos;t
                 take a cut of your client revenue. You keep 100% of whatever
                 you charge your clients. Your only cost is the Fusion Calling
-                subscription:
+                subscription (full details on our{" "}
+                <Link href="/pricing" className="text-brand-light hover:text-brand transition-colors">
+                  pricing page
+                </Link>
+                ):
               </p>
 
               <div className="bg-gradient-to-r from-brand/10 to-brand-strong/5 rounded-xl p-6 border border-brand/30 mb-6">
@@ -463,9 +491,13 @@ export default function VapiWhiteLabelBlogPost() {
               <p className="text-gray-300 leading-relaxed">
                 Beyond Vapi, Fusion Calling also supports Retell AI and
                 ElevenLabs, and integrates with GoHighLevel via API and
-                webhooks (connecting across 2,200+ apps). You can see it all in
+                webhooks (connecting across 2,200+ apps — see the{" "}
+                <Link href="/docs" className="text-brand-light hover:text-brand transition-colors">
+                  API &amp; webhook docs
+                </Link>
+                ). You can see it all in
                 action on our{" "}
-                <Link href="/" className="text-brand-light hover:text-brand transition-colors">
+                <Link href="/#show-case" className="text-brand-light hover:text-brand transition-colors">
                   live interactive demo
                 </Link>{" "}
                 on the homepage.
@@ -487,7 +519,12 @@ export default function VapiWhiteLabelBlogPost() {
               <p className="text-gray-300 leading-relaxed mb-8">
                 Instead of spending months and tens of thousands building a
                 custom white-label app, you can launch your branded voice AI
-                practice in about 7 days with done-with-you onboarding.
+                practice in about 7 days with done-with-you onboarding. Ready to
+                see the{" "}
+                <Link href="/whitelabel/vapi" className="text-brand-light hover:text-brand transition-colors">
+                  white-label Vapi platform
+                </Link>{" "}
+                up close?
               </p>
               <Link
                 href="/whitelabel"
@@ -535,25 +572,32 @@ export default function VapiWhiteLabelBlogPost() {
           {/* Author Bio */}
           <div className="mt-12 pt-8 border-t border-brand/20">
             <div className="flex items-start gap-6">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-brand to-brand-strong flex items-center justify-center flex-shrink-0">
-                <span className="text-2xl font-bold text-white">FC</span>
-              </div>
+              <Image
+                src={teamAuthor.avatar}
+                alt={teamAuthor.name}
+                width={64}
+                height={64}
+                className="w-16 h-16 rounded-full object-cover border border-brand/30 flex-shrink-0"
+              />
               <div className="flex-1">
                 <h3 className="text-lg font-bold text-white mb-2">About the Author</h3>
                 <p className="text-gray-400 text-sm mb-3">
-                  <strong className="text-brand-strong">Fusion Calling Team</strong>
+                  <Link
+                    href={`/team/${teamAuthor.slug}`}
+                    className="text-brand-strong hover:text-brand transition-colors"
+                  >
+                    <strong>{teamAuthor.name}</strong>
+                  </Link>
                 </p>
                 <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                  We're the team behind Fusion Calling's white-label AI voice platform. Having helped 50+ agencies launch profitable voice AI practices since 2025, we specialize in helping businesses scale their phone operations with cutting-edge automation technology.
+                  {teamAuthor.shortBio}
                 </p>
                 <div className="flex items-center gap-4 text-sm">
                   <a
-                    href="https://www.fusioncalling.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={`mailto:${teamAuthor.email}`}
                     className="text-brand-strong hover:text-brand transition-colors"
                   >
-                    Website →
+                    Email →
                   </a>
                   <a
                     href="/whitelabel"

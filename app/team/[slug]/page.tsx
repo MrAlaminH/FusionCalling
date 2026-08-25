@@ -3,70 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
-
-type Author = {
-  slug: string;
-  name: string;
-  role: string;
-  avatar: string;
-  shortBio: string;
-  longBio: string[];
-  linkedin?: string;
-  twitter?: string;
-  email: string;
-  authorSchemaId: string;
-  specialties: string[];
-};
-
-const authors: Author[] = [
-  {
-    slug: "alamin",
-    name: "Alamin",
-    role: "Founder & CEO",
-    avatar: "/avatars/male_avatar.svg",
-    shortBio: "Founder of Fusion Calling. Building the infrastructure for 500+ agencies to launch white-label voice AI businesses. Previously scaled B2B SaaS to 7-figures ARR.",
-    longBio: [
-      "Alamin founded Fusion Calling in 2022 after recognizing that agencies wanted to sell voice AI but lacked the infrastructure to white-label, manage multi-provider deployments, and bill clients under their own brand.",
-      "Before Fusion Calling, he built and exited a B2B SaaS platform serving 2,000+ SMB customers. He brings deep experience in agency business models, recurring revenue architecture, and voice AI technology stacks.",
-      "He's passionate about democratizing access to enterprise-grade voice AI, enabling agencies of any size to compete with major platforms. When not building, he's advising early-stage founders on go-to-market strategy and SaaS pricing.",
-    ],
-    linkedin: "https://linkedin.com/in/alamin",
-    twitter: "https://twitter.com/fusioncalling",
-    email: "alamin@fusioncalling.com",
-    authorSchemaId: "https://www.fusioncalling.com/team/alamin#person",
-    specialties: [
-      "Voice AI Strategy",
-      "White-label SaaS Architecture",
-      "Agency Business Models",
-      "Multi-provider Voice Infrastructure",
-      "Recurring Revenue Optimization",
-    ],
-  },
-  {
-    slug: "voice-team",
-    name: "FusionCalling Voice Team",
-    role: "Product & Voice Engineering",
-    avatar: "/avatars/female_avatar.svg",
-    shortBio: "The engineering and voice AI team behind Fusion Calling's multi-provider platform. Experts in Vapi, Retell, ElevenLabs integration, conversation design, and production voice deployments.",
-    longBio: [
-      "The FusionCalling Voice Team comprises conversation designers, voice engineers, and platform architects who have collectively deployed 10,000+ AI voice agents across real estate, healthcare, insurance, home services, and legal verticals.",
-      "They specialize in optimizing latency, barge-in handling, endpointing accuracy, and multi-turn conversation flows. The team maintains direct partnerships with Vapi, Retell, and ElevenLabs engineering teams to ensure Fusion Calling customers get early access to new features and priority support.",
-      "Their published work includes the industry's most comprehensive voice AI glossary (74 terms), benchmark studies on provider performance, and open-source tooling for voice agent testing.",
-    ],
-    linkedin: "https://linkedin.com/company/fusion-calling",
-    twitter: "https://twitter.com/fusioncalling",
-    email: "voice@fusioncalling.com",
-    authorSchemaId: "https://www.fusioncalling.com/team/voice-team#person",
-    specialties: [
-      "Conversation Design",
-      "Voice Provider Integration (Vapi, Retell, ElevenLabs)",
-      "Latency Optimization",
-      "ASR/TTS Tuning",
-      "Multi-turn Dialog Management",
-      "Compliance (HIPAA, TCPA, GDPR)",
-    ],
-  },
-];
+import { authors, getAuthor } from "@/lib/authors";
 
 export function generateStaticParams() {
   return authors.map((a) => ({ slug: a.slug }));
@@ -77,13 +14,13 @@ export function generateMetadata({
 }: {
   params: { slug: string };
 }): Metadata {
-  const author = authors.find((a) => a.slug === params.slug);
+  const author = getAuthor(params.slug);
   if (!author) {
     return { title: "Team Member Not Found" };
   }
 
   const url = `${SITE_URL}/team/${author.slug}`;
-  const title = `${author.name} | ${author.role} | Fusion Calling`;
+  const title = `${author.name} | ${author.role}`;
 
   return {
     title,
@@ -118,7 +55,7 @@ export default function TeamMemberPage({
 }: {
   params: { slug: string };
 }) {
-  const author = authors.find((a) => a.slug === params.slug);
+  const author = getAuthor(params.slug);
   if (!author) {
     notFound();
   }

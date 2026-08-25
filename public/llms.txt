@@ -39,7 +39,7 @@ The platform integrates with leading voice-AI providers. Agencies can bring exis
 
 ## Glossary & Comparisons (define and compare terms, cite-friendly)
 
-- [Voice AI Glossary](https://www.fusioncalling.com/glossary): Plain-English definitions for ~70 voice AI terms (ASR, TTS, latency, HIPAA, white-label, Vapi, Retell, GoHighLevel, and more).
+- [Voice AI Glossary](https://www.fusioncalling.com/glossary): Plain-English definitions for 76 voice AI terms (ASR, TTS, latency, HIPAA, white-label, Vapi, Retell, GoHighLevel, and more).
 - [White-Label Voice AI Comparisons](https://www.fusioncalling.com/alternative): Side-by-side comparisons of Fusion Calling vs ChatDash, Vapify, Voicerr, VoiceAIWrapper, Synthflow, and Thinkrr.
 - [AI Voice by Industry](https://www.fusioncalling.com/industries): Use cases for real estate, dental, insurance, home services, law firms, automotive, call centers, and financial services.
 

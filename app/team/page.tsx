@@ -2,11 +2,11 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { authors } from "@/lib/authors";
-
-export const revalidate = 86400;
 import { SITE_URL } from "@/lib/site-url";
 
-const title = "Our Team | Fusion Calling";
+export const revalidate = 86400;
+
+const title = "Our Team";
 const description = "Meet the team behind Fusion Calling — founders, voice AI engineers, and agency growth experts building the future of white-label voice automation.";
 
 export const metadata: Metadata = {
@@ -113,9 +113,9 @@ export default function TeamPage() {
                         priority
                       />
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-1 group-hover:text-brand-light transition-colors">
+                    <h2 className="text-xl font-bold text-white mb-1 group-hover:text-brand-light transition-colors">
                       {author.name}
-                    </h3>
+                    </h2>
                     <p className="text-brand-light text-sm font-medium">{author.role}</p>
                   </div>
 

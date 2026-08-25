@@ -1,21 +1,17 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
+import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { getTeamAuthor } from "@/lib/authors";
 
 /* eslint-disable react/no-unescaped-entities */
+
+const teamAuthor = getTeamAuthor();
 
 export const metadata: Metadata = {
   title: "AI Voice Agents for Small Business: Use Cases & ROI",
   description:
     "Missed calls cost small businesses revenue. This guide covers AI voice agent use cases — 24/7 booking, missed-call recovery, lead capture — with Fusion Calling.",
-  keywords: [
-    "ai voice agents for small business",
-    "ai voice agent use cases",
-    "voice ai roi",
-    "missed call recovery",
-    "small business voice automation",
-    "ai receptionist for small business",
-  ],
   alternates: {
     canonical: "/blog/ai-voice-agents-for-small-business",
   },
@@ -36,7 +32,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "article",
     publishedTime: "2025-02-15T00:00:00Z",
-    modifiedTime: "2025-02-15T00:00:00Z",
+    modifiedTime: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
     authors: ["Fusion Calling"],
   },
 };
@@ -204,10 +200,24 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
             businesses and the agencies that serve them.
           </p>
 
-          <div className="flex items-center gap-6 text-sm text-gray-500">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-500">
             <span>February 15, 2025</span>
             <span>•</span>
-            <span>By Fusion Calling Team</span>
+            <Link
+              href={`/team/${teamAuthor.slug}`}
+              className="flex items-center gap-2 hover:text-brand-light transition-colors"
+            >
+              <Image
+                src={teamAuthor.avatar}
+                alt={teamAuthor.name}
+                width={24}
+                height={24}
+                className="w-6 h-6 rounded-full object-cover"
+              />
+              <span>By {teamAuthor.name}</span>
+            </Link>
+            <span>•</span>
+            <span>Last updated: July 7, 2026</span>
           </div>
         </div>
 
@@ -247,7 +257,10 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
                 and peak hours, and the leak becomes constant.
               </p>
               <p className="text-brand-light text-lg font-semibold">
-                AI voice agents close that gap by answering every call
+                <Link href="/glossary/ai-voice-agent" className="underline hover:text-brand transition-colors">
+                  AI voice agents
+                </Link>{" "}
+                close that gap by answering every call
                 instantly, 24/7 — capturing the revenue that's currently
                 slipping away.
               </p>
@@ -312,7 +325,12 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
                     <h3 className="text-white font-bold mb-2">Missed-Call Recovery</h3>
                     <p className="text-gray-400 text-sm">
                       Every call gets answered, qualified, and routed or booked
-                      so revenue stops leaking to voicemail.
+                      so revenue stops leaking to voicemail. This is the core
+                      pitch for{" "}
+                      <Link href="/industries/ai-voice-for-home-services" className="text-brand-light hover:text-brand transition-colors">
+                        home services
+                      </Link>{" "}
+                      businesses especially.
                     </p>
                   </div>
                 </div>
@@ -325,7 +343,12 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
                     <h3 className="text-white font-bold mb-2">24/7 Appointment Booking</h3>
                     <p className="text-gray-400 text-sm">
                       Callers book directly into your calendar at any hour —
-                      nights, weekends, and peak hours included.
+                      nights, weekends, and peak hours included. Dental and
+                      healthcare clinics live on this: see our{" "}
+                      <Link href="/industries/ai-voice-for-dental" className="text-brand-light hover:text-brand transition-colors">
+                        AI voice playbook for dental
+                      </Link>
+                      .
                     </p>
                   </div>
                 </div>
@@ -392,7 +415,11 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
               <p className="text-gray-300 leading-relaxed mb-6">
                 The case for an AI voice agent comes down to simple arithmetic.
                 Compare what happens today with what happens once every call is
-                answered:
+                answered (or plug your own numbers into our{" "}
+                <Link href="/calculator" className="text-brand-light hover:text-brand transition-colors">
+                  missed-call ROI calculator
+                </Link>
+                ):
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -428,7 +455,12 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
                 Now weigh that recovered revenue against the cost. Fusion Calling
                 runs from{" "}
                 <strong className="text-brand-light">$99 to $499/mo</strong>{" "}
-                depending on how many locations or sub-accounts you manage. For
+                depending on how many locations or sub-accounts you manage (full
+                tier details on our{" "}
+                <Link href="/pricing" className="text-brand-light hover:text-brand transition-colors">
+                  pricing page
+                </Link>
+                ). For
                 most small businesses, recovering a single job per month covers
                 the entire subscription — and most recover far more than that.
               </p>
@@ -524,7 +556,11 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
                 Get started with{" "}
                 <strong className="text-brand-light">$0 setup</strong> and a{" "}
                 <strong className="text-brand-light">3-day free trial</strong>,
-                watch the live demo on the homepage, or apply to white-label
+                watch the{" "}
+                <Link href="/#show-case" className="text-brand-light hover:text-brand transition-colors">
+                  live demo on the homepage
+                </Link>
+                , or apply to white-label
                 Fusion Calling for your own clients.
               </p>
 
@@ -548,7 +584,7 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
                   className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition-all group"
                 >
                   <h3 className="text-white font-bold mb-2 group-hover:text-brand-light transition-colors">
-                    How to Start a Voice AI Agency in 2025
+                    How to Start a Voice AI Agency in 2026
                   </h3>
                   <p className="text-gray-400 text-sm">
                     A step-by-step guide to launching and growing a profitable
@@ -574,25 +610,32 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
           {/* Author Bio */}
           <div className="mt-12 pt-8 border-t border-brand/20">
             <div className="flex items-start gap-6">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-brand to-brand-strong flex items-center justify-center flex-shrink-0">
-                <span className="text-2xl font-bold text-white">FC</span>
-              </div>
+              <Image
+                src={teamAuthor.avatar}
+                alt={teamAuthor.name}
+                width={64}
+                height={64}
+                className="w-16 h-16 rounded-full object-cover border border-brand/30 flex-shrink-0"
+              />
               <div className="flex-1">
                 <h3 className="text-lg font-bold text-white mb-2">About the Author</h3>
                 <p className="text-gray-400 text-sm mb-3">
-                  <strong className="text-brand-strong">Fusion Calling Team</strong>
+                  <Link
+                    href={`/team/${teamAuthor.slug}`}
+                    className="text-brand-strong hover:text-brand transition-colors"
+                  >
+                    <strong>{teamAuthor.name}</strong>
+                  </Link>
                 </p>
                 <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                  We're the team behind Fusion Calling's white-label AI voice platform. Having helped 50+ agencies launch profitable voice AI practices since 2025, we specialize in helping businesses scale their phone operations with cutting-edge automation technology.
+                  {teamAuthor.shortBio}
                 </p>
                 <div className="flex items-center gap-4 text-sm">
                   <a
-                    href="https://www.fusioncalling.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={`mailto:${teamAuthor.email}`}
                     className="text-brand-strong hover:text-brand transition-colors"
                   >
-                    Website →
+                    Email →
                   </a>
                   <a
                     href="/whitelabel"

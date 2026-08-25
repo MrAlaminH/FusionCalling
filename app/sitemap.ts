@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
-import { SITE_URL } from "@/lib/site-url";
-import { glossaryTerms, slugifyTerm } from "@/lib/glossary";
+import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { glossaryTerms, slugifyTerm, GLOSSARY_LAST_UPDATED } from "@/lib/glossary";
+import { blogPosts } from "@/lib/blog-posts";
 import { whitelabelCaseStudies } from "@/lib/whitelabel-case-studies";
 import { whitelabelLocations } from "@/lib/whitelabel-locations";
 
@@ -30,13 +31,9 @@ const STATIC_PATHS = [
   "/privacy",
   "/terms",
   "/blog",
-  "/blog/vapi-white-label-platform",
-  "/blog/retell-ai-white-label",
-  "/blog/gohighlevel-white-label-voice",
-  "/blog/how-to-start-a-voice-ai-agency",
-  "/blog/vapi-vs-retell-vs-elevenlabs",
-  "/blog/ai-voice-agents-for-small-business",
-  "/blog/gohighlevel-alternative-for-voice-ai",
+  "/team",
+  "/team/alamin",
+  "/team/voice-team",
   "/alternative",
   "/alternative/chatdash",
   "/alternative/vapify",
@@ -64,16 +61,28 @@ const STATIC_PATHS = [
 const GLOSSARY_PATHS = glossaryTerms.map((t) => `/glossary/${slugifyTerm(t.term)}`);
 const CASE_STUDY_PATHS = whitelabelCaseStudies.map((cs) => `/whitelabel/case-studies/${cs.slug}`);
 const LOCATION_PATHS = whitelabelLocations.map((loc) => `/whitelabel/locations/${loc.slug}`);
+const BLOG_PATHS = blogPosts.map((p) => `/blog/${p.slug}`);
+
+// Real, maintained editorial dates — never `new Date()`. A lastmod that
+// changes on every deploy teaches Google to ignore it entirely.
+function lastmodFor(path: string): Date {
+  const blogPost = BLOG_PATHS.includes(path)
+    ? blogPosts.find((p) => `/blog/${p.slug}` === path)
+    : undefined;
+  if (blogPost?.date) return new Date(blogPost.date);
+  if (path.startsWith("/glossary")) return new Date(GLOSSARY_LAST_UPDATED);
+  return new Date(CONTENT_LAST_UPDATED);
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = SITE_URL;
-  const lastModified = new Date();
 
   const paths: readonly string[] = [
     ...STATIC_PATHS,
     ...GLOSSARY_PATHS,
     ...CASE_STUDY_PATHS,
     ...LOCATION_PATHS,
+    ...BLOG_PATHS,
   ];
 
   // Guard: never emit duplicate or empty URLs into the sitemap.
@@ -108,12 +117,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
         : path.startsWith("/whitelabel/case-studies/") ||
           path.startsWith("/whitelabel/locations/") ||
           path.startsWith("/alternative/") ||
-          path.startsWith("/industries/")
+          path.startsWith("/industries/") ||
+          path.startsWith("/blog/")
         ? 0.7
         : path.startsWith("/glossary/")
         ? 0.6
         : path === "/terms" || path === "/privacy"
         ? 0.3
+        : path.startsWith("/team")
+        ? 0.5
         : 0.7;
     const changeFrequency =
       path === "/"
@@ -124,7 +136,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     return {
       url: `${baseUrl}${path}`,
-      lastModified,
+      lastModified: lastmodFor(path),
       changeFrequency,
       priority,
     };

@@ -1,38 +1,23 @@
-"use client";
 import { Calendar, Phone, BarChart3 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { Reveal } from "@/components/ui/reveal";
 
 export default function Features() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
   return (
-    <section className="w-full bg-black" ref={ref}>
-      <motion.div
-        className="flex flex-col items-center"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -20 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-      >
-        <motion.h2 className="text-brand-strong text-center font-bold text-3xl md:text-4xl  pb-4">
+    <section className="w-full bg-black">
+      <Reveal animation="animate-fade-in-up" className="flex flex-col items-center">
+        <h2 className="text-brand-strong text-center font-bold text-3xl md:text-4xl  pb-4">
           Calling Features
-        </motion.h2>
+        </h2>
         <p className="text-gray-400 text-center md:text-xl mb-6">
           Turn missed calls into revenue with <br /> AI phone call agents that
           sound and behave like real humans.
         </p>
-      </motion.div>
+      </Reveal>
       {/* First Feature */}
       <div className="container mx-auto px-4 md:px-6 max-w-6xl">
-        <motion.div
-          className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
+        <Reveal animation="animate-fade-in-up" className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
           <div className="w-full md:w-1/2 space-y-4">
             <div className="inline-block rounded-lg bg-brand/10 px-3 py-1 text-sm text-brand-strong">
               Smart Scheduling
@@ -71,17 +56,12 @@ export default function Features() {
               </CardContent>
             </Card>
           </div>
-        </motion.div>
+        </Reveal>
       </div>
 
       {/* Second Feature */}
       <div className="container mx-auto px-4 md:px-6 mt-20 max-w-6xl">
-        <motion.div
-          className="flex flex-col md:flex-row-reverse items-center justify-center gap-6 md:gap-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
+        <Reveal animation="animate-fade-in-up" className="flex flex-col md:flex-row-reverse items-center justify-center gap-6 md:gap-12">
           <div className="w-full md:w-1/2 space-y-4">
             <div className="inline-block rounded-lg bg-brand/10 px-3 py-1 text-sm text-brand-strong">
               24/7 Support
@@ -124,17 +104,12 @@ export default function Features() {
               </CardContent>
             </Card>
           </div>
-        </motion.div>
+        </Reveal>
       </div>
 
       {/* Third Feature */}
       <div className="container mx-auto px-4 md:px-6 mt-20 max-w-6xl pb-20">
-        <motion.div
-          className="grid md:grid-cols-3 gap-8 justify-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-        >
+        <Reveal animation="animate-fade-in-up" delay={0.2} className="grid md:grid-cols-3 gap-8 justify-center">
           <Card className="bg-black border-brand/20 group relative overflow-hidden transition-all duration-500 hover:shadow-lg hover:shadow-brand-strong hover:-translate-y-1 min-h-[200px]">
             <CardContent className="p-6 space-y-4">
               <BarChart3 className="h-12 w-12 text-brand-strong" />
@@ -169,7 +144,7 @@ export default function Features() {
               </p>
             </CardContent>
           </Card>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

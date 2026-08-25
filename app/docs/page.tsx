@@ -9,22 +9,9 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  keywords: [
-    "Fusion Calling documentation",
-    "AI voice API docs",
-    "agent configuration guide",
-    "lead management API",
-    "SMS integration docs",
-    "voice automation setup"
-  ],
   ...buildOpenGraph({ title, description, path: "/docs" }),
 };
 
 export default function DocsPage() {
-  return (
-    <>
-      <h1 className="sr-only">Fusion Calling Docs & API Reference | Fusion Calling</h1>
-      <DocsHub />
-    </>
-  );
+  return <DocsHub />;
 }

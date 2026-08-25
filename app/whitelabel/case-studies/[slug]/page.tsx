@@ -9,6 +9,8 @@ import {
   type WhiteLabelCaseStudy,
 } from "@/lib/whitelabel-case-studies";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { buildOpenGraph } from "@/lib/seo";
+
 
 export function generateStaticParams() {
   return whitelabelCaseStudies.map((cs) => ({ slug: cs.slug }));
@@ -25,26 +27,12 @@ export function generateMetadata({
   return {
     title: cs.metaTitle,
     description: cs.metaDescription,
-    keywords: cs.keywords,
-    alternates: {
-      canonical: `/whitelabel/case-studies/${cs.slug}`,
-    },
-    openGraph: {
+    ...buildOpenGraph({
       title: cs.metaTitle,
       description: cs.metaDescription,
-      url: `${SITE_URL}/whitelabel/case-studies/${cs.slug}`,
-      siteName: "Fusion Calling",
-      images: [
-        {
-          url: "/og.jpg",
-          width: 1200,
-          height: 630,
-          alt: `${cs.agencyName} - Fusion Calling Case Study`,
-        },
-      ],
-      locale: "en_US",
+      path: `/whitelabel/case-studies/${cs.slug}`,
       type: "article",
-    },
+    }),
   };
 }
 
@@ -246,7 +234,7 @@ function buildSchema(cs: WhiteLabelCaseStudy) {
           name: "Fusion Calling",
           url: SITE_URL,
         },
-        datePublished: "2026-07-07",
+        datePublished: cs.datePublished,
         dateModified: CONTENT_LAST_UPDATED,
         mainEntityOfPage: {
           "@type": "WebPage",

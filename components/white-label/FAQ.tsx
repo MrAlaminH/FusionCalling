@@ -1,17 +1,12 @@
-"use client";
-
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Reveal } from "@/components/ui/reveal";
 
 export default function FAQ() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
 
   const faqs = [
     {
@@ -57,15 +52,10 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="w-full bg-black section-spacing" ref={ref}>
+    <section className="w-full bg-black section-spacing">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         {/* Header */}
-        <motion.div
-          className="text-center mb-10 md:mb-12 lg:mb-16"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -20 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
+        <Reveal animation="animate-fade-in-up" className="text-center mb-10 md:mb-12 lg:mb-16">
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6 tracking-tight">
             Frequently Asked
             <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
@@ -77,14 +67,10 @@ export default function FAQ() {
             Everything you need to know about becoming a Fusion Calling partner.
             Don&apos;t see your question? Reach out to our team.
           </p>
-        </motion.div>
+        </Reveal>
 
         {/* FAQ Accordion */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
+        <Reveal animation="animate-fade-in-up" delay={0.15}>
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
               <AccordionItem
@@ -103,27 +89,20 @@ export default function FAQ() {
               </AccordionItem>
             ))}
           </Accordion>
-        </motion.div>
+        </Reveal>
 
         {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-10 md:mt-12 lg:mt-16 text-center"
-        >
+        <div className="mt-10 md:mt-12 lg:mt-16 text-center">
           <p className="font-body text-gray-400 text-base sm:text-lg md:text-xl mb-4 md:mb-6">
             Still have questions?
           </p>
-          <motion.a
+          <a
             href="#cta"
-            className="inline-flex items-center rounded-2xl bg-gradient-to-r from-brand to-brand-strong px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 text-sm sm:text-base font-semibold text-white transition-all shadow-premium hover:shadow-premium-lg hover:from-brand-strong hover:to-orange-700 hover:scale-105"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.98 }}
+            className="inline-flex items-center rounded-2xl bg-gradient-to-r from-brand to-brand-strong px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 text-sm sm:text-base font-semibold text-white transition-all shadow-premium hover:shadow-premium-lg hover:from-brand-strong hover:to-orange-700 hover:scale-105 active:scale-[0.98]"
           >
             Talk to Our Team
-          </motion.a>
-        </motion.div>
+          </a>
+        </div>
       </div>
     </section>
   );
