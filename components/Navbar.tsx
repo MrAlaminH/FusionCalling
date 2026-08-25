@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
@@ -11,9 +11,14 @@ const NAV_LINKS = [
   { label: "Showcase", href: "/#show-case" },
   { label: "Features", href: "/#features" },
   { label: "Pricing", href: "/pricing" },
-  { label: "Blog", href: "/blog" },
-  { label: "Docs", href: "/docs" },
-  { label: "FAQs", href: "/#faqs" },
+];
+
+// Secondary destinations grouped under the "More" dropdown to keep the
+// desktop navbar uncluttered. New sections can simply be appended here.
+const MORE_LINKS = [
+  { label: "Blog", href: "/blog", description: "Guides & insights" },
+  { label: "Docs", href: "/docs", description: "Platform documentation" },
+  { label: "FAQs", href: "/#faqs", description: "Common questions" },
 ];
 
 const CONTACT_URL = "https://cal.com/mralamin/discovery-call";
@@ -141,6 +146,47 @@ const Navbar = () => {
                 </Link>
               </li>
             ))}
+            {/* More dropdown — opens on hover and when focused via keyboard */}
+            <li className="group relative">
+              <button
+                type="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                className="flex items-center gap-1 rounded-full px-3.5 py-2 text-sm font-medium text-gray-300 transition-colors duration-300 hover:bg-white/5 hover:text-white group-focus-within:bg-white/5 group-focus-within:text-white group-hover:text-white cursor-pointer"
+              >
+                More
+                <ChevronDown
+                  className="h-3.5 w-3.5 transition-transform duration-300 group-hover:rotate-180 group-focus-within:rotate-180"
+                  aria-hidden="true"
+                />
+              </button>
+              {/* Invisible hover bridge so the pointer can travel from the
+                  trigger to the panel without the dropdown closing */}
+              <div
+                className="absolute left-0 top-full hidden h-2 w-full group-hover:block group-focus-within:block"
+                aria-hidden="true"
+              />
+              <div className="invisible absolute left-0 top-[calc(100%+0.5rem)] z-50 w-60 translate-y-1 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+                <ul className="rounded-2xl border border-white/10 bg-zinc-950/95 p-2 shadow-premium-lg backdrop-blur-xl">
+                  {MORE_LINKS.map((item) => (
+                    <li key={item.label}>
+                      <Link
+                        href={item.href}
+                        onClick={() => setIsMenuOpen(false)}
+                        className="block rounded-xl px-4 py-2.5 transition-colors duration-200 hover:bg-white/5 focus:bg-white/5 focus:outline-none"
+                      >
+                        <span className="block text-sm font-medium text-gray-200 group-hover:text-white">
+                          {item.label}
+                        </span>
+                        <span className="block text-xs text-gray-500">
+                          {item.description}
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </li>
           </ul>
         </div>
 
@@ -172,7 +218,7 @@ const Navbar = () => {
           className="absolute inset-x-3 top-full mt-2 rounded-3xl border border-white/10 bg-zinc-950/95 p-4 shadow-premium-lg backdrop-blur-xl lg:hidden"
         >
           <ul className="flex flex-col space-y-1">
-            {NAV_LINKS.map((item, i) => (
+            {[...NAV_LINKS, ...MORE_LINKS].map((item, i) => (
               <li key={item.label}>
                 <Link
                   ref={i === 0 ? firstItemRef : undefined}
