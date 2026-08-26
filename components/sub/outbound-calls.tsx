@@ -50,6 +50,7 @@ export default function OutboundCalls() {
                     className="transition-transform duration-300 transform hover:scale-110 rounded-lg"
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
+                    loading="lazy"
                     style={{
                       objectFit: "contain",
                     }}

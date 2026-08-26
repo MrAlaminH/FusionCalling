@@ -79,30 +79,35 @@ const NeonGradientCard: React.FC<NeonGradientCardProps> = ({
   ...props
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const frameRef = useRef<number>(0);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
     const updateDimensions = () => {
-      if (containerRef.current) {
-        const { offsetWidth, offsetHeight } = containerRef.current;
-        setDimensions({ width: offsetWidth, height: offsetHeight });
-      }
+      // Batch the layout read into rAF so it never interleaves with the
+      // style write below (avoids forced synchronous reflow on mount/resize).
+      cancelAnimationFrame(frameRef.current);
+      frameRef.current = requestAnimationFrame(() => {
+        if (containerRef.current) {
+          const { offsetWidth, offsetHeight } = containerRef.current;
+          setDimensions((prev) =>
+            prev.width === offsetWidth && prev.height === offsetHeight
+              ? prev
+              : { width: offsetWidth, height: offsetHeight },
+          );
+        }
+      });
     };
 
+    const observer = new ResizeObserver(updateDimensions);
+    if (containerRef.current) observer.observe(containerRef.current);
     updateDimensions();
-    window.addEventListener("resize", updateDimensions);
 
     return () => {
-      window.removeEventListener("resize", updateDimensions);
+      observer.disconnect();
+      cancelAnimationFrame(frameRef.current);
     };
   }, []);
-
-  useEffect(() => {
-    if (containerRef.current) {
-      const { offsetWidth, offsetHeight } = containerRef.current;
-      setDimensions({ width: offsetWidth, height: offsetHeight });
-    }
-  }, [children]);
 
   return (
     <div

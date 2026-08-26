@@ -20,10 +20,12 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
     };
 
     if ("requestIdleCallback" in window) {
-      const id = window.requestIdleCallback(init, { timeout: 4000 });
+      // Generous timeout: this must never fire inside the LCP window (fonts
+      // swap + repaint land ~2-5s into the load); idle alone is too flaky.
+      const id = window.requestIdleCallback(init, { timeout: 8000 });
       return () => window.cancelIdleCallback(id);
     }
-    const t: ReturnType<typeof setTimeout> = setTimeout(init, 2000);
+    const t: ReturnType<typeof setTimeout> = setTimeout(init, 5000);
     return () => clearTimeout(t);
   }, []);
 

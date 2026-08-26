@@ -113,6 +113,7 @@ export function VoiceCard({
           alt=""
           width={48}
           height={48}
+          loading="lazy"
           className="w-12 h-12 rounded-full object-cover ring-2 ring-orange-500/20 group-hover:ring-orange-500/40"
         />
         <div className="flex flex-col">

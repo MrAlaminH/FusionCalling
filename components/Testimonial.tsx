@@ -166,6 +166,7 @@ function TestimonialCard({ testimonial }: { testimonial: TestimonialProps }) {
             alt={`${testimonial.name}'s profile picture`}
             className="rounded-full"
             height="40"
+            loading="lazy"
             src={testimonial.image}
             style={{
               aspectRatio: "40/40",
