@@ -17,7 +17,7 @@ const productLinks = [
   { label: "Vapi White-Label", href: "/whitelabel/vapi" },
   { label: "Retell AI White-Label", href: "/whitelabel/retell" },
   { label: "ElevenLabs White-Label", href: "/whitelabel/elevenlabs" },
-  { label: "Features", href: "/#features" },
+  { label: "Features", href: "/whitelabel#features" },
   { label: "Pricing", href: "/pricing" },
   { label: "ROI Calculator", href: "/calculator" },
   { label: "Documentation", href: "/docs" },
@@ -67,7 +67,7 @@ export default function Footer() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white max-w-3xl leading-tight">
               Let&apos;s Build
               <br />
-              Next Gen AI Agent
+              Next Gen AI Voice Agents
               <br />
               Together
             </h2>
@@ -194,20 +194,20 @@ export default function Footer() {
 
               {/* Contact details */}
               <div className="mt-6 space-y-3">
-                <Link
+                <a
                   href="mailto:hello@fusioncalling.com"
                   className="flex items-start gap-3 text-sm text-gray-400 hover:text-brand transition-colors"
                 >
                   <Mail className="h-5 w-5 flex-shrink-0 mt-0.5" />
                   <span>hello@fusioncalling.com</span>
-                </Link>
-                <Link
+                </a>
+                <a
                   href="tel:+19146394069"
                   className="flex items-start gap-3 text-sm text-gray-400 hover:text-brand transition-colors"
                 >
                   <Phone className="h-5 w-5 flex-shrink-0 mt-0.5" />
                   <span>+1 (914) 639-4069</span>
-                </Link>
+                </a>
               </div>
             </div>
           </div>

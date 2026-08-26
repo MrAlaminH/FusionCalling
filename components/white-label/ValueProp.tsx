@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { DollarSign, Zap, Users, Shield } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Reveal } from "@/components/ui/reveal";
@@ -130,6 +131,14 @@ export default function ValueProp() {
                       <div className="font-body text-xs md:text-sm text-gray-500">
                         {benefit.statLabel}
                       </div>
+                      {index === 0 && (
+                        <Link
+                          href="/whitelabel/case-studies"
+                          className="font-body text-xs md:text-sm text-brand/70 hover:text-brand transition-colors underline-offset-2 hover:underline mt-2 inline-block"
+                        >
+                          See partner results
+                        </Link>
+                      )}
                     </div>
                   </CardContent>
                 </Card>
@@ -162,6 +171,15 @@ export default function ValueProp() {
                   </div>
                 </div>
               ))}
+            </div>
+
+            <div className="text-center mt-8 md:mt-10">
+              <Link
+                href="/whitelabel/case-studies"
+                className="font-body text-xs md:text-sm text-brand/70 hover:text-brand transition-colors underline-offset-2 hover:underline"
+              >
+                See partner results
+              </Link>
             </div>
           </div>
         </Reveal>

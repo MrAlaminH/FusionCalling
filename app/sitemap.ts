@@ -25,6 +25,7 @@ const STATIC_PATHS: string[] = [
   ...whitelabelProviders.map((p) => `/whitelabel/${p.slug}`),
   "/whitelabel/compare",
   "/whitelabel/case-studies",
+  "/whitelabel/gohighlevel",
   "/whitelabel/locations",
   "/ai-phone-call-automation",
   "/calculator",
@@ -92,6 +93,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ? 0.9
         : path === "/whitelabel/compare" ||
           path === "/whitelabel/case-studies" ||
+          path === "/whitelabel/gohighlevel" ||
           path === "/whitelabel/locations" ||
           path === "/alternative" ||
           path === "/industries" ||

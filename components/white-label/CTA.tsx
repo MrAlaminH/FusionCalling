@@ -9,7 +9,7 @@ export default function CTA() {
         {/* Header */}
         <Reveal animation="animate-fade-in-up" className="text-center mb-12 sm:mb-16 md:mb-20">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">
-            Ready to Start Your
+            Ready to Start Your White-Label
             <span className="bg-gradient-to-r from-brand to-brand-strong text-transparent bg-clip-text">
               {" "}
               Partnership?

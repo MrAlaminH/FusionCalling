@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Play, ArrowRight, Sparkles } from "lucide-react";
@@ -76,11 +77,11 @@ export default function Hero() {
         {/* Main heading — rendered visible at first paint (LCP) */}
         <div className="text-center mb-4 sm:mb-6 md:mb-8 px-2 sm:px-4 md:px-6">
           <h1 className="font-display text-2xl xxs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]">
-            Scale Your Agency with,
+            Scale Your Agency with
             <br className="hidden sm:block" />
             <span className="whitespace-nowrap"> </span>
             <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
-              White-Labeled AI Voice Agents
+              White-Label AI Voice Agents
             </span>
           </h1>
         </div>
@@ -167,12 +168,18 @@ export default function Hero() {
                       />
                     ) : (
                       <div
-                        className="absolute inset-0 bg-cover bg-center cursor-pointer group rounded-[27px] transition-transform duration-700 group-hover:scale-[1.02]"
-                        style={{
-                          backgroundImage: "url(/hero-thumbnail.jpg)",
-                        }}
+                        className="absolute inset-0 cursor-pointer group overflow-hidden rounded-[27px] transition-transform duration-700 group-hover:scale-[1.02]"
                         onClick={() => setIsVideoPlaying(true)}
                       >
+                        <Image
+                          src="/hero-thumbnail.jpg"
+                          alt="Preview of the Fusion Calling white-label AI voice dashboard"
+                          fill
+                          priority
+                          sizes="100vw"
+                          className="object-cover"
+                        />
+
                         {/* Enhanced gradient overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/50 group-hover:from-black/85 group-hover:via-black/20 group-hover:to-black/40 transition-all duration-700 rounded-[27px]"></div>
 

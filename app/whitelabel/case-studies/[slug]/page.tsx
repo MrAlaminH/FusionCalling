@@ -22,7 +22,8 @@ export function generateMetadata({
   params: { slug: string };
 }): Metadata {
   const cs = whitelabelCaseStudies.find((c) => c.slug === params.slug);
-  if (!cs) return { title: "Case Study Not Found" };
+  if (!cs)
+    return { title: "Case Study Not Found", robots: { index: false } };
 
   return {
     title: cs.metaTitle,
@@ -80,9 +81,12 @@ export default function CaseStudyDetailPage({
             <span className="inline-flex items-center rounded-full glass-light px-3 py-1 text-xs font-medium text-brand-light border border-brand/20 mb-4">
               {cs.industry} &middot; {cs.location}
             </span>
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] text-white mb-8">
-              {cs.agencyName}
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] text-white mb-4">
+              {cs.metaTitle}
             </h1>
+            <p className="text-sm text-gray-400 mb-8">
+              Client story: {cs.agencyName}
+            </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
               {cs.heroStats.map((stat) => (
@@ -227,7 +231,8 @@ function buildSchema(cs: WhiteLabelCaseStudy) {
         description: cs.metaDescription,
         author: {
           "@type": "Organization",
-          name: cs.agencyName,
+          "@id": `${SITE_URL}/#organization`,
+          name: "Fusion Calling",
         },
         publisher: { "@id": `${SITE_URL}/#organization` },
         datePublished: cs.datePublished,

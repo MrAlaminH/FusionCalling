@@ -24,7 +24,8 @@ export function generateMetadata({
   params: { slug: string };
 }): Metadata {
   const loc = whitelabelLocations.find((l) => l.slug === params.slug);
-  if (!loc) return { title: "Location Not Found" };
+  if (!loc)
+    return { title: "Location Not Found", robots: { index: false } };
 
   return {
     title: loc.metaTitle,
@@ -79,7 +80,7 @@ export default function LocationDetailPage({
         <section className="relative pt-8 pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-5xl text-center">
             <span className="inline-flex items-center rounded-full glass-light px-4 py-1.5 text-xs sm:text-sm text-brand-light border border-brand/20 mb-6">
-              {loc.abbreviation} &middot; {loc.agencyCount} Active Agencies
+              {loc.abbreviation} &middot; Local Partner Program
             </span>
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white">
               White-Label AI Voice Agents for{" "}

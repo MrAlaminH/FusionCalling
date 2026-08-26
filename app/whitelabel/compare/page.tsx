@@ -9,7 +9,7 @@ import { truncateAtWord } from "@/lib/utils";
 
 const title = "Best White-Label AI Voice Platforms Compared";
 const description =
-  "Compare the top white-label AI voice platforms side-by-side: Fusion Calling vs Vapify vs Voicerr vs VoiceAIWrapper vs Synthflow vs Thinkrr vs Bland AI vs Air AI. Pricing, features, sub-accounts, and more.";
+  "Compare white-label AI voice platforms side-by-side: pricing, sub-accounts, features & multi-provider import for Vapi, Retell & ElevenLabs. From $99/mo.";
 
 export const metadata: Metadata = {
   title,
@@ -202,7 +202,7 @@ export default function WhitelabelComparePage() {
             name: "Which white-label AI voice platform supports Vapi, Retell, and ElevenLabs?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Fusion Calling is the only white-label AI voice platform that supports all three major providers out of the box: Vapi, Retell AI, and ElevenLabs. You can import existing agents and API keys from any provider and resell them under one branded dashboard.",
+              text: "Fusion Calling is one of the few white-label platforms with native multi-provider import: Vapi, Retell AI, and ElevenLabs. You can import existing agents and API keys from any provider and resell them under one branded dashboard.",
             },
           },
         ],
@@ -365,7 +365,7 @@ export default function WhitelabelComparePage() {
                 },
                 {
                   q: "Which platform supports Vapi, Retell, AND ElevenLabs?",
-                  a: "Fusion Calling is the only white-label AI voice platform that supports all three major voice AI providers out of the box. You can import existing agents from Vapi, Retell AI, and ElevenLabs and resell them under one branded dashboard — no other platform offers this multi-provider flexibility.",
+                  a: "Fusion Calling is one of the few white-label platforms with native multi-provider import: Vapi, Retell AI, and ElevenLabs. You can import existing agents and API keys from any provider and resell them under one branded dashboard.",
                 },
                 {
                   q: "Can I switch from another white-label platform to Fusion Calling?",

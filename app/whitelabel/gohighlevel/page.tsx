@@ -5,6 +5,7 @@ import WhiteLabelNavbar from "@/components/white-label-navbar";
 import Footer from "@/components/Footer";
 import Pricing from "@/components/white-label/Pricing";
 import CTA from "@/components/white-label/CTA";
+import ProviderCrossLinks from "@/components/white-label/ProviderCrossLinks";
 import { whitelabelCaseStudies } from "@/lib/whitelabel-case-studies";
 import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { buildOpenGraph } from "@/lib/seo";
@@ -135,10 +136,31 @@ export default function GHLWhiteLabelPage() {
       />
       <WhiteLabelNavbar />
       <main id="main" className="min-h-screen w-full bg-black">
+        {/* Breadcrumb */}
+        <nav aria-label="Breadcrumb" className="pt-24 px-4 sm:px-6 lg:px-8">
+          <div className="container mx-auto max-w-5xl">
+            <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
+              <li>
+                <Link href="/" className="hover:text-brand-light transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>/</li>
+              <li>
+                <Link href="/whitelabel" className="hover:text-brand-light transition-colors">
+                  White-label Partner Program
+                </Link>
+              </li>
+              <li>/</li>
+              <li className="text-brand-light">GoHighLevel</li>
+            </ol>
+          </div>
+        </nav>
+
         {/* Hero */}
         <section
           id="ghl-hero"
-          className="relative pt-28 pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 lg:px-8"
+          className="relative pt-8 pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 lg:px-8"
         >
           <div className="container mx-auto max-w-5xl text-center">
             <span className="inline-flex items-center rounded-full glass-light px-4 py-1.5 text-xs sm:text-sm text-brand-light border border-brand/20 mb-6">
@@ -318,6 +340,8 @@ export default function GHLWhiteLabelPage() {
             </div>
           </div>
         </section>
+
+        <ProviderCrossLinks currentSlug="gohighlevel" />
 
         {/* CTA */}
         <div id="cta">

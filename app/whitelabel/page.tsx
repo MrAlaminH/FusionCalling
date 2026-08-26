@@ -13,13 +13,37 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { buildOpenGraph } from "@/lib/seo";
+import { whitelabelFaqs } from "@/lib/whitelabel-faqs";
+
+const PROVIDER_LINKS = [
+  {
+    href: "/whitelabel/vapi",
+    title: "Vapi white-label reselling",
+    description: "Import Vapi agents, brand them as your own, and resell with pricing you control.",
+  },
+  {
+    href: "/whitelabel/retell",
+    title: "Retell AI white-label reselling",
+    description: "Bring Retell AI agents into your branded dashboard and keep 100% of client revenue.",
+  },
+  {
+    href: "/whitelabel/elevenlabs",
+    title: "ElevenLabs white-label reselling",
+    description: "Resell ElevenLabs voice agents under your agency brand with your own domain and portal.",
+  },
+  {
+    href: "/whitelabel/gohighlevel",
+    title: "GoHighLevel voice AI integration",
+    description: "Plug AI voice calling into GoHighLevel sub-accounts and sell it to your clients.",
+  },
+];
 
 export const metadata: Metadata = {
-  title: "White-Label AI Voice Agents (Vapi, Retell)",
+  title: "White-Label AI Voice Agents (Vapi, Retell, ElevenLabs)",
   description:
     "Resell AI voice agents under your brand via Fusion Calling white-label program. Import Vapi, Retell and ElevenLabs agents, set pricing, keep 100% of revenue.",
   ...buildOpenGraph({
-    title: "White-Label AI Voice Agents (Vapi, Retell) | Fusion Calling",
+    title: "White-Label AI Voice Agents (Vapi, Retell, ElevenLabs)",
     description:
       "Resell AI voice agents under your own brand. Import your Vapi, Retell & ElevenLabs agents and keep 100% of the revenue.",
     path: "/whitelabel",
@@ -27,49 +51,6 @@ export const metadata: Metadata = {
 };
 
 export default function WhiteLabelPage() {
-  const faqs = [
-    {
-      question: "What is a white-label partnership?",
-      answer:
-        "A white-label partnership allows you to sell our AI voice calling solution under your own brand. Your clients see your logo, your colors, and interact with your branded interface while we handle the technology and infrastructure behind the scenes.",
-    },
-    {
-      question: "How long does it take to get started?",
-      answer:
-        "Once approved, you can launch your white-label solution within 1-2 days. This includes branding setup, voice training, and dashboard customization. Our team guides you through every step of the process.",
-    },
-    {
-      question: "Do I need technical expertise?",
-      answer:
-        "No technical expertise is required. We provide a fully managed white-label solution. You focus on sales and client relationships while we handle all technical aspects including integrations, updates, and maintenance.",
-    },
-    {
-      question: "What's the difference between partner tiers?",
-      answer:
-        "The main differences are the number of sub-accounts, the support level, and the price. Starter includes 6 sub-accounts and client portal access for $99/month. Growth includes 20 sub-accounts with priority support and advanced analytics for $299/month. Scale includes unlimited sub-accounts, a dedicated account manager, and API access for $499/month. On every tier you keep 100% of what you charge your clients.",
-    },
-    {
-      question: "Can I use my own domain?",
-      answer:
-        "Absolutely. We set up your white-label solution on your own domain (e.g., app.youragency.com). Your clients will never know about Fusion Calling unless you choose to tell them—you have complete brand control.",
-    },
-    {
-      question: "What is a white-label voice AI platform?",
-      answer:
-        "A white-label voice AI platform is an AI phone-call automation product that an agency rebrands and resells under its own name. Fusion Calling handles the underlying speech recognition, language models, text-to-speech, telephony, and dashboard, while you set your branding, domain, and pricing. Plans start at $99/month for 6 sub-accounts, and partners keep 100% of what they charge clients.",
-    },
-    {
-      question: "How much does it cost to start a white-label voice AI business?",
-      answer:
-        "You can start for as little as $99/month with no setup fee and a 3-day free trial. Fusion Calling offers three partner tiers: Starter ($99/mo, 6 sub-accounts), Growth ($299/mo, 20 sub-accounts with priority support), and Scale ($499/mo, unlimited sub-accounts, dedicated account manager, and API access). Because you keep the full margin between your client price and the wholesale rate, most partners reach positive ROI within the first 1–2 client accounts.",
-    },
-    {
-      question: "Which voice AI providers can I resell through Fusion Calling?",
-      answer:
-        "Fusion Calling supports Vapi, Retell AI, and ElevenLabs out of the box, so you can match each client to the best engine instead of being locked into one vendor. You can bring existing agent configurations and API keys from any of these providers, and the platform layers branding, client portals, lead management, and billing on top so agencies can resell them under a single branded dashboard.",
-    },
-  ];
-
   return (
     <>
           <script
@@ -80,23 +61,6 @@ export default function WhiteLabelPage() {
                 "@context": "https://schema.org",
                 "@graph": [
                   {
-                    "@type": "LocalBusiness",
-                    "@id": `${SITE_URL}/whitelabel#localbusiness`,
-                    name: "Fusion Calling White-label Partner Program",
-                    image: `${SITE_URL}/logo.webp`,
-                    description: "White-label AI voice solution for agencies and resellers. Offer AI phone automation under your own brand with full customization and pricing you control.",
-                    url: `${SITE_URL}/whitelabel`,
-                    telephone: "+1-914-639-4069",
-                    email: "hello@fusioncalling.com",
-                    parentOrganization: {
-                      "@id": `${SITE_URL}/#organization`
-                    },
-                    areaServed: {
-                      "@type": "Country",
-                      name: "United States"
-                    }
-                  },
-                  {
                     "@type": "Service",
                     "@id": `${SITE_URL}/whitelabel#service`,
                     name: "White-label AI Voice Solution",
@@ -104,35 +68,6 @@ export default function WhiteLabelPage() {
                     provider: {
                       "@id": `${SITE_URL}/#organization`
                     },
-                    offers: [
-                      {
-                        "@type": "Offer",
-                        name: "Starter Partner Plan",
-                        price: "99.00",
-                        priceCurrency: "USD",
-                        description: "6 sub-accounts, complete white-labeling, client portal access",
-                        availability: "https://schema.org/InStock",
-                        url: `${SITE_URL}/whitelabel`
-                      },
-                      {
-                        "@type": "Offer",
-                        name: "Growth Partner Plan",
-                        price: "299.00",
-                        priceCurrency: "USD",
-                        description: "20 sub-accounts, priority support, advanced analytics",
-                        availability: "https://schema.org/InStock",
-                        url: `${SITE_URL}/whitelabel`
-                      },
-                      {
-                        "@type": "Offer",
-                        name: "Scale Partner Plan",
-                        price: "499.00",
-                        priceCurrency: "USD",
-                        description: "Unlimited sub-accounts, dedicated account manager, API access",
-                        availability: "https://schema.org/InStock",
-                        url: `${SITE_URL}/whitelabel`
-                      }
-                    ],
                     audience: {
                       "@type": "Audience",
                       audienceType: "Marketing agencies, call centers, SaaS resellers, consultants"
@@ -168,7 +103,7 @@ export default function WhiteLabelPage() {
                     breadcrumb: { "@id": `${SITE_URL}/whitelabel#breadcrumb` },
                     speakable: {
                       "@type": "SpeakableSpecification",
-                      cssSelector: ["h1", "h2", "p"]
+                      cssSelector: ["h1"]
                     }
                   },
                   {
@@ -229,7 +164,7 @@ export default function WhiteLabelPage() {
                   {
                     "@type": "FAQPage",
                     "@id": `${SITE_URL}/whitelabel#faqpage`,
-                    mainEntity: faqs.map((faq) => ({
+                    mainEntity: whitelabelFaqs.map((faq) => ({
                       "@type": "Question",
                       name: faq.question,
                       acceptedAnswer: {
@@ -299,6 +234,48 @@ export default function WhiteLabelPage() {
       </section>
       <section id="features" className="scroll-mt-24">
         <Features />
+      </section>
+      <section className="w-full bg-black py-16 sm:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center mb-4">
+            Resell{" "}
+            <span className="bg-gradient-to-r from-brand to-brand-strong text-transparent bg-clip-text">
+              Vapi, Retell &amp; ElevenLabs
+            </span>{" "}
+            Under Your Brand
+          </h2>
+          <p className="text-gray-400 text-base sm:text-lg text-center mb-10 md:mb-12">
+            Fusion Calling is provider-agnostic — pick the engine that fits each client and resell it under your own brand.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {PROVIDER_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="glass-light rounded-xl p-5 border border-brand/20 hover:border-brand/40 transition-premium group"
+              >
+                <h3 className="text-base font-bold text-brand-light mb-1 group-hover:text-brand transition-colors">
+                  {link.title}
+                </h3>
+                <p className="text-sm text-gray-400">{link.description}</p>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
+            <Link
+              href="/whitelabel/case-studies"
+              className="text-gray-400 hover:text-brand underline-offset-4 hover:underline transition-colors"
+            >
+              White-label case studies
+            </Link>
+            <Link
+              href="/whitelabel/locations"
+              className="text-gray-400 hover:text-brand underline-offset-4 hover:underline transition-colors"
+            >
+              White-label availability by location
+            </Link>
+          </div>
+        </div>
       </section>
       <section id="how-it-works" className="scroll-mt-24">
         <HowItWorks />

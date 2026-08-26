@@ -8,9 +8,9 @@ import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { buildOpenGraph } from "@/lib/seo";
 import { truncateAtWord } from "@/lib/utils";
 
-const title = "White-Label AI Voice by State";
+const title = "White-Label AI Voice Agents by US State";
 const description =
-  "White-label AI voice agents for agencies across all 50 states. Resell Vapi, Retell & ElevenLabs under your own brand. State-specific compliance support. Start at $99/mo.";
+  "White-label AI voice agents for agencies in 10 states including California, Texas, Florida & New York. Resell Vapi, Retell & ElevenLabs under your brand.";
 
 export const metadata: Metadata = {
   title,
@@ -114,8 +114,9 @@ export default function WhitelabelLocationsHub() {
                 Available States
               </h2>
               <p className="text-gray-400 text-base sm:text-lg max-w-3xl mx-auto">
-                Click your state for localized partner information, industry
-                insights, and compliance guidance.
+                We&apos;re expanding nationwide. Click your state for
+                localized partner information, industry insights, and
+                compliance guidance.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">

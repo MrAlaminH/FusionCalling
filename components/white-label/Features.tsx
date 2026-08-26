@@ -24,6 +24,8 @@ export default function Features() {
         "Custom email templates & notifications",
       ],
       image: "/feature/feature1.webp",
+      imageAlt:
+        "Screenshot of the Fusion Calling white-label dashboard showing agency brand customization with custom logo and colors",
       highlights: [
         { icon: Zap, text: "Setup in minutes" },
         { icon: Shield, text: "No code required" },
@@ -41,6 +43,8 @@ export default function Features() {
         "Real-time analytics & reporting",
       ],
       image: "/feature/feature2.webp",
+      imageAlt:
+        "Screenshot of the Fusion Calling white-label client dashboard showing AI agent management, analytics, and call recordings",
       highlights: [
         { icon: Smartphone, text: "Mobile responsive" },
         { icon: Zap, text: "Instant updates" },
@@ -58,6 +62,8 @@ export default function Features() {
         "CRM integration & data sync",
       ],
       image: "/feature/feature3.webp",
+      imageAlt:
+        "Screenshot of the Fusion Calling white-label platform dashboard showing flexible call flow configuration and routing settings",
       highlights: [
         { icon: Shield, text: "Enterprise ready" },
         { icon: Zap, text: "Scale effortlessly" },
@@ -216,7 +222,7 @@ export default function Features() {
                       {/* Image - Enhanced with better sizing */}
                       <Image
                         src={feature.image}
-                        alt={feature.title}
+                        alt={feature.imageAlt}
                         width={1200}
                         height={900}
                         className="relative z-10 w-full h-auto object-cover pt-8 pb-3 px-3"

@@ -96,9 +96,9 @@ Fusion Calling white-label lets agencies sell this to local businesses at $500-2
   },
   {
     slug: "vapi-white-label-platform",
-    title: "White-Labeling Vapi with Fusion Calling: A Guide for Agencies",
+    title: "Does Vapi Offer White Label? How It Works",
     description:
-      "Vapi is excellent voice AI infrastructure. Fusion Calling is the white-label agency layer built to work with it, so you can resell Vapi under your own brand.",
+      "Does Vapi offer white label natively? Learn how agencies resell Vapi under their own brand in 2026, what's missing, and the step-by-step setup.",
     date: "2025-02-10",
     category: "Integration Guide",
     readTime: "7 min read",
@@ -121,9 +121,9 @@ Benefits over direct Vapi:
   },
   {
     slug: "retell-ai-white-label",
-    title: "White-Labeling Retell AI with Fusion Calling",
+    title: "Can You White-Label Retell AI? Here's How",
     description:
-      "Retell AI is a powerful conversational voice engine. Fusion Calling layers on top to add branding, client portals, and billing so agencies can resell Retell.",
+      "Learn whether you can white-label Retell AI, its limits as an engine-only platform, and a step-by-step path to reselling it under your own brand.",
     date: "2025-02-11",
     category: "Integration Guide",
     readTime: "7 min read",
@@ -142,9 +142,9 @@ Agencies using Retell directly spend months building billing, portals, and multi
   },
   {
     slug: "gohighlevel-white-label-voice",
-    title: "Adding White-Label Voice AI to Your GoHighLevel Agency",
+    title: "White-Label Voice AI for GoHighLevel: Costs",
     description:
-      "Keep GoHighLevel as your CRM and add Fusion Calling as your dedicated, white-label voice AI layer, syncing calls and leads straight back into GHL.",
+      "Step-by-step guide to adding white-label voice AI to GoHighLevel: webhook setup, per-client costs, pricing math, and pitfalls to avoid before launch.",
     date: "2025-02-12",
     category: "Integration Guide",
     readTime: "8 min read",
