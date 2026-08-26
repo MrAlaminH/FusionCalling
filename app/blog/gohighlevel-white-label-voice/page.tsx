@@ -10,11 +10,11 @@ import { buildOpenGraph } from "@/lib/seo";
 const teamAuthor = getTeamAuthor();
 
 export const metadata: Metadata = {
-  title: "Adding White-Label Voice AI to Your GoHighLevel Agency",
+  title: "White-Label Voice AI for GoHighLevel: Costs",
   description:
     "GoHighLevel agencies: keep GHL as your CRM and add a dedicated white-label voice AI layer with Fusion Calling. Integrates via API and webhooks.",
   ...buildOpenGraph({
-    title: "Adding White-Label Voice AI to Your GoHighLevel Agency",
+    title: "White-Label Voice AI for GoHighLevel: Costs",
     description:
       "A partnership guide for GoHighLevel agencies. Keep GHL as your CRM and add a dedicated, white-label voice AI layer with Fusion Calling via API and webhooks.",
     path: "/blog/gohighlevel-white-label-voice",
@@ -63,9 +63,9 @@ export default function GoHighLevelBlogPost() {
                 "@type": "Article",
                 "@id": `${SITE_URL}/blog/gohighlevel-white-label-voice#article`,
                 url: `${SITE_URL}/blog/gohighlevel-white-label-voice`,
-                name: "Adding White-Label Voice AI to Your GoHighLevel Agency",
+                name: "White-Label Voice AI for GoHighLevel: Costs",
                 headline:
-                  "Adding White-Label Voice AI to Your GoHighLevel Agency: An Integration Guide",
+                  "White-Label Voice AI for GoHighLevel: Costs: An Integration Guide",
                 description:
                   "A partnership guide for GoHighLevel agencies. Keep GHL as your CRM and add a dedicated, white-label voice AI layer with Fusion Calling via API and webhooks.",
                 inLanguage: "en-US",

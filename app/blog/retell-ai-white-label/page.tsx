@@ -10,11 +10,11 @@ import { buildOpenGraph } from "@/lib/seo";
 const teamAuthor = getTeamAuthor();
 
 export const metadata: Metadata = {
-  title: "White-Labeling Retell AI with Fusion Calling",
+  title: "Can You White-Label Retell AI? Here's How",
   description:
     "Retell AI powers conversations. Fusion Calling adds the white-label agency layer: branding, client portals, and billing, so you can resell Retell under your own brand.",
   ...buildOpenGraph({
-    title: "White-Labeling Retell AI with Fusion Calling",
+    title: "Can You White-Label Retell AI? Here's How",
     description:
       "Retell AI powers great conversations. Fusion Calling adds the white-label agency layer — branding, client portals, multi-client management, and client billing — so you can resell Retell under your own brand.",
     path: "/blog/retell-ai-white-label",
@@ -54,7 +54,7 @@ export default function RetellAIBlogPost() {
                   {
                     "@type": "ListItem",
                     position: 3,
-                    name: "White-Labeling Retell AI with Fusion Calling",
+                    name: "Can You White-Label Retell AI? Here's How",
                     item: `${SITE_URL}/blog/retell-ai-white-label`,
                   },
                 ],
@@ -63,9 +63,9 @@ export default function RetellAIBlogPost() {
                 "@type": "Article",
                 "@id": `${SITE_URL}/blog/retell-ai-white-label#article`,
                 url: `${SITE_URL}/blog/retell-ai-white-label`,
-                name: "White-Labeling Retell AI with Fusion Calling",
+                name: "Can You White-Label Retell AI? Here's How",
                 headline:
-                  "White-Labeling Retell AI with Fusion Calling",
+                  "Can You White-Label Retell AI? Here's How",
                 description:
                   "Retell AI powers great conversations. Fusion Calling adds the white-label agency layer — branding, client portals, multi-client management, and client billing — so you can resell Retell under your own brand.",
                 inLanguage: "en-US",
@@ -215,7 +215,7 @@ export default function RetellAIBlogPost() {
         <div className="relative mb-12 rounded-3xl overflow-hidden border border-brand/20">
           <Image
             src="/blog/blog6.webp"
-            alt="White-Labeling Retell AI with Fusion Calling"
+            alt="Can You White-Label Retell AI? Here's How"
             fill
             priority
             className="object-cover"
