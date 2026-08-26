@@ -17,28 +17,28 @@ export default function HowItWorks() {
       step: "01",
       title: "Schedule a call or email to apply",
       description:
-        "Submit your application and get approved within 48 hours. We review your agency to ensure a successful partnership.",
+        "Submit your application and get approved within 48 hours. We review your agency to ensure a successful partnership. The application asks about your client base, your current Voice AI experience if any, and the industries you plan to serve so we can tailor your onboarding. Most partners hear back within two business days and can start their 3-day free trial immediately after approval.",
     },
     {
       icon: Palette,
       step: "02",
       title: "Customize Your Brand",
       description:
-        "Set up your white-label environment with your logo, colors, and domain. Launch your branded AI solution.",
+        "Set up your white-label environment with your logo, colors, and domain. Launch your branded AI solution. Connect a custom domain you already own, upload your logo and brand palette, and your dashboard and client portals render entirely under your brand with no Fusion Calling mention anywhere. Branding setup is guided in the dashboard and typically takes under an hour.",
     },
     {
       icon: DollarSign,
       step: "03",
       title: "Set Your Pricing",
       description:
-        "Define your pricing model and margins. You have complete control over what you charge your clients.",
+        "Define your pricing model and margins. You have complete control over what you charge your clients. Set per-minute rates, monthly retainers, or bundled packages in the dashboard, and Stripe billing handles invoicing and collection under your brand. Partners keep 100% of client revenue; your platform cost stays fixed at your plan price regardless of how much you resell.",
     },
     {
       icon: TrendingUp,
       step: "04",
       title: "Start Selling & Earning",
       description:
-        "Begin onboarding clients and generating recurring revenue. Scale as fast as you want with our infrastructure.",
+        "Begin onboarding clients and generating recurring revenue. Scale as fast as you want with our infrastructure. Each client gets their own sub-account with lead management, calendar booking, and portal access, so adding a new client is a dashboard task rather than a build project. Import existing Vapi, Retell, or ElevenLabs agents and have a first client live in 1-2 days.",
     },
   ];
 

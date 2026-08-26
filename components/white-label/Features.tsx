@@ -16,7 +16,7 @@ export default function Features() {
       icon: Palette,
       title: "Full Brand Customization",
       description:
-        "Add your logo, choose your colors, and customize every visual element. Your clients will only see your brand, never ours. Complete control over your agency's visual identity.",
+        "Make the platform unmistakably yours before your first demo. Upload your logo, apply your color palette across the interface, connect a custom domain like app.youragency.com, and send client invitations from branded email templates. Clients never see Fusion Calling anywhere in the product. Because the entire experience reads as your agency's software, you can price it as proprietary technology rather than a resold tool, which protects both your margins and your market positioning.",
       items: [
         "Custom logo placement & branding",
         "Brand color palette integration",
@@ -35,7 +35,7 @@ export default function Features() {
       icon: LayoutDashboard,
       title: "White-label Dashboard",
       description:
-        "Provide your clients with a powerful branded dashboard to manage their AI agents, view detailed analytics, and access call recordings. All under your agency's name.",
+        "Every client gets their own login under your brand, hosted on your domain. From inside, they manage their AI agents, monitor call analytics in real time, review transcripts and recordings, and track leads without emailing your team for updates. Granular permissions let you decide exactly what each client can see. The result is fewer status meetings, a self-serve experience clients value, and a professional product surface that supports higher monthly retainers.",
       items: [
         "Custom dashboard URL with your domain",
         "Your branding throughout the interface",
@@ -54,7 +54,7 @@ export default function Features() {
       icon: Settings,
       title: "Flexible Configuration",
       description:
-        "Configure call handling, routing, and AI behavior to match your clients' unique business requirements. From simple IVR to complex multi-step workflows.",
+        "Adapt call behavior to each client's operation instead of forcing a generic script. Build custom call flows and conversation scripts, set routing and escalation rules for handoffs to human staff, and sync qualified leads into your client's CRM automatically. A simple appointment-booking line for a local clinic and a multi-step workflow for a multi-location brand both run on the same platform, so one tool covers your entire portfolio.",
       items: [
         "Custom call flows & scripts",
         "Intelligent routing & escalation",

@@ -17,7 +17,7 @@ export default function CTA() {
           </h2>
           <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-3xl mx-auto">
             Schedule a discovery call with our team. We&apos;ll discuss your agency&apos;s
-            goals and help you get started with your white-label solution.
+            goals and help you get started with your white-label solution. Every plan starts with a 3-day free trial and no setup fee, and you can cancel anytime.
           </p>
         </Reveal>
 

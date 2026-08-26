@@ -10,40 +10,40 @@ export default function ValueProp() {
       icon: DollarSign,
       title: "New Revenue Stream",
       description:
-        "Monetize AI phone automation with high-margin recurring revenue. Set your own pricing and keep the difference.",
-      stat: "$10K+",
-      statLabel: "Avg. Monthly Revenue",
+        "Package white-label AI voice as a productized service and price it however your market will bear. Partners keep 100% of client revenue, so every retainer you close flows straight to your margin. On the Growth plan at $299 per month for twenty sub-accounts, even a modest per-client fee compounds quickly across a small roster. You set pricing, you invoice, and you own the relationship end to end.",
+      stat: "100%",
+      statLabel: "Revenue You Keep",
     },
     {
       icon: Zap,
       title: "Launch in Days",
       description:
-        "Skip months of development. Our proven technology lets you go to market in days, not years.",
-      stat: "7 Days",
-      statLabel: "Average Launch Time",
+        "Go from signup to a live, sellable product in one to two days. Your branded dashboard, client portals, and custom domain are configured during onboarding, and a three-day free trial lets you explore the full platform before committing. There is no setup fee and no engineering project to manage. While competitors spend months building, you can be running demos for paying prospects this week.",
+      stat: "1-2 Days",
+      statLabel: "Typical Launch Time",
     },
     {
       icon: Users,
       title: "Scale Without Limits",
       description:
-        "Serve unlimited clients with our robust infrastructure. From startups to enterprises, we handle it all.",
+        "The Scale plan includes unlimited sub-accounts, so growth never triggers an upgrade conversation mid-quarter. Behind the scenes we run the telephony, the underlying AI models from Vapi, Retell AI, and ElevenLabs, and every platform update. When providers ship new capabilities, they appear in your dashboard automatically. Your job is selling and account management; ours is keeping the infrastructure fast, current, and dependable.",
       stat: "Unlimited",
-      statLabel: "Client Capacity",
+      statLabel: "Sub-Accounts on Scale",
     },
     {
       icon: Shield,
       title: "Full Control",
       description:
-        "Maintain complete ownership of your client relationships. We're your technology partner, not your competitor.",
+        "Your logo, your colors, your domain at app.youragency.com, and your name on every client portal. Clients log into a dashboard that looks and feels like your product, and nothing exposes Fusion Calling. That control protects pricing power: because clients buy from you, switching means leaving their trusted agency, not just swapping a tool. You remain the provider of record on every account you create.",
       stat: "100%",
       statLabel: "Brand Ownership",
     },
   ];
 
   const stats = [
-    { value: "20+", label: "Active Partners" },
-    { value: "5M+", label: "AI Calls Handled" },
-    { value: "99.9%", label: "Uptime" },
+    { value: "$0", label: "Setup Fee" },
+    { value: "3-Day", label: "Free Trial" },
+    { value: "$99/mo", label: "Starting Price" },
   ];
 
   return (
@@ -154,7 +154,8 @@ export default function ValueProp() {
             <div className="absolute inset-0 bg-gradient-to-br from-brand/10 via-transparent to-green-500/5 rounded-3xl -z-10" />
 
             <p className="font-body text-gray-400 text-base md:text-lg lg:text-xl text-center mb-10 md:mb-12">
-              Join agencies already generating 6-figure revenue streams
+              Simple plans that grow with your agency: Starter, Growth, and
+              Scale
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
