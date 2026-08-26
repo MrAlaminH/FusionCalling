@@ -11,6 +11,9 @@ const outfit = Outfit({
   weight: ["500", "600", "700"],
   variable: "--font-outfit",
   display: "swap",
+  preload: true,
+  fallback: ["system-ui", "Arial", "sans-serif"],
+  adjustFontFallback: true,
 });
 
 const jakarta = Plus_Jakarta_Sans({
@@ -18,6 +21,9 @@ const jakarta = Plus_Jakarta_Sans({
   weight: ["400", "500", "600", "700"],
   variable: "--font-jakarta",
   display: "swap",
+  preload: true,
+  fallback: ["system-ui", "Arial", "sans-serif"],
+  adjustFontFallback: true,
 });
 
 export const metadata: Metadata = {
@@ -89,6 +95,7 @@ export default function RootLayout({
         ) : null}
         {/* Resource hints for third-party origins used on the page */}
         <link rel="preconnect" href="https://cal.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://peregrine-results.s3.amazonaws.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://n8n.deployify.xyz" />
         <script
           type="application/ld+json"

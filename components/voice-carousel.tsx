@@ -3,65 +3,25 @@
 import { Marquee } from "@/components/magicui/marquee";
 import { VoiceCard } from "@/components/sub/voice-card";
 import { FEMALE_VOICES, MALE_VOICES } from "@/data/voices";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { Reveal } from "@/components/ui/reveal";
 
 export default function VoiceCarousel() {
-  const containerRef = useRef(null);
-  const isInView = useInView(containerRef, { once: true, margin: "-100px" });
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        staggerChildren: 0.3,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.215, 0.61, 0.355, 1.0],
-      },
-    },
-  };
-
   return (
     <div className="bg-black p-6 md:p-8">
-      <motion.div
-        ref={containerRef}
-        variants={containerVariants}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-        className="mb-12 max-w-none mx-auto"
-      >
-        <motion.div variants={itemVariants} className="text-center mb-16">
-          <motion.h2
-            variants={itemVariants}
-            className="text-3xl md:text-4xl font-bold tracking-tighter text-brand-strong mb-4"
-          >
+      <div className="mb-12 max-w-none mx-auto">
+        <Reveal animation="animate-fade-in-up" className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-brand-strong mb-4">
             Test Out Some Used Voices
-          </motion.h2>
-          <motion.p variants={itemVariants} className="text-gray-400">
+          </h2>
+          <p className="text-gray-400">
             We offer voices in multiple languages, with different genders and
             accents!
-          </motion.p>
-        </motion.div>
+          </p>
+        </Reveal>
 
-        <motion.div variants={itemVariants} className="space-y-6">
+        <div className="space-y-6">
           {/* Female voices - scrolling left */}
-          <motion.div
-            variants={itemVariants}
-            className="relative w-full overflow-hidden"
-          >
+          <Reveal animation="animate-fade-in-up" delay={0.1} className="relative w-full overflow-hidden">
             <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
             <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
             <Marquee
@@ -79,13 +39,10 @@ export default function VoiceCarousel() {
                 />
               ))}
             </Marquee>
-          </motion.div>
+          </Reveal>
 
           {/* Male voices - scrolling right */}
-          <motion.div
-            variants={itemVariants}
-            className="relative w-full overflow-hidden"
-          >
+          <Reveal animation="animate-fade-in-up" delay={0.2} className="relative w-full overflow-hidden">
             <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
             <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
             <Marquee
@@ -104,9 +61,9 @@ export default function VoiceCarousel() {
                 />
               ))}
             </Marquee>
-          </motion.div>
-        </motion.div>
-      </motion.div>
+          </Reveal>
+        </div>
+      </div>
     </div>
   );
 }

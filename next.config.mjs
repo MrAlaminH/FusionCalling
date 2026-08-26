@@ -54,7 +54,7 @@ const nextConfig = {
     minimumCacheTTL: 3600,
   },
   experimental: {
-    optimizePackageImports: ["lucide-react"],
+    optimizePackageImports: ["lucide-react", "framer-motion"],
   },
   async redirects() {
     return [

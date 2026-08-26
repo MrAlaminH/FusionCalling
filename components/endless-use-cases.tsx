@@ -1,39 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Card } from "@/components/ui/card";
 import InboundCalls from "./sub/inbound-calls";
 import OutboundCalls from "./sub/outbound-calls";
 
 export default function EndlessUseCases() {
-  const reduce = useReducedMotion();
   const [activeTab, setActiveTab] = useState<"outbound" | "inbound">(
     "outbound"
   );
-
-  // Animation variants
-  const tabVariants = {
-    initial: { opacity: 0, y: 10 },
-    animate: { opacity: 1, y: 0, transition: { duration: 0.3 } },
-    exit: { opacity: 0, y: -10, transition: { duration: 0.2 } },
-  };
-
-  const tabButtonVariants = {
-    rest: {
-      scale: 1,
-      transition: { duration: 0.2 },
-    },
-    hover: {
-      scale: 1.05,
-      transition: { duration: 0.2 },
-    },
-    tap: {
-      scale: 0.95,
-      transition: { duration: 0.1 },
-    },
-  };
 
   return (
     <section className="w-full bg-black py-16">
@@ -42,73 +18,62 @@ export default function EndlessUseCases() {
           Real-world usecases
         </h2>
 
-        {/* Enhanced Tab Switcher */}
+        {/* Enhanced Tab Switcher - CSS-only animation, no framer-motion */}
         <Card className="w-full max-w-md mx-auto mb-6 p-1.5 bg-zinc-900 border-zinc-800 rounded-xl shadow-2xl">
           <div className="relative flex gap-1 bg-zinc-900 rounded-lg">
-            {/* Animated Background Indicator */}
-            <motion.div
-              layoutId="active-tab-background"
-              className="absolute inset-0 bg-brand/20 rounded-lg"
-              initial={false}
-              animate={{
-                x: activeTab === "outbound" ? "0%" : "100%",
+            {/* Animated Background Indicator - CSS transform */}
+            <div
+              className="absolute top-0 bottom-0 bg-brand/20 rounded-lg transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]"
+              style={{
                 width: "50%",
+                transform:
+                  activeTab === "outbound"
+                    ? "translateX(0%)"
+                    : "translateX(100%)",
               }}
-              transition={{
-                type: "spring",
-                stiffness: 300,
-                damping: 30,
-              }}
+              aria-hidden="true"
             />
 
             {/* Outbound Tab */}
-            <motion.button
-              variants={tabButtonVariants}
-              initial={reduce ? false : "rest"}
-              whileHover="hover"
-              whileTap="tap"
+            <button
               onClick={() => setActiveTab("outbound")}
               className={cn(
-                "relative flex-1 text-sm font-medium px-4 py-3 rounded-lg z-10 transition-colors",
+                "relative flex-1 text-sm font-medium px-4 py-3 rounded-lg z-10 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]",
                 activeTab === "outbound"
                   ? "text-brand-strong font-bold"
                   : "text-gray-400 hover:text-gray-200"
               )}
+              aria-selected={activeTab === "outbound"}
+              role="tab"
             >
               Outbound Calls
-            </motion.button>
+            </button>
 
             {/* Inbound Tab */}
-            <motion.button
-              variants={tabButtonVariants}
-              initial={reduce ? false : "rest"}
-              whileHover="hover"
-              whileTap="tap"
+            <button
               onClick={() => setActiveTab("inbound")}
               className={cn(
-                "relative flex-1 text-sm font-medium px-4 py-3 rounded-lg z-10 transition-colors",
+                "relative flex-1 text-sm font-medium px-4 py-3 rounded-lg z-10 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]",
                 activeTab === "inbound"
                   ? "text-brand-strong font-bold"
                   : "text-gray-400 hover:text-gray-200"
               )}
+              aria-selected={activeTab === "inbound"}
+              role="tab"
             >
               Inbound Calls
-            </motion.button>
+            </button>
           </div>
         </Card>
 
-        {/* Content */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeTab}
-            variants={tabVariants}
-            initial={reduce ? false : "initial"}
-            animate="animate"
-            exit="exit"
-          >
-            {activeTab === "outbound" ? <OutboundCalls /> : <InboundCalls />}
-          </motion.div>
-        </AnimatePresence>
+        {/* Content - CSS fade transition keyed by tab */}
+        <div
+          key={activeTab}
+          className="animate-fade-in"
+          style={{ animationDuration: "300ms" }}
+        >
+          {activeTab === "outbound" ? <OutboundCalls /> : <InboundCalls />}
+        </div>
       </div>
     </section>
   );

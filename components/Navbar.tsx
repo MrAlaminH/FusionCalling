@@ -86,6 +86,8 @@ const Navbar = () => {
               alt="Fusion Calling logo"
               width={36}
               height={36}
+              priority
+              fetchPriority="high"
               className="cursor-pointer transition-transform hover:scale-105"
             />
             <span className="text-lg font-bold tracking-tight text-white sm:text-xl">

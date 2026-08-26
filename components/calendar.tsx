@@ -10,7 +10,6 @@ interface CalendarProps {
 }
 
 const Calendar = ({ calUsername, eventSlug, showHeader = true }: CalendarProps) => {
-  const [isMobile, setIsMobile] = useState(false);
   const [ready, setReady] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -36,21 +35,6 @@ const Calendar = ({ calUsername, eventSlug, showHeader = true }: CalendarProps) 
     return () => io.disconnect();
   }, []);
 
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    // Check initially
-    checkMobile();
-
-    // Add resize listener
-    window.addEventListener("resize", checkMobile);
-
-    // Cleanup
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
   return (
     <div className="calendar-wrapper">
       {showHeader && (
@@ -62,14 +46,14 @@ const Calendar = ({ calUsername, eventSlug, showHeader = true }: CalendarProps) 
           </p>
         </div>
       )}
-      <div className="calendar-container" ref={containerRef}>
+      <div className="calendar-container calendar-embed" ref={containerRef}>
         {ready ? (
           <Cal
             calLink={`${calUsername}/${eventSlug}`}
             style={{
               width: "100%",
               height: "100%",
-              minHeight: isMobile ? "550px" : "500px",
+              minHeight: "500px",
               borderRadius: "16px",
               overflow: "auto",
               WebkitOverflowScrolling: "touch",
@@ -86,7 +70,8 @@ const Calendar = ({ calUsername, eventSlug, showHeader = true }: CalendarProps) 
         ) : (
           <div
             aria-busy="true"
-            style={{ minHeight: isMobile ? "550px" : "500px" }}
+            className="calendar-placeholder"
+            style={{ minHeight: "500px" }}
           />
         )}
       </div>

@@ -37,10 +37,52 @@ export function VelocityScroll({
   className,
 }: VelocityScrollProps) {
   const reduce = useReducedMotion();
+  const [isVisible, setIsVisible] = useState(false);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = wrapperRef.current;
+    if (!el || typeof IntersectionObserver === "undefined") {
+      setIsVisible(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setIsVisible(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "300px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
 
   if (reduce) {
     return (
-      <section className="relative w-full space-y-6">
+      <section ref={wrapperRef} className="relative w-full space-y-6">
+        <div className="w-full overflow-hidden whitespace-nowrap relative">
+          <div className={cn("inline-block", className)}>
+            <span>{text} </span>
+          </div>
+        </div>
+        <div className="w-full overflow-hidden whitespace-nowrap relative">
+          <div className={cn("inline-block", className)}>
+            <span>{text} </span>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (!isVisible) {
+    return (
+      <section
+        ref={wrapperRef}
+        className="relative w-full space-y-6"
+        aria-hidden="true"
+      >
         <div className="w-full overflow-hidden whitespace-nowrap relative">
           <div className={cn("inline-block", className)}>
             <span>{text} </span>
@@ -129,7 +171,7 @@ export function VelocityScroll({
   }
 
   return (
-    <section className="relative w-full space-y-6">
+    <section ref={wrapperRef} className="relative w-full space-y-6">
       <ParallaxText baseVelocity={default_velocity} className={className}>
         {text}
       </ParallaxText>

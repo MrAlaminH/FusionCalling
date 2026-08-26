@@ -1,78 +1,14 @@
-"use client";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import { Sparkles } from "lucide-react";
-import { Input } from "@/components/ui/input";
 import { NeonGradientCard } from "@/components/ui/neon-gradient-card";
 import Image from "next/image";
 import { BorderBeam } from "@/components/ui/border-beam";
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
-
-// react-phone-number-input bundles every country flag (~50 KB). Code-split it
-// so that weight is not in the initial render-blocking bundle. ssr:true keeps
-// the form in the server HTML (no layout shift); the chunk hydrates on load.
-const PhoneInputComponent = dynamic(
-  () => import("@/components/sub/PhoneInput"),
-);
-const SlideToCall = dynamic(() => import("@/components/sub/SlideToCall"));
+import HeroForm from "@/components/sub/HeroForm";
+import CopyNumberButton from "@/components/sub/CopyNumberButton";
 
 export default function Component() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [selectedAgent, setSelectedAgent] = useState("");
-  const [formKey, setFormKey] = useState(0);
-  const [copySuccess, setCopySuccess] = useState(false);
-  const [touched, setTouched] = useState<{
-    name: boolean;
-    email: boolean;
-    phone: boolean;
-    agent: boolean;
-  }>({ name: false, email: false, phone: false, agent: false });
-  const markTouched = (field: keyof typeof touched) =>
-    setTouched((t) => ({ ...t, [field]: true }));
-
-  // Function to reset input values
-  const resetInputs = () => {
-    setName("");
-    setEmail("");
-    setPhoneNumber("");
-    setSelectedAgent("");
-    setFormKey((prev) => prev + 1);
-    setTouched({ name: false, email: false, phone: false, agent: false });
-  };
-
-  // Function to validate email format
-  const isValidEmail = (email: string) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
-
-  // Function to check if inputs are valid
-  const isFormValid = () => {
-    return (
-      name.trim().length >= 2 && // Name should be at least 2 characters
-      isValidEmail(email.trim()) && // Email should be valid
-      phoneNumber.trim().length >= 10 && // Phone should be at least 10 digits
-      selectedAgent !== "" // Agent must be selected
-    );
-  };
-
-  // Function to handle form submission completion
-  const handleCallComplete = () => {
-    // This function will be called after the call is initiated
-    // We don't need to do anything here as resetInputs is already called in SlideToCall
-  };
-
-  // Function to handle copying phone number
-  const handleCopyNumber = () => {
-    navigator.clipboard.writeText("+19146394069");
-    setCopySuccess(true);
-    setTimeout(() => setCopySuccess(false), 2000);
-  };
-
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden pt-16 sm:pt-20 md:pt-24 lg:pt-28 xl:pt-32 relative">
       {/* Background Pattern SVG */}
@@ -173,9 +109,9 @@ export default function Component() {
               <div className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 p-3 sm:p-4 md:p-6 lg:p-8 relative z-50">
                 {/* Left Column */}
                 <div className="space-y-4 sm:space-y-6">
-                  <button className="bg-brand text-brand-foreground px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium">
+                  <span className="inline-block bg-brand text-brand-foreground px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium">
                     Live demo
-                  </button>
+                  </span>
                   <div className="space-y-2 sm:space-y-4">
                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
                       Skeptical?{" "}
@@ -214,44 +150,7 @@ export default function Component() {
                         <span className="text-xs sm:text-sm font-medium text-white">
                           +1 (914) 639-4069
                         </span>
-                        <button
-                          onClick={handleCopyNumber}
-                          className={cn(
-                            "transition-all active:scale-95",
-                            copySuccess
-                              ? "text-green-500"
-                              : "text-brand hover:text-brand",
-                          )}
-                          aria-label="Copy phone number"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            {copySuccess ? (
-                              <polyline points="20 6 9 17 4 12"></polyline>
-                            ) : (
-                              <>
-                                <rect
-                                  x="9"
-                                  y="9"
-                                  width="13"
-                                  height="13"
-                                  rx="2"
-                                  ry="2"
-                                ></rect>
-                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                              </>
-                            )}
-                          </svg>
-                        </button>
+                        <CopyNumberButton />
                       </div>
                     </div>
                   </div>
@@ -294,128 +193,7 @@ export default function Component() {
                     </div>
                   </div>
 
-                  <form className="space-y-4" key={formKey}>
-                    <label
-                      className="block text-sm font-medium text-gray-300"
-                      htmlFor="name"
-                    >
-                      Your name <span className="text-red-500">*</span>
-                    </label>
-                    <Input
-                      id="name"
-                      type="text"
-                      placeholder="Your name"
-                      className="bg-zinc-800 border-zinc-700 text-white"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      onBlur={() => markTouched("name")}
-                      aria-invalid={touched.name && name.trim().length < 2}
-                    />
-                    {touched.name && name.trim().length < 2 && (
-                      <p className="-mt-2 mb-2 text-xs text-red-400">
-                        Please enter your name (at least 2 characters).
-                      </p>
-                    )}
-
-                    <label
-                      className="block text-sm font-medium text-gray-300"
-                      htmlFor="email"
-                    >
-                      Your e-mail <span className="text-red-500">*</span>
-                    </label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="Your e-mail"
-                      className="bg-zinc-800 border-zinc-700 text-white"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      onBlur={() => markTouched("email")}
-                      aria-invalid={
-                        touched.email && !isValidEmail(email.trim())
-                      }
-                    />
-                    {touched.email && !isValidEmail(email.trim()) && (
-                      <p className="-mt-2 mb-2 text-xs text-red-400">
-                        Please enter a valid email address.
-                      </p>
-                    )}
-
-                    <label
-                      className="block text-sm font-medium text-gray-300"
-                      htmlFor="phone"
-                    >
-                      Phone number <span className="text-red-500">*</span>
-                    </label>
-                    <div
-                      className="[&_.PhoneInputInput]:bg-zinc-800 [&_.PhoneInputInput]:border-zinc-700 [&_.PhoneInputInput]:text-white"
-                      onBlur={() => markTouched("phone")}
-                    >
-                      <PhoneInputComponent
-                        id="phone"
-                        placeholder="Phone number"
-                        defaultCountry="US"
-                        aria-label="Phone number"
-                        value={phoneNumber}
-                        onChange={(value) => setPhoneNumber(value || "")}
-                      />
-                    </div>
-                    {touched.phone && phoneNumber.trim().length < 10 && (
-                      <p className="-mt-2 mb-2 text-xs text-red-400">
-                        Please enter a valid phone number (min. 10 digits).
-                      </p>
-                    )}
-
-                    <label
-                      className="block text-sm font-medium text-gray-300"
-                      htmlFor="agent"
-                    >
-                      Select Agent <span className="text-red-500">*</span>
-                    </label>
-                    <select
-                      id="agent"
-                      value={selectedAgent}
-                      onChange={(e) => setSelectedAgent(e.target.value)}
-                      onBlur={() => markTouched("agent")}
-                      aria-invalid={touched.agent && selectedAgent === ""}
-                      className="w-full bg-zinc-800 border border-zinc-700 text-white rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent"
-                    >
-                      <option value="">Choose an agent</option>
-                      <option value="appointment-scheduler">
-                        Appointment Scheduler Agent
-                      </option>
-                      <option value="real-estate">Real Estate Agent</option>
-                      <option value="dental-practice">
-                        Dental Practice Agent
-                      </option>
-                      <option value="insurance-agent">insurance Agent</option>
-                    </select>
-                    {touched.agent && selectedAgent === "" && (
-                      <p className="-mt-2 mb-2 text-xs text-red-400">
-                        Please select an agent.
-                      </p>
-                    )}
-
-                    <p className="text-sm text-gray-400">
-                      The call will automatically end after{" "}
-                      <span className="text-brand-strong">5 minutes</span>. Must
-                      use USA or Canada phone number.
-                    </p>
-
-                    <div className="relative">
-                      <div className="w-full ">
-                        <SlideToCall
-                          name={name}
-                          email={email}
-                          phoneNumber={phoneNumber}
-                          selectedAgent={selectedAgent}
-                          resetInputs={resetInputs}
-                          onCallComplete={handleCallComplete}
-                          disabled={!isFormValid()}
-                        />
-                      </div>
-                    </div>
-                  </form>
+                  <HeroForm />
                 </div>
               </div>
             </NeonGradientCard>

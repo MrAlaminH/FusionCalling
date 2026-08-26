@@ -85,12 +85,13 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
 
   return (
     <div className="relative inline-flex items-center self-stretch rounded-s-lg border border-zinc-700 bg-zinc-800 py-2 pe-2 ps-3 text-black">
-      <div className="inline-flex items-center gap-1">
+      <div className="inline-flex items-center gap-1" aria-hidden="true">
         <FlagComponent country={value} />
         <ChevronDown size={16} strokeWidth={2} className="text-gray-400" />
       </div>
       <select
         {...allowedProps}
+        aria-label="Phone country code"
         value={value || ""}
         onChange={(event) => {
           onChange(event.target.value as Country);
