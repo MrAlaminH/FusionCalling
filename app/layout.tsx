@@ -92,6 +92,10 @@ export default function RootLayout({
             content={process.env.NEXT_PUBLIC_YANDEX_VERIFICATION}
           />
         ) : null}
+        <meta
+          name="scrolllaunch-verify"
+          content="a4cbbbed6599f0c56272e29cf27df080"
+        />
         {/* Resource hints for third-party origins used on the page */}
         <link rel="preconnect" href="https://cal.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://peregrine-results.s3.amazonaws.com" crossOrigin="anonymous" />
