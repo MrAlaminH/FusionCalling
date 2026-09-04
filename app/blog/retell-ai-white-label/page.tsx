@@ -191,7 +191,7 @@ export default function RetellAIBlogPost() {
             >
               <Image
                 src={teamAuthor.avatar}
-                alt={teamAuthor.name}
+                alt={`${teamAuthor.name}, ${teamAuthor.role} at Fusion Calling`}
                 width={24}
                 height={24}
                 className="w-6 h-6 rounded-full object-cover"
@@ -536,7 +536,7 @@ export default function RetellAIBlogPost() {
             <div className="flex items-start gap-6">
               <Image
                 src={teamAuthor.avatar}
-                alt={teamAuthor.name}
+                alt={`${teamAuthor.name}, ${teamAuthor.role} at Fusion Calling`}
                 width={64}
                 height={64}
                 className="w-16 h-16 rounded-full object-cover border border-brand/30 flex-shrink-0"

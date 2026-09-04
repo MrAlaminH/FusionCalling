@@ -135,7 +135,7 @@ export default function TeamMemberPage({
             <div className="w-36 h-36 mx-auto mb-6 rounded-full border-4 border-brand/30 overflow-hidden">
               <Image
                 src={author.avatar}
-                alt={author.name}
+                alt={`${author.name}, ${author.role} at Fusion Calling`}
                 width={144}
                 height={144}
                 className="w-full h-full object-cover"

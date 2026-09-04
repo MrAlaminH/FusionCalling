@@ -51,10 +51,28 @@ const nextConfig = {
     deviceSizes: [360, 414, 640, 750, 828, 1080, 1200, 1920, 2048],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     // Re-check upstream images at least this often so source changes propagate.
-    minimumCacheTTL: 3600,
+    // 1 year: optimized-image URLs carry the deployment id (?dpl=…), so every
+    // deploy gets a fresh URL and long-lived caching can never go stale.
+    minimumCacheTTL: 31536000,
   },
   experimental: {
-    optimizePackageImports: ["lucide-react", "framer-motion"],
+    optimizePackageImports: ["lucide-react"],
+  },
+  webpack(config, { isServer }) {
+    // Drop Next's unconditional app-router legacy polyfills (Array::at/flat,
+    // Object.fromEntries, Promise::finally…). Every browser in the
+    // package.json `browserslist` implements these natively, so the shims are
+    // dead weight (~12 KB) in the initial bundle. Keep this alias and the
+    // browserslist aligned: raise the browserslist floor if a target lacks
+    // any polyfilled API. Upgrade-sensitive: verify after Next upgrades that
+    // `app-index.js` still requires `../build/polyfills/polyfill-module`.
+    if (!isServer) {
+      config.resolve.alias["../build/polyfills/polyfill-module"] = false;
+      config.resolve.alias[
+        "next/dist/build/polyfills/polyfill-module"
+      ] = false;
+    }
+    return config;
   },
   async redirects() {
     return [

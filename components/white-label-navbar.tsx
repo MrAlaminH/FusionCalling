@@ -120,7 +120,7 @@ const WhiteLabelNavbar = () => {
             href={CONTACT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-10 items-center justify-center rounded-xl border border-brand-strong bg-brand-strong px-4 font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:bg-orange-700 lg:px-5"
+            className="inline-flex h-10 items-center justify-center rounded-xl border border-brand-strong bg-brand-strong px-4 font-medium text-black transition duration-300 hover:-translate-y-0.5 hover:bg-orange-700 lg:px-5"
           >
             Contact Us
           </a>
@@ -201,7 +201,7 @@ const WhiteLabelNavbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMenuOpen(false)}
-                className="inline-flex items-center justify-center rounded-xl bg-brand-strong px-4 py-3 text-center font-semibold text-white shadow-lg shadow-brand-strong/30 transition duration-300 hover:bg-orange-700"
+                className="inline-flex items-center justify-center rounded-xl bg-brand-strong px-4 py-3 text-center font-semibold text-black shadow-lg shadow-brand-strong/30 transition duration-300 hover:bg-orange-700"
               >
                 Contact Us
               </a>

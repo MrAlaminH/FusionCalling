@@ -1,16 +1,6 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import {
-  motion,
-  useAnimationFrame,
-  useMotionValue,
-  useReducedMotion,
-  useScroll,
-  useSpring,
-  useTransform,
-  useVelocity,
-} from "framer-motion";
 
 import { cn } from "@/lib/utils";
 
@@ -20,25 +10,127 @@ interface VelocityScrollProps {
   className?: string;
 }
 
-interface ParallaxProps {
-  children: string;
-  baseVelocity: number;
-  className?: string;
-}
-
 export const wrap = (min: number, max: number, v: number) => {
   const rangeSize = max - min;
   return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min;
 };
+
+/**
+ * One marquee row. Replaces the framer-motion implementation (useScroll +
+ * useVelocity + useSpring + useAnimationFrame) with an equivalent rAF loop:
+ * scroll velocity is measured per frame, smoothed, and used to modulate speed
+ * and flip direction — same visual behavior, no animation library.
+ */
+function MarqueeRow({
+  children,
+  baseVelocity,
+  className,
+}: {
+  children: string;
+  baseVelocity: number;
+  className?: string;
+}) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLSpanElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [repetitions, setRepetitions] = useState(1);
+
+  useEffect(() => {
+    const calculateRepetitions = () => {
+      if (containerRef.current && textRef.current) {
+        const containerWidth = containerRef.current.offsetWidth;
+        const textWidth = textRef.current.offsetWidth;
+        if (textWidth > 0) {
+          setRepetitions(Math.ceil(containerWidth / textWidth) + 2);
+        }
+      }
+    };
+
+    calculateRepetitions();
+    window.addEventListener("resize", calculateRepetitions);
+    return () => window.removeEventListener("resize", calculateRepetitions);
+  }, [children]);
+
+  useEffect(() => {
+    let raf = 0;
+    let baseX = 0;
+    let lastY = window.scrollY;
+    let lastT = performance.now();
+    let smoothVelocity = 0;
+    const directionFactor = { current: 1 };
+
+    const tick = (now: number) => {
+      const delta = Math.min((now - lastT) / 1000, 0.1); // seconds, capped
+      lastT = now;
+
+      const scrollY = window.scrollY;
+      const rawVelocity = delta > 0 ? (scrollY - lastY) / delta : 0; // px/s
+      lastY = scrollY;
+
+      // Exponential smoothing ≈ the previous spring (damping 50, stiffness 400).
+      const tau = 0.12;
+      smoothVelocity +=
+        (rawVelocity - smoothVelocity) * (1 - Math.exp(-delta / tau));
+
+      const velocityFactor = smoothVelocity / 200; // maps [0, 1000] → [0, 5], unclamped
+
+      if (velocityFactor < 0) {
+        directionFactor.current = -1;
+      } else if (velocityFactor > 0) {
+        directionFactor.current = 1;
+      }
+
+      let moveBy = directionFactor.current * baseVelocity * delta;
+      moveBy += directionFactor.current * moveBy * velocityFactor;
+      baseX += moveBy;
+
+      if (contentRef.current) {
+        const x = wrap(-100 / repetitions, 0, baseX);
+        contentRef.current.style.transform = `translate3d(${x}%,0,0)`;
+      }
+
+      raf = requestAnimationFrame(tick);
+    };
+
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [baseVelocity, repetitions]);
+
+  return (
+    <div
+      className="w-full overflow-hidden whitespace-nowrap relative"
+      ref={containerRef}
+    >
+      <div ref={contentRef} className={cn("inline-block", className)}>
+        {Array.from({ length: repetitions }).map((_, i) => (
+          <span key={i} ref={i === 0 ? textRef : null}>
+            {children}{" "}
+          </span>
+        ))}
+      </div>
+      {/* Gradient overlays for fade effect */}
+      <div className="absolute left-0 top-0 h-full w-[100px] bg-gradient-to-r from-black via-black to-transparent"></div>
+      <div className="absolute right-0 top-0 h-full w-[100px] bg-gradient-to-l from-black via-black to-transparent"></div>
+    </div>
+  );
+}
 
 export function VelocityScroll({
   text,
   default_velocity = 5,
   className,
 }: VelocityScrollProps) {
-  const reduce = useReducedMotion();
   const [isVisible, setIsVisible] = useState(false);
-  const wrapperRef = useRef<HTMLDivElement>(null);
+  const [reduce, setReduce] = useState(false);
+  const wrapperRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReduce(mq.matches);
+    const onChange = (e: MediaQueryListEvent) => setReduce(e.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
 
   useEffect(() => {
     const el = wrapperRef.current;
@@ -53,12 +145,14 @@ export function VelocityScroll({
           io.disconnect();
         }
       },
-      { rootMargin: "300px" },
+      { rootMargin: "300px" }
     );
     io.observe(el);
     return () => io.disconnect();
   }, []);
 
+  // Reduced motion: return static rows immediately so users who prefer
+  // reduced motion never see an aria-hidden placeholder while scrolling.
   if (reduce) {
     return (
       <section ref={wrapperRef} className="relative w-full space-y-6">
@@ -97,87 +191,14 @@ export function VelocityScroll({
     );
   }
 
-  function ParallaxText({
-    children,
-    baseVelocity = 100,
-    className,
-  }: ParallaxProps) {
-    const baseX = useMotionValue(0);
-    const { scrollY } = useScroll();
-    const scrollVelocity = useVelocity(scrollY);
-    const smoothVelocity = useSpring(scrollVelocity, {
-      damping: 50,
-      stiffness: 400,
-    });
-
-    const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
-      clamp: false,
-    });
-
-    const [repetitions, setRepetitions] = useState(1);
-    const containerRef = useRef<HTMLDivElement>(null);
-    const textRef = useRef<HTMLSpanElement>(null);
-
-    useEffect(() => {
-      const calculateRepetitions = () => {
-        if (containerRef.current && textRef.current) {
-          const containerWidth = containerRef.current.offsetWidth;
-          const textWidth = textRef.current.offsetWidth;
-          const newRepetitions = Math.ceil(containerWidth / textWidth) + 2;
-          setRepetitions(newRepetitions);
-        }
-      };
-
-      calculateRepetitions();
-
-      window.addEventListener("resize", calculateRepetitions);
-      return () => window.removeEventListener("resize", calculateRepetitions);
-    }, [children]);
-
-    const x = useTransform(baseX, (v) => `${wrap(-100 / repetitions, 0, v)}%`);
-
-    const directionFactor = React.useRef<number>(1);
-    useAnimationFrame((t, delta) => {
-      let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
-
-      if (velocityFactor.get() < 0) {
-        directionFactor.current = -1;
-      } else if (velocityFactor.get() > 0) {
-        directionFactor.current = 1;
-      }
-
-      moveBy += directionFactor.current * moveBy * velocityFactor.get();
-
-      baseX.set(baseX.get() + moveBy);
-    });
-
-    return (
-      <div
-        className="w-full overflow-hidden whitespace-nowrap relative"
-        ref={containerRef}
-      >
-        <motion.div className={cn("inline-block", className)} style={{ x }}>
-          {Array.from({ length: repetitions }).map((_, i) => (
-            <span key={i} ref={i === 0 ? textRef : null}>
-              {children}{" "}
-            </span>
-          ))}
-        </motion.div>
-        {/* Gradient overlays for fade effect */}
-        <div className="absolute left-0 top-0 h-full w-[100px] bg-gradient-to-r from-black via-black to-transparent"></div>
-        <div className="absolute right-0 top-0 h-full w-[100px] bg-gradient-to-l from-black via-black to-transparent"></div>
-      </div>
-    );
-  }
-
   return (
     <section ref={wrapperRef} className="relative w-full space-y-6">
-      <ParallaxText baseVelocity={default_velocity} className={className}>
+      <MarqueeRow baseVelocity={default_velocity} className={className}>
         {text}
-      </ParallaxText>
-      <ParallaxText baseVelocity={-default_velocity} className={className}>
+      </MarqueeRow>
+      <MarqueeRow baseVelocity={-default_velocity} className={className}>
         {text}
-      </ParallaxText>
+      </MarqueeRow>
     </section>
   );
 }

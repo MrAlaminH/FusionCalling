@@ -260,7 +260,7 @@ export default function Home() {
           Want the full breakdown?{" "}
           <Link
             href="/pricing"
-            className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors"
+            className="text-brand hover:text-brand-light underline underline-offset-4 hover:underline transition-colors"
           >
             See pricing details for every plan
           </Link>
@@ -287,7 +287,7 @@ export default function Home() {
               Book a convenient time slot for us to discuss your needs and how we can help you succeed. Not sure which plan fits?{" "}
               <Link
                 href="/pricing"
-                className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors"
+                className="text-brand hover:text-brand-light underline underline-offset-4 hover:underline transition-colors"
               >
                 Compare pricing first
               </Link>

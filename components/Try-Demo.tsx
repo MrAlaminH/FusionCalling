@@ -13,7 +13,8 @@ export default function TryDemo() {
 
   const features = [
     {
-      title: " Real Estate Outbound Agnet",
+      title: "Real Estate Outbound Agent",
+      alt: "Demo: Real estate outbound AI agent consultation call",
       description:
         "This call demonstrates an AI assistant handling an initial consultation for real estate investments. The AI identifies client interests, discusses property preferences, and arranges for further information delivery.",
       bgColor: "bg-brand/10",
@@ -21,7 +22,8 @@ export default function TryDemo() {
       image: "/cardImage.jpg",
     },
     {
-      title: "Dental lab customer service Agent",
+      title: "Dental Lab Customer Service Agent",
+      alt: "Demo: Dental lab customer service AI agent booking call",
       description:
         "Listen to a customer calling a dental lab with booking appointment and handeling questions. Hear how the dental lab handles the inquiry and provides information.",
       bgColor: "bg-pink-100",
@@ -30,6 +32,7 @@ export default function TryDemo() {
     },
     {
       title: "Insurance Lead Qualification Agent",
+      alt: "Demo: Insurance lead qualification AI agent call",
       description:
         "Listen to an AI agent qualifying a lead for insurance services. Hear how the agent gathers information, addresses concerns, and sets up a follow-up with a human agent.",
       bgColor: "bg-pink-100",
@@ -38,6 +41,7 @@ export default function TryDemo() {
     },
     {
       title: "Appointment Booking Agent",
+      alt: "Demo: Appointment booking AI agent scheduling call",
       description:
         "Automate scheduling with natural conversation. Check availability, offer options, confirm details, and update calendars, boosting efficiency and customer convenience.",
       bgColor: "bg-pink-100",
@@ -46,6 +50,7 @@ export default function TryDemo() {
     },
     {
       title: "Restaurant Reservations Agent",
+      alt: "Demo: Restaurant reservations AI agent booking call",
       description:
         "Listen to a customer, calling to make a restaurant reservation. Hear how the restaurant handles the booking process and checks for availability.",
       bgColor: "bg-blue-100",
@@ -54,6 +59,7 @@ export default function TryDemo() {
     },
     {
       title: "Credit Repair Service Inquiry Agent",
+      alt: "Demo: Credit repair service inquiry AI agent call",
       description:
         "Listen to a potential client call Credit Repair Company to learn about their credit repair services and costs. Focus on the initial information provided.",
       bgColor: "bg-green-100",
@@ -65,6 +71,7 @@ export default function TryDemo() {
   const additionalFeatures = [
     {
       title: "Restaurant AI Order Taking Agent",
+      alt: "Demo: Restaurant AI order taking agent call",
       description:
         "Watch a demo of AI taking a customer's food order over the phone. See how AI streamlines restaurant order taking, improves efficiency, and enhances customer convenience.",
       bgColor: "bg-purple-100",
@@ -73,6 +80,7 @@ export default function TryDemo() {
     },
     {
       title: "Cold Call Lead Generation Agent",
+      alt: "Demo: Cold call lead generation AI agent pitch",
       description:
         "Listen to a cold call offering a local business a free SEO service to rank higher on Google. Learn about the initial pitch and value proposition",
       bgColor: "bg-brand/10",
@@ -81,6 +89,7 @@ export default function TryDemo() {
     },
     {
       title: "Trading System Offering Agent",
+      alt: "Demo: Trading system offering AI agent call",
       description:
         "Listen to a discussion about a system designed to automate and simplify Forex trading. Discover how AI can potentially manage trades and aim for profitable outcomes without constant user monitoring",
       bgColor: "bg-yellow-100",
@@ -137,12 +146,7 @@ export default function TryDemo() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       <Image
                         src={feature.image}
-                        alt={
-                          feature.title +
-                          " - " +
-                          feature.description.slice(0, 80) +
-                          (feature.description.length > 80 ? "..." : "")
-                        }
+                        alt={feature.alt}
                         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                         height={300}
                         width={500}
@@ -173,7 +177,7 @@ export default function TryDemo() {
                     {feature.title}
                   </h3>
                   <p
-                    className="text-sm leading-relaxed text-muted-foreground text-gray-200 
+                    className="text-sm leading-relaxed text-gray-200 
                     transition-transform duration-300 group-hover:translate-x-2"
                   >
                     {feature.description}
@@ -188,7 +192,7 @@ export default function TryDemo() {
         {!showMore && (
           <Reveal animation="animate-fade-in-up" className="flex justify-center mt-8">
             <Button
-              className="bg-brand-strong text-white px-6 py-3 rounded-lg hover:bg-brand-strong"
+              className="bg-gradient-to-r from-brand to-brand-strong text-black px-6 py-3 rounded-lg hover:from-brand-light hover:to-brand"
               onClick={() => setShowMore(true)}
             >
               See More

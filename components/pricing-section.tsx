@@ -104,7 +104,7 @@ function PricingCard({
       )}
     >
       {popular && (
-        <span className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 rounded-pill bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wide text-brand-foreground shadow-lg">
+        <span className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 rounded-pill bg-gradient-to-r from-brand to-brand-strong px-3 py-1 text-xs font-bold uppercase tracking-wide text-black shadow-lg">
           <Star className="h-3 w-3 fill-current" />
           Popular
         </span>
@@ -161,7 +161,7 @@ function PricingCard({
         className={cn(
           "w-full rounded-pill py-2 md:py-2.5 text-center text-xs md:text-sm font-medium transition-all duration-300 hover:shadow-lg",
           popular
-            ? "bg-gradient-to-r from-brand to-brand-strong text-brand-foreground"
+            ? "bg-gradient-to-r from-brand to-brand-strong text-black"
             : "bg-white text-[#0f172a] hover:bg-gray-100"
         )}
       >

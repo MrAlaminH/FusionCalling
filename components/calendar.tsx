@@ -1,7 +1,7 @@
 "use client";
 
-import Cal from "@calcom/embed-react";
 import { useEffect, useRef, useState } from "react";
+import type CalEmbedded from "@calcom/embed-react";
 
 interface CalendarProps {
   calUsername: string;
@@ -11,10 +11,23 @@ interface CalendarProps {
 
 const Calendar = ({ calUsername, eventSlug, showHeader = true }: CalendarProps) => {
   const [ready, setReady] = useState(false);
+  const [Cal, setCal] = useState<typeof CalEmbedded | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Defer the cal.com embed (script + iframe) until the calendar scrolls near
-  // the viewport so it never competes with initial page load.
+  // the viewport so it never competes with initial page load. The module
+  // import itself is gated too — ~48 KB of embed JS stays out of hydration.
+  useEffect(() => {
+    if (!ready) return;
+    let cancelled = false;
+    import("@calcom/embed-react").then((m) => {
+      if (!cancelled) setCal(() => m.default);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [ready]);
+
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
@@ -47,7 +60,7 @@ const Calendar = ({ calUsername, eventSlug, showHeader = true }: CalendarProps) 
         </div>
       )}
       <div className="calendar-container calendar-embed" ref={containerRef}>
-        {ready ? (
+        {ready && Cal ? (
           <Cal
             calLink={`${calUsername}/${eventSlug}`}
             style={{

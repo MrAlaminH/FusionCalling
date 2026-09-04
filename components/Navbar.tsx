@@ -205,7 +205,7 @@ const Navbar = () => {
             href={CONTACT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full bg-brand px-5 py-2 text-sm font-medium text-brand-foreground shadow-lg shadow-brand/25 transition-all duration-300 hover:bg-brand-strong"
+            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-strong px-5 py-2 text-sm font-medium text-black shadow-lg shadow-brand/25 transition-all duration-300 hover:from-brand-light hover:to-brand"
           >
             Contact Us
           </Link>
@@ -250,7 +250,7 @@ const Navbar = () => {
                 href={CONTACT_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center rounded-xl bg-brand px-4 py-3 font-medium shadow-lg shadow-brand/25 transition-all duration-300 hover:bg-brand-strong"
+                className="flex items-center justify-center rounded-xl bg-gradient-to-r from-brand to-brand-strong px-4 py-3 font-medium text-black shadow-lg shadow-brand/25 transition-all duration-300 hover:from-brand-light hover:to-brand"
               >
                 Contact Us
               </a>

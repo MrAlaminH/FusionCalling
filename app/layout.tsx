@@ -3,7 +3,6 @@ import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import ChatWidget from "@/components/chat/ChatWidget";
 import { PostHogProvider } from "./providers";
-import SuspendedPostHogPageView from "./PostHogPageView";
 import { SITE_URL } from "@/lib/site-url";
 
 const outfit = Outfit({
@@ -188,7 +187,6 @@ export default function RootLayout({
           Skip to content
         </a>
         <PostHogProvider>
-          <SuspendedPostHogPageView />
           <ChatWidget />
           {children}
         </PostHogProvider>

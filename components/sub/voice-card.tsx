@@ -110,7 +110,7 @@ export function VoiceCard({
       <div className="flex items-center gap-4 mb-2">
         <Image
           src={voice.avatarUrl || "/placeholder.svg"}
-          alt=""
+          alt={`${voice.name} — ${voice.gender} ${voice.accent} ${voice.language} voice avatar`}
           width={48}
           height={48}
           loading="lazy"

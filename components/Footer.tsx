@@ -74,7 +74,7 @@ export default function Footer() {
 
             <Link
               href="/#show-case"
-              className="mt-8 px-8 py-3 bg-brand text-brand-foreground rounded-full font-bold hover:bg-gray-700 transition-colors duration-300 inline-flex items-center group"
+              className="mt-8 px-8 py-3 bg-gradient-to-r from-brand to-brand-strong text-black rounded-full font-bold hover:from-brand-light hover:to-brand transition-colors duration-300 inline-flex items-center group"
             >
               Try Our Demo
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -215,26 +215,26 @@ export default function Footer() {
           {/* Bottom Bar */}
           <div className="border-t border-gray-800 pt-8">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-gray-400">
                 © {new Date().getFullYear()} Fusion Calling. All rights
                 reserved.
               </p>
               <div className="flex items-center gap-6">
                 <Link
                   href="/privacy"
-                  className="text-sm text-gray-500 hover:text-brand transition-colors"
+                  className="text-sm text-gray-400 hover:text-brand transition-colors"
                 >
                   Privacy Policy
                 </Link>
                 <Link
                   href="/terms"
-                  className="text-sm text-gray-500 hover:text-brand transition-colors"
+                  className="text-sm text-gray-400 hover:text-brand transition-colors"
                 >
                   Terms of Service
                 </Link>
                 <Link
                   href="/docs"
-                  className="text-sm text-gray-500 hover:text-brand transition-colors"
+                  className="text-sm text-gray-400 hover:text-brand transition-colors"
                 >
                   Docs
                 </Link>

@@ -47,7 +47,7 @@ export default function InboundCalls() {
                   <div className="absolute inset-0">
                     <Image
                       src="/agent.webp"
-                      alt="Satellite dish illustration"
+                      alt="AI inbound call agent illustration handling customer appointments and FAQs"
                       className="transition-transform duration-300 transform hover:scale-110"
                       fill
                       sizes="(max-width: 768px) 100vw, 33vw"
@@ -76,7 +76,7 @@ export default function InboundCalls() {
                   existing systems for a hassle-free setup.
                 </p>
                 <Link href="#calendar" passHref legacyBehavior>
-                  <Button className="mt-8 bg-orange-600 hover:bg-orange-700 text-white">
+                  <Button className="mt-8 bg-gradient-to-r from-brand to-brand-strong hover:from-brand-light hover:to-brand text-black">
                     Get Started
                   </Button>
                 </Link>

@@ -208,7 +208,7 @@ export default function CompareHubPage() {
                     <div className="relative aspect-video overflow-hidden">
                       <Image
                         src={post.heroImage}
-                        alt={`${post.competitorName} vs Fusion Calling comparison - ${post.subtitle}`}
+                        alt={`${post.competitorName} vs Fusion Calling comparison`}
                         title={`Best ${post.competitorName} Alternatives for AI Phone Call Agents`}
                         fill
                         className="object-cover transform group-hover:scale-105 transition-transform duration-500"

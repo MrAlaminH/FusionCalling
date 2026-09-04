@@ -94,18 +94,18 @@ export default function Sources() {
           ))}
         </ul>
 
-        <p className="mt-10 text-xs text-gray-500">
+        <p className="mt-10 text-xs text-gray-400">
           Looking for the platform itself? Explore our{" "}
           <Link
             href="/whitelabel"
-            className="text-brand-strong hover:text-brand transition-colors"
+            className="text-brand-strong hover:text-brand underline underline-offset-2 transition-colors"
           >
             white-label program
           </Link>{" "}
           or read the{" "}
           <Link
             href="/docs"
-            className="text-brand-strong hover:text-brand transition-colors"
+            className="text-brand-strong hover:text-brand underline underline-offset-2 transition-colors"
           >
             documentation
           </Link>

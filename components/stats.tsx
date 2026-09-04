@@ -122,7 +122,7 @@ const AnimatedStatistics = () => {
       </div>
 
       {/* Source disclaimer */}
-      <p className="text-gray-500 text-xs mt-8 max-w-3xl text-center">
+      <p className="text-gray-400 text-xs mt-8 max-w-3xl text-center">
         Statistics based on internal data from Jan 2024 - June 2026. Individual results may vary.
       </p>
     </section>

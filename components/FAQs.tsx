@@ -107,12 +107,12 @@ export default function FAQSection() {
               ))}
             </div>
 
-              <p className="mt-6 text-sm text-gray-500">
+              <p className="mt-6 text-sm text-gray-400">
                 Answers reflect Fusion Calling&apos;s platform capabilities and
                 industry standards. See our{" "}
                 <a
                   href="/ai-phone-call-automation#sources"
-                  className="text-brand-strong hover:text-brand transition-colors underline-offset-2 hover:underline"
+                  className="text-brand-strong hover:text-brand transition-colors underline underline-offset-2 hover:underline"
                 >
                   Sources &amp; References
                 </a>{" "}

@@ -44,9 +44,9 @@ export default function OutboundCalls() {
                 style={{ minHeight: "300px", maxHeight: "400px" }}
               >
                 <div className="absolute inset-0 ">
-                  <Image
+                    <Image
                     src="/agent2.webp"
-                    alt="Satellite dish illustration"
+                    alt="AI outbound call agent illustration for sales and lead qualification"
                     className="transition-transform duration-300 transform hover:scale-110 rounded-lg"
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
@@ -73,7 +73,7 @@ export default function OutboundCalls() {
                 level of productivity and customer engagement.
               </p>
               <Link href="#calendar" passHref legacyBehavior>
-                <Button className="mt-8 bg-orange-600 hover:bg-orange-700 text-white">
+                <Button className="mt-8 bg-gradient-to-r from-brand to-brand-strong hover:from-brand-light hover:to-brand text-black">
                   Get Started
                 </Button>
               </Link>

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export type BillingCycle = "monthly" | "yearly";
@@ -14,7 +13,6 @@ export function BillingToggle({
   onChange: (value: BillingCycle) => void;
   className?: string;
 }) {
-  const reduce = useReducedMotion();
   return (
     <div className={cn("flex items-center justify-center", className)}>
       <div
@@ -22,13 +20,14 @@ export function BillingToggle({
         aria-label="Billing cycle"
         className="relative flex w-full max-w-[360px] items-center rounded-full border border-white/10 bg-zinc-900/80 p-1.5 shadow-premium backdrop-blur"
       >
-        {/* Sliding pill — animated via `left` (rigid body, no overlap/squeeze). */}
-        <motion.div
-          className="absolute top-1.5 bottom-1.5 rounded-full bg-gradient-to-r from-brand to-brand-strong shadow-lg shadow-brand/40 ring-1 ring-brand/30"
-          initial={false}
-          animate={{ left: value === "monthly" ? "0.375rem" : "50%" }}
-          transition={reduce ? {} : { type: "spring", stiffness: 380, damping: 30 }}
-          style={{ width: "calc(50% - 0.375rem)" }}
+        {/* Sliding pill — CSS transform animation (rigid body, no overlap/squeeze). */}
+        <div
+          aria-hidden="true"
+          className="absolute top-1.5 bottom-1.5 rounded-full bg-gradient-to-r from-brand to-brand-strong shadow-lg shadow-brand/40 ring-1 ring-brand/30 transition-[left] duration-300 motion-reduce:transition-none ease-[cubic-bezier(0.32,0.72,0,1)]"
+          style={{
+            width: "calc(50% - 0.375rem)",
+            left: value === "monthly" ? "0.375rem" : "50%",
+          }}
         />
 
         {(["monthly", "yearly"] as const).map((option) => {

@@ -104,7 +104,7 @@ export default function TeamPage() {
                     <div className="w-28 h-28 mx-auto mb-4 rounded-full border-4 border-brand/30 overflow-hidden group-hover:border-brand transition-colors">
                       <Image
                         src={author.avatar}
-                        alt={author.name}
+                        alt={`${author.name}, ${author.role} at Fusion Calling`}
                         width={112}
                         height={112}
                         className="w-full h-full object-cover"
