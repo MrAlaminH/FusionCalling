@@ -143,6 +143,14 @@ export default function RetellAIBlogPost() {
                       text: "Absolutely. Fusion Calling unifies Vapi, Retell AI, and ElevenLabs under one white-label dashboard. Assign the best engine per client — Retell for natural support flows, Vapi for cost-sensitive outbound, ElevenLabs for premium voices.",
                     },
                   },
+                  {
+                    "@type": "Question",
+                    name: "How much does it cost to resell Retell agents under my brand?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Plans start at $99/month for 6 sub-accounts. You import your existing Retell agents with your API key, so there is no rebuild, and you set your own client prices on top.",
+                    },
+                  },
                 ],
               },
             ],
@@ -407,7 +415,15 @@ export default function RetellAIBlogPost() {
                 Because we connect to your Retell account directly, your existing agent
                 configs and assistants carry over. You keep the conversational setup you
                 already trust; you simply gain a branded, multi-client, billable product
-                around it.
+                around it. See the{" "}
+                <Link href="/whitelabel/retell" className="text-brand-light hover:text-brand transition-colors">
+                  white-label Retell platform
+                </Link>{" "}
+                for what clients get, or read our{" "}
+                <Link href="/alternative/retell" className="text-brand-light hover:text-brand transition-colors">
+                  Retell alternative comparison
+                </Link>{" "}
+                before you decide.
               </p>
             </div>
 

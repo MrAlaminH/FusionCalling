@@ -126,7 +126,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: "Automatic Speech Recognition",
     category: "Speech Technology",
     definition:
-      "Automatic speech recognition (ASR) is the technology, powered by acoustic and language models, that converts spoken audio into text. It is the technical foundation beneath speech-to-text.",
+      "Automatic speech recognition (ASR) is the technology, powered by acoustic and language models, that converts spoken audio into text. It is the technical foundation beneath speech-to-text. It decides how well an agent hears callers on noisy lines and across accents. Test any provider on a live call with real background noise before you commit.",
     whyItMatters:
       "Higher-quality ASR providers like Deepgram improve recognition accuracy and reduce costly misunderstandings in automated calls.",
     related: ["Speech-to-Text", "Deepgram", "Transcription"],
@@ -317,7 +317,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: "WebRTC",
     category: "Telephony",
     definition:
-      "Web Real-Time Communication (WebRTC) is a technology that enables real-time voice and video directly in web browsers, commonly used for in-browser voice widgets and click-to-call experiences.",
+      "Web Real-Time Communication (WebRTC) is a technology that enables real-time voice and video directly in web browsers, commonly used for in-browser voice widgets and click-to-call experiences. Hire a consultant for custom WebRTC builds, use a platform to launch fast without managing servers and call routing. See our security and compliance guide for what call encryption to ask about, and our AI phone call automation guide for how browser calling fits a full setup.",
     whyItMatters:
       "WebRTC lets agencies embed voice agents directly into websites for instant, browser-based calling without plugins.",
     related: ["VoIP", "Full-Duplex Communication", "Telephony"],

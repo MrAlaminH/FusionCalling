@@ -76,7 +76,7 @@ With Fusion Calling, you don't choose one — you get all three. Match each clie
     slug: "ai-voice-agents-for-small-business",
     title: "AI Voice Agents for Small Business: Use Cases & ROI",
     description:
-      "Every missed call is lost revenue. See how small businesses use AI voice agents to capture leads, book appointments, and stay open 24/7, plus the ROI math.",
+      "See how restaurants and other small businesses use AI voice agents to answer every call, book appointments, and stay open 24/7. Compare the cost with a Vapi-based build and see the ROI math for a first client.",
     date: "2025-02-15",
     category: "Use Cases",
     readTime: "8 min read",
@@ -123,7 +123,7 @@ Benefits over direct Vapi:
     slug: "retell-ai-white-label",
     title: "Can You White-Label Retell AI? Here's How",
     description:
-      "Learn whether you can white-label Retell AI, its limits as an engine-only platform, and a step-by-step path to reselling it under your own brand.",
+      "Learn how agencies resell Retell AI under their own brand for clients like dental clinics, and how it compares with Vapi on cost and setup. Follow the step-by-step path before you launch.",
     date: "2025-02-11",
     category: "Integration Guide",
     readTime: "7 min read",

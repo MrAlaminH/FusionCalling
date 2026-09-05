@@ -207,6 +207,64 @@ export default function RetellWhiteLabelPage() {
           <Pricing />
         </div>
 
+        {/* Compare providers — keep comparison intent on-site */}
+        <nav
+          aria-label="Compare white-label providers"
+          className="w-full bg-black section-spacing"
+        >
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+            <h2 className="font-display text-xl sm:text-2xl font-bold text-white mb-4 text-center">
+              Compare white-label providers
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <Link
+                href="/whitelabel/vapi"
+                className="glass-light rounded-xl p-5 border border-brand/20 hover:border-brand/40 transition-premium"
+              >
+                <span className="text-base font-bold text-brand-light">
+                  Retell vs Vapi
+                </span>
+                <span className="block text-sm text-gray-400 mt-1">
+                  Which engine fits each client use case.
+                </span>
+              </Link>
+              <Link
+                href="/whitelabel/elevenlabs"
+                className="glass-light rounded-xl p-5 border border-brand/20 hover:border-brand/40 transition-premium"
+              >
+                <span className="text-base font-bold text-brand-light">
+                  Retell vs ElevenLabs
+                </span>
+                <span className="block text-sm text-gray-400 mt-1">
+                  Natural support flows or premium voices.
+                </span>
+              </Link>
+              <Link
+                href="/whitelabel/gohighlevel"
+                className="glass-light rounded-xl p-5 border border-brand/20 hover:border-brand/40 transition-premium"
+              >
+                <span className="text-base font-bold text-brand-light">
+                  Retell + GoHighLevel
+                </span>
+                <span className="block text-sm text-gray-400 mt-1">
+                  Run Retell agents inside GHL sub-accounts.
+                </span>
+              </Link>
+              <Link
+                href="/whitelabel/compare"
+                className="glass-light rounded-xl p-5 border border-brand/20 hover:border-brand/40 transition-premium"
+              >
+                <span className="text-base font-bold text-brand-light">
+                  Compare all providers
+                </span>
+                <span className="block text-sm text-gray-400 mt-1">
+                  Pricing and features side by side.
+                </span>
+              </Link>
+            </div>
+          </div>
+        </nav>
+
         {/* FAQ */}
         <section id="retell-faq" className="w-full bg-black section-spacing">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">

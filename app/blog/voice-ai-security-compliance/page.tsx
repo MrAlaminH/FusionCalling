@@ -127,6 +127,30 @@ export default function VoiceAISecurityComplianceBlogPost() {
                       text: "Common safeguards include disclosing that the caller is speaking with an AI, keeping audit logs of calls, restricting voice cloning to consented voices, and using provider abuse monitoring. Ask your vendor which of these controls they support.",
                     },
                   },
+                  {
+                    "@type": "Question",
+                    name: "How can you tell a synthetic voice on a support call?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Start by asking for clear disclosure, so every caller knows they are speaking with an AI. On the call, listen for flat tone, odd pauses, or answers that ignore interruptions, and flag them for human review. Keep recordings and logs so a person can check anything that sounds off.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "What TCPA and consent rules apply to AI outbound calls?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "For AI outbound calls, get consent before you dial, honor opt-outs right away, and play a short notice when a call is recorded. Keep logs of consent, call times, and do-not-call checks for every campaign. Rules differ by state and country, so ask counsel before you launch.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Which CPaaS features matter for AI voice calling?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Look for an outbound dialing API that is simple to set up, with clear docs for starting and tracking calls. Make sure call recording can be turned on or off per use case, with transcripts tied to each call. Finally, check for GDPR retention controls like auto-delete and per-caller deletion.",
+                    },
+                  },
                 ],
               },
             ],

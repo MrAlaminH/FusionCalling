@@ -5,9 +5,9 @@ import { comparisons } from "@/lib/comparisons";
 import { SITE_URL } from "@/lib/site-url";
 import { buildOpenGraph } from "@/lib/seo";
 
-const title = "10 Best White-Label Voice AI Alternatives Compared (2026 Pricing)";
+const title = "12 Best White-Label Voice AI Alternatives Compared (2026 Pricing)";
 const description =
-  "Compare Fusion Calling vs Vapi, Retell AI, Synthflow, Bland AI, Air AI + 5 more: pricing from $99/mo, providers, sub-accounts, onboarding. Live demo included.";
+  "Compare Fusion Calling vs Vapi, Retell AI, Synthflow, Bland AI, Air AI + 7 more: pricing from $99/mo, providers, sub-accounts, onboarding. Live demo included.";
 
 export const metadata: Metadata = {
   title,

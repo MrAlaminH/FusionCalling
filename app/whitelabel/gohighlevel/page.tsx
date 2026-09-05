@@ -179,6 +179,23 @@ export default function GHLWhiteLabelPage() {
               deliver 24/7 call handling and booking, and resell everything under
               your own brand.
             </p>
+            <p className="mt-4 max-w-3xl mx-auto text-sm sm:text-base text-gray-400 leading-relaxed">
+              New to reselling voice? Read our{" "}
+              <Link
+                href="/blog/gohighlevel-white-label-voice"
+                className="text-brand-light hover:text-brand underline-offset-4 hover:underline transition-colors"
+              >
+                GoHighLevel white-label voice guide
+              </Link>{" "}
+              or{" "}
+              <Link
+                href="/whitelabel/compare"
+                className="text-brand-light hover:text-brand underline-offset-4 hover:underline transition-colors"
+              >
+                compare white-label providers
+              </Link>{" "}
+              before you pick a plan.
+            </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href="#cta"
@@ -259,6 +276,64 @@ export default function GHLWhiteLabelPage() {
         <div id="ghl-pricing">
           <Pricing />
         </div>
+
+        {/* Compare providers — keep comparison intent on-site */}
+        <nav
+          aria-label="Compare white-label providers"
+          className="w-full bg-black section-spacing"
+        >
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+            <h2 className="font-display text-xl sm:text-2xl font-bold text-white mb-4 text-center">
+              Compare white-label providers
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <Link
+                href="/whitelabel/vapi"
+                className="glass-light rounded-xl p-5 border border-brand/20 hover:border-brand/40 transition-premium"
+              >
+                <span className="text-base font-bold text-brand-light">
+                  GoHighLevel + Vapi
+                </span>
+                <span className="block text-sm text-gray-400 mt-1">
+                  Resell Vapi agents inside GHL sub-accounts.
+                </span>
+              </Link>
+              <Link
+                href="/whitelabel/retell"
+                className="glass-light rounded-xl p-5 border border-brand/20 hover:border-brand/40 transition-premium"
+              >
+                <span className="text-base font-bold text-brand-light">
+                  GoHighLevel + Retell
+                </span>
+                <span className="block text-sm text-gray-400 mt-1">
+                  Resell Retell agents inside GHL sub-accounts.
+                </span>
+              </Link>
+              <Link
+                href="/whitelabel/elevenlabs"
+                className="glass-light rounded-xl p-5 border border-brand/20 hover:border-brand/40 transition-premium"
+              >
+                <span className="text-base font-bold text-brand-light">
+                  GoHighLevel + ElevenLabs
+                </span>
+                <span className="block text-sm text-gray-400 mt-1">
+                  Resell ElevenLabs voices inside GHL sub-accounts.
+                </span>
+              </Link>
+              <Link
+                href="/whitelabel/compare"
+                className="glass-light rounded-xl p-5 border border-brand/20 hover:border-brand/40 transition-premium"
+              >
+                <span className="text-base font-bold text-brand-light">
+                  Compare all providers
+                </span>
+                <span className="block text-sm text-gray-400 mt-1">
+                  Pricing and features side by side.
+                </span>
+              </Link>
+            </div>
+          </div>
+        </nav>
 
         {/* FAQ */}
         <section id="ghl-faq" className="w-full bg-black section-spacing">

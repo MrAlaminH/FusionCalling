@@ -109,6 +109,35 @@ export default function BlogPage() {
             </div>
           </div>
 
+          {/* Start here */}
+          <div className="mb-16">
+            <div className="glass rounded-3xl p-8 md:p-12 border border-orange-500/20">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
+                Start here
+              </h2>
+              <div className="flex flex-col md:flex-row gap-4">
+                <Link
+                  href="/ai-phone-call-automation"
+                  className="text-orange-400 hover:text-orange-300 transition-colors"
+                >
+                  AI phone call automation guide
+                </Link>
+                <Link
+                  href="/alternative"
+                  className="text-orange-400 hover:text-orange-300 transition-colors"
+                >
+                  Platform alternatives
+                </Link>
+                <Link
+                  href="/industries"
+                  className="text-orange-400 hover:text-orange-300 transition-colors"
+                >
+                  Industries
+                </Link>
+              </div>
+            </div>
+          </div>
+
           {/* Blog Posts Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
