@@ -55,6 +55,16 @@ const useCases = [
     href: "/industries/ai-voice-for-home-services",
     text: "Answer emergency calls after hours, book estimates, and route jobs to the right technician the moment a customer calls.",
   },
+  {
+    name: "Restaurants & hospitality",
+    href: "/industries/ai-voice-for-restaurants-hospitality",
+    text: "Take reservations, confirm bookings, and answer questions about hours, menus, and parking, even during the dinner rush. No-show reminders and waitlist callbacks run on their own.",
+  },
+  {
+    name: "Ecommerce & retail",
+    href: "/industries/ai-voice-for-ecommerce-retail",
+    text: "Answer questions about orders, delivery times, and returns, and place follow-up calls about carts or back-in-stock items. Your shop phone stays covered nights and weekends without extra staff.",
+  },
 ];
 
 const faqs = [
@@ -82,6 +92,26 @@ const faqs = [
     question: "How long does it take to launch?",
     answer:
       "Most Fusion Calling agents go live within days of kickoff: you provide your business knowledge, choose a voice, connect your calendar and CRM, then test calls with the team before turning the agent on for customers.",
+  },
+  {
+    question: "What is AI call handling?",
+    answer:
+      "AI call handling means software answers your business calls, talks with the caller, and takes care of routine work like booking, answering common questions, or passing the call to the right person. At Fusion Calling, the agent follows your rules for greetings, hours, and handoffs, so every caller gets a quick, polite reply even after hours.",
+  },
+  {
+    question: "What is automated call handling vs IVR?",
+    answer:
+      "Automated call handling lets callers speak in their own words and get things done, while a classic IVR menu makes them press numbers and wait through fixed options. An IVR can only route calls, but an AI agent understands intent, asks follow-up questions, and completes tasks like scheduling or updating your CRM.",
+  },
+  {
+    question: "What is conversational AI for phone calls?",
+    answer:
+      "Conversational AI for phone calls is technology that holds a two-way spoken talk with a caller instead of playing recorded prompts. It listens, understands meaning, and replies in a normal voice, so callers can interrupt, change topics, or ask questions the way they would with a person.",
+  },
+  {
+    question: "What is telephony automation?",
+    answer:
+      "Telephony automation means your phone system runs routine call work on its own: answering, placing calls, sending follow-up texts, and logging notes. It connects your phone number to tools like your calendar and CRM, so bookings and records stay current without staff typing them in by hand.",
   },
 ];
 

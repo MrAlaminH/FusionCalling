@@ -151,6 +151,22 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
                       text: "With Fusion Calling's done-with-you onboarding, most small businesses go live in 7-14 days. Pick a template, customize the script, connect a number, and test. No engineering required.",
                     },
                   },
+                  {
+                    "@type": "Question",
+                    name: "What does an AI voice agent cost a small team each month?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Small teams usually start at $99/mo for a single location, which covers the platform, call handling, and transcripts. Per-minute voice usage is billed by the provider, and most teams find one recovered job a month covers the full cost.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "How long does launch take for a small team with no tech staff?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Most non-technical teams launch in 7-14 days with done-with-you onboarding. You pick a template for your trade, we help connect your number and calendar, and you test with real calls before going live.",
+                    },
+                  },
                 ],
               },
             ],
@@ -354,7 +370,12 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
                     <h3 className="text-white font-bold mb-2">Lead Capture & Qualification</h3>
                     <p className="text-gray-400 text-sm">
                       Capture every caller's details and qualify the job before
-                      it ever reaches your team.
+                      it ever reaches your team. Real estate teams use this to
+                      screen buyers and sellers around the clock — see our{" "}
+                      <Link href="/industries/ai-voice-for-real-estate" className="text-brand-light hover:text-brand transition-colors">
+                        AI voice playbook for real estate
+                      </Link>
+                      .
                     </p>
                   </div>
                 </div>
@@ -367,7 +388,12 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
                     <h3 className="text-white font-bold mb-2">Reminders & Recall</h3>
                     <p className="text-gray-400 text-sm">
                       Automated appointment reminders and follow-ups cut no-shows
-                      and bring lapsed customers back.
+                      and bring lapsed customers back. Run your own numbers with
+                      our{" "}
+                      <Link href="/calculator" className="text-brand-light hover:text-brand transition-colors">
+                        missed-call ROI calculator
+                      </Link>{" "}
+                      to see what fewer no-shows are worth.
                     </p>
                   </div>
                 </div>

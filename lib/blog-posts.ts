@@ -168,4 +168,17 @@ Agency workflow:
 
 This lets you offer voice AI without leaving the GHL ecosystem.`,
   },
+  {
+    slug: "voice-ai-security-compliance",
+    title: "Voice AI Security & Compliance: Encryption, GDPR, Interruption Handling",
+    description:
+      "How is call audio encrypted at rest and in transit? How do GDPR retention, outbound dialing rules, and barge-in work? A plain-English guide to evaluating voice AI security.",
+    date: "2026-09-05",
+    category: "Security Guide",
+    readTime: "6 min read",
+    image: "/blog/blog3.webp",
+    content: `Voice AI handles real phone calls with real people. This guide answers the most common security questions in plain English: TLS plus SRTP encryption in transit, AES-256 at rest, GDPR retention controls, TCPA outbound and recording consent rules, barge-in interruption handling, and synthetic-voice safeguards.
+
+Fusion Calling runs calls over encrypted connections, protects stored call data with strong encryption, and offers per-account retention and deletion controls. Read the full guide at /blog/voice-ai-security-compliance.`,
+  },
 ];

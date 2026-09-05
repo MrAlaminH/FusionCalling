@@ -286,6 +286,27 @@ export default function WhiteLabelPage() {
       <section id="benefits" className="scroll-mt-16">
         <Benefits />
       </section>
+      <section className="w-full bg-black py-16 sm:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center mb-4">
+            White-label voice AI software your agency owns
+          </h2>
+          <p className="text-gray-400 text-base sm:text-lg mb-4">
+            This is software, not a done-for-you service. You run it under your own domain, with your logo and your client accounts. Your clients log in to your brand, not ours.
+          </p>
+          <p className="text-gray-400 text-base sm:text-lg mb-4">
+            The platform connects to the tools you already use. Import agents from{" "}
+            <Link href="/whitelabel/vapi" className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors">Vapi</Link>,{" "}
+            <Link href="/whitelabel/retell" className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors">Retell</Link>, and{" "}
+            <Link href="/whitelabel/elevenlabs" className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors">ElevenLabs</Link>, or plug voice calling into{" "}
+            <Link href="/whitelabel/gohighlevel" className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors">GoHighLevel</Link> sub-accounts.{" "}
+            <Link href="/whitelabel/compare" className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors">Compare the white-label platform options</Link> to pick the setup that fits each client.
+          </p>
+          <p className="text-gray-400 text-base sm:text-lg">
+            You work as a reseller with full control. You set the pricing, you bill the client, and you keep 100% of what you charge above the plan cost.
+          </p>
+        </div>
+      </section>
       <section id="faq" className="scroll-mt-16">
         <FAQ />
       </section>

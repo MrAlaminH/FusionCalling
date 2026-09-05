@@ -171,7 +171,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: "Barge-In",
     category: "Speech Technology",
     definition:
-      "Barge-in is the ability of a voice agent to detect and respond when a caller interrupts while the agent is still speaking, pausing its own speech to yield the floor, just as humans do.",
+      "Barge-in is the ability of a voice agent to detect and respond when a caller interrupts while the agent is still speaking, pausing its own speech to yield the floor, just as humans do. Good barge-in relies on full-duplex audio so both sides can be heard at once, plus fast endpointing so the agent yields within a fraction of a second. See our security and compliance guide for how to test interruption handling on a live call.",
     whyItMatters:
       "Barge-in support makes conversations feel natural and polite, a key sign of a high-quality voice agent.",
     related: ["Full-Duplex Communication", "Turn-Taking", "Latency"],
@@ -546,7 +546,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: "GDPR",
     category: "Compliance & Security",
     definition:
-      "The General Data Protection Regulation (GDPR) is the European Union's data privacy law governing how personal data is collected, stored, and processed, with strict consent and rights requirements.",
+      "The General Data Protection Regulation (GDPR) is the European Union's data privacy law governing how personal data is collected, stored, and processed, with strict consent and rights requirements. For voice AI, this means setting a clear retention period for call recordings and transcripts, deleting them on schedule, and honoring access and deletion requests. See our security and compliance guide for what retention controls to ask any vendor about.",
     whyItMatters:
       "Agencies serving EU clients or callers must ensure their voice AI handling complies with GDPR privacy rules.",
     related: ["HIPAA", "SOC 2", "Data Privacy"],
@@ -573,7 +573,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: "AES-256 Encryption",
     category: "Compliance & Security",
     definition:
-      "AES-256 is a strong encryption standard used to secure data both at rest and in transit. It is a common baseline for protecting sensitive call and customer data.",
+      "AES-256 is a strong encryption standard used to secure data both at rest and in transit. It is a common baseline for protecting sensitive call and customer data. In voice AI, live audio is typically protected in transit with TLS and SRTP, while stored recordings and transcripts are encrypted at rest with AES-256. See our security and compliance guide for what to ask vendors about key storage and access.",
     whyItMatters:
       "Strong encryption is a standard expectation in vendor security reviews and supports compliance claims.",
     related: ["Data Privacy", "SOC 2", "HIPAA"],

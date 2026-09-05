@@ -809,11 +809,24 @@ export const industries: Industry[] = [
         description:
           "Deflect delivery, pricing, and policy FAQs around the clock and escalate VIP or fraud-risk calls with full context.",
       },
+      {
+        emoji: "📞",
+        title: "Abandoned-Cart Call-Back (Shopify, WooCommerce)",
+        description:
+          "Call shoppers back shortly after they leave items in their cart on Shopify or WooCommerce and answer simple questions about shipping or returns. Include an SMS checkout link so they can finish the order in one tap.",
+      },
+      {
+        emoji: "🔍",
+        title: "Proactive Order Tracking Updates (Shopify, WooCommerce)",
+        description:
+          "Give instant order status from your Shopify or WooCommerce store data and send tracking links by SMS. Flag delays early so shoppers do not need to call twice.",
+      },
     ],
     stats: [
       { value: "24/7", label: "support coverage without adding headcount" },
       { value: "<5s", label: "average response to order questions" },
       { value: "100%", label: "of routine support calls deflected" },
+      { value: "Instant", label: "answers on order status from your store data" },
     ],
     agencyAngle:
       "E-commerce is a massive, recurring-pain market where every recovered call is directly measurable revenue, making it an easy retainer to sell.",
@@ -839,6 +852,11 @@ export const industries: Industry[] = [
         question: "Can it recover abandoned carts by phone?",
         answer:
           "Yes. The agent calls cart abandoners within minutes, answers objections, and texts a one-tap checkout link. Every recovered order is logged with call recording and revenue attribution for the agency to report.",
+      },
+      {
+        question: "Does the AI voice agent work with my store's orders?",
+        answer:
+          "Yes. It reads live order status and tracking info from your store system such as Shopify or WooCommerce through API connections. It answers where-is-my-order questions, starts returns, and logs each call to your CRM.",
       },
       {
         question: "Can my agency white-label this for retail clients?",
@@ -945,6 +963,7 @@ export const industries: Industry[] = [
       "AI voice agent for restaurants & hotels: reservations via OpenTable/Resy, phone orders via Toast/Square, catering & after-hours answering 24/7. From $149/mo.",
     keywords: [
       "ai voice agent for restaurants",
+      "ai voice agents for restaurants",
       "ai voice agent for restaurant",
       "voice ai for restaurants",
       "restaurant voice ai",
@@ -1002,6 +1021,18 @@ export const industries: Industry[] = [
         description:
           "Send 24h and 2h reminders, run waitlist SMS, and answer every after-hours call instead of voicemail.",
       },
+      {
+        emoji: "⏱️",
+        title: "Waitlist & Quote-Time Management (OpenTable, Resy)",
+        description:
+          "Add walk-ins to the waitlist, quote honest wait times, and text guests when their table is ready. Update OpenTable or Resy in real time so the host stand stays clear.",
+      },
+      {
+        emoji: "📱",
+        title: "Online Ordering Help & Menu Questions (Toast, Square)",
+        description:
+          "Walk callers through online ordering and send orders to Toast or Square as clean tickets. Answer simple questions about hours, location, and menu items without staff help.",
+      },
     ],
     stats: [
       { value: "100%", label: "of incoming reservation calls answered" },
@@ -1037,6 +1068,11 @@ export const industries: Industry[] = [
         question: "Does it work for hotels as well as restaurants?",
         answer:
           "Yes. Fusion Calling agents are configured per venue, so a hotel can use the same platform for guest services, concierge questions, and reservation handling while a restaurant uses it for orders and bookings.",
+      },
+      {
+        question: "Can it take reservations and handle menu questions?",
+        answer:
+          "Yes. It books, changes, and cancels reservations and answers common questions about hours, menu items, and allergens. Special requests go to your staff with a full call summary.",
       },
       {
         question: "Can I sell this to hospitality clients under my brand?",
