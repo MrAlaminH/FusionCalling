@@ -83,6 +83,20 @@ const nextConfig = {
         destination: "/team/voice-team",
         permanent: true,
       },
+      // Legacy root /compare URLs (pre-rename to /alternative) still get
+      // Google impressions (e.g. /compare/vapify-alternative Pos 8.75).
+      // Preserve ranking signals by 301ing them to /alternative equivalents.
+      // NOTE: /whitelabel/compare is a separate live page and is untouched.
+      {
+        source: "/compare",
+        destination: "/alternative",
+        permanent: true,
+      },
+      {
+        source: "/compare/:slug",
+        destination: "/alternative/:slug",
+        permanent: true,
+      },
       // Host canonicalization: serve one canonical host (www) so we never
       // split ranking signals across apex/www if platform config drifts.
       {

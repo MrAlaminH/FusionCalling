@@ -756,10 +756,13 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2025-02-09T00:00:00Z",
     productSupported: true,
-    metaTitle: "AI Voice for E-commerce & Retail: Support & Orders",
+    metaTitle: "AI Voice Agent for Ecommerce: Support, Returns & Cart Recovery",
     metaDescription:
-      "AI voice agents for e-commerce & retail answer order status, returns, and support 24/7, and recover carts. White-label voice AI for agencies.",
+      "AI voice agent for ecommerce & retail: order status via Shopify/WooCommerce, returns, cart-recovery & back-in-stock calls 24/7. From $149/mo.",
     keywords: [
+      "ai voice agent for ecommerce",
+      "ai voice agents for e-commerce",
+      "ai receptionist for ecommerce",
       "ai voice ecommerce",
       "ai voice retail",
       "ecommerce order status ai",
@@ -773,14 +776,14 @@ export const industries: Industry[] = [
       "Every abandoned-cart follow-up and 'where is my order' call is revenue at risk. An AI agent recovers sales and deflects support volume around the clock.",
     intro: [
       "Online stores generate a constant stream of routine phone calls: order status, returns, exchanges, and delivery questions. These calls arrive after hours and during peaks, when support teams are overwhelmed or offline, and each one is a chance to lose a customer or a sale.",
-      "Fusion Calling lets retailers, and the agencies serving them, deploy a branded AI voice agent that answers order questions, processes returns and exchanges, and triggers abandoned-cart and back-in-stock follow-up calls automatically.",
+      "Fusion Calling lets retailers, and the agencies serving them, deploy a branded AI voice agent that answers order questions from live Shopify, WooCommerce, or fulfillment data, processes returns and exchanges, and triggers abandoned-cart and back-in-stock follow-up calls automatically—logging every outcome to the CRM.",
     ],
     useCases: [
       {
         emoji: "📦",
-        title: "Order Status & Tracking",
+        title: "Order Status & Tracking (Shopify, WooCommerce)",
         description:
-          "Answer 'where is my order' instantly by pulling live status from your store or fulfillment system.",
+          "Answer 'where is my order' instantly by pulling live status from your store or fulfillment system, with SMS tracking links.",
       },
       {
         emoji: "↩️",
@@ -792,13 +795,19 @@ export const industries: Industry[] = [
         emoji: "🛒",
         title: "Cart Recovery Calls",
         description:
-          "Automatically re-engage shoppers who abandoned carts with a friendly, conversational reminder.",
+          "Automatically re-engage shoppers who abandoned carts with a friendly call plus SMS checkout link—attributable revenue per call.",
       },
       {
         emoji: "🚚",
         title: "Restock & Back-in-Stock",
         description:
           "Call customers when wished-for items return to stock and guide them straight to checkout.",
+      },
+      {
+        emoji: "💬",
+        title: "24/7 Receptionist & FAQ Deflection",
+        description:
+          "Deflect delivery, pricing, and policy FAQs around the clock and escalate VIP or fraud-risk calls with full context.",
       },
     ],
     stats: [
@@ -819,12 +828,17 @@ export const industries: Industry[] = [
       {
         question: "Can an AI voice agent handle e-commerce support?",
         answer:
-          "Yes. A Fusion Calling agent answers order-status, returns, and exchange questions by connecting to your store or fulfillment system, and can trigger follow-up calls for abandoned carts and restocks. Complex issues transfer to a human agent with context.",
+          "Yes. A Fusion Calling agent answers order-status, returns, and exchange questions by connecting to Shopify, WooCommerce, or your fulfillment system, and can trigger follow-up calls for abandoned carts and restocks. Complex issues transfer to a human agent with transcript and order context.",
       },
       {
         question: "Does it integrate with Shopify or WooCommerce?",
         answer:
-          "Fusion Calling connects via API and webhooks to 2,200+ apps including Shopify and WooCommerce, so order data and follow-up actions flow into the tools your store already uses.",
+          "Fusion Calling connects via API and webhooks to 2,200+ apps including Shopify and WooCommerce, so order data, tracking links, and follow-up actions flow into the tools your store already uses. Klaviyo and HubSpot sync is supported for SMS and CRM attribution.",
+      },
+      {
+        question: "Can it recover abandoned carts by phone?",
+        answer:
+          "Yes. The agent calls cart abandoners within minutes, answers objections, and texts a one-tap checkout link. Every recovered order is logged with call recording and revenue attribution for the agency to report.",
       },
       {
         question: "Can my agency white-label this for retail clients?",
@@ -926,10 +940,16 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2025-02-11T00:00:00Z",
     productSupported: false,
-    metaTitle: "AI Voice for Restaurants & Hospitality: Booking & Orders",
+    metaTitle: "AI Voice Agent for Restaurants: Reservations, Orders & 24/7 Answering",
     metaDescription:
-      "AI voice agents for restaurants & hotels take reservations, phone orders, and catering calls 24/7. White-label hospitality voice AI for agencies.",
+      "AI voice agent for restaurants & hotels: reservations via OpenTable/Resy, phone orders via Toast/Square, catering & after-hours answering 24/7. From $149/mo.",
     keywords: [
+      "ai voice agent for restaurants",
+      "ai voice agent for restaurant",
+      "voice ai for restaurants",
+      "restaurant voice ai",
+      "ai receptionist for restaurants",
+      "restaurant call automation",
       "ai voice restaurant",
       "ai reservation agent",
       "restaurant phone order ai",
@@ -943,32 +963,44 @@ export const industries: Industry[] = [
       "A ringing phone during a rush means a lost reservation or a dropped order. An AI agent answers every call, even at the peak of service.",
     intro: [
       "Restaurants and hotels lose business every time the phone rings unanswered during a rush, late night, or off-hours. Reservations go to competitors, takeout orders are abandoned, and catering leads go cold.",
-      "Fusion Calling gives hospitality businesses, and the agencies serving them, a branded AI voice agent that takes reservations, processes phone orders, handles catering inquiries, and answers guest questions, automatically and around the clock.",
+      "Fusion Calling gives hospitality businesses, and the agencies serving them, a branded AI voice agent that takes reservations, processes phone orders, handles catering inquiries, and answers guest questions, automatically and around the clock. It books directly into OpenTable, Resy, and Tock, sends orders into Toast, Square, and Clover, and texts confirmations so the host stand never touches the phone.",
     ],
     useCases: [
       {
         emoji: "📅",
-        title: "Reservations",
+        title: "Reservations (OpenTable, Resy, Tock)",
         description:
-          "Book, modify, and cancel reservations directly into the reservation system, even at peak times.",
+          "Book, modify, and cancel reservations directly into the reservation system with party size, dietary notes, and SMS confirmation—even at peak times.",
       },
       {
         emoji: "🥡",
-        title: "Takeout & Phone Orders",
+        title: "Takeout & Phone Orders (Toast, Square)",
         description:
-          "Capture takeout and delivery orders accurately and send them to the kitchen or POS without a staffed line.",
+          "Capture takeout and delivery orders with modifiers and combos accurately and send clean tickets to the kitchen or POS without a staffed line.",
       },
       {
         emoji: "🍰",
         title: "Catering Inquiries",
         description:
-          "Qualify catering leads, collect event details, and route them to the right person for follow-up.",
+          "Qualify catering leads, collect headcount, date, and service style, and route them to the events manager with POS-ready notes.",
       },
       {
         emoji: "🏨",
         title: "Hotel Guest Services",
         description:
           "Answer guest questions about amenities, check-in, and local recommendations, and route requests to the front desk.",
+      },
+      {
+        emoji: "📋",
+        title: "Menu, Allergen & Hours FAQs",
+        description:
+          "Answer the same 12 questions—hours, parking, allergens, dress code—from your live menu matrix without pulling staff off the floor.",
+      },
+      {
+        emoji: "🔔",
+        title: "No-Show Reminders & After-Hours",
+        description:
+          "Send 24h and 2h reminders, run waitlist SMS, and answer every after-hours call instead of voicemail.",
       },
     ],
     stats: [
@@ -989,7 +1021,17 @@ export const industries: Industry[] = [
       {
         question: "Can an AI voice agent take restaurant reservations and orders?",
         answer:
-          "Yes. The agent books and modifies reservations in your system, captures takeout and catering orders accurately, and answers common guest questions, freeing staff during the rush. Complex or special requests transfer to a person.",
+          "Yes. The agent books and modifies reservations in OpenTable, Resy, or Tock, captures takeout and catering orders with modifiers into Toast, Square, or Clover, and answers menu, allergen, and hours questions, freeing staff during the rush. Complex or special requests transfer to a person with full transcript.",
+      },
+      {
+        question: "Does it integrate with my POS and reservation system?",
+        answer:
+          "Yes. Orders flow into Toast, Square, or Clover as clean tickets and tables book directly in OpenTable, Resy, or Tock during the call—no staff re-keying. Availability, 86'd items, and hours stay in sync automatically.",
+      },
+      {
+        question: "Does it work after hours and during the dinner rush?",
+        answer:
+          "Yes. The agent picks up in under a second 24/7, handles nights, weekends, and peak overflow, sends SMS confirmations and no-show reminders, and never sends a caller to voicemail.",
       },
       {
         question: "Does it work for hotels as well as restaurants?",

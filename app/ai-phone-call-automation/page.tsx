@@ -7,9 +7,9 @@ import Sources from "@/components/sources";
 import { buildOpenGraph } from "@/lib/seo";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 
-const title = "What Is AI Phone Call Automation?";
+const title = "AI Phone Call Automation: 24/7 Booking, Zero Missed Calls";
 const description =
-  "Plain-English explainer on AI phone call automation: how AI voice agents answer and place calls, the tech behind them, and results with Fusion Calling.";
+  "How AI voice agents answer & place calls, book appointments, and cut missed calls. Plans from $149/mo with live demo calls to hear it in action.";
 
 const howItWorksSteps = [
   {

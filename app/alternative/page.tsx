@@ -5,9 +5,9 @@ import { comparisons } from "@/lib/comparisons";
 import { SITE_URL } from "@/lib/site-url";
 import { buildOpenGraph } from "@/lib/seo";
 
-const title = "White-Label Voice AI Comparisons";
+const title = "9 Best White-Label Voice AI Alternatives Compared (2026 Pricing)";
 const description =
-  "Side-by-side comparisons of top white-label voice AI platforms for agencies. Compare Fusion Calling vs ChatDash, Vapify, Voicerr, Synthflow, Bland AI and more.";
+  "Compare Fusion Calling vs Vapi, Synthflow, Bland AI, Air AI + 5 more: pricing from $99/mo, providers, sub-accounts, onboarding. Live demo included.";
 
 export const metadata: Metadata = {
   title,

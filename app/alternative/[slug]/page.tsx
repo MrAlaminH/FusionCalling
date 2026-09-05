@@ -51,6 +51,7 @@ const COMPARISON_GLOSSARY_TERMS: Record<string, string[]> = {
   thinkrr: ["White-Label", "Reseller", "SaaS"],
   "bland-ai": ["API", "Latency", "Automatic Speech Recognition"],
   "air-ai": ["AI Voice Agent", "Latency", "White-Label"],
+  vapi: ["Vapi", "Bring Your Own Key", "White-Label"],
 };
 
 function resolveGlossaryLinks(comparisonSlug: string) {
