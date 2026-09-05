@@ -82,6 +82,7 @@ const navItems = [
     label: "Reference",
     isSection: true,
     children: [
+      { id: "recording-retention", label: "Recording & Retention" },
       { id: "error-codes", label: "Error Codes" },
       { id: "rate-limiting", label: "Rate Limiting" },
       { id: "best-practices", label: "Best Practices" },
@@ -96,6 +97,50 @@ const breadcrumbs = [
   { label: "API Reference" },
 ];
 
+function RecordingRetentionSection() {
+  return (
+    <section id="recording-retention" className="mb-16 scroll-mt-28">
+      <div className="mb-8">
+        <h2 className="font-display text-2xl sm:text-3xl font-bold text-white mb-2">
+          Call recording, transcripts &amp; retention controls
+        </h2>
+        <p className="text-gray-400 text-sm">
+          What to configure when calls are recorded, transcribed, and stored.
+        </p>
+      </div>
+      <div className="rounded-xl border border-white/10 bg-white/[0.02] p-5">
+        <ul className="space-y-1.5 text-sm text-gray-300">
+          <li>
+            Turn recording and transcripts on or off per use case, so only the calls that need
+            review are kept. For outbound dialing, ask for a simple API call that takes a phone
+            number and the agent to use, with no vendor-specific setup.
+          </li>
+          <li>
+            Set how long recordings and transcripts are kept, then delete them on a schedule.
+            Shorter periods mean less stored data to manage.
+          </li>
+          <li>
+            Plan for per-caller requests to see or delete their recordings and transcripts. Keep a
+            simple log of what was shared or removed and when.
+          </li>
+          <li>
+            Tell callers when a call is recorded, get consent where the law requires it, and log
+            opt-outs. Rules differ by place and use case, so ask your counsel what wording and
+            flow fit your calls. Background reading:{" "}
+            <a
+              href="/blog/voice-ai-security-compliance"
+              className="text-orange-400 hover:text-orange-300"
+            >
+              voice AI security and compliance
+            </a>
+            .
+          </li>
+        </ul>
+      </div>
+    </section>
+  );
+}
+
 export default function ApiReferencePage() {
   return (
     <ApiReferenceShell navItems={navItems} breadcrumbs={breadcrumbs}>
@@ -104,6 +149,7 @@ export default function ApiReferencePage() {
       <CalendarApiSection />
       <LeadsApiSection />
       <IntegrationGuidesSection />
+      <RecordingRetentionSection />
       <ReferenceSection />
       <DocFooter
         prev={{ id: "quick-start", label: "Quick Start" }}

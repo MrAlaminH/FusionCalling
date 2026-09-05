@@ -27,11 +27,11 @@ const Calendar = dynamic(() => import("@/components/calendar"), { ssr: false });
 export const metadata: Metadata = {
   title: "AI Phone Call Automation & AI Receptionist",
   description:
-    "Fusion Calling AI voice agents handle inbound and outbound calls 24/7: book appointments, qualify leads, and automate customer interactions with voice AI.",
+    "Fusion Calling AI voice agents handle inbound and outbound calls 24/7: book appointments, qualify leads, and automate customer interactions. Plans from $149/mo.",
   ...buildOpenGraph({
     title: "AI Phone Call Automation & AI Receptionist | Fusion Calling",
     description:
-      "Automate inbound & outbound calls with human-like AI voice agents. Book appointments, qualify leads, and scale your phone operations 24/7.",
+      "Automate inbound & outbound calls with human-like AI voice agents. Book appointments, qualify leads, and scale your phone operations 24/7. Plans from $149/mo.",
     path: "/",
   }),
 };

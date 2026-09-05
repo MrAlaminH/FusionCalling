@@ -281,7 +281,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: "Telephony",
     category: "Telephony",
     definition:
-      "Telephony refers to the technology and infrastructure for transmitting voice calls over telephone networks. Voice AI platforms connect to telephony providers to place and receive real phone calls.",
+      "Telephony refers to the technology and infrastructure for transmitting voice calls over telephone networks. Voice AI platforms connect to telephony providers to place and receive real phone calls. Building this stack yourself means managing carriers, numbers, and call routing, so most agencies skip that work and use a managed platform instead. See our AI phone call automation guide for how telephony fits a full hands-free calling setup.",
     whyItMatters:
       "Telephony is the bridge between AI software and the real phone network; reliability here determines whether calls connect and stay connected.",
     related: ["PSTN", "SIP", "VoIP", "Twilio"],
@@ -290,7 +290,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: "VoIP",
     category: "Telephony",
     definition:
-      "Voice over Internet Protocol (VoIP) is the technology that delivers voice calls over the internet rather than traditional phone lines, enabling flexible, software-driven calling.",
+      "Voice over Internet Protocol (VoIP) is the technology that delivers voice calls over the internet rather than traditional phone lines, enabling flexible, software-driven calling. Calls travel as data packets, so an agent can dial from anywhere with a good connection and no phone hardware. Call quality depends on a stable link, so test on real networks before launch. See our AI phone call automation guide for how VoIP calling fits a full setup.",
     whyItMatters:
       "VoIP underpins modern cloud calling and lets voice AI platforms place calls globally without traditional phone hardware.",
     related: ["Telephony", "SIP", "WebRTC"],
@@ -519,7 +519,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: "HIPAA",
     category: "Compliance & Security",
     definition:
-      "The Health Insurance Portability and Accountability Act (HIPAA) is a US law governing the protection of protected health information. Voice AI used in healthcare may require compliant infrastructure and a signed agreement.",
+      "The Health Insurance Portability and Accountability Act (HIPAA) is a US law governing the protection of protected health information. Voice AI used in healthcare may require compliant infrastructure and a signed agreement. Ask for a signed BAA before handling patient calls, and switch on redaction so private health details are masked in transcripts and logs. See our security and compliance guide for the full checklist to run before taking healthcare clients.",
     whyItMatters:
       "Healthcare buyers require HIPAA-aware deployments, so agencies serving medical and dental clients must address it.",
     related: ["Business Associate Agreement", "SOC 2", "GDPR"],
@@ -555,7 +555,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: "TCPA",
     category: "Compliance & Security",
     definition:
-      "The Telephone Consumer Protection Act (TCPA) is a US law restricting telemarketing calls, auto-dialed calls, and prerecorded messages, requiring consent and governing outbound calling practices.",
+      "The Telephone Consumer Protection Act (TCPA) is a US law restricting telemarketing calls, auto-dialed calls, and prerecorded messages, requiring consent and governing outbound calling practices. Get clear consent before automated outbound calls, honor opt-outs right away, and play a recording notice where the law calls for it. These simple steps keep campaigns safe and build trust with callers. See our security and compliance guide for the consent and recording rules to check before you dial.",
     whyItMatters:
       "TCPA compliance is critical for any outbound calling campaign; agencies must follow consent and dialing rules.",
     related: ["Outbound Calls", "Connect Rate", "GDPR"],
@@ -665,7 +665,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: "Call Analytics",
     category: "Business & Operations",
     definition:
-      "Call analytics is the measurement and reporting of call performance, including volume, duration, outcomes, sentiment, and transcripts, giving agencies and clients insight into results.",
+      "Call analytics is the measurement and reporting of call performance, including volume, duration, outcomes, sentiment, and transcripts, giving agencies and clients insight into results. Good reports tie each call to a clear outcome, like a booked visit or a saved lead, so clients see what they paid for. Keep recordings and transcripts only as long as you need them, and delete them on a set schedule. See our security and compliance guide for what retention controls to ask any vendor about.",
     whyItMatters:
       "Analytics are how agencies prove ROI and optimize agent performance for their clients.",
     related: ["Transcription", "Sentiment Analysis", "ROI Tracking"],

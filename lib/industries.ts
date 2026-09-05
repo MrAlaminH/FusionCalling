@@ -340,6 +340,7 @@ export const industries: Industry[] = [
       "plumbing ai answering service",
       "home services dispatch ai",
       "contractor ai voice agent",
+      "ai voice agent for home services",
       "white label voice ai",
     ],
     h1: "AI Voice for",
@@ -375,6 +376,18 @@ export const industries: Industry[] = [
         description:
           "Automatically follow up after jobs to request reviews and book recurring maintenance.",
       },
+      {
+        emoji: "🌙",
+        title: "After-Hours Emergency Answering",
+        description:
+          "Pick up every late-night and weekend call. Capture the address and issue, then alert the on-call tech for real emergencies.",
+      },
+      {
+        emoji: "🚚",
+        title: "Estimate Dispatch and Job Updates",
+        description:
+          "Send new estimate requests to the right tech calendar. Call customers with arrival windows and completion follow-up.",
+      },
     ],
     stats: [
       { value: "1st", label: "contractor to answer wins most jobs" },
@@ -405,6 +418,11 @@ export const industries: Industry[] = [
         question: "Can I sell this to contractors under my own brand?",
         answer:
           "Yes. White-label partners deploy a branded AI agent for each contractor, set their own pricing, keep 100% of revenue.",
+      },
+      {
+        question: "What happens on after-hours emergency calls?",
+        answer:
+          "The agent answers at once and collects the address, contact, and issue details. Real emergencies route to the on-call tech, and the rest get booked for the morning. Nothing goes to voicemail.",
       },
     ],
   },
@@ -680,6 +698,7 @@ export const industries: Industry[] = [
       "fintech ai voice",
       "financial lead qualification",
       "loan application ai",
+      "ai voice agent for financial services",
       "white label voice ai",
     ],
     h1: "AI Voice for",
@@ -715,6 +734,18 @@ export const industries: Industry[] = [
         description:
           "Remind clients of annual reviews, renewals, and important deadlines automatically.",
       },
+      {
+        emoji: "📞",
+        title: "Inbound Qualification Calls",
+        description:
+          "Screen new inquiries by needs and timeline, then book qualified prospects with the right advisor.",
+      },
+      {
+        emoji: "📄",
+        title: "Document Chasing With Handoff",
+        description:
+          "Call clients about missing forms and deadlines. Staff get a full transcript for compliant follow-up.",
+      },
     ],
     stats: [
       { value: "100%", label: "of inquiries captured, day or night" },
@@ -745,6 +776,11 @@ export const industries: Industry[] = [
         question: "Can my agency offer this to financial clients?",
         answer:
           "Yes. White-label partners deploy a branded AI agent for each financial client, control pricing, keep 100% of revenue.",
+      },
+      {
+        question: "How do transcripts and compliance handoffs work?",
+        answer:
+          "Every call is logged with a recording and transcript your team can review. When a call needs a licensed person, the agent transfers it live with context. Your firm keeps records per its own rules.",
       },
     ],
   },
@@ -882,6 +918,7 @@ export const industries: Industry[] = [
       "tutoring enrollment ai",
       "education intake ai",
       "parent communication ai",
+      "ai voice agent for education",
       "white label voice ai",
     ],
     h1: "AI Voice for",
@@ -917,6 +954,18 @@ export const industries: Industry[] = [
         description:
           "Answer common parent questions about curriculum, schedules, and pricing consistently.",
       },
+      {
+        emoji: "📣",
+        title: "Admissions Follow-Up Calls",
+        description:
+          "Re-engage inquiries that went quiet and answer common admissions questions. Ready families go straight to staff.",
+      },
+      {
+        emoji: "🔄",
+        title: "Tutor Matching and Rescheduling",
+        description:
+          "Match students to open tutor slots and handle reschedules by phone. Confirmations go out automatically.",
+      },
     ],
     stats: [
       { value: "100%", label: "of after-hours inquiries captured" },
@@ -947,6 +996,11 @@ export const industries: Industry[] = [
         question: "Can my agency offer this to education clients?",
         answer:
           "Yes. White-label partners deploy a branded AI agent for each education client, control pricing, and keep 100% of revenue.",
+      },
+      {
+        question: "Can the AI answer detailed enrollment questions?",
+        answer:
+          "Yes. It answers common questions on courses, schedules, and pricing from your approved answers. Complex cases pass to admissions staff with full call context.",
       },
     ],
   },

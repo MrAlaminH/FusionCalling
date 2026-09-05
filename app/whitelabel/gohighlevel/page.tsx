@@ -45,6 +45,16 @@ const ghlfaqs = [
     answer:
       "No. The platform is 100% white-labeled — your logo, colors, domain, and email. Your GoHighLevel clients experience a fully branded AI voice product and never see Fusion Calling unless you tell them.",
   },
+  {
+    question: "How does the GoHighLevel voice AI integration work?",
+    answer:
+      "Fusion Calling links to each client sub-account via API and webhooks. Calls push contacts, notes, and outcomes back into the right GHL workspace. You can run Vapi, Retell, or ElevenLabs agents per client, all under your own brand.",
+  },
+  {
+    question: "How much does it cost to resell voice AI to GHL sub-accounts?",
+    answer:
+      "Plans start at $99/month for 6 sub-accounts. You set your own client pricing and keep 100% of what you charge. Minute rebilling lets you control your margin on every client.",
+  },
 ];
 
 const ghlschema = {

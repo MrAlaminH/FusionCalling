@@ -18,7 +18,19 @@ const relatedCaseStudies = whitelabelCaseStudies.filter((cs) =>
   provider.relatedCaseStudySlugs?.includes(cs.slug),
 );
 
-const faqs = provider.faqs;
+const faqs = [
+  ...provider.faqs,
+  {
+    question: "Can I resell Retell agents under my own brand?",
+    answer:
+      "Yes. You import your existing Retell agents and API keys with no rebuild, then resell them under your own brand. You set your own client pricing and keep 100% of what you charge. Most partners launch in 24 hours with 30 days of support included.",
+  },
+  {
+    question: "Do my clients ever see Retell?",
+    answer:
+      "No. Your clients see only your domain, logo, and pricing. Call usage stays on your Retell account behind the scenes. Fusion Calling stays invisible unless you tell them.",
+  },
+];
 
 const retellschema = {
   "@context": "https://schema.org",

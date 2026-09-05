@@ -18,6 +18,15 @@ const relatedCaseStudies = whitelabelCaseStudies.filter((cs) =>
   provider.relatedCaseStudySlugs?.includes(cs.slug),
 );
 
+const faqs = [
+  ...provider.faqs,
+  {
+    question: "Do my clients ever see Vapi?",
+    answer:
+      "No. Your clients see only your brand — logo, domain, and pricing. You import your existing Vapi agents and API keys with no rebuild.     Usage stays on your Vapi account behind the scenes.",
+  },
+];
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -77,7 +86,7 @@ const schema = {
     {
       "@type": "FAQPage",
       "@id": `${SITE_URL}/whitelabel/vapi#faqpage`,
-      mainEntity: provider.faqs.map((f) => ({
+      mainEntity: faqs.map((f) => ({
         "@type": "Question",
         name: f.question,
         acceptedAnswer: { "@type": "Answer", text: f.answer },
@@ -274,7 +283,7 @@ export default function VapiWhiteLabelPage() {
               </p>
             </div>
             <div className="space-y-4">
-              {provider.faqs.map((faq) => (
+              {faqs.map((faq) => (
                 <div
                   key={faq.question}
                   className="glass-light rounded-xl p-6 border border-brand/20"

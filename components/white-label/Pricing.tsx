@@ -11,8 +11,7 @@ export default function Pricing() {
   const plans = [
     {
       name: "Starter",
-      description:
-        "Perfect for agencies just starting with Voice AI. For example, at $99/mo with 6 sub-accounts, a single client resold at $300-500/mo typically covers the plan cost, with the remaining sub-accounts pure margin.",
+      description: "Launch your first voice AI clients under your own brand.",
       priceMonthly: 99,
       priceYearly: 89,
       popular: false,
@@ -28,8 +27,7 @@ export default function Pricing() {
     },
     {
       name: "Growth",
-      description:
-        "For growing agencies scaling their Voice AI offerings. 20 sub-accounts at $299/mo means each seat costs roughly $15/mo, so for example reselling even a few clients at typical rates covers the plan while priority support keeps your launches moving.",
+      description: "Scale to more clients with priority support and deeper insights.",
       priceMonthly: 299,
       priceYearly: 269,
       popular: true,
@@ -44,8 +42,7 @@ export default function Pricing() {
     },
     {
       name: "Scale",
-      description:
-        "For established agencies with unlimited client needs. Unlimited sub-accounts mean your platform cost never rises as you add clients, and the included dedicated account manager and API access suit teams running high client volumes and custom workflows.",
+      description: "Unlimited clients with a dedicated manager and API access.",
       priceMonthly: 499,
       priceYearly: 449,
       popular: false,

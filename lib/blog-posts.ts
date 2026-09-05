@@ -169,6 +169,19 @@ Agency workflow:
 This lets you offer voice AI without leaving the GHL ecosystem.`,
   },
   {
+    slug: "how-to-automate-phone-calls-with-ai",
+    title: "How to Automate Phone Calls with AI: Setup to First Live Call",
+    description:
+      "Learn how to automate phone calls with AI in five simple steps: pick a use case, connect your number, calendar, and CRM, add business knowledge, test calls, then launch with clear handoff rules.",
+    date: "2026-09-05",
+    category: "How-To Guide",
+    readTime: "6 min read",
+    image: "/blog/blog4.webp",
+    content: `How to automate phone calls with AI in five steps: pick one use case (after-hours answering, booking, or lead follow-up), connect your number, calendar, and CRM, add business knowledge and pick a voice, make test calls, then launch with clear handoff rules.
+
+Fusion Calling plans start at $99/mo with guided setup, so most small teams go live in days. Estimate savings with the ROI calculator, then check pricing to start.`,
+  },
+  {
     slug: "voice-ai-security-compliance",
     title: "Voice AI Security & Compliance: Encryption, GDPR, Interruption Handling",
     description:
