@@ -214,6 +214,28 @@ export default function RetellWhiteLabelPage() {
           </div>
         </section>
 
+        <section id="retell-differentiators" className="w-full bg-black section-spacing">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
+                Why white-label{" "}
+                <span className="bg-gradient-to-r from-brand to-brand-strong text-transparent bg-clip-text">
+                  {provider.name}
+                </span>{" "}
+                with Fusion Calling
+              </h2>
+            </div>
+            <div className="space-y-4">
+              {provider.differentiators.map((d) => (
+                <div key={d.heading} className="rounded-xl border border-white/10 p-5">
+                  <h3 className="font-semibold text-white mb-1">{d.heading}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">{d.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Pricing */}
         <div id="retell-pricing">
           <Pricing />

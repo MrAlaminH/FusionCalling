@@ -250,8 +250,12 @@ export default function VapiWhiteLabelBlogPost() {
                 </Link>{" "}
                 infrastructure, not a sellable product. To actually turn Vapi
                 into something you can charge clients for under your own brand,
-                you need a layer on top — and that layer is what most teams try
-                (and struggle) to build themselves.
+                you need a layer on top —{" "}
+                <Link href="/whitelabel/vapi" className="text-brand-light hover:text-brand transition-colors">
+                  Fusion Calling&apos;s white-label Vapi platform
+                </Link>{" "}
+                — and that layer is what most teams try (and struggle) to build
+                themselves.
               </p>
               <p className="text-brand-light text-lg font-semibold">
                 That gap is exactly where Fusion Calling fits. We&apos;re built

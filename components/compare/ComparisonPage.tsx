@@ -26,6 +26,7 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
     h1Highlight,
     subtitle,
     quickAnswer,
+    topAlternatives,
     keyStatistics,
     intro,
     competitorBestFor,
@@ -184,6 +185,38 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
             </div>
           </div>
         </div>
+
+        {topAlternatives && (
+          <section className="glass-light rounded-2xl p-8 border border-brand/30 mb-8">
+            <h2 className="text-2xl font-bold text-brand-light mb-4">
+              {topAlternatives.heading}
+            </h2>
+            <p className="text-gray-300 leading-relaxed mb-6">
+              {topAlternatives.intro}
+            </p>
+            <ol className="space-y-3">
+              {topAlternatives.items.map((item, i) => (
+                <li key={item.name} className="rounded-xl border border-brand/20 bg-black/40 p-5">
+                  <div className="flex items-baseline gap-3">
+                    <span className="font-bold text-brand-light">{i + 1}.</span>
+                    {item.href ? (
+                      <Link
+                        href={item.href}
+                        className="font-semibold text-brand-light hover:text-brand transition-colors"
+                      >
+                        {item.name}
+                      </Link>
+                    ) : (
+                      <span className="font-semibold text-white">{item.name}</span>
+                    )}
+                  </div>
+                  <p className="text-sm text-gray-300 mt-2">{item.bestFor}</p>
+                  <p className="text-sm text-gray-400 mt-1">{item.note}</p>
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
 
         {/* Article Content */}
         <div className="prose prose-lg prose-invert max-w-none">

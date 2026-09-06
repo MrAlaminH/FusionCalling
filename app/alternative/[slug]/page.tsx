@@ -52,6 +52,13 @@ const COMPARISON_GLOSSARY_TERMS: Record<string, string[]> = {
   "bland-ai": ["API", "Latency", "Automatic Speech Recognition"],
   "air-ai": ["AI Voice Agent", "Latency", "White-Label"],
   vapi: ["Vapi", "Bring Your Own Key", "White-Label"],
+  birdcall: ["AI Voice Agent", "White-Label"],
+  voiceflow: ["Conversational AI", "Voice Bot", "White-Label"],
+  voicestamp: ["AI Voice Agent", "White-Label"],
+  voicelate: ["AI Voice Agent", "White-Label"],
+  famulor: ["White-Label", "Reseller", "AI Voice Agent"],
+  verloop: ["Conversational AI", "Intent Recognition", "Human Handoff"],
+  "drop-cowboy": ["Outbound Calls", "VoIP", "White-Label"],
 };
 
 function resolveGlossaryLinks(comparisonSlug: string) {

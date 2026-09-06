@@ -255,7 +255,11 @@ export default function RetellAIBlogPost() {
                 yet a product you can sell to clients at scale. To turn Retell into a
                 branded, billable offering, you need a layer on top: your own identity,
                 dedicated client access, a way to manage multiple clients, and a clean way
-                to charge for it.
+                to charge for it — which is exactly what{" "}
+                <Link href="/whitelabel/retell" className="text-brand-light hover:text-brand transition-colors">
+                  Fusion Calling's white-label Retell AI platform
+                </Link>{" "}
+                adds.
               </p>
               <p className="text-brand-light text-lg font-semibold">
                 That is the{" "}
@@ -501,7 +505,11 @@ export default function RetellAIBlogPost() {
                 <Link href="/#show-case" className="text-brand-light hover:text-brand transition-colors">
                   live demo on the homepage
                 </Link>
-                , or you can apply to start white-labeling Retell today.
+                , or you can{" "}
+                <Link href="/whitelabel/retell" className="text-brand-light hover:text-brand transition-colors">
+                  explore the white-label Retell AI platform
+                </Link>{" "}
+                before you apply to start white-labeling Retell today.
               </p>
 
               <Link

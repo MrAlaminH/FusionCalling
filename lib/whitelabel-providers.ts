@@ -8,6 +8,7 @@ export type WhiteLabelProvider = {
   h1Highlight: string;
   keywords: string[];
   features: { title: string; description: string }[];
+  differentiators: { heading: string; text: string }[];
   faqs: { question: string; answer: string }[];
   /** Blog guide for this provider (deep link for internal cross-linking). */
   blogGuide?: { href: string; label: string };
@@ -20,7 +21,7 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
     slug: "vapi",
     name: "Vapi",
     badge: "Built for Vapi Partners",
-    title: "White-Label Vapi AI Voice Agents",
+    title: "Vapi White Label: Resell Vapi Agents Under Your Brand",
     description:
       "Resell Vapi AI voice agents under your own brand via Fusion Calling. Import your existing Vapi agent configurations and API keys, set your pricing, and keep 100% of revenue — with full white-label dashboard, client portals, and rebilling.",
     h1Prefix: "White-Label AI Voice Agents for",
@@ -30,6 +31,20 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
       label: "How to White-Label Vapi AI Voice Agents (Agency Guide)",
     },
     relatedCaseStudySlugs: ["voicewave-marketing", "apex-realty-group"],
+    differentiators: [
+      {
+        heading: "Bring your own Vapi account and keys",
+        text: "Fusion Calling sits on top of the Vapi account you already run: import your agent configurations, keep your provider settings, and let clients meet only your brand. Vapi usage and billing stay on your account while the platform wraps them in sub-accounts, client portals, and Stripe rebilling.",
+      },
+      {
+        heading: "Best for agencies already building on Vapi",
+        text: "If your team already ships Vapi workloads, white-labeling beats re-platforming. Nothing about your agents changes — but every client gets an isolated, branded sub-account instead of sharing your builder, and you stop giving clients logins to raw tooling.",
+      },
+      {
+        heading: "Vapi vs. Retell vs. ElevenLabs, from the Vapi side",
+        text: "Pick Vapi when you want maximum pipeline control and bring-your-own-key economics; Retell when deployment speed matters most; ElevenLabs when premium voice quality is the selling point. Because Fusion Calling is provider-agnostic, many partners run Vapi for technical clients alongside ElevenLabs for brand-critical front doors — one dashboard, mixed engines per client.",
+      },
+    ],
     keywords: [
       "white label Vapi AI voice",
       "resell Vapi agents",
@@ -106,7 +121,7 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
     slug: "retell",
     name: "Retell AI",
     badge: "Built for Retell AI Partners",
-    title: "White-Label Retell AI Voice Agents",
+    title: "White-Label Retell AI: Resell Retell Agents Under Your Brand",
     description:
       "Resell Retell AI voice agents under your own brand via Fusion Calling. Bring your existing Retell agent configurations and API keys, set your pricing, and keep 100% of the revenue — with full white-label dashboard, client management, and rebilling.",
     h1Prefix: "White-Label AI Voice Agents for",
@@ -116,6 +131,20 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
       label: "How to White-Label Retell AI Voice Agents (Agency Guide)",
     },
     relatedCaseStudySlugs: ["callflow-solutions"],
+    differentiators: [
+      {
+        heading: "Fastest path from Retell agent to branded client launch",
+        text: "Retell's agent builder is one of the quickest to production, and white-labeling keeps it that way: import your Retell agents unchanged, add your logo and domain, and a client-ready portal goes live in about 24 hours — without rebuilding a single workflow.",
+      },
+      {
+        heading: "Best for agencies standardizing on one engine",
+        text: "If Retell is your team's default engine, the white-label layer turns it into a product: per-client sub-accounts with separate minutes and billing, branded call logs and transcripts for renewals, and pricing you set — instead of reselling Retell through spreadsheets and shared logins.",
+      },
+      {
+        heading: "Retell vs. Vapi vs. ElevenLabs, from the Retell side",
+        text: "Pick Retell when launch speed and simplicity win the deal; Vapi when a technical client needs deep pipeline control and BYOK; ElevenLabs when the voice itself has to impress. Fusion Calling is provider-agnostic, so you can standardize on Retell for most clients and mix in the others where a specific account calls for it.",
+      },
+    ],
     keywords: [
       "white label Retell AI voice",
       "resell Retell AI agents",
@@ -192,12 +221,26 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
     slug: "elevenlabs",
     name: "ElevenLabs",
     badge: "Built for ElevenLabs Partners",
-    title: "White-Label ElevenLabs Voice Agents",
+    title: "ElevenLabs White Label: Resell Agents Under Your Brand",
     description:
       "Resell ElevenLabs voice agents under your own brand via Fusion Calling. Bring your existing ElevenLabs agent configurations and API keys, set your pricing, and keep 100% of the revenue — with full white-label dashboard, client portals, and rebilling.",
     h1Prefix: "White-Label AI Voice Agents for",
     h1Highlight: "ElevenLabs",
     relatedCaseStudySlugs: ["voicewave-marketing"],
+    differentiators: [
+      {
+        heading: "Premium voices for brand-critical phone experiences",
+        text: "ElevenLabs is the engine agencies reach for when the voice itself is the product — receptionist front doors, premium client accounts, and brands where a robotic caller costs deals. White-labeled, that voice quality ships under your logo and your domain.",
+      },
+      {
+        heading: "Best for client-facing, high-touch deployments",
+        text: "ElevenLabs-powered agents suit inbound front-door roles where every call shapes brand perception. The white-label layer adds what a voice engine alone cannot give an agency: isolated client sub-accounts, portals on your domain, and Stripe rebilling at prices you set.",
+      },
+      {
+        heading: "ElevenLabs vs. Vapi vs. Retell, from the ElevenLabs side",
+        text: "Pick ElevenLabs when voice quality and brand experience are the selling point; Vapi when a technical client wants deep pipeline control and BYOK; Retell when speed of deployment leads the conversation. Fusion Calling lets you deploy ElevenLabs for flagship accounts and the other engines elsewhere — per client, from one dashboard.",
+      },
+    ],
     keywords: [
       "white label ElevenLabs voice",
       "resell ElevenLabs AI agents",
