@@ -41,11 +41,11 @@ const PROVIDER_LINKS = [
 export const metadata: Metadata = {
   title: "White-Label AI Voice Agents From $99/mo (Vapi, Retell, ElevenLabs)",
   description:
-    "Resell AI voice agents under your brand: 6 sub-accounts included, 24-hour guided launch, live demo, Stripe rebilling. Keep 100% of revenue.",
+    "White-label AI voice agent platform for agencies & resellers: resell AI voice agents as software under your brand. 6 sub-accounts, 24-hour launch, Stripe rebilling. Keep 100% of revenue.",
   ...buildOpenGraph({
     title: "White-Label AI Voice Agents From $99/mo (Vapi, Retell, ElevenLabs)",
     description:
-      "Launch your voice AI agency in 24 hours. Import Vapi, Retell & ElevenLabs agents, brand them as yours, set your pricing, keep 100% of revenue.",
+      "Launch your white-label voice AI agency in 24 hours. Import Vapi, Retell & ElevenLabs agents into one platform, brand them as yours, set your pricing, keep 100% of revenue.",
     path: "/whitelabel",
   }),
 };
@@ -305,6 +305,97 @@ export default function WhiteLabelPage() {
           <p className="text-gray-400 text-base sm:text-lg">
             You work as a reseller with full control. You set the pricing, you bill the client, and you keep 100% of what you charge above the plan cost.
           </p>
+        </div>
+      </section>
+      <section id="economics" className="w-full bg-black py-16 sm:py-20 scroll-mt-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center mb-4">
+            White-label AI voice agent reseller economics
+          </h2>
+          <p className="text-gray-400 text-base sm:text-lg text-center mb-10 md:mb-12">
+            Buy wholesale, sell retail. Your platform cost stays flat while
+            client pricing follows the value of an answered phone.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <div className="glass-light rounded-xl p-5 border border-brand/20">
+              <p className="text-sm font-semibold text-brand-light mb-1">
+                Receptionist Basic
+              </p>
+              <p className="text-2xl font-bold text-white mb-2">$197–$297/mo</p>
+              <p className="text-sm text-gray-400">
+                Inbound white-label AI voice agent, call logging, basic CRM,
+                standard voice. Best for home services, salons, and small
+                retail replacing missed calls.
+              </p>
+            </div>
+            <div className="glass-light rounded-xl p-5 border border-brand/20">
+              <p className="text-sm font-semibold text-brand-light mb-1">
+                Receptionist Pro
+              </p>
+              <p className="text-2xl font-bold text-white mb-2">$397–$597/mo</p>
+              <p className="text-sm text-gray-400">
+                Inbound plus outbound white-label voice AI, advanced CRM,
+                premium voice, analytics with monthly review. Best for real
+                estate, dental and medical, and B2B services.
+              </p>
+            </div>
+            <div className="glass-light rounded-xl p-5 border border-brand/20">
+              <p className="text-2xl font-bold text-white mb-2">$797–$1,497/mo</p>
+              <p className="text-sm font-semibold text-brand-light mb-1">
+                Growth Engine
+              </p>
+              <p className="text-sm text-gray-400">
+                Pro plus managed outbound campaigns and dedicated reporting.
+                Best for high-ticket roofing, solar, legal, and finance where
+                eight extra estimates cover the retainer.
+              </p>
+            </div>
+          </div>
+          <div className="rounded-xl border border-white/10 p-5 sm:p-6 mb-8">
+            <h3 className="font-semibold text-white mb-3">
+              Wholesale in, retail out — why 1–2 clients cover the platform
+            </h3>
+            <ul className="text-sm text-gray-400 leading-relaxed space-y-2 list-disc pl-5">
+              <li>
+                Starter $99/mo includes 6 sub-accounts, Growth $299/mo
+                includes 20, Scale $499/mo is unlimited. You keep 100% of what
+                you charge above the plan.
+              </li>
+              <li>
+                Clients compare you to a hire or to lost revenue, not to
+                minutes. Price on outcomes — bookings, answered calls,
+                recovered carts — never on wholesale cost.
+              </li>
+              <li>
+                Import existing{" "}
+                <Link href="/whitelabel/vapi" className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors">Vapi</Link>,{" "}
+                <Link href="/whitelabel/retell" className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors">Retell AI</Link>, and{" "}
+                <Link href="/whitelabel/elevenlabs" className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors">ElevenLabs</Link>{" "}
+                agents with no rebuild, then{" "}
+                <Link href="/whitelabel/compare" className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors">compare white-label platform options</Link>{" "}
+                per client.
+              </li>
+              <li>
+                Launch in about 24 hours: apply, add your logo and domain,
+                connect calendar and CRM, test calls, then bill via Stripe
+                rebilling. See{" "}
+                <Link href="/pricing" className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors">pricing details</Link>{" "}
+                for every tier.
+              </li>
+            </ul>
+          </div>
+          <div className="rounded-xl border border-brand/20 bg-black/40 p-5 sm:p-6">
+            <h3 className="font-semibold text-brand-light mb-3">
+              Full white-label checklist
+            </h3>
+            <ul className="text-sm text-gray-400 leading-relaxed space-y-2 list-disc pl-5">
+              <li>Custom domain, logo, colors, and favicon — your brand only</li>
+              <li>Client sub-accounts with self-service portal access</li>
+              <li>Stripe rebilling with pricing you control</li>
+              <li>Call logs, transcripts, recordings, and analytics per client</li>
+              <li>Platform name fully hidden from clients</li>
+            </ul>
+          </div>
         </div>
       </section>
       <section id="faq" className="scroll-mt-16">

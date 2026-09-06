@@ -278,11 +278,52 @@ export default function VoiceAISecurityComplianceBlogPost() {
                 </Link>
                 , a strong cipher used across the industry for stored data.
               </p>
+              <div className="rounded-xl border border-white/10 p-5 mb-4 overflow-x-auto">
+                <h3 className="font-semibold text-white mb-3">
+                  Encryption layers to expect
+                </h3>
+                <table className="w-full text-sm text-gray-300">
+                  <thead>
+                    <tr className="text-left text-gray-400">
+                      <th className="pb-2 pr-4 font-semibold">Layer</th>
+                      <th className="pb-2 pr-4 font-semibold">Standard</th>
+                      <th className="pb-2 font-semibold">What to confirm</th>
+                    </tr>
+                  </thead>
+                  <tbody className="leading-relaxed">
+                    <tr className="border-t border-white/10">
+                      <td className="py-2 pr-4">Signaling in transit</td>
+                      <td className="py-2 pr-4">TLS 1.2+ (prefer 1.3)</td>
+                      <td className="py-2">All call setup, including carrier handoffs</td>
+                    </tr>
+                    <tr className="border-t border-white/10">
+                      <td className="py-2 pr-4">Voice media in transit</td>
+                      <td className="py-2 pr-4">SRTP</td>
+                      <td className="py-2">Audio packets scrambled in motion</td>
+                    </tr>
+                    <tr className="border-t border-white/10">
+                      <td className="py-2 pr-4">Stored calls</td>
+                      <td className="py-2 pr-4">AES-256 at rest</td>
+                      <td className="py-2">Key storage, access roles, auto-delete</td>
+                    </tr>
+                    <tr className="border-t border-white/10">
+                      <td className="py-2 pr-4">Key management</td>
+                      <td className="py-2 pr-4">Rotation per NIST SP 800-57</td>
+                      <td className="py-2">Who holds keys, rotation cadence</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
               <p className="text-gray-300 leading-relaxed">
                 Ask where keys are kept, who can access stored calls, and
                 whether you can turn storage off or set auto-delete. Good
                 answers are short and clear. Long, vague answers are a warning
-                sign.
+                sign. For transport baselines see NIST SP 800-52r2 and for key
+                management NIST SP 800-57 alongside our{" "}
+                <Link href="/glossary/aes-256-encryption" className="text-brand-light hover:text-brand transition-colors">
+                  AES-256 glossary definition
+                </Link>
+                .
               </p>
             </div>
 
@@ -292,9 +333,12 @@ export default function VoiceAISecurityComplianceBlogPost() {
                 GDPR and Call Analytics Retention
               </h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                If you call people in the EU, GDPR applies. It says you may
-                only keep personal data as long as you need it, and people can
-                ask for a copy or for deletion.
+                If you call people in the EU,{" "}
+                <Link href="/glossary/gdpr" className="text-brand-light hover:text-brand transition-colors">
+                  GDPR
+                </Link>{" "}
+                applies. It says you may only keep personal data as long as you
+                need it, and people can ask for a copy or for deletion.
               </p>
               <p className="text-gray-300 leading-relaxed mb-4">
                 In practice this means three things. Set a clear retention
@@ -308,6 +352,10 @@ export default function VoiceAISecurityComplianceBlogPost() {
                 backups cleared? Full details on API controls are in our{" "}
                 <Link href="/docs/api-reference" className="text-brand-light hover:text-brand transition-colors">
                   API reference
+                </Link>
+                . For outbound consent baselines see the{" "}
+                <Link href="/glossary/tcpa" className="text-brand-light hover:text-brand transition-colors">
+                  TCPA glossary definition
                 </Link>
                 .
               </p>
@@ -339,7 +387,20 @@ export default function VoiceAISecurityComplianceBlogPost() {
               <p className="text-gray-300 leading-relaxed mb-4">
                 People interrupt. A good voice agent handles it well. When a
                 caller talks over the agent, the agent should stop, listen, and
-                respond to the new input. This is called barge-in.
+                respond to the new input. This is called{" "}
+                <Link href="/glossary/barge-in" className="text-brand-light hover:text-brand transition-colors">
+                  barge-in
+                </Link>
+                , and it needs full-duplex audio so both sides can be heard at
+                once.
+              </p>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Under the hood teams tune voice activity detection (VAD):
+                server-side VAD for accuracy, client-side VAD for speed, or
+                hybrid for both. Well-tuned setups yield in 80–150ms without
+                cutting off breaths or background noise. Ask your vendor which
+                VAD they use and what endpointer delay they target for
+                multi-turn phone conversations with natural turn-taking.
               </p>
               <p className="text-gray-300 leading-relaxed">
                 The best test is a live call. Interrupt the agent mid-sentence

@@ -172,26 +172,26 @@ This lets you offer voice AI without leaving the GHL ecosystem.`,
     slug: "how-to-automate-phone-calls-with-ai",
     title: "How to Automate Phone Calls with AI: Setup to First Live Call",
     description:
-      "Learn how to automate phone calls with AI in five simple steps: pick a use case, connect your number, calendar, and CRM, add business knowledge, test calls, then launch with clear handoff rules.",
+      "How to automate phone calls with AI in five steps: pick a use case, connect your number, calendar, and CRM, add business knowledge, test calls, then launch with clear handoff rules. Includes AI call automation vs IVR, recording consent, and time-to-launch.",
     date: "2026-09-05",
     category: "How-To Guide",
     readTime: "6 min read",
     image: "/blog/blog4.webp",
-    content: `How to automate phone calls with AI in five steps: pick one use case (after-hours answering, booking, or lead follow-up), connect your number, calendar, and CRM, add business knowledge and pick a voice, make test calls, then launch with clear handoff rules.
+    content: `How to automate phone calls with AI — the query behind "how to automate phone calls with ai" (GSC 5 imp, pos 21.2) — in five practical steps: pick one use case (after-hours answering, booking, or lead follow-up), connect your phone number, calendar, and CRM, add business knowledge and pick a voice, make test calls to validate names and bookings, then launch with clear handoff rules for upset callers or edge cases.
 
-Fusion Calling plans start at $99/mo with guided setup, so most small teams go live in days. Estimate savings with the ROI calculator, then check pricing to start.`,
+This is AI call automation, not IVR: callers speak in plain language instead of pressing buttons, and the agent can book times, answer questions, and route to a person with transcript context. Teams often start with one flow (real estate lead follow-up is a common first win), then expand once analytics show the routine. Cost and timing are simple: Fusion Calling starts at $99/month (Starter, 6 sub-accounts), with Growth at $299 and Scale at $499, plus voice-minutes billed by provider; most small teams launching one use case go live in days with guided onboarding. Key guardrails before launch: set transfer triggers, play a recording notice and honor consent per state/country, and review weekly recordings to fix the top 1-2 gaps. Deepen with the 2026 guide at /ai-phone-call-automation (ASR → LLM → TTS, telephony automation, conversational AI for phone calls) and validate ROI with the calculator before checking pricing.`,
   },
   {
     slug: "voice-ai-security-compliance",
     title: "Voice AI Security & Compliance: Encryption, GDPR, Interruption Handling",
     description:
-      "How is call audio encrypted at rest and in transit? How do GDPR retention, outbound dialing rules, and barge-in work? A plain-English guide to evaluating voice AI security.",
+      "How is call audio encrypted at rest and in transit? TLS plus SRTP in transit, AES-256 at rest, GDPR retention, TCPA outbound and recording consent, barge-in (80-150 ms), and synthetic-voice safeguards — with NIST SP 800-52/57 baselines.",
     date: "2026-09-05",
     category: "Security Guide",
-    readTime: "6 min read",
+    readTime: "7 min read",
     image: "/blog/blog3.webp",
-    content: `Voice AI handles real phone calls with real people. This guide answers the most common security questions in plain English: TLS plus SRTP encryption in transit, AES-256 at rest, GDPR retention controls, TCPA outbound and recording consent rules, barge-in interruption handling, and synthetic-voice safeguards.
+    content: `This guide targets the AI-search long-tail that already ranks page 1 in GSC — "how is call audio typically encrypted at rest and in transit for voice ai platforms?" (18 imp, pos 10.94) plus "voice calling api providers with gdpr compliant call analytics and retention controls" and "what voice ai tools support interruption handling and natural turn-taking" — so you know what to ask any vendor before buying.
 
-Fusion Calling runs calls over encrypted connections, protects stored call data with strong encryption, and offers per-account retention and deletion controls. Read the full guide at /blog/voice-ai-security-compliance.`,
+Layer check to expect: TLS 1.2+ (prefer 1.3) for signaling including carrier handoffs, SRTP for the voice media stream, AES-256 at rest for recordings and transcripts, and key rotation per NIST SP 800-57 (transport baseline NIST SP 800-52r2). Ask where keys live, who can access stored calls, and whether you can turn storage off or set auto-delete. For retention: GDPR says keep personal data only as long as needed — you should be able to set retention per client, delete one call or one caller's entire history, limit access by role, and see backup purge timing; details are in /docs/api-reference and per-term explainers for AES-256 Encryption, GDPR, and TCPA. For outbound dialing and recording: in the US the TCPA requires consent for autodialed and prerecorded marketing calls plus calling-hour and do-not-call checks, and recording consent varies (one-party vs all-party by state), so play a short notice and keep consent/time/DNC logs per campaign. For interruption handling: good barge-in needs full-duplex audio and tuned voice activity detection (server vs client vs hybrid VAD targeting 80-150 ms yield), so test it live by interrupting the agent mid-sentence — see the barge-in glossary term for depth. Synthetic-voice safeguards to expect: clear AI disclosure, audit logs, consent-scoped cloning, provider abuse monitoring, and a one-tap path to a human. Fusion Calling runs calls over encrypted connections, protects stored data with strong encryption, and offers per-account retention and deletion controls; regulated teams should walk through paperwork before signing. Read the full guides at /blog/voice-ai-security-compliance and /ai-phone-call-automation, and try the live demo on the homepage to test voice and barge-in firsthand.`,
   },
 ];

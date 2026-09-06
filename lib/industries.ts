@@ -875,6 +875,11 @@ export const industries: Industry[] = [
     whyFusion: sharedWhyFusion,
     faqs: [
       {
+        question: "What is the best AI voice agent for ecommerce?",
+        answer:
+          "The best AI voice agent for ecommerce answers where-is-my-order from live Shopify or WooCommerce data with SMS tracking, starts returns and exchanges, and places abandoned-cart and back-in-stock calls within minutes with one-tap checkout links. Every recovered order logs call recording plus revenue attribution. Fusion Calling connects via API and webhooks to Shopify, WooCommerce, Klaviyo, and HubSpot, starting at $149/month.",
+      },
+      {
         question: "Can an AI voice agent handle e-commerce support?",
         answer:
           "Yes. A Fusion Calling agent answers order-status, returns, and exchange questions by connecting to Shopify, WooCommerce, or your fulfillment system, and can trigger follow-up calls for abandoned carts and restocks. Complex issues transfer to a human agent with transcript and order context.",
@@ -1103,6 +1108,11 @@ export const industries: Industry[] = [
     ],
     whyFusion: sharedWhyFusion,
     faqs: [
+      {
+        question: "What is the best AI voice agent for restaurants?",
+        answer:
+          "The best AI voice agent for restaurants answers every call in under a second, books directly into OpenTable, Resy, or Tock with party size and SMS confirmation, sends takeout tickets into Toast, Square, or Clover with modifiers, and runs 24-hour and 2-hour no-show reminders plus waitlist callbacks. For a 40-seat venue at $60 average cover, cutting no-shows from 10% to 3% on 100 weekly covers recovers about $420/week. Fusion Calling starts at $149/month for restaurants and agencies white-labeling hospitality.",
+      },
       {
         question: "Can an AI voice agent take restaurant reservations and orders?",
         answer:

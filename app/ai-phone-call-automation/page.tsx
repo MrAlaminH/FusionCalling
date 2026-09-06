@@ -7,9 +7,9 @@ import Sources from "@/components/sources";
 import { buildOpenGraph } from "@/lib/seo";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 
-const title = "AI Phone Call Automation: 24/7 Booking, Zero Missed Calls";
+const title = "What Is AI Phone Call Automation? How It Works (2026 Guide)";
 const description =
-  "How AI voice agents answer & place calls, book appointments, and cut missed calls. Plans from $149/mo with live demo calls to hear it in action.";
+  "Learn how AI phone call automation works: ASR to LLM to TTS, IVR vs AI handling, telephony automation, and conversational AI for phone calls — plain-English 2026 guide with FAQs.";
 
 const howItWorksSteps = [
   {
@@ -217,11 +217,16 @@ export default function AiPhoneCallAutomationPage() {
             <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
               A complete, plain-English guide to how AI voice agents place and
               answer calls, the technology that powers them, and the results
-              businesses see — plus the standards Fusion Calling follows.{" "}
-              <Link href="/pricing" className="text-brand hover:underline">
-                View pricing
+              businesses see — plus the standards Fusion Calling follows. Ready
+              to buy?{" "}
+              <Link href="/" className="text-brand hover:underline">
+                Get AI phone automation for your business with live demo calls
               </Link>{" "}
-              to see plans for every team size.
+              or{" "}
+              <Link href="/pricing" className="text-brand hover:underline">
+                view pricing
+              </Link>
+              .
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Link
@@ -362,8 +367,12 @@ export default function AiPhoneCallAutomationPage() {
               Want the numbers for your business?{" "}
               <Link href="/calculator" className="text-brand hover:underline">
                 Run the ROI calculator
-              </Link>{" "}
-              or{" "}
+              </Link>
+              ,{" "}
+              <Link href="/" className="text-brand hover:underline">
+                get AI phone automation with a live demo on the homepage
+              </Link>
+              , or{" "}
               <Link href="/#show-case" className="text-brand hover:underline">
                 watch live demo calls
               </Link>

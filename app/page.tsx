@@ -25,9 +25,9 @@ const FAQSection = dynamic(() => import("@/components/FAQs"));
 const Calendar = dynamic(() => import("@/components/calendar"), { ssr: false });
 
 export const metadata: Metadata = {
-  title: "AI Phone Call Automation & AI Receptionist",
+  title: "AI Phone Call Automation Software — 24/7 AI Receptionist From $149/mo",
   description:
-    "Fusion Calling AI voice agents handle inbound and outbound calls 24/7: book appointments, qualify leads, and automate customer interactions. Plans from $149/mo.",
+    "Get AI phone call automation for your business: Fusion Calling AI voice agents answer & place calls 24/7, book appointments, and qualify leads. Live demo, 500–2,100 min plans from $149/mo.",
   ...buildOpenGraph({
     title: "AI Phone Call Automation & AI Receptionist | Fusion Calling",
     description:
@@ -249,6 +249,40 @@ export default function Home() {
       <section id="EndlessUseCases" className="scroll-mt-24">
         <EndlessUseCases />
       </section>
+      <section aria-label="AI voice agents by industry" className="w-full bg-black pb-4">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <p className="text-center text-gray-400 text-sm sm:text-base">
+            Built for your vertical:{" "}
+            <Link
+              href="/industries/ai-voice-for-restaurants-hospitality"
+              className="text-brand hover:text-brand-light underline underline-offset-4 hover:underline transition-colors"
+            >
+              AI voice agent for restaurants
+            </Link>
+            {" · "}
+            <Link
+              href="/industries/ai-voice-for-ecommerce-retail"
+              className="text-brand hover:text-brand-light underline underline-offset-4 hover:underline transition-colors"
+            >
+              AI voice agent for ecommerce
+            </Link>
+            {" · "}
+            <Link
+              href="/industries/ai-voice-for-real-estate"
+              className="text-brand hover:text-brand-light underline underline-offset-4 hover:underline transition-colors"
+            >
+              AI voice for real estate
+            </Link>
+            {" · "}
+            <Link
+              href="/industries/ai-voice-for-dental"
+              className="text-brand hover:text-brand-light underline underline-offset-4 hover:underline transition-colors"
+            >
+              AI voice for dental
+            </Link>
+          </p>
+        </div>
+      </section>
       <section id="VoiceCarousel" className="scroll-mt-24">
         <VoiceCarousel />
       </section>
@@ -264,6 +298,13 @@ export default function Home() {
             className="text-brand hover:text-brand-light underline underline-offset-4 hover:underline transition-colors"
           >
             See pricing details for every plan
+          </Link>
+          . New to the technology?{" "}
+          <Link
+            href="/ai-phone-call-automation"
+            className="text-brand hover:text-brand-light underline underline-offset-4 hover:underline transition-colors"
+          >
+            Learn how AI phone call automation works in the 2026 guide
           </Link>
           .
         </p>
