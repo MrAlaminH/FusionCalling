@@ -24,8 +24,10 @@ interface RevealProps {
  * Replaces framer-motion `useInView` + `motion.div` with CSS-only
  * opacity/transform transitions (no keyframes or JS animation needed).
  *
- * Uses IntersectionObserver to toggle the visible classes when the element
- * scrolls into view. Respects `prefers-reduced-motion` via the global CSS rule.
+ * Uses a single shared IntersectionObserver for all instances on the page
+ * (instead of one observer per Reveal) to keep setup cost off the main
+ * thread during hydration. Respects `prefers-reduced-motion` via the
+ * global CSS rule.
  *
  * @example
  * ```tsx
@@ -34,6 +36,26 @@ interface RevealProps {
  * </Reveal>
  * ```
  */
+
+// One observer for every Reveal on the page. Dozens of per-instance
+// observers each cost setup + bookkeeping during the hydration window.
+let sharedObserver: IntersectionObserver | null = null;
+const pendingCallbacks = new Map<Element, (visible: boolean) => void>();
+
+function getSharedObserver(): IntersectionObserver | null {
+  if (typeof IntersectionObserver === "undefined") return null;
+  if (!sharedObserver) {
+    sharedObserver = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          pendingCallbacks.get(entry.target)?.(entry.isIntersecting);
+        }
+      },
+      { threshold: 0.1 },
+    );
+  }
+  return sharedObserver;
+}
 export function Reveal({
   children,
   animation = "animate-fade-in-up",
@@ -52,25 +74,30 @@ export function Reveal({
     const el = ref.current;
     if (!el) return;
 
-    if (typeof IntersectionObserver === "undefined") {
+    const io = getSharedObserver();
+    if (!io) {
       setIsVisible(true);
       return;
     }
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          if (once) observer.unobserve(el);
-        } else if (!once) {
-          setIsVisible(false);
+    const onChange = (visible: boolean) => {
+      if (visible) {
+        setIsVisible(true);
+        if (once) {
+          pendingCallbacks.delete(el);
+          io.unobserve(el);
         }
-      },
-      { threshold: 0.1 },
-    );
+      } else if (!once) {
+        setIsVisible(false);
+      }
+    };
 
-    observer.observe(el);
-    return () => observer.disconnect();
+    pendingCallbacks.set(el, onChange);
+    io.observe(el);
+    return () => {
+      pendingCallbacks.delete(el);
+      io.unobserve(el);
+    };
   }, [once]);
 
   // Hidden state per direction; when visible, all offsets reset to zero.

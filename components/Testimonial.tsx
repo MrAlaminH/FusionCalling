@@ -3,8 +3,7 @@ import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { Card } from "@/components/ui/card";
 import { Reveal } from "@/components/ui/reveal";
-import { useCallback } from "react";
-import useEmblaCarousel from "embla-carousel-react";
+import { useCallback, useRef } from "react";
 
 interface TestimonialProps {
   name: string;
@@ -66,22 +65,26 @@ const testimonials: TestimonialProps[] = [
 ];
 
 export default function TestimonialsSection() {
-  // Properly initialize embla carousel
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    loop: true,
-    align: "start",
-    slidesToScroll: 1,
-    containScroll: "trimSnaps",
-  });
+  // Native scroll-snap carousel: same cards, buttons, and layout as before,
+  // but zero carousel library JS. Buttons advance one card and wrap around
+  // (preserves the previous loop behavior).
+  const trackRef = useRef<HTMLDivElement>(null);
 
-  // Set up carousel control functions
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
+  const scrollByCard = useCallback((dir: 1 | -1) => {
+    const el = trackRef.current;
+    if (!el) return;
+    const firstCard = el.children[0] as HTMLElement | undefined;
+    // gap-4 = 16px between cards.
+    const step = firstCard ? firstCard.offsetWidth + 16 : el.clientWidth / 3;
+    const max = el.scrollWidth - el.clientWidth;
+    let next = el.scrollLeft + dir * step;
+    if (next < 0) next = max;
+    else if (next > max + 1) next = 0;
+    el.scrollTo({ left: next, behavior: "smooth" });
+  }, []);
 
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
+  const scrollPrev = useCallback(() => scrollByCard(-1), [scrollByCard]);
+  const scrollNext = useCallback(() => scrollByCard(1), [scrollByCard]);
 
   return (
     <section className="w-full py-8 bg-black">
@@ -102,14 +105,17 @@ export default function TestimonialsSection() {
         <div className="relative max-w-screen-lg mx-auto mt-12">
           {/* Desktop carousel with navigation buttons */}
           <div className="hidden lg:block relative">
-            <div className="overflow-hidden" ref={emblaRef}>
+            <div
+              ref={trackRef}
+              className="overflow-x-auto snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            >
               <div className="flex gap-4">
                 {testimonials.map((testimonial, index) => (
                   <Reveal
                     key={index}
                     animation="animate-fade-in-up"
                     duration={0.5}
-                    className="flex-none w-full md:w-1/2 lg:w-1/3"
+                    className="flex-none w-full md:w-1/2 lg:w-1/3 snap-start"
                   >
                     <TestimonialCard testimonial={testimonial} />
                   </Reveal>

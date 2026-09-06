@@ -10,12 +10,19 @@ import "react-phone-number-input/style.css";
 
 import en from "react-phone-number-input/locale/en.json";
 
-// All ~200 country flag SVGs (~50 KB). Loaded idle in the background: only
-// the current country's flag is ever rendered, so the initial paint uses the
-// phone-icon fallback and flags pop in moments later. Keeps the hero form's
-// bundle free of the full flag atlas.
+// Only the flags we can actually serve ship in the bundle. The demo form
+// requires a USA/Canada number, so US + CA cover every valid submission —
+// the full ~200-flag atlas (227 KB raw, 97% unused per PageSpeed) is gone.
+// Any other selected country falls back to the phone icon.
+import USFlag from "country-flag-icons/react/3x2/US";
+import CAFlag from "country-flag-icons/react/3x2/CA";
+
 type FlagIcon = React.ComponentType<{ title?: string }>;
-type FlagMap = Record<string, FlagIcon>;
+
+const FLAG_ICONS: Partial<Record<Country, FlagIcon>> = {
+  US: USFlag as FlagIcon,
+  CA: CAFlag as FlagIcon,
+};
 
 interface PhoneInputProps {
   id?: string;
@@ -59,11 +66,8 @@ const CustomInput = forwardRef<HTMLInputElement, DefaultInputComponentProps>(
 CustomInput.displayName = "CustomInput";
 
 // Updated FlagComponent with proper typing and title handling
-const FlagComponent: React.FC<{ country: Country; flags: FlagMap | null }> = ({
-  country,
-  flags,
-}) => {
-  const FlagIcon = country && flags ? flags[country] : undefined;
+const FlagComponent: React.FC<{ country: Country }> = ({ country }) => {
+  const FlagIcon = (country && FLAG_ICONS[country]) || undefined;
   const countryName = en[country as keyof typeof en] || country;
 
   return FlagIcon ? (
@@ -75,9 +79,14 @@ const FlagComponent: React.FC<{ country: Country; flags: FlagMap | null }> = ({
   );
 };
 
-const CountrySelect: React.FC<
-  CountrySelectProps & { flags: FlagMap | null }
-> = ({ value, onChange, options, placeholder, className, flags, ...rest }) => {
+const CountrySelect: React.FC<CountrySelectProps> = ({
+  value,
+  onChange,
+  options,
+  placeholder,
+  className,
+  ...rest
+}) => {
   // Only spread allowed props
   const allowedProps = {
     className,
@@ -89,7 +98,7 @@ const CountrySelect: React.FC<
   return (
     <div className="relative inline-flex items-center self-stretch rounded-s-lg border border-zinc-700 bg-zinc-800 py-2 pe-2 ps-3 text-white">
       <div className="inline-flex items-center gap-1" aria-hidden="true">
-        <FlagComponent country={value} flags={flags} />
+        <FlagComponent country={value} />
         <ChevronDown size={16} strokeWidth={2} className="text-gray-400" />
       </div>
       <select
@@ -122,38 +131,11 @@ const PhoneInputComponent: React.FC<PhoneInputProps> = ({
   "aria-label": ariaLabel,
 }) => {
   const [phoneValue, setPhoneValue] = useState(value || "");
-  const [flagMap, setFlagMap] = useState<FlagMap | null>(null);
 
   // Update internal state when value prop changes
   useEffect(() => {
     setPhoneValue(value || "");
   }, [value]);
-
-  // Load the flag atlas after the page is interactive.
-  useEffect(() => {
-    let cancelled = false;
-    const load = () => {
-      import("react-phone-number-input/flags")
-        .then((m) => {
-          if (!cancelled) setFlagMap(m.default as FlagMap);
-        })
-        .catch(() => {
-          // Atlas failed to load (offline/blocked) — keep phone-icon fallback.
-        });
-    };
-    if ("requestIdleCallback" in window) {
-      const id = window.requestIdleCallback(load, { timeout: 4000 });
-      return () => {
-        cancelled = true;
-        window.cancelIdleCallback(id);
-      };
-    }
-    const t: ReturnType<typeof setTimeout> = setTimeout(load, 3000);
-    return () => {
-      cancelled = true;
-      clearTimeout(t);
-    };
-  }, []);
 
   const handleChange = (newValue: string | undefined) => {
     setPhoneValue(newValue || "");
@@ -161,10 +143,8 @@ const PhoneInputComponent: React.FC<PhoneInputProps> = ({
   };
 
   const renderCountrySelect = useCallback(
-    (props: CountrySelectProps) => (
-      <CountrySelect {...props} flags={flagMap} />
-    ),
-    [flagMap]
+    (props: CountrySelectProps) => <CountrySelect {...props} />,
+    []
   );
 
   return (

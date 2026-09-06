@@ -13,6 +13,7 @@ export default function ScrollLaunchBadge() {
           width={220}
           height={48}
           loading="lazy"
+          decoding="async"
         />
       </a>
     </div>

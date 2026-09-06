@@ -92,7 +92,6 @@ const ChatWidget = () => {
       });
 
       const data = await res.json();
-      console.log("Response from n8n:", data); // Debug log
 
       // Handle different possible response formats
       let reply = "";

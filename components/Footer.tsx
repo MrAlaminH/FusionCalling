@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -99,6 +97,7 @@ export default function Footer() {
                   alt="Fusion Calling Logo"
                   width={32}
                   height={32}
+                  loading="lazy"
                   className="object-contain"
                 />
                 Fusion Calling

@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
 import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
+import dynamic from "next/dynamic";
 import "./globals.css";
-import ChatWidget from "@/components/chat/ChatWidget";
 import { PostHogProvider } from "./providers";
 import { SITE_URL } from "@/lib/site-url";
+
+// Chat widget is below-the-fold UI (fixed button) with its own client JS.
+// Loaded client-only and deferred so it never competes with LCP/hydration.
+const ChatWidget = dynamic(() => import("@/components/chat/ChatWidget"), {
+  ssr: false,
+});
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -20,7 +26,10 @@ const jakarta = Plus_Jakarta_Sans({
   weight: ["400", "500", "600", "700"],
   variable: "--font-jakarta",
   display: "swap",
-  preload: true,
+  // Not preloaded: only the Outfit display font paints the LCP headline.
+  // Jakarta (body text) still loads with display:swap — same visuals, fewer
+  // competing preloads in the LCP window.
+  preload: false,
   fallback: ["system-ui", "Arial", "sans-serif"],
   adjustFontFallback: true,
 });
@@ -96,9 +105,13 @@ export default function RootLayout({
           name="scrolllaunch-verify"
           content="a4cbbbed6599f0c56272e29cf27df080"
         />
-        {/* Resource hints for third-party origins used on the page */}
-        <link rel="preconnect" href="https://cal.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://peregrine-results.s3.amazonaws.com" crossOrigin="anonymous" />
+        {/* Resource hints for third-party origins used on the page.
+            dns-prefetch only: Cal.com and the voice-sample CDN are
+            below-the-fold (IntersectionObserver-gated embed, click-to-play
+            audio), so an early preconnect would burn connections inside the
+            LCP window. DNS is cheap and keeps later loads fast. */}
+        <link rel="dns-prefetch" href="https://cal.com" />
+        <link rel="dns-prefetch" href="https://peregrine-results.s3.amazonaws.com" />
         <link rel="dns-prefetch" href="https://n8n.deployify.xyz" />
         <script
           type="application/ld+json"
