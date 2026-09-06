@@ -254,6 +254,13 @@ export default function Home() {
           <p className="text-center text-gray-400 text-sm sm:text-base">
             Built for your vertical:{" "}
             <Link
+              href="/ai-receptionist"
+              className="text-brand hover:text-brand-light underline underline-offset-4 hover:underline transition-colors"
+            >
+              AI receptionist for business calls
+            </Link>
+            {" · "}
+            <Link
               href="/industries/ai-voice-for-restaurants-hospitality"
               className="text-brand hover:text-brand-light underline underline-offset-4 hover:underline transition-colors"
             >

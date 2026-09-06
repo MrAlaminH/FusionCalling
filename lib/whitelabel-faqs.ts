@@ -66,4 +66,14 @@ export const whitelabelFaqs: WhitelabelFaq[] = [
     answer:
       "Building directly gives engineers full pipeline control but leaves agencies to build sub-accounts, branding, billing, and onboarding themselves, which typically takes weeks. A white label layer like Fusion Calling adds those in 24 hours: import existing Vapi or Retell agents with no rebuild, run them alongside ElevenLabs where voice quality matters, and resell under your brand from one dashboard. If you have engineers and want raw control, build direct. If you want to sell this month, resell white-labeled.",
   },
+  {
+    question: "Are white-label AI receptionists worth reselling?",
+    answer:
+      "For most agencies, yes: demand is mainstream (small businesses miss an estimated 60% of inbound calls, and AI receptionists solve it for $149–$497/month at retail), while your wholesale cost starts at $99/month for 6 sub-accounts. Partners typically package a receptionist at $197–$497/month per client, keep 100% of the spread, and bill recurring revenue through Stripe — one or two clients usually cover the platform cost.",
+  },
+  {
+    question: "Will AI replace the receptionists our clients already have?",
+    answer:
+      "No — position it honestly and it sells better. The AI takes the routine volume: after-hours calls, overflow, bookings, reminders, and common questions. Client staff keep judgment calls, sensitive conversations, and in-person service. Agencies that pitch the AI as a 24/7 first line (not a headcount replacement) see faster buy-in and lower churn.",
+  },
 ];

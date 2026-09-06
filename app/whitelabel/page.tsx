@@ -277,6 +277,129 @@ export default function WhiteLabelPage() {
           </div>
         </div>
       </section>
+      <section id="reseller-program" className="w-full bg-black py-16 sm:py-20 scroll-mt-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center mb-4">
+            AI Voice Agent{" "}
+            <span className="bg-gradient-to-r from-brand to-brand-strong text-transparent bg-clip-text">
+              Reseller Program
+            </span>
+          </h2>
+          <p className="text-gray-400 text-base sm:text-lg text-center mb-10 md:mb-12">
+            Buy wholesale from $99/month, set your own client pricing, and keep 100% of the margin. Sub-accounts, Stripe rebilling, and a 24-hour launch are included on every plan.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="glass-light rounded-xl p-5 border border-brand/20">
+              <h3 className="text-base font-bold text-brand-light mb-1">
+                Your pricing, your margins
+              </h3>
+              <p className="text-sm text-gray-400">
+                Package an AI receptionist at $197–$497/month and keep every dollar above the wholesale rate.
+              </p>
+            </div>
+            <div className="glass-light rounded-xl p-5 border border-brand/20">
+              <h3 className="text-base font-bold text-brand-light mb-1">
+                Stripe rebilling built in
+              </h3>
+              <p className="text-sm text-gray-400">
+                Bill clients on your own Stripe account with automated recurring invoices in your brand.
+              </p>
+            </div>
+            <div className="glass-light rounded-xl p-5 border border-brand/20">
+              <h3 className="text-base font-bold text-brand-light mb-1">
+                Launch in 24 hours
+              </h3>
+              <p className="text-sm text-gray-400">
+                Add your logo, colors, and domain, then import Vapi, Retell, or ElevenLabs agents the same day.
+              </p>
+            </div>
+          </div>
+          <p className="text-center mt-6 text-sm text-gray-400">
+            Model your margins in the{" "}
+            <Link
+              href="/calculator"
+              className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors"
+            >
+              white-label margin calculator
+            </Link>
+            , see real partner results in our{" "}
+            <Link
+              href="/whitelabel/case-studies"
+              className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors"
+            >
+              reseller case studies
+            </Link>
+            , or explore the full{" "}
+            <Link
+              href="/whitelabel/reseller-program"
+              className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors"
+            >
+              AI voice agent reseller program
+            </Link>
+            .
+          </p>
+        </div>
+      </section>
+      <section
+        id="white-label-receptionist"
+        className="w-full bg-black py-16 sm:py-20 scroll-mt-24"
+      >
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center mb-4">
+            White-Label{" "}
+            <span className="bg-gradient-to-r from-brand to-brand-strong text-transparent bg-clip-text">
+              AI Receptionist
+            </span>{" "}
+            &amp; Answering Service
+          </h2>
+          <p className="text-gray-400 text-base sm:text-lg text-center mb-10 md:mb-12">
+            Package the platform as a white-label AI receptionist for your clients: it answers every call 24/7, books appointments, takes messages, and transfers urgent callers — all under your agency brand.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="glass-light rounded-xl p-5 border border-brand/20">
+              <h3 className="text-base font-bold text-brand-light mb-1">
+                24/7 call answering
+              </h3>
+              <p className="text-sm text-gray-400">
+                Every call picked up in two rings — nights, weekends, and holidays included.
+              </p>
+            </div>
+            <div className="glass-light rounded-xl p-5 border border-brand/20">
+              <h3 className="text-base font-bold text-brand-light mb-1">
+                Booking &amp; reminders
+              </h3>
+              <p className="text-sm text-gray-400">
+                Books straight into your client&apos;s calendar and sends automated appointment reminders.
+              </p>
+            </div>
+            <div className="glass-light rounded-xl p-5 border border-brand/20">
+              <h3 className="text-base font-bold text-brand-light mb-1">
+                Smart transfer &amp; messages
+              </h3>
+              <p className="text-sm text-gray-400">
+                Screens callers, takes detailed messages, and warm-transfers urgent calls to your client&apos;s team.
+              </p>
+            </div>
+          </div>
+          <p className="text-center mt-6 text-sm text-gray-400">
+            Ship it to any vertical — explore{" "}
+            <Link
+              href="/industries"
+              className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors"
+            >
+              AI voice solutions by industry
+            </Link>{" "}
+            or browse our{" "}
+            <Link
+              href="/whitelabel/case-studies"
+              className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors"
+            >
+              white-label answering service case studies
+            </Link>
+            .
+          </p>
+        </div>
+      </section>
       <section id="how-it-works" className="scroll-mt-24">
         <HowItWorks />
       </section>

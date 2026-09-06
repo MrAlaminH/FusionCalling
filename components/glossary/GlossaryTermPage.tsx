@@ -128,6 +128,14 @@ export default function GlossaryTermPage({ term }: { term: GlossaryTerm }) {
               Why it matters
             </h2>
             <p className="text-gray-300 leading-relaxed">{term.whyItMatters}</p>
+            {term.platform && (
+              <Link
+                href={term.platform.href}
+                className="inline-block mt-3 text-sm font-semibold text-brand-light hover:text-brand underline-offset-4 hover:underline transition-colors"
+              >
+                {term.platform.label}
+              </Link>
+            )}
           </div>
         </div>
 

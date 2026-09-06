@@ -14,7 +14,7 @@ export const blogPosts: BlogPost[] = [
     slug: "how-to-start-a-voice-ai-agency",
     title: "How to Start a Voice AI Agency in 2026: A Step-by-Step Guide",
     description:
-      "The smart way to launch a voice AI agency without building infrastructure: partner with a white-label platform, pick a niche, set pricing, and land your first client.",
+      "Learn how to start an AI voice agency business with a white-label platform and our AI voice agent reseller program. Keep 100% of client revenue, launch in 7 days, scale with Vapi, Retell and ElevenLabs.",
     date: "2025-02-13",
     category: "Agency Growth",
     readTime: "9 min read",
@@ -193,5 +193,41 @@ This is AI call automation, not IVR: callers speak in plain language instead of 
     content: `This guide answers common buyer questions — how call audio is encrypted at rest and in transit, how to get GDPR-compliant analytics with retention controls, and which tools support interruption handling and natural turn-taking — so you know what to ask any vendor before buying.
 
 Layer check to expect: TLS 1.2+ (prefer 1.3) for signaling including carrier handoffs, SRTP for the voice media stream, AES-256 at rest for recordings and transcripts, and key rotation per NIST SP 800-57 (transport baseline NIST SP 800-52r2). Ask where keys live, who can access stored calls, and whether you can turn storage off or set auto-delete. For retention: GDPR says keep personal data only as long as needed — you should be able to set retention per client, delete one call or one caller's entire history, limit access by role, and see backup purge timing; details are in /docs/api-reference and per-term explainers for AES-256 Encryption, GDPR, and TCPA. For outbound dialing and recording: in the US the TCPA requires consent for autodialed and prerecorded marketing calls plus calling-hour and do-not-call checks, and recording consent varies (one-party vs all-party by state), so play a short notice and keep consent/time/DNC logs per campaign. For interruption handling: good barge-in needs full-duplex audio and tuned voice activity detection (server vs client vs hybrid VAD targeting 80-150 ms yield), so test it live by interrupting the agent mid-sentence — see the barge-in glossary term for depth. Synthetic-voice safeguards to expect: clear AI disclosure, audit logs, consent-scoped cloning, provider abuse monitoring, and a one-tap path to a human. Fusion Calling runs calls over encrypted connections, protects stored data with strong encryption, and offers per-account retention and deletion controls; regulated teams should walk through paperwork before signing. Read the full guides at /blog/voice-ai-security-compliance and /ai-phone-call-automation, and try the live demo on the homepage to test voice and barge-in firsthand.`,
+  },
+  {
+    slug: "ai-receptionist-cost",
+    title: "How Much Does an AI Receptionist Cost in 2026? (Real Pricing)",
+    description:
+      "Real 2026 AI receptionist pricing: per-minute vs per-month models, hidden costs like setup fees and overages, and where Fusion Calling sits from $149/mo.",
+    date: "2026-09-06",
+    category: "Buyer's Guide",
+    readTime: "8 min read",
+    image: "/blog/blog2.webp",
+    content: `An AI receptionist typically costs $14-$65/mo for budget self-serve tools, $149-$600/mo for mid-tier business plans, and up to $3,000/mo at the premium enterprise end. By comparison, a human receptionist costs $3,000+/mo in salary alone, and human answering services typically run $1-3 per minute.
+
+Pricing models: per-month plans bundle a set number of included minutes and are the most predictable; per-minute plans charge only for usage but overage minutes typically cost $0.10-$0.50/min once you exceed your allowance, which can quietly inflate a cheap-looking plan.
+
+Hidden costs to watch: setup fees ($250-$5,000 at some vendors), per-minute overages, integration/add-on fees ($50-$500/mo for CRM and calendar connections), and compliance or premium-voice add-ons. Fusion Calling charges $0 setup and has no long-term contracts.
+
+Where Fusion Calling fits: business plans run $149/mo with 500 included minutes up to $497/mo with 2,100 minutes, flat and predictable. Agencies can resell the platform white-label from $99/mo and keep 100% of client revenue.
+
+ROI math: compare the flat monthly AI cost against a $3,000+/mo human salary plus benefits and 40-hour-per-week coverage limits — most businesses recover the subscription cost with a handful of captured calls per month. Model your own numbers with the ROI calculator at /calculator and see full pricing at /pricing.`,
+  },
+  {
+    slug: "will-ai-replace-receptionists",
+    title: "Will AI Replace Receptionists? What Actually Changes in 2026",
+    description:
+      "Mostly no: AI receptionists take over routine calls while humans keep judgment, empathy, and relationships. What to automate, what to keep, and what that means for owners and front-desk teams in 2026.",
+    date: "2026-09-06",
+    category: "Use Cases",
+    readTime: "8 min read",
+    image: "/blog/blog3.webp",
+    content: `Will AI replace receptionists? Mostly no. AI takes over the routine call work — answering every call in two rings 24/7, appointment booking and reminders, common questions, message-taking, and SMS follow-ups — while humans keep judgment calls, sensitive conversations, negotiations, loyal-customer relationships, and unusual requests.
+
+For owners: industry estimates suggest small businesses miss around 60% of inbound calls, and AI is now an affordable first line from $149/mo (500 minutes) to $497/mo (2,100 minutes) with no contracts, so staff shift to work that actually needs a person.
+
+For front-desk teams: routine workload drops and roles move toward customer experience, in-person service, and overseeing the AI — scripts, escalation rules, transcripts.
+
+Good fit signals: high call volume, missed calls, after-hours demand, and mostly routine questions. See /ai-receptionist, /ai-phone-call-automation, and /pricing.`,
   },
 ];

@@ -113,6 +113,16 @@ const faqs = [
     answer:
       "Telephony automation means your phone system runs routine call work on its own: answering, placing calls, sending follow-up texts, and logging notes. It connects your phone number to tools like your calendar and CRM, so bookings and records stay current without staff typing them in by hand.",
   },
+  {
+    question: "Can AI answer phone calls by itself?",
+    answer:
+      "Yes. AI voice agents answer inbound calls and place outbound calls on their own — no human on the line. They greet the caller, understand what they need, complete tasks like booking or CRM updates, and transfer to a person when judgment is required. You set the rules for greetings, escalation, and hours.",
+  },
+  {
+    question: "Are AI phone agents worth it for small businesses?",
+    answer:
+      "Usually, yes — the math is about missed calls. Industry estimates suggest small businesses miss roughly 60% of inbound calls, and most first-time callers who hit voicemail never call back. If a single new customer is worth a few hundred dollars, an AI agent answering every call from $149/month typically pays for itself with one saved job or booking.",
+  },
 ];
 
 export const metadata: Metadata = {
@@ -297,6 +307,55 @@ export default function AiPhoneCallAutomationPage() {
                   </p>
                 </Link>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="use-case-guides" className="w-full bg-black py-16 md:py-24">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Go deeper by use case
+            </h2>
+            <p className="text-gray-400 leading-relaxed mb-10">
+              Dedicated guides for the highest-ROI automation workflows:
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <Link
+                href="/ai-phone-call-automation/appointment-reminders"
+                className="group rounded-xl border border-brand/20 bg-black/40 p-5 hover:border-brand/40 transition-colors"
+              >
+                <h3 className="font-semibold text-brand-light mb-2 group-hover:text-brand transition-colors">
+                  Automated appointment reminder calls
+                </h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Cut no-shows with AI calls that confirm, reschedule, and fill
+                  cancellations automatically.
+                </p>
+              </Link>
+              <Link
+                href="/ai-phone-call-automation/cold-calling"
+                className="group rounded-xl border border-brand/20 bg-black/40 p-5 hover:border-brand/40 transition-colors"
+              >
+                <h3 className="font-semibold text-brand-light mb-2 group-hover:text-brand transition-colors">
+                  AI cold calling software
+                </h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Outbound AI agents that dial your lists, qualify prospects,
+                  and book meetings.
+                </p>
+              </Link>
+              <Link
+                href="/ai-phone-call-automation/lead-qualification"
+                className="group rounded-xl border border-brand/20 bg-black/40 p-5 hover:border-brand/40 transition-colors"
+              >
+                <h3 className="font-semibold text-brand-light mb-2 group-hover:text-brand transition-colors">
+                  AI lead qualification calls
+                </h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Reach new leads in minutes and route only qualified prospects
+                  to your team.
+                </p>
+              </Link>
             </div>
           </div>
         </section>

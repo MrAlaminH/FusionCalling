@@ -12,7 +12,7 @@ const teamAuthor = getAuthor("alamin")!;
 export const metadata: Metadata = {
   title: "How to Start a Voice AI Agency in 2026: A Step-by-Step Guide",
   description:
-    "Learn how to start a voice AI agency with a white-label platform. Keep 100% of client revenue, launch in 7 days, scale with Vapi, Retell and ElevenLabs.",
+    "Learn how to start an AI voice agency business with a white-label platform and our AI voice agent reseller program. Keep 100% of client revenue, launch in 7 days, scale with Vapi, Retell and ElevenLabs.",
   ...buildOpenGraph({
     title: "How to Start a Voice AI Agency in 2026: A Step-by-Step Guide",
     description:
@@ -151,6 +151,14 @@ export default function StartVoiceAIAgencyBlogPost() {
                       text: "Fusion Calling integrates with GoHighLevel via API and webhooks. Calls, leads, and appointments sync back into your client's GHL sub-account so their workflows continue uninterrupted.",
                     },
                   },
+                  {
+                    "@type": "Question",
+                    name: "Is a voice AI agency business profitable?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Yes. Wholesale platform access starts from $99/month, and typical packaged client pricing runs $297-$497/month. Five clients at $297 covers about $1,485/month in revenue against a $99-$299 platform cost, and the margins stay with you as the reseller.",
+                    },
+                  },
                 ],
               },
             ],
@@ -184,12 +192,16 @@ export default function StartVoiceAIAgencyBlogPost() {
           </h1>
 
           <p className="text-xl text-gray-400 leading-relaxed mb-8">
-            The smart way to launch a voice AI agency isn&apos;t to build voice
-            infrastructure from scratch &mdash; it&apos;s to partner with a{" "}
+            The smart way to launch a voice AI agency business isn&apos;t to build
+            voice infrastructure from scratch &mdash; it&apos;s to partner with a{" "}
             <Link href="/glossary/white-label" className="text-brand-light hover:text-brand transition-colors">
               white-label
             </Link>{" "}
-            platform and resell under your own brand. Here&apos;s the step-by-step
+            platform through an{" "}
+            <Link href="/whitelabel/reseller-program" className="text-brand-light hover:text-brand transition-colors">
+              AI voice agent reseller program
+            </Link>{" "}
+            and resell under your own brand. Here&apos;s the step-by-step
             playbook.
           </p>
 
@@ -311,12 +323,19 @@ export default function StartVoiceAIAgencyBlogPost() {
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                     <span>
-                      You keep <strong>100% of client revenue</strong> &mdash; the
-                      platform is just the enablement layer underneath.
-                    </span>
-                  </li>
-                </ul>
-              </div>
+                    You keep <strong>100% of client revenue</strong> &mdash; the
+                    platform is just the enablement layer underneath.
+                  </span>
+                </li>
+              </ul>
+              <p className="text-gray-300 leading-relaxed">
+                Fusion Calling formalizes this with an{" "}
+                <Link href="/whitelabel/reseller-program" className="text-brand-light hover:text-brand transition-colors">
+                  AI voice agent reseller program
+                </Link>{" "}
+                with tiers from $99/month.
+              </p>
+            </div>
 
               <p className="text-gray-300 leading-relaxed">
                 Fusion Calling is that enablement layer: it plugs into Vapi, Retell
@@ -566,15 +585,15 @@ export default function StartVoiceAIAgencyBlogPost() {
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
-                  <span>Start from $99/mo with $0 setup and a 3-day free trial</span>
+                  <span>Start on the AI voice agent reseller program from $99/mo with $0 setup and a 3-day free trial</span>
                 </li>
               </ul>
 
               <Link
-                href="/whitelabel"
+                href="/whitelabel/reseller-program"
                 className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition-all shadow-premium hover:shadow-premium-lg hover:scale-105"
               >
-                Start Your Voice AI Agency
+                Join the AI Voice Agent Reseller Program
                 <span className="ml-2">→</span>
               </Link>
             </div>
@@ -607,6 +626,18 @@ export default function StartVoiceAIAgencyBlogPost() {
                   <p className="text-gray-400 text-sm">
                     How to bolt white-label voice AI onto a GoHighLevel practice via
                     API and webhooks.
+                  </p>
+                </Link>
+                <Link
+                  href="/blog/ai-receptionist-cost"
+                  className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition-all group"
+                >
+                  <h3 className="text-white font-bold mb-2 group-hover:text-brand-light transition-colors">
+                    How Much Does an AI Receptionist Cost in 2026?
+                  </h3>
+                  <p className="text-gray-400 text-sm">
+                    Real 2026 AI receptionist pricing, the hidden costs most buyers
+                    miss, and the margin math for resellers.
                   </p>
                 </Link>
                </div>

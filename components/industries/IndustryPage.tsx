@@ -385,6 +385,22 @@ export default function IndustryPage({ industry }: { industry: Industry }) {
           </div>
         </div>
 
+        <div className="mt-12 rounded-xl border border-brand/20 bg-black/40 p-6">
+          <h3 className="text-lg font-bold text-white mb-2">
+            Want this as a product you can resell?
+          </h3>
+          <p className="text-gray-400 leading-relaxed">
+            Every vertical page here runs on the same platform — see how the{" "}
+            <Link
+              href="/ai-receptionist"
+              className="text-brand-strong hover:text-brand transition-colors"
+            >
+              AI receptionist
+            </Link>{" "}
+            works for business calls.
+          </p>
+        </div>
+
         {/* Author Bio */}
         <div className="mt-12 pt-8 border-t border-brand/20">
           <div className="flex items-start gap-6">

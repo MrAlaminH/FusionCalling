@@ -76,7 +76,7 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2025-02-01T00:00:00Z",
     productSupported: true,
-    metaTitle: "AI Voice for Real Estate: Automate Leads & Showings",
+    metaTitle: "AI Receptionist for Real Estate: Leads & Showings",
     metaDescription:
       "AI voice agents help real estate teams capture leads, book showings, and follow up 24/7. Launch a white-label AI calling agent for your agency.",
     keywords: [
@@ -161,7 +161,7 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2025-02-02T00:00:00Z",
     productSupported: true,
-    metaTitle: "AI Voice for Dental & Healthcare: Booking & Recall",
+    metaTitle: "AI Receptionist for Dental Offices: Booking & Recall",
     metaDescription:
       "AI voice agents for dental & healthcare book appointments, run recalls, and cut no-shows 24/7. White-label the AI receptionist for your agency.",
     keywords: [
@@ -689,7 +689,7 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2025-02-08T00:00:00Z",
     productSupported: false,
-    metaTitle: "AI Voice for Financial Services: Advising & Scheduling",
+    metaTitle: "AI Receptionist for Financial Services & Advisors",
     metaDescription:
       "AI voice agents for financial advisors, lenders & fintechs qualify leads, book meetings, and follow up 24/7. White-label for your agency.",
     keywords: [
@@ -792,7 +792,7 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2025-02-09T00:00:00Z",
     productSupported: true,
-    metaTitle: "AI Voice Agent for Ecommerce: Support, Returns & Cart Recovery",
+    metaTitle: "AI Receptionist for Ecommerce: Support & Cart Recovery",
     metaDescription:
       "AI voice agent for ecommerce & retail: order status via Shopify/WooCommerce, returns, cart-recovery & back-in-stock calls 24/7. From $149/mo.",
     keywords: [
@@ -1017,7 +1017,7 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2025-02-11T00:00:00Z",
     productSupported: false,
-    metaTitle: "AI Voice Agent for Restaurants: Reservations, Orders & 24/7 Answering",
+    metaTitle: "AI Receptionist for Restaurants: Reservations & Orders",
     metaDescription:
       "AI voice agent for restaurants & hotels: reservations via OpenTable/Resy, phone orders via Toast/Square, catering & after-hours answering 24/7. From $149/mo.",
     keywords: [

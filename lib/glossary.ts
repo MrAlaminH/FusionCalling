@@ -39,6 +39,7 @@ export type GlossaryTerm = {
   definition: string;
   whyItMatters: string;
   related?: string[];
+  platform?: { label: string; href: string };
 };
 
 // Date the glossary entries were last editorially reviewed/updated. Used as the
@@ -74,6 +75,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     whyItMatters:
       "The receptionist use case is the most common and fastest-to-deploy voice AI offering, making it an ideal first product for a new agency.",
     related: ["AI Voice Agent", "Inbound Calls", "Interactive Voice Response"],
+    platform: { label: "See Fusion Calling's AI receptionist platform", href: "/ai-receptionist" },
   },
   {
     term: "Conversational AI",
