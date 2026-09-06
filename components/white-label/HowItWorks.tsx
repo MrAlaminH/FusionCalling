@@ -116,10 +116,17 @@ export default function HowItWorks() {
                     </Card>
                   </div>
 
-                  {/* Arrow indicator - visible on md and up */}
+                  {/* Connector node between cards - visible on md and up.
+                      Anchored to the row's bottom edge so it sits centered
+                      in the fixed md:space-y-12 gap, on the center line. */}
                   {index < steps.length - 1 && (
-                    <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-1/2 mt-8 z-20">
-                      <ArrowDown className="w-8 h-8 text-brand" />
+                    <div
+                      aria-hidden="true"
+                      className="absolute left-1/2 top-full z-20 mt-2 hidden -translate-x-1/2 md:block"
+                    >
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full border border-brand/30 bg-black shadow-premium">
+                        <ArrowDown className="h-4 w-4 text-brand" />
+                      </div>
                     </div>
                   )}
                 </Reveal>
