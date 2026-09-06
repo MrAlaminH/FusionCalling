@@ -118,7 +118,7 @@ export default function Pricing() {
               <div
                 className={`h-full rounded-2xl md:rounded-3xl p-6 md:p-8 border-2 transition-all duration-500 ${
                   plan.popular
-                    ? "glass border-brand/40 shadow-premium-lg"
+                    ? "bg-brand border-brand shadow-premium-lg"
                     : "glass-light border-gray-800/50 hover:border-brand/30 shadow-premium"
                 }`}
               >
@@ -126,7 +126,7 @@ export default function Pricing() {
                 {plan.popular && (
                   <div className="absolute -top-4 -right-4 md:-top-5 md:-right-5">
                     <div className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center">
-                      <div className="absolute inset-0 bg-gradient-to-br from-brand to-brand-strong rounded-full shadow-premium-lg animate-pulse" />
+                      <div className="absolute inset-0 bg-black rounded-full shadow-premium-lg" />
                       <Star
                         viewBox="0 0 24 24"
                         className="w-6 h-6 md:w-7 md:h-7 text-white fill-white z-10 relative"
@@ -141,14 +141,14 @@ export default function Pricing() {
                     {plan.name}
                   </h3>
                   <p
-                    className={`text-sm md:text-base mb-4 ${plan.popular ? "text-brand-light" : "text-gray-400"}`}
+                    className={`text-sm md:text-base mb-4 ${plan.popular ? "text-white/90" : "text-gray-400"}`}
                   >
                     {plan.description}
                   </p>
                   <div className="space-y-1">
                     <div className="flex items-baseline gap-2 flex-wrap">
                       {billing === "yearly" && (
-                        <span className="font-display text-2xl md:text-3xl font-medium text-gray-500 line-through">
+                        <span className="font-display text-2xl md:text-3xl font-medium text-black/50 line-through">
                           ${plan.priceMonthly}
                         </span>
                       )}
@@ -158,17 +158,17 @@ export default function Pricing() {
                         ${billing === "yearly" ? plan.priceYearly : plan.priceMonthly}
                       </span>
                       <span
-                        className={`text-sm md:text-base ${plan.popular ? "text-brand-light" : "text-gray-400"}`}
+                        className={`text-sm md:text-base ${plan.popular ? "text-white/90" : "text-gray-400"}`}
                       >
                         /month
                       </span>
                     </div>
                     {billing === "yearly" && (
                         <div className="flex flex-wrap items-center gap-2 animate-in fade-in duration-300">
-                          <span className="text-xs md:text-sm text-brand-light/80">
+                          <span className={`text-xs md:text-sm ${plan.popular ? "text-white/80" : "text-brand-light/80"}`}>
                             billed annually
                           </span>
-                          <span className="rounded-full bg-green-500/15 px-2 py-0.5 text-[10px] md:text-xs font-semibold text-green-400 ring-1 ring-inset ring-green-500/30">
+                          <span className={`rounded-full px-2 py-0.5 text-[10px] md:text-xs font-semibold ring-1 ring-inset ${plan.popular ? "bg-black/20 text-white ring-white/30" : "bg-green-500/15 text-green-400 ring-green-500/30"}`}>
                             Save ${(plan.priceMonthly - plan.priceYearly) * 12}/yr
                           </span>
                         </div>
@@ -186,14 +186,14 @@ export default function Pricing() {
                       <div
                         className={`min-w-5 min-h-5 md:min-w-6 md:min-h-6 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0 ${
                           plan.popular
-                            ? "bg-gradient-to-br from-brand to-brand-strong"
+                            ? "bg-black"
                             : "bg-green-500"
                         } shadow-premium`}
                       >
                         <Check className="w-3 h-3 md:w-3.5 md:h-3.5 text-white" />
                       </div>
                       <span
-                        className={`font-body text-xs md:text-sm ${plan.popular ? "text-gray-200" : "text-gray-300"}`}
+                        className={`font-body text-xs md:text-sm ${plan.popular ? "text-white" : "text-gray-300"}`}
                       >
                         {feature}
                       </span>
@@ -206,7 +206,7 @@ export default function Pricing() {
                   href="#cta"
                   className={`block w-full text-center rounded-xl py-3 md:py-4 text-sm md:text-base font-semibold transition-all duration-300 shadow-premium hover:scale-105 hover:-translate-y-0.5 active:scale-[0.98] ${
                     plan.popular
-                      ? "bg-gradient-to-r from-brand to-brand-strong text-white hover:from-brand-strong hover:to-orange-700"
+                      ? "bg-black text-white hover:bg-neutral-900"
                       : "bg-white/10 text-white hover:bg-white/20 border border-white/20"
                   }`}
                 >

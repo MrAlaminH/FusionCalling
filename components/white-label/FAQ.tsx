@@ -28,7 +28,11 @@ export default function FAQ() {
 
         {/* FAQ Accordion */}
         <Reveal animation="animate-fade-in-up" delay={0.15}>
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion
+            type="multiple"
+            defaultValue={["item-0"]}
+            className="space-y-4"
+          >
             {whitelabelFaqs.map((faq, index) => (
               <AccordionItem
                 key={index}
@@ -40,13 +44,8 @@ export default function FAQ() {
                     {faq.question}
                   </span>
                 </AccordionTrigger>
-                <AccordionContent
-                  forceMount
-                  className="p-0 grid overflow-hidden grid-rows-[1fr] transition-[grid-template-rows] duration-200 ease-out [[data-state=closed]>&]:grid-rows-[0fr]"
-                >
-                  <div className="font-body text-gray-400 text-sm sm:text-base leading-relaxed pb-5 md:pb-6">
-                    {faq.answer}
-                  </div>
+                <AccordionContent className="font-body text-gray-400 text-sm sm:text-base leading-relaxed">
+                  {faq.answer}
                 </AccordionContent>
               </AccordionItem>
             ))}
