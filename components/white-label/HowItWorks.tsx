@@ -8,6 +8,9 @@ import {
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Reveal } from "@/components/ui/reveal";
+import { SectionHeader } from "@/components/ui/section-header";
+import { primaryButton } from "@/components/ui/button-styles";
+import { cn } from "@/lib/utils";
 
 export default function HowItWorks() {
 
@@ -43,22 +46,14 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section className="w-full bg-black section-spacing">
+    <section className="w-full bg-black section-rhythm">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Header */}
-        <Reveal animation="animate-fade-in-up" className="text-center mb-10 md:mb-12 lg:mb-16">
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6 tracking-tight">
-            How to Launch Your
-            <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
-              {" "}
-              White-label Business
-            </span>
-          </h2>
-          <p className="font-body text-gray-400 text-base sm:text-lg md:text-xl max-w-3xl mx-auto">
-            From application to first sale in as little as one week. We handle
-            the technology, you focus on growing your agency.
-          </p>
-        </Reveal>
+        <SectionHeader
+          title="How to Launch Your White-label Business"
+          highlight="White-label Business"
+          subtitle="From application to first sale in as little as one week. We handle the technology, you focus on growing your agency."
+        />
 
         {/* Steps Timeline */}
         <div className="relative max-w-5xl mx-auto">
@@ -90,7 +85,7 @@ export default function HowItWorks() {
                   {/* Card */}
                   <div className="flex-grow w-full">
                     <Card className="glass-light border-brand/20 hover:border-brand/40 transition-all duration-500 hover:shadow-premium group">
-                      <CardContent className="p-6 sm:p-8">
+                      <CardContent className="p-5 md:p-6">
                         <div className="flex items-start gap-4 sm:gap-6">
                           <div className="flex-shrink-0 hidden md:block">
                             <div className="w-14 h-14 rounded-xl bg-brand/10 border border-brand/30 flex items-center justify-center group-hover:bg-brand/20 group-hover:border-brand/50 transition-all duration-300">
@@ -103,16 +98,16 @@ export default function HowItWorks() {
                               <div className="w-12 h-12 rounded-lg bg-brand/10 border border-brand/30 flex items-center justify-center">
                                 <Icon className="w-6 h-6 text-brand" />
                               </div>
-                              <h3 className="font-display text-xl sm:text-2xl font-bold text-white">
+                              <h3 className="font-display text-xl md:text-2xl font-bold text-white">
                                 {step.title}
                               </h3>
                             </div>
                             <div className="hidden md:block mb-3">
-                              <h3 className="font-display text-xl sm:text-2xl font-bold text-white">
+                              <h3 className="font-display text-xl md:text-2xl font-bold text-white">
                                 {step.title}
                               </h3>
                             </div>
-                            <p className="font-body text-gray-400 text-sm sm:text-base leading-relaxed">
+                            <p className="font-body text-gray-400 text-sm md:text-base leading-relaxed">
                               {step.description}
                             </p>
                           </div>
@@ -140,7 +135,7 @@ export default function HowItWorks() {
           </p>
           <a
             href="#cta"
-            className="inline-flex items-center rounded-2xl bg-gradient-to-r from-brand to-brand-strong px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 text-sm sm:text-base font-semibold text-white transition-all shadow-premium hover:shadow-premium-lg hover:from-brand-strong hover:to-orange-700 hover:scale-105 active:scale-[0.98]"
+            className={cn(primaryButton)}
           >
             Apply Now
             <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />

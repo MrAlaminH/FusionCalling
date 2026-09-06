@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Reveal } from "@/components/ui/reveal";
 import { Check, Star, ArrowRight } from "lucide-react";
 import { BillingToggle, type BillingCycle } from "@/components/ui/billing-toggle";
+import { SectionHeader } from "@/components/ui/section-header";
 
 export default function Pricing() {
   const [billing, setBilling] = useState<BillingCycle>("monthly");
@@ -59,7 +60,7 @@ export default function Pricing() {
   ];
 
   return (
-    <section className="w-full bg-black relative section-spacing">
+    <section className="w-full bg-black relative section-rhythm">
       {/* Background effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
@@ -84,17 +85,11 @@ export default function Pricing() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Header */}
-        <Reveal animation="animate-fade-in-up" className="text-center mb-12 md:mb-16 lg:mb-20">
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold mb-6 tracking-tight">
-            <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
-              White-Label Voice AI Pricing Plans
-            </span>
-          </h2>
-          <p className="font-body text-gray-400 text-lg md:text-xl xl:text-2xl max-w-3xl mx-auto leading-relaxed">
-            Choose the plan that fits your agency&apos;s needs. Scale up as you
-            grow.
-          </p>
-        </Reveal>
+        <SectionHeader
+          title="White-Label Voice AI Pricing Plans"
+          highlight="White-Label Voice AI Pricing Plans"
+          subtitle="Choose the plan that fits your agency's needs. Scale up as you grow."
+        />
 
         {/* Billing Cycle Toggle */}
         <Reveal animation="animate-fade-in-up" delay={0.15} className="flex justify-center mb-10 md:mb-14">
@@ -116,7 +111,7 @@ export default function Pricing() {
               )}
 
               <div
-                className={`h-full rounded-2xl md:rounded-3xl p-6 md:p-8 border-2 transition-all duration-500 ${
+                className={`h-full rounded-2xl md:rounded-3xl p-5 md:p-6 border-2 transition-all duration-500 ${
                   plan.popular
                     ? "bg-brand border-brand shadow-premium-lg"
                     : "glass-light border-gray-800/50 hover:border-brand/30 shadow-premium"
@@ -137,7 +132,7 @@ export default function Pricing() {
 
                 {/* Plan Header */}
                 <div className="mb-6 md:mb-8">
-                  <h3 className="font-display text-xl md:text-2xl lg:text-3xl font-bold text-white mb-3">
+                  <h3 className="font-display text-xl md:text-2xl font-bold text-white mb-3">
                     {plan.name}
                   </h3>
                   <p
@@ -148,7 +143,7 @@ export default function Pricing() {
                   <div className="space-y-1">
                     <div className="flex items-baseline gap-2 flex-wrap">
                       {billing === "yearly" && (
-                        <span className="font-display text-2xl md:text-3xl font-medium text-black/50 line-through">
+                        <span className="font-display text-2xl md:text-3xl font-medium text-white/70 line-through">
                           ${plan.priceMonthly}
                         </span>
                       )}
@@ -193,7 +188,7 @@ export default function Pricing() {
                         <Check className="w-3 h-3 md:w-3.5 md:h-3.5 text-white" />
                       </div>
                       <span
-                        className={`font-body text-xs md:text-sm ${plan.popular ? "text-white" : "text-gray-300"}`}
+                        className={`font-body text-sm md:text-base ${plan.popular ? "text-white" : "text-gray-300"}`}
                       >
                         {feature}
                       </span>
@@ -204,7 +199,7 @@ export default function Pricing() {
                 {/* CTA Button */}
                 <a
                   href="#cta"
-                  className={`block w-full text-center rounded-xl py-3 md:py-4 text-sm md:text-base font-semibold transition-all duration-300 shadow-premium hover:scale-105 hover:-translate-y-0.5 active:scale-[0.98] ${
+                  className={`block w-full text-center rounded-xl py-3 md:py-3.5 text-sm md:text-base font-semibold transition-all duration-300 shadow-premium hover:scale-105 hover:-translate-y-0.5 active:scale-[0.98] ${
                     plan.popular
                       ? "bg-black text-white hover:bg-neutral-900"
                       : "bg-white/10 text-white hover:bg-white/20 border border-white/20"
@@ -222,7 +217,7 @@ export default function Pricing() {
         <div className="mt-12 md:mt-16 lg:mt-20">
           {/* Single unified card with compact info */}
           <div className="max-w-3xl mx-auto">
-            <div className="glass rounded-2xl p-6 md:p-8 border border-brand/20">
+            <div className="glass rounded-2xl p-5 md:p-6 border border-brand/20">
               {/* Header */}
               <div className="text-center mb-6 md:mb-8">
                 <p className="font-display text-white text-lg md:text-xl font-semibold mb-2">

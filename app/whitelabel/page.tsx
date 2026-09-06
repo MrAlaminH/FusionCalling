@@ -14,6 +14,7 @@ import Link from "next/link";
 import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { buildOpenGraph } from "@/lib/seo";
 import { whitelabelFaqs } from "@/lib/whitelabel-faqs";
+import { SectionHeader } from "@/components/ui/section-header";
 
 const PROVIDER_LINKS = [
   {
@@ -235,29 +236,24 @@ export default function WhiteLabelPage() {
       <section id="features" className="scroll-mt-24">
         <Features />
       </section>
-      <section className="w-full bg-black py-16 sm:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center mb-4">
-            Resell{" "}
-            <span className="bg-gradient-to-r from-brand to-brand-strong text-transparent bg-clip-text">
-              Vapi, Retell &amp; ElevenLabs
-            </span>{" "}
-            Under Your Brand
-          </h2>
-          <p className="text-gray-400 text-base sm:text-lg text-center mb-10 md:mb-12">
-            Fusion Calling is provider-agnostic — pick the engine that fits each client and resell it under your own brand.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <section className="w-full bg-black section-rhythm">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <SectionHeader
+            title="Resell Vapi, Retell & ElevenLabs Under Your Brand"
+            highlight="Vapi, Retell & ElevenLabs"
+            subtitle="Fusion Calling is provider-agnostic — pick the engine that fits each client and resell it under your own brand."
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {PROVIDER_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="glass-light rounded-xl p-5 border border-brand/20 hover:border-brand/40 transition-premium group"
+                className="glass-light rounded-xl p-5 md:p-6 border border-brand/20 hover:border-brand/40 transition-premium group"
               >
-                <h3 className="text-base font-bold text-brand-light mb-1 group-hover:text-brand transition-colors">
+                <h3 className="text-base md:text-lg font-bold text-brand-light mb-1 group-hover:text-brand transition-colors">
                   {link.title}
                 </h3>
-                <p className="text-sm text-gray-400">{link.description}</p>
+                <p className="text-sm md:text-base text-gray-400">{link.description}</p>
               </Link>
             ))}
           </div>
@@ -277,39 +273,35 @@ export default function WhiteLabelPage() {
           </div>
         </div>
       </section>
-      <section id="reseller-program" className="w-full bg-black py-16 sm:py-20 scroll-mt-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center mb-4">
-            AI Voice Agent{" "}
-            <span className="bg-gradient-to-r from-brand to-brand-strong text-transparent bg-clip-text">
-              Reseller Program
-            </span>
-          </h2>
-          <p className="text-gray-400 text-base sm:text-lg text-center mb-10 md:mb-12">
-            Buy wholesale from $99/month, set your own client pricing, and keep 100% of the margin. Sub-accounts, Stripe rebilling, and a 24-hour launch are included on every plan.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div className="glass-light rounded-xl p-5 border border-brand/20">
-              <h3 className="text-base font-bold text-brand-light mb-1">
+      <section id="reseller-program" className="w-full bg-black section-rhythm scroll-mt-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <SectionHeader
+            title="AI Voice Agent Reseller Program"
+            highlight="Reseller Program"
+            subtitle="Buy wholesale from $99/month, set your own client pricing, and keep 100% of the margin. Sub-accounts, Stripe rebilling, and a 24-hour launch are included on every plan."
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+            <div className="glass-light rounded-xl p-5 md:p-6 border border-brand/20">
+              <h3 className="text-base md:text-lg font-bold text-brand-light mb-1">
                 Your pricing, your margins
               </h3>
-              <p className="text-sm text-gray-400">
+              <p className="text-sm md:text-base text-gray-400">
                 Package an AI receptionist at $197–$497/month and keep every dollar above the wholesale rate.
               </p>
             </div>
-            <div className="glass-light rounded-xl p-5 border border-brand/20">
-              <h3 className="text-base font-bold text-brand-light mb-1">
+            <div className="glass-light rounded-xl p-5 md:p-6 border border-brand/20">
+              <h3 className="text-base md:text-lg font-bold text-brand-light mb-1">
                 Stripe rebilling built in
               </h3>
-              <p className="text-sm text-gray-400">
+              <p className="text-sm md:text-base text-gray-400">
                 Bill clients on your own Stripe account with automated recurring invoices in your brand.
               </p>
             </div>
-            <div className="glass-light rounded-xl p-5 border border-brand/20">
-              <h3 className="text-base font-bold text-brand-light mb-1">
+            <div className="glass-light rounded-xl p-5 md:p-6 border border-brand/20">
+              <h3 className="text-base md:text-lg font-bold text-brand-light mb-1">
                 Launch in 24 hours
               </h3>
-              <p className="text-sm text-gray-400">
+              <p className="text-sm md:text-base text-gray-400">
                 Add your logo, colors, and domain, then import Vapi, Retell, or ElevenLabs agents the same day.
               </p>
             </div>
@@ -342,41 +334,36 @@ export default function WhiteLabelPage() {
       </section>
       <section
         id="white-label-receptionist"
-        className="w-full bg-black py-16 sm:py-20 scroll-mt-24"
+        className="w-full bg-black section-rhythm scroll-mt-24"
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center mb-4">
-            White-Label{" "}
-            <span className="bg-gradient-to-r from-brand to-brand-strong text-transparent bg-clip-text">
-              AI Receptionist
-            </span>{" "}
-            &amp; Answering Service
-          </h2>
-          <p className="text-gray-400 text-base sm:text-lg text-center mb-10 md:mb-12">
-            Package the platform as a white-label AI receptionist for your clients: it answers every call 24/7, books appointments, takes messages, and transfers urgent callers — all under your agency brand.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div className="glass-light rounded-xl p-5 border border-brand/20">
-              <h3 className="text-base font-bold text-brand-light mb-1">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <SectionHeader
+            title="White-Label AI Receptionist & Answering Service"
+            highlight="AI Receptionist"
+            subtitle="Package the platform as a white-label AI receptionist for your clients: it answers every call 24/7, books appointments, takes messages, and transfers urgent callers — all under your agency brand."
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+            <div className="glass-light rounded-xl p-5 md:p-6 border border-brand/20">
+              <h3 className="text-base md:text-lg font-bold text-brand-light mb-1">
                 24/7 call answering
               </h3>
-              <p className="text-sm text-gray-400">
+              <p className="text-sm md:text-base text-gray-400">
                 Every call picked up in two rings — nights, weekends, and holidays included.
               </p>
             </div>
-            <div className="glass-light rounded-xl p-5 border border-brand/20">
-              <h3 className="text-base font-bold text-brand-light mb-1">
+            <div className="glass-light rounded-xl p-5 md:p-6 border border-brand/20">
+              <h3 className="text-base md:text-lg font-bold text-brand-light mb-1">
                 Booking &amp; reminders
               </h3>
-              <p className="text-sm text-gray-400">
+              <p className="text-sm md:text-base text-gray-400">
                 Books straight into your client&apos;s calendar and sends automated appointment reminders.
               </p>
             </div>
-            <div className="glass-light rounded-xl p-5 border border-brand/20">
-              <h3 className="text-base font-bold text-brand-light mb-1">
+            <div className="glass-light rounded-xl p-5 md:p-6 border border-brand/20">
+              <h3 className="text-base md:text-lg font-bold text-brand-light mb-1">
                 Smart transfer &amp; messages
               </h3>
-              <p className="text-sm text-gray-400">
+              <p className="text-sm md:text-base text-gray-400">
                 Screens callers, takes detailed messages, and warm-transfers urgent calls to your client&apos;s team.
               </p>
             </div>
@@ -406,31 +393,12 @@ export default function WhiteLabelPage() {
       <section id="pricing" className="scroll-mt-24">
         <Pricing />
       </section>
-      <section id="benefits" className="scroll-mt-16">
+      <section id="benefits" className="scroll-mt-24">
         <Benefits />
       </section>
-      <section id="faq" className="scroll-mt-16">
+      <section id="faq" className="scroll-mt-24">
         <FAQ />
       </section>
-      <div className="text-center px-4 pb-4">
-        <p className="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto">
-          Comparing platforms?{" "}
-          <Link
-            href="/whitelabel/compare"
-            className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors"
-          >
-            See how we compare
-          </Link>{" "}
-          or{" "}
-          <Link
-            href="/pricing"
-            className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors"
-          >
-            see pricing details
-          </Link>
-          .
-        </p>
-      </div>
       <section id="cta" className="scroll-mt-24">
         <CTA />
       </section>

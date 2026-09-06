@@ -278,6 +278,25 @@ html {
   }
 }
 
+/* Unified vertical rhythm: top-only. A section owns only its top padding so
+   whitespace between sections has exactly one source and adjacent sections
+   never double-stack. The last section on a page adds its own bottom padding. */
+.section-rhythm {
+  padding-top: 6rem;
+}
+
+@media (min-width: 768px) {
+  .section-rhythm {
+    padding-top: 7rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-rhythm {
+    padding-top: 8rem;
+  }
+}
+
 /* Atmospheric floating particles */
 @keyframes float {
   0%,

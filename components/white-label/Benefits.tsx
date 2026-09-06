@@ -10,6 +10,9 @@ import {
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Reveal } from "@/components/ui/reveal";
+import { SectionHeader } from "@/components/ui/section-header";
+import { primaryButton } from "@/components/ui/button-styles";
+import { cn } from "@/lib/utils";
 
 export default function Benefits() {
 
@@ -65,7 +68,7 @@ export default function Benefits() {
   ];
 
   return (
-    <section className="w-full bg-black relative section-spacing">
+    <section className="w-full bg-black relative section-rhythm">
       {/* Subtle background effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
@@ -90,22 +93,14 @@ export default function Benefits() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Header */}
-        <Reveal animation="animate-fade-in-up" className="text-center mb-12 md:mb-16 lg:mb-20">
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">
-            Partner
-            <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
-              {" "}
-              Benefits
-            </span>
-          </h2>
-          <p className="font-body text-gray-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            Everything you need to succeed as a Fusion Calling partner. From
-            training materials to dedicated support, we&apos;ve got you covered.
-          </p>
-        </Reveal>
+        <SectionHeader
+          title="Partner Benefits"
+          highlight="Benefits"
+          subtitle="Everything you need to succeed as a Fusion Calling partner. From training materials to dedicated support, we've got you covered."
+        />
 
         {/* Benefits Grid - Asymmetric layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon;
 
@@ -121,7 +116,7 @@ export default function Benefits() {
                 <div className="absolute -inset-3 bg-gradient-to-br from-brand/20 via-transparent to-transparent rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
 
                 <Card className="glass-light h-full transition-premium border-gray-800/50 hover:border-brand/40">
-                  <CardContent className="p-6 md:p-8 space-y-4 md:space-y-5 flex flex-col h-full">
+                  <CardContent className="p-5 md:p-6 space-y-4 md:space-y-5 flex flex-col h-full">
                     {/* Icon with enhanced styling */}
                     <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-brand/15 to-brand-strong/5 border border-brand/25 flex items-center justify-center flex-shrink-0 group-hover:border-brand/50 group-hover:rotate-6 group-hover:scale-110 transition-premium-fast shadow-premium">
                       <Icon className="w-6 h-6 md:w-7 md:h-7 text-brand" />
@@ -129,7 +124,7 @@ export default function Benefits() {
 
                     {/* Content */}
                     <div className="flex-grow">
-                      <h3 className="font-display text-lg md:text-xl font-bold text-white mb-3 group-hover:text-brand-light transition-colors duration-300">
+                      <h3 className="font-display text-base md:text-lg font-bold text-white mb-3 group-hover:text-brand-light transition-colors duration-300">
                         {benefit.title}
                       </h3>
                       <p className="font-body text-gray-400 text-sm md:text-base leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
@@ -153,7 +148,7 @@ export default function Benefits() {
           </p>
           <a
             href="#cta"
-            className="inline-flex items-center rounded-2xl bg-gradient-to-r from-brand to-brand-strong px-8 md:px-10 lg:px-12 py-3.5 md:py-4 lg:py-5 text-sm md:text-base font-medium text-white transition-premium shadow-premium hover:shadow-premium-lg hover:scale-105 hover:-translate-y-1 active:scale-[0.98]"
+            className={cn(primaryButton)}
           >
             Apply to Become a Partner
           </a>

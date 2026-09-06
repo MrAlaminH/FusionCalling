@@ -2,6 +2,7 @@ import Link from "next/link";
 import { DollarSign, Zap, Users, Shield } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Reveal } from "@/components/ui/reveal";
+import { SectionHeader } from "@/components/ui/section-header";
 
 export default function ValueProp() {
 
@@ -47,7 +48,7 @@ export default function ValueProp() {
   ];
 
   return (
-    <section className="w-full bg-black relative section-spacing">
+    <section className="w-full bg-black relative section-rhythm">
       {/* Atmospheric background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
@@ -72,23 +73,14 @@ export default function ValueProp() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Header */}
-        <Reveal animation="animate-fade-in-up" className="text-center mb-12 md:mb-16 lg:mb-20">
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">
-            Why Agencies Choose
-            <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
-              {" "}
-              Fusion Calling
-            </span>
-          </h2>
-          <p className="font-body text-gray-400 text-lg md:text-xl xl:text-2xl max-w-3xl mx-auto leading-relaxed">
-            Partner with us to offer enterprise-grade AI phone automation under
-            your brand. No technical expertise required, just pure business
-            growth.
-          </p>
-        </Reveal>
+        <SectionHeader
+          title="Why Agencies Choose Fusion Calling"
+          highlight="Fusion Calling"
+          subtitle="Partner with us to offer enterprise-grade AI phone automation under your brand. No technical expertise required, just pure business growth."
+        />
 
         {/* Asymmetric Benefits Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12 md:mb-16 lg:mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 md:mb-16 lg:mb-20">
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon;
 
@@ -104,7 +96,7 @@ export default function ValueProp() {
                 <div className="absolute -inset-4 bg-gradient-to-br from-brand/25 via-brand-strong/10 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
 
                 <Card className="glass-light h-full transition-premium border-gray-800/50 hover:border-brand/40 group-hover:bg-gradient-to-br group-hover:from-brand/5 group-hover:to-transparent">
-                  <CardContent className="p-6 md:p-8 space-y-5 flex flex-col h-full relative overflow-hidden">
+                  <CardContent className="p-5 md:p-6 space-y-5 flex flex-col h-full relative overflow-hidden">
                     {/* Decorative gradient overlay */}
                     <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-brand/10 to-transparent rounded-full blur-2xl -z-10" />
 
@@ -115,7 +107,7 @@ export default function ValueProp() {
 
                     {/* Content */}
                     <div className="flex-grow space-y-3">
-                      <h3 className="font-display text-lg md:text-xl font-bold text-white group-hover:text-brand-light transition-colors duration-300">
+                      <h3 className="font-display text-base md:text-lg font-bold text-white group-hover:text-brand-light transition-colors duration-300">
                         {benefit.title}
                       </h3>
                       <p className="font-body text-gray-400 text-sm md:text-base leading-relaxed group-hover:text-gray-300 transition-colors duration-300">

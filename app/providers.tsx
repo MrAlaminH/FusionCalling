@@ -29,13 +29,16 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
     let cancelled = false;
 
     const init = async () => {
+      // No key configured (e.g. fresh clone without .env.local): skip init
+      // entirely instead of starting PostHog with an empty token.
+      if (!process.env.NEXT_PUBLIC_POSTHOG_KEY) return;
       const [posthogModule, reactModule] = await Promise.all([
         import("posthog-js"),
         import("posthog-js/react"),
       ]);
       if (cancelled) return;
       const posthog = posthogModule.default;
-      posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY || "", {
+      posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
         api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST || "",
         capture_pageleave: true,
         capture_pageview: false, // Disabled; we capture pageviews manually

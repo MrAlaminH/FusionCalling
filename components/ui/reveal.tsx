@@ -66,9 +66,11 @@ export function Reveal({
   once = true,
 }: RevealProps) {
   const ref = useRef<HTMLElement>(null);
-  const [isVisible, setIsVisible] = useState(
-    typeof IntersectionObserver === "undefined",
-  );
+  // Start visible on both server and client so hydration matches and content
+  // renders even without JS. The observer's initial dispatch flips
+  // below-viewport elements to hidden (off-screen, so never seen) and
+  // reveals them on scroll; in-view elements simply stay visible.
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const el = ref.current;
@@ -87,7 +89,10 @@ export function Reveal({
           pendingCallbacks.delete(el);
           io.unobserve(el);
         }
-      } else if (!once) {
+      } else {
+        // Also runs for `once` elements: the initial not-intersecting
+        // dispatch must hide them until scrolled into view. Once revealed,
+        // they are unobserved above, so this can never flip them back.
         setIsVisible(false);
       }
     };

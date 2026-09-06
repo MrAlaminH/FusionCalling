@@ -1,5 +1,8 @@
 import Image from "next/image";
 import { Reveal } from "@/components/ui/reveal";
+import { SectionHeader } from "@/components/ui/section-header";
+import { secondaryButton } from "@/components/ui/button-styles";
+import { cn } from "@/lib/utils";
 import {
   Palette,
   LayoutDashboard,
@@ -72,7 +75,7 @@ export default function Features() {
   ];
 
   return (
-    <section className="w-full bg-black relative section-spacing">
+    <section className="w-full bg-black relative section-rhythm">
       {/* Atmospheric Background Effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
@@ -106,19 +109,11 @@ export default function Features() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Header */}
-        <Reveal animation="animate-fade-in-up" className="text-center mb-12 md:mb-16 lg:mb-20">
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">
-            Complete White-label
-            <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
-              {" "}
-              Solution
-            </span>
-          </h2>
-          <p className="font-body text-gray-400 text-lg md:text-xl xl:text-2xl max-w-3xl mx-auto leading-relaxed">
-            Everything you need to launch and scale your AI phone automation
-            business under your own brand. No technical expertise required.
-          </p>
-        </Reveal>
+        <SectionHeader
+          title="Complete White-label Solution"
+          highlight="Solution"
+          subtitle="Everything you need to launch and scale your AI phone automation business under your own brand. No technical expertise required."
+        />
 
         {/* Features */}
         <div className="space-y-16 md:space-y-20 lg:space-y-24">
@@ -149,12 +144,12 @@ export default function Features() {
                     </div>
 
                     {/* Title - Slightly reduced for better balance */}
-                    <h3 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
+                    <h3 className="font-display text-2xl md:text-3xl font-bold text-white leading-tight">
                       {feature.title}
                     </h3>
 
                     {/* Description - More concise */}
-                    <p className="font-body text-gray-400 text-sm md:text-base lg:text-lg leading-relaxed">
+                    <p className="font-body text-gray-400 text-sm md:text-base leading-relaxed">
                       {feature.description}
                     </p>
 
@@ -250,9 +245,9 @@ export default function Features() {
         <Reveal animation="animate-fade-in-up" className="mt-16 md:mt-20 lg:mt-24 text-center">
           <a
             href="#cta"
-            className="inline-flex items-center gap-3 px-8 py-4 md:px-10 md:py-5 rounded-2xl glass-light border border-brand/30 hover:border-brand/50 hover:scale-105 hover:-translate-y-1 active:scale-[0.98] transition-premium cursor-pointer group shadow-premium"
+            className={cn("group cursor-pointer gap-3", secondaryButton)}
           >
-            <span className="font-display text-white font-semibold text-lg md:text-xl">
+            <span className="font-display text-white font-semibold text-sm md:text-base">
               Ready to start your white-label journey?
             </span>
             <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-brand group-hover:translate-x-2 transition-transform duration-300" />

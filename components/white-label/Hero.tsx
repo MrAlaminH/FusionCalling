@@ -7,6 +7,7 @@ import { Play, ArrowRight, Sparkles } from "lucide-react";
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { NeonGradientCard } from "@/components/ui/neon-gradient-card";
+import { primaryButton } from "@/components/ui/button-styles";
 import { cn } from "@/lib/utils";
 
 export default function Hero() {
@@ -76,10 +77,9 @@ export default function Hero() {
 
         {/* Main heading — rendered visible at first paint (LCP) */}
         <div className="text-center mb-4 sm:mb-6 md:mb-8 px-2 sm:px-4 md:px-6">
-          <h1 className="font-display text-2xl xxs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]">
-            Scale Your Agency with
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]">
+            Scale Your Agency with{" "}
             <br className="hidden sm:block" />
-            <span className="whitespace-nowrap"> </span>
             <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
               White-Label AI Voice Agents
             </span>
@@ -88,8 +88,10 @@ export default function Hero() {
 
         {/* Subheading — rendered visible at first paint */}
         <div className="max-w-4xl mx-auto text-center mb-8 sm:mb-10 lg:mb-12 px-2 sm:px-4 md:px-6">
-          <p className="font-body text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-400 leading-relaxed">
-            Fusion Calling&apos;s white-label partner program lets agencies and resellers offer AI phone automation under their own brand. Bring your existing Vapi, Retell, or ElevenLabs agents and resell them under your logo—we handle the technology while you capture 100% of the revenue. Import takes minutes, so agents you have already built keep working without a rebuild. You keep 100% of what you charge clients, and your platform cost stays fixed at your monthly plan.
+          <p className="font-body text-sm sm:text-base lg:text-lg text-gray-400 leading-relaxed">
+            Bring your existing Vapi, Retell, or ElevenLabs agents under your
+            own brand. The white-label partner program for agencies: keep 100%
+            of client revenue and launch in 24 hours.
           </p>
         </div>
 
@@ -97,7 +99,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-14 lg:mb-16 xl:mb-20">
           <Link
             href="#cta"
-            className="group inline-flex items-center rounded-2xl bg-gradient-to-r from-brand to-brand-strong px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 text-xs sm:text-sm md:text-base font-semibold text-white transition-all shadow-premium hover:shadow-premium-lg hover:from-brand-strong hover:to-orange-700 hover:scale-105 hover:-translate-y-1"
+            className={cn("group", primaryButton)}
           >
             Book a Demo
             <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />

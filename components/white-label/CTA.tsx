@@ -1,25 +1,18 @@
 import { Phone, Mail } from "lucide-react";
 import Calendar from "@/components/calendar";
 import { Reveal } from "@/components/ui/reveal";
+import { SectionHeader } from "@/components/ui/section-header";
 
 export default function CTA() {
   return (
-    <section className="w-full bg-black py-16 sm:py-20 md:py-24">
+    <section className="w-full bg-black section-rhythm pb-16 sm:pb-20 md:pb-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Header */}
-        <Reveal animation="animate-fade-in-up" className="text-center mb-12 sm:mb-16 md:mb-20">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">
-            Ready to Start Your White-Label
-            <span className="bg-gradient-to-r from-brand to-brand-strong text-transparent bg-clip-text">
-              {" "}
-              Partnership?
-            </span>
-          </h2>
-          <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-3xl mx-auto">
-            Schedule a discovery call with our team. We&apos;ll discuss your agency&apos;s
-            goals and help you get started with your white-label solution. Every plan starts with a 3-day free trial and no setup fee, and you can cancel anytime.
-          </p>
-        </Reveal>
+        <SectionHeader
+          title="Ready to Start Your White-Label Partnership?"
+          highlight="Partnership?"
+          subtitle="Schedule a discovery call with our team. We'll discuss your agency's goals and help you get started with your white-label solution. Every plan starts with a 3-day free trial and no setup fee, and you can cancel anytime."
+        />
 
         {/* Calendar Section */}
         <Reveal animation="animate-fade-in-up" delay={0.15}>
