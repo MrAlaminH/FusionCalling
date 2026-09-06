@@ -32,6 +32,7 @@ export type Industry = {
   h1Highlight: string;
   subtitle: string;
   intro: string[];
+  receptionistSection?: { heading: string; body: string; bullets: string[] };
   useCases: IndustryUseCase[];
   stats: IndustryStat[];
   agencyAngle: string;
@@ -95,6 +96,17 @@ export const industries: Industry[] = [
       "Real estate is a speed business. The agent who responds first usually wins the listing or the buyer, yet most inquiries arrive outside business hours when teams are showing homes or asleep. AI voice agents close that gap by answering every call instantly, qualifying the lead, and booking a showing directly into the calendar.",
       "With Fusion Calling, brokerages and the agencies that serve them can deploy a branded AI voice agent in days, one that handles inbound inquiries, outbound follow-up, and after-hours coverage without adding headcount.",
     ],
+    receptionistSection: {
+      heading: "Your AI receptionist for real estate",
+      body:
+        "Buyers call the number on the sign at all hours. An AI receptionist answers every inquiry, qualifies the caller, books showings into your calendar, and follows up on sign-call leads before they cool — so no opportunity dies in voicemail.",
+      bullets: [
+        "Answers sign calls and listing inquiries instantly",
+        "Qualifies buyer vs seller vs renter on the call",
+        "Books showings and agent callbacks directly",
+        "Follows up on stale leads automatically",
+      ],
+    },
     useCases: [
       {
         emoji: "📞",
@@ -180,6 +192,17 @@ export const industries: Industry[] = [
       "Dental and healthcare practices lose revenue every time a call goes to voicemail during treatment, and every time a patient no-shows. An AI voice agent answers every call instantly, books appointments into the practice management system, and runs automated recall and reminder campaigns to keep the schedule full.",
       "Fusion Calling lets practices, and the agencies serving them, deploy a branded AI receptionist in days that handles scheduling, recalls, and patient questions while keeping conversations professional and compliant.",
     ],
+    receptionistSection: {
+      heading: "Your AI receptionist for dental offices",
+      body:
+        "An AI receptionist answers every patient call in two rings, books and reschedules in your practice management calendar, runs recall and reminder calls, and passes clinical questions to your team. Front-desk staff stop drowning in the phone and patients get an instant, polite answer at 8am or 11pm.",
+      bullets: [
+        "Books, reschedules, and confirms appointments on the call",
+        "Recall and reminder calls that cut no-shows",
+        "Handles hours, directions, insurance questions, and new-patient intake",
+        "Warm-transfers emergencies to your on-call team with context",
+      ],
+    },
     useCases: [
       {
         emoji: "🗓️",
@@ -709,6 +732,17 @@ export const industries: Industry[] = [
       "Financial services firms, from advisors to lenders to fintechs, win business by responding fast and following up consistently. A delayed callback can lose a loan application or a new advisory client. An AI voice agent ensures every inquiry is captured, qualified, and scheduled.",
       "Fusion Calling lets financial services firms, and the agencies serving them, deploy a branded AI agent that qualifies leads, books appointments, and runs compliant follow-up on applications and renewals.",
     ],
+    receptionistSection: {
+      heading: "Your AI receptionist for financial services",
+      body:
+        "Clients call when markets move, not when your office is open. An AI receptionist answers instantly, qualifies the caller, schedules advisor meetings, and routes sensitive requests to your team with the full transcript attached — professional, compliant-conscious, and available 24/7.",
+      bullets: [
+        "Schedules and confirms advisor appointments",
+        "Qualifies prospects before they reach your calendar",
+        "Answers FAQ-tier questions about services and processes",
+        "Warm-transfers sensitive matters to licensed staff",
+      ],
+    },
     useCases: [
       {
         emoji: "🧑‍💼",
@@ -814,6 +848,17 @@ export const industries: Industry[] = [
       "Online stores generate a constant stream of routine phone calls: order status, returns, exchanges, and delivery questions. These calls arrive after hours and during peaks, when support teams are overwhelmed or offline, and each one is a chance to lose a customer or a sale.",
       "Fusion Calling lets retailers, and the agencies serving them, deploy a branded AI voice agent that answers order questions from live Shopify, WooCommerce, or fulfillment data, processes returns and exchanges, and triggers abandoned-cart and back-in-stock follow-up calls automatically—logging every outcome to the CRM.",
     ],
+    receptionistSection: {
+      heading: "Your AI receptionist for ecommerce and retail",
+      body:
+        "An AI receptionist answers order-status and returns questions with live store data, takes phone orders, and follows up on abandoned carts by voice — giving solo shoppers a human-feeling phone channel without hiring a support team for it.",
+      bullets: [
+        "Answers where-is-my-order, returns, and exchange questions",
+        "Takes phone orders and checks stock answers",
+        "Cart-recovery and back-in-stock calls on autopilot",
+        "Escalates VIP and complex cases to your team with a transcript",
+      ],
+    },
     useCases: [
       {
         emoji: "📦",
@@ -1043,6 +1088,17 @@ export const industries: Industry[] = [
       "Restaurants and hotels lose business every time the phone rings unanswered during a rush, late night, or off-hours. Reservations go to competitors, takeout orders are abandoned, and catering leads go cold.",
       "Fusion Calling gives hospitality businesses, and the agencies serving them, a branded AI voice agent that takes reservations, processes phone orders, handles catering inquiries, and answers guest questions, automatically and around the clock. It books directly into OpenTable, Resy, and Tock, sends orders into Toast, Square, and Clover, and texts confirmations so the host stand never touches the phone.",
     ],
+    receptionistSection: {
+      heading: "Your AI receptionist for restaurants",
+      body:
+        "From the Friday-night rush to a quiet Tuesday at 10pm, an AI receptionist picks up on the first ring, takes phone orders, books reservations, and answers hours, menu, and directions questions — so the host stand never has to choose between a guest in front of them and a caller on hold.",
+      bullets: [
+        "Takes phone orders and routes them to the kitchen or POS",
+        "Books reservations and confirms or reschedules on the call",
+        "Answers menu, hours, parking, and directions questions",
+        "Handles waitlists and sends SMS confirmations",
+      ],
+    },
     useCases: [
       {
         emoji: "📅",

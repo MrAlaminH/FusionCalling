@@ -481,6 +481,17 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
               </Link>
             </div>
 
+            <p className="text-center text-sm text-gray-400">
+              Switching from {competitorName}? See the{" "}
+              <Link
+                href="/whitelabel/reseller-program"
+                className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors"
+              >
+                AI voice agent reseller program
+              </Link>{" "}
+              — wholesale from $99/mo, your brand, your pricing.
+            </p>
+
             {/* Related Comparisons */}
             <div>
               <h2 className="text-2xl font-bold text-white mb-6">

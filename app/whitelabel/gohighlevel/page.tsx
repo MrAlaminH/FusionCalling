@@ -55,6 +55,11 @@ const ghlfaqs = [
     answer:
       "Plans start at $99/month for 6 sub-accounts. You set your own client pricing and keep 100% of what you charge. Minute rebilling lets you control your margin on every client.",
   },
+  {
+    question: "Does this replace GoHighLevel's Missed Call Text Back?",
+    answer:
+      "No — it makes it rarely needed. The white-label AI voice agent answers calls in two rings, 24/7, so there is far less to text back about. When a call is genuinely missed, GoHighLevel's native Missed Call Text Back still fires in your client's brand, and the AI agent can also place a call-back that qualifies and books the lead. You can resell the whole flow inside each client sub-account.",
+  },
 ];
 
 const ghlschema = {
@@ -266,6 +271,57 @@ export default function GHLWhiteLabelPage() {
                 {
                   t: "Centralized multi-tenant dashboard",
                   d: "Manage every client's agents, minutes, and billing from one partner dashboard.",
+                },
+              ].map((f) => (
+                <div
+                  key={f.t}
+                  className="glass-light rounded-2xl p-6 border border-brand/20 hover:border-brand/40 transition-premium"
+                >
+                  <h3 className="text-lg font-bold text-brand-light mb-3">
+                    {f.t}
+                  </h3>
+                  <p className="text-sm text-gray-400 leading-relaxed">{f.d}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="ghl-missed-call-text-back"
+          className="w-full bg-black section-spacing"
+        >
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
+                Missed-Call Text Back,{" "}
+                <span className="bg-gradient-to-r from-brand to-brand-strong text-transparent bg-clip-text">
+                  White-Labeled
+                </span>
+              </h2>
+              <p className="text-gray-400 text-base sm:text-lg max-w-3xl mx-auto">
+                GoHighLevel&apos;s native Missed Call Text Back sends an
+                automatic SMS when a call goes unanswered. Pair it with Fusion
+                Calling&apos;s white-label AI voice agent and the missed call
+                mostly disappears: the AI answers in two rings, 24/7, takes the
+                message or books the appointment, and the text-back flow remains
+                as the safety net — all under your agency&apos;s brand inside
+                client sub-accounts.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  t: "AI answers before it becomes missed",
+                  d: "The white-label voice agent picks up in two rings around the clock, so most callers never reach voicemail — and never need the text-back in the first place.",
+                },
+                {
+                  t: "Text back as the safety net",
+                  d: "Keep GoHighLevel's Missed Call Text Back running for the edge cases. Your client's caller gets the SMS in your client's brand, with the conversation logged to the sub-account.",
+                },
+                {
+                  t: "Call-backs that book, not just notify",
+                  d: "The AI agent can call missed callers back, qualify them, and book straight into the calendar — turning a dead lead into a booked appointment.",
                 },
               ].map((f) => (
                 <div

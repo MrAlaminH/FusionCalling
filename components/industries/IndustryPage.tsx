@@ -263,6 +263,27 @@ export default function IndustryPage({ industry }: { industry: Industry }) {
               </div>
             </div>
 
+            {industry.receptionistSection && (
+              <section>
+                <div>
+                  <h2 className="text-3xl font-bold text-white mb-6">
+                    {industry.receptionistSection.heading}
+                  </h2>
+                  <p className="text-gray-400 leading-relaxed mb-6">
+                    {industry.receptionistSection.body}
+                  </p>
+                  <ul className="space-y-3 text-gray-300">
+                    {industry.receptionistSection.bullets.map((b) => (
+                      <li key={b} className="flex items-start gap-3">
+                        <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </section>
+            )}
+
             {/* Agency angle */}
             <div className="glass rounded-2xl p-8 border border-brand/30">
               <div className="bg-gradient-to-r from-brand/10 to-brand-strong/5 rounded-xl p-6 border border-brand/30">

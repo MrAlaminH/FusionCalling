@@ -89,10 +89,10 @@ export default function VoiceAISecurityComplianceBlogPost() {
                 mainEntity: [
                   {
                     "@type": "Question",
-                    name: "How is call audio typically encrypted at rest and in transit for voice AI platforms?",
+                    name: "How is call audio encrypted at rest and in transit for voice AI platforms?",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "In transit, call audio is normally protected with TLS for signaling and SRTP for the media stream. At rest, recordings and transcripts are normally encrypted with AES-256. When you evaluate a vendor, ask which of these they use and where keys are stored.",
+                      text: "In transit, reputable voice AI platforms encrypt call audio with TLS for signaling and SRTP for media, so streams cannot be read in motion. At rest, recordings and transcripts are typically protected with AES-256 encryption, scoped access controls, and retention policies you configure. Exact coverage varies by provider and telephony carrier — review each vendor's security documentation and confirm certifications like SOC 2 before committing.",
                     },
                   },
                   {

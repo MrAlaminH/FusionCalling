@@ -23,10 +23,13 @@ export function generateMetadata({
 
   const slug = slugifyTerm(term.term);
   // No hardcoded "| Fusion Calling" — the root layout title template appends it.
-  const title = `${term.term} | AI Glossary`;
+  const title = `What Is ${term.term}? How It Works in Voice AI`;
   // Word-boundary-truncated so we never ship a meta description that ends
   // mid-word (e.g. "...real-time transcri").
-  const description = truncateAtWord(term.definition, 155);
+  const description = truncateAtWord(
+    `${truncateAtWord(term.definition, 115)} Here's why it matters for AI phone agents.`,
+    160
+  );
 
   return {
     title,

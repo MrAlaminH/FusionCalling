@@ -66,6 +66,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     whyItMatters:
       "Voice agents let businesses answer every call instantly and operate 24/7, which is the core value agencies resell through a white-label platform.",
     related: ["Conversational AI", "AI Receptionist", "Large Language Model"],
+    platform: { label: "See how AI voice agents work in practice", href: "/ai-phone-call-automation" },
   },
   {
     term: "AI Receptionist",
@@ -276,6 +277,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     whyItMatters:
       "ElevenLabs voices are a popular choice for natural-sounding agents, and Fusion Calling supports it as one of its core providers.",
     related: ["Text-to-Speech", "Voice Cloning", "Synthetic Voice"],
+    platform: { label: "See the ElevenLabs white-label program", href: "/whitelabel/elevenlabs" },
   },
 
   // ---------- Telephony ----------
@@ -590,6 +592,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     whyItMatters:
       "White-labeling is the foundation of a voice AI agency, letting you build a branded product without building the technology yourself.",
     related: ["Reseller", "SaaS", "Bring Your Own Key"],
+    platform: { label: "See Fusion Calling's white-label program", href: "/whitelabel" },
   },
   {
     term: "Reseller",
@@ -599,6 +602,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     whyItMatters:
       "Reselling is the business model behind white-label voice AI, and healthy margins can make it a lucrative recurring revenue stream.",
     related: ["White-Label", "Recurring Revenue", "SaaS"],
+    platform: { label: "See the Fusion Calling AI voice agent reseller program", href: "/whitelabel/reseller-program" },
   },
   {
     term: "Bring Your Own Key",
@@ -698,6 +702,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     whyItMatters:
       "Vapi is a leading underlying engine; supporting it gives agencies flexibility and access to a mature provider.",
     related: ["Retell AI", "ElevenLabs", "White-Label"],
+    platform: { label: "See the Vapi white-label program", href: "/whitelabel/vapi" },
   },
   {
     term: "Retell AI",
@@ -707,6 +712,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     whyItMatters:
       "Multi-provider support, including Retell, lets agencies match each client to the best engine.",
     related: ["Vapi", "ElevenLabs", "White-Label"],
+    platform: { label: "See the Retell AI white-label program", href: "/whitelabel/retell" },
   },
   {
     term: "GoHighLevel",
@@ -716,6 +722,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     whyItMatters:
       "GoHighLevel integration is a major selling point for the large base of agencies already standardized on GHL.",
     related: ["CRM Integration", "API", "Webhook"],
+    platform: { label: "See the GoHighLevel voice AI integration", href: "/whitelabel/gohighlevel" },
   },
   {
     term: "Knowledge Base",
