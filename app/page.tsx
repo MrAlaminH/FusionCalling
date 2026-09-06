@@ -25,13 +25,13 @@ const FAQSection = dynamic(() => import("@/components/FAQs"));
 const Calendar = dynamic(() => import("@/components/calendar"), { ssr: false });
 
 export const metadata: Metadata = {
-  title: "AI Phone Call Automation Software — 24/7 AI Receptionist From $149/mo",
+  title: "AI Phone Call Automation — 24/7 AI Receptionist",
   description:
-    "Get AI phone call automation for your business: Fusion Calling AI voice agents answer & place calls 24/7, book appointments, and qualify leads. Live demo, 500–2,100 min plans from $149/mo.",
+    "Fusion Calling AI voice agents answer & place calls 24/7, book appointments, and qualify leads. Live demo, plans from $149/mo.",
   ...buildOpenGraph({
-    title: "AI Phone Call Automation & AI Receptionist | Fusion Calling",
+    title: "AI Phone Call Automation — 24/7 AI Receptionist",
     description:
-      "Automate inbound & outbound calls with human-like AI voice agents. Book appointments, qualify leads, and scale your phone operations 24/7. Plans from $149/mo.",
+      "Fusion Calling AI voice agents answer & place calls 24/7, book appointments, and qualify leads. Live demo, plans from $149/mo.",
     path: "/",
   }),
 };

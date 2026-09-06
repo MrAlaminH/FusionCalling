@@ -39,13 +39,13 @@ const PROVIDER_LINKS = [
 ];
 
 export const metadata: Metadata = {
-  title: "White-Label AI Voice Agents From $99/mo (Vapi, Retell, ElevenLabs)",
+  title: "White-Label AI Voice Agents From $99/mo",
   description:
-    "White-label AI voice agent platform for agencies & resellers: resell AI voice agents as software under your brand. 6 sub-accounts, 24-hour launch, Stripe rebilling. Keep 100% of revenue.",
+    "White-label AI voice platform for agencies: resell under your brand. 6 sub-accounts, 24-hour launch, Stripe rebilling.",
   ...buildOpenGraph({
-    title: "White-Label AI Voice Agents From $99/mo (Vapi, Retell, ElevenLabs)",
+    title: "White-Label AI Voice Agents From $99/mo",
     description:
-      "Launch your white-label voice AI agency in 24 hours. Import Vapi, Retell & ElevenLabs agents into one platform, brand them as yours, set your pricing, keep 100% of revenue.",
+      "White-label AI voice platform for agencies: resell under your brand. 6 sub-accounts, 24-hour launch, Stripe rebilling.",
     path: "/whitelabel",
   }),
 };

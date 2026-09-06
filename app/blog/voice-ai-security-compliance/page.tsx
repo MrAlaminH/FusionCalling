@@ -397,7 +397,7 @@ export default function VoiceAISecurityComplianceBlogPost() {
               <p className="text-gray-300 leading-relaxed mb-4">
                 Under the hood teams tune voice activity detection (VAD):
                 server-side VAD for accuracy, client-side VAD for speed, or
-                hybrid for both. Well-tuned setups yield in 80–150ms without
+                hybrid for both. Well-tuned setups respond in 80–150ms without
                 cutting off breaths or background noise. Ask your vendor which
                 VAD they use and what endpointer delay they target for
                 multi-turn phone conversations with natural turn-taking.

@@ -1391,7 +1391,7 @@ export const comparisons: Comparison[] = [
     heroImage: "/blog/blog3.webp",
     metaTitle: "Best Vapi Alternatives for White-Label Voice AI Agencies (2026)",
     metaDescription:
-      "Vapi alternative guide (2026): true Vapi cost $0.23-$0.33/min all-in vs $0.05 platform fee. Compare 7 Vapi competitors neutrally — when to stay on Vapi vs resell white-labeled via Fusion Calling from $99/mo.",
+      "Vapi alternative guide (2026): true Vapi cost vs 7 competitors — when to stay on Vapi vs resell white-labeled from $99/mo.",
     keywords: [
       "vapi alternative",
       "vapi alternatives",
