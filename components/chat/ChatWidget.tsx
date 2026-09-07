@@ -146,23 +146,31 @@ const ChatWidget = () => {
     if (e.key === "Enter") sendMessage();
   };
 
+  // Feature flag: AI chat hidden from UI (owner decision — human-first via
+  // WhatsApp for now). Code stays intact; set to true to restore the AI
+  // bubble alongside WhatsApp. Chat window below is gated on the same flag.
+  const SHOW_AI_CHAT = false;
+
   return (
     <>
-      {/* Floating action stack: WhatsApp (human) above AI chat. Hidden while chat window is open to avoid overlap. */}
+      {/* WhatsApp human-handoff bubble — the only visible bubble while AI chat is hidden.
+          Corner anchor (bottom-6) with safe-area lift on notched devices. */}
       {!open && (
         <>
-          <WhatsAppBubble />
-          <button
-            className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-brand-strong hover:bg-brand shadow-lg flex items-center justify-center transition-transform duration-200 hover:scale-110"
-            onClick={() => setOpen(true)}
-            aria-label="Open chat"
-          >
-            <BotMessageSquare size={32} color="white" />
-          </button>
+          <WhatsAppBubble className="bottom-[max(1.5rem,env(safe-area-inset-bottom))]" />
+          {SHOW_AI_CHAT && (
+            <button
+              className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-brand-strong hover:bg-brand shadow-lg flex items-center justify-center transition-transform duration-200 hover:scale-110"
+              onClick={() => setOpen(true)}
+              aria-label="Open chat"
+            >
+              <BotMessageSquare size={32} color="white" />
+            </button>
+          )}
         </>
       )}
-      {/* Chat Window */}
-      {open && (
+      {/* Chat Window (only reachable while SHOW_AI_CHAT is true) */}
+      {SHOW_AI_CHAT && open && (
         <div className="fixed bottom-6 right-6 z-50 w-96 max-w-full h-[600px] bg-white rounded-2xl shadow-2xl flex flex-col border-2 border-brand-light animate-fade-in">
           {/* Header */}
           <div className="flex items-center justify-between px-5 py-4 bg-gradient-to-r from-brand to-brand-light rounded-t-2xl border-b-2 border-brand-light">
