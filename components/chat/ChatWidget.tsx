@@ -1,6 +1,7 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import { BotMessageSquare } from "lucide-react";
+import WhatsAppBubble from "@/components/WhatsAppBubble";
 
 interface Message {
   sender: "user" | "bot";
@@ -147,15 +148,18 @@ const ChatWidget = () => {
 
   return (
     <>
-      {/* Floating Chat Button */}
+      {/* Floating action stack: WhatsApp (human) above AI chat. Hidden while chat window is open to avoid overlap. */}
       {!open && (
-        <button
-          className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-brand-strong hover:bg-brand shadow-lg flex items-center justify-center transition-transform duration-200 hover:scale-110"
-          onClick={() => setOpen(true)}
-          aria-label="Open chat"
-        >
-          <BotMessageSquare size={32} color="white" />
-        </button>
+        <>
+          <WhatsAppBubble />
+          <button
+            className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-brand-strong hover:bg-brand shadow-lg flex items-center justify-center transition-transform duration-200 hover:scale-110"
+            onClick={() => setOpen(true)}
+            aria-label="Open chat"
+          >
+            <BotMessageSquare size={32} color="white" />
+          </button>
+        </>
       )}
       {/* Chat Window */}
       {open && (
