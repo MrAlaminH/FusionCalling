@@ -161,7 +161,7 @@ export default function Hero() {
                     {isVideoPlaying ? (
                       <iframe
                         className="w-full h-full rounded-[27px]"
-                        src="https://player.vimeo.com/video/1155684546?autoplay=1"
+                        src="https://player.vimeo.com/video/1225047351?autoplay=1"
                         title="Fusion Calling White-label Demo"
                         allow="autoplay; fullscreen; picture-in-picture"
                         allowFullScreen
@@ -174,7 +174,7 @@ export default function Hero() {
                         onClick={() => setIsVideoPlaying(true)}
                       >
                         <Image
-                          src="/hero-thumbnail.jpg"
+                          src="/new-hero-thumbnail.png"
                           alt="Preview of the Fusion Calling white-label AI voice dashboard"
                           fill
                           priority

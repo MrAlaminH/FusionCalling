@@ -210,11 +210,11 @@ export default function WhiteLabelPage() {
                     description:
                       "See the Fusion Calling white-label AI voice platform in action: branded dashboard, sub-account management, and live AI phone agents under your own domain.",
                     thumbnailUrl:
-                      `${SITE_URL}/hero-thumbnail.jpg`,
+                      `${SITE_URL}/new-hero-thumbnail.png`,
                     uploadDate: "2026-01-15",
                     duration: "PT2M0S",
-                    contentUrl: "https://vimeo.com/1155684546",
-                    embedUrl: "https://player.vimeo.com/video/1155684546",
+                    contentUrl: "https://vimeo.com/1225047351",
+                    embedUrl: "https://player.vimeo.com/video/1225047351",
                     regionsAllowed: ["US", "CA", "GB", "AU"],
                     isFamilyFriendly: true,
                     publisher: {
