@@ -281,7 +281,14 @@ Drop Cowboy is a credible choice for ringless voicemail and SMS broadcasting at 
 ## Voice AI Glossary | Fusion Calling
 URL: https://www.fusioncalling.com/glossary
 
-Complete glossary of 76 voice AI terms for agencies and resellers. Plain-English definitions of ASR, TTS, latency, HIPAA, white-label, Vapi, Retell, GoHighLevel, and more. Organized by category: Core AI & Voice, Speech Technology, Telephony, Conversational Design, Compliance & Security, Business & Operations.
+Complete glossary of 77 voice AI terms for agencies and resellers. Plain-English definitions of ASR, TTS, latency, HIPAA, white-label, Vapi, Retell, GoHighLevel, and more. Organized by category: Core AI & Voice, Speech Technology, Telephony, Conversational Design, Compliance & Security, Business & Operations.
+
+---
+
+## AI Calling | AI Glossary | Fusion Calling
+URL: https://www.fusioncalling.com/glossary/ai-calling
+
+AI calling is the use of artificial intelligence to place and answer phone calls without a human on the line. An AI calling system listens with speech recognition, decides what to say with a language model, and speaks with a synthesized voice, so it can book appointments, qualify leads, and handle routine conversations end to end. AI calling turns the phone channel — the highest-intent channel most businesses miss — into an always-on operation, which is why agencies package it as their flagship white-label offer. Related: AI Voice Agent, Conversational AI, Outbound Calls
 
 ---
 

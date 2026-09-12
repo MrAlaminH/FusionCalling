@@ -59,6 +59,16 @@ export function slugifyTerm(term: string): string {
 export const glossaryTerms: GlossaryTerm[] = [
   // ---------- Core AI & Voice ----------
   {
+    term: "AI Calling",
+    category: "Core AI & Voice",
+    definition:
+      "AI calling is the use of artificial intelligence to place and answer phone calls without a human on the line. An AI calling system listens with speech recognition, decides what to say with a language model, and speaks with a synthesized voice, so it can book appointments, qualify leads, and handle routine conversations end to end.",
+    whyItMatters:
+      "AI calling turns the phone channel — the highest-intent channel most businesses miss — into an always-on operation, which is why agencies package it as their flagship white-label offer.",
+    related: ["AI Voice Agent", "Conversational AI", "Outbound Calls"],
+    platform: { label: "How AI phone call automation works", href: "/ai-phone-call-automation" },
+  },
+  {
     term: "AI Voice Agent",
     category: "Core AI & Voice",
     definition:

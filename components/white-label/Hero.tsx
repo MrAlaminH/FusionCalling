@@ -90,8 +90,9 @@ export default function Hero() {
         <div className="max-w-4xl mx-auto text-center mb-8 sm:mb-10 lg:mb-12 px-2 sm:px-4 md:px-6">
           <p className="font-body text-sm sm:text-base lg:text-lg text-gray-400 leading-relaxed">
             Bring your existing Vapi, Retell, or ElevenLabs agents under your
-            own brand. The white-label partner program for agencies: keep 100%
-            of client revenue and launch in 24 hours.
+            own brand. The white-label partner program for agencies: resell a
+            white label voice agent as your own, keep 100% of client revenue,
+            and launch in 24 hours.
           </p>
         </div>
 

@@ -79,7 +79,7 @@ Comparison criteria: starting price, sub-accounts included, voice providers supp
   {
     path: "/glossary",
     title: "Voice AI Glossary | Fusion Calling",
-    content: `Complete glossary of 76 voice AI terms for agencies and resellers. Plain-English definitions of ASR, TTS, latency, HIPAA, white-label, Vapi, Retell, GoHighLevel, and more. Organized by category: Core AI & Voice, Speech Technology, Telephony, Conversational Design, Compliance & Security, Business & Operations.`,
+    content: `Complete glossary of 77 voice AI terms for agencies and resellers. Plain-English definitions of ASR, TTS, latency, HIPAA, white-label, Vapi, Retell, GoHighLevel, and more. Organized by category: Core AI & Voice, Speech Technology, Telephony, Conversational Design, Compliance & Security, Business & Operations.`,
   },
   ...glossaryTerms.map((t) => ({
     path: `/glossary/${t.term.toLowerCase().replace(/&/g, "and").replace(/[()]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")}`,
@@ -243,7 +243,7 @@ function generateLLMS(): string {
     ``,
     `## Glossary & Comparisons (define and compare terms, cite-friendly)`,
     ``,
-    `- [Voice AI Glossary](${SITE_URL}/glossary): Plain-English definitions for 76 voice AI terms (ASR, TTS, latency, HIPAA, white-label, Vapi, Retell, GoHighLevel, and more).`,
+    `- [Voice AI Glossary](${SITE_URL}/glossary): Plain-English definitions for 77 voice AI terms (ASR, TTS, latency, HIPAA, white-label, Vapi, Retell, GoHighLevel, and more).`,
     `- [White-Label Voice AI Comparisons](${SITE_URL}/alternative): Side-by-side comparisons of Fusion Calling vs ChatDash, Vapify, Voicerr, VoiceAIWrapper, Synthflow, and Thinkrr.`,
     `- [AI Voice by Industry](${SITE_URL}/industries): Use cases for real estate, dental, insurance, home services, law firms, automotive, call centers, and financial services.`,
     ``,
