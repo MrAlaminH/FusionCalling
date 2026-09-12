@@ -312,7 +312,7 @@ export default function Home() {
             href="/ai-phone-call-automation"
             className="text-brand hover:text-brand-light underline underline-offset-4 hover:underline transition-colors"
           >
-            Learn how AI phone call automation works in the 2026 guide
+            Learn how call automation works in the 2026 guide
           </Link>
           .
         </p>

@@ -316,7 +316,7 @@ export default function AiReceptionistPage() {
                 href="/ai-phone-call-automation"
                 className="text-brand hover:underline"
               >
-                how AI phone call automation works
+                how AI phone automation works
               </Link>
               .
             </p>

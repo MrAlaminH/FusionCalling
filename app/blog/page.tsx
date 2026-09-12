@@ -120,7 +120,7 @@ export default function BlogPage() {
                   href="/ai-phone-call-automation"
                   className="text-orange-400 hover:text-orange-300 transition-colors"
                 >
-                  AI phone call automation guide
+                  Call automation guide
                 </Link>
                 <Link
                   href="/alternative"

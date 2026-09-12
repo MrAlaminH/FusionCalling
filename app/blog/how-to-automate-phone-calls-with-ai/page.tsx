@@ -189,7 +189,7 @@ export default function HowToAutomatePhoneCallsWithAI() {
           <p className="text-brand-light font-semibold mb-8">
             New to the topic? Start with our{" "}
             <Link href="/ai-phone-call-automation" className="underline hover:text-brand transition-colors">
-              guide to AI phone call automation
+              guide to AI call automation
             </Link>
             .
           </p>
