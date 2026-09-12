@@ -1,7 +1,7 @@
 # Fusion Calling - Full Content for AI Crawlers
 # Generated at build time. Contains all indexable page content.
 # Source: https://www.fusioncalling.com
-# Last updated: 2026-09-08
+# Last updated: 2026-09-12
 
 ## AI Phone Call Automation & AI Receptionist | Fusion Calling
 URL: https://www.fusioncalling.com/

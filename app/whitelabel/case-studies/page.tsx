@@ -46,7 +46,7 @@ export default function WhitelabelCaseStudiesHub() {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: SITE_URL,
+            item: `${SITE_URL}/`,
           },
           {
             "@type": "ListItem",

@@ -97,6 +97,16 @@ const nextConfig = {
         destination: "/alternative/:slug",
         permanent: true,
       },
+      // Ghost slug: referenced in code (comparison→glossary map) but no
+      // comparison entry exists, so /alternative/drop-cowboy 404s — and
+      // /compare/drop-cowboy 301s straight into that 404 (redirect chain to
+      // nowhere). Collapse it to the hub so neither URL can surface in
+      // Coverage as 404 or "Page with redirect".
+      {
+        source: "/alternative/drop-cowboy",
+        destination: "/alternative",
+        permanent: true,
+      },
       // Host canonicalization: serve one canonical host (www) so we never
       // split ranking signals across apex/www if platform config drifts.
       {

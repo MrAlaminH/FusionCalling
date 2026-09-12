@@ -161,7 +161,7 @@ export default function WhitelabelComparePage() {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: SITE_URL,
+            item: `${SITE_URL}/`,
           },
           {
             "@type": "ListItem",
@@ -206,13 +206,6 @@ export default function WhitelabelComparePage() {
             },
           },
         ],
-      },
-      {
-        "@type": "Table",
-        "@id": `${SITE_URL}/whitelabel/compare#table`,
-        name: "White-Label AI Voice Platform Comparison",
-        description:
-          "Side-by-side comparison of top white-label AI voice platforms including Fusion Calling, Vapify, Voicerr, VoiceAIWrapper, Synthflow, Thinkrr, Bland AI, and Air AI.",
       },
     ],
   };

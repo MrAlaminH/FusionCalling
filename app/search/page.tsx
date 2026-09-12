@@ -3,13 +3,15 @@ import type { Metadata } from "next";
 import { glossaryTerms, slugifyTerm } from "@/lib/glossary";
 import { industries } from "@/lib/industries";
 import { comparisons } from "@/lib/comparisons";
-import { SITE_URL } from "@/lib/site-url";
 
 export const metadata: Metadata = {
   title: "Search | Fusion Calling",
   description:
     "Search Fusion Calling's voice AI glossary, industry guides, platform comparisons, and documentation.",
-  alternates: { canonical: "/search" },
+  // No canonical on purpose: a noindex page declaring a canonical sends
+  // contradictory signals (index directive vs. canonical target). noindex +
+  // follow alone is the correct combination here, and /search is excluded
+  // from the XML sitemap for the same reason.
   robots: { index: false, follow: true },
 };
 
@@ -127,37 +129,10 @@ export default function SearchPage({
   const results = search(rawQuery);
   const hasQuery = rawQuery.trim().length >= 2;
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
-          { "@type": "ListItem", position: 2, name: "Search", item: `${SITE_URL}/search` },
-        ],
-      },
-      {
-        "@type": "WebPage",
-        "@id": `${SITE_URL}/search#webpage`,
-        url: `${SITE_URL}/search`,
-        name: "Search | Fusion Calling",
-        description:
-          "Search Fusion Calling's voice AI glossary, industry guides, platform comparisons, and documentation.",
-        inLanguage: "en-US",
-        isPartOf: { "@id": `${SITE_URL}/#website` },
-      },
-    ],
-  };
+  // Note: no JSON-LD is emitted on this page by design (see above).
 
   return (
     <>
-      <script
-        id="search-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
       <div className="min-h-screen bg-gradient-to-b from-black via-black to-gray-900 text-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 bg-gradient-to-r from-white via-orange-200 to-orange-400 bg-clip-text text-transparent">

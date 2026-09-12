@@ -7,7 +7,12 @@ export default function robots(): MetadataRoute.Robots {
   // Googlebot ignores it if a scheme like https:// is included.
   const host = baseUrl.replace(/^https?:\/\//, "");
 
-  const disallow = ["/api/", "/admin/"];
+  // Query-string search URLs (/search?q=...) are infinite combinations of
+  // the same noindex page. Blocking the query variants preserves crawl
+  // budget for real content (the "Discovered - currently not indexed" queue).
+  // `/search?*` only matches URLs containing `?`, so the `/search` page
+  // itself stays crawlable (most-specific-match wins over `Allow: /`).
+  const disallow = ["/api/", "/admin/", "/search?*"];
 
   return {
     rules: [

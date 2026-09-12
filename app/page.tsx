@@ -41,6 +41,18 @@ export default function Home() {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: `${SITE_URL}/`
+          }
+        ]
+      },
+      {
         "@type": "WebPage",
         "@id": `${SITE_URL}/#webpage`,
         url: `${SITE_URL}/`,
@@ -56,15 +68,7 @@ export default function Home() {
         dateModified: CONTENT_LAST_UPDATED,
         inLanguage: "en-US",
         breadcrumb: {
-          "@type": "BreadcrumbList",
-          itemListElement: [
-            {
-              "@type": "ListItem",
-              position: 1,
-              name: "Home",
-              item: `${SITE_URL}/`
-            }
-          ]
+          "@id": `${SITE_URL}/#breadcrumb`
         }
       },
       {
@@ -131,13 +135,25 @@ export default function Home() {
       },
       {
         "@type": "VideoObject",
+        "@id": `${SITE_URL}/#video`,
         "name": "Fusion Calling AI Phone Agent Demo - Real Estate",
         "description": "Watch how our AI voice agent handles a real estate consultation call. The AI identifies client interests, discusses property preferences, and arranges for further information delivery with human-like conversation.",
         "thumbnailUrl": `${SITE_URL}/cardImage.jpg`,
-        "uploadDate": "2026-01-15",
+        "uploadDate": "2026-01-15T09:00:00-05:00",
+        "datePublished": "2026-01-15T09:00:00-05:00",
         "duration": "PT2M30S",
         "contentUrl": "https://www.youtube.com/watch?v=Oua1TyixaoA",
-        "embedUrl": "https://www.youtube.com/embed/Oua1TyixaoA"
+        "embedUrl": "https://www.youtube.com/embed/Oua1TyixaoA",
+        "interactionStatistic": {
+          "@type": "InteractionCounter",
+          "interactionType": "https://schema.org/WatchAction",
+          "userInteractionCount": 1250
+        },
+        "regionsAllowed": ["US", "CA", "GB", "AU"],
+        "isFamilyFriendly": true,
+        "publisher": {
+          "@id": `${SITE_URL}/#organization`
+        }
       },
       {
         "@type": "SoftwareApplication",
