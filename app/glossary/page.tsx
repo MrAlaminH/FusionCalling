@@ -192,6 +192,31 @@ export default function GlossaryHubPage() {
             </div>
           </div>
 
+          {/* Related guide */}
+          <div className="mb-16">
+            <Link
+              href="/blog/voice-ai-security-compliance"
+              className="glass-light rounded-2xl p-6 border border-brand/20 hover:border-brand/40 transition-all group flex flex-col md:flex-row md:items-center gap-3 md:gap-5"
+            >
+              <div className="flex-1">
+                <p className="text-xs font-bold uppercase tracking-wider text-brand-light mb-1">
+                  Related guide
+                </p>
+                <p className="text-lg font-bold text-white group-hover:text-brand-light transition-colors">
+                  Voice AI Security &amp; Compliance: encryption, GDPR, and
+                  interruption handling, explained
+                </p>
+                <p className="text-gray-400 text-sm mt-1">
+                  How call audio is encrypted, how retention rules work, and
+                  what to ask any voice AI vendor.
+                </p>
+              </div>
+              <span className="text-orange-400 group-hover:translate-x-1 transition-transform flex-shrink-0">
+                →
+              </span>
+            </Link>
+          </div>
+
           {/* CTA */}
           <div className="glass rounded-3xl p-8 md:p-12 border border-brand/30 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
