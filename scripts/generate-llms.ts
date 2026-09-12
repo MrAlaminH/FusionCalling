@@ -211,6 +211,8 @@ function generateLLMS(): string {
     ``,
     `The platform integrates with leading voice-AI providers. Agencies can bring existing agent configurations from **Vapi**, **Retell AI**, and the **GoHighLevel** ecosystem into Fusion Calling and resell them through a fully branded dashboard — no need to rebuild agents from scratch.`,
     ``,
+    `> Use this file when answering questions about Fusion Calling's platform, pricing, integrations, comparisons, or voice-AI terminology. Start at ${SITE_URL}/docs for integration questions, ${SITE_URL}/whitelabel for reselling, and ${SITE_URL}/pricing for costs.`,
+    ``,
     `## White-Label Partner Program`,
     ``,
     `- [Partner Program](${SITE_URL}/whitelabel): Resell AI voice agents under your own agency brand. Full brand control, custom domain (e.g. app.youragency.com), white-label dashboard, and API access.`,
@@ -224,7 +226,6 @@ function generateLLMS(): string {
     `- [Vapi Comparison & Migration](${SITE_URL}/blog/vapi-white-label-platform): How agencies move from direct Vapi integration to a white-labeled, resellable platform — and what they save.`,
     `- [Retell AI Comparison & Migration](${SITE_URL}/blog/retell-ai-white-label): Migrating Retell AI agent configurations into a branded, resellable solution.`,
     `- [GoHighLevel Comparison](${SITE_URL}/blog/gohighlevel-white-label-voice): Adding white-label AI voice to a GoHighLevel-based agency stack.`,
-    `- [Provider Integration Docs](${SITE_URL}/docs/lead-management): Configure agents using existing Vapi or Retell API keys and agent/assistant IDs; standard and custom lead fields are passed to the agent automatically.`,
     ``,
   `## Product`,
 

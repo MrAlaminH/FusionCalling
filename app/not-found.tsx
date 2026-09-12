@@ -40,6 +40,24 @@ export default function NotFound() {
             Book a Call
           </a>
         </div>
+
+        {/* Recovery links for visitors and crawlers landing on a dead URL. */}
+        <nav
+          aria-label="Site recovery"
+          className="mt-6 flex items-center justify-center gap-4 text-xs text-gray-500"
+        >
+          <Link href="/sitemap.xml" className="transition-colors hover:text-gray-300">
+            Sitemap
+          </Link>
+          <span aria-hidden>·</span>
+          <Link href="/docs" className="transition-colors hover:text-gray-300">
+            Docs
+          </Link>
+          <span aria-hidden>·</span>
+          <Link href="/llms.txt" className="transition-colors hover:text-gray-300">
+            llms.txt
+          </Link>
+        </nav>
       </div>
     </main>
   );
