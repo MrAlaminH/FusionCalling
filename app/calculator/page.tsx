@@ -4,7 +4,7 @@ import { buildOpenGraph, GEO_SOURCES } from "@/lib/seo";
 import Footer from "@/components/Footer";
 import { SITE_URL } from "@/lib/site-url";
 
-const title = "AI Voice Agent Calculator: Throughput & Capacity";
+const title = "AI Voice Agent Capacity Calculator";
 const description =
   "Calculate how many calls your AI voice agents or AI receptionist can handle. Plan concurrency, forecast call volume, and size infrastructure for Vapi and Retell AI platforms.";
 

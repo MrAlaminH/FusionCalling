@@ -7,7 +7,7 @@ import Sources from "@/components/sources";
 import { buildOpenGraph } from "@/lib/seo";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 
-const title = "What Is AI Phone Call Automation? How It Works (2026 Guide)";
+const title = "AI Phone Call Automation: 2026 Guide";
 const description =
   "Learn how AI phone call automation works: ASR to LLM to TTS, IVR vs AI handling, telephony automation, and conversational AI for phone calls — plain-English 2026 guide with FAQs.";
 

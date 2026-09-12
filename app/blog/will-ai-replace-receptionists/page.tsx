@@ -10,11 +10,11 @@ import { buildOpenGraph } from "@/lib/seo";
 const teamAuthor = getAuthor("voice-team")!;
 
 export const metadata: Metadata = {
-  title: "Will AI Replace Receptionists? What Changes in 2026",
+  title: "Will AI Replace Receptionists? 2026 Outlook",
   description:
     "Mostly no — AI receptionists handle routine calls while humans keep judgment and relationships. What to automate, what to keep, and what it means for owners and front-desk teams in 2026.",
   ...buildOpenGraph({
-    title: "Will AI Replace Receptionists? What Actually Changes in 2026",
+    title: "Will AI Replace Receptionists? 2026 Outlook",
     description:
       "Mostly no — AI receptionists handle routine calls while humans keep judgment and relationships. What to automate, what to keep, and what it means for owners and front-desk teams in 2026.",
     path: "/blog/will-ai-replace-receptionists",

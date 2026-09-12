@@ -23,7 +23,10 @@ export function generateMetadata({
 
   const slug = slugifyTerm(term.term);
   // No hardcoded "| Fusion Calling" — the root layout title template appends it.
-  const title = `What Is ${term.term}? How It Works in Voice AI`;
+  // Kept short on purpose: the template adds ~18px chars, and SEO crawls
+  // flag titles over ~580px. "What Is X?" matches the query and stays under
+  // the threshold even for long terms like "Automatic Speech Recognition".
+  const title = `What Is ${term.term}?`;
   // Word-boundary-truncated so we never ship a meta description that ends
   // mid-word (e.g. "...real-time transcri").
   const description = truncateAtWord(

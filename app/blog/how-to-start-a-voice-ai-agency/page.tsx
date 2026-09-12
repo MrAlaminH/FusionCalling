@@ -10,11 +10,11 @@ import { buildOpenGraph } from "@/lib/seo";
 const teamAuthor = getAuthor("alamin")!;
 
 export const metadata: Metadata = {
-  title: "How to Start a Voice AI Agency in 2026: A Step-by-Step Guide",
+  title: "Start a Voice AI Agency in 2026: Step-by-Step",
   description:
     "Learn how to start an AI voice agency business with a white-label platform and our AI voice agent reseller program. Keep 100% of client revenue, launch in 7 days, scale with Vapi, Retell and ElevenLabs.",
   ...buildOpenGraph({
-    title: "How to Start a Voice AI Agency in 2026: A Step-by-Step Guide",
+    title: "Start a Voice AI Agency in 2026: Step-by-Step",
     description:
       "Learn how to start a profitable voice AI agency in 2026 by partnering with a white-label platform. Keep 100% of client revenue, launch in 7 days.",
     path: "/blog/how-to-start-a-voice-ai-agency",

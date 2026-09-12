@@ -5,7 +5,7 @@ import { industries } from "@/lib/industries";
 import { comparisons } from "@/lib/comparisons";
 
 export const metadata: Metadata = {
-  title: "Search | Fusion Calling",
+  title: "Search",
   description:
     "Search Fusion Calling's voice AI glossary, industry guides, platform comparisons, and documentation.",
   // No canonical on purpose: a noindex page declaring a canonical sends

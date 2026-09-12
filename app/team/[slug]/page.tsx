@@ -23,7 +23,10 @@ export function generateMetadata({
   const title = `${author.name} | ${author.role}`;
 
   return {
-    title,
+    // Absolute: author.name already contains the brand ("Fusion Calling
+    // Team"), so the root "%s | Fusion Calling" template would duplicate it.
+    // Absolute keeps a single brand mention and stays under ~580px.
+    title: { absolute: title },
     description: author.shortBio,
     alternates: { canonical: `/team/${author.slug}` },
     openGraph: {

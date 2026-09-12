@@ -41,18 +41,6 @@ export default function Home() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "BreadcrumbList",
-        "@id": `${SITE_URL}/#breadcrumb`,
-        itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            name: "Home",
-            item: `${SITE_URL}/`
-          }
-        ]
-      },
-      {
         "@type": "WebPage",
         "@id": `${SITE_URL}/#webpage`,
         url: `${SITE_URL}/`,
@@ -66,10 +54,7 @@ export default function Home() {
           url: `${SITE_URL}/opengraph-image.png`
         },
         dateModified: CONTENT_LAST_UPDATED,
-        inLanguage: "en-US",
-        breadcrumb: {
-          "@id": `${SITE_URL}/#breadcrumb`
-        }
+        inLanguage: "en-US"
       },
       {
         "@type": "Service",

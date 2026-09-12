@@ -10,11 +10,11 @@ import { buildOpenGraph } from "@/lib/seo";
 const teamAuthor = getAuthor("voice-team")!;
 
 export const metadata: Metadata = {
-  title: "How Much Does an AI Receptionist Cost in 2026? (Real Pricing)",
+  title: "AI Receptionist Cost in 2026: Real Pricing",
   description:
     "Real 2026 AI receptionist pricing: per-minute vs per-month models, hidden costs like setup fees and overages, and where Fusion Calling sits from $149/mo.",
   ...buildOpenGraph({
-    title: "How Much Does an AI Receptionist Cost in 2026? (Real Pricing)",
+    title: "AI Receptionist Cost in 2026: Real Pricing",
     description:
       "Real 2026 AI receptionist pricing: per-minute vs per-month models, hidden costs like setup fees and overages, and where Fusion Calling sits from $149/mo.",
     path: "/blog/ai-receptionist-cost",

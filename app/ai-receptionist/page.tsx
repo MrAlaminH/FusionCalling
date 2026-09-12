@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { buildOpenGraph } from "@/lib/seo";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 
-const title = "AI Receptionist for Business Calls | Fusion Calling";
+const title = "AI Receptionist for Business Calls";
 const description =
   "An AI receptionist answers your business calls 24/7: bookings, messages, smart transfers, and SMS follow-ups. See how it works, what it handles, and pricing from $149/mo.";
 

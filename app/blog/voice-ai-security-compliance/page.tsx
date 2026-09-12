@@ -10,11 +10,11 @@ import { buildOpenGraph } from "@/lib/seo";
 const teamAuthor = getTeamAuthor();
 
 export const metadata: Metadata = {
-  title: "Voice AI Security & Compliance: Encryption, GDPR, Interruption Handling",
+  title: "Voice AI Security & Compliance Guide (2026)",
   description:
     "How is call audio encrypted at rest and in transit? How do GDPR retention, outbound dialing rules, and barge-in work? A plain-English guide to evaluating voice AI security.",
   ...buildOpenGraph({
-    title: "Voice AI Security & Compliance: Encryption, GDPR, Interruption Handling",
+    title: "Voice AI Security & Compliance Guide (2026)",
     description:
       "How is call audio encrypted at rest and in transit? How do GDPR retention, outbound dialing rules, and barge-in work? A plain-English guide to evaluating voice AI security with Fusion Calling.",
     path: "/blog/voice-ai-security-compliance",

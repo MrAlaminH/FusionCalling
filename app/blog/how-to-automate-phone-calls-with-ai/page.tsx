@@ -10,11 +10,11 @@ import { buildOpenGraph } from "@/lib/seo";
 const teamAuthor = getTeamAuthor();
 
 export const metadata: Metadata = {
-  title: "How to Automate Phone Calls with AI: Setup to First Live Call",
+  title: "How to Automate Phone Calls with AI",
   description:
     "Learn how to automate phone calls with AI in five simple steps: pick a use case, connect your number, calendar, and CRM, add business knowledge, test calls, then launch with clear handoff rules.",
   ...buildOpenGraph({
-    title: "How to Automate Phone Calls with AI: Setup to First Live Call",
+    title: "How to Automate Phone Calls with AI",
     description:
       "Learn how to automate phone calls with AI in five simple steps: pick a use case, connect your number, calendar, and CRM, add business knowledge, test calls, then launch with clear handoff rules.",
     path: "/blog/how-to-automate-phone-calls-with-ai",

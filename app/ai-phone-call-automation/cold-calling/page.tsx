@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { buildOpenGraph } from "@/lib/seo";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 
-const title = "AI Cold Calling Software | Fusion Calling";
+const title = "AI Cold Calling Software";
 const description =
   "AI cold calling software that dials your lists, holds natural conversations, qualifies prospects, and books meetings — with TCPA-conscious workflows. From $149/mo.";
 

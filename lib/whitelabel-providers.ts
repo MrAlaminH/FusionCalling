@@ -21,7 +21,7 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
     slug: "vapi",
     name: "Vapi",
     badge: "Built for Vapi Partners",
-    title: "Vapi White Label: Resell Vapi Agents Under Your Brand",
+    title: "Vapi White-Label Agents for Agencies",
     description:
       "Resell Vapi AI voice agents under your own brand via Fusion Calling. Import your existing Vapi agent configurations and API keys, set your pricing, and keep 100% of revenue — with full white-label dashboard, client portals, and rebilling.",
     h1Prefix: "White-Label AI Voice Agents for",
@@ -121,7 +121,7 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
     slug: "retell",
     name: "Retell AI",
     badge: "Built for Retell AI Partners",
-    title: "White-Label Retell AI: Resell Retell Agents Under Your Brand",
+    title: "Retell White-Label Agents for Agencies",
     description:
       "Resell Retell AI voice agents under your own brand via Fusion Calling. Bring your existing Retell agent configurations and API keys, set your pricing, and keep 100% of the revenue — with full white-label dashboard, client management, and rebilling.",
     h1Prefix: "White-Label AI Voice Agents for",
@@ -221,7 +221,7 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
     slug: "elevenlabs",
     name: "ElevenLabs",
     badge: "Built for ElevenLabs Partners",
-    title: "ElevenLabs White Label: Resell Agents Under Your Brand",
+    title: "ElevenLabs White-Label Agents for Agencies",
     description:
       "Resell ElevenLabs voice agents under your own brand via Fusion Calling. Bring your existing ElevenLabs agent configurations and API keys, set your pricing, and keep 100% of the revenue — with full white-label dashboard, client portals, and rebilling.",
     h1Prefix: "White-Label AI Voice Agents for",

@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { buildOpenGraph } from "@/lib/seo";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 
-const title = "Automated Appointment Reminder Calls | Fusion Calling";
+const title = "Automated Appointment Reminder Calls";
 const description =
   "Reduce no-shows with automated appointment reminder calls. AI reminder calls confirm bookings, reschedule cancellations on the call, and send SMS confirmations. Plans from $149/mo.";
 

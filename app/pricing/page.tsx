@@ -210,7 +210,7 @@ const pricingJsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: "Pricing | AI Phone Call Automation",
+  title: "Pricing",
   description: "Simple, fair pricing for AI phone call automation. Plans from $149/month with 500-2,100 included minutes. No long-term contracts. 14-day money-back guarantee.",
   alternates: {
     canonical: "/pricing",

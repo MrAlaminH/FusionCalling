@@ -581,7 +581,7 @@ export const comparisons: Comparison[] = [
     datePublished: "2025-01-23T00:00:00Z",
     heroEmoji: "🎚️",
     heroImage: "/alternative/alternative4.webp",
-    metaTitle: "VoiceAIWrapper Alternatives for Voice Agencies (2026 Comparison)",
+    metaTitle: "VoiceAIWrapper Alternatives (2026)",
     metaDescription:
       "Fusion Calling vs VoiceAIWrapper (2026 comparison): white-label voice AI for agencies. Guided 24-hour onboarding, live demo, unlimited sub-accounts at $499/mo.",
     keywords: [
@@ -1850,7 +1850,7 @@ export const comparisons: Comparison[] = [
     datePublished: "2026-09-05T00:00:00Z",
     heroEmoji: "🔊",
     heroImage: "/blog/blog1.webp",
-    metaTitle: "Best ElevenLabs Alternatives for White-Label Voice Agencies (2026)",
+    metaTitle: "ElevenLabs Alternatives for Agencies (2026)",
     metaDescription:
       "Looking for an ElevenLabs alternative? Compare Fusion Calling vs ElevenLabs on white-label reselling, pricing from $99/mo, sub-accounts & 24-hour guided launch (2026).",
     keywords: [
@@ -2163,7 +2163,7 @@ export const comparisons: Comparison[] = [
     datePublished: "2026-09-05T00:00:00Z",
     heroEmoji: "📲",
     heroImage: "/alternative/alternative2.webp",
-    metaTitle: "Best AIOnCalls Alternatives for White-Label Voice Agencies (2026 comparison)",
+    metaTitle: "AIOnCalls Alternatives for Agencies (2026)",
     metaDescription:
       "Looking for an AIOnCalls alternative? Compare Fusion Calling vs AIOnCalls on white-label reselling, pricing from $99/mo, sub-accounts & 24-hour guided launch (2026 comparison).",
     keywords: [
@@ -2606,7 +2606,7 @@ export const comparisons: Comparison[] = [
     datePublished: "2026-09-06T00:00:00Z",
     heroEmoji: "📮",
     heroImage: "/blog/blog6.webp",
-    metaTitle: "Voicestamp Technologies Alternatives for Voice AI Agencies (2026)",
+    metaTitle: "Voicestamp Alternatives for Voice AI (2026)",
     metaDescription:
       "Public details on Voicestamp Technologies are limited. Use this evaluation guide on branding, sub-accounts, and billing — benchmarked against Fusion Calling from $99/mo.",
     keywords: [
