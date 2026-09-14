@@ -469,7 +469,7 @@ export default function WillAIReplaceReceptionistsBlogPost() {
               </p>
               <Link
                 href="/ai-receptionist"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition-all shadow-premium hover:shadow-premium-lg hover:scale-105"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition shadow-premium hover:shadow-premium-lg hover:scale-105"
               >
                 See the AI Receptionist Platform
                 <span className="ml-2">→</span>
@@ -563,7 +563,7 @@ export default function WillAIReplaceReceptionistsBlogPost() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Link
                   href="/blog/ai-receptionist-cost"
-                  className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition-all group"
+                  className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition group"
                 >
                   <h3 className="text-white font-bold mb-2 group-hover:text-brand-light transition-colors">
                     How Much Does an AI Receptionist Cost in 2026?
@@ -575,7 +575,7 @@ export default function WillAIReplaceReceptionistsBlogPost() {
                 </Link>
                 <Link
                   href="/blog/ai-voice-agents-for-small-business"
-                  className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition-all group"
+                  className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition group"
                 >
                   <h3 className="text-white font-bold mb-2 group-hover:text-brand-light transition-colors">
                     AI Voice Agents for Small Business: Use Cases &amp; ROI
@@ -618,7 +618,7 @@ export default function WillAIReplaceReceptionistsBlogPost() {
               </ul>
               <Link
                 href="/ai-receptionist"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition-all shadow-premium hover:shadow-premium-lg hover:scale-105"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition shadow-premium hover:shadow-premium-lg hover:scale-105"
               >
                 Try an AI Receptionist on Your Own Number
                 <span className="ml-2">→</span>

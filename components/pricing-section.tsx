@@ -97,7 +97,7 @@ function PricingCard({
   return (
     <div
       className={cn(
-        "relative flex h-full flex-col rounded-card p-4 md:p-6 transition-all duration-300 hover:-translate-y-1",
+        "relative flex h-full flex-col rounded-card p-4 md:p-6 transition duration-300 hover:-translate-y-1",
         popular
           ? "bg-gradient-to-b from-brand to-gray-900 text-white shadow-premium-lg hover:shadow-brand/40 lg:scale-105 lg:-translate-y-1"
           : "border-2 border-brand/20 bg-gradient-to-b from-[#0f172a] to-[#1e293b] text-white shadow-lg hover:shadow-brand/30"
@@ -118,26 +118,28 @@ function PricingCard({
         <p className="text-xs opacity-80">{plan.tagline}</p>
       </div>
 
-      {/* Price */}
+      {/* Price — keyed by billing cycle so toggling crossfades the numbers */}
       <div className="mb-4 md:mb-5">
-        <div className="flex items-baseline gap-1.5 flex-wrap">
-          {billing === "yearly" && (
-            <span className="text-sm md:text-base font-medium text-gray-500 line-through">
-              ${monthly}
+        <div key={billing} className="animate-fade-in">
+          <div className="flex items-baseline gap-1.5 flex-wrap">
+            {billing === "yearly" && (
+              <span className="text-sm md:text-base font-medium text-gray-500 line-through">
+                ${monthly}
+              </span>
+            )}
+            <span className="text-2xl md:text-3xl font-bold font-display">
+              ${activePrice}
             </span>
+            <span className="text-xs opacity-80">/ per month</span>
+          </div>
+          {billing === "yearly" ? (
+            <p className="text-xs font-semibold text-green-400">
+              Billed annually · Save ${annualSaving}/year
+            </p>
+          ) : (
+            <p className="text-xs opacity-80">Billed monthly</p>
           )}
-          <span className="text-2xl md:text-3xl font-bold font-display">
-            ${activePrice}
-          </span>
-          <span className="text-xs opacity-80">/ per month</span>
         </div>
-        {billing === "yearly" ? (
-          <p className="text-xs font-semibold text-green-400">
-            Billed annually · Save ${annualSaving}/year
-          </p>
-        ) : (
-          <p className="text-xs opacity-80">Billed monthly</p>
-        )}
       </div>
 
       {/* Setup fee — separated from features, clearly a one-time cost */}
@@ -159,7 +161,7 @@ function PricingCard({
       <a
         href={plan.href}
         className={cn(
-          "w-full rounded-pill py-2 md:py-2.5 text-center text-xs md:text-sm font-medium transition-all duration-300 hover:shadow-lg",
+          "w-full rounded-pill py-2 md:py-2.5 text-center text-xs md:text-sm font-medium transition duration-300 hover:shadow-lg",
           popular
             ? "bg-gradient-to-r from-brand to-brand-strong text-black"
             : "bg-white text-[#0f172a] hover:bg-gray-100"

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 interface ToastProps {
   message: string;
@@ -20,14 +20,25 @@ const Toast: React.FC<ToastProps> = ({ message, onClose, type = "error" }) => {
     }
   };
 
+  // Enter transition: mount hidden, flip one frame later so the
+  // opacity/transform transition actually plays.
+  const [entered, setEntered] = useState(false);
+  useEffect(() => {
+    const raf = requestAnimationFrame(() => setEntered(true));
+    return () => cancelAnimationFrame(raf);
+  }, []);
+
   return (
     <div
-      className={`fixed top-20 left-1/2 transform -translate-x-1/2 ${getToastStyles()} text-white px-4 py-3 rounded-lg shadow-xl transition-opacity duration-300 z-50 border-2 flex items-center justify-between min-w-[300px] max-w-md`}
+      role="alert"
+      className={`fixed top-20 left-1/2 -translate-x-1/2 ${getToastStyles()} text-white px-4 py-3 rounded-lg shadow-xl transition-[opacity,transform] duration-200 ease-out z-50 border-2 flex items-center justify-between min-w-[300px] max-w-md ${
+        entered ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2"
+      }`}
     >
       <span className="font-semibold text-sm">{message}</span>
       <button
         onClick={onClose}
-        className="ml-4 text-white hover:text-gray-200 focus:outline-none bg-transparent border border-white/30 rounded-full w-6 h-6 flex items-center justify-center"
+        className="ml-4 text-white hover:text-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 bg-transparent border border-white/30 rounded-full w-6 h-6 flex items-center justify-center"
         aria-label="Close"
       >
         ✖

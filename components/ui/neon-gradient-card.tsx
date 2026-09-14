@@ -105,8 +105,10 @@ const NeonGradientCard: React.FC<NeonGradientCardProps> = ({
           "motion-safe:before:animate-background-position-spin",
           "after:absolute after:-left-[var(--border-size)] after:-top-[var(--border-size)] after:-bottom-[var(--border-size)] after:-right-[var(--border-size)] after:-z-10 after:block",
           "after:rounded-[var(--border-radius)] after:blur-[var(--after-blur)] after:content-['']",
-          "after:bg-[linear-gradient(0deg,var(--neon-first-color),var(--neon-second-color))] after:bg-[length:100%_200%] after:opacity-80",
-          "motion-safe:after:animate-background-position-spin",
+          "after:bg-[linear-gradient(0deg,var(--neon-first-color),var(--neon-second-color))] after:bg-[length:100%_200%] after:bg-[position:center] after:opacity-80",
+          // The 64px-blurred glow layer stays static: animating background-position
+          // on a blurred layer forces a full re-filter every frame. The crisp
+          // border pseudo above keeps the neon motion; the glow just sits behind it.
           "dark:bg-neutral-900"
         )}
       >

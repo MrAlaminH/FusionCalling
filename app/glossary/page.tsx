@@ -106,7 +106,7 @@ export default function GlossaryHubPage() {
                 <a
                   key={letter}
                   href={`#${letter}`}
-                  className="w-10 h-10 flex items-center justify-center rounded-lg bg-brand/10 text-brand-light hover:bg-brand hover:text-white font-bold transition-all text-sm"
+                  className="w-10 h-10 flex items-center justify-center rounded-lg bg-brand/10 text-brand-light hover:bg-brand hover:text-white font-bold transition text-sm"
                 >
                   {letter}
                 </a>
@@ -126,7 +126,7 @@ export default function GlossaryHubPage() {
                     <Link
                       key={t.term}
                       href={`/glossary/${slugifyTerm(t.term)}`}
-                      className="glass-light rounded-xl p-5 border border-brand/20 hover:border-brand/40 transition-all group"
+                      className="glass-light rounded-xl p-5 border border-brand/20 hover:border-brand/40 transition group"
                     >
                       <div className="flex items-start justify-between gap-3">
                         <div>
@@ -196,7 +196,7 @@ export default function GlossaryHubPage() {
           <div className="mb-16">
             <Link
               href="/blog/voice-ai-security-compliance"
-              className="glass-light rounded-2xl p-6 border border-brand/20 hover:border-brand/40 transition-all group flex flex-col md:flex-row md:items-center gap-3 md:gap-5"
+              className="glass-light rounded-2xl p-6 border border-brand/20 hover:border-brand/40 transition group flex flex-col md:flex-row md:items-center gap-3 md:gap-5"
             >
               <div className="flex-1">
                 <p className="text-xs font-bold uppercase tracking-wider text-brand-light mb-1">
@@ -228,7 +228,7 @@ export default function GlossaryHubPage() {
             </p>
             <Link
               href="/whitelabel"
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition-all shadow-premium hover:shadow-premium-lg hover:scale-105"
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition duration-300 shadow-premium hover:shadow-premium-lg hover:scale-105 active:scale-[0.98]"
             >
               Explore the Partner Program
               <span className="ml-2">→</span>

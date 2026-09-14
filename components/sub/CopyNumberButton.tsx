@@ -13,7 +13,7 @@ export default function CopyNumberButton() {
     <button
       onClick={handleCopyNumber}
       className={cn(
-        "transition-all active:scale-95",
+        "transition active:scale-95",
         copySuccess ? "text-green-500" : "text-brand hover:text-brand",
       )}
       aria-label={copySuccess ? "Copied phone number" : "Copy phone number"}

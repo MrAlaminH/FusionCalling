@@ -127,7 +127,7 @@ export default function TryDemo() {
           {visibleFeatures.map((feature, index) => (
             <div key={index} className="relative transition-transform duration-300 hover:scale-[1.05]">
               <div
-                className="group relative overflow-hidden rounded-2xl transition-all duration-500 
+                className="group relative overflow-hidden rounded-2xl transition duration-300 
                   hover:shadow-lg hover:shadow-brand-strong hover:-translate-y-1 min-h-[200px]"
               >
                 <div
@@ -147,7 +147,7 @@ export default function TryDemo() {
                       <Image
                         src={feature.image}
                         alt={feature.alt}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
                         height={300}
                         width={500}
                         loading="lazy"
@@ -157,7 +157,7 @@ export default function TryDemo() {
                         size="icon"
                         className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-16 w-16 rounded-full 
                           bg-black/30 text-white backdrop-blur-sm
-                          shadow-lg transition-all duration-300 
+                          shadow-lg transition duration-300 
                           hover:scale-110 hover:bg-black/50
                           active:scale-95 
                           group-hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]"

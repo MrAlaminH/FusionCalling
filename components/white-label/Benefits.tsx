@@ -113,7 +113,7 @@ export default function Benefits() {
                 className="relative group transition-transform duration-300 hover:-translate-y-2 hover:scale-[1.02]"
               >
                 {/* Glow effect on hover */}
-                <div className="absolute -inset-3 bg-gradient-to-br from-brand/20 via-transparent to-transparent rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+                <div className="absolute -inset-3 bg-gradient-to-br from-brand/20 via-transparent to-transparent rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
 
                 <Card className="glass-light h-full transition-premium border-gray-800/50 hover:border-brand/40">
                   <CardContent className="p-5 md:p-6 space-y-4 md:space-y-5 flex flex-col h-full">
@@ -132,8 +132,8 @@ export default function Benefits() {
                       </p>
                     </div>
 
-                    {/* Subtle bottom accent */}
-                    <div className="w-12 h-1 rounded-full bg-gradient-to-r from-brand/50 to-brand-strong/50 group-hover:w-full transition-all duration-500 ease-out" />
+                    {/* Subtle bottom accent — grows via transform, not width */}
+                    <div className="w-full h-1 rounded-full bg-gradient-to-r from-brand/50 to-brand-strong/50 origin-left scale-x-[0.09] group-hover:scale-x-100 transition-transform duration-300 ease-out" />
                   </CardContent>
                 </Card>
               </Reveal>

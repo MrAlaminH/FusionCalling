@@ -27,7 +27,7 @@ export default function EndlessUseCases() {
           >
             {/* Animated Background Indicator - CSS transform */}
             <div
-              className="absolute top-0 bottom-0 bg-brand/20 rounded-lg transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]"
+              className="absolute top-0 bottom-0 bg-brand/20 rounded-lg transition-transform duration-300 ease-[var(--ease-drawer)]"
               style={{
                 width: "50%",
                 transform:
@@ -43,7 +43,7 @@ export default function EndlessUseCases() {
               id="usecase-tab-outbound"
               onClick={() => setActiveTab("outbound")}
               className={cn(
-                "relative flex-1 text-sm font-medium px-4 py-3 rounded-lg z-10 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]",
+                "relative flex-1 text-sm font-medium px-4 py-3 rounded-lg z-10 transition duration-200 hover:scale-[1.02] active:scale-[0.98]",
                 activeTab === "outbound"
                   ? "text-brand font-bold"
                   : "text-gray-300 hover:text-gray-100"
@@ -60,7 +60,7 @@ export default function EndlessUseCases() {
               id="usecase-tab-inbound"
               onClick={() => setActiveTab("inbound")}
               className={cn(
-                "relative flex-1 text-sm font-medium px-4 py-3 rounded-lg z-10 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]",
+                "relative flex-1 text-sm font-medium px-4 py-3 rounded-lg z-10 transition duration-200 hover:scale-[1.02] active:scale-[0.98]",
                 activeTab === "inbound"
                   ? "text-brand font-bold"
                   : "text-gray-300 hover:text-gray-100"
@@ -74,7 +74,7 @@ export default function EndlessUseCases() {
           </div>
         </Card>
 
-        {/* Content - CSS fade transition keyed by tab */}
+        {/* Content - CSS fade keyed by tab (remount replays the animation) */}
         <div
           key={activeTab}
           id={
@@ -85,7 +85,6 @@ export default function EndlessUseCases() {
           role="tabpanel"
           aria-labelledby={`usecase-tab-${activeTab}`}
           className="animate-fade-in"
-          style={{ animationDuration: "300ms" }}
         >
           {activeTab === "outbound" ? <OutboundCalls /> : <InboundCalls />}
         </div>

@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Sparkles } from "lucide-react";
 import { NeonGradientCard } from "@/components/ui/neon-gradient-card";
 import Image from "next/image";
-import { BorderBeam } from "@/components/ui/border-beam";
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import { cn } from "@/lib/utils";
 import HeroForm from "@/components/sub/HeroForm";
@@ -82,7 +81,7 @@ export default function Component() {
         <div className="flex justify-center mb-8 sm:mb-12 lg:mb-16 xl:mb-20">
           <Link
             href="#show-case"
-            className="inline-flex items-center rounded-md bg-white px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm md:text-base font-medium text-black transition-all hover:bg-gray-200 hover:scale-105"
+            className="inline-flex items-center rounded-md bg-white px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm md:text-base font-medium text-black transition hover:bg-gray-200 hover:scale-105 active:scale-[0.98]"
           >
             Start creating with us
             <span className="ml-1 sm:ml-1.5 md:ml-2">→</span>
@@ -166,13 +165,6 @@ export default function Component() {
 
                 {/* Right Column - Form */}
                 <div className="bg-zinc-900 z-50 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 border border-green-500/20 relative mx-[-12px] sm:mx-0">
-                  <BorderBeam
-                    className="opacity-40"
-                    colorFrom="rgb(249 115 22)"
-                    colorTo="rgb(34 197 94)"
-                    duration={20}
-                    size={200}
-                  />
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-12 h-12 rounded-full flex items-center justify-center">
                       <Image

@@ -70,7 +70,7 @@ export default function HowItWorks() {
             >
               <Reveal animation="animate-fade-in-up" delay={index * 0.15}>
                 <div
-                  className={`bg-black border-brand/20 rounded-lg p-6 h-full  border-2 transition-all duration-300 hover:shadow-lg hover:shadow-brand-strong hover:-translate-y-1 min-h-[200px] ${
+                  className={`bg-black border-brand/20 rounded-lg p-6 h-full  border-2 transition duration-300 hover:shadow-lg hover:shadow-brand-strong hover:-translate-y-1 min-h-[200px] ${
                     hoveredStep === index
                       ? " hover:shadow-lg hover:shadow-brand-strong hover:-translate-y-1 min-h-[200px]"
                       : "border-brand/20"
@@ -97,7 +97,7 @@ export default function HowItWorks() {
                     {/* Horizontal arrow for desktop */}
                     <div className="hidden lg:block absolute top-1/2 left-full w-6 -translate-y-1/2 text-brand-strong">
                       <div
-                        className={`flex items-center transition-all duration-300 ${
+                        className={`flex items-center transition duration-300 ${
                           hoveredStep === index
                             ? "translate-x-0 opacity-100"
                             : "-translate-x-1 opacity-50"
@@ -111,7 +111,7 @@ export default function HowItWorks() {
                     {/* Vertical arrow for mobile/tablet */}
                     <div className="lg:hidden absolute -bottom-6 left-1/2 -translate-x-1/2 text-brand-strong">
                       <div
-                        className={`flex flex-col items-center transition-all duration-300 ${
+                        className={`flex flex-col items-center transition duration-300 ${
                           hoveredStep === index
                             ? "translate-y-0 opacity-100"
                             : "-translate-y-1 opacity-50"

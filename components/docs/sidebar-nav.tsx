@@ -23,37 +23,47 @@ export default function SidebarNav({ items }: SidebarNavProps) {
   );
 
   useEffect(() => {
+    // rAF-throttled so the per-section getBoundingClientRect reads run at
+    // most once per frame instead of on every scroll event.
+    let raf = 0;
     const handleScroll = () => {
-      const sections = items.flatMap((item) =>
-        item.children
-          ? item.children.flatMap((child) =>
-              child.children
-                ? child.children.map((grandchild) => grandchild.id)
-                : [child.id],
-            )
-          : [item.id],
-      );
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        const sections = items.flatMap((item) =>
+          item.children
+            ? item.children.flatMap((child) =>
+                child.children
+                  ? child.children.map((grandchild) => grandchild.id)
+                  : [child.id],
+              )
+            : [item.id],
+        );
 
-      const current = sections.find((id) => {
-        const element = document.getElementById(id);
-        if (!element) return false;
-        const rect = element.getBoundingClientRect();
-        return rect.top <= 120 && rect.bottom >= 120;
-      });
+        const current = sections.find((id) => {
+          const element = document.getElementById(id);
+          if (!element) return false;
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 120 && rect.bottom >= 120;
+        });
 
-      if (current) {
-        setActiveSection(current);
-        // Update URL hash without causing scroll
-        if (window.location.hash !== `#${current}`) {
-          window.history.replaceState(null, "", `#${current}`);
+        if (current) {
+          setActiveSection(current);
+          // Update URL hash without causing scroll
+          if (window.location.hash !== `#${current}`) {
+            window.history.replaceState(null, "", `#${current}`);
+          }
         }
-      }
+      });
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll(); // Check on mount
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
   }, [items]);
 
   // Handle hash navigation on mount and hash change

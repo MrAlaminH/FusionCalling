@@ -108,7 +108,7 @@ const AnimatedStatistics = () => {
         {statItems.map((item, index) => (
           <div
             key={index}
-            className="bg-black/40 border-2 border-brand/20 rounded-2xl p-8 transition-all duration-300 hover:shadow-lg hover:shadow-brand-strong hover:-translate-y-1 min-h-[200px]"
+            className="bg-black/40 border-2 border-brand/20 rounded-2xl p-8 transition duration-300 hover:shadow-lg hover:shadow-brand-strong hover:-translate-y-1 min-h-[200px]"
           >
             <h2 className="text-lg md:text-xl font-medium mb-3">
               {item.title}

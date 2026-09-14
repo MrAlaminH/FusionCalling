@@ -159,7 +159,7 @@ export default function TeamMemberPage({
                 href={author.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-800 border border-gray-700 hover:border-brand hover:text-brand transition-all group"
+                className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-800 border border-gray-700 hover:border-brand hover:text-brand transition group"
                 aria-label={`${author.name} on LinkedIn`}
               >
                 <svg className="w-6 h-6 text-gray-400 group-hover:text-brand transition-colors" fill="currentColor" viewBox="0 0 24 24">
@@ -172,7 +172,7 @@ export default function TeamMemberPage({
                 href={author.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-800 border border-gray-700 hover:border-brand hover:text-brand transition-all group"
+                className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-800 border border-gray-700 hover:border-brand hover:text-brand transition group"
                 aria-label={`${author.name} on Twitter`}
               >
                 <svg className="w-6 h-6 text-gray-400 group-hover:text-brand transition-colors" fill="currentColor" viewBox="0 0 24 24">
@@ -182,7 +182,7 @@ export default function TeamMemberPage({
             )}
             <a
               href={`mailto:${author.email}`}
-              className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-800 border border-gray-700 hover:border-brand hover:text-brand transition-all group"
+              className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-800 border border-gray-700 hover:border-brand hover:text-brand transition group"
               aria-label={`Email ${author.name}`}
             >
               <svg className="w-6 h-6 text-gray-400 group-hover:text-brand transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -229,13 +229,13 @@ export default function TeamMemberPage({
             <div className="flex items-center justify-center gap-4 flex-wrap">
               <Link
                 href="/whitelabel"
-                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition-all shadow-premium hover:shadow-premium-lg hover:scale-105"
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition shadow-premium hover:shadow-premium-lg hover:scale-105"
               >
                 Explore Partner Program
               </Link>
               <a
                 href={`mailto:${author.email}`}
-                className="inline-flex items-center px-6 py-3 border border-brand/30 text-brand-light font-semibold rounded-xl hover:border-brand hover:bg-brand/10 transition-all"
+                className="inline-flex items-center px-6 py-3 border border-brand/30 text-brand-light font-semibold rounded-xl hover:border-brand hover:bg-brand/10 transition"
               >
                 Get in Touch
               </a>

@@ -33,7 +33,7 @@ export default function FAQ() {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="glass-light border border-brand/20 rounded-xl px-6 md:px-8 hover:border-brand/40 transition-all duration-300"
+                className="glass-light border border-brand/20 rounded-xl px-6 md:px-8 hover:border-brand/40 transition duration-300"
               >
                 <AccordionTrigger className="text-white text-left hover:no-underline py-5 md:py-6">
                   <span className="font-body text-base md:text-lg font-medium">

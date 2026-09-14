@@ -168,7 +168,7 @@ export default function GlossaryTermPage({ term }: { term: GlossaryTerm }) {
                 <Link
                   key={r.term}
                   href={`/glossary/${slugifyTerm(r.term)}`}
-                  className="glass-light rounded-full px-5 py-2.5 border border-brand/20 hover:border-brand/40 transition-all text-gray-300 hover:text-brand-light text-sm font-medium"
+                  className="glass-light rounded-full px-5 py-2.5 border border-brand/20 hover:border-brand/40 transition text-gray-300 hover:text-brand-light text-sm font-medium"
                 >
                   {r.term}
                 </Link>
@@ -192,7 +192,7 @@ export default function GlossaryTermPage({ term }: { term: GlossaryTerm }) {
                     href={s.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 glass-light rounded-full px-5 py-2.5 border border-brand/20 hover:border-brand/40 transition-all text-gray-300 hover:text-brand-light text-sm font-medium"
+                    className="inline-flex items-center gap-2 glass-light rounded-full px-5 py-2.5 border border-brand/20 hover:border-brand/40 transition text-gray-300 hover:text-brand-light text-sm font-medium"
                   >
                     {s.label}
                     <span aria-hidden className="text-brand-light">↗</span>
@@ -216,7 +216,7 @@ export default function GlossaryTermPage({ term }: { term: GlossaryTerm }) {
           </p>
           <Link
             href="/whitelabel"
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition-all shadow-premium hover:shadow-premium-lg hover:scale-105"
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition shadow-premium hover:shadow-premium-lg hover:scale-105"
           >
             Explore the Partner Program
             <span className="ml-2">→</span>

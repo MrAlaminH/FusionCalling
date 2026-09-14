@@ -135,11 +135,10 @@ export default function Features() {
                   <Reveal
                     animation={isEven ? "animate-fade-in-left" : "animate-fade-in-right"}
                     duration={0.7}
-                    delay={index * 0.15}
                     className="space-y-5 md:space-y-6 lg:space-y-7"
                   >
                     {/* Icon - Slightly smaller */}
-                    <div className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-brand/20 via-brand-strong/10 to-brand/5 border border-brand/30 shadow-premium transition-transform duration-300 hover:scale-105 hover:rotate-2">
+                    <div className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-brand/20 via-brand-strong/10 to-brand/5 border border-brand/30 shadow-premium transition-transform duration-300 hover:scale-105">
                       <Icon className="w-7 h-7 md:w-9 md:h-9 text-brand" />
                     </div>
 
@@ -194,13 +193,12 @@ export default function Features() {
                 >
                   <Reveal
                     animation="animate-scale-in"
-                    duration={0.9}
-                    delay={index * 0.15}
+                    duration={0.7}
                     className="relative group"
                   >
                     {/* Multi-layer glow system - Enhanced for larger images */}
-                    <div className="absolute -inset-6 bg-gradient-to-br from-brand/25 via-brand-strong/10 to-transparent rounded-3xl blur-3xl opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
-                    <div className="absolute -inset-4 bg-gradient-to-br from-brand-light/15 via-transparent to-transparent rounded-3xl blur-2xl opacity-40 group-hover:opacity-70 transition-opacity duration-700" />
+                    <div className="absolute -inset-6 bg-gradient-to-br from-brand/25 via-brand-strong/10 to-transparent rounded-3xl blur-3xl opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute -inset-4 bg-gradient-to-br from-brand-light/15 via-transparent to-transparent rounded-3xl blur-2xl opacity-40 group-hover:opacity-70 transition-opacity duration-300" />
 
                     {/* Image Container with glassmorphism - Larger and more prominent */}
                     <div className="relative rounded-3xl overflow-hidden border border-brand/20 bg-gradient-to-br from-gray-900 via-gray-800/50 to-gray-900 shadow-premium-lg">
@@ -227,7 +225,7 @@ export default function Features() {
                       <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent pointer-events-none z-20" />
 
                       {/* Hover gradient overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-30" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30" />
 
                       {/* Shimmer effect on hover (CSS-only) */}
                       <div className="absolute inset-0 overflow-hidden z-40 pointer-events-none rounded-b-none">

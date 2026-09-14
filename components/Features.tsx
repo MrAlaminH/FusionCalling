@@ -41,14 +41,14 @@ export default function Features() {
             </ul>
           </div>
           <div className="w-full md:w-1/2">
-            <Card className="border-brand rounded-lg group relative overflow-hidden transition-all duration-500 hover:shadow-lg hover:shadow-brand-strong hover:-translate-y-1 min-h-[200px]">
+            <Card className="border-brand rounded-lg group relative overflow-hidden transition duration-300 hover:shadow-lg hover:shadow-brand-strong hover:-translate-y-1 min-h-[200px]">
               <CardContent className="p-0">
                 <div className="relative w-full aspect-[3/2]">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <Image
                     src="/feature2.webp"
                     alt="AI-powered calendar interface for automated appointment booking and reminders"
-                    className="rounded-lg object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="rounded-lg object-cover transition-transform duration-300 group-hover:scale-110"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                     loading="lazy"
@@ -90,14 +90,14 @@ export default function Features() {
             </ul>
           </div>
           <div className="w-full md:w-1/2">
-            <Card className="border-brand rounded-lg group relative overflow-hidden transition-all duration-500 hover:shadow-lg hover:shadow-brand-strong hover:-translate-y-1 min-h-[200px]">
+            <Card className="border-brand rounded-lg group relative overflow-hidden transition duration-300 hover:shadow-lg hover:shadow-brand-strong hover:-translate-y-1 min-h-[200px]">
               <CardContent className="p-0">
                 <div className="relative w-full aspect-[3/2]">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <Image
                     src="/feature3.webp"
                     alt="AI customer support interface for 24/7 automated inquiries and real-time integration"
-                    className="rounded-lg object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="rounded-lg object-cover transition-transform duration-300 group-hover:scale-110"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                     loading="lazy"
@@ -111,42 +111,23 @@ export default function Features() {
 
       {/* Third Feature */}
       <div className="container mx-auto px-4 md:px-6 mt-20 max-w-6xl pb-20">
-        <Reveal animation="animate-fade-in-up" delay={0.2} className="grid md:grid-cols-3 gap-8 justify-center">
-          <Card className="bg-black border-brand/20 group relative overflow-hidden transition-all duration-500 hover:shadow-lg hover:shadow-brand-strong hover:-translate-y-1 min-h-[200px]">
-            <CardContent className="p-6 space-y-4">
-              <BarChart3 className="h-12 w-12 text-brand-strong" />
-              <h3 className="text-xl font-bold text-white">Detailed Reports</h3>
-              <p className="text-gray-400">
-                Track every interaction with comprehensive call recordings,
-                transcriptions, and customized analytics.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="bg-black border-brand/20 group relative overflow-hidden transition-all duration-500 hover:shadow-lg hover:shadow-brand-strong hover:-translate-y-1 min-h-[200px]">
-            <CardContent className="p-6 space-y-4">
-              <Calendar className="h-12 w-12 text-brand-strong" />
-              <h3 className="text-xl font-bold text-white">
-                Focus on Priorities
-              </h3>
-              <p className="text-gray-400">
-                Let AI handle routine calls while your team focuses on
-                high-value tasks and strategic initiatives.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="bg-black border-brand/20 group relative overflow-hidden transition-all duration-500 hover:shadow-lg hover:shadow-brand-strong hover:-translate-y-1 min-h-[200px]">
-            <CardContent className="p-6 space-y-4">
-              <Phone className="h-12 w-12 text-brand-strong" />
-              <h3 className="text-xl font-bold text-white">
-                Outbound Campaigns
-              </h3>
-              <p className="text-gray-400">
-                Seamlessly import leads and automate outbound calling campaigns
-                with intelligent AI agents.
-              </p>
-            </CardContent>
-          </Card>
-        </Reveal>
+        <div className="grid md:grid-cols-3 gap-8 justify-center">
+          {[
+            { icon: BarChart3, title: "Detailed Reports", body: "Track every interaction with comprehensive call recordings, transcriptions, and customized analytics." },
+            { icon: Calendar, title: "Focus on Priorities", body: "Let AI handle routine calls while your team focuses on high-value tasks and strategic initiatives." },
+            { icon: Phone, title: "Outbound Campaigns", body: "Seamlessly import leads and automate outbound calling campaigns with intelligent AI agents." },
+          ].map(({ icon: Icon, title, body }, index) => (
+            <Reveal key={title} animation="animate-fade-in-up" delay={index * 0.08}>
+              <Card className="bg-black border-brand/20 group relative overflow-hidden transition duration-300 hover:shadow-lg hover:shadow-brand-strong hover:-translate-y-1 min-h-[200px] h-full">
+                <CardContent className="p-6 space-y-4">
+                  <Icon className="h-12 w-12 text-brand-strong" />
+                  <h3 className="text-xl font-bold text-white">{title}</h3>
+                  <p className="text-gray-400">{body}</p>
+                </CardContent>
+              </Card>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );

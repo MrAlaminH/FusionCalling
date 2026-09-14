@@ -88,7 +88,7 @@ const Navbar = () => {
               height={36}
               priority
               fetchPriority="high"
-              className="cursor-pointer transition-transform hover:scale-105"
+              className="cursor-pointer"
             />
             <span className="text-lg font-bold tracking-tight text-white sm:text-xl">
               Fusion{" "}
@@ -168,7 +168,7 @@ const Navbar = () => {
                 className="absolute left-0 top-full hidden h-2 w-full group-hover:block group-focus-within:block"
                 aria-hidden="true"
               />
-              <div className="invisible absolute left-0 top-[calc(100%+0.5rem)] z-50 w-60 translate-y-1 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+              <div className="invisible absolute left-0 top-[calc(100%+0.5rem)] z-50 w-60 translate-y-1 opacity-0 transition-[visibility,opacity,transform] duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
                 <ul className="rounded-2xl border border-white/10 bg-zinc-950/95 p-2 shadow-premium-lg backdrop-blur-xl">
                   {MORE_LINKS.map((item) => (
                     <li key={item.label}>
@@ -196,7 +196,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-2">
           <Link
             href="/whitelabel"
-            className="hidden lg:inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-transparent px-4 py-2 text-sm font-medium text-white transition-all duration-300 hover:bg-white/5"
+            className="hidden lg:inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-transparent px-4 py-2 text-sm font-medium text-white transition duration-300 hover:bg-white/5"
           >
             Partner Program
             <ArrowRight className="h-3.5 w-3.5" />
@@ -205,7 +205,7 @@ const Navbar = () => {
             href={CONTACT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-strong px-5 py-2 text-sm font-medium text-black shadow-lg shadow-brand/25 transition-all duration-300 hover:from-brand-light hover:to-brand"
+            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-strong px-5 py-2 text-sm font-medium text-black shadow-lg shadow-brand/25 transition duration-300 hover:from-brand-light hover:to-brand active:scale-[0.98]"
           >
             Contact Us
           </Link>
@@ -217,7 +217,7 @@ const Navbar = () => {
         <div
           ref={menuRef}
           id="mobile-menu"
-          className="absolute inset-x-3 top-full mt-2 rounded-3xl border border-white/10 bg-zinc-950/95 p-4 shadow-premium-lg backdrop-blur-xl lg:hidden"
+          className="absolute inset-x-3 top-full mt-2 origin-top rounded-3xl border border-white/10 bg-zinc-950/95 p-4 shadow-premium-lg backdrop-blur-xl animate-scale-in [animation-duration:180ms] lg:hidden"
         >
           <ul className="flex flex-col space-y-1">
             {[...NAV_LINKS, ...MORE_LINKS].map((item, i) => (
@@ -227,7 +227,7 @@ const Navbar = () => {
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
                   className={cn(
-                    "block rounded-xl px-4 py-3 font-medium transition-all duration-300",
+                    "block rounded-xl px-4 py-3 font-medium transition duration-300 active:scale-[0.98]",
                     item.label === "Home"
                       ? "bg-brand/10 text-brand-strong"
                       : "text-gray-300 hover:bg-white/5 hover:text-white"
@@ -241,7 +241,7 @@ const Navbar = () => {
               <Link
                 href="/whitelabel"
                 onClick={() => setIsMenuOpen(false)}
-                className="flex items-center justify-center gap-2 rounded-xl border border-white/15 px-4 py-3 font-medium text-white transition-all duration-300 hover:bg-white/5"
+                className="flex items-center justify-center gap-2 rounded-xl border border-white/15 px-4 py-3 font-medium text-white transition duration-300 hover:bg-white/5"
               >
                 Partner Program
                 <ArrowRight className="h-4 w-4" />
@@ -250,7 +250,7 @@ const Navbar = () => {
                 href={CONTACT_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center rounded-xl bg-gradient-to-r from-brand to-brand-strong px-4 py-3 font-medium text-black shadow-lg shadow-brand/25 transition-all duration-300 hover:from-brand-light hover:to-brand"
+                className="flex items-center justify-center rounded-xl bg-gradient-to-r from-brand to-brand-strong px-4 py-3 font-medium text-black shadow-lg shadow-brand/25 transition duration-300 hover:from-brand-light hover:to-brand"
               >
                 Contact Us
               </a>

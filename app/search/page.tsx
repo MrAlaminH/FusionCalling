@@ -156,7 +156,7 @@ export default function SearchPage({
               />
               <button
                 type="submit"
-                className="px-6 py-3 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition-all"
+                className="px-6 py-3 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition"
               >
                 Search
               </button>
@@ -178,7 +178,7 @@ export default function SearchPage({
                     <li key={`${r.type}-${r.href}`}>
                       <Link
                         href={r.href}
-                        className="block glass-light rounded-xl p-5 border border-brand/20 hover:border-brand/40 transition-all group"
+                        className="block glass-light rounded-xl p-5 border border-brand/20 hover:border-brand/40 transition group"
                       >
                         <div className="flex items-start justify-between gap-3 mb-1">
                           <h2 className="text-base md:text-lg font-semibold text-white group-hover:text-brand-light transition-colors">

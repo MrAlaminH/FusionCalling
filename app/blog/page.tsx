@@ -80,7 +80,7 @@ export default function BlogPage() {
 
           {/* Featured Post */}
           <div className="mb-16">
-            <div className="glass rounded-3xl p-8 md:p-12 border border-orange-500/20 hover:border-orange-500/40 transition-all duration-500">
+            <div className="glass rounded-3xl p-8 md:p-12 border border-orange-500/20 hover:border-orange-500/40 transition duration-300">
               <div className="flex flex-col md:flex-row gap-8 items-start">
                 <div className="flex-1">
                   <span className="inline-block px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full text-sm font-semibold text-white mb-4">
@@ -146,9 +146,9 @@ export default function BlogPage() {
                 href={`/blog/${post.slug}`}
                 className="group"
               >
-                <div className="glass-light h-full rounded-2xl p-6 border border-orange-500/20 hover:border-orange-500/40 transition-all duration-500 hover:shadow-premium">
+                <div className="glass-light h-full rounded-2xl p-6 border border-orange-500/20 hover:border-orange-500/40 transition duration-300 hover:shadow-premium">
                   {/* Post Image */}
-                  <div className="relative aspect-video rounded-xl mb-6 overflow-hidden border border-orange-500/10 group-hover:border-orange-500/30 transition-all duration-300">
+                  <div className="relative aspect-video rounded-xl mb-6 overflow-hidden border border-orange-500/10 group-hover:border-orange-500/30 transition duration-300">
                     <Image
                       src={post.image}
                       alt={post.title}

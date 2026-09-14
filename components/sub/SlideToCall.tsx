@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState, useRef, useCallback } from "react";
+import React, { useState, useRef, useCallback, useEffect } from "react";
 import { Phone } from "lucide-react";
 import Toast from "@/components/ui/Toast";
+import { shouldReleaseCall } from "@/lib/slide-to-call";
 
 interface SlideToCallProps {
   onCallComplete?: () => void;
@@ -15,10 +16,11 @@ interface SlideToCallProps {
 }
 
 const HANDLE_WIDTH = 48;
-const THRESHOLD = 0.9;
 const VIBRATION_DURATION = 50;
 const SUCCESS_DELAY = 6000;
 const RESET_DELAY = 6000;
+const VALIDATION_MESSAGE =
+  "Please fill in all fields correctly: valid name, valid email, phone number, and select an agent";
 
 export default function SlideToCall({
   onCallComplete,
@@ -36,10 +38,27 @@ export default function SlideToCall({
   });
 
   const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState(VALIDATION_MESSAGE);
 
   const sliderRef = useRef<HTMLDivElement>(null);
   const widthRef = useRef(0);
   const callInitiatedRef = useRef(false);
+  const dragStartRef = useRef(0);
+  const toastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const showToastMessage = useCallback((message: string) => {
+    setToastMessage(message);
+    setShowToast(true);
+    if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
+    toastTimerRef.current = setTimeout(() => setShowToast(false), 4000);
+  }, []);
+
+  useEffect(
+    () => () => {
+      if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
+    },
+    []
+  );
 
   const getEffectiveWidth = useCallback(() => {
     if (!widthRef.current && sliderRef.current) {
@@ -98,6 +117,9 @@ export default function SlideToCall({
       console.error("Call initiation failed:", error);
       setSlideState({ isDragging: false, position: 0, isSuccess: false });
       callInitiatedRef.current = false;
+      showToastMessage(
+        "The call couldn't start. Please check your details and try again."
+      );
     }
   }, [
     phoneNumber,
@@ -108,14 +130,16 @@ export default function SlideToCall({
     vibrate,
     resetInputs,
     disabled,
+    showToastMessage,
   ]);
 
   const handleDragEnd = useCallback(() => {
     const effectiveWidth = getEffectiveWidth();
-    const thresholdPosition = effectiveWidth * THRESHOLD;
+    const elapsed = performance.now() - dragStartRef.current;
 
     setSlideState((prev) => {
-      if (prev.position >= thresholdPosition && !prev.isSuccess) {
+      if (prev.isSuccess) return prev;
+      if (shouldReleaseCall(prev.position, effectiveWidth, elapsed)) {
         initiateCall();
         return { ...prev, position: effectiveWidth, isDragging: false };
       }
@@ -146,16 +170,15 @@ export default function SlideToCall({
     (e: React.PointerEvent) => {
       e.preventDefault();
       if (disabled) {
-        setShowToast(true);
-        // Show toast for 4 seconds
-        const timeoutId = setTimeout(() => setShowToast(false), 4000);
-        return () => clearTimeout(timeoutId);
+        showToastMessage(VALIDATION_MESSAGE);
+        return;
       }
+      dragStartRef.current = performance.now();
       vibrate();
       setSlideState((prev) => ({ ...prev, isDragging: true }));
       handleDrag(e.clientX);
     },
-    [vibrate, handleDrag, disabled]
+    [vibrate, handleDrag, disabled, showToastMessage]
   );
 
   const handlePointerMove = useCallback(
@@ -177,7 +200,7 @@ export default function SlideToCall({
       {showToast && (
         <div className="absolute top-[-80px] left-1/2 transform -translate-x-1/2 z-50 w-full">
           <Toast
-            message="Please fill in all fields correctly: valid name, valid email, phone number, and select an agent"
+            message={toastMessage}
             type="error"
             onClose={() => setShowToast(false)}
           />
@@ -197,16 +220,16 @@ export default function SlideToCall({
           onPointerUp={handleDragEnd}
           onPointerLeave={handleDragEnd}
         >
-          {/* Progress bar */}
+          {/* Progress bar — scaleX (compositor-only) instead of animated width */}
           <div
-            className={`absolute top-0 left-0 h-full ${
+            className={`absolute top-0 left-0 h-full w-full origin-left rounded-full ${
               slideState.isSuccess ? "bg-green-500" : "bg-orange-500"
-            } rounded-full transition-all duration-200`}
+            }`}
             style={{
-              width: `${progressWidth}%`,
+              transform: `scaleX(${progressWidth / 100})`,
               transition: slideState.isDragging
                 ? "none"
-                : "width 0.3s ease-out",
+                : "transform 0.3s ease-out",
             }}
           />
 
@@ -214,13 +237,14 @@ export default function SlideToCall({
           <div
             className={`absolute top-1/2 left-0 w-12 h-12 ${
               slideState.isSuccess ? "bg-green-500" : "bg-orange-500"
-            } rounded-full flex items-center justify-center cursor-grab
-              transition-all duration-200 ${
-                slideState.isDragging ? "scale-105" : ""
-              }`}
+            } rounded-full flex items-center justify-center cursor-grab`}
             style={{
-              transform: `translate(${slideState.position}px, -50%)`,
-              transition: slideState.isDragging ? "none" : "all 0.3s ease-out",
+              transform: `translate(${slideState.position}px, -50%)${
+                slideState.isDragging ? " scale(1.05)" : ""
+              }`,
+              transition: slideState.isDragging
+                ? "none"
+                : "transform 0.3s ease-out, background-color 0.3s ease-out",
             }}
           >
             {slideState.isSuccess ? (

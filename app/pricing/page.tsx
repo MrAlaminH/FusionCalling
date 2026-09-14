@@ -256,7 +256,7 @@ export default function PricingPage() {
             </h2>
             <div className="space-y-4">
               {pricingFaqs.map((faq) => (
-                <details key={faq.question} className="group border-2 border-brand/20 bg-gradient-to-b from-[#0f172a] to-[#1e293b] rounded-card p-4 md:p-6 transition-all duration-300 hover:border-brand/40">
+                <details key={faq.question} className="group border-2 border-brand/20 bg-gradient-to-b from-[#0f172a] to-[#1e293b] rounded-card p-4 md:p-6 transition duration-300 hover:border-brand/40">
                   <summary className="flex items-start justify-between gap-4 cursor-pointer list-none text-white font-medium text-base md:text-lg">
                     {faq.question}
                     <span className="flex-shrink-0 text-brand group-open:rotate-180 transition-transform duration-300">

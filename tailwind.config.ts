@@ -2,6 +2,9 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
     darkMode: ["class"],
+    future: {
+      hoverOnlyWhenSupported: true
+    },
     content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -99,12 +102,6 @@ const config: Config = {
   				}
   			},
   			marquee: {
-  				'0%': {
-  					transform: 'translateX(0%)'
-  				},
-  				'100%': {
-  					transform: 'translateX(-100%)'
-  				},
   				from: {
   					transform: 'translateX(0)'
   				},
@@ -148,6 +145,54 @@ const config: Config = {
   				to: {
   					transform: 'translateY(calc(-100% - var(--gap)))'
   				}
+  			},
+  			'fade-in': {
+  				from: {
+  					opacity: '0'
+  				},
+  				to: {
+  					opacity: '1'
+  				}
+  			},
+  			'fade-in-up': {
+  				from: {
+  					opacity: '0',
+  					transform: 'translateY(12px)'
+  				},
+  				to: {
+  					opacity: '1',
+  					transform: 'translateY(0)'
+  				}
+  			},
+  			'fade-in-left': {
+  				from: {
+  					opacity: '0',
+  					transform: 'translateX(-12px)'
+  				},
+  				to: {
+  					opacity: '1',
+  					transform: 'translateX(0)'
+  				}
+  			},
+  			'fade-in-right': {
+  				from: {
+  					opacity: '0',
+  					transform: 'translateX(12px)'
+  				},
+  				to: {
+  					opacity: '1',
+  					transform: 'translateX(0)'
+  				}
+  			},
+  			'scale-in': {
+  				from: {
+  					opacity: '0',
+  					transform: 'scale(0.95)'
+  				},
+  				to: {
+  					opacity: '1',
+  					transform: 'scale(1)'
+  				}
   			}
   		},
   		animation: {
@@ -159,7 +204,12 @@ const config: Config = {
   			'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
   			'background-position-spin': 'background-position-spin 3000ms infinite alternate',
   			'shiny-text': 'shiny-text 8s infinite',
-  			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite'
+  			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
+  			'fade-in': 'fade-in 0.2s var(--ease-out) both',
+  			'fade-in-up': 'fade-in-up 0.5s var(--ease-out) both',
+  			'fade-in-left': 'fade-in-left 0.5s var(--ease-out) both',
+  			'fade-in-right': 'fade-in-right 0.5s var(--ease-out) both',
+  			'scale-in': 'scale-in 0.25s var(--ease-out) both'
   		}
   	}
   },

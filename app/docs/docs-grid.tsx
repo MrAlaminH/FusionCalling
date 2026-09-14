@@ -18,7 +18,7 @@ export default function DocsGrid() {
       {filteredDocs.map((doc) => (
         <Link key={doc.id} href={doc.href} className="group">
           <div
-            className={`bg-zinc-900 border ${colorClasses[doc.color].border} rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:shadow-brand/30 hover:-translate-y-1 h-full ${colorClasses[doc.color].hover}`}
+            className={`bg-zinc-900 border ${colorClasses[doc.color].border} rounded-xl p-6 transition duration-300 hover:shadow-lg hover:shadow-brand/30 hover:-translate-y-1 h-full ${colorClasses[doc.color].hover}`}
           >
             <div className="text-4xl mb-4">{doc.icon}</div>
             <h2 className="text-xl font-bold text-white mb-3 group-hover:text-brand-strong transition-colors">

@@ -48,6 +48,12 @@ body {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
 
+    /* Motion tokens — shared easing curves. UI entrances/hovers use
+       --ease-out; drawers and sliding indicators use --ease-drawer
+       (iOS-like). */
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+
     /* Brand (orange) — single source of truth for the brand color. */
     --brand: 25 95% 51%; /* ~ orange-500 (#f97316) */
     --brand-strong: 21 92% 48%; /* ~ orange-600 (#ea580c) */
@@ -131,7 +137,11 @@ html {
 
 /* Respect users who prefer reduced motion: freeze all non-essential
    animations/transitions. This lowers main-thread load and is a PageSpeed
-   accessibility best practice. */
+   accessibility best practice.
+   Deliberate tradeoff: this also zeroes hover fades and feedback fades
+   (they apply instantly instead of animating — state indication survives).
+   Verified nothing blanks out: Reveal starts visible and marquees freeze
+   at their base frame. */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -142,6 +152,25 @@ html {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* Progressive enhancement: animate native <details> open/close where the
+   browser supports ::details-content + interpolate-size. Unsupported
+   browsers ignore these rules and keep the instant default. */
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    interpolate-size: allow-keywords;
+  }
+  details::details-content {
+    block-size: 0;
+    overflow: clip;
+    transition:
+      block-size 0.2s var(--ease-out),
+      content-visibility 0.2s allow-discrete;
+  }
+  details[open]::details-content {
+    block-size: auto;
   }
 }
 
@@ -170,27 +199,6 @@ html {
 .PhoneInputInput {
   flex: 1 !important;
   min-width: 0 !important;
-}
-
-.custom-chat-icon {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 64px;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ffffff; /* Add a background color */
-  border-radius: 50%; /* Make it circular */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  z-index: 1000;
-}
-
-.custom-chat-icon:hover {
-  transform: scale(1.1); /* Add a hover effect */
-  transition: transform 0.2s ease-in-out;
 }
 
 /* ===== Visual Depth Enhancements ===== */
@@ -249,13 +257,28 @@ html {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Smooth transitions with custom easing */
+/* Shared interaction transitions — scoped to the compositor/paint-friendly
+   property list on the shared ease-out curve. (Previously these were
+   `transition: all` at 0.6s/0.3s, which made card hovers feel sluggish and
+   animated unintended properties.) */
 .transition-premium {
-  transition: all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition:
+    color 0.25s var(--ease-out),
+    background-color 0.25s var(--ease-out),
+    border-color 0.25s var(--ease-out),
+    box-shadow 0.25s var(--ease-out),
+    transform 0.25s var(--ease-out),
+    opacity 0.25s var(--ease-out);
 }
 
 .transition-premium-fast {
-  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition:
+    color 0.15s var(--ease-out),
+    background-color 0.15s var(--ease-out),
+    border-color 0.15s var(--ease-out),
+    box-shadow 0.15s var(--ease-out),
+    transform 0.15s var(--ease-out),
+    opacity 0.15s var(--ease-out);
 }
 
 /* Better spacing system - More balanced section spacing */

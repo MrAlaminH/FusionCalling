@@ -60,7 +60,7 @@ const Tools = () => {
                 {logos.map((logo, key) => (
                   <div
                     key={key}
-                    className="flex items-center justify-center w-[80px] h-[40px] rounded-md transition-all duration-300"
+                    className="flex items-center justify-center w-[80px] h-[40px] rounded-md transition duration-300"
                   >
                     <div className="w-[60px] h-[30px] relative flex items-center justify-center">
                       <Image
@@ -70,7 +70,7 @@ const Tools = () => {
                         fill
                         sizes="60px"
                         loading="lazy"
-                        className="absolute w-full h-full transition-all duration-300 ease-in-out object-contain opacity-75 hover:opacity-100 [filter:drop-shadow(0_0_4px_rgba(59,130,246,0.3))] hover:[filter:drop-shadow(0_0_6px_rgba(59,130,246,0.5))]"
+                        className="absolute w-full h-full transition duration-300 ease-in-out object-contain opacity-75 hover:opacity-100 [filter:drop-shadow(0_0_4px_rgba(59,130,246,0.3))] hover:[filter:drop-shadow(0_0_6px_rgba(59,130,246,0.5))]"
                       />
                     </div>
                   </div>

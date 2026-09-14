@@ -112,8 +112,8 @@ export default function Hero() {
           {/* Outer glow container for depth */}
           <div className="relative group">
             {/* Enhanced glow effects */}
-            <div className="absolute -inset-2 bg-gradient-to-r from-brand/30 via-brand-light/40 to-brand/30 rounded-[32px] blur-3xl opacity-70 group-hover:opacity-100 transition-opacity duration-700"></div>
-            <div className="absolute -inset-1 bg-gradient-to-r from-brand-light/20 via-brand/30 to-brand-light/20 rounded-[32px] blur-2xl opacity-50 group-hover:opacity-80 transition-opacity duration-700"></div>
+            <div className="absolute -inset-2 bg-gradient-to-r from-brand/30 via-brand-light/40 to-brand/30 rounded-[32px] blur-3xl opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute -inset-1 bg-gradient-to-r from-brand-light/20 via-brand/30 to-brand-light/20 rounded-[32px] blur-2xl opacity-50 group-hover:opacity-80 transition-opacity duration-300"></div>
 
             {/* Main container with padding for border visibility */}
             <div className="relative p-[3px] rounded-[32px] bg-gradient-to-r from-brand-light via-brand to-brand-strong shadow-premium-lg">
@@ -171,7 +171,7 @@ export default function Hero() {
                       />
                     ) : (
                       <div
-                        className="absolute inset-0 cursor-pointer group overflow-hidden rounded-[27px] transition-transform duration-700 group-hover:scale-[1.02]"
+                        className="absolute inset-0 cursor-pointer group overflow-hidden rounded-[27px] transition-transform duration-300 group-hover:scale-[1.02]"
                         onClick={() => setIsVideoPlaying(true)}
                       >
                         <Image
@@ -184,23 +184,21 @@ export default function Hero() {
                         />
 
                         {/* Enhanced gradient overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/50 group-hover:from-black/85 group-hover:via-black/20 group-hover:to-black/40 transition-all duration-700 rounded-[27px]"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/50 group-hover:from-black/85 group-hover:via-black/20 group-hover:to-black/40 transition duration-300 rounded-[27px]"></div>
 
                         {/* Play Button Container */}
                         <div className="absolute inset-0 flex items-center justify-center z-20">
                           <div className="relative flex items-center justify-center">
-                            {/* Outer ping rings (CSS-only) */}
+                            {/* Outer ping ring (CSS-only, single ring) */}
                             <span className="absolute inline-flex h-full w-full items-center justify-center">
                               <span className="absolute inline-flex w-full aspect-square rounded-full border-2 border-brand/50 animate-ping [animation-duration:3s]" />
-                              <span className="absolute inline-flex w-full aspect-square rounded-full border-2 border-brand-light/60 animate-ping [animation-duration:3s] [animation-delay:0.8s]" />
-                              <span className="absolute inline-flex w-full aspect-square rounded-full border border-brand-light/70 animate-ping [animation-duration:3s] [animation-delay:1.6s]" />
                             </span>
 
-                            {/* Enhanced glow backdrop */}
-                            <span className="absolute -inset-4 bg-gradient-to-br from-brand/40 to-brand-strong/30 rounded-full blur-3xl animate-pulse [animation-duration:3s]" />
+                            {/* Enhanced glow backdrop (static) */}
+                            <span className="absolute -inset-4 bg-gradient-to-br from-brand/40 to-brand-strong/30 rounded-full blur-3xl" />
 
                             {/* Play Button */}
-                            <span className="relative bg-gradient-to-br from-brand to-brand-strong rounded-full p-5 sm:p-6 md:p-7 shadow-premium-lg group-hover:shadow-premium-xl group-hover:scale-110 active:scale-95 transition-all duration-300">
+                            <span className="relative bg-gradient-to-br from-brand to-brand-strong rounded-full p-5 sm:p-6 md:p-7 shadow-premium-lg group-hover:shadow-premium-xl group-hover:scale-110 active:scale-95 transition duration-300">
                               <Play className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white fill-white ml-1" />
                             </span>
                           </div>

@@ -474,7 +474,7 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
 
               <Link
                 href="/whitelabel"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition-all shadow-premium hover:shadow-premium-lg hover:scale-105"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition shadow-premium hover:shadow-premium-lg hover:scale-105"
               >
                 Explore the Partner Program
                 <span className="ml-2">→</span>
@@ -502,7 +502,7 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
                   <Link
                     key={r.slug}
                     href={`/alternative/${r.slug}`}
-                    className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition-all group"
+                    className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition group"
                   >
                     <div className="aspect-video rounded-lg mb-3 overflow-hidden relative">
                       <Image

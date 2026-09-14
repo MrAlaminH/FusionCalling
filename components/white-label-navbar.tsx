@@ -83,7 +83,7 @@ const WhiteLabelNavbar = () => {
             alt="Fusion Calling logo"
             width={40}
             height={40}
-            className="cursor-pointer transition-transform hover:scale-105 sm:h-[45px] sm:w-[45px] lg:h-[50px] lg:w-[50px]"
+            className="cursor-pointer sm:h-[45px] sm:w-[45px] lg:h-[50px] lg:w-[50px]"
           />
           <span className="flex flex-col leading-tight">
             <span className="text-lg font-extrabold text-brand-strong sm:text-xl">
@@ -102,7 +102,7 @@ const WhiteLabelNavbar = () => {
               <Link
                 href={item.href}
                 className={cn(
-                  "block rounded-lg px-3 py-2 text-sm font-medium transition duration-300 hover:-translate-y-0.5 hover:bg-brand-strong hover:text-white",
+                  "block rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-200 hover:bg-brand-strong hover:text-white",
                   item.label === "Home"
                     ? "text-yellow-400"
                     : "text-gray-200"
@@ -120,7 +120,7 @@ const WhiteLabelNavbar = () => {
             href={CONTACT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-10 items-center justify-center rounded-xl border border-brand-strong bg-brand-strong px-4 font-medium text-black transition duration-300 hover:-translate-y-0.5 hover:bg-orange-700 lg:px-5"
+            className="inline-flex h-10 items-center justify-center rounded-xl border border-brand-strong bg-brand-strong px-4 font-medium text-black transition-colors duration-200 hover:bg-orange-700 active:scale-[0.98] lg:px-5"
           >
             Contact Us
           </a>
@@ -128,7 +128,7 @@ const WhiteLabelNavbar = () => {
             href={APP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-10 items-center justify-center gap-2 rounded-xl border-2 border-brand-strong bg-transparent px-4 font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:bg-brand-strong/20 lg:px-5"
+            className="inline-flex h-10 items-center justify-center gap-2 rounded-xl border-2 border-brand-strong bg-transparent px-4 font-medium text-white transition-colors duration-200 hover:bg-brand-strong/20 active:scale-[0.98] lg:px-5"
           >
             Open app
             <ExternalLink className="h-4 w-4" />

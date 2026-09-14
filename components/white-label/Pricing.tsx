@@ -105,13 +105,13 @@ export default function Pricing() {
                 plan.popular ? "md:-translate-y-4 md:scale-105" : ""
               }`}
             >
-              {/* Glow effect for popular plan (CSS-only pulse) */}
+              {/* Static glow for popular plan (no pulse — price-comparison surface) */}
               {plan.popular && (
-                <div className="absolute -inset-4 bg-gradient-to-br from-brand/30 via-brand-strong/20 to-transparent rounded-3xl blur-3xl -z-10 animate-pulse [animation-duration:4s]" />
+                <div className="absolute -inset-4 bg-gradient-to-br from-brand/30 via-brand-strong/20 to-transparent rounded-3xl blur-3xl -z-10" />
               )}
 
               <div
-                className={`h-full rounded-2xl md:rounded-3xl p-5 md:p-6 border-2 transition-all duration-500 ${
+                className={`h-full rounded-2xl md:rounded-3xl p-5 md:p-6 border-2 transition duration-300 ${
                   plan.popular
                     ? "bg-brand border-brand shadow-premium-lg"
                     : "glass-light border-gray-800/50 hover:border-brand/30 shadow-premium"
@@ -199,7 +199,7 @@ export default function Pricing() {
                 {/* CTA Button */}
                 <a
                   href="#cta"
-                  className={`block w-full text-center rounded-xl py-3 md:py-3.5 text-sm md:text-base font-semibold transition-all duration-300 shadow-premium hover:scale-105 hover:-translate-y-0.5 active:scale-[0.98] ${
+                  className={`block w-full text-center rounded-xl py-3 md:py-3.5 text-sm md:text-base font-semibold transition duration-300 shadow-premium hover:scale-105 hover:-translate-y-0.5 active:scale-[0.98] ${
                     plan.popular
                       ? "bg-black text-white hover:bg-neutral-900"
                       : "bg-white/10 text-white hover:bg-white/20 border border-white/20"

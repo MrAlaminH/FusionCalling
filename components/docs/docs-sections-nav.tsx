@@ -60,14 +60,14 @@ export default function DocssectionsNav() {
           <Link
             key={section.id}
             href={section.href}
-            className={`group relative overflow-hidden rounded-lg border transition-all duration-300 ${
+            className={`group relative overflow-hidden rounded-lg border transition duration-300 ${
               isActive(section.href)
                 ? "border-orange-500 bg-orange-600/10"
                 : "border-gray-800 bg-gray-900/50 hover:border-orange-500/50 hover:bg-gray-900"
             }`}
           >
             {/* Gradient Background Effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-600/0 via-orange-600/0 to-orange-600/0 group-hover:from-orange-600/5 group-hover:via-orange-600/10 group-hover:to-orange-600/5 transition-all duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-r from-orange-600/0 via-orange-600/0 to-orange-600/0 group-hover:from-orange-600/5 group-hover:via-orange-600/10 group-hover:to-orange-600/5 transition duration-300" />
 
             <div className="relative p-6">
               <div className="flex items-start justify-between mb-3">

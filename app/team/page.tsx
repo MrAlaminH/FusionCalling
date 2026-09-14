@@ -99,7 +99,7 @@ export default function TeamPage() {
                 href={`/team/${author.slug}`}
                 className="group block"
               >
-                <div className="glass rounded-2xl p-6 border border-brand/20 hover:border-brand/40 transition-all duration-500 hover:shadow-premium">
+                <div className="glass rounded-2xl p-6 border border-brand/20 hover:border-brand/40 transition duration-300 hover:shadow-premium">
                   <div className="text-center mb-6">
                     <div className="w-28 h-28 mx-auto mb-4 rounded-full border-4 border-brand/30 overflow-hidden group-hover:border-brand transition-colors">
                       <Image
@@ -165,7 +165,7 @@ export default function TeamPage() {
             </p>
             <Link
               href="/whitelabel"
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition-all shadow-premium hover:shadow-premium-lg hover:scale-105"
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition shadow-premium hover:shadow-premium-lg hover:scale-105"
             >
               Explore the Partner Program
               <span className="ml-2">→</span>

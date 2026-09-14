@@ -115,6 +115,7 @@ export default function TestimonialsSection() {
                     key={index}
                     animation="animate-fade-in-up"
                     duration={0.5}
+                    delay={(index % 3) * 0.08}
                     className="flex-none w-full md:w-1/2 lg:w-1/3 snap-start"
                   >
                     <TestimonialCard testimonial={testimonial} />
@@ -126,14 +127,14 @@ export default function TestimonialsSection() {
             {/* Navigation controls for desktop */}
             <button
               onClick={scrollPrev}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-black border border-brand rounded-full p-2 text-brand hover:bg-brand hover:text-black transition-all z-10"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-black border border-brand rounded-full p-2 text-brand hover:bg-brand hover:text-black transition z-10"
               aria-label="Previous slide"
             >
               <ChevronLeft className="h-6 w-6" />
             </button>
             <button
               onClick={scrollNext}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-black border border-brand rounded-full p-2 text-brand hover:bg-brand hover:text-black transition-all z-10"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-black border border-brand rounded-full p-2 text-brand hover:bg-brand hover:text-black transition z-10"
               aria-label="Next slide"
             >
               <ChevronRight className="h-6 w-6" />
@@ -143,7 +144,7 @@ export default function TestimonialsSection() {
           {/* Mobile grid layout (original) */}
           <div className="grid gap-4 sm:gap-6 lg:hidden md:grid-cols-2 lg:grid-cols-3">
             {testimonials.slice(0, 3).map((testimonial, index) => (
-              <Reveal key={index} animation="animate-fade-in-up" duration={0.5}>
+              <Reveal key={index} animation="animate-fade-in-up" duration={0.5} delay={index * 0.08}>
                 <TestimonialCard testimonial={testimonial} />
               </Reveal>
             ))}
@@ -157,7 +158,7 @@ export default function TestimonialsSection() {
 // Extracted Card component for reuse
 function TestimonialCard({ testimonial }: { testimonial: TestimonialProps }) {
   return (
-    <Card className="bg-black border-brand/20 group relative overflow-hidden transition-all duration-500 hover:shadow-lg hover:shadow-brand-strong hover:-translate-y-1 min-h-[420px] h-full w-full max-w-sm mx-auto">
+    <Card className="bg-black border-brand/20 group relative overflow-hidden transition duration-300 hover:shadow-lg hover:shadow-brand-strong hover:-translate-y-1 min-h-[420px] h-full w-full max-w-sm mx-auto">
       <div className="p-6 flex flex-col h-full">
         <div className="text-brand-strong mb-4 text-4xl font-extrabold">
           <Quote />

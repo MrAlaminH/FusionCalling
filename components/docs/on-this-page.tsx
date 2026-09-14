@@ -62,29 +62,39 @@ export default function OnThisPage({
 
   // Track active heading on scroll
   useEffect(() => {
+    // rAF-throttled: the DOM reads below are cheap per frame, but unthrottled
+    // they run on every scroll event.
+    let raf = 0;
     const handleScroll = () => {
-      const headingElements = document.querySelectorAll(
-        "main h2[id], main h3[id]",
-      );
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        const headingElements = document.querySelectorAll(
+          "main h2[id], main h3[id]",
+        );
 
-      let currentActiveId = "";
+        let currentActiveId = "";
 
-      headingElements.forEach((heading) => {
-        const rect = heading.getBoundingClientRect();
-        if (rect.top <= 150) {
-          currentActiveId = heading.getAttribute("id") || "";
+        headingElements.forEach((heading) => {
+          const rect = heading.getBoundingClientRect();
+          if (rect.top <= 150) {
+            currentActiveId = heading.getAttribute("id") || "";
+          }
+        });
+
+        if (currentActiveId && currentActiveId !== activeId) {
+          setActiveId(currentActiveId);
         }
       });
-
-      if (currentActiveId && currentActiveId !== activeId) {
-        setActiveId(currentActiveId);
-      }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll(); // Check initial state
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
   }, [activeId]);
 
   const scrollToHeading = (id: string) => {

@@ -514,7 +514,7 @@ export default function RetellAIBlogPost() {
 
               <Link
                 href="/whitelabel"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition-all shadow-premium hover:shadow-premium-lg hover:scale-105"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition shadow-premium hover:shadow-premium-lg hover:scale-105"
               >
                 Start White-Labeling Retell
                 <span className="ml-2">→</span>
@@ -529,7 +529,7 @@ export default function RetellAIBlogPost() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Link
                   href="/blog/vapi-white-label-platform"
-                  className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition-all group"
+                  className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition group"
                 >
                   <h3 className="text-white font-bold mb-2 group-hover:text-brand-light transition-colors">
                     White-Labeling Vapi with Fusion Calling
@@ -541,7 +541,7 @@ export default function RetellAIBlogPost() {
                 </Link>
                 <Link
                   href="/blog/vapi-vs-retell-vs-elevenlabs"
-                  className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition-all group"
+                  className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition group"
                 >
                   <h3 className="text-white font-bold mb-2 group-hover:text-brand-light transition-colors">
                     Vapi vs Retell vs ElevenLabs: Choosing a Provider

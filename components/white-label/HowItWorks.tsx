@@ -84,11 +84,11 @@ export default function HowItWorks() {
 
                   {/* Card */}
                   <div className="flex-grow w-full">
-                    <Card className="glass-light border-brand/20 hover:border-brand/40 transition-all duration-500 hover:shadow-premium group">
+                    <Card className="glass-light border-brand/20 hover:border-brand/40 transition duration-300 hover:shadow-premium group">
                       <CardContent className="p-5 md:p-6">
                         <div className="flex items-start gap-4 sm:gap-6">
                           <div className="flex-shrink-0 hidden md:block">
-                            <div className="w-14 h-14 rounded-xl bg-brand/10 border border-brand/30 flex items-center justify-center group-hover:bg-brand/20 group-hover:border-brand/50 transition-all duration-300">
+                            <div className="w-14 h-14 rounded-xl bg-brand/10 border border-brand/30 flex items-center justify-center group-hover:bg-brand/20 group-hover:border-brand/50 transition duration-300">
                               <Icon className="w-7 h-7 text-brand" />
                             </div>
                           </div>

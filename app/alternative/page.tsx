@@ -203,7 +203,7 @@ export default function CompareHubPage() {
                   href={`/alternative/${post.slug}`}
                   className="group block"
                 >
-                  <div className="glass-light h-full rounded-2xl overflow-hidden border border-brand/20 hover:border-brand/40 transition-all duration-500 hover:shadow-premium hover:shadow-premium-lg">
+                  <div className="glass-light h-full rounded-2xl overflow-hidden border border-brand/20 hover:border-brand/40 transition duration-300 hover:shadow-premium hover:shadow-premium-lg">
                     {/* Image Section */}
                     <div className="relative aspect-video overflow-hidden">
                       <Image
@@ -211,7 +211,7 @@ export default function CompareHubPage() {
                         alt={`${post.competitorName} vs Fusion Calling comparison`}
                         title={`Best ${post.competitorName} Alternatives for AI Phone Call Agents`}
                         fill
-                        className="object-cover transform group-hover:scale-105 transition-transform duration-500"
+                        className="object-cover transform group-hover:scale-105 transition-transform duration-300"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
@@ -298,7 +298,7 @@ export default function CompareHubPage() {
               ].map((f) => (
                 <div
                   key={f.title}
-                  className="glass-light rounded-2xl p-6 border border-brand/20 hover:border-brand/40 transition-all duration-300 group"
+                  className="glass-light rounded-2xl p-6 border border-brand/20 hover:border-brand/40 transition duration-300 group"
                 >
                   <div className="text-3xl mb-4 text-brand-light group-hover:text-brand transition-colors">
                     {f.icon}
@@ -314,7 +314,7 @@ export default function CompareHubPage() {
             <div className="text-center mt-12">
               <Link
                 href="/whitelabel"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition-all shadow-premium hover:shadow-premium-lg hover:scale-105"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition shadow-premium hover:shadow-premium-lg hover:scale-105"
               >
                 Explore the Partner Program
                 <span className="ml-2">→</span>

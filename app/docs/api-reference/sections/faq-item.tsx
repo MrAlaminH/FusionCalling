@@ -16,7 +16,7 @@ export default function FaqItem({ q, a }: { q: string; a: string }) {
         <span className="text-sm font-medium text-gray-100">{q}</span>
         <ChevronDown className={`h-4 w-4 text-gray-500 shrink-0 transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
-      {open && <p className="px-4 pb-4 text-sm text-gray-400">{a}</p>}
+      {open && <p className="px-4 pb-4 text-sm text-gray-400 animate-fade-in">{a}</p>}
     </div>
   );
 }

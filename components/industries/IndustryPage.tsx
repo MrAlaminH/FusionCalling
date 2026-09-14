@@ -353,7 +353,7 @@ export default function IndustryPage({ industry }: { industry: Industry }) {
 
               <Link
                 href="/whitelabel"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition-all shadow-premium hover:shadow-premium-lg hover:scale-105"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition shadow-premium hover:shadow-premium-lg hover:scale-105"
               >
                 Explore the Partner Program
                 <span className="ml-2">→</span>
@@ -390,7 +390,7 @@ export default function IndustryPage({ industry }: { industry: Industry }) {
                   <Link
                     key={r.slug}
                     href={`/industries/${r.slug}`}
-                    className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition-all group"
+                    className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition group"
                   >
                     <div className="text-3xl mb-3">{r.emoji}</div>
                     <h3 className="text-white font-bold mb-2 group-hover:text-brand-light transition-colors">

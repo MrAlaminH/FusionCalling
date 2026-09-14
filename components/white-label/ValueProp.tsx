@@ -93,7 +93,7 @@ export default function ValueProp() {
                 className="relative group transition-transform duration-300 hover:-translate-y-2 hover:scale-[1.03]"
               >
                 {/* Glow effect */}
-                <div className="absolute -inset-4 bg-gradient-to-br from-brand/25 via-brand-strong/10 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+                <div className="absolute -inset-4 bg-gradient-to-br from-brand/25 via-brand-strong/10 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
 
                 <Card className="glass-light h-full transition-premium border-gray-800/50 hover:border-brand/40 group-hover:bg-gradient-to-br group-hover:from-brand/5 group-hover:to-transparent">
                   <CardContent className="p-5 md:p-6 space-y-5 flex flex-col h-full relative overflow-hidden">

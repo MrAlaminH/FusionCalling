@@ -109,8 +109,8 @@ export default function IndustriesHubPage() {
                 href={`/industries/${industry.slug}`}
                 className="group"
               >
-                <div className="glass-light h-full rounded-2xl p-6 border border-brand/20 hover:border-brand/40 transition-all duration-500 hover:shadow-premium">
-                  <div className="aspect-video bg-gradient-to-br from-brand/10 to-brand-strong/5 rounded-xl mb-6 overflow-hidden border border-brand/10 group-hover:border-brand/30 transition-all duration-300 flex items-center justify-center">
+                <div className="glass-light h-full rounded-2xl p-6 border border-brand/20 hover:border-brand/40 transition duration-300 hover:shadow-premium">
+                  <div className="aspect-video bg-gradient-to-br from-brand/10 to-brand-strong/5 rounded-xl mb-6 overflow-hidden border border-brand/10 group-hover:border-brand/30 transition duration-300 flex items-center justify-center">
                     <div className="text-5xl">{industry.emoji}</div>
                   </div>
 
@@ -196,7 +196,7 @@ export default function IndustriesHubPage() {
             <div className="text-center mt-10">
               <Link
                 href="/whitelabel"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition-all shadow-premium hover:shadow-premium-lg hover:scale-105"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition duration-300 shadow-premium hover:shadow-premium-lg hover:scale-105 active:scale-[0.98]"
               >
                 Explore the Partner Program
                 <span className="ml-2">→</span>

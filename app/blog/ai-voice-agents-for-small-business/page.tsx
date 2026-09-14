@@ -585,7 +585,7 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
 
               <Link
                 href="/whitelabel"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition-all shadow-premium hover:shadow-premium-lg hover:scale-105"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition shadow-premium hover:shadow-premium-lg hover:scale-105"
               >
                 Start White-Labeling Fusion Calling
                 <span className="ml-2">→</span>
@@ -600,7 +600,7 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Link
                   href="/blog/how-to-start-a-voice-ai-agency"
-                  className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition-all group"
+                  className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition group"
                 >
                   <h3 className="text-white font-bold mb-2 group-hover:text-brand-light transition-colors">
                     How to Start a Voice AI Agency in 2026
@@ -612,7 +612,7 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
                 </Link>
                 <Link
                   href="/blog/gohighlevel-white-label-voice"
-                  className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition-all group"
+                  className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition group"
                 >
                   <h3 className="text-white font-bold mb-2 group-hover:text-brand-light transition-colors">
                     Adding Voice AI to Your GoHighLevel Agency

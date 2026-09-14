@@ -106,7 +106,7 @@ export default function ShareMenu() {
       {toast && (
         <div
           role="status"
-          className="fixed bottom-5 left-1/2 -translate-x-1/2 z-[70] rounded-lg border border-white/15 bg-zinc-900 px-4 py-2 text-sm text-gray-200 shadow-xl"
+          className="fixed bottom-5 left-1/2 -translate-x-1/2 z-[70] rounded-lg border border-white/15 bg-zinc-900 px-4 py-2 text-sm text-gray-200 shadow-xl animate-fade-in"
         >
           {toast}
         </div>

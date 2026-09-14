@@ -127,13 +127,13 @@ export default function VoiceCalculator() {
           <div className="flex gap-2 bg-zinc-900 p-1.5 rounded-xl border border-brand/20">
             <button
               onClick={() => handleProviderChange("vapi")}
-              className={`px-6 py-2 rounded-lg font-bold transition-all ${provider === "vapi" ? "bg-gradient-to-r from-brand to-brand-strong text-white shadow-premium" : "text-gray-400 hover:bg-zinc-800"}`}
+              className={`px-6 py-2 rounded-lg font-bold transition ${provider === "vapi" ? "bg-gradient-to-r from-brand to-brand-strong text-white shadow-premium" : "text-gray-400 hover:bg-zinc-800"}`}
             >
               Vapi
             </button>
             <button
               onClick={() => handleProviderChange("retail")}
-              className={`px-6 py-2 rounded-lg font-bold transition-all ${provider === "retail" ? "bg-gradient-to-r from-brand to-brand-strong text-white shadow-premium" : "text-gray-400 hover:bg-zinc-800"}`}
+              className={`px-6 py-2 rounded-lg font-bold transition ${provider === "retail" ? "bg-gradient-to-r from-brand to-brand-strong text-white shadow-premium" : "text-gray-400 hover:bg-zinc-800"}`}
             >
               Retell
             </button>
@@ -186,7 +186,7 @@ export default function VoiceCalculator() {
                       <button
                         key={d}
                         onClick={() => setDuration(d)}
-                        className={`py-2 text-xs font-bold rounded-lg border-2 transition-all ${duration === d ? "bg-gradient-to-r from-brand to-brand-strong border-brand text-white shadow-premium" : "bg-zinc-800 border-zinc-700 text-gray-400 hover:border-brand/50"}`}
+                        className={`py-2 text-xs font-bold rounded-lg border-2 transition ${duration === d ? "bg-gradient-to-r from-brand to-brand-strong border-brand text-white shadow-premium" : "bg-zinc-800 border-zinc-700 text-gray-400 hover:border-brand/50"}`}
                       >
                         {d}m
                       </button>
@@ -301,7 +301,7 @@ export default function VoiceCalculator() {
                   {stats.map((stat, i) => (
                     <div
                       key={i}
-                      className={`${stat.bg} rounded-2xl p-6 border-2 ${stat.border} transition-all group relative hover:shadow-premium`}
+                      className={`${stat.bg} rounded-2xl p-6 border-2 ${stat.border} transition group relative hover:shadow-premium`}
                     >
                       <p className="text-[11px] font-black uppercase tracking-widest text-gray-400 mb-2">
                         {stat.label}

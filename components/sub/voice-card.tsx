@@ -103,7 +103,7 @@ export function VoiceCard({
 
   return (
     <div
-      className={`bg-black rounded-lg p-6 min-w-[300px] select-none group border border-orange-500/40 transition-all duration-300 hover:shadow-[0_0_30px_rgba(249,115,22,0.4)] hover:border-orange-500/40 ${className}`}
+      className={`bg-black rounded-lg p-6 min-w-[300px] select-none group border border-orange-500/40 transition duration-300 hover:shadow-[0_0_30px_rgba(249,115,22,0.4)] hover:border-orange-500/40 ${className}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
@@ -142,7 +142,7 @@ export function VoiceCard({
         </button>
         <div className="flex-1 h-1 bg-[#333333] rounded-full overflow-hidden">
           <div
-            className="h-full bg-orange-500 group-hover:bg-orange-400 transition-all duration-300 rounded-full"
+            className="h-full bg-orange-500 group-hover:bg-orange-400 transition duration-300 rounded-full"
             style={{ width: `${progress}%` }}
           />
         </div>
