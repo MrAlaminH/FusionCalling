@@ -1,5 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { BotMessageSquare } from "lucide-react";
 import WhatsAppBubble from "@/components/WhatsAppBubble";
 
@@ -17,6 +18,10 @@ const WEBHOOK_URL =
   "https://n8n.deployify.xyz/webhook/beb4b78f-1ffd-4411-b489-3ff9989b7169/chat";
 
 const ChatWidget = () => {
+  // The /deck presentation is fullscreen — no floating widgets over slides.
+  const pathname = usePathname();
+  const isDeck = pathname?.startsWith("/deck") ?? false;
+
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     { sender: "bot", text: "Hi there! 👋" },
@@ -150,6 +155,8 @@ const ChatWidget = () => {
   // WhatsApp for now). Code stays intact; set to true to restore the AI
   // bubble alongside WhatsApp. Chat window below is gated on the same flag.
   const SHOW_AI_CHAT = false;
+
+  if (isDeck) return null;
 
   return (
     <>
