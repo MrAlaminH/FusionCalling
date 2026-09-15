@@ -31,3 +31,21 @@ export function truncateAtWord(input: string, maxLen: number): string {
   return body.replace(/\s+$/, "") + "…";
 }
 
+/**
+ * Format an ISO date for display, pinned to UTC so server rendering never
+ * shifts the calendar day. Accepts "YYYY-MM-DD" or a full ISO timestamp.
+ * Long = "February 13, 2025", short = "Feb 13, 2025".
+ */
+export function formatDate(
+  iso: string,
+  month: "long" | "short" = "long"
+): string {
+  const normalized = iso.includes("T") ? iso : `${iso}T00:00:00Z`;
+  return new Date(normalized).toLocaleDateString("en-US", {
+    year: "numeric",
+    month,
+    day: "numeric",
+    timeZone: "UTC",
+  });
+}
+

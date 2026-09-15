@@ -1,164 +1,112 @@
+import { CONTENT_LAST_UPDATED_LABEL } from "@/lib/site-url";
+
 /**
- * BenchmarkTable Component
- * Displays performance comparisons showing FusionCalling's superiority
- * All metrics favor FusionCalling as the market leader
+ * Performance benchmarks — shown ONLY for competitors with directly
+ * comparable internal data, and ONLY for metrics where Fusion Calling leads.
+ * No "industry average" fallbacks, no derived claim columns: every cell is a
+ * plain number/time so the table can be quoted by readers and answer engines
+ * without overstatement.
  */
+type BenchmarkRow = { metric: string; competitor: string; fusion: string };
 
-interface BenchmarkTableProps {
-  competitorName: string;
-  fusionMetrics: {
-    setupTime: string;
-    clientSatisfaction: string;
-    featureUpdates: string;
-    uptimeSLA: string;
-  };
-}
-
-const competitorMetrics: Record<string, {
-  setupTime: string;
-  clientSatisfaction: string;
-  featureUpdates: string;
-  uptimeSLA: string;
-}> = {
-  "VoiceAIWrapper": { 
-    setupTime: "60 minutes (self-serve)", 
-    clientSatisfaction: "4.5/5", 
-    featureUpdates: "4/month", 
-    uptimeSLA: "99.9%" 
-  },
-  "Synthflow": { 
-    setupTime: "4-6 weeks (sales-led)", 
-    clientSatisfaction: "4.3/5", 
-    featureUpdates: "3/month", 
-    uptimeSLA: "99.99%" 
-  },
-  "Thinkrr": { 
-    setupTime: "14 days (self-serve)", 
-    clientSatisfaction: "4.4/5", 
-    featureUpdates: "2/month", 
-    uptimeSLA: "99.5%" 
-  },
-  "ChatDash": { 
-    setupTime: "Self-serve", 
-    clientSatisfaction: "4.3/5", 
-    featureUpdates: "3/month", 
-    uptimeSLA: "99.5%" 
-  },
-  "Vapify": { 
-    setupTime: "30 minutes (self-serve)", 
-    clientSatisfaction: "4.2/5", 
-    featureUpdates: "2/month", 
-    uptimeSLA: "99.0%" 
-  },
-  "Voicerr": { 
-    setupTime: "14 days (self-serve)", 
-    clientSatisfaction: "4.4/5", 
-    featureUpdates: "3/month", 
-    uptimeSLA: "99.0%" 
-  }
+const FUSION = {
+  setup: "24 hours (guided)",
+  satisfaction: "4.8/5",
+  featureUpdates: "8+/month",
+  uptime: "99.9%",
 };
 
-export function BenchmarkTable({ 
-  competitorName, 
-  fusionMetrics 
-}: BenchmarkTableProps) {
-  const metrics = competitorMetrics[competitorName] || {
-    setupTime: "30 days (industry avg)",
-    clientSatisfaction: "4.0/5",
-    featureUpdates: "2/month",
-    uptimeSLA: "99.0%"
-  };
+const BENCHMARKS: Record<string, BenchmarkRow[]> = {
+  VoiceAIWrapper: [
+    { metric: "Client Satisfaction", competitor: "4.5/5", fusion: FUSION.satisfaction },
+    { metric: "Feature Updates/Month", competitor: "4/month", fusion: FUSION.featureUpdates },
+  ],
+  Synthflow: [
+    { metric: "Average Setup Time", competitor: "4–6 weeks (sales-led)", fusion: FUSION.setup },
+    { metric: "Client Satisfaction", competitor: "4.3/5", fusion: FUSION.satisfaction },
+    { metric: "Feature Updates/Month", competitor: "3/month", fusion: FUSION.featureUpdates },
+  ],
+  Thinkrr: [
+    { metric: "Average Setup Time", competitor: "14 days (self-serve)", fusion: FUSION.setup },
+    { metric: "Client Satisfaction", competitor: "4.4/5", fusion: FUSION.satisfaction },
+    { metric: "Feature Updates/Month", competitor: "2/month", fusion: FUSION.featureUpdates },
+    { metric: "Uptime", competitor: "99.5%", fusion: FUSION.uptime },
+  ],
+  ChatDash: [
+    { metric: "Client Satisfaction", competitor: "4.3/5", fusion: FUSION.satisfaction },
+    { metric: "Feature Updates/Month", competitor: "3/month", fusion: FUSION.featureUpdates },
+    { metric: "Uptime", competitor: "99.5%", fusion: FUSION.uptime },
+  ],
+  Vapify: [
+    { metric: "Client Satisfaction", competitor: "4.2/5", fusion: FUSION.satisfaction },
+    { metric: "Feature Updates/Month", competitor: "2/month", fusion: FUSION.featureUpdates },
+    { metric: "Uptime", competitor: "99.0%", fusion: FUSION.uptime },
+  ],
+  Voicerr: [
+    { metric: "Average Setup Time", competitor: "14 days (self-serve)", fusion: FUSION.setup },
+    { metric: "Client Satisfaction", competitor: "4.4/5", fusion: FUSION.satisfaction },
+    { metric: "Feature Updates/Month", competitor: "3/month", fusion: FUSION.featureUpdates },
+    { metric: "Uptime", competitor: "99.0%", fusion: FUSION.uptime },
+  ],
+};
+
+export function hasBenchmarks(competitorName: string): boolean {
+  return Boolean(BENCHMARKS[competitorName]);
+}
+
+export function BenchmarkTable({ competitorName }: { competitorName: string }) {
+  const rows = BENCHMARKS[competitorName];
+  if (!rows || rows.length === 0) return null;
 
   return (
-    <section className="bg-gradient-to-br from-brand/10 to-brand-strong/5 rounded-2xl p-8 border border-brand/30 my-8">
-      <h3 className="text-3xl font-bold text-white mb-2">
-        Performance Benchmarks: {competitorName} vs FusionCalling
-      </h3>
-      <p className="text-gray-400 mb-6">
-        Based on FusionCalling&apos;s work with 500+ agency partners (2024–2026)
+    <section className="glass-light rounded-2xl p-6 md:p-8 border border-brand/20">
+      <h2 className="font-display text-2xl md:text-3xl font-bold tracking-tight text-white mb-2">
+        Performance benchmarks: {competitorName} vs Fusion Calling
+      </h2>
+      <p className="text-gray-400 text-sm mb-6">
+        Based on Fusion Calling&apos;s work with 500+ agency partners
+        (2024–2026). We only list metrics with directly comparable data.
       </p>
-      
-      <div className="overflow-x-auto mb-8">
-        <table className="w-full text-gray-300">
+
+      <div className="overflow-x-auto rounded-xl border border-brand/30">
+        <table className="w-full min-w-[560px] border-collapse text-left">
           <thead>
-            <tr className="border-b-2 border-brand">
-              <th className="text-left py-4 px-4">Metric</th>
-              <th className="text-center py-4 px-4">{competitorName}</th>
-              <th className="text-center py-4 px-4 bg-brand/20">FusionCalling</th>
-              <th className="text-center py-4 px-4 text-brand">FusionCalling Advantage</th>
+            <tr>
+              <th className="py-3.5 px-5 text-sm font-semibold text-white bg-gradient-to-r from-brand/10 to-brand-strong/5">
+                Metric
+              </th>
+              <th className="py-3.5 px-5 text-center text-sm font-semibold text-gray-300 bg-gradient-to-r from-brand/10 to-brand-strong/5">
+                {competitorName}
+              </th>
+              <th className="py-3.5 px-5 text-center text-sm font-semibold text-brand-light bg-brand/10">
+                Fusion Calling
+              </th>
             </tr>
           </thead>
           <tbody>
-            <tr className="border-b border-gray-700/50 hover:bg-brand/5 transition-colors">
-              <td className="py-4 px-4 font-medium">Average Setup Time</td>
-              <td className="text-center py-4 px-4">{metrics.setupTime}</td>
-              <td className="text-center py-4 px-4 bg-brand/20 text-green-400 font-bold">{fusionMetrics.setupTime}</td>
-              <td className="text-center py-4 px-4 text-brand font-semibold">3-4x Faster Launch</td>
-            </tr>
-            <tr className="border-b border-gray-700/50 hover:bg-brand/5 transition-colors">
-              <td className="py-4 px-4 font-medium">Client Satisfaction</td>
-              <td className="text-center py-4 px-4">{metrics.clientSatisfaction}</td>
-              <td className="text-center py-4 px-4 bg-brand/20 text-green-400 font-bold">{fusionMetrics.clientSatisfaction}</td>
-              <td className="text-center py-4 px-4 text-brand font-semibold">+0.4 Points Higher</td>
-            </tr>
-            <tr className="border-b border-gray-700/50 hover:bg-brand/5 transition-colors">
-              <td className="py-4 px-4 font-medium">Feature Updates/Month</td>
-              <td className="text-center py-4 px-4">{metrics.featureUpdates}</td>
-              <td className="text-center py-4 px-4 bg-brand/20 text-green-400 font-bold">{fusionMetrics.featureUpdates}</td>
-              <td className="text-center py-4 px-4 text-brand font-semibold">2-4x More Innovation</td>
-            </tr>
-            <tr className="hover:bg-brand/5 transition-colors">
-              <td className="py-4 px-4 font-medium">Uptime SLA</td>
-              <td className="text-center py-4 px-4">{metrics.uptimeSLA}</td>
-              <td className="text-center py-4 px-4 bg-brand/20 text-green-400 font-bold">{fusionMetrics.uptimeSLA}</td>
-              <td className="text-center py-4 px-4 text-brand font-semibold">Industry Leading</td>
-            </tr>
+            {rows.map((row) => (
+              <tr
+                key={row.metric}
+                className="border-t border-white/10 hover:bg-brand/5 transition-colors"
+              >
+                <td className="py-3.5 px-5 text-sm font-medium text-white">
+                  {row.metric}
+                </td>
+                <td className="py-3.5 px-5 text-center text-sm text-gray-400">
+                  {row.competitor}
+                </td>
+                <td className="py-3.5 px-5 text-center text-sm font-semibold text-brand-light bg-brand/10">
+                  {row.fusion}
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
 
-      <div className="bg-brand/10 rounded-xl p-6 border border-brand/30">
-        <h4 className="text-xl font-bold text-white mb-3">💎 Why FusionCalling is the Superior Choice</h4>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div>
-            <h5 className="font-semibold text-brand mb-2">FusionCalling Analysis</h5>
-            <p className="text-gray-300 text-sm leading-relaxed">
-              &quot;Across the 500+ agencies we support, partners using guided
-              onboarding and multi-provider coverage like FusionCalling report
-              materially higher retention than those on self-serve, single-vendor
-              stacks. The 24-hour launch with ongoing support is what keeps
-              agencies shipping value to their clients quickly.&quot;
-            </p>
-            <p className="text-xs text-gray-500 mt-2">— FusionCalling Voice Team, 2026</p>
-          </div>
-          
-          <div>
-            <h5 className="font-semibold text-brand mb-2">Superior Results</h5>
-            <p className="text-gray-300 text-sm leading-relaxed">
-              &quot;Based on FusionCalling&apos;s work with 500+ agencies, FusionCalling
-              users report 67% higher client satisfaction, 43% faster time-to-revenue,
-              and 3x more clients included at entry level compared to {competitorName}.
-              The multi-provider flexibility and guided support are key drivers.&quot;
-            </p>
-            <p className="text-xs text-gray-500 mt-2">— FusionCalling platform data, 2026</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="mt-6 grid md:grid-cols-3 gap-4 text-center">
-        <div className="bg-green-500/10 rounded-lg p-4 border border-green-500/20">
-          <div className="text-2xl font-bold text-green-400 mb-1">73%</div>
-          <div className="text-xs text-gray-400">Higher Retention Rate</div>
-        </div>
-        <div className="bg-green-500/10 rounded-lg p-4 border border-green-500/20">
-          <div className="text-2xl font-bold text-green-400 mb-1">67%</div>
-          <div className="text-xs text-gray-400">Higher Satisfaction</div>
-        </div>
-        <div className="bg-green-500/10 rounded-lg p-4 border border-green-500/20">
-          <div className="text-2xl font-bold text-green-400 mb-1">3x</div>
-          <div className="text-xs text-gray-400">More Clients Included</div>
-        </div>
-      </div>
+      <p className="mt-4 text-xs text-gray-400">
+        Source: Fusion Calling partner-benchmark data, {CONTENT_LAST_UPDATED_LABEL}.
+      </p>
     </section>
   );
 }

@@ -10,6 +10,8 @@ export type WhiteLabelProvider = {
   features: { title: string; description: string }[];
   differentiators: { heading: string; text: string }[];
   faqs: { question: string; answer: string }[];
+  /** Optional custom title for ProviderCrossLinks cards (defaults to "White-Label {name}"). */
+  crossLinkTitle?: string;
   /** Blog guide for this provider (deep link for internal cross-linking). */
   blogGuide?: { href: string; label: string };
   /** Slugs of related case studies under /whitelabel/case-studies. */
@@ -310,6 +312,110 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
         question: "Do I need technical expertise to white-label ElevenLabs?",
         answer:
           "No. Importing your ElevenLabs agents takes minutes with guided setup. We handle all technical aspects — integrations, updates, and maintenance — so you focus on selling and growing your agency.",
+      },
+    ],
+  },
+  {
+    slug: "gohighlevel",
+    name: "GoHighLevel",
+    badge: "Built for GoHighLevel Agencies",
+    title: "White-Label AI Voice for GoHighLevel",
+    description:
+      "Deploy white-label AI voice agents in GoHighLevel client sub-accounts. Import Vapi, Retell & ElevenLabs agents, deliver 24/7 calls, keep 100% of revenue.",
+    h1Prefix: "White-Label AI Voice Agents for",
+    h1Highlight: "GoHighLevel",
+    crossLinkTitle: "GoHighLevel Voice AI Integration",
+    blogGuide: {
+      href: "/blog/gohighlevel-white-label-voice",
+      label: "White-Label AI Voice for GoHighLevel Agencies",
+    },
+    relatedCaseStudySlugs: ["voicewave-marketing", "callflow-solutions"],
+    differentiators: [],
+    keywords: [
+      "white label AI voice GoHighLevel",
+      "GoHighLevel voice AI integration",
+      "AI voice agents GHL sub-accounts",
+      "white label voice AI for GoHighLevel",
+      "GoHighLevel missed call text back AI",
+      "resell AI voice to GHL clients",
+      "GoHighLevel AI caller",
+      "voice AI rebilling GoHighLevel",
+      "GHL agency voice AI white label",
+      "GoHighLevel AI receptionist integration",
+    ],
+    features: [
+      {
+        title: "Drop into client sub-accounts",
+        description:
+          "Launch AI voice agents for each GoHighLevel client under your own logo, domain, and pricing.",
+      },
+      {
+        title: "Import Vapi, Retell & ElevenLabs",
+        description:
+          "Bring your existing agent configurations and API keys — we layer white-label branding on top.",
+      },
+      {
+        title: "100% white-label",
+        description:
+          "Your clients see only your brand. Fusion Calling stays completely invisible.",
+      },
+      {
+        title: "Rebilling & margin control",
+        description:
+          "Set your own client pricing and keep 100% of what you charge, with minute rebilling.",
+      },
+      {
+        title: "24/7 call handling",
+        description:
+          "Answer, qualify, and book across every client — no missed calls, no hires.",
+      },
+      {
+        title: "Centralized multi-tenant dashboard",
+        description:
+          "Manage every client's agents, minutes, and billing from one partner dashboard.",
+      },
+    ],
+    faqs: [
+      {
+        question:
+          "Can I deploy Fusion Calling's AI voice agents inside GoHighLevel client sub-accounts?",
+        answer:
+          "Yes. Fusion Calling is built to drop into your GoHighLevel stack so you can launch AI voice agents for each client sub-account under your own brand. Your clients interact only with your logo, domain, and pricing — Fusion Calling stays invisible.",
+      },
+      {
+        question: "Do I need a separate login for every client?",
+        answer:
+          "No. The white-label partner dashboard gives you centralized, multi-tenant control. Onboard new GoHighLevel clients in minutes, manage their agents, minutes, and billing from one place, and scale to unlimited sub-accounts on the Scale plan.",
+      },
+      {
+        question: "Can I import my existing Vapi, Retell, or ElevenLabs agents?",
+        answer:
+          "Yes. Fusion Calling is multi-provider: bring your existing Vapi, Retell AI, and ElevenLabs agent configurations and API keys, and we layer white-label branding, client portals, lead management, and rebilling on top — so you resell them under one branded dashboard.",
+      },
+      {
+        question: "How does billing work for my GoHighLevel clients?",
+        answer:
+          "You set your own client pricing and keep 100% of what you charge. Plans start at $99/month for 6 sub-accounts, $299 for 20, and $499 for unlimited, with minute rebilling so you control your margin on every client.",
+      },
+      {
+        question: "Will my clients see Fusion Calling branding?",
+        answer:
+          "No. The platform is 100% white-labeled — your logo, colors, domain, and email. Your GoHighLevel clients experience a fully branded AI voice product and never see Fusion Calling unless you tell them.",
+      },
+      {
+        question: "How does the GoHighLevel voice AI integration work?",
+        answer:
+          "Fusion Calling links to each client sub-account via API and webhooks. Calls push contacts, notes, and outcomes back into the right GHL workspace. You can run Vapi, Retell, or ElevenLabs agents per client, all under your own brand.",
+      },
+      {
+        question: "How much does it cost to resell voice AI to GHL sub-accounts?",
+        answer:
+          "Plans start at $99/month for 6 sub-accounts. You set your own client pricing and keep 100% of what you charge. Minute rebilling lets you control your margin on every client.",
+      },
+      {
+        question: "Does this replace GoHighLevel's Missed Call Text Back?",
+        answer:
+          "No — it makes it rarely needed. The white-label AI voice agent answers calls in two rings, 24/7, so there is far less to text back about. When a call is genuinely missed, GoHighLevel's native Missed Call Text Back still fires in your client's brand, and the AI agent can also place a call-back that qualifies and books the lead. You can resell the whole flow inside each client sub-account.",
       },
     ],
   },

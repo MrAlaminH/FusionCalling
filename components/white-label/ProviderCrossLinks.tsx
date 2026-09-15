@@ -1,27 +1,17 @@
 import Link from "next/link";
 import { whitelabelProviders } from "@/lib/whitelabel-providers";
 
-// GoHighLevel has its own standalone integration page (not in the providers
-// registry), so it's appended here to complete the cross-link set.
-const EXTRA_PROVIDER_LINKS = [
-  { slug: "gohighlevel", name: "GoHighLevel" },
-];
-
-const PROVIDER_LINKS = [
-  ...whitelabelProviders.map((p) => ({ slug: p.slug, name: p.name })),
-  ...EXTRA_PROVIDER_LINKS,
-];
-
 /**
  * Cross-links every white-label provider page to its siblings so
  * comparison-intent visitors stay on-site instead of bouncing back to search.
+ * GoHighLevel lives in the same registry (with a custom crossLinkTitle).
  */
 export default function ProviderCrossLinks({
   currentSlug,
 }: {
   currentSlug: string;
 }) {
-  const others = PROVIDER_LINKS.filter((p) => p.slug !== currentSlug);
+  const others = whitelabelProviders.filter((p) => p.slug !== currentSlug);
   if (others.length === 0) return null;
 
   return (
@@ -47,9 +37,7 @@ export default function ProviderCrossLinks({
               className="glass-light rounded-xl p-5 border border-brand/20 hover:border-brand/40 transition-premium group"
             >
               <h3 className="text-base font-bold text-brand-light mb-1 group-hover:text-brand transition-colors">
-                {p.slug === "gohighlevel"
-                  ? "GoHighLevel Voice AI Integration"
-                  : `White-Label ${p.name}`}
+                {p.crossLinkTitle ?? `White-Label ${p.name}`}
               </h3>
               <p className="text-sm text-gray-400">
                 Import {p.name} agents, set your pricing, keep 100% of revenue.

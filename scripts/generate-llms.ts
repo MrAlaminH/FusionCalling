@@ -142,11 +142,6 @@ Comparison criteria: starting price, sub-accounts included, voice providers supp
     content: `${p.description} Features: ${p.features.map((f) => `${f.title}: ${f.description}`).join(" ")} FAQs: ${p.faqs.map((f) => `Q: ${f.question} A: ${f.answer}`).join(" ")}`,
   })),
   {
-    path: "/whitelabel/gohighlevel",
-    title: "White-Label AI Voice for GoHighLevel | Fusion Calling",
-    content: `Deploy white-label AI voice agents in GoHighLevel client sub-accounts. Import Vapi, Retell & ElevenLabs agents, deliver 24/7 calls, keep 100% of revenue. GoHighLevel agencies: launch in GoHighLevel stack under own brand, multi-tenant control, bring existing agent configurations, full white-label (logo, domain, colors), minute rebilling, centralized dashboard.`,
-  },
-  {
     path: "/whitelabel/compare",
     title: "Best White-Label AI Voice Platforms Compared | Fusion Calling",
     content: `Side-by-side comparison of Fusion Calling vs Vapify vs Voicerr vs VoiceAIWrapper vs Synthflow vs Thinkrr vs Bland AI vs Air AI. Criteria: starting price, sub-accounts, voice providers (Vapi, Retell, ElevenLabs), live demo, onboarding, Stripe rebilling, 2200+ apps. Fusion $99-$499, guided launch 24h.`,

@@ -6,7 +6,17 @@ import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const NAV_LINKS = [
+export type NavbarLink = { label: string; href: string };
+
+interface WhiteLabelNavbarProps {
+  /**
+   * Override the default hub-anchored links. Provider pages pass in-page
+   * anchors (#features, #pricing, …) so navigation never leaves the page.
+   */
+  links?: NavbarLink[];
+}
+
+const DEFAULT_LINKS: NavbarLink[] = [
   { label: "Home", href: "/whitelabel" },
   { label: "Features", href: "/whitelabel#features" },
   { label: "Pricing", href: "/whitelabel#pricing" },
@@ -17,7 +27,8 @@ const NAV_LINKS = [
 const CONTACT_URL = "https://cal.com/mralamin/discovery-call";
 const APP_URL = "https://app.fusioncalling.com/";
 
-const WhiteLabelNavbar = () => {
+const WhiteLabelNavbar = ({ links }: WhiteLabelNavbarProps) => {
+  const navLinks = links ?? DEFAULT_LINKS;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -70,7 +81,7 @@ const WhiteLabelNavbar = () => {
   }, [isMenuOpen]);
 
   return (
-    <nav className="bg-[#03001417] backdrop-blur-md shadow-lg shadow-brand-strong/50 fixed inset-x-0 top-0 z-50">
+    <nav className="bg-black/70 backdrop-blur-md border-b border-brand/10 fixed inset-x-0 top-0 z-50">
       <div className="mx-auto flex max-w-screen-xl items-center justify-between gap-4 px-4 py-2 sm:px-6 lg:px-8">
         {/* Brand */}
         <Link
@@ -89,7 +100,7 @@ const WhiteLabelNavbar = () => {
             <span className="text-lg font-extrabold text-brand-strong sm:text-xl">
               Fusion Calling
             </span>
-            <span className="-mt-0.5 self-end text-[10px] font-bold text-[#FF4500]">
+            <span className="-mt-0.5 self-end text-[10px] font-bold text-brand">
               Labs
             </span>
           </span>
@@ -97,15 +108,13 @@ const WhiteLabelNavbar = () => {
 
         {/* Desktop nav */}
         <ul className="hidden items-center gap-1 lg:flex xl:gap-2">
-          {NAV_LINKS.map((item) => (
+          {navLinks.map((item) => (
             <li key={item.label}>
               <Link
                 href={item.href}
                 className={cn(
                   "block rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-200 hover:bg-brand-strong hover:text-white",
-                  item.label === "Home"
-                    ? "text-yellow-400"
-                    : "text-gray-200"
+                  item.label === "Home" ? "text-brand-light" : "text-gray-200"
                 )}
               >
                 {item.label}
@@ -120,7 +129,7 @@ const WhiteLabelNavbar = () => {
             href={CONTACT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-10 items-center justify-center rounded-xl border border-brand-strong bg-brand-strong px-4 font-medium text-black transition-colors duration-200 hover:bg-orange-700 active:scale-[0.98] lg:px-5"
+            className="inline-flex h-10 items-center justify-center rounded-xl border border-brand-strong bg-brand-strong px-4 font-medium text-black transition-colors duration-200 hover:bg-brand active:scale-[0.98] lg:px-5"
           >
             Contact Us
           </a>
@@ -172,11 +181,11 @@ const WhiteLabelNavbar = () => {
         <div
           ref={menuRef}
           id="wl-mobile-menu"
-          className="border-t border-brand-strong/30 bg-[#03001417] backdrop-blur-md lg:hidden"
+          className="border-t border-brand-strong/30 bg-black/90 backdrop-blur-md lg:hidden"
         >
           <div className="mx-auto max-w-screen-xl px-4 py-4 sm:px-6">
             <ul className="flex flex-col space-y-1">
-              {NAV_LINKS.map((item, i) => (
+              {navLinks.map((item, i) => (
                 <li key={item.label}>
                   <Link
                     ref={i === 0 ? firstItemRef : undefined}
@@ -184,9 +193,7 @@ const WhiteLabelNavbar = () => {
                     onClick={() => setIsMenuOpen(false)}
                     className={cn(
                       "block rounded-lg px-4 py-3 font-medium transition duration-300 hover:bg-brand-strong hover:text-white",
-                      item.label === "Home"
-                        ? "text-yellow-400"
-                        : "text-gray-200"
+                      item.label === "Home" ? "text-brand-light" : "text-gray-200"
                     )}
                   >
                     {item.label}
@@ -201,7 +208,7 @@ const WhiteLabelNavbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMenuOpen(false)}
-                className="inline-flex items-center justify-center rounded-xl bg-brand-strong px-4 py-3 text-center font-semibold text-black shadow-lg shadow-brand-strong/30 transition duration-300 hover:bg-orange-700"
+                className="inline-flex items-center justify-center rounded-xl bg-brand-strong px-4 py-3 text-center font-semibold text-black shadow-lg shadow-brand-strong/30 transition duration-300 hover:bg-brand"
               >
                 Contact Us
               </a>

@@ -143,7 +143,7 @@ export default function ValueProp() {
         <Reveal animation="animate-fade-in-up" delay={0.2} className="relative">
           <div className="glass rounded-3xl p-8 md:p-12 lg:p-16 border border-brand/20 shadow-premium-lg">
             {/* Background gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-brand/10 via-transparent to-green-500/5 rounded-3xl -z-10" />
+            <div className="absolute inset-0 bg-gradient-to-br from-brand/10 via-transparent to-brand/5 rounded-3xl -z-10" />
 
             <p className="font-body text-gray-400 text-base md:text-lg lg:text-xl text-center mb-10 md:mb-12">
               Simple plans that grow with your agency: Starter, Growth, and

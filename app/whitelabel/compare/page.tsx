@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import WhiteLabelNavbar from "@/components/white-label-navbar";
 import Footer from "@/components/Footer";
 import CTA from "@/components/white-label/CTA";
+import StickyMobileCta from "@/components/sticky-mobile-cta";
+import PostFaq from "@/components/blog/PostFaq";
+import { primaryButton, secondaryButton } from "@/components/ui/button-styles";
 import { comparisons } from "@/lib/comparisons";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { buildOpenGraph } from "@/lib/seo";
@@ -10,6 +13,31 @@ import { truncateAtWord } from "@/lib/utils";
 const title = "Best White-Label AI Voice Platforms Compared";
 const description =
   "Compare white-label AI voice platforms side-by-side: pricing, sub-accounts, features & multi-provider import for Vapi, Retell & ElevenLabs. From $99/mo.";
+
+// Single source of truth: the FAQPage schema and the visible FAQ list must
+// render the exact same questions/answers (Google requires visible content).
+const COMPARE_FAQS = [
+  {
+    question: "What is the best white-label AI voice platform?",
+    answer: "The best white-label AI voice platform depends on your needs. Fusion Calling offers the most flexibility with multi-provider support (Vapi, Retell AI, ElevenLabs), full white-label branding, sub-account billing where you keep 100% of revenue, and plans starting at $99/month for 6 sub-accounts.",
+  },
+  {
+    question: "How much does a white-label AI voice platform cost?",
+    answer: "White-label AI voice platforms typically range from $99/month to $499/month wholesale. Fusion Calling offers Starter ($99/mo, 6 sub-accounts), Growth ($299/mo, 20 sub-accounts, priority support, advanced analytics), and Scale ($499/mo, unlimited sub-accounts, dedicated account manager, API access). Partners keep 100% of what they charge clients.",
+  },
+  {
+    question: "Which platform supports Vapi, Retell, AND ElevenLabs?",
+    answer: "Fusion Calling is one of the few white-label platforms with native multi-provider import: Vapi, Retell AI, and ElevenLabs. You can import existing agents and API keys from any provider and resell them under one branded dashboard.",
+  },
+  {
+    question: "Can I switch from another white-label platform to Fusion Calling?",
+    answer: "Yes. Because Fusion Calling is multi-provider, you can bring your existing Vapi, Retell, or ElevenLabs agents and API keys. The transition is smooth — your agents keep working while we layer white-label branding, client portals, and rebilling on top.",
+  },
+  {
+    question: "Do I need to commit to a long-term contract?",
+    answer: "No. Fusion Calling offers month-to-month billing with no long-term contracts. There's a 3-day free trial on all plans, and you can upgrade, downgrade, or cancel at any time.",
+  },
+];
 
 export const metadata: Metadata = {
   title,
@@ -180,32 +208,14 @@ export default function WhitelabelComparePage() {
       {
         "@type": "FAQPage",
         "@id": `${SITE_URL}/whitelabel/compare#faqpage`,
-        mainEntity: [
-          {
-            "@type": "Question",
-            name: "What is the best white-label AI voice platform?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "The best white-label AI voice platform depends on your needs, but Fusion Calling stands out for multi-provider support (Vapi, Retell AI, ElevenLabs), sub-account billing where you keep 100% of revenue, full white-label dashboard with custom domain and branding, and plans starting at $99/month for 6 sub-accounts.",
-            },
+        mainEntity: COMPARE_FAQS.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
           },
-          {
-            "@type": "Question",
-            name: "How much does a white-label AI voice platform cost?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "White-label AI voice platforms typically range from $99/month to $499/month wholesale. Fusion Calling offers three tiers: Starter ($99/mo, 6 sub-accounts), Growth ($299/mo, 20 sub-accounts), and Scale ($499/mo, unlimited sub-accounts, dedicated account manager, API access). Partners keep 100% of what they charge clients.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Which white-label AI voice platform supports Vapi, Retell, and ElevenLabs?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Fusion Calling is one of the few white-label platforms with native multi-provider import: Vapi, Retell AI, and ElevenLabs. You can import existing agents and API keys from any provider and resell them under one branded dashboard.",
-            },
-          },
-        ],
+        })),
       },
     ],
   };
@@ -236,6 +246,14 @@ export default function WhitelabelComparePage() {
               We&apos;ve analyzed pricing, features, sub-account support, and
               white-label capabilities so you can make the right choice.
             </p>
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a href="#cta" className={primaryButton}>
+                Book a Demo
+              </a>
+              <a href="#platform-details" className={secondaryButton}>
+                Explore Platform Details
+              </a>
+            </div>
           </div>
         </section>
 
@@ -297,7 +315,7 @@ export default function WhitelabelComparePage() {
         </section>
 
         {/* Detailed Comparison Cards */}
-        <section className="w-full bg-black section-spacing">
+        <section id="platform-details" className="w-full bg-black section-spacing">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <div className="text-center mb-12 md:mb-16">
               <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
@@ -346,42 +364,7 @@ export default function WhitelabelComparePage() {
                 Common questions about white-label AI voice platforms.
               </p>
             </div>
-            <div className="space-y-4">
-              {[
-                {
-                  q: "What is the best white-label AI voice platform?",
-                  a: "The best white-label AI voice platform depends on your needs. Fusion Calling offers the most flexibility with multi-provider support (Vapi, Retell AI, ElevenLabs), full white-label branding, sub-account billing where you keep 100% of revenue, and plans starting at $99/month for 6 sub-accounts.",
-                },
-                {
-                  q: "How much does a white-label AI voice platform cost?",
-                  a: "White-label AI voice platforms typically range from $99/month to $499/month wholesale. Fusion Calling offers Starter ($99/mo, 6 sub-accounts), Growth ($299/mo, 20 sub-accounts, priority support, advanced analytics), and Scale ($499/mo, unlimited sub-accounts, dedicated account manager, API access). Partners keep 100% of what they charge clients.",
-                },
-                {
-                  q: "Which platform supports Vapi, Retell, AND ElevenLabs?",
-                  a: "Fusion Calling is one of the few white-label platforms with native multi-provider import: Vapi, Retell AI, and ElevenLabs. You can import existing agents and API keys from any provider and resell them under one branded dashboard.",
-                },
-                {
-                  q: "Can I switch from another white-label platform to Fusion Calling?",
-                  a: "Yes. Because Fusion Calling is multi-provider, you can bring your existing Vapi, Retell, or ElevenLabs agents and API keys. The transition is smooth — your agents keep working while we layer white-label branding, client portals, and rebilling on top.",
-                },
-                {
-                  q: "Do I need to commit to a long-term contract?",
-                  a: "No. Fusion Calling offers month-to-month billing with no long-term contracts. There's a 3-day free trial on all plans, and you can upgrade, downgrade, or cancel at any time.",
-                },
-              ].map((faq) => (
-                <div
-                  key={faq.q}
-                  className="glass-light rounded-xl p-6 border border-brand/20"
-                >
-                  <h3 className="text-lg font-bold text-brand-light mb-3">
-                    {faq.q}
-                  </h3>
-                  <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
-                    {faq.a}
-                  </p>
-                </div>
-              ))}
-            </div>
+            <PostFaq faqs={COMPARE_FAQS} title="" />
           </div>
         </section>
 
@@ -391,6 +374,7 @@ export default function WhitelabelComparePage() {
         </div>
       </main>
       <Footer />
+      <StickyMobileCta href="#cta" label="Book a Free Call" />
     </>
   );
 }

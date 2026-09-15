@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Reveal } from "@/components/ui/reveal";
-import { Check, Star, ArrowRight } from "lucide-react";
+import { Check, Star, ArrowRight, DollarSign, Timer, LockOpen } from "lucide-react";
 import { BillingToggle, type BillingCycle } from "@/components/ui/billing-toggle";
 import { SectionHeader } from "@/components/ui/section-header";
 
@@ -24,7 +24,7 @@ export default function Pricing() {
         "Vapi + Retell Support",
         "Minute Rebilling",
       ],
-      cta: "Start 3-day Free Trial",
+      cta: "Book a Demo",
     },
     {
       name: "Growth",
@@ -39,7 +39,7 @@ export default function Pricing() {
         "Advanced Analytics",
         "Custom Onboarding",
       ],
-      cta: "Start 3-day Free Trial",
+      cta: "Book a Demo",
     },
     {
       name: "Scale",
@@ -55,7 +55,7 @@ export default function Pricing() {
         "Custom Integrations",
         "Early Feature Access",
       ],
-      cta: "Start 3-day Free Trial",
+      cta: "Book a Demo",
     },
   ];
 
@@ -87,7 +87,7 @@ export default function Pricing() {
         {/* Header */}
         <SectionHeader
           title="White-Label Voice AI Pricing Plans"
-          highlight="White-Label Voice AI Pricing Plans"
+          highlight="Pricing Plans"
           subtitle="Choose the plan that fits your agency's needs. Scale up as you grow."
         />
 
@@ -136,7 +136,7 @@ export default function Pricing() {
                     {plan.name}
                   </h3>
                   <p
-                    className={`text-sm md:text-base mb-4 ${plan.popular ? "text-white/90" : "text-gray-400"}`}
+                    className={`text-sm md:text-base mb-4 ${plan.popular ? "text-black/75" : "text-gray-400"}`}
                   >
                     {plan.description}
                   </p>
@@ -148,22 +148,22 @@ export default function Pricing() {
                         </span>
                       )}
                       <span
-                        className={`font-display text-4xl md:text-5xl lg:text-6xl font-bold ${plan.popular ? "text-white" : "text-brand"}`}
+                        className={`font-display text-4xl md:text-5xl lg:text-6xl font-bold ${plan.popular ? "text-black" : "text-brand"}`}
                       >
                         ${billing === "yearly" ? plan.priceYearly : plan.priceMonthly}
                       </span>
                       <span
-                        className={`text-sm md:text-base ${plan.popular ? "text-white/90" : "text-gray-400"}`}
+                        className={`text-sm md:text-base ${plan.popular ? "text-black/75" : "text-gray-400"}`}
                       >
                         /month
                       </span>
                     </div>
                     {billing === "yearly" && (
                         <div className="flex flex-wrap items-center gap-2 animate-in fade-in duration-300">
-                          <span className={`text-xs md:text-sm ${plan.popular ? "text-white/80" : "text-brand-light/80"}`}>
+                          <span className={`text-xs md:text-sm ${plan.popular ? "text-black/70" : "text-brand-light/80"}`}>
                             billed annually
                           </span>
-                          <span className={`rounded-full px-2 py-0.5 text-[10px] md:text-xs font-semibold ring-1 ring-inset ${plan.popular ? "bg-black/20 text-white ring-white/30" : "bg-green-500/15 text-green-400 ring-green-500/30"}`}>
+                          <span className={`rounded-full px-2 py-0.5 text-[10px] md:text-xs font-semibold ring-1 ring-inset ${plan.popular ? "bg-black/15 text-black ring-black/25" : "bg-brand/15 text-brand-light ring-brand/30"}`}>
                             Save ${(plan.priceMonthly - plan.priceYearly) * 12}/yr
                           </span>
                         </div>
@@ -182,13 +182,13 @@ export default function Pricing() {
                         className={`min-w-5 min-h-5 md:min-w-6 md:min-h-6 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0 ${
                           plan.popular
                             ? "bg-black"
-                            : "bg-green-500"
+                            : "bg-brand"
                         } shadow-premium`}
                       >
-                        <Check className="w-3 h-3 md:w-3.5 md:h-3.5 text-white" />
+                        <Check className="w-3 h-3 md:w-3.5 md:h-3.5 text-brand-foreground" />
                       </div>
                       <span
-                        className={`font-body text-sm md:text-base ${plan.popular ? "text-white" : "text-gray-300"}`}
+                        className={`font-body text-sm md:text-base ${plan.popular ? "text-black" : "text-gray-300"}`}
                       >
                         {feature}
                       </span>
@@ -231,19 +231,19 @@ export default function Pricing() {
               {/* Info badges in a more compact layout */}
               <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
                 {[
-                  { value: "$0", label: "Setup Fee", icon: "💰" },
-                  { value: "3 Days", label: "Free Trial", icon: "🎯" },
+                  { value: "$0", label: "Setup Fee", icon: DollarSign },
+                  { value: "3 Days", label: "Free Trial", icon: Timer },
                   {
                     value: "Cancel Anytime",
                     label: "No Contracts",
-                    icon: "🔓",
+                    icon: LockOpen,
                   },
                 ].map((item, idx) => (
                   <div
                     key={idx}
                     className="flex items-center gap-2 px-4 py-2 md:px-5 md:py-2.5 rounded-xl bg-gradient-to-br from-brand/10 to-brand-strong/5 border border-brand/20 hover:border-brand/40 hover:-translate-y-0.5 hover:scale-[1.05] transition-premium-fast"
                   >
-                    <span className="text-lg md:text-xl">{item.icon}</span>
+                    <item.icon className="h-5 w-5 text-brand" aria-hidden="true" />
                     <div className="flex items-baseline gap-1.5">
                       <span className="font-display text-base md:text-lg font-bold text-brand">
                         {item.value}

@@ -1,13 +1,19 @@
-import Link from "next/link";
 import type { Metadata } from "next";
-import Image from "next/image";
-import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import Link from "next/link";
+import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { getTeamAuthor } from "@/lib/authors";
 import { buildOpenGraph } from "@/lib/seo";
+import { blogPosts } from "@/lib/blog-posts";
+import { blogFaqs } from "@/lib/blog-faqs";
+import { buildBlogGraph } from "@/lib/blog-schema";
+import PostLayout from "@/components/blog/PostLayout";
 
 /* eslint-disable react/no-unescaped-entities */
+import { primaryButton } from "@/components/ui/button-styles";
 
+const post = blogPosts.find((p) => p.slug === "gohighlevel-white-label-voice")!;
 const teamAuthor = getTeamAuthor();
+const faqs = blogFaqs["gohighlevel-white-label-voice"];
 
 export const metadata: Metadata = {
   title: "White-Label Voice AI for GoHighLevel: Costs",
@@ -20,7 +26,7 @@ export const metadata: Metadata = {
     path: "/blog/gohighlevel-white-label-voice",
     image: "/blog/blog7.webp",
     type: "article",
-    publishedTime: "2025-02-12T00:00:00Z",
+    publishedTime: `${post.date}T00:00:00Z`,
     modifiedTime: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
     authors: ["Fusion Calling"],
   }),
@@ -33,652 +39,432 @@ export default function GoHighLevelBlogPost() {
         id="gohighlevel-blog-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@type": "BreadcrumbList",
-                itemListElement: [
-                  {
-                    "@type": "ListItem",
-                    position: 1,
-                    name: "Home",
-                    item: `${SITE_URL}/`,
-                  },
-                  {
-                    "@type": "ListItem",
-                    position: 2,
-                    name: "Blog",
-                    item: `${SITE_URL}/blog`,
-                  },
-                  {
-                    "@type": "ListItem",
-                    position: 3,
-                    name: "Adding Voice AI to Your GoHighLevel Agency",
-                    item: `${SITE_URL}/blog/gohighlevel-white-label-voice`,
-                  },
-                ],
-              },
-              {
-                "@type": "Article",
-                "@id": `${SITE_URL}/blog/gohighlevel-white-label-voice#article`,
-                url: `${SITE_URL}/blog/gohighlevel-white-label-voice`,
-                name: "White-Label Voice AI for GoHighLevel: Costs",
-                headline:
-                  "White-Label Voice AI for GoHighLevel: Costs: An Integration Guide",
-                description:
-                  "A partnership guide for GoHighLevel agencies. Keep GHL as your CRM and add a dedicated, white-label voice AI layer with Fusion Calling via API and webhooks.",
-                inLanguage: "en-US",
-                image: `${SITE_URL}/blog/blog7.webp`,
-                isPartOf: {
-                  "@id": `${SITE_URL}/#website`,
-                },
-                datePublished: "2025-02-12T00:00:00Z",
-                dateModified: "2026-07-07T00:00:00Z",
-                author: { "@id": `${SITE_URL}/team/voice-team#person` },
-                publisher: {
-                  "@id": `${SITE_URL}/#organization`,
-                },
-                speakable: {
-                  "@type": "SpeakableSpecification",
-                  cssSelector: ["h1", ".prose"]
-                },
-              },
-              {
-                "@type": "FAQPage",
-                mainEntity: [
-                  {
-                    "@type": "Question",
-                    name: "Do I have to leave GoHighLevel to use Fusion Calling?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "No. Fusion Calling integrates with GoHighLevel via API and webhooks. You keep GoHighLevel as your CRM and add Fusion Calling as a dedicated, white-label voice AI layer that syncs calls and leads back into your GHL workflows.",
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: "Can I white-label voice AI for my GoHighLevel clients?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "Yes. Fusion Calling lets you offer voice AI under your own brand with branded portals, your own domain, and your own pricing. You manage each client in a separate sub-account and bill them however you choose.",
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: "Does Fusion Calling sync calls and leads back to GoHighLevel?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "Yes. Fusion Calling connects to GoHighLevel through API and webhooks, so call outcomes, captured leads, and appointment activity flow back into your GHL CRM and automations for follow-up.",
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: "Can I use Fusion Calling's built-in CRM instead of GoHighLevel?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "Yes. Fusion Calling includes a built-in lead management CRM on every plan — contacts, call logs, transcripts, lead statuses, notes, and pipeline — with no separate GHL subscription required for voice-first agencies.",
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: "What data syncs between Fusion Calling and GoHighLevel?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "Inbound/outbound call logs, recordings, transcripts, captured lead data (name, phone, email, custom fields), appointment bookings, call outcomes (qualified, booked, voicemail, etc.), and lead status changes.",
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: "Does this work with GHL sub-accounts for my clients?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "Yes. Each Fusion Calling sub-account can webhook into a corresponding GHL sub-account, so your clients see their voice AI activity in their own GHL workspace while you manage everything centrally.",
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: "How long does the integration take to set up?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "API + webhook configuration typically takes 1-2 hours. Our team provides done-with-you setup guidance as part of the 7-day guided onboarding.",
-                    },
-                  },
-                ],
-              },
-            ],
-          }),
+          __html: JSON.stringify(
+            buildBlogGraph({
+              slug: post.slug,
+              title: post.title,
+              description: post.description,
+              image: post.image,
+              datePublished: post.date,
+              authorSchemaId: teamAuthor.authorSchemaId,
+              faqs,
+              crumbName: "Adding Voice AI to Your GoHighLevel Agency",
+            })
+          ),
         }}
       />
 
-      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Article Header */}
-        <div className="mb-12">
-          <Link
-            href="/blog"
-            className="inline-flex items-center text-brand-light hover:text-brand-light mb-8 transition-colors"
-          >
-            ← Back to Blog
-          </Link>
-
-          <div className="flex items-center gap-3 mb-4">
-            <span className="px-4 py-2 bg-gradient-to-r from-brand to-brand-strong rounded-full text-sm font-semibold text-white">
-              Integration Guide
-            </span>
-            <span className="text-gray-500 text-sm">8 min read</span>
+      <PostLayout
+        post={post}
+        titleLead="Adding Voice AI to Your"
+        titleHighlight="GoHighLevel Agency"
+        dek={
+          <>
+            <p className="text-xl text-gray-400 leading-relaxed mb-8">
+              A partnership guide for GoHighLevel agencies. Keep GHL as your CRM and
+              add a dedicated, white-label voice AI layer your clients can use today.
+            </p>
+            <p className="text-brand-light font-semibold mb-8">
+              Running a GoHighLevel agency?{" "}
+              <Link href="/whitelabel/gohighlevel" className="underline hover:text-brand transition-colors">
+                See our white-label voice AI for GoHighLevel
+              </Link>
+              .
+            </p>
+          </>
+        }
+        author={teamAuthor}
+        faqs={faqs}
+        toc={[
+          { id: "perfect-fit", title: "Why GHL Agencies Are a Perfect Fit for Voice AI" },
+          { id: "where-voice-ai-fits", title: "Where Voice AI Fits in a GHL Agency" },
+          { id: "how-it-works-together", title: "How Fusion Calling + GoHighLevel Work Together" },
+          { id: "dedicated-voice-layer", title: "Why a Dedicated Voice Layer Complements GoHighLevel" },
+          { id: "built-in-crm", title: "Don't Have GoHighLevel Yet? Fusion Calling Includes a CRM" },
+          { id: "economics", title: "The Economics: Simple and Predictable" },
+        ]}
+      >
+        <div className="space-y-8">
+          {/* Introduction */}
+          <div className="glass-light rounded-2xl p-8 border border-brand/20">
+            <h2 id="perfect-fit" className="scroll-mt-28 text-2xl font-bold text-white mb-4">
+              Why GHL Agencies Are a Perfect Fit for Voice AI
+            </h2>
+            <p className="text-gray-300 leading-relaxed mb-4">
+              GoHighLevel is an excellent all-in-one marketing and CRM platform
+              that thousands of agencies run on. If you&apos;re one of them, you
+              already serve the local businesses that need call handling the most:
+              dental offices, home services, med spas, real estate teams, legal
+              practices, and small service businesses that live and die by the
+              phone.
+            </p>
+            <p className="text-gray-300 leading-relaxed mb-4">
+              Fusion Calling is <strong className="text-brand-light">not a competitor</strong> of
+              GoHighLevel. It&apos;s a dedicated,{" "}
+              <Link href="/glossary/white-label" className="text-brand-light hover:text-brand transition-colors">
+                white-label
+              </Link>{" "}
+              voice AI layer that
+              integrates with GHL to handle the calls your clients can&apos;t
+              always get to. The message is simple:
+            </p>
+            <p className="text-brand-light text-lg font-semibold">
+              Keep GoHighLevel as your CRM; add Fusion Calling as your dedicated,
+              white-label voice AI layer.
+            </p>
+            <p className="text-gray-300 leading-relaxed">
+              And if you don&apos;t use GoHighLevel yet, Fusion Calling includes a
+              built-in CRM of its own — so you can start a voice AI agency without
+              paying for a separate, expensive CRM.
+            </p>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
-            Adding Voice AI to Your
-            <br />
-            <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong bg-clip-text text-transparent">
-              GoHighLevel Agency
-            </span>
-          </h1>
+          {/* Where Voice AI Fits in a GHL Agency */}
+          <div>
+            <h2 id="where-voice-ai-fits" className="scroll-mt-28 text-3xl font-bold text-white mb-6">
+              Where Voice AI Fits in a GHL Agency
+            </h2>
+            <p className="text-gray-300 leading-relaxed mb-6">
+              Most of our partners come from the GoHighLevel ecosystem, and they
+              use voice AI to solve the same problems their clients ask about
+              every day. Fusion Calling handles the call, then syncs the outcome
+              back to GHL via webhooks and CRM integration.
+            </p>
 
-          <p className="text-xl text-gray-400 leading-relaxed mb-8">
-            A partnership guide for GoHighLevel agencies. Keep GHL as your CRM and
-            add a dedicated, white-label voice AI layer your clients can use today.
-          </p>
-
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-500 mb-8">
-            <span>February 12, 2025</span>
-            <span>•</span>
-            <Link
-              href={`/team/${teamAuthor.slug}`}
-              className="flex items-center gap-2 hover:text-brand-light transition-colors"
-            >
-              <Image
-                src={teamAuthor.avatar}
-                alt={`${teamAuthor.name}, ${teamAuthor.role} at Fusion Calling`}
-                width={24}
-                height={24}
-                className="w-6 h-6 rounded-full object-cover"
-              />
-              <span>By {teamAuthor.name}</span>
-            </Link>
-            <span>•</span>
-            <span>Last updated: July 7, 2026</span>
-          </div>
-
-          <p className="text-brand-light font-semibold mb-8">
-            Running a GoHighLevel agency?{" "}
-            <Link href="/whitelabel/gohighlevel" className="underline hover:text-brand transition-colors">
-              See our white-label voice AI for GoHighLevel
-            </Link>
-            .
-          </p>
-        </div>
-
-        {/* Featured Image */}
-        <div className="relative mb-12 rounded-3xl overflow-hidden border border-brand/20">
-          <Image
-            src="/blog/blog7.webp"
-            alt="Adding Voice AI to Your GoHighLevel Agency"
-            fill
-            priority
-            className="object-cover"
-            sizes="(max-width: 1200px) 100vw, 1200px"
-          />
-        </div>
-
-        {/* Article Content */}
-        <div className="prose prose-lg prose-invert max-w-none">
-          <div className="space-y-8">
-            {/* Introduction */}
-            <div className="glass-light rounded-2xl p-8 border border-brand/20">
-              <h2 className="text-2xl font-bold text-white mb-4">
-                Why GHL Agencies Are a Perfect Fit for Voice AI
-              </h2>
-              <p className="text-gray-300 leading-relaxed mb-4">
-                GoHighLevel is an excellent all-in-one marketing and CRM platform
-                that thousands of agencies run on. If you&apos;re one of them, you
-                already serve the local businesses that need call handling the most:
-                dental offices, home services, med spas, real estate teams, legal
-                practices, and small service businesses that live and die by the
-                phone.
-              </p>
-              <p className="text-gray-300 leading-relaxed mb-4">
-                Fusion Calling is <strong className="text-brand-light">not a competitor</strong> of
-                GoHighLevel. It&apos;s a dedicated,{" "}
-                <Link href="/glossary/white-label" className="text-brand-light hover:text-brand transition-colors">
-                  white-label
-                </Link>{" "}
-                voice AI layer that
-                integrates with GHL to handle the calls your clients can&apos;t
-                always get to. The message is simple:
-              </p>
-              <p className="text-brand-light text-lg font-semibold">
-                Keep GoHighLevel as your CRM; add Fusion Calling as your dedicated,
-                white-label voice AI layer.
-              </p>
-              <p className="text-gray-300 leading-relaxed">
-                And if you don&apos;t use GoHighLevel yet, Fusion Calling includes a
-                built-in CRM of its own — so you can start a voice AI agency without
-                paying for a separate, expensive CRM.
-              </p>
-            </div>
-
-            {/* Where Voice AI Fits in a GHL Agency */}
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-6">
-                Where Voice AI Fits in a GHL Agency
-              </h2>
-              <p className="text-gray-300 leading-relaxed mb-6">
-                Most of our partners come from the GoHighLevel ecosystem, and they
-                use voice AI to solve the same problems their clients ask about
-                every day. Fusion Calling handles the call, then syncs the outcome
-                back to GHL via webhooks and CRM integration.
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="glass-light rounded-xl p-6 border border-brand/20">
-                  <h3 className="text-lg font-bold text-brand-light mb-3">📞 Missed-Call Recovery</h3>
-                  <p className="text-gray-400 text-sm">
-                    Answer every after-hours or overflow call instantly, capture the
-                    caller&apos;s details, and push the lead straight into a GHL
-                    pipeline.
-                  </p>
-                </div>
-                <div className="glass-light rounded-xl p-6 border border-brand/20">
-                  <h3 className="text-lg font-bold text-brand-light mb-3">🗓️ Appointment Booking</h3>
-                  <p className="text-gray-400 text-sm">
-                    Let AI book, reschedule, and confirm appointments against your
-                    clients&apos; calendars, then trigger GHL automations.
-                  </p>
-                </div>
-                <div className="glass-light rounded-xl p-6 border border-brand/20">
-                  <h3 className="text-lg font-bold text-brand-light mb-3">🎯 Lead Qualification</h3>
-                  <p className="text-gray-400 text-sm">
-                    Pre-screen inbound callers, score the lead, and route hot
-                    opportunities to the right team inside GoHighLevel.
-                  </p>
-                </div>
-                <div className="glass-light rounded-xl p-6 border border-brand/20">
-                  <h3 className="text-lg font-bold text-brand-light mb-3">⏰ Reminders & Follow-Up</h3>
-                  <p className="text-gray-400 text-sm">
-                    Send outbound reminders and follow-ups, log the result, and keep
-                    the GHL contact record up to date.
-                  </p>
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="glass-light rounded-xl p-6 border border-brand/20">
+                <h3 className="text-lg font-bold text-brand-light mb-3">📞 Missed-Call Recovery</h3>
+                <p className="text-gray-400 text-sm">
+                  Answer every after-hours or overflow call instantly, capture the
+                  caller&apos;s details, and push the lead straight into a GHL
+                  pipeline.
+                </p>
               </div>
-            </div>
-
-            {/* How Fusion Calling + GoHighLevel Work Together */}
-            <div className="glass rounded-2xl p-8 border border-brand/20">
-              <h2 className="text-3xl font-bold text-white mb-6">
-                How Fusion Calling + GoHighLevel Work Together
-              </h2>
-              <p className="text-gray-300 leading-relaxed mb-6">
-                Fusion Calling connects to GoHighLevel through{" "}
-                <Link href="/glossary/crm-integration" className="text-brand-light hover:text-brand transition-colors">
-                  CRM integration
-                </Link>{" "}
-                and{" "}
-                <Link href="/glossary/webhook" className="text-brand-light hover:text-brand transition-colors">
-                  webhooks
-                </Link>
-                , and reaches 2,200+ other apps through our integration network (the
-                full setup is covered in our{" "}
-                <Link href="/docs" className="text-brand-light hover:text-brand transition-colors">
-                  docs
-                </Link>
-                ). Here&apos;s what that looks like for an agency:
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">🔗</span>
-                  </div>
-                  <div>
-                    <h3 className="text-white font-bold mb-2">
-                      Sync to GHL via API &amp; Webhooks
-                    </h3>
-                    <p className="text-gray-400 text-sm">
-                      Call outcomes, captured leads, and appointments flow back into
-                      your GHL CRM and automations.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">🏷️</span>
-                  </div>
-                  <div>
-                    <h3 className="text-white font-bold mb-2">
-                      White-Label Under Your Brand
-                    </h3>
-                    <p className="text-gray-400 text-sm">
-                      Branded portals on your own domain, with your pricing. Your
-                      clients never see Fusion Calling.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">👥</span>
-                  </div>
-                  <div>
-                    <h3 className="text-white font-bold mb-2">
-                      Per-Client Sub-Accounts
-                    </h3>
-                    <p className="text-gray-400 text-sm">
-                      Spin up an isolated sub-account for each GHL client, each with
-                      its own numbers, agents, and settings.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">💳</span>
-                  </div>
-                  <div>
-                    <h3 className="text-white font-bold mb-2">
-                      Bill Clients Your Way
-                    </h3>
-                    <p className="text-gray-400 text-sm">
-                      You set the price and you bill the client directly. Keep 100%
-                      of what you charge.
-                    </p>
-                  </div>
-                </div>
+              <div className="glass-light rounded-xl p-6 border border-brand/20">
+                <h3 className="text-lg font-bold text-brand-light mb-3">🗓️ Appointment Booking</h3>
+                <p className="text-gray-400 text-sm">
+                  Let AI book, reschedule, and confirm appointments against your
+                  clients&apos; calendars, then trigger GHL automations.
+                </p>
               </div>
-            </div>
-
-            {/* Why a Dedicated Voice Layer */}
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-6">
-                Why a Dedicated Voice Layer Complements GoHighLevel
-              </h2>
-              <p className="text-gray-300 leading-relaxed mb-6">
-                GoHighLevel is outstanding at CRM, automation, and marketing. A
-                dedicated voice layer complements GHL by going deep on the calls
-                themselves, so you don&apos;t have to build and maintain that
-                complexity in-house.
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="glass-light rounded-xl p-6 border border-brand/20">
-                  <h3 className="text-lg font-bold text-brand-light mb-3">
-                    Specialized Voice Depth
-                  </h3>
-                  <p className="text-gray-400 text-sm">
-                    Conversation design, voice tuning, and call analytics built
-                    specifically for phone automation.
-                  </p>
-                </div>
-                <div className="glass-light rounded-xl p-6 border border-brand/20">
-                  <h3 className="text-lg font-bold text-brand-light mb-3">
-                    Multi-Provider Support
-                  </h3>
-                  <p className="text-gray-400 text-sm">
-                    Choose the best engine per client with Vapi, Retell, and
-                    ElevenLabs all available on one platform.
-                  </p>
-                </div>
-                <div className="glass-light rounded-xl p-6 border border-brand/20">
-                  <h3 className="text-lg font-bold text-brand-light mb-3">
-                    Live Demo
-                  </h3>
-                  <p className="text-gray-400 text-sm">
-                    Hear the voice quality yourself on the Fusion Calling homepage
-                    before you offer it to clients.
-                  </p>
-                </div>
-                <div className="glass-light rounded-xl p-6 border border-brand/20">
-                  <h3 className="text-lg font-bold text-brand-light mb-3">
-                    Done-With-You Setup
-                  </h3>
-                  <p className="text-gray-400 text-sm">
-                    Launch your first client&apos;s voice AI in about 7 days with
-                    guided, done-with-you onboarding.
-                  </p>
-                </div>
+              <div className="glass-light rounded-xl p-6 border border-brand/20">
+                <h3 className="text-lg font-bold text-brand-light mb-3">🎯 Lead Qualification</h3>
+                <p className="text-gray-400 text-sm">
+                  Pre-screen inbound callers, score the lead, and route hot
+                  opportunities to the right team inside GoHighLevel.
+                </p>
               </div>
-            </div>
-
-            {/* Don't have GoHighLevel? Built-in CRM */}
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-6">
-                Don&apos;t Have GoHighLevel Yet? Fusion Calling Includes a CRM
-              </h2>
-              <p className="text-gray-300 leading-relaxed mb-6">
-                Everything above assumes you already run on GoHighLevel. But many
-                agencies are just starting out, and GoHighLevel&apos;s higher tiers
-                the ones you need to white-label client sub-accounts, are a real
-                expense before you&apos;ve landed a single voice AI client. Here&apos;s
-                the part most agencies miss:
-              </p>
-              <p className="text-brand-light text-lg font-semibold mb-6">
-                Fusion Calling includes its own built-in CRM (lead management), so
-                you don&apos;t need a separate CRM to run a voice AI agency. (For a
-                head-to-head breakdown, see our guide to the{" "}
-                <Link href="/blog/gohighlevel-alternative-for-voice-ai" className="underline hover:text-brand transition-colors">
-                  GoHighLevel alternative for voice-first agencies
-                </Link>
-                .)
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="glass-light rounded-xl p-6 border border-brand/20">
-                  <h3 className="text-lg font-bold text-brand-light mb-3">📇 Leads Captured Automatically</h3>
-                  <p className="text-gray-400 text-sm">
-                    Every inbound call and outbound campaign feeds leads straight
-                    into the built-in CRM — contacts, call history, and lead status,
-                    with no extra integration to build.
-                  </p>
-                </div>
-                <div className="glass-light rounded-xl p-6 border border-brand/20">
-                  <h3 className="text-lg font-bold text-brand-light mb-3">💰 One Subscription, Not Two</h3>
-                  <p className="text-gray-400 text-sm">
-                    Voice agents and the CRM come together in one platform, so you
-                    skip paying for a separate CRM on top of your voice tool.
-                  </p>
-                </div>
-                <div className="glass-light rounded-xl p-6 border border-brand/20">
-                  <h3 className="text-lg font-bold text-brand-light mb-3">🧩 Easier to Maintain</h3>
-                  <p className="text-gray-400 text-sm">
-                    One login, one bill, one support team. Less to integrate, sync,
-                    and troubleshoot across separate tools.
-                  </p>
-                </div>
-                <div className="glass-light rounded-xl p-6 border border-brand/20">
-                  <h3 className="text-lg font-bold text-brand-light mb-3">🔗 Still Connects to GHL If You Want</h3>
-                  <p className="text-gray-400 text-sm">
-                    If a client already uses GoHighLevel, Fusion Calling syncs to it
-                    via API and webhooks — use the built-in CRM for new clients and
-                    GHL for existing ones, all from one platform.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Economics Note */}
-            <div className="glass rounded-2xl p-8 border border-brand/20">
-              <h2 className="text-3xl font-bold text-white mb-6">
-                The Economics: Simple and Predictable
-              </h2>
-              <p className="text-gray-300 leading-relaxed mb-6">
-                You pay a flat monthly subscription for the Fusion Calling platform
-                and you keep 100% of what you charge your clients. Your only cost is
-                the subscription (tier details on our{" "}
-                <Link href="/pricing" className="text-brand-light hover:text-brand transition-colors">
-                  pricing page
-                </Link>
-                ):
-              </p>
-
-              <div className="bg-gradient-to-r from-brand/10 to-brand-strong/5 rounded-xl p-6 border border-brand/30 mb-6">
-                <ul className="space-y-3 text-gray-300">
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
-                    <span>
-                      <strong>Starter — $99/mo</strong> for up to 6 client
-                      sub-accounts
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
-                    <span>
-                      <strong>Growth — $299/mo</strong> for up to 20 client
-                      sub-accounts
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
-                    <span>
-                      <strong>Scale — $499/mo</strong> for unlimited client
-                      sub-accounts
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
-                    <span>
-                      <strong>Keep 100%</strong> of the revenue you charge clients,
-                      with full pricing control
-                    </span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="bg-gradient-to-r from-green-500/10 to-green-600/5 rounded-xl p-6 border border-green-500/20">
-                <p className="text-center text-green-300 font-semibold text-lg">
-                  💡 One flat subscription, no per-minute math, and every dollar you
-                  bill stays with your agency
+              <div className="glass-light rounded-xl p-6 border border-brand/20">
+                <h3 className="text-lg font-bold text-brand-light mb-3">⏰ Reminders & Follow-Up</h3>
+                <p className="text-gray-400 text-sm">
+                  Send outbound reminders and follow-ups, log the result, and keep
+                  the GHL contact record up to date.
                 </p>
               </div>
             </div>
+          </div>
 
-            {/* Conclusion */}
-            <div className="glass-light rounded-2xl p-8 border border-brand/30">
-              <h2 className="text-3xl font-bold text-white mb-6">
-                Add Voice AI Without Changing Your Stack
-              </h2>
-              <p className="text-gray-300 leading-relaxed mb-6">
-                GoHighLevel stays at the center of your agency. Fusion Calling slots
-                in alongside it as your dedicated, white-label voice AI layer,
-                integrating through API and webhooks so calls and leads flow back
-                into GHL. Here&apos;s what you get:
-              </p>
+          {/* How Fusion Calling + GoHighLevel Work Together */}
+          <div className="glass rounded-2xl p-8 border border-brand/20">
+            <h2 id="how-it-works-together" className="scroll-mt-28 text-3xl font-bold text-white mb-6">
+              How Fusion Calling + GoHighLevel Work Together
+            </h2>
+            <p className="text-gray-300 leading-relaxed mb-6">
+              Fusion Calling connects to GoHighLevel through{" "}
+              <Link href="/glossary/crm-integration" className="text-brand-light hover:text-brand transition-colors">
+                CRM integration
+              </Link>{" "}
+              and{" "}
+              <Link href="/glossary/webhook" className="text-brand-light hover:text-brand transition-colors">
+                webhooks
+              </Link>
+              , and reaches 2,200+ other apps through our integration network (the
+              full setup is covered in our{" "}
+              <Link href="/docs" className="text-brand-light hover:text-brand transition-colors">
+                docs
+              </Link>
+              ). Here&apos;s what that looks like for an agency:
+            </p>
 
-              <ul className="space-y-3 text-gray-300 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
+                  <span className="text-2xl">🔗</span>
+                </div>
+                <div>
+                  <h3 className="text-white font-bold mb-2">
+                    Sync to GHL via API &amp; Webhooks
+                  </h3>
+                  <p className="text-gray-400 text-sm">
+                    Call outcomes, captured leads, and appointments flow back into
+                    your GHL CRM and automations.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
+                  <span className="text-2xl">🏷️</span>
+                </div>
+                <div>
+                  <h3 className="text-white font-bold mb-2">
+                    White-Label Under Your Brand
+                  </h3>
+                  <p className="text-gray-400 text-sm">
+                    Branded portals on your own domain, with your pricing. Your
+                    clients never see Fusion Calling.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
+                  <span className="text-2xl">👥</span>
+                </div>
+                <div>
+                  <h3 className="text-white font-bold mb-2">
+                    Per-Client Sub-Accounts
+                  </h3>
+                  <p className="text-gray-400 text-sm">
+                    Spin up an isolated sub-account for each GHL client, each with
+                    its own numbers, agents, and settings.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
+                  <span className="text-2xl">💳</span>
+                </div>
+                <div>
+                  <h3 className="text-white font-bold mb-2">
+                    Bill Clients Your Way
+                  </h3>
+                  <p className="text-gray-400 text-sm">
+                    You set the price and you bill the client directly. Keep 100%
+                    of what you charge.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Why a Dedicated Voice Layer */}
+          <div>
+            <h2 id="dedicated-voice-layer" className="scroll-mt-28 text-3xl font-bold text-white mb-6">
+              Why a Dedicated Voice Layer Complements GoHighLevel
+            </h2>
+            <p className="text-gray-300 leading-relaxed mb-6">
+              GoHighLevel is outstanding at CRM, automation, and marketing. A
+              dedicated voice layer complements GHL by going deep on the calls
+              themselves, so you don&apos;t have to build and maintain that
+              complexity in-house.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="glass-light rounded-xl p-6 border border-brand/20">
+                <h3 className="text-lg font-bold text-brand-light mb-3">
+                  Specialized Voice Depth
+                </h3>
+                <p className="text-gray-400 text-sm">
+                  Conversation design, voice tuning, and call analytics built
+                  specifically for phone automation.
+                </p>
+              </div>
+              <div className="glass-light rounded-xl p-6 border border-brand/20">
+                <h3 className="text-lg font-bold text-brand-light mb-3">
+                  Multi-Provider Support
+                </h3>
+                <p className="text-gray-400 text-sm">
+                  Choose the best engine per client with Vapi, Retell, and
+                  ElevenLabs all available on one platform.
+                </p>
+              </div>
+              <div className="glass-light rounded-xl p-6 border border-brand/20">
+                <h3 className="text-lg font-bold text-brand-light mb-3">
+                  Live Demo
+                </h3>
+                <p className="text-gray-400 text-sm">
+                  Hear the voice quality yourself on the Fusion Calling homepage
+                  before you offer it to clients.
+                </p>
+              </div>
+              <div className="glass-light rounded-xl p-6 border border-brand/20">
+                <h3 className="text-lg font-bold text-brand-light mb-3">
+                  Done-With-You Setup
+                </h3>
+                <p className="text-gray-400 text-sm">
+                  Launch your first client&apos;s voice AI in about 7 days with
+                  guided, done-with-you onboarding.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Don't have GoHighLevel? Built-in CRM */}
+          <div>
+            <h2 id="built-in-crm" className="scroll-mt-28 text-3xl font-bold text-white mb-6">
+              Don&apos;t Have GoHighLevel Yet? Fusion Calling Includes a CRM
+            </h2>
+            <p className="text-gray-300 leading-relaxed mb-6">
+              Everything above assumes you already run on GoHighLevel. But many
+              agencies are just starting out, and GoHighLevel&apos;s higher tiers
+              the ones you need to white-label client sub-accounts, are a real
+              expense before you&apos;ve landed a single voice AI client. Here&apos;s
+              the part most agencies miss:
+            </p>
+            <p className="text-brand-light text-lg font-semibold mb-6">
+              Fusion Calling includes its own built-in CRM (lead management), so
+              you don&apos;t need a separate CRM to run a voice AI agency. (For a
+              head-to-head breakdown, see our guide to the{" "}
+              <Link href="/blog/gohighlevel-alternative-for-voice-ai" className="underline hover:text-brand transition-colors">
+                GoHighLevel alternative for voice-first agencies
+              </Link>
+              .)
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="glass-light rounded-xl p-6 border border-brand/20">
+                <h3 className="text-lg font-bold text-brand-light mb-3">📇 Leads Captured Automatically</h3>
+                <p className="text-gray-400 text-sm">
+                  Every inbound call and outbound campaign feeds leads straight
+                  into the built-in CRM — contacts, call history, and lead status,
+                  with no extra integration to build.
+                </p>
+              </div>
+              <div className="glass-light rounded-xl p-6 border border-brand/20">
+                <h3 className="text-lg font-bold text-brand-light mb-3">💰 One Subscription, Not Two</h3>
+                <p className="text-gray-400 text-sm">
+                  Voice agents and the CRM come together in one platform, so you
+                  skip paying for a separate CRM on top of your voice tool.
+                </p>
+              </div>
+              <div className="glass-light rounded-xl p-6 border border-brand/20">
+                <h3 className="text-lg font-bold text-brand-light mb-3">🧩 Easier to Maintain</h3>
+                <p className="text-gray-400 text-sm">
+                  One login, one bill, one support team. Less to integrate, sync,
+                  and troubleshoot across separate tools.
+                </p>
+              </div>
+              <div className="glass-light rounded-xl p-6 border border-brand/20">
+                <h3 className="text-lg font-bold text-brand-light mb-3">🔗 Still Connects to GHL If You Want</h3>
+                <p className="text-gray-400 text-sm">
+                  If a client already uses GoHighLevel, Fusion Calling syncs to it
+                  via API and webhooks — use the built-in CRM for new clients and
+                  GHL for existing ones, all from one platform.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Economics Note */}
+          <div className="glass rounded-2xl p-8 border border-brand/20">
+            <h2 id="economics" className="scroll-mt-28 text-3xl font-bold text-white mb-6">
+              The Economics: Simple and Predictable
+            </h2>
+            <p className="text-gray-300 leading-relaxed mb-6">
+              You pay a flat monthly subscription for the Fusion Calling platform
+              and you keep 100% of what you charge your clients. Your only cost is
+              the subscription (tier details on our{" "}
+              <Link href="/pricing" className="text-brand-light hover:text-brand transition-colors">
+                pricing page
+              </Link>
+              ):
+            </p>
+
+            <div className="bg-gradient-to-r from-brand/10 to-brand-strong/5 rounded-xl p-6 border border-brand/30 mb-6">
+              <ul className="space-y-3 text-gray-300">
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                   <span>
-                    A <strong>complementary voice layer</strong> that works with
-                    GoHighLevel, not against it
+                    <strong>Starter — $99/mo</strong> for up to 6 client
+                    sub-accounts
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                   <span>
-                    <strong>White-label delivery</strong> on your domain, with your
-                    pricing and per-client sub-accounts
+                    <strong>Growth — $299/mo</strong> for up to 20 client
+                    sub-accounts
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                   <span>
-                    <strong>Multi-provider choice</strong> across Vapi, Retell, and
-                    ElevenLabs
+                    <strong>Scale — $499/mo</strong> for unlimited client
+                    sub-accounts
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                   <span>
-                    <strong>100% of client revenue</strong> on a simple monthly
-                    subscription
+                    <strong>Keep 100%</strong> of the revenue you charge clients,
+                    with full pricing control
                   </span>
                 </li>
               </ul>
-
-              <Link
-                href="/whitelabel"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition shadow-premium hover:shadow-premium-lg hover:scale-105"
-              >
-                Explore the Fusion Calling White-Label Platform
-                <span className="ml-2">→</span>
-              </Link>
             </div>
 
-            {/* Related Posts */}
-            <div>
-              <h2 className="text-2xl font-bold text-white mb-6">
-                Related Articles
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Link
-                  href="/blog/vapi-white-label-platform"
-                  className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition group"
-                >
-                  <h3 className="text-white font-bold mb-2 group-hover:text-brand-light transition-colors">
-                    White-Labeling Vapi with Fusion Calling
-                  </h3>
-                  <p className="text-gray-400 text-sm">
-                    How to offer Vapi-powered voice AI under your own brand through
-                    Fusion Calling.
-                  </p>
-                </Link>
-                <Link
-                  href="/blog/how-to-start-a-voice-ai-agency"
-                  className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition group"
-                >
-                  <h3 className="text-white font-bold mb-2 group-hover:text-brand-light transition-colors">
-                    How to Start a Voice AI Agency in 2026
-                  </h3>
-                  <p className="text-gray-400 text-sm">
-                    A practical playbook for launching a profitable voice AI
-                    agency this year.
-                  </p>
-                </Link>
-               </div>
-              </div>
-
-            {/* Author Bio */}
-            <div className="mt-12 pt-8 border-t border-brand/20">
-              <div className="flex items-start gap-6">
-                <Image
-                  src={teamAuthor.avatar}
-                  alt={`${teamAuthor.name}, ${teamAuthor.role} at Fusion Calling`}
-                  width={64}
-                  height={64}
-                  className="w-16 h-16 rounded-full object-cover border border-brand/30 flex-shrink-0"
-                />
-                <div className="flex-1">
-                  <h3 className="text-lg font-bold text-white mb-2">About the Author</h3>
-                  <p className="text-gray-400 text-sm mb-3">
-                    <Link
-                      href={`/team/${teamAuthor.slug}`}
-                      className="text-brand-strong hover:text-brand transition-colors"
-                    >
-                      <strong>{teamAuthor.name}</strong>
-                    </Link>
-                  </p>
-                  <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                    {teamAuthor.shortBio}
-                  </p>
-                  <div className="flex items-center gap-4 text-sm">
-                    <a
-                      href={`mailto:${teamAuthor.email}`}
-                      className="text-brand-strong hover:text-brand transition-colors"
-                    >
-                      Email →
-                    </a>
-                    <a
-                      href="/whitelabel"
-                      className="text-brand-strong hover:text-brand transition-colors"
-                    >
-                      Partner Program →
-                    </a>
-                  </div>
-                </div>
-              </div>
-             </div>
-           </div>
+            <div className="bg-gradient-to-r from-brand/10 to-brand-strong/5 rounded-xl p-6 border border-brand/30">
+              <p className="text-center text-brand-light font-semibold text-lg">
+                💡 One flat subscription, no per-minute math, and every dollar you
+                bill stays with your agency
+              </p>
+            </div>
           </div>
-        </article>
-      </>
-    );
-  }
+
+          {/* Conclusion */}
+          <div className="glass-light rounded-2xl p-8 border border-brand/30">
+            <h2 className="text-3xl font-bold text-white mb-6">
+              Add Voice AI Without Changing Your Stack
+            </h2>
+            <p className="text-gray-300 leading-relaxed mb-6">
+              GoHighLevel stays at the center of your agency. Fusion Calling slots
+              in alongside it as your dedicated, white-label voice AI layer,
+              integrating through API and webhooks so calls and leads flow back
+              into GHL. Here&apos;s what you get:
+            </p>
+
+            <ul className="space-y-3 text-gray-300 mb-8">
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
+                <span>
+                  A <strong>complementary voice layer</strong> that works with
+                  GoHighLevel, not against it
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
+                <span>
+                  <strong>White-label delivery</strong> on your domain, with your
+                  pricing and per-client sub-accounts
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
+                <span>
+                  <strong>Multi-provider choice</strong> across Vapi, Retell, and
+                  ElevenLabs
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
+                <span>
+                  <strong>100% of client revenue</strong> on a simple monthly
+                  subscription
+                </span>
+              </li>
+            </ul>
+
+            <Link
+              href="/whitelabel"
+              className={primaryButton}
+            >
+              Explore the Fusion Calling White-Label Platform
+              <span className="ml-2">→</span>
+            </Link>
+          </div>
+        </div>
+      </PostLayout>
+    </>
+  );
+}

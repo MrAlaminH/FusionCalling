@@ -3,6 +3,8 @@ import Link from "next/link";
 import WhiteLabelNavbar from "@/components/white-label-navbar";
 import Footer from "@/components/Footer";
 import CTA from "@/components/white-label/CTA";
+import StickyMobileCta from "@/components/sticky-mobile-cta";
+import { primaryButton, secondaryButton } from "@/components/ui/button-styles";
 import { whitelabelLocations } from "@/lib/whitelabel-locations";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { buildOpenGraph } from "@/lib/seo";
@@ -103,11 +105,19 @@ export default function WhitelabelLocationsHub() {
               clients are. Each state page includes local industry insights,
               compliance guidance, and market-specific strategies.
             </p>
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a href="#cta" className={primaryButton}>
+                Book a Demo
+              </a>
+              <a href="#states" className={secondaryButton}>
+                Browse Available States
+              </a>
+            </div>
           </div>
         </section>
 
         {/* State Grid */}
-        <section className="w-full bg-black section-spacing">
+        <section id="states" className="w-full bg-black section-spacing">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <div className="text-center mb-12 md:mb-16">
               <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
@@ -130,7 +140,7 @@ export default function WhitelabelLocationsHub() {
                     <h3 className="font-display text-lg font-bold text-white group-hover:text-brand-light transition-colors">
                       {loc.stateName}
                     </h3>
-                    <span className="text-xs font-mono text-gray-500">
+                    <span className="text-xs font-mono text-gray-400">
                       {loc.abbreviation}
                     </span>
                   </div>
@@ -147,7 +157,7 @@ export default function WhitelabelLocationsHub() {
                       </span>
                     ))}
                     {loc.topIndustries.length > 3 && (
-                      <span className="text-[10px] text-gray-500 self-center">
+                      <span className="text-[10px] text-gray-400 self-center">
                         +{loc.topIndustries.length - 3}
                       </span>
                     )}
@@ -164,6 +174,7 @@ export default function WhitelabelLocationsHub() {
         </div>
       </main>
       <Footer />
+      <StickyMobileCta href="#cta" label="Book a Free Call" />
     </>
   );
 }

@@ -30,6 +30,8 @@ export type Comparison = {
   h1Highlight: string;
   subtitle: string;
   quickAnswer: string;
+  /** Topical sibling comparisons, curated per page (resolved in getRelatedComparisons). */
+  related?: string[];
   topAlternatives?: {
     heading: string;
     intro: string;
@@ -110,6 +112,7 @@ export const FUSION_ECONOMICS_POINTS = [
 export const comparisons: Comparison[] = [
   {
     slug: "chatdash",
+    related: ["vapify", "voicerr", "synthflow"],
     competitorName: "ChatDash",
     category: "Platform Comparison",
     readTime: "8 min read",
@@ -265,6 +268,7 @@ export const comparisons: Comparison[] = [
   },
   {
     slug: "vapify",
+    related: ["chatdash", "voiceaiwrapper", "voicerr"],
     competitorName: "Vapify",
     category: "Platform Comparison",
     readTime: "7 min read",
@@ -420,6 +424,7 @@ export const comparisons: Comparison[] = [
   },
   {
     slug: "voicerr",
+    related: ["vapify", "voiceaiwrapper", "chatdash"],
     competitorName: "Voicerr AI",
     category: "Platform Comparison",
     readTime: "7 min read",
@@ -575,6 +580,7 @@ export const comparisons: Comparison[] = [
   },
   {
     slug: "voiceaiwrapper",
+    related: ["vapify", "voicerr", "thinkrr"],
     competitorName: "VoiceAIWrapper",
     category: "Platform Comparison",
     readTime: "8 min read",
@@ -730,6 +736,7 @@ export const comparisons: Comparison[] = [
   },
   {
     slug: "synthflow",
+    related: ["chatdash", "thinkrr", "voiceaiwrapper"],
     competitorName: "Synthflow",
     category: "Platform Comparison",
     readTime: "8 min read",
@@ -948,6 +955,7 @@ export const comparisons: Comparison[] = [
   },
   {
     slug: "thinkrr",
+    related: ["synthflow", "voiceaiwrapper", "voicerr"],
     competitorName: "Thinkrr",
     category: "Platform Comparison",
     readTime: "7 min read",
@@ -1103,6 +1111,7 @@ export const comparisons: Comparison[] = [
   },
   {
     slug: "bland-ai",
+    related: ["air-ai", "vapi", "retell"],
     competitorName: "Bland AI",
     category: "Platform Comparison",
     readTime: "8 min read",
@@ -1317,6 +1326,7 @@ export const comparisons: Comparison[] = [
   },
   {
     slug: "air-ai",
+    related: ["bland-ai", "vapi", "retell"],
     competitorName: "Air AI",
     category: "Platform Comparison",
     readTime: "7 min read",
@@ -1471,6 +1481,7 @@ export const comparisons: Comparison[] = [
   },
   {
     slug: "vapi",
+    related: ["retell", "elevenlabs", "bland-ai"],
     competitorName: "Vapi",
     category: "Platform Comparison",
     readTime: "8 min read",
@@ -1685,6 +1696,7 @@ export const comparisons: Comparison[] = [
   },
   {
     slug: "retell",
+    related: ["vapi", "elevenlabs", "bland-ai"],
     competitorName: "Retell AI",
     category: "Platform Comparison",
     readTime: "8 min read",
@@ -1844,6 +1856,7 @@ export const comparisons: Comparison[] = [
   },
   {
     slug: "elevenlabs",
+    related: ["vapi", "retell", "air-ai"],
     competitorName: "ElevenLabs",
     category: "Platform Comparison",
     readTime: "8 min read",
@@ -2003,6 +2016,7 @@ export const comparisons: Comparison[] = [
   },
   {
     slug: "gohighlevel",
+    related: ["chatdash", "vapify", "famulor"],
     competitorName: "GoHighLevel",
     category: "Platform Comparison",
     readTime: "8 min read",
@@ -2157,6 +2171,7 @@ export const comparisons: Comparison[] = [
   },
   {
     slug: "aioncalls",
+    related: ["birdcall", "voicelate", "famulor"],
     competitorName: "AIOnCalls",
     category: "Platform Comparison",
     readTime: "8 min read",
@@ -2316,6 +2331,7 @@ export const comparisons: Comparison[] = [
   },
   {
     slug: "birdcall",
+    related: ["aioncalls", "voicestamp", "voicelate"],
     competitorName: "BirdCall AI",
     category: "Platform Comparison",
     readTime: "7 min read",
@@ -2458,6 +2474,7 @@ export const comparisons: Comparison[] = [
   },
   {
     slug: "voiceflow",
+    related: ["verloop", "voicestamp", "birdcall"],
     competitorName: "Voiceflow",
     category: "Platform Comparison",
     readTime: "7 min read",
@@ -2600,6 +2617,7 @@ export const comparisons: Comparison[] = [
   },
   {
     slug: "voicestamp",
+    related: ["voicelate", "birdcall", "famulor"],
     competitorName: "Voicestamp Technologies",
     category: "Platform Comparison",
     readTime: "7 min read",
@@ -2741,6 +2759,7 @@ export const comparisons: Comparison[] = [
   },
   {
     slug: "voicelate",
+    related: ["voicestamp", "aioncalls", "birdcall"],
     competitorName: "Voicelate",
     category: "Platform Comparison",
     readTime: "7 min read",
@@ -2882,6 +2901,7 @@ export const comparisons: Comparison[] = [
   },
   {
     slug: "famulor",
+    related: ["voicelate", "voicestamp", "aioncalls"],
     competitorName: "Famulor",
     category: "Platform Comparison",
     readTime: "7 min read",
@@ -3025,6 +3045,7 @@ export const comparisons: Comparison[] = [
   },
   {
     slug: "verloop",
+    related: ["voiceflow", "birdcall", "voicestamp"],
     competitorName: "Verloop",
     category: "Platform Comparison",
     readTime: "7 min read",
@@ -3166,6 +3187,7 @@ export const comparisons: Comparison[] = [
   },
   {
     slug: "drop-cowboy",
+    related: ["bland-ai", "air-ai", "aioncalls"],
     competitorName: "Drop Cowboy",
     category: "Platform Comparison",
     readTime: "7 min read",
@@ -3312,5 +3334,14 @@ export function getComparison(slug: string): Comparison | undefined {
 }
 
 export function getRelatedComparisons(slug: string, limit = 3): Comparison[] {
-  return comparisons.filter((c) => c.slug !== slug).slice(0, limit);
+  const current = getComparison(slug);
+  const curated = (current?.related ?? [])
+    .map(getComparison)
+    .filter((c): c is Comparison => Boolean(c) && c!.slug !== slug);
+  if (curated.length >= limit) return curated.slice(0, limit);
+  // Deterministic fallback: neighbors in registry order, excluding duplicates.
+  const seen = new Set(curated.map((c) => c.slug));
+  seen.add(slug);
+  const fillers = comparisons.filter((c) => !seen.has(c.slug));
+  return [...curated, ...fillers].slice(0, limit);
 }

@@ -12,6 +12,8 @@ import CTA from "@/components/white-label/CTA";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { Reveal } from "@/components/ui/reveal";
+import StickyMobileCta from "@/components/sticky-mobile-cta";
 import { buildOpenGraph } from "@/lib/seo";
 import { whitelabelFaqs } from "@/lib/whitelabel-faqs";
 import { SectionHeader } from "@/components/ui/section-header";
@@ -305,17 +307,18 @@ export default function WhiteLabelPage() {
             subtitle="Fusion Calling is provider-agnostic — pick the engine that fits each client and resell it under your own brand."
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-            {PROVIDER_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="glass-light rounded-xl p-5 md:p-6 border border-brand/20 hover:border-brand/40 transition-premium group"
-              >
-                <h3 className="text-base md:text-lg font-bold text-brand-light mb-1 group-hover:text-brand transition-colors">
-                  {link.title}
-                </h3>
-                <p className="text-sm md:text-base text-gray-400">{link.description}</p>
-              </Link>
+            {PROVIDER_LINKS.map((link, i) => (
+              <Reveal key={link.href} delay={i * 0.06}>
+                <Link
+                  href={link.href}
+                  className="glass-light block rounded-xl p-5 md:p-6 border border-brand/20 hover:border-brand/40 transition-premium group"
+                >
+                  <h3 className="text-base md:text-lg font-bold text-brand-light mb-1 group-hover:text-brand transition-colors">
+                    {link.title}
+                  </h3>
+                  <p className="text-sm md:text-base text-gray-400">{link.description}</p>
+                </Link>
+              </Reveal>
             ))}
           </div>
           <div className="text-center mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
@@ -342,30 +345,29 @@ export default function WhiteLabelPage() {
             subtitle="Buy wholesale from $99/month, set your own client pricing, and keep 100% of the margin. Sub-accounts, Stripe rebilling, and a 24-hour launch are included on every plan."
           />
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-            <div className="glass-light rounded-xl p-5 md:p-6 border border-brand/20">
-              <h3 className="text-base md:text-lg font-bold text-brand-light mb-1">
-                Your pricing, your margins
-              </h3>
-              <p className="text-sm md:text-base text-gray-400">
-                Package an AI receptionist at $197–$497/month and keep every dollar above the wholesale rate.
-              </p>
-            </div>
-            <div className="glass-light rounded-xl p-5 md:p-6 border border-brand/20">
-              <h3 className="text-base md:text-lg font-bold text-brand-light mb-1">
-                Stripe rebilling built in
-              </h3>
-              <p className="text-sm md:text-base text-gray-400">
-                Bill clients on your own Stripe account with automated recurring invoices in your brand.
-              </p>
-            </div>
-            <div className="glass-light rounded-xl p-5 md:p-6 border border-brand/20">
-              <h3 className="text-base md:text-lg font-bold text-brand-light mb-1">
-                Launch in 24 hours
-              </h3>
-              <p className="text-sm md:text-base text-gray-400">
-                Add your logo, colors, and domain, then import Vapi, Retell, or ElevenLabs agents the same day.
-              </p>
-            </div>
+            {[
+              {
+                title: "Your pricing, your margins",
+                text: "Package an AI receptionist at $197–$497/month and keep every dollar above the wholesale rate.",
+              },
+              {
+                title: "Stripe rebilling built in",
+                text: "Bill clients on your own Stripe account with automated recurring invoices in your brand.",
+              },
+              {
+                title: "Launch in 24 hours",
+                text: "Add your logo, colors, and domain, then import Vapi, Retell, or ElevenLabs agents the same day.",
+              },
+            ].map((card, i) => (
+              <Reveal key={card.title} delay={i * 0.06}>
+                <div className="glass-light rounded-xl p-5 md:p-6 border border-brand/20">
+                  <h3 className="text-base md:text-lg font-bold text-brand-light mb-1">
+                    {card.title}
+                  </h3>
+                  <p className="text-sm md:text-base text-gray-400">{card.text}</p>
+                </div>
+              </Reveal>
+            ))}
           </div>
           <p className="text-center mt-6 text-sm text-gray-400">
             Model your margins in the{" "}
@@ -404,30 +406,29 @@ export default function WhiteLabelPage() {
             subtitle="Package the platform as a white-label AI receptionist for your clients: it answers every call 24/7, books appointments, takes messages, and transfers urgent callers — all under your agency brand."
           />
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-            <div className="glass-light rounded-xl p-5 md:p-6 border border-brand/20">
-              <h3 className="text-base md:text-lg font-bold text-brand-light mb-1">
-                24/7 call answering
-              </h3>
-              <p className="text-sm md:text-base text-gray-400">
-                Every call picked up in two rings — nights, weekends, and holidays included.
-              </p>
-            </div>
-            <div className="glass-light rounded-xl p-5 md:p-6 border border-brand/20">
-              <h3 className="text-base md:text-lg font-bold text-brand-light mb-1">
-                Booking &amp; reminders
-              </h3>
-              <p className="text-sm md:text-base text-gray-400">
-                Books straight into your client&apos;s calendar and sends automated appointment reminders.
-              </p>
-            </div>
-            <div className="glass-light rounded-xl p-5 md:p-6 border border-brand/20">
-              <h3 className="text-base md:text-lg font-bold text-brand-light mb-1">
-                Smart transfer &amp; messages
-              </h3>
-              <p className="text-sm md:text-base text-gray-400">
-                Screens callers, takes detailed messages, and warm-transfers urgent calls to your client&apos;s team.
-              </p>
-            </div>
+            {[
+              {
+                title: "24/7 call answering",
+                text: "Every call picked up in two rings — nights, weekends, and holidays included.",
+              },
+              {
+                title: "Booking & reminders",
+                text: "Books straight into your client's calendar and sends automated appointment reminders.",
+              },
+              {
+                title: "Smart transfer & messages",
+                text: "Screens callers, takes detailed messages, and warm-transfers urgent calls to your client's team.",
+              },
+            ].map((card, i) => (
+              <Reveal key={card.title} delay={i * 0.06}>
+                <div className="glass-light rounded-xl p-5 md:p-6 border border-brand/20">
+                  <h3 className="text-base md:text-lg font-bold text-brand-light mb-1">
+                    {card.title}
+                  </h3>
+                  <p className="text-sm md:text-base text-gray-400">{card.text}</p>
+                </div>
+              </Reveal>
+            ))}
           </div>
           <p className="text-center mt-6 text-sm text-gray-400">
             Ship it to any vertical — explore{" "}
@@ -464,6 +465,7 @@ export default function WhiteLabelPage() {
         <CTA />
       </section>
       <Footer />
+      <StickyMobileCta href="#cta" label="Book a Free Call" />
     </main>
     </>
   );

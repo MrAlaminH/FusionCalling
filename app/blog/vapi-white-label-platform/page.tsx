@@ -1,13 +1,19 @@
-import Link from "next/link";
 import type { Metadata } from "next";
-import Image from "next/image";
-import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import Link from "next/link";
+import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { getTeamAuthor } from "@/lib/authors";
 import { buildOpenGraph } from "@/lib/seo";
+import { blogPosts } from "@/lib/blog-posts";
+import { blogFaqs } from "@/lib/blog-faqs";
+import { buildBlogGraph } from "@/lib/blog-schema";
+import PostLayout from "@/components/blog/PostLayout";
+import { primaryButton } from "@/components/ui/button-styles";
 
 /* eslint-disable react/no-unescaped-entities */
 
+const post = blogPosts.find((p) => p.slug === "vapi-white-label-platform")!;
 const teamAuthor = getTeamAuthor();
+const faqs = blogFaqs["vapi-white-label-platform"];
 
 export const metadata: Metadata = {
   title: "White-Label Vapi: Vapi Alone Isn't Resellable",
@@ -20,7 +26,7 @@ export const metadata: Metadata = {
     path: "/blog/vapi-white-label-platform",
     image: "/blog/blog5.webp",
     type: "article",
-    publishedTime: "2025-02-10T00:00:00Z",
+    publishedTime: `${post.date}T00:00:00Z`,
     modifiedTime: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
     authors: ["Fusion Calling"],
   }),
@@ -33,577 +39,355 @@ export default function VapiWhiteLabelBlogPost() {
         id="vapi-blog-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@type": "BreadcrumbList",
-                itemListElement: [
-                  {
-                    "@type": "ListItem",
-                    position: 1,
-                    name: "Home",
-                    item: `${SITE_URL}/`,
-                  },
-                  {
-                    "@type": "ListItem",
-                    position: 2,
-                    name: "Blog",
-                    item: `${SITE_URL}/blog`,
-                  },
-                  {
-                    "@type": "ListItem",
-                    position: 3,
-                    name: "White-Labeling Vapi with Fusion Calling",
-                    item: `${SITE_URL}/blog/vapi-white-label-platform`,
-                  },
-                ],
-              },
-              {
-                "@type": "Article",
-                "@id": `${SITE_URL}/blog/vapi-white-label-platform#article`,
-                url: `${SITE_URL}/blog/vapi-white-label-platform`,
-                name: "White-Labeling Vapi with Fusion Calling: A Guide for Agencies",
-                headline:
-                  "White-Labeling Vapi with Fusion Calling: A Guide for Agencies",
-                description:
-                  "Fusion Calling is the white-label agency layer built to work with Vapi. Add branding, client portals, multi-client management, and billing so you can resell Vapi under your own brand.",
-                inLanguage: "en-US",
-                image: `${SITE_URL}/blog/blog5.webp`,
-                isPartOf: {
-                  "@id": `${SITE_URL}/#website`,
-                },
-                datePublished: "2025-02-10T00:00:00Z",
-                dateModified: "2026-07-07T00:00:00Z",
-                author: { "@id": `${SITE_URL}/team/voice-team#person` },
-                publisher: {
-                  "@id": `${SITE_URL}/#organization`,
-                },
-                speakable: {
-                  "@type": "SpeakableSpecification",
-                  cssSelector: ["h1", ".prose"]
-                },
-              },
-              {
-                "@type": "FAQPage",
-                mainEntity: [
-                  {
-                    "@type": "Question",
-                    name: "Do I need to leave Vapi to use Fusion Calling?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "No. Fusion Calling is built to layer on top of your existing Vapi account. Bring your Vapi account and API key, connect it once, and Fusion Calling adds the white-label agency layer — branding, client portals, sub-accounts, and billing — while Vapi keeps powering the calls.",
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: "Can I resell Vapi under my own brand?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "Yes — that is exactly what Fusion Calling adds. Vapi is excellent voice AI infrastructure, but on its own it is not white-label or resellable. Fusion Calling turns Vapi into a branded, sellable product with your logo, your custom domain, your client portals, and your pricing. You keep 100% of what you charge clients.",
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: "How long does setup take?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "Most partners launch in about 7 days thanks to our done-with-you onboarding. Instead of spending months building a custom $45K white-label app, you connect your Vapi account, apply your branding, and start reselling in roughly a week.",
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: "Can I use other providers alongside Vapi?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "Yes. Fusion Calling supports Vapi, Retell AI, and ElevenLabs simultaneously. You can assign different providers to different clients based on their needs — all managed from one white-label dashboard.",
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: "Does Fusion Calling mark up Vapi's per-minute costs?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "No. You bring your own Vapi API key and pay Vapi directly for usage. Fusion Calling charges a flat monthly platform fee ($99-$499/mo) with no markup on voice minutes.",
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: "Can I migrate existing Vapi agents to Fusion Calling?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "Yes. Your Vapi assistants, phone numbers, and configurations remain in your Vapi account. Fusion Calling manages the client-facing layer — branding, portals, billing — while Vapi continues to power the actual calls.",
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: "What happens if Vapi changes their API?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "Fusion Calling maintains the integration layer and updates it proactively when providers release API changes. Your white-label operation stays stable without you needing to rewrite code.",
-                    },
-                  },
-                ],
-              },
-            ],
-          }),
+          __html: JSON.stringify(
+            buildBlogGraph({
+              slug: post.slug,
+              title: post.title,
+              description: post.description,
+              image: post.image,
+              datePublished: post.date,
+              authorSchemaId: teamAuthor.authorSchemaId,
+              faqs,
+              crumbName: "White-Labeling Vapi with Fusion Calling",
+            })
+          ),
         }}
       />
 
-      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Article Header */}
-        <div className="mb-12">
-          <Link
-            href="/blog"
-            className="inline-flex items-center text-brand-light hover:text-brand-light mb-8 transition-colors"
-          >
-            ← Back to Blog
-          </Link>
-
-          <div className="flex items-center gap-3 mb-4">
-            <span className="px-4 py-2 bg-gradient-to-r from-brand to-brand-strong rounded-full text-sm font-semibold text-white">
-              Integration Guide
-            </span>
-            <span className="text-gray-500 text-sm">7 min read</span>
-          </div>
-
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
-            White-Labeling Vapi with
-            <br />
-            <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong bg-clip-text text-transparent">
-              Fusion Calling
-            </span>
-          </h1>
-
-          <p className="text-xl text-gray-400 leading-relaxed mb-8">
+      <PostLayout
+        post={post}
+        titleLead="White-Labeling Vapi with"
+        titleHighlight="Fusion Calling"
+        dek={
+          <>
             Vapi is excellent voice AI infrastructure. Fusion Calling is the
             white-label agency layer built to work with it — adding branding,
             client portals, multi-client management, and billing so agencies can
             resell Vapi under their own brand.
-          </p>
-
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-500 mb-8">
-            <span>February 10, 2025</span>
-            <span>•</span>
-            <Link
-              href={`/team/${teamAuthor.slug}`}
-              className="flex items-center gap-2 hover:text-brand-light transition-colors"
-            >
-              <Image
-                src={teamAuthor.avatar}
-                alt={`${teamAuthor.name}, ${teamAuthor.role} at Fusion Calling`}
-                width={24}
-                height={24}
-                className="w-6 h-6 rounded-full object-cover"
-              />
-              <span>By {teamAuthor.name}</span>
-            </Link>
-            <span>•</span>
-            <span>Last updated: July 7, 2026</span>
-          </div>
-
-          <p className="text-brand-light font-semibold mb-8">
+          </>
+        }
+        author={teamAuthor}
+        faqs={faqs}
+        toc={[
+          { id: "why-agencies-love-vapi", title: "Why Agencies Love Vapi — and Where the Gap Is" },
+          { id: "what-fusion-adds", title: "What Fusion Calling Adds on Top of Vapi" },
+          { id: "how-they-work-together", title: "How Vapi + Fusion Calling Work Together" },
+          { id: "who-this-is-for", title: "Who This Is For" },
+          { id: "the-economics", title: "The Economics: You Keep 100%" },
+        ]}
+      >
+        <div className="space-y-8">
+          <p className="text-brand-light font-semibold">
             Looking to launch your own white-labeled Vapi agency?{" "}
             <Link href="/whitelabel/vapi" className="underline hover:text-brand transition-colors">
               See our white-label Vapi platform
             </Link>
             .
           </p>
-        </div>
 
-        {/* Featured Image */}
-        <div className="relative mb-12 rounded-3xl overflow-hidden border border-brand/20">
-          <Image
-            src="/blog/blog5.webp"
-            alt="White-Labeling Vapi with Fusion Calling"
-            fill
-            priority
-            className="object-cover"
-            sizes="(max-width: 1200px) 100vw, 1200px"
-          />
-        </div>
+          {/* Introduction */}
+          <div className="glass-light rounded-2xl p-8 border border-brand/20">
+            <h2 id="why-agencies-love-vapi" className="scroll-mt-28 text-2xl font-bold text-white mb-4">
+              Why Agencies Love Vapi — and Where the Gap Is
+            </h2>
+            <p className="text-gray-300 leading-relaxed mb-4">
+              <Link href="/glossary/vapi" className="text-brand-light hover:text-brand transition-colors">
+                Vapi
+              </Link>{" "}
+              has become a go-to choice for agencies building voice AI
+              practices. It delivers fast, reliable, real-time voice
+              infrastructure that handles the hard part of conversational AI —
+              speech, latency, telephony, and model orchestration. For the
+              engineering that powers great calls, Vapi is genuinely
+              excellent.
+            </p>
+            <p className="text-gray-300 leading-relaxed mb-4">
+              But most agencies who build on Vapi hit the same wall: Vapi
+              alone isn&apos;t white-label or resellable. It is developer{" "}
+              <Link href="/glossary/white-label" className="text-brand-light hover:text-brand transition-colors">
+                white-label
+              </Link>{" "}
+              infrastructure, not a sellable product. To actually turn Vapi
+              into something you can charge clients for under your own brand,
+              you need a layer on top —{" "}
+              <Link href="/whitelabel/vapi" className="text-brand-light hover:text-brand transition-colors">
+                Fusion Calling&apos;s white-label Vapi platform
+              </Link>{" "}
+              — and that layer is what most teams try (and struggle) to build
+              themselves.
+            </p>
+            <p className="text-brand-light text-lg font-semibold">
+              That gap is exactly where Fusion Calling fits. We&apos;re built
+              with Vapi, not against it.
+            </p>
+          </div>
 
-        {/* Article Content */}
-        <div className="prose prose-lg prose-invert max-w-none">
-          <div className="space-y-8">
-            {/* Introduction */}
-            <div className="glass-light rounded-2xl p-8 border border-brand/20">
-              <h2 className="text-2xl font-bold text-white mb-4">
-                Why Agencies Love Vapi — and Where the Gap Is
-              </h2>
-              <p className="text-gray-300 leading-relaxed mb-4">
-                <Link href="/glossary/vapi" className="text-brand-light hover:text-brand transition-colors">
-                  Vapi
-                </Link>{" "}
-                has become a go-to choice for agencies building voice AI
-                practices. It delivers fast, reliable, real-time voice
-                infrastructure that handles the hard part of conversational AI —
-                speech, latency, telephony, and model orchestration. For the
-                engineering that powers great calls, Vapi is genuinely
-                excellent.
-              </p>
-              <p className="text-gray-300 leading-relaxed mb-4">
-                But most agencies who build on Vapi hit the same wall: Vapi
-                alone isn&apos;t white-label or resellable. It is developer{" "}
-                <Link href="/glossary/white-label" className="text-brand-light hover:text-brand transition-colors">
-                  white-label
-                </Link>{" "}
-                infrastructure, not a sellable product. To actually turn Vapi
-                into something you can charge clients for under your own brand,
-                you need a layer on top —{" "}
-                <Link href="/whitelabel/vapi" className="text-brand-light hover:text-brand transition-colors">
-                  Fusion Calling&apos;s white-label Vapi platform
-                </Link>{" "}
-                — and that layer is what most teams try (and struggle) to build
-                themselves.
-              </p>
-              <p className="text-brand-light text-lg font-semibold">
-                That gap is exactly where Fusion Calling fits. We&apos;re built
-                with Vapi, not against it.
-              </p>
-            </div>
+          {/* What Fusion Calling Adds */}
+          <div>
+            <h2 id="what-fusion-adds" className="scroll-mt-28 text-3xl font-bold text-white mb-6">
+              What Fusion Calling Adds on Top of Vapi
+            </h2>
+            <p className="text-gray-300 leading-relaxed mb-6">
+              Fusion Calling is the white-label agency layer for Vapi. Most of
+              our users come <em>from</em> Vapi — they love the infrastructure
+              and use Fusion Calling to turn it into a branded, sellable
+              product. Instead of building a custom white-label app yourself
+              (typically a $45K project and months of work), Fusion Calling
+              gives you everything you need to launch in about 7 days.
+            </p>
 
-            {/* What Fusion Calling Adds */}
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-6">
-                What Fusion Calling Adds on Top of Vapi
-              </h2>
-              <p className="text-gray-300 leading-relaxed mb-6">
-                Fusion Calling is the white-label agency layer for Vapi. Most of
-                our users come <em>from</em> Vapi — they love the infrastructure
-                and use Fusion Calling to turn it into a branded, sellable
-                product. Instead of building a custom white-label app yourself
-                (typically a $45K project and months of work), Fusion Calling
-                gives you everything you need to launch in about 7 days.
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="glass-light rounded-xl p-6 border border-brand/20">
-                  <h3 className="text-lg font-bold text-brand-light mb-3">
-                    Branding &amp; Custom Domain
-                  </h3>
-                  <p className="text-gray-400 text-sm">
-                    Apply your logo, colors, and custom domain so every client
-                    touchpoint carries your brand — not someone else&apos;s.
-                  </p>
-                </div>
-                <div className="glass-light rounded-xl p-6 border border-brand/20">
-                  <h3 className="text-lg font-bold text-brand-light mb-3">
-                    Client Portals
-                  </h3>
-                  <p className="text-gray-400 text-sm">
-                    Give each client their own branded login to view and manage
-                    their voice AI without ever seeing your backend.
-                  </p>
-                </div>
-                <div className="glass-light rounded-xl p-6 border border-brand/20">
-                  <h3 className="text-lg font-bold text-brand-light mb-3">
-                    Sub-Account Management
-                  </h3>
-                  <p className="text-gray-400 text-sm">
-                    Run many clients from one dashboard, with isolated
-                    sub-accounts, usage, and settings per client.
-                  </p>
-                </div>
-                <div className="glass-light rounded-xl p-6 border border-brand/20">
-                  <h3 className="text-lg font-bold text-brand-light mb-3">
-                    Client Billing &amp; Rebilling
-                  </h3>
-                  <p className="text-gray-400 text-sm">
-                    Set your own pricing and bill clients directly. You keep
-                    100% of what you charge — Fusion Calling takes no cut.
-                  </p>
-                </div>
-              </div>
-
-              <div className="glass rounded-2xl p-8 border border-brand/20 mt-6">
-                <p className="text-gray-300 leading-relaxed">
-                  The point isn&apos;t to replace Vapi. It&apos;s to save you
-                  from building a custom white-label application yourself. A
-                  build-it-yourself approach typically runs about{" "}
-                  <strong className="text-brand-light">$45K</strong> and takes
-                  months. With Fusion Calling&apos;s done-with-you setup, most
-                  agencies launch in about{" "}
-                  <strong className="text-brand-light">7 days</strong>.
-                </p>
-              </div>
-            </div>
-
-            {/* How They Work Together */}
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-6">
-                How Vapi + Fusion Calling Work Together
-              </h2>
-              <p className="text-gray-300 leading-relaxed mb-6">
-                The integration is designed to be straightforward. Fusion
-                Calling sits in front of Vapi and handles the agency experience,
-                while Vapi keeps powering the actual calls.
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">🔄</span>
-                  </div>
-                  <div>
-                    <h3 className="text-white font-bold mb-2">Connect your Vapi account</h3>
-                    <p className="text-gray-400 text-sm">
-                      Bring your existing Vapi account and API key — a{" "}
-                      <Link href="/glossary/bring-your-own-key" className="text-brand-light hover:text-brand transition-colors">
-                        bring-your-own-key
-                      </Link>{" "}
-                      model with a one-time connection. You keep the infrastructure
-                      you already trust.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">🏷️</span>
-                  </div>
-                  <div>
-                    <h3 className="text-white font-bold mb-2">Brand it</h3>
-                    <p className="text-gray-400 text-sm">
-                      Apply your logo, colors, and custom domain so clients see
-                      your brand everywhere.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">👥</span>
-                  </div>
-                  <div>
-                    <h3 className="text-white font-bold mb-2">Manage clients</h3>
-                    <p className="text-gray-400 text-sm">
-                      Spin up isolated sub-accounts and client portals, each
-                      with their own usage and settings.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">💳</span>
-                  </div>
-                  <div>
-                    <h3 className="text-white font-bold mb-2">Bill clients</h3>
-                    <p className="text-gray-400 text-sm">
-                      Set your own pricing, bill clients directly, and keep 100%
-                      of what you charge.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Who This Is For */}
-            <div className="glass-light rounded-2xl p-8 border border-brand/20">
-              <h2 className="text-3xl font-bold text-white mb-6">
-                Who This Is For
-              </h2>
-              <p className="text-gray-300 leading-relaxed mb-6">
-                Fusion Calling is built for the people who already see the value
-                in Vapi and need to make it sellable:
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="glass-light rounded-xl p-6 border border-brand/20">
-                  <h3 className="text-lg font-bold text-brand-light mb-3">
-                    Agencies
-                  </h3>
-                  <p className="text-gray-400 text-sm">
-                    Marketing, lead-gen, and services agencies adding voice AI
-                    to their offering under their own brand.
-                  </p>
-                </div>
-                <div className="glass-light rounded-xl p-6 border border-brand/20">
-                  <h3 className="text-lg font-bold text-brand-light mb-3">
-                    Resellers
-                  </h3>
-                  <p className="text-gray-400 text-sm">
-                    Operators who want to resell voice AI with branded client
-                    portals and direct billing — no custom build required.
-                  </p>
-                </div>
-                <div className="glass-light rounded-xl p-6 border border-brand/20">
-                  <h3 className="text-lg font-bold text-brand-light mb-3">
-                    GHL Agencies Using Vapi
-                  </h3>
-                  <p className="text-gray-400 text-sm">
-                    GoHighLevel agencies already running Vapi who want a
-                    white-label layer that ties into their stack.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Economics Note */}
-            <div className="glass rounded-2xl p-8 border border-brand/20">
-              <h2 className="text-3xl font-bold text-white mb-6">
-                The Economics: You Keep 100%
-              </h2>
-              <p className="text-gray-300 leading-relaxed mb-6">
-                Fusion Calling is a simple, flat subscription — we don&apos;t
-                take a cut of your client revenue. You keep 100% of whatever
-                you charge your clients. Your only cost is the Fusion Calling
-                subscription (full details on our{" "}
-                <Link href="/pricing" className="text-brand-light hover:text-brand transition-colors">
-                  pricing page
-                </Link>
-                ):
-              </p>
-
-              <div className="bg-gradient-to-r from-brand/10 to-brand-strong/5 rounded-xl p-6 border border-brand/30 mb-6">
-                <h3 className="text-xl font-bold text-brand-light mb-4">
-                  White-Label Tiers
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="glass-light rounded-xl p-6 border border-brand/20">
+                <h3 className="text-lg font-bold text-brand-light mb-3">
+                  Branding &amp; Custom Domain
                 </h3>
-                <ul className="space-y-3 text-gray-300">
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
-                    <span>
-                      <strong>Starter — $99/mo</strong> (6 sub-accounts)
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
-                    <span>
-                      <strong>Growth — $299/mo</strong> (20 sub-accounts)
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
-                    <span>
-                      <strong>Scale — $499/mo</strong> (unlimited sub-accounts)
-                    </span>
-                  </li>
-                </ul>
+                <p className="text-gray-400 text-sm">
+                  Apply your logo, colors, and custom domain so every client
+                  touchpoint carries your brand — not someone else&apos;s.
+                </p>
+              </div>
+              <div className="glass-light rounded-xl p-6 border border-brand/20">
+                <h3 className="text-lg font-bold text-brand-light mb-3">
+                  Client Portals
+                </h3>
+                <p className="text-gray-400 text-sm">
+                  Give each client their own branded login to view and manage
+                  their voice AI without ever seeing your backend.
+                </p>
+              </div>
+              <div className="glass-light rounded-xl p-6 border border-brand/20">
+                <h3 className="text-lg font-bold text-brand-light mb-3">
+                  Sub-Account Management
+                </h3>
+                <p className="text-gray-400 text-sm">
+                  Run many clients from one dashboard, with isolated
+                  sub-accounts, usage, and settings per client.
+                </p>
+              </div>
+              <div className="glass-light rounded-xl p-6 border border-brand/20">
+                <h3 className="text-lg font-bold text-brand-light mb-3">
+                  Client Billing &amp; Rebilling
+                </h3>
+                <p className="text-gray-400 text-sm">
+                  Set your own pricing and bill clients directly. You keep
+                  100% of what you charge — Fusion Calling takes no cut.
+                </p>
+              </div>
+            </div>
+
+            <div className="glass rounded-2xl p-8 border border-brand/20 mt-6">
+              <p className="text-gray-300 leading-relaxed">
+                The point isn&apos;t to replace Vapi. It&apos;s to save you
+                from building a custom white-label application yourself. A
+                build-it-yourself approach typically runs about{" "}
+                <strong className="text-brand-light">$45K</strong> and takes
+                months. With Fusion Calling&apos;s done-with-you setup, most
+                agencies launch in about{" "}
+                <strong className="text-brand-light">7 days</strong>.
+              </p>
+            </div>
+          </div>
+
+          {/* How They Work Together */}
+          <div>
+            <h2 id="how-they-work-together" className="scroll-mt-28 text-3xl font-bold text-white mb-6">
+              How Vapi + Fusion Calling Work Together
+            </h2>
+            <p className="text-gray-300 leading-relaxed mb-6">
+              The integration is designed to be straightforward. Fusion
+              Calling sits in front of Vapi and handles the agency experience,
+              while Vapi keeps powering the actual calls.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
+                  <span className="text-2xl">🔄</span>
+                </div>
+                <div>
+                  <h3 className="text-white font-bold mb-2">Connect your Vapi account</h3>
+                  <p className="text-gray-400 text-sm">
+                    Bring your existing Vapi account and API key — a{" "}
+                    <Link href="/glossary/bring-your-own-key" className="text-brand-light hover:text-brand transition-colors">
+                      bring-your-own-key
+                    </Link>{" "}
+                    model with a one-time connection. You keep the infrastructure
+                    you already trust.
+                  </p>
+                </div>
               </div>
 
-              <p className="text-gray-300 leading-relaxed">
-                Beyond Vapi, Fusion Calling also supports Retell AI and
-                ElevenLabs, and integrates with GoHighLevel via API and
-                webhooks (connecting across 2,200+ apps — see the{" "}
-                <Link href="/docs" className="text-brand-light hover:text-brand transition-colors">
-                  API &amp; webhook docs
-                </Link>
-                ). You can see it all in
-                action on our{" "}
-                <Link href="/#show-case" className="text-brand-light hover:text-brand transition-colors">
-                  live interactive demo
-                </Link>{" "}
-                on the homepage.
-              </p>
-            </div>
-
-            {/* Conclusion */}
-            <div className="glass-light rounded-2xl p-8 border border-brand/30">
-              <h2 className="text-3xl font-bold text-white mb-6">
-                Built With Vapi, Not Against It
-              </h2>
-              <p className="text-gray-300 leading-relaxed mb-6">
-                Vapi built excellent voice AI infrastructure. Fusion Calling
-                built the agency layer that lets you resell it under your own
-                brand. Most of our users were already on Vapi — they just needed
-                branding, client portals, sub-accounts, and billing to turn it
-                into a real product.
-              </p>
-              <p className="text-gray-300 leading-relaxed mb-8">
-                Instead of spending months and tens of thousands building a
-                custom white-label app, you can launch your branded voice AI
-                practice in about 7 days with done-with-you onboarding. Ready to
-                see the{" "}
-                <Link href="/whitelabel/vapi" className="text-brand-light hover:text-brand transition-colors">
-                  white-label Vapi platform
-                </Link>{" "}
-                up close?
-              </p>
-              <Link
-                href="/whitelabel"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition shadow-premium hover:shadow-premium-lg hover:scale-105"
-              >
-                Start White-Labeling Vapi
-                <span className="ml-2">→</span>
-              </Link>
-            </div>
-
-            {/* Related Posts */}
-            <div>
-              <h2 className="text-2xl font-bold text-white mb-6">
-                Related Articles
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Link
-                  href="/blog/retell-ai-white-label"
-                  className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition group"
-                >
-                  <h3 className="text-white font-bold mb-2 group-hover:text-brand-light transition-colors">
-                    White-Labeling Retell AI with Fusion Calling
-                  </h3>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
+                  <span className="text-2xl">🏷️</span>
+                </div>
+                <div>
+                  <h3 className="text-white font-bold mb-2">Brand it</h3>
                   <p className="text-gray-400 text-sm">
-                    How the same agency layer works with Retell AI for branding,
-                    client portals, and billing.
+                    Apply your logo, colors, and custom domain so clients see
+                    your brand everywhere.
                   </p>
-                </Link>
-                <Link
-                  href="/blog/vapi-vs-retell-vs-elevenlabs"
-                  className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition group"
-                >
-                  <h3 className="text-white font-bold mb-2 group-hover:text-brand-light transition-colors">
-                    Vapi vs Retell vs ElevenLabs: Choosing a Provider
-                  </h3>
-                  <p className="text-gray-400 text-sm">
-                    A practical comparison of the voice AI providers Fusion
-                    Calling supports.
-                  </p>
-                </Link>
-               </div>
-             </div>
-           </div>
+                </div>
+              </div>
 
-          {/* Author Bio */}
-          <div className="mt-12 pt-8 border-t border-brand/20">
-            <div className="flex items-start gap-6">
-              <Image
-                src={teamAuthor.avatar}
-                alt={`${teamAuthor.name}, ${teamAuthor.role} at Fusion Calling`}
-                width={64}
-                height={64}
-                className="w-16 h-16 rounded-full object-cover border border-brand/30 flex-shrink-0"
-              />
-              <div className="flex-1">
-                <h3 className="text-lg font-bold text-white mb-2">About the Author</h3>
-                <p className="text-gray-400 text-sm mb-3">
-                  <Link
-                    href={`/team/${teamAuthor.slug}`}
-                    className="text-brand-strong hover:text-brand transition-colors"
-                  >
-                    <strong>{teamAuthor.name}</strong>
-                  </Link>
-                </p>
-                <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                  {teamAuthor.shortBio}
-                </p>
-                <div className="flex items-center gap-4 text-sm">
-                  <a
-                    href={`mailto:${teamAuthor.email}`}
-                    className="text-brand-strong hover:text-brand transition-colors"
-                  >
-                    Email →
-                  </a>
-                  <a
-                    href="/whitelabel"
-                    className="text-brand-strong hover:text-brand transition-colors"
-                  >
-                    Partner Program →
-                  </a>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
+                  <span className="text-2xl">👥</span>
+                </div>
+                <div>
+                  <h3 className="text-white font-bold mb-2">Manage clients</h3>
+                  <p className="text-gray-400 text-sm">
+                    Spin up isolated sub-accounts and client portals, each
+                    with their own usage and settings.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-strong/10 border border-brand/30 flex items-center justify-center flex-shrink-0">
+                  <span className="text-2xl">💳</span>
+                </div>
+                <div>
+                  <h3 className="text-white font-bold mb-2">Bill clients</h3>
+                  <p className="text-gray-400 text-sm">
+                    Set your own pricing, bill clients directly, and keep 100%
+                    of what you charge.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
+
+          {/* Who This Is For */}
+          <div className="glass-light rounded-2xl p-8 border border-brand/20">
+            <h2 id="who-this-is-for" className="scroll-mt-28 text-3xl font-bold text-white mb-6">
+              Who This Is For
+            </h2>
+            <p className="text-gray-300 leading-relaxed mb-6">
+              Fusion Calling is built for the people who already see the value
+              in Vapi and need to make it sellable:
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="glass-light rounded-xl p-6 border border-brand/20">
+                <h3 className="text-lg font-bold text-brand-light mb-3">
+                  Agencies
+                </h3>
+                <p className="text-gray-400 text-sm">
+                  Marketing, lead-gen, and services agencies adding voice AI
+                  to their offering under their own brand.
+                </p>
+              </div>
+              <div className="glass-light rounded-xl p-6 border border-brand/20">
+                <h3 className="text-lg font-bold text-brand-light mb-3">
+                  Resellers
+                </h3>
+                <p className="text-gray-400 text-sm">
+                  Operators who want to resell voice AI with branded client
+                  portals and direct billing — no custom build required.
+                </p>
+              </div>
+              <div className="glass-light rounded-xl p-6 border border-brand/20">
+                <h3 className="text-lg font-bold text-brand-light mb-3">
+                  GHL Agencies Using Vapi
+                </h3>
+                <p className="text-gray-400 text-sm">
+                  GoHighLevel agencies already running Vapi who want a
+                  white-label layer that ties into their stack.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Economics Note */}
+          <div className="glass rounded-2xl p-8 border border-brand/20">
+            <h2 id="the-economics" className="scroll-mt-28 text-3xl font-bold text-white mb-6">
+              The Economics: You Keep 100%
+            </h2>
+            <p className="text-gray-300 leading-relaxed mb-6">
+              Fusion Calling is a simple, flat subscription — we don&apos;t
+              take a cut of your client revenue. You keep 100% of whatever
+              you charge your clients. Your only cost is the Fusion Calling
+              subscription (full details on our{" "}
+              <Link href="/pricing" className="text-brand-light hover:text-brand transition-colors">
+                pricing page
+              </Link>
+              ):
+            </p>
+
+            <div className="bg-gradient-to-r from-brand/10 to-brand-strong/5 rounded-xl p-6 border border-brand/30 mb-6">
+              <h3 className="text-xl font-bold text-brand-light mb-4">
+                White-Label Tiers
+              </h3>
+              <ul className="space-y-3 text-gray-300">
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
+                  <span>
+                    <strong>Starter — $99/mo</strong> (6 sub-accounts)
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
+                  <span>
+                    <strong>Growth — $299/mo</strong> (20 sub-accounts)
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
+                  <span>
+                    <strong>Scale — $499/mo</strong> (unlimited sub-accounts)
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            <p className="text-gray-300 leading-relaxed">
+              Beyond Vapi, Fusion Calling also supports Retell AI and
+              ElevenLabs, and integrates with GoHighLevel via API and
+              webhooks (connecting across 2,200+ apps — see the{" "}
+              <Link href="/docs" className="text-brand-light hover:text-brand transition-colors">
+                API &amp; webhook docs
+              </Link>
+              ). You can see it all in
+              action on our{" "}
+              <Link href="/#show-case" className="text-brand-light hover:text-brand transition-colors">
+                live interactive demo
+              </Link>{" "}
+              on the homepage.
+            </p>
+          </div>
+
+          {/* Conclusion */}
+          <div className="glass-light rounded-2xl p-8 border border-brand/30">
+            <h2 className="text-3xl font-bold text-white mb-6">
+              Built With Vapi, Not Against It
+            </h2>
+            <p className="text-gray-300 leading-relaxed mb-6">
+              Vapi built excellent voice AI infrastructure. Fusion Calling
+              built the agency layer that lets you resell it under your own
+              brand. Most of our users were already on Vapi — they just needed
+              branding, client portals, sub-accounts, and billing to turn it
+              into a real product.
+            </p>
+            <p className="text-gray-300 leading-relaxed mb-8">
+              Instead of spending months and tens of thousands building a
+              custom white-label app, you can launch your branded voice AI
+              practice in about 7 days with done-with-you onboarding. Ready to
+              see the{" "}
+              <Link href="/whitelabel/vapi" className="text-brand-light hover:text-brand transition-colors">
+                white-label Vapi platform
+              </Link>{" "}
+              up close?
+            </p>
+            <Link
+              href="/whitelabel"
+              className={primaryButton}
+            >
+              Start White-Labeling Vapi
+              <span className="ml-2">→</span>
+            </Link>
+          </div>
         </div>
-      </article>
-      </>
-    );
+      </PostLayout>
+    </>
+  );
 }

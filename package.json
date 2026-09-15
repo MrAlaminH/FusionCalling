@@ -17,6 +17,7 @@
     "build": "npm run llms:gen && next build",
     "start": "next start",
     "lint": "next lint",
+    "check:data": "npx --yes tsx scripts/check-data.ts",
     "typecheck": "tsc --noEmit",
     "analyze": "node scripts/analyze.mjs",
     "optimize-images": "node scripts/optimize-images.mjs",

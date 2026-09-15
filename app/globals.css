@@ -58,7 +58,7 @@ body {
     --brand: 25 95% 51%; /* ~ orange-500 (#f97316) */
     --brand-strong: 21 92% 48%; /* ~ orange-600 (#ea580c) */
     --brand-light: 25 95% 61%; /* ~ orange-400 (#fb923c) */
-    --brand-foreground: 0 0% 100%; /* white text on brand */
+    --brand-foreground: 0 0% 5%; /* near-black text on brand — #f97316 fails contrast with white (~2.8:1) but passes with dark text (~7.5:1) */
     --chat--color-primary: #1e90ff; /* Adjusted to match website theme */
     --chat--color-secondary: #db942a;
     --chat--color-white: #ffffff;
@@ -356,4 +356,77 @@ html {
   .particle {
     display: none;
   }
+}
+
+/* ===== Blog post body =====
+   Normalizes typography inside PostLayout's body slot. Selectors like
+   `.post-body h2` outrank single-class utilities (0,1,1 vs 0,1,0), so legacy
+   per-post `text-2xl`/`text-3xl` heading drift and the four competing table
+   styles collapse into one consistent scale without editing every paragraph. */
+.post-body h2 {
+  font-family: var(--font-outfit), "Outfit", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: #fff;
+}
+@media (min-width: 768px) {
+  .post-body h2 {
+    font-size: 1.75rem;
+  }
+}
+.post-body h3 {
+  font-family: var(--font-outfit), "Outfit", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: hsl(var(--brand-light));
+}
+.post-body a {
+  color: hsl(var(--brand-light));
+  text-decoration-line: underline;
+  text-decoration-color: hsl(var(--brand) / 0.4);
+  text-underline-offset: 4px;
+  transition-property: color, text-decoration-color;
+  transition-duration: 150ms;
+  transition-timing-function: var(--ease-out);
+}
+.post-body a:hover {
+  color: hsl(var(--brand));
+  text-decoration-color: hsl(var(--brand));
+}
+.post-body strong {
+  color: #fff;
+  font-weight: 600;
+}
+.post-body table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  text-align: left;
+}
+.post-body th {
+  padding: 0.875rem 1.25rem;
+  font-weight: 600;
+  color: #fff;
+  border-bottom: 1px solid hsl(var(--brand) / 0.3);
+  background: linear-gradient(
+    to right,
+    hsl(var(--brand) / 0.1),
+    hsl(var(--brand-strong) / 0.05)
+  );
+}
+.post-body td {
+  padding: 0.875rem 1.25rem;
+  color: #d1d5db; /* gray-300 */
+  border-bottom: 1px solid rgb(255 255 255 / 0.08);
+}
+.post-body tbody tr:last-child td {
+  border-bottom: none;
+}
+.post-body blockquote {
+  border-left: 4px solid hsl(var(--brand));
+  padding: 0.5rem 0 0.5rem 1rem;
+  font-style: italic;
+  color: #d1d5db;
 }

@@ -3,6 +3,8 @@ import Link from "next/link";
 import WhiteLabelNavbar from "@/components/white-label-navbar";
 import Footer from "@/components/Footer";
 import CTA from "@/components/white-label/CTA";
+import StickyMobileCta from "@/components/sticky-mobile-cta";
+import { primaryButton, secondaryButton } from "@/components/ui/button-styles";
 import { whitelabelCaseStudies } from "@/lib/whitelabel-case-studies";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { buildOpenGraph } from "@/lib/seo";
@@ -103,6 +105,14 @@ export default function WhitelabelCaseStudiesHub() {
               launch, scale, and earn with Fusion Calling&apos;s white-label
               platform. Every story includes real numbers and real results.
             </p>
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a href="#cta" className={primaryButton}>
+                Book a Demo
+              </a>
+              <a href="/whitelabel/reseller-program" className={secondaryButton}>
+                Explore the Reseller Program
+              </a>
+            </div>
           </div>
         </section>
 
@@ -137,7 +147,7 @@ export default function WhitelabelCaseStudiesHub() {
                         <div className="text-lg font-bold text-brand-light">
                           {stat.value}
                         </div>
-                        <div className="text-[10px] sm:text-xs text-gray-500 leading-tight">
+                        <div className="text-[10px] sm:text-xs text-gray-400 leading-tight">
                           {stat.label}
                         </div>
                       </div>
@@ -145,7 +155,7 @@ export default function WhitelabelCaseStudiesHub() {
                   </div>
 
                   {/* Location */}
-                  <div className="text-xs text-gray-500 border-t border-brand/10 pt-3">
+                  <div className="text-xs text-gray-400 border-t border-brand/10 pt-3">
                     {cs.location}
                   </div>
                 </Link>
@@ -160,6 +170,7 @@ export default function WhitelabelCaseStudiesHub() {
         </div>
       </main>
       <Footer />
+      <StickyMobileCta href="#cta" label="Book a Free Call" />
     </>
   );
 }

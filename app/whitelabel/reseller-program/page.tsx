@@ -4,6 +4,9 @@ import Link from "next/link";
 import WhiteLabelNavbar from "@/components/white-label-navbar";
 import Footer from "@/components/Footer";
 import Pricing from "@/components/white-label/Pricing";
+import { primaryButton, secondaryButton } from "@/components/ui/button-styles";
+import PostFaq from "@/components/blog/PostFaq";
+import StickyMobileCta from "@/components/sticky-mobile-cta";
 import CTA from "@/components/white-label/CTA";
 import { buildOpenGraph } from "@/lib/seo";
 
@@ -281,16 +284,10 @@ export default function ResellerProgramPage() {
               first.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href="#cta"
-                className="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-brand to-brand-strong px-6 sm:px-8 py-3 sm:py-3.5 md:py-4 text-sm sm:text-base font-semibold text-white transition shadow-premium hover:shadow-premium-lg hover:from-brand-strong hover:to-orange-700 hover:scale-105"
-              >
+              <a href="#cta" className={primaryButton}>
                 Apply to the Program
               </a>
-              <a
-                href="#rp-pricing"
-                className="inline-flex items-center justify-center rounded-2xl border-2 border-brand px-6 sm:px-8 py-3 sm:py-3.5 md:py-4 text-sm sm:text-base font-semibold text-white transition-colors hover:bg-brand/20"
-              >
+              <a href="#rp-pricing" className={secondaryButton}>
                 View Partner Pricing
               </a>
             </div>
@@ -448,26 +445,12 @@ export default function ResellerProgramPage() {
                 What partners ask before they join.
               </p>
             </div>
-            <div className="space-y-4">
-              {rpFaqs.map((faq) => (
-                <div
-                  key={faq.question}
-                  className="glass-light rounded-xl p-6 border border-brand/20"
-                >
-                  <h3 className="text-lg font-bold text-brand-light mb-3">
-                    {faq.question}
-                  </h3>
-                  <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
-                    {faq.answer}
-                  </p>
-                </div>
-              ))}
-            </div>
+            <PostFaq faqs={rpFaqs} title="" />
             <p className="text-gray-400 text-center mt-8 text-sm sm:text-base">
               Weighing the build-vs-resell decision?{" "}
               <Link
                 href="/blog/how-to-start-a-voice-ai-agency"
-                className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors"
+                className="text-brand-light hover:text-brand underline-offset-4 hover:underline transition-colors"
               >
                 Read the full voice AI agency playbook
               </Link>
@@ -481,6 +464,7 @@ export default function ResellerProgramPage() {
         </div>
       </main>
       <Footer />
+      <StickyMobileCta href="#cta" label="Book a Free Call" />
     </>
   );
 }

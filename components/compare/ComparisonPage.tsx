@@ -4,15 +4,18 @@ import type { Comparison } from "@/lib/comparisons";
 import { getRelatedComparisons } from "@/lib/comparisons";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { BenchmarkTable } from "@/components/compare/BenchmarkTable";
+import { primaryButton } from "@/components/ui/button-styles";
+import PostFaq from "@/components/blog/PostFaq";
+import { formatDate } from "@/lib/utils";
 
-function formatDate(iso: string): string {
-  const d = new Date(iso);
-  return d.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+/** "24 hours vs 4-6 weeks" → value "24", label "hours vs 4-6 weeks" (no duplication). */
+function splitStat(value: string): { value: string; label: string } {
+  const [first, ...rest] = value.split(" ");
+  return { value: first, label: rest.join(" ") || value };
 }
+
+const statTile =
+  "rounded-xl border border-brand/20 bg-brand/10 p-4 text-center";
 
 export default function ComparisonPage({ comparison }: { comparison: Comparison }) {
   const {
@@ -50,6 +53,11 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
 
   const related = getRelatedComparisons(slug, 3);
   const articleUrl = `${SITE_URL}/alternative/${slug}`;
+  const launch = splitStat(keyStatistics.timeToLaunch);
+  const clients = splitStat(keyStatistics.clientsIncluded);
+
+  const sectionHeading =
+    "font-display text-2xl md:text-3xl font-bold tracking-tight text-white";
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -114,19 +122,19 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
         <div className="mb-12">
           <Link
             href="/alternative"
-            className="inline-flex items-center text-brand-light hover:text-brand-light mb-8 transition-colors"
+            className="inline-flex items-center text-brand-light hover:text-brand mb-8 transition-colors"
           >
             ← Back to Compare
           </Link>
 
-          <div className="flex items-center gap-3 mb-4">
-            <span className="px-4 py-2 bg-gradient-to-r from-brand to-brand-strong rounded-full text-sm font-semibold text-white">
+          <div className="flex flex-wrap items-center gap-3 mb-5">
+            <span className="inline-flex items-center rounded-full border border-brand/30 bg-brand/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-brand-light">
               {category}
             </span>
-            <span className="text-gray-500 text-sm">{readTime}</span>
+            <span className="text-gray-400 text-sm">{readTime}</span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
+          <h1 className="font-display text-4xl md:text-5xl font-bold tracking-tight mb-6 leading-[1.15] text-white">
             {h1}
             <br />
             <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong bg-clip-text text-transparent">
@@ -136,15 +144,17 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
 
           <p className="text-xl text-gray-400 leading-relaxed mb-8">{subtitle}</p>
 
-          <div className="flex items-center gap-6 text-sm text-gray-500">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-b border-white/10 pb-8 text-sm text-gray-400">
             <span>{formatDate(datePublished)}</span>
-            <span>•</span>
+            <span aria-hidden="true">•</span>
             <span>By Fusion Calling Team</span>
+            <span aria-hidden="true">•</span>
+            <span>Updated {formatDate(CONTENT_LAST_UPDATED)}</span>
           </div>
         </div>
 
         {/* Hero Image */}
-        <div className="mb-12 rounded-3xl overflow-hidden border border-brand/20 relative">
+        <div className="mb-12 rounded-3xl overflow-hidden border border-brand/20 relative shadow-premium">
           <div className="aspect-video relative">
             <Image
               src={heroImage}
@@ -160,27 +170,27 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
 
         {/* Quick Answer - GEO Optimized */}
         <div className="glass-light rounded-2xl p-8 border border-brand/30 mb-8">
-          <h2 className="text-2xl font-bold text-brand-light mb-4">
+          <h2 className={`${sectionHeading} mb-4`}>
             ⚡ Quick Answer: Why Choose Fusion Calling Over {competitorName}?
           </h2>
           <p className="text-gray-300 leading-relaxed mb-6">
             {quickAnswer}
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="bg-brand/10 rounded-lg p-4">
-              <div className="text-2xl font-bold text-green-400 mb-1">{keyStatistics.retentionRate}</div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className={statTile}>
+              <div className="font-display text-2xl font-bold text-brand-light mb-1">{keyStatistics.retentionRate}</div>
               <div className="text-xs text-gray-400">Higher agency retention</div>
             </div>
-            <div className="bg-brand/10 rounded-lg p-4">
-              <div className="text-2xl font-bold text-green-400 mb-1">{keyStatistics.timeToLaunch.split(' ')[0]}</div>
-              <div className="text-xs text-gray-400">{keyStatistics.timeToLaunch}</div>
+            <div className={statTile}>
+              <div className="font-display text-2xl font-bold text-brand-light mb-1">{launch.value}</div>
+              <div className="text-xs text-gray-400">{launch.label}</div>
             </div>
-            <div className="bg-brand/10 rounded-lg p-4">
-              <div className="text-2xl font-bold text-green-400 mb-1">{keyStatistics.clientsIncluded.split(' ')[0]}</div>
-              <div className="text-xs text-gray-400">{keyStatistics.clientsIncluded}</div>
+            <div className={statTile}>
+              <div className="font-display text-2xl font-bold text-brand-light mb-1">{clients.value}</div>
+              <div className="text-xs text-gray-400">{clients.label}</div>
             </div>
-            <div className="bg-brand/10 rounded-lg p-4">
-              <div className="text-2xl font-bold text-green-400 mb-1">{keyStatistics.featureUpdates}</div>
+            <div className={statTile}>
+              <div className="font-display text-2xl font-bold text-brand-light mb-1">{keyStatistics.featureUpdates}</div>
               <div className="text-xs text-gray-400">Feature updates/month</div>
             </div>
           </div>
@@ -188,7 +198,7 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
 
         {topAlternatives && (
           <section className="glass-light rounded-2xl p-8 border border-brand/30 mb-8">
-            <h2 className="text-2xl font-bold text-brand-light mb-4">
+            <h2 className={`${sectionHeading} mb-4`}>
               {topAlternatives.heading}
             </h2>
             <p className="text-gray-300 leading-relaxed mb-6">
@@ -223,7 +233,7 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
           <div className="space-y-8">
             {/* Introduction */}
             <div className="glass-light rounded-2xl p-8 border border-brand/20">
-              <h2 className="text-2xl font-bold text-white mb-4">
+              <h2 className={`${sectionHeading} mb-4`}>
                 A Quick Overview of {competitorName}
               </h2>
               {intro.map((p, i) => (
@@ -235,7 +245,7 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
 
             {/* Fusion Calling Overview */}
             <div>
-              <h2 className="text-3xl font-bold text-white mb-4">
+              <h2 className={`${sectionHeading} mb-4`}>
                 A Quick Overview of Fusion Calling
               </h2>
               <div className="glass-light rounded-2xl p-8 border border-brand/20">
@@ -249,7 +259,7 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
 
             {/* What the competitor does well (neutral / soft tone) */}
             <div>
-              <h2 className="text-3xl font-bold text-white mb-4">
+              <h2 className={`${sectionHeading} mb-4`}>
                 What {competitorName} Does Well
               </h2>
               <p className="text-gray-400 leading-relaxed mb-6 italic">
@@ -260,9 +270,9 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
                 {competitorStrengths.map((s) => (
                   <div
                     key={s.title}
-                    className="glass-light rounded-xl p-6 border border-brand/20"
+                    className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition-premium"
                   >
-                    <h3 className="text-lg font-bold text-brand-light mb-3">
+                    <h3 className="font-display text-lg font-bold text-brand-light mb-3">
                       {s.title}
                     </h3>
                     <p className="text-gray-400 text-sm">{s.description}</p>
@@ -273,65 +283,64 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
 
             {/* Feature Comparison Table */}
             <div>
-              <h2 className="text-3xl font-bold text-white mb-6">{tableTitle}</h2>
+              <h2 className={`${sectionHeading} mb-6`}>{tableTitle}</h2>
 
-              <div className="overflow-x-auto">
-                <table className="w-full border-collapse">
-                  <thead>
-                    <tr className="border-b border-gray-800">
-                      <th className="text-left py-4 px-4 text-white font-bold">
-                        Feature
-                      </th>
-                      <th className="text-center py-4 px-4 text-gray-300 font-bold">
-                        {competitorName}
-                      </th>
-                      <th className="text-center py-4 px-4 text-green-400 font-bold">
-                        Fusion Calling
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="text-gray-300">
-                    {comparisonRows.map((row) => (
-                      <tr key={row.label} className="border-b border-gray-800">
-                        <td className="py-4 px-4">{row.label}</td>
-                        <td className="text-center py-4 px-4 text-gray-400">
-                          {row.competitor}
-                        </td>
-                        <td className="text-center py-4 px-4 text-green-400 font-medium">
-                          {row.fusion}
-                        </td>
+              <div className="glass rounded-2xl p-4 md:p-6 border border-brand/20">
+                <div className="overflow-x-auto">
+                  <table className="w-full min-w-[560px] border-collapse text-left">
+                    <thead>
+                      <tr>
+                        <th className="py-3.5 px-4 text-sm font-semibold text-white bg-gradient-to-r from-brand/10 to-brand-strong/5 rounded-l-lg">
+                          Feature
+                        </th>
+                        <th className="py-3.5 px-4 text-center text-sm font-semibold text-gray-300 bg-gradient-to-r from-brand/10 to-brand-strong/5">
+                          {competitorName}
+                        </th>
+                        <th className="py-3.5 px-4 text-center text-sm font-semibold text-brand-light bg-brand/10 rounded-r-lg">
+                          Fusion Calling
+                        </th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      {comparisonRows.map((row) => (
+                        <tr key={row.label} className="border-t border-white/10 hover:bg-brand/5 transition-colors">
+                          <td className="py-3.5 px-4 text-sm font-medium text-white">
+                            {row.label}
+                          </td>
+                          <td className="text-center py-3.5 px-4 text-sm text-gray-400">
+                            {row.competitor}
+                          </td>
+                          <td className="text-center py-3.5 px-4 text-sm font-medium text-brand-light bg-brand/10">
+                            {row.fusion}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
 
-            {/* Performance Benchmarks */}
-            <BenchmarkTable 
-              competitorName={competitorName}
-              fusionMetrics={{
-                setupTime: "24 hours + 30-day support",
-                clientSatisfaction: "4.8/5",
-                featureUpdates: "8+/month",
-                uptimeSLA: "99.9%"
-              }}
-            />
+            {/* Performance Benchmarks — only where we have comparable data */}
+            <BenchmarkTable competitorName={competitorName} />
 
             {/* Where Fusion Calling goes further */}
             <div>
-              <h2 className="text-3xl font-bold text-white mb-4">
+              <h2 className={`${sectionHeading} mb-4`}>
                 {advantagesTitle}
               </h2>
               <p className="text-gray-300 leading-relaxed mb-6">{intro2}</p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {advantages.map((a) => (
-                  <div key={a.title} className="flex items-start gap-4">
-                    <div>
-                      <h3 className="text-white font-bold mb-2">{a.title}</h3>
-                      <p className="text-gray-400 text-sm">{a.description}</p>
-                    </div>
+                  <div
+                    key={a.title}
+                    className="glass-light rounded-xl p-6 border border-brand/20 hover:border-brand/40 transition-premium"
+                  >
+                    <h3 className="font-display text-base font-bold text-white mb-2">
+                      {a.title}
+                    </h3>
+                    <p className="text-gray-400 text-sm">{a.description}</p>
                   </div>
                 ))}
               </div>
@@ -339,14 +348,17 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
 
             {/* Why Choose Fusion Calling */}
             <div className="glass rounded-2xl p-8 border border-brand/30">
-              <h2 className="text-3xl font-bold text-white mb-6">
+              <h2 className={`${sectionHeading} mb-6`}>
                 {whyChooseFusionCalling.title}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {whyChooseFusionCalling.points.map((point) => (
                   <div key={point.title} className="flex items-start gap-4">
+                    <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                     <div>
-                      <h3 className="text-white font-bold mb-2">{point.title}</h3>
+                      <h3 className="font-display text-base font-bold text-white mb-2">
+                        {point.title}
+                      </h3>
                       <p className="text-gray-400 text-sm">{point.description}</p>
                     </div>
                   </div>
@@ -356,14 +368,14 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
 
             {/* Expert Quote - GEO Optimized */}
             <div className="glass-light rounded-2xl p-8 border border-brand/30">
-              <h4 className="text-xl font-bold text-brand-light mb-4">
+              <h2 className={`${sectionHeading} mb-4`}>
                 Expert Analysis
-              </h4>
+              </h2>
               <blockquote className="border-l-4 border-brand pl-4 py-2">
                 <p className="text-gray-300 italic leading-relaxed">
                   &ldquo;{expertQuote.text}&rdquo;
                 </p>
-                <footer className="mt-3 text-sm text-gray-500">
+                <footer className="mt-3 text-sm text-gray-400">
                   — {expertQuote.attribution}, {expertQuote.source}
                 </footer>
               </blockquote>
@@ -371,23 +383,21 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
 
             {/* Differentiator Callout */}
             <div className="glass rounded-2xl p-8 border border-brand/30">
-              <div className="bg-gradient-to-r from-brand/10 to-brand-strong/5 rounded-xl p-6 border border-brand/30">
-                <h3 className="text-2xl font-bold text-brand-light mb-4">
-                  {differentiatorHeadline}
-                </h3>
-                <p className="text-gray-300 leading-relaxed">{differentiatorBody}</p>
-              </div>
+              <h3 className="font-display text-2xl font-bold text-brand-light mb-4">
+                {differentiatorHeadline}
+              </h3>
+              <p className="text-gray-300 leading-relaxed">{differentiatorBody}</p>
             </div>
 
             {/* Economics */}
             <div className="glass rounded-2xl p-8 border border-brand/20">
-              <h2 className="text-3xl font-bold text-white mb-6">
+              <h2 className={`${sectionHeading} mb-6`}>
                 How the Economics Compare
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-4">
-                  <h3 className="text-xl font-bold text-gray-300 mb-4">
+                  <h3 className="font-display text-xl font-bold text-gray-300 mb-4">
                     {economics.competitorTitle}
                   </h3>
                   <ul className="space-y-3 text-gray-300">
@@ -401,13 +411,13 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-xl font-bold text-green-400 mb-4">
+                  <h3 className="font-display text-xl font-bold text-brand-light mb-4">
                     {economics.fusionTitle}
                   </h3>
                   <ul className="space-y-3 text-gray-300">
                     {economics.fusionPoints.map((point) => (
                       <li key={point} className="flex items-start gap-3">
-                        <div className="w-2 h-2 mt-2 rounded-full bg-green-500 flex-shrink-0" />
+                        <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                         <span>{point}</span>
                       </li>
                     ))}
@@ -415,36 +425,19 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
                 </div>
               </div>
 
-              <div className="mt-8 bg-gradient-to-r from-green-500/10 to-green-600/5 rounded-xl p-6 border border-green-500/20">
-                <p className="text-center text-green-300 font-semibold text-lg">
+              <div className="mt-8 bg-gradient-to-r from-brand/10 to-brand-strong/5 rounded-xl p-6 border border-brand/30">
+                <p className="text-center text-brand-light font-semibold text-lg">
                   {highlight}
                 </p>
               </div>
             </div>
 
             {/* FAQ */}
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-6">
-                Frequently Asked Questions
-              </h2>
-              <div className="space-y-4">
-                {faqs.map((faq) => (
-                  <div
-                    key={faq.question}
-                    className="glass-light rounded-xl p-6 border border-brand/20"
-                  >
-                    <h3 className="text-lg font-bold text-brand-light mb-3">
-                      {faq.question}
-                    </h3>
-                    <p className="text-gray-400 leading-relaxed">{faq.answer}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <PostFaq faqs={faqs} title="Frequently Asked Questions" />
 
             {/* Conclusion / CTA */}
             <div className="glass-light rounded-2xl p-8 border border-brand/30">
-              <h2 className="text-3xl font-bold text-white mb-6">
+              <h2 className={`${sectionHeading} mb-6`}>
                 Build Your Voice AI Agency With Fusion Calling
               </h2>
               <p className="text-gray-300 leading-relaxed mb-6">
@@ -474,7 +467,7 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
 
               <Link
                 href="/whitelabel"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition shadow-premium hover:shadow-premium-lg hover:scale-105"
+                className={primaryButton}
               >
                 Explore the Partner Program
                 <span className="ml-2">→</span>
@@ -485,7 +478,7 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
               Switching from {competitorName}? See the{" "}
               <Link
                 href="/whitelabel/reseller-program"
-                className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors"
+                className="text-brand-light hover:text-brand underline-offset-4 hover:underline transition-colors"
               >
                 AI voice agent reseller program
               </Link>{" "}
@@ -494,7 +487,7 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
 
             {/* Related Comparisons */}
             <div>
-              <h2 className="text-2xl font-bold text-white mb-6">
+              <h2 className={`${sectionHeading} mb-6`}>
                 More Comparisons
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -514,7 +507,7 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                       />
                     </div>
-                    <h3 className="text-white font-bold mb-2 group-hover:text-brand-light transition-colors">
+                    <h3 className="font-display text-white font-bold mb-2 group-hover:text-brand-light transition-colors">
                       {r.h1}
                     </h3>
                     <p className="text-gray-400 text-sm line-clamp-2">
@@ -531,12 +524,12 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
         <div className="mt-12 pt-8 border-t border-brand/20">
           <div className="flex items-start gap-6">
             <div className="w-16 h-16 rounded-full bg-gradient-to-br from-brand to-brand-strong flex items-center justify-center flex-shrink-0">
-              <span className="text-2xl font-bold text-white">FC</span>
+              <span className="text-2xl font-bold text-brand-foreground">FC</span>
             </div>
             <div className="flex-1">
-              <h3 className="text-lg font-bold text-white mb-2">About the Author</h3>
+              <h2 className="font-display text-lg font-bold text-white mb-2">About the Author</h2>
               <p className="text-gray-400 text-sm mb-3">
-                <strong className="text-brand-strong">Fusion Calling Team</strong>
+                <strong className="text-brand-light">Fusion Calling Team</strong>
               </p>
               <p className="text-gray-400 text-sm leading-relaxed mb-4">
                 We&apos;re the team behind Fusion Calling&apos;s white-label AI voice
@@ -545,20 +538,12 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
                 phone operations with cutting-edge automation technology.
               </p>
               <div className="flex items-center gap-4 text-sm">
-                <a
-                  href={SITE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-brand-strong hover:text-brand transition-colors"
-                >
-                  Website →
-                </a>
-                <a
+                <Link
                   href="/whitelabel"
-                  className="text-brand-strong hover:text-brand transition-colors"
+                  className="text-brand-light hover:text-brand transition-colors"
                 >
                   Partner Program →
-                </a>
+                </Link>
               </div>
             </div>
           </div>

@@ -233,8 +233,8 @@ export default function Hero() {
                 className="flex items-center gap-2.5 sm:gap-3 group cursor-default"
               >
                 <div className="relative">
-                  <div className="absolute inset-0 w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500/50 blur-sm group-hover:bg-green-400/70 transition-colors"></div>
-                  <div className="relative w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500 group-hover:bg-green-400 transition-colors shadow-lg shadow-green-500/50"></div>
+                  <div className="absolute inset-0 w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-brand/50 blur-sm group-hover:bg-brand-light/70 transition-colors"></div>
+                  <div className="relative w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-brand group-hover:bg-brand-light transition-colors shadow-lg shadow-brand/50"></div>
                 </div>
                 <span className="font-body text-gray-400 text-xs sm:text-sm font-medium group-hover:text-gray-300 transition-colors">
                   {label}

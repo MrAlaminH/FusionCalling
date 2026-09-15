@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import StickyMobileCta from "@/components/sticky-mobile-cta";
 
 export const metadata: Metadata = {
   title: "Voice AI Platform Comparisons",
@@ -21,6 +22,8 @@ export default function CompareLayout({
       <Navbar />
       <main className="pt-24 lg:pt-28">{children}</main>
       <Footer />
+      {/* Comparison readers are deep-funnel; keep the platform CTA reachable. */}
+      <StickyMobileCta href="/whitelabel" label="Explore the Platform" />
     </div>
   );
 }

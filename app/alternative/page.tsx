@@ -4,10 +4,12 @@ import Image from "next/image";
 import { comparisons } from "@/lib/comparisons";
 import { SITE_URL } from "@/lib/site-url";
 import { buildOpenGraph } from "@/lib/seo";
+import { primaryButton } from "@/components/ui/button-styles";
 
-const title = "13 White-Label Voice AI Alternatives (2026)";
-const description =
-  "Compare Fusion Calling vs Vapi, Retell AI, Synthflow, Bland AI, Air AI + 8 more: pricing from $99/mo, providers, sub-accounts, onboarding. Live demo included.";
+const title = `${comparisons.length} White-Label Voice AI Alternatives (2026)`;
+const description = `Compare Fusion Calling vs Vapi, Retell AI, Synthflow, Bland AI, Air AI + ${
+  comparisons.length - 5
+} more: pricing from $99/mo, providers, sub-accounts, onboarding. Live demo included.`;
 
 export const metadata: Metadata = {
   title,
@@ -108,8 +110,9 @@ export default function CompareHubPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16 md:mb-20 pt-4 md:pt-6 relative z-10">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 md:mb-8 bg-gradient-to-r from-white via-orange-200 to-orange-400 bg-clip-text text-transparent">
-              Voice AI Platform Comparisons
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6 md:mb-8 leading-[1.1]">
+              Voice AI Platform
+              <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong bg-clip-text text-transparent"> Comparisons</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed px-4">
               Honest, side-by-side comparisons of the leading white-label voice AI
@@ -120,7 +123,7 @@ export default function CompareHubPage() {
 
           {/* At-a-glance matrix */}
           <div className="mb-20">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 text-center">
+            <h2 className="font-display text-2xl md:text-3xl font-bold tracking-tight text-white mb-3 text-center">
               The Category at a Glance
             </h2>
             <p className="text-gray-400 text-center mb-8 max-w-2xl mx-auto">
@@ -170,13 +173,13 @@ export default function CompareHubPage() {
                         <span>Fusion Calling</span>
                       </span>
                     </td>
-                    <td className="py-4 px-4 text-green-400 font-medium">
+                    <td className="py-4 px-4 text-brand-light font-medium">
                       $99/mo (6 sub-accounts)
                     </td>
-                    <td className="py-4 px-4 text-green-400 font-medium">
+                    <td className="py-4 px-4 text-brand-light font-medium">
                       Vapi + Retell + ElevenLabs
                     </td>
-                    <td className="py-4 px-4 text-green-400 font-bold">
+                    <td className="py-4 px-4 text-brand-light font-bold">
                       Guided, ~7 days
                     </td>
                   </tr>
@@ -232,7 +235,7 @@ export default function CompareHubPage() {
                       {/* Quick Stats */}
                       <div className="grid grid-cols-2 gap-3 pt-3">
                         <div className="flex items-center gap-2">
-                          <div className="w-2 h-2 rounded-full bg-green-500" />
+                          <div className="w-2 h-2 rounded-full bg-brand" />
                           <span className="text-xs text-gray-400">{post.readTime}</span>
                         </div>
                         <div className="flex items-center gap-2">
@@ -314,7 +317,7 @@ export default function CompareHubPage() {
             <div className="text-center mt-12">
               <Link
                 href="/whitelabel"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition shadow-premium hover:shadow-premium-lg hover:scale-105"
+                className={primaryButton}
               >
                 Explore the Partner Program
                 <span className="ml-2">→</span>
