@@ -1,31 +1,31 @@
 export function QuickReferenceSection() {
   return (
-    <section id="quick-ref" className="mb-16 scroll-mt-24">
+    <section id="quick-ref" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">Quick Reference</h2>
 
       <div className="space-y-8">
         {/* Admin Permissions */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
-          <div className="bg-orange-600/20 border-b border-orange-700/50 p-6">
-            <h3 className="text-2xl font-bold text-orange-400">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
+          <div className="bg-brand/15 border-b border-brand/20 p-6">
+            <h3 className="text-2xl font-bold text-white">
               Admin Permissions
             </h3>
           </div>
           <div className="p-8">
             <div className="space-y-2">
-              <div className="flex justify-between items-center p-3 bg-gray-800/50 rounded">
+              <div className="flex justify-between items-center p-3 bg-zinc-800/50 rounded">
                 <span className="font-semibold text-white">Agency Owner</span>
                 <span className="text-gray-300 text-sm">
                   All admin sections, all features
                 </span>
               </div>
-              <div className="flex justify-between items-center p-3 bg-gray-800/50 rounded">
+              <div className="flex justify-between items-center p-3 bg-zinc-800/50 rounded">
                 <span className="font-semibold text-white">Client Admin</span>
                 <span className="text-gray-300 text-sm">
                   Their client&apos;s dashboard only
                 </span>
               </div>
-              <div className="flex justify-between items-center p-3 bg-gray-800/50 rounded">
+              <div className="flex justify-between items-center p-3 bg-zinc-800/50 rounded">
                 <span className="font-semibold text-white">Client User</span>
                 <span className="text-gray-300 text-sm">
                   Their assigned features only
@@ -36,7 +36,7 @@ export function QuickReferenceSection() {
         </div>
 
         {/* Client Limits by Plan */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
           <div className="bg-blue-600/20 border-b border-blue-700/50 p-6">
             <h3 className="text-2xl font-bold text-blue-400">
               Client Limits by Plan
@@ -44,15 +44,15 @@ export function QuickReferenceSection() {
           </div>
           <div className="p-8">
             <div className="space-y-2">
-              <div className="flex justify-between items-center p-3 bg-gray-800/50 rounded">
+              <div className="flex justify-between items-center p-3 bg-zinc-800/50 rounded">
                 <span className="font-semibold text-white">Starter</span>
                 <span className="text-gray-300">6 clients</span>
               </div>
-              <div className="flex justify-between items-center p-3 bg-gray-800/50 rounded">
+              <div className="flex justify-between items-center p-3 bg-zinc-800/50 rounded">
                 <span className="font-semibold text-white">Pro</span>
                 <span className="text-gray-300">20 clients</span>
               </div>
-              <div className="flex justify-between items-center p-3 bg-gray-800/50 rounded">
+              <div className="flex justify-between items-center p-3 bg-zinc-800/50 rounded">
                 <span className="font-semibold text-white">Enterprise</span>
                 <span className="text-gray-300">Unlimited</span>
               </div>
@@ -61,7 +61,7 @@ export function QuickReferenceSection() {
         </div>
 
         {/* User Credit Allocations */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
           <div className="bg-green-600/20 border-b border-green-700/50 p-6">
             <h3 className="text-2xl font-bold text-green-400">
               User Credit Allocations
@@ -69,19 +69,19 @@ export function QuickReferenceSection() {
           </div>
           <div className="p-8">
             <div className="space-y-2">
-              <div className="flex justify-between items-center p-3 bg-gray-800/50 rounded">
+              <div className="flex justify-between items-center p-3 bg-zinc-800/50 rounded">
                 <span className="font-semibold text-white">Trial</span>
                 <span className="text-gray-300">Varies (configurable)</span>
               </div>
-              <div className="flex justify-between items-center p-3 bg-gray-800/50 rounded">
+              <div className="flex justify-between items-center p-3 bg-zinc-800/50 rounded">
                 <span className="font-semibold text-white">Basic</span>
                 <span className="text-gray-300">Varies (configurable)</span>
               </div>
-              <div className="flex justify-between items-center p-3 bg-gray-800/50 rounded">
+              <div className="flex justify-between items-center p-3 bg-zinc-800/50 rounded">
                 <span className="font-semibold text-white">Premium</span>
                 <span className="text-gray-300">Varies (configurable)</span>
               </div>
-              <div className="flex justify-between items-center p-3 bg-gray-800/50 rounded">
+              <div className="flex justify-between items-center p-3 bg-zinc-800/50 rounded">
                 <span className="font-semibold text-white">Enterprise</span>
                 <span className="text-gray-300">Unlimited</span>
               </div>
@@ -90,7 +90,7 @@ export function QuickReferenceSection() {
         </div>
 
         {/* API Provider Limits */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
           <div className="bg-purple-600/20 border-b border-purple-700/50 p-6">
             <h3 className="text-2xl font-bold text-purple-400">
               API Provider Limits
@@ -113,21 +113,21 @@ export function QuickReferenceSection() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border-b border-gray-800 hover:bg-gray-800/50">
+                  <tr className="border-b border-white/10 hover:bg-zinc-800/50">
                     <td className="px-4 py-2 text-gray-300">Webhook (n8n)</td>
                     <td className="px-4 py-2 text-gray-300">Unlimited</td>
                     <td className="px-4 py-2 text-gray-300">
                       Requires n8n workflow
                     </td>
                   </tr>
-                  <tr className="border-b border-gray-800 hover:bg-gray-800/50">
+                  <tr className="border-b border-white/10 hover:bg-zinc-800/50">
                     <td className="px-4 py-2 text-gray-300">Vapi AI</td>
                     <td className="px-4 py-2 text-gray-300">10 calls</td>
                     <td className="px-4 py-2 text-gray-300">
                       Voice AI platform
                     </td>
                   </tr>
-                  <tr className="hover:bg-gray-800/50">
+                  <tr className="hover:bg-zinc-800/50">
                     <td className="px-4 py-2 text-gray-300">Retell AI</td>
                     <td className="px-4 py-2 text-gray-300">20 calls</td>
                     <td className="px-4 py-2 text-gray-300">
@@ -141,14 +141,14 @@ export function QuickReferenceSection() {
         </div>
 
         {/* Common Status Values */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
           <div className="bg-red-600/20 border-b border-red-700/50 p-6">
             <h3 className="text-2xl font-bold text-red-400">
               Common Status Values
             </h3>
           </div>
           <div className="p-8 space-y-2">
-            <div className="flex items-start gap-3 bg-gray-800/50 p-3 rounded">
+            <div className="flex items-start gap-3 bg-zinc-800/50 p-3 rounded">
               <span className="text-green-400 font-bold mt-0.5">●</span>
               <div>
                 <p className="font-semibold text-gray-200">Active</p>
@@ -157,7 +157,7 @@ export function QuickReferenceSection() {
                 </p>
               </div>
             </div>
-            <div className="flex items-start gap-3 bg-gray-800/50 p-3 rounded">
+            <div className="flex items-start gap-3 bg-zinc-800/50 p-3 rounded">
               <span className="text-yellow-400 font-bold mt-0.5">●</span>
               <div>
                 <p className="font-semibold text-gray-200">Paused</p>
@@ -166,8 +166,8 @@ export function QuickReferenceSection() {
                 </p>
               </div>
             </div>
-            <div className="flex items-start gap-3 bg-gray-800/50 p-3 rounded">
-              <span className="text-orange-400 font-bold mt-0.5">●</span>
+            <div className="flex items-start gap-3 bg-zinc-800/50 p-3 rounded">
+              <span className="text-brand-light font-bold mt-0.5">●</span>
               <div>
                 <p className="font-semibold text-gray-200">Suspended</p>
                 <p className="text-gray-300 text-sm">
@@ -175,7 +175,7 @@ export function QuickReferenceSection() {
                 </p>
               </div>
             </div>
-            <div className="flex items-start gap-3 bg-gray-800/50 p-3 rounded">
+            <div className="flex items-start gap-3 bg-zinc-800/50 p-3 rounded">
               <span className="text-red-400 font-bold mt-0.5">●</span>
               <div>
                 <p className="font-semibold text-gray-200">Terminated</p>
@@ -184,7 +184,7 @@ export function QuickReferenceSection() {
                 </p>
               </div>
             </div>
-            <div className="flex items-start gap-3 bg-gray-800/50 p-3 rounded">
+            <div className="flex items-start gap-3 bg-zinc-800/50 p-3 rounded">
               <span className="text-gray-600 font-bold mt-0.5">●</span>
               <div>
                 <p className="font-semibold text-gray-200">Deleted</p>
@@ -195,13 +195,13 @@ export function QuickReferenceSection() {
         </div>
 
         {/* Quick Tips */}
-        <div className="bg-gradient-to-r from-orange-900/30 to-orange-800/20 border border-orange-700/50 rounded-lg p-8">
-          <h3 className="text-2xl font-bold text-orange-400 mb-6">
+        <div className="bg-gradient-to-r from-brand/10 to-brand/5 border border-brand/20 rounded-lg p-8">
+          <h3 className="text-2xl font-bold text-white mb-6">
             Quick Tips
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-gray-900/50 rounded p-4">
-              <p className="text-orange-300 font-semibold mb-2">
+            <div className="bg-zinc-900/50 rounded p-4">
+              <p className="font-semibold text-white mb-2">
                 💡 Client Creation
               </p>
               <p className="text-gray-300 text-sm">
@@ -209,14 +209,14 @@ export function QuickReferenceSection() {
                 converting to paid
               </p>
             </div>
-            <div className="bg-gray-900/50 rounded p-4">
-              <p className="text-orange-300 font-semibold mb-2">💡 API Keys</p>
+            <div className="bg-zinc-900/50 rounded p-4">
+              <p className="font-semibold text-white mb-2">💡 API Keys</p>
               <p className="text-gray-300 text-sm">
                 Test all API keys before deploying to ensure connectivity
               </p>
             </div>
-            <div className="bg-gray-900/50 rounded p-4">
-              <p className="text-orange-300 font-semibold mb-2">
+            <div className="bg-zinc-900/50 rounded p-4">
+              <p className="font-semibold text-white mb-2">
                 💡 Monitoring
               </p>
               <p className="text-gray-300 text-sm">
@@ -224,22 +224,22 @@ export function QuickReferenceSection() {
                 opportunities
               </p>
             </div>
-            <div className="bg-gray-900/50 rounded p-4">
-              <p className="text-orange-300 font-semibold mb-2">
+            <div className="bg-zinc-900/50 rounded p-4">
+              <p className="font-semibold text-white mb-2">
                 💡 Documentation
               </p>
               <p className="text-gray-300 text-sm">
                 Document all client changes and reasons for audit trail
               </p>
             </div>
-            <div className="bg-gray-900/50 rounded p-4">
-              <p className="text-orange-300 font-semibold mb-2">💡 Support</p>
+            <div className="bg-zinc-900/50 rounded p-4">
+              <p className="font-semibold text-white mb-2">💡 Support</p>
               <p className="text-gray-300 text-sm">
                 Quick response times build client trust and loyalty
               </p>
             </div>
-            <div className="bg-gray-900/50 rounded p-4">
-              <p className="text-orange-300 font-semibold mb-2">💡 Security</p>
+            <div className="bg-zinc-900/50 rounded p-4">
+              <p className="font-semibold text-white mb-2">💡 Security</p>
               <p className="text-gray-300 text-sm">
                 Rotate API keys every 90 days and never share them
               </p>

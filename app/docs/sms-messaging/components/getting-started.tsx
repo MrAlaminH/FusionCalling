@@ -1,6 +1,6 @@
 export function GettingStartedSection() {
   return (
-    <section id="before-you-start" className="mb-16 scroll-mt-24">
+    <section id="before-you-start" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">
         Before you start — what you need
       </h2>
@@ -9,7 +9,7 @@ export function GettingStartedSection() {
       </p>
 
       <div className="space-y-4 mb-8">
-        <div className="flex gap-4 p-4 rounded-lg border border-gray-700 bg-gray-900/50">
+        <div className="flex gap-4 p-4 rounded-lg border border-gray-700 bg-zinc-900/50">
           <div className="text-2xl flex-shrink-0">1️⃣</div>
           <div>
             <h4 className="font-semibold text-white mb-1">
@@ -21,7 +21,7 @@ export function GettingStartedSection() {
           </div>
         </div>
 
-        <div className="flex gap-4 p-4 rounded-lg border border-gray-700 bg-gray-900/50">
+        <div className="flex gap-4 p-4 rounded-lg border border-gray-700 bg-zinc-900/50">
           <div className="text-2xl flex-shrink-0">2️⃣</div>
           <div>
             <h4 className="font-semibold text-white mb-1">Twilio Account</h4>
@@ -31,7 +31,7 @@ export function GettingStartedSection() {
           </div>
         </div>
 
-        <div className="flex gap-4 p-4 rounded-lg border border-gray-700 bg-gray-900/50">
+        <div className="flex gap-4 p-4 rounded-lg border border-gray-700 bg-zinc-900/50">
           <div className="text-2xl flex-shrink-0">3️⃣</div>
           <div>
             <h4 className="font-semibold text-white mb-1">
@@ -43,7 +43,7 @@ export function GettingStartedSection() {
             <ul className="space-y-1 text-gray-300 ml-4">
               <li>
                 <strong>Account SID</strong> (starts with{" "}
-                <code className="bg-gray-800 px-2 py-1 rounded text-sm">
+                <code className="bg-zinc-800 px-2 py-1 rounded text-sm">
                   AC…
                 </code>
                 )
@@ -53,7 +53,7 @@ export function GettingStartedSection() {
               </li>
               <li>
                 <strong>Your Twilio phone number</strong> in full format, e.g.{" "}
-                <code className="bg-gray-800 px-2 py-1 rounded text-sm">
+                <code className="bg-zinc-800 px-2 py-1 rounded text-sm">
                   +18335551234
                 </code>
               </li>
@@ -62,15 +62,15 @@ export function GettingStartedSection() {
         </div>
       </div>
 
-      <div className="p-4 rounded-lg border border-orange-500/30 bg-orange-500/5">
+      <div className="p-4 rounded-lg border border-brand/20 bg-brand/5">
         <p className="text-gray-200">
-          <strong className="text-orange-400">💡 Tip:</strong> If you do not
+          <strong className="text-brand-light">💡 Tip:</strong> If you do not
           have Twilio yet, sign up at{" "}
           <a
             href="https://www.twilio.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-orange-400 hover:text-orange-300 underline"
+            className="text-brand-light hover:text-brand-light underline"
           >
             twilio.com
           </a>

@@ -34,10 +34,10 @@ export default function IntegrationGuidesSection() {
             <li>Click <strong>&quot;Add Webhook&quot;</strong></li>
             <li>
               URL:{" "}
-              <code className="text-orange-400 break-all">https://app.fusioncalling.com/api/leads/external/v1/leads</code>
+              <code className="text-brand-light break-all">https://app.fusioncalling.com/api/leads/external/v1/leads</code>
             </li>
             <li>Method: <strong>POST</strong></li>
-            <li>Header: <code className="text-orange-400">Authorization: Bearer YOUR_API_KEY</code></li>
+            <li>Header: <code className="text-brand-light">Authorization: Bearer YOUR_API_KEY</code></li>
           </ol>
           <CodeBlock
             code={`{
@@ -56,9 +56,9 @@ export default function IntegrationGuidesSection() {
             <li>• <strong>Method:</strong> POST</li>
             <li>
               • <strong>URL:</strong>{" "}
-              <code className="text-orange-400 break-all">https://app.fusioncalling.com/api/leads/external/v1/leads</code>
+              <code className="text-brand-light break-all">https://app.fusioncalling.com/api/leads/external/v1/leads</code>
             </li>
-            <li>• <strong>Auth:</strong> Generic Credential · header <code className="text-orange-400">Authorization</code> = <code className="text-orange-400">Bearer YOUR_API_KEY</code></li>
+            <li>• <strong>Auth:</strong> Generic Credential · header <code className="text-brand-light">Authorization</code> = <code className="text-brand-light">Bearer YOUR_API_KEY</code></li>
             <li>• <strong>Body content type:</strong> JSON</li>
           </ul>
           <Callout type="info">

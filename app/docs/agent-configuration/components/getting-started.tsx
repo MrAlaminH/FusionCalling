@@ -1,15 +1,15 @@
 export function GettingStartedSection() {
   return (
-    <section id="creating-first-agent" className="mb-16 scroll-mt-24">
+    <section id="creating-first-agent" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">
         Creating Your First Agent
       </h2>
 
       <div className="space-y-8">
         {/* Step 1 */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg p-8">
           <div className="flex items-start gap-4">
-            <div className="bg-orange-500 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
+            <div className="bg-brand/15 text-brand-light border border-brand/30 font-bold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
               1
             </div>
             <div className="flex-1">
@@ -19,12 +19,12 @@ export function GettingStartedSection() {
               <ol className="space-y-2 text-gray-300 list-decimal list-inside">
                 <li>
                   From your dashboard, click{" "}
-                  <span className="text-orange-400 font-semibold">Agents</span>{" "}
+                  <span className="font-semibold text-white">Agents</span>{" "}
                   in the navigation menu
                 </li>
                 <li>
                   You&apos;ll see the{" "}
-                  <span className="text-orange-400 font-semibold">
+                  <span className="font-semibold text-white">
                     AI Phone Agents
                   </span>{" "}
                   page listing all your agents
@@ -35,9 +35,9 @@ export function GettingStartedSection() {
         </div>
 
         {/* Step 2 */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg p-8">
           <div className="flex items-start gap-4">
-            <div className="bg-orange-500 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
+            <div className="bg-brand/15 text-brand-light border border-brand/30 font-bold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
               2
             </div>
             <div className="flex-1">
@@ -46,7 +46,7 @@ export function GettingStartedSection() {
               </h3>
               <p className="text-gray-300">
                 Click the blue{" "}
-                <span className="text-orange-400 font-semibold">
+                <span className="font-semibold text-white">
                   Create Agent
                 </span>{" "}
                 button in the top-right corner of the agents page.
@@ -56,9 +56,9 @@ export function GettingStartedSection() {
         </div>
 
         {/* Step 3 */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg p-8">
           <div className="flex items-start gap-4">
-            <div className="bg-orange-500 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
+            <div className="bg-brand/15 text-brand-light border border-brand/30 font-bold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
               3
             </div>
             <div className="flex-1">
@@ -69,22 +69,22 @@ export function GettingStartedSection() {
                 A modal will appear asking for the following information:
               </p>
               <div className="overflow-x-auto">
-                <table className="w-full text-sm border border-gray-800 rounded-lg overflow-hidden">
+                <table className="w-full text-sm border border-white/10 rounded-lg overflow-hidden">
                   <thead>
-                    <tr className="bg-gray-800 border-b border-gray-700">
-                      <th className="px-4 py-3 text-left text-orange-400 font-semibold">
+                    <tr className="bg-zinc-800 border-b border-gray-700">
+                      <th className="px-4 py-3 text-left font-semibold text-white">
                         Field
                       </th>
-                      <th className="px-4 py-3 text-left text-orange-400 font-semibold">
+                      <th className="px-4 py-3 text-left font-semibold text-white">
                         Description
                       </th>
-                      <th className="px-4 py-3 text-left text-orange-400 font-semibold">
+                      <th className="px-4 py-3 text-left font-semibold text-white">
                         Required
                       </th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="border-b border-gray-800 hover:bg-gray-800/50">
+                    <tr className="border-b border-white/10 hover:bg-zinc-800/50">
                       <td className="px-4 py-3 font-semibold text-white">
                         Agent Name
                       </td>
@@ -97,7 +97,7 @@ export function GettingStartedSection() {
                         </span>
                       </td>
                     </tr>
-                    <tr className="border-b border-gray-800 hover:bg-gray-800/50">
+                    <tr className="border-b border-white/10 hover:bg-zinc-800/50">
                       <td className="px-4 py-3 font-semibold text-white">
                         Agent Type
                       </td>
@@ -110,7 +110,7 @@ export function GettingStartedSection() {
                         </span>
                       </td>
                     </tr>
-                    <tr className="border-b border-gray-800 hover:bg-gray-800/50">
+                    <tr className="border-b border-white/10 hover:bg-zinc-800/50">
                       <td className="px-4 py-3 font-semibold text-white">
                         Voice
                       </td>
@@ -123,7 +123,7 @@ export function GettingStartedSection() {
                         </span>
                       </td>
                     </tr>
-                    <tr className="border-b border-gray-800 hover:bg-gray-800/50">
+                    <tr className="border-b border-white/10 hover:bg-zinc-800/50">
                       <td className="px-4 py-3 font-semibold text-white">
                         Phone Number
                       </td>
@@ -136,7 +136,7 @@ export function GettingStartedSection() {
                         </span>
                       </td>
                     </tr>
-                    <tr className="border-b border-gray-800 hover:bg-gray-800/50">
+                    <tr className="border-b border-white/10 hover:bg-zinc-800/50">
                       <td className="px-4 py-3 font-semibold text-white">
                         First Message
                       </td>
@@ -149,7 +149,7 @@ export function GettingStartedSection() {
                         </span>
                       </td>
                     </tr>
-                    <tr className="hover:bg-gray-800/50">
+                    <tr className="hover:bg-zinc-800/50">
                       <td className="px-4 py-3 font-semibold text-white">
                         System Prompt
                       </td>
@@ -194,9 +194,9 @@ If you don't understand, ask for clarification.`}
         </div>
 
         {/* Step 4 */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg p-8">
           <div className="flex items-start gap-4">
-            <div className="bg-orange-500 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
+            <div className="bg-brand/15 text-brand-light border border-brand/30 font-bold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
               4
             </div>
             <div className="flex-1">
@@ -205,7 +205,7 @@ If you don't understand, ask for clarification.`}
               </h3>
               <p className="text-gray-300 mb-4">
                 Click{" "}
-                <span className="text-orange-400 font-semibold">
+                <span className="font-semibold text-white">
                   Save Agent
                 </span>{" "}
                 to create your agent. You&apos;ll see it appear in the agents

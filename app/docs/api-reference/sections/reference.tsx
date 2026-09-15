@@ -51,7 +51,7 @@ const CHANGELOG = [
 
 const TONE: Record<string, string> = {
   blue: "bg-blue-500/15 text-blue-300 ring-blue-500/30",
-  orange: "bg-orange-500/15 text-orange-300 ring-orange-500/30",
+  orange: "bg-brand/15 text-brand-light ring-orange-500/30",
   green: "bg-emerald-500/15 text-emerald-300 ring-emerald-500/30",
 };
 
@@ -77,7 +77,7 @@ export default function ReferenceSection() {
               key={e.code}
               className="grid grid-cols-1 md:grid-cols-[5rem_1fr_2fr] gap-1 md:gap-4 px-4 py-3 border-b border-white/5 last:border-0"
             >
-              <code className="text-orange-400 text-sm">{e.code}</code>
+              <code className="text-brand-light text-sm">{e.code}</code>
               <span className="text-sm text-gray-200">{e.name}</span>
               <span className="text-sm text-gray-400">{e.fix}</span>
             </div>
@@ -129,7 +129,7 @@ export default function ReferenceSection() {
               <ul className="space-y-1.5 text-sm text-gray-300">
                 {c.items.map((it) => (
                   <li key={it} className="flex items-start gap-2">
-                    <span className="mt-1.5 h-1 w-1 rounded-full bg-orange-400 shrink-0" />
+                    <span className="mt-1.5 h-1 w-1 rounded-full bg-brand-light shrink-0" />
                     {it}
                   </li>
                 ))}
@@ -144,7 +144,7 @@ export default function ReferenceSection() {
         <h3 className="text-lg font-semibold text-white mb-3">Support</h3>
         <Callout type="info">
           For API support, email{" "}
-          <a href="mailto:hello@fusioncalling.com" className="text-orange-400 hover:text-orange-300">
+          <a href="mailto:hello@fusioncalling.com" className="text-brand-light hover:text-brand-light">
             hello@fusioncalling.com
           </a>
           .

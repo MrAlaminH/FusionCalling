@@ -1,32 +1,32 @@
 export function FaqSection() {
   return (
-    <section id="common-questions" className="mb-16 scroll-mt-24">
+    <section id="common-questions" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">
         Part 6 — Common questions
       </h2>
 
       <div className="space-y-6">
-        <div className="p-4 rounded-lg border border-gray-700 bg-gray-900/30">
+        <div className="p-4 rounded-lg border border-gray-700 bg-zinc-900/30">
           <h3 className="text-lg font-semibold text-white mb-3">
             ❓ &quot;I connected Twilio but Messages is empty.&quot;
           </h3>
           <ul className="space-y-2 text-gray-300">
             <li className="flex items-start">
-              <span className="text-orange-400 mr-3 mt-1">•</span>
+              <span className="text-brand-light mr-3 mt-1">•</span>
               <span>
                 Send a test text from <strong>Messages</strong> compose, or wait
                 until your campaign sends.
               </span>
             </li>
             <li className="flex items-start">
-              <span className="text-orange-400 mr-3 mt-1">•</span>
+              <span className="text-brand-light mr-3 mt-1">•</span>
               <span>
                 <strong>Refresh</strong> the Messages page — the app loads
                 recent history from Twilio.
               </span>
             </li>
             <li className="flex items-start">
-              <span className="text-orange-400 mr-3 mt-1">•</span>
+              <span className="text-brand-light mr-3 mt-1">•</span>
               <span>
                 Confirm you selected the correct <strong>Twilio number</strong>{" "}
                 in the picker (if you have more than one).
@@ -35,7 +35,7 @@ export function FaqSection() {
           </ul>
         </div>
 
-        <div className="p-4 rounded-lg border border-gray-700 bg-gray-900/30">
+        <div className="p-4 rounded-lg border border-gray-700 bg-zinc-900/30">
           <h3 className="text-lg font-semibold text-white mb-3">
             ❓ &quot;I sent texts from Zapier / n8n / another tool — will they
             show?&quot;
@@ -47,7 +47,7 @@ export function FaqSection() {
           </p>
         </div>
 
-        <div className="p-4 rounded-lg border border-gray-700 bg-gray-900/30">
+        <div className="p-4 rounded-lg border border-gray-700 bg-zinc-900/30">
           <h3 className="text-lg font-semibold text-white mb-3">
             ❓ &quot;Inbound replies are not showing.&quot;
           </h3>
@@ -55,7 +55,7 @@ export function FaqSection() {
             <li>
               Check the Twilio webhook URL (Part 2) is exactly your Fusion Call
               URL ending in{" "}
-              <code className="bg-gray-800 px-2 py-1 rounded text-sm">
+              <code className="bg-zinc-800 px-2 py-1 rounded text-sm">
                 /api/incoming-sms
               </code>
               , method <strong>POST</strong>.
@@ -67,27 +67,27 @@ export function FaqSection() {
           </ol>
         </div>
 
-        <div className="p-4 rounded-lg border border-gray-700 bg-gray-900/30">
+        <div className="p-4 rounded-lg border border-gray-700 bg-zinc-900/30">
           <h3 className="text-lg font-semibold text-white mb-3">
             ❓ &quot;Auto SMS is grayed out or won&apos;t turn on.&quot;
           </h3>
           <ul className="space-y-2 text-gray-300">
             <li className="flex items-start">
-              <span className="text-orange-400 mr-3 mt-1">•</span>
+              <span className="text-brand-light mr-3 mt-1">•</span>
               <span>
                 <strong>Start</strong> or <strong>Resume</strong> the campaign
                 so it is <strong>Active</strong>.
               </span>
             </li>
             <li className="flex items-start">
-              <span className="text-orange-400 mr-3 mt-1">•</span>
+              <span className="text-brand-light mr-3 mt-1">•</span>
               <span>
                 Turn off Auto SMS on any <strong>other</strong> SMS campaign
                 first.
               </span>
             </li>
             <li className="flex items-start">
-              <span className="text-orange-400 mr-3 mt-1">•</span>
+              <span className="text-brand-light mr-3 mt-1">•</span>
               <span>
                 Confirm Twilio is connected and a <strong>From number</strong>{" "}
                 is saved in campaign settings.
@@ -96,7 +96,7 @@ export function FaqSection() {
           </ul>
         </div>
 
-        <div className="p-4 rounded-lg border border-gray-700 bg-gray-900/30">
+        <div className="p-4 rounded-lg border border-gray-700 bg-zinc-900/30">
           <h3 className="text-lg font-semibold text-white mb-3">
             ❓ &quot;Texts only go out during certain hours.&quot;
           </h3>
@@ -107,7 +107,7 @@ export function FaqSection() {
           </p>
         </div>
 
-        <div className="p-4 rounded-lg border border-gray-700 bg-gray-900/30">
+        <div className="p-4 rounded-lg border border-gray-700 bg-zinc-900/30">
           <h3 className="text-lg font-semibold text-white mb-3">
             ❓ &quot;Someone replied STOP — what happens?&quot;
           </h3>

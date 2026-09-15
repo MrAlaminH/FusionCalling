@@ -1,6 +1,6 @@
 export function QuickReferenceSection() {
   return (
-    <section id="quick-reference" className="mb-16 scroll-mt-24">
+    <section id="quick-reference" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">
         Part 5 — Quick reference
       </h2>
@@ -9,16 +9,16 @@ export function QuickReferenceSection() {
         <table className="w-full border-collapse">
           <thead>
             <tr className="border-b border-gray-700">
-              <th className="text-left py-3 px-4 font-semibold text-orange-400">
+              <th className="text-left py-3 px-4 font-semibold text-brand-light">
                 I want to…
               </th>
-              <th className="text-left py-3 px-4 font-semibold text-orange-400">
+              <th className="text-left py-3 px-4 font-semibold text-brand-light">
                 Where to go
               </th>
             </tr>
           </thead>
           <tbody>
-            <tr className="border-b border-gray-700/50 hover:bg-gray-900/30 transition">
+            <tr className="border-b border-gray-700/50 hover:bg-zinc-900/30 transition">
               <td className="py-3 px-4 font-medium text-white">
                 Connect Twilio
               </td>
@@ -26,7 +26,7 @@ export function QuickReferenceSection() {
                 <strong>Settings</strong> → <strong>Twilio Credentials</strong>
               </td>
             </tr>
-            <tr className="border-b border-gray-700/50 hover:bg-gray-900/30 transition">
+            <tr className="border-b border-gray-700/50 hover:bg-zinc-900/30 transition">
               <td className="py-3 px-4 font-medium text-white">
                 Read or send texts
               </td>
@@ -34,7 +34,7 @@ export function QuickReferenceSection() {
                 <strong>Messages</strong>
               </td>
             </tr>
-            <tr className="border-b border-gray-700/50 hover:bg-gray-900/30 transition">
+            <tr className="border-b border-gray-700/50 hover:bg-zinc-900/30 transition">
               <td className="py-3 px-4 font-medium text-white">
                 Set up inbound replies
               </td>
@@ -42,7 +42,7 @@ export function QuickReferenceSection() {
                 Twilio Console → your number → webhook URL (Part 2)
               </td>
             </tr>
-            <tr className="border-b border-gray-700/50 hover:bg-gray-900/30 transition">
+            <tr className="border-b border-gray-700/50 hover:bg-zinc-900/30 transition">
               <td className="py-3 px-4 font-medium text-white">
                 Create automated texting
               </td>
@@ -50,7 +50,7 @@ export function QuickReferenceSection() {
                 <strong>Campaign</strong> → Create <strong>SMS</strong> campaign
               </td>
             </tr>
-            <tr className="border-b border-gray-700/50 hover:bg-gray-900/30 transition">
+            <tr className="border-b border-gray-700/50 hover:bg-zinc-900/30 transition">
               <td className="py-3 px-4 font-medium text-white">
                 Edit message steps
               </td>
@@ -58,7 +58,7 @@ export function QuickReferenceSection() {
                 Campaign → <strong>Settings</strong> tab
               </td>
             </tr>
-            <tr className="border-b border-gray-700/50 hover:bg-gray-900/30 transition">
+            <tr className="border-b border-gray-700/50 hover:bg-zinc-900/30 transition">
               <td className="py-3 px-4 font-medium text-white">
                 Start sending to my list
               </td>
@@ -66,7 +66,7 @@ export function QuickReferenceSection() {
                 <strong>Start</strong> campaign + <strong>Auto SMS</strong> ON
               </td>
             </tr>
-            <tr className="hover:bg-gray-900/30 transition">
+            <tr className="hover:bg-zinc-900/30 transition">
               <td className="py-3 px-4 font-medium text-white">
                 See all texts (including from other tools)
               </td>

@@ -1,6 +1,6 @@
 export function RetrySystemSection() {
   return (
-    <section id="retry-system" className="mb-16 scroll-mt-24">
+    <section id="retry-system" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">
         Retry System Explained
       </h2>
@@ -33,7 +33,7 @@ export function RetrySystemSection() {
       <h3 className="text-2xl font-semibold mb-4 text-white">
         Retry Delay Configuration
       </h3>
-      <div className="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-8">
+      <div className="bg-zinc-900 border border-white/10 rounded-lg p-6 mb-8">
         <p className="text-gray-300 mb-4">
           <strong>Where to Set:</strong> Settings → Calling Configuration
         </p>
@@ -42,15 +42,15 @@ export function RetrySystemSection() {
         </p>
         <ul className="space-y-2 text-gray-300 ml-4">
           <li className="flex items-start">
-            <span className="text-orange-400 mr-2">•</span>
+            <span className="text-brand-light mr-2">•</span>
             <span>Minimum: 1 hour</span>
           </li>
           <li className="flex items-start">
-            <span className="text-orange-400 mr-2">•</span>
+            <span className="text-brand-light mr-2">•</span>
             <span>Maximum: 168 hours (7 days)</span>
           </li>
           <li className="flex items-start">
-            <span className="text-orange-400 mr-2">•</span>
+            <span className="text-brand-light mr-2">•</span>
             <span>Default: Usually 1-2 hours</span>
           </li>
         </ul>
@@ -63,7 +63,7 @@ export function RetrySystemSection() {
       <h3 className="text-2xl font-semibold mb-4 text-white">
         Maximum Call Attempts
       </h3>
-      <div className="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-8">
+      <div className="bg-zinc-900 border border-white/10 rounded-lg p-6 mb-8">
         <p className="text-gray-300 mb-4">
           <strong>Where to Set:</strong> Settings → Calling Configuration
         </p>

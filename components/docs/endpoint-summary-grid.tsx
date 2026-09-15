@@ -32,7 +32,7 @@ export default function EndpointSummaryGrid({
               {e.method}
             </span>
             <code className="font-mono text-xs text-gray-200 truncate">{e.path}</code>
-            <ArrowRight className="h-3.5 w-3.5 ml-auto text-gray-600 group-hover:text-orange-400 group-hover:translate-x-0.5 transition shrink-0" />
+            <ArrowRight className="h-3.5 w-3.5 ml-auto text-gray-600 group-hover:text-brand-light group-hover:translate-x-0.5 transition shrink-0" />
           </div>
           <p className="mt-1.5 text-xs text-gray-500 truncate">{e.summary}</p>
         </button>

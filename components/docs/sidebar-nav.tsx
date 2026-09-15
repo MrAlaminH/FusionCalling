@@ -1,23 +1,36 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ChevronRight, ChevronDown, ArrowLeft } from "lucide-react";
+import { ChevronDown, X } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { docSections } from "@/app/docs/doc-sections";
 
 interface NavItem {
   id: string;
   label: string;
   children?: NavItem[];
-  isSection?: boolean; // New: marks top-level collapsible sections
+  isSection?: boolean; // marks top-level collapsible sections
 }
 
 interface SidebarNavProps {
   items: NavItem[];
+  sectionTitle?: string;
+  sectionHref?: string;
+  /** Controlled mobile drawer state, owned by the docs layout wrapper. */
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
 }
 
-export default function SidebarNav({ items }: SidebarNavProps) {
+export default function SidebarNav({
+  items,
+  sectionTitle = "Guide",
+  sectionHref = "/docs",
+  open,
+  onOpenChange,
+}: SidebarNavProps) {
+  const pathname = usePathname();
   const [activeSection, setActiveSection] = useState<string>("");
-  const [isOpen, setIsOpen] = useState(false);
   const [expandedSections, setExpandedSections] = useState<Set<string>>(
     new Set(items.filter((item) => item.isSection).map((item) => item.id)),
   );
@@ -44,7 +57,7 @@ export default function SidebarNav({ items }: SidebarNavProps) {
           const element = document.getElementById(id);
           if (!element) return false;
           const rect = element.getBoundingClientRect();
-          return rect.top <= 120 && rect.bottom >= 120;
+          return rect.top <= 140 && rect.bottom >= 140;
         });
 
         if (current) {
@@ -85,12 +98,13 @@ export default function SidebarNav({ items }: SidebarNavProps) {
     }
 
     return () => window.removeEventListener("hashchange", handleHashChange);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const offset = 100;
+      const offset = 140;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
 
@@ -102,7 +116,7 @@ export default function SidebarNav({ items }: SidebarNavProps) {
       // Update URL hash
       window.history.pushState(null, "", `#${id}`);
       setActiveSection(id);
-      setIsOpen(false);
+      onOpenChange(false);
     }
   };
 
@@ -136,10 +150,10 @@ export default function SidebarNav({ items }: SidebarNavProps) {
           }}
           className={`w-full text-left px-4 py-2 rounded-lg transition-colors flex items-center justify-between ${
             isActive
-              ? "bg-orange-600/20 text-orange-400 font-medium"
+              ? "bg-brand/10 text-brand-light font-medium"
               : isSection
-                ? "text-white font-semibold hover:bg-gray-900"
-                : "text-gray-300 hover:text-white hover:bg-gray-900"
+                ? "text-white font-semibold hover:bg-white/5"
+                : "text-gray-300 hover:text-white hover:bg-white/5"
           } ${level === 1 ? "text-sm pl-6" : level === 2 ? "text-sm pl-10" : ""}`}
         >
           <span>{item.label}</span>
@@ -162,52 +176,71 @@ export default function SidebarNav({ items }: SidebarNavProps) {
 
   return (
     <>
-      {/* Mobile menu button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="lg:hidden fixed top-24 left-4 z-50 p-2 bg-gray-900 border border-gray-800 rounded-lg text-white"
-        aria-label="Toggle navigation"
-      >
-        <ChevronRight
-          className={`w-5 h-5 transition-transform ${
-            isOpen ? "rotate-90" : ""
-          }`}
-        />
-      </button>
-
-      {/* Sidebar */}
       <aside
-        className={`fixed lg:sticky top-20 left-0 h-[calc(100vh-5rem)] w-64 bg-black/95 backdrop-blur-sm border-r border-gray-900 overflow-y-auto z-40 transition-transform duration-300 ${
-          isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
+        className={`fixed lg:sticky top-20 left-0 h-[calc(100vh-5rem)] w-72 lg:w-64 flex-shrink-0 bg-black/95 backdrop-blur-sm border-r border-white/10 overflow-y-auto z-40 transition-transform duration-300 ${
+          open ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
         }`}
       >
         <nav className="p-4 space-y-2">
-          {/* Back to Documentation Hub */}
-          <Link
-            href="/docs"
-            onClick={() => setIsOpen(false)}
-            className="flex items-center gap-2 px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-900 transition-colors mb-4"
+          {/* Mobile close button */}
+          <button
+            onClick={() => onOpenChange(false)}
+            className="lg:hidden absolute top-3 right-3 p-2 text-gray-400 hover:text-white"
+            aria-label="Close navigation"
           >
-            <ArrowLeft className="w-4 h-4" />
-            <span className="text-sm font-medium">Back to Hub</span>
-          </Link>
+            <X className="w-5 h-5" />
+          </button>
 
-          <div className="border-t border-gray-800 my-4" />
+          {/* All guides */}
+          <h2 className="text-xs font-semibold text-gray-500 uppercase tracking-wider px-4 pt-1">
+            Documentation
+          </h2>
+          <div className="mt-2 space-y-0.5">
+            {docSections.map((doc) => {
+              const isCurrent = pathname === doc.href;
+              return (
+                <Link
+                  key={doc.id}
+                  href={doc.href}
+                  onClick={() => onOpenChange(false)}
+                  className={`flex items-center gap-2.5 px-4 py-2 rounded-lg text-sm transition-colors ${
+                    isCurrent
+                      ? "bg-brand/10 text-brand-light font-medium"
+                      : "text-gray-300 hover:text-white hover:bg-white/5"
+                  }`}
+                >
+                  <doc.icon className="w-4 h-4 flex-shrink-0" />
+                  <span>{doc.title}</span>
+                </Link>
+              );
+            })}
+          </div>
 
+          <div className="border-t border-white/10 my-4" />
+
+          {/* Current guide TOC */}
           <div className="mb-4">
-            <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider px-4">
-              API Reference
+            <h2 className="text-xs font-semibold text-gray-500 uppercase tracking-wider px-4">
+              {sectionTitle}
             </h2>
+            {sectionHref !== "/docs" && (
+              <Link
+                href={sectionHref}
+                className="mt-1 block px-4 text-xs text-gray-600 hover:text-brand-light transition-colors"
+              >
+                All sections
+              </Link>
+            )}
           </div>
           {items.map((item) => renderNavItem(item))}
         </nav>
       </aside>
 
       {/* Overlay for mobile */}
-      {isOpen && (
+      {open && (
         <div
-          className="lg:hidden fixed inset-0 bg-black/50 z-30"
-          onClick={() => setIsOpen(false)}
+          className="lg:hidden fixed inset-0 bg-black/60 z-30"
+          onClick={() => onOpenChange(false)}
         />
       )}
     </>

@@ -1,6 +1,6 @@
 export function ComplianceSection() {
   return (
-    <section id="important-rules" className="mb-16 scroll-mt-24">
+    <section id="important-rules" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">
         Part 7 — Important rules (please read)
       </h2>
@@ -45,7 +45,7 @@ export function ComplianceSection() {
         </ul>
       </div>
 
-      <div className="p-4 rounded-lg border border-gray-700 bg-gray-900/50">
+      <div className="p-4 rounded-lg border border-gray-700 bg-zinc-900/50">
         <p className="text-gray-300">
           <strong>Fusion Call</strong> provides tools (inbox, campaigns, opt-out
           handling); it does <strong>not</strong> replace legal or compliance
@@ -58,7 +58,7 @@ export function ComplianceSection() {
 
 export function GettingHelpSection() {
   return (
-    <section id="getting-help" className="mb-16 scroll-mt-24">
+    <section id="getting-help" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">
         Part 8 — Getting help
       </h2>

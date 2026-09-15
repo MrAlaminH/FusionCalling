@@ -32,7 +32,7 @@ export default function ResponseExample({
     <div className="my-6">
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="flex items-center justify-between w-full text-white font-semibold mb-3 hover:text-orange-400 transition-colors"
+        className="flex items-center justify-between w-full text-white font-semibold mb-3 hover:text-brand-light transition-colors"
       >
         <span>{title}</span>
         {isExpanded ? (

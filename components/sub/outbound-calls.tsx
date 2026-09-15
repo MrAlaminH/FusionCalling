@@ -1,6 +1,3 @@
-import Image from "next/image";
-import { Reveal } from "@/components/ui/reveal";
-import { Card } from "@/components/ui/card";
 import {
   ShoppingCart,
   Clipboard,
@@ -9,111 +6,66 @@ import {
   Briefcase,
   RefreshCcw,
 } from "lucide-react";
-import { Button } from "../ui/button";
-import Link from "next/link";
-
-type FeatureCardProps = {
-  icon: React.ElementType;
-  title: string;
-  description: string;
-};
-
-function FeatureCard({ icon: Icon, title, description }: FeatureCardProps) {
-  return (
-    <Reveal animation="animate-fade-in-up" duration={0.5}>
-      <Card className="p-6 bg-gradient-to-br from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 transition duration-300 h-full">
-        <div className="w-12 h-12 rounded-full bg-white/10 mb-4 flex items-center justify-center">
-          <Icon className="text-white" width={24} height={24} />
-        </div>
-        <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
-        <p className="text-white/90 text-sm">{description}</p>
-      </Card>
-    </Reveal>
-  );
-}
+import UseCasePanel from "./use-case-panel";
 
 export default function OutboundCalls() {
   return (
-    <div className="container mx-auto px-1 py-12 space-y-12">
-      <Reveal animation="animate-fade-in-up" duration={0.5}>
-        <Card className="w-full p-8 bg-black border-orange-500/20 group relative overflow-hidden transition duration-300 hover:shadow-lg hover:shadow-orange-600 hover:-translate-y-1 min-h-[200px]">
-          <div className="flex flex-col lg:flex-row gap-8">
-            <div className="flex-shrink-0 rounded-lg overflow-hidden lg:w-1/3">
-              <div
-                className="relative"
-                style={{ minHeight: "300px", maxHeight: "400px" }}
-              >
-                <div className="absolute inset-0 ">
-                    <Image
-                    src="/agent2.webp"
-                    alt="AI outbound call agent illustration for sales and lead qualification"
-                    className="transition-transform duration-300 transform hover:scale-110 rounded-lg"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    loading="lazy"
-                    style={{
-                      objectFit: "contain",
-                    }}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="flex-grow">
-              <h2 className="text-4xl font-bold text-orange-600 mb-4">
-                Outbound Calls
-              </h2>
-              <p className="text-gray-300 mb-4 text-lg">
-                Automate and optimize the management of outbound calls to
-                increase your team&apos;s efficiency and reach more customers.
-              </p>
-              <p className="text-gray-400">
-                With our advanced tools, you can streamline your calling
-                processes, ensuring that your team can focus on what matters
-                most—building relationships and closing deals. Experience a new
-                level of productivity and customer engagement.
-              </p>
-              <Link href="#calendar" passHref legacyBehavior>
-                <Button className="mt-8 bg-gradient-to-r from-brand to-brand-strong hover:from-brand-light hover:to-brand text-black">
-                  Get Started
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </Card>
-      </Reveal>
-
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <FeatureCard
-          icon={ShoppingCart}
-          title="Sales"
-          description="Contact potential customers to sell products or services, increasing revenue and expanding the customer base."
-        />
-        <FeatureCard
-          icon={Clipboard}
-          title="Surveys and feedback"
-          description="Conduct satisfaction surveys and collect feedback to improve the services provided."
-        />
-        <FeatureCard
-          icon={User}
-          title="Lead prequalification"
-          description="Call potential customers and filter them before being called by real agents, facilitating the closing of transactions."
-        />
-        <FeatureCard
-          icon={Calendar}
-          title="Confirmations and follow-up"
-          description="Confirm reservations, appointments, and make adjustments if necessary, ensuring an easy experience for customers."
-        />
-        <FeatureCard
-          icon={RefreshCcw}
-          title="Renewals and upselling"
-          description="Contact existing customers to renew contracts or sell additional products and services."
-        />
-        <FeatureCard
-          icon={Briefcase}
-          title="Your business"
-          description="Easily create and customize AI voice agents to handle any scenario your business needs—no coding required."
-        />
-      </div>
-    </div>
+    <UseCasePanel
+      image="/agent2.webp"
+      imageAlt="AI outbound call agent illustration for sales and lead qualification"
+      title="Outbound Calls"
+      lede="Automate and optimize the management of outbound calls to increase your team's efficiency and reach more customers."
+      body="With our advanced tools, you can streamline your calling processes, ensuring that your team can focus on what matters most—building relationships and closing deals. Experience a new level of productivity and customer engagement."
+      transcript={[
+        {
+          speaker: "AI",
+          text: "Hi, this is Riley from Brightline Realty — do you have a quick minute?",
+        },
+        { speaker: "Caller", text: "Sure, what's this about?" },
+        {
+          speaker: "AI",
+          text: "You asked about a valuation last week. I have Tuesday at 2 PM open — shall I book it?",
+        },
+        { speaker: "Caller", text: "Tuesday works." },
+      ]}
+      items={[
+        {
+          icon: ShoppingCart,
+          title: "Sales",
+          description:
+            "Contact potential customers to sell products or services, increasing revenue and expanding the customer base.",
+        },
+        {
+          icon: Clipboard,
+          title: "Surveys and feedback",
+          description:
+            "Conduct satisfaction surveys and collect feedback to improve the services provided.",
+        },
+        {
+          icon: User,
+          title: "Lead prequalification",
+          description:
+            "Call potential customers and filter them before being called by real agents, facilitating the closing of transactions.",
+        },
+        {
+          icon: Calendar,
+          title: "Confirmations and follow-up",
+          description:
+            "Confirm reservations, appointments, and make adjustments if necessary, ensuring an easy experience for customers.",
+        },
+        {
+          icon: RefreshCcw,
+          title: "Renewals and upselling",
+          description:
+            "Contact existing customers to renew contracts or sell additional products and services.",
+        },
+        {
+          icon: Briefcase,
+          title: "Your business",
+          description:
+            "Easily create and customize AI voice agents to handle any scenario your business needs—no coding required.",
+        },
+      ]}
+    />
   );
 }

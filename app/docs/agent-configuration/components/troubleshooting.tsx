@@ -1,6 +1,6 @@
 export function TroubleshootingSection() {
   return (
-    <section id="troubleshooting" className="mb-16 scroll-mt-24">
+    <section id="troubleshooting" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">Troubleshooting</h2>
       <p className="text-lg text-gray-300 mb-8">
         Common issues and their solutions.
@@ -8,7 +8,7 @@ export function TroubleshootingSection() {
 
       <div className="space-y-8">
         {/* Issue 1 */}
-        <div className="bg-gray-900/50 border border-red-700/30 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-red-700/30 rounded-lg overflow-hidden">
           <div className="bg-red-900/40 border-b border-red-700/50 p-6">
             <h3 className="text-2xl font-bold text-red-400 flex items-center gap-2">
               <span className="text-2xl">🔴</span>
@@ -23,57 +23,57 @@ export function TroubleshootingSection() {
               <p className="text-gray-300 font-semibold mb-3">Solutions:</p>
               <ol className="space-y-3">
                 <li className="flex gap-3">
-                  <span className="text-orange-400 font-bold flex-shrink-0">
+                  <span className="text-brand-light font-bold flex-shrink-0">
                     1.
                   </span>
                   <span className="text-gray-300">
                     Check{" "}
-                    <span className="text-orange-400 font-semibold">
+                    <span className="font-semibold text-white">
                       First Message
                     </span>{" "}
                     is not empty
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-orange-400 font-bold flex-shrink-0">
+                  <span className="text-brand-light font-bold flex-shrink-0">
                     2.
                   </span>
                   <span className="text-gray-300">
                     Verify{" "}
-                    <span className="text-orange-400 font-semibold">
+                    <span className="font-semibold text-white">
                       Phone Number
                     </span>{" "}
                     is correctly configured
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-orange-400 font-bold flex-shrink-0">
+                  <span className="text-brand-light font-bold flex-shrink-0">
                     3.
                   </span>
                   <span className="text-gray-300">
                     Ensure{" "}
-                    <span className="text-orange-400 font-semibold">
+                    <span className="font-semibold text-white">
                       LLM Provider
                     </span>{" "}
                     and{" "}
-                    <span className="text-orange-400 font-semibold">Model</span>{" "}
+                    <span className="font-semibold text-white">Model</span>{" "}
                     are selected
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-orange-400 font-bold flex-shrink-0">
+                  <span className="text-brand-light font-bold flex-shrink-0">
                     4.
                   </span>
                   <span className="text-gray-300">
                     Check if{" "}
-                    <span className="text-orange-400 font-semibold">
+                    <span className="font-semibold text-white">
                       External Configuration
                     </span>{" "}
                     is properly set up
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-orange-400 font-bold flex-shrink-0">
+                  <span className="text-brand-light font-bold flex-shrink-0">
                     5.
                   </span>
                   <span className="text-gray-300">
@@ -86,7 +86,7 @@ export function TroubleshootingSection() {
         </div>
 
         {/* Issue 2 */}
-        <div className="bg-gray-900/50 border border-red-700/30 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-red-700/30 rounded-lg overflow-hidden">
           <div className="bg-red-900/40 border-b border-red-700/50 p-6">
             <h3 className="text-2xl font-bold text-red-400 flex items-center gap-2">
               <span className="text-2xl">🔴</span>
@@ -101,17 +101,17 @@ export function TroubleshootingSection() {
               <p className="text-gray-300 font-semibold mb-3">Solutions:</p>
               <ol className="space-y-3">
                 <li className="flex gap-3">
-                  <span className="text-orange-400 font-bold flex-shrink-0">
+                  <span className="text-brand-light font-bold flex-shrink-0">
                     1.
                   </span>
                   <span className="text-gray-300">
                     Verify{" "}
-                    <span className="text-orange-400 font-semibold">Voice</span>{" "}
+                    <span className="font-semibold text-white">Voice</span>{" "}
                     field is set
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-orange-400 font-bold flex-shrink-0">
+                  <span className="text-brand-light font-bold flex-shrink-0">
                     2.
                   </span>
                   <span className="text-gray-300">
@@ -119,7 +119,7 @@ export function TroubleshootingSection() {
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-orange-400 font-bold flex-shrink-0">
+                  <span className="text-brand-light font-bold flex-shrink-0">
                     3.
                   </span>
                   <span className="text-gray-300">
@@ -127,7 +127,7 @@ export function TroubleshootingSection() {
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-orange-400 font-bold flex-shrink-0">
+                  <span className="text-brand-light font-bold flex-shrink-0">
                     4.
                   </span>
                   <span className="text-gray-300">
@@ -140,7 +140,7 @@ export function TroubleshootingSection() {
         </div>
 
         {/* Issue 3 */}
-        <div className="bg-gray-900/50 border border-red-700/30 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-red-700/30 rounded-lg overflow-hidden">
           <div className="bg-red-900/40 border-b border-red-700/50 p-6">
             <h3 className="text-2xl font-bold text-red-400 flex items-center gap-2">
               <span className="text-2xl">🔴</span>
@@ -155,7 +155,7 @@ export function TroubleshootingSection() {
               <p className="text-gray-300 font-semibold mb-3">Solutions:</p>
               <ol className="space-y-3">
                 <li className="flex gap-3">
-                  <span className="text-orange-400 font-bold flex-shrink-0">
+                  <span className="text-brand-light font-bold flex-shrink-0">
                     1.
                   </span>
                   <span className="text-gray-300">
@@ -163,7 +163,7 @@ export function TroubleshootingSection() {
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-orange-400 font-bold flex-shrink-0">
+                  <span className="text-brand-light font-bold flex-shrink-0">
                     2.
                   </span>
                   <span className="text-gray-300">
@@ -171,25 +171,25 @@ export function TroubleshootingSection() {
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-orange-400 font-bold flex-shrink-0">
+                  <span className="text-brand-light font-bold flex-shrink-0">
                     3.
                   </span>
                   <span className="text-gray-300">
                     Adjust{" "}
-                    <span className="text-orange-400 font-semibold">
+                    <span className="font-semibold text-white">
                       Maximum Call Duration
                     </span>{" "}
                     if timing out
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-orange-400 font-bold flex-shrink-0">
+                  <span className="text-brand-light font-bold flex-shrink-0">
                     4.
                   </span>
                   <span className="text-gray-300">Review carrier settings</span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-orange-400 font-bold flex-shrink-0">
+                  <span className="text-brand-light font-bold flex-shrink-0">
                     5.
                   </span>
                   <span className="text-gray-300">
@@ -202,7 +202,7 @@ export function TroubleshootingSection() {
         </div>
 
         {/* Issue 4 */}
-        <div className="bg-gray-900/50 border border-red-700/30 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-red-700/30 rounded-lg overflow-hidden">
           <div className="bg-red-900/40 border-b border-red-700/50 p-6">
             <h3 className="text-2xl font-bold text-red-400 flex items-center gap-2">
               <span className="text-2xl">🔴</span>
@@ -217,19 +217,19 @@ export function TroubleshootingSection() {
               <p className="text-gray-300 font-semibold mb-3">Solutions:</p>
               <ol className="space-y-3">
                 <li className="flex gap-3">
-                  <span className="text-orange-400 font-bold flex-shrink-0">
+                  <span className="text-brand-light font-bold flex-shrink-0">
                     1.
                   </span>
                   <span className="text-gray-300">
                     Verify{" "}
-                    <span className="text-orange-400 font-semibold">
+                    <span className="font-semibold text-white">
                       Webhook URL
                     </span>{" "}
                     is correct (starts with https://)
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-orange-400 font-bold flex-shrink-0">
+                  <span className="text-brand-light font-bold flex-shrink-0">
                     2.
                   </span>
                   <span className="text-gray-300">
@@ -237,7 +237,7 @@ export function TroubleshootingSection() {
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-orange-400 font-bold flex-shrink-0">
+                  <span className="text-brand-light font-bold flex-shrink-0">
                     3.
                   </span>
                   <span className="text-gray-300">
@@ -245,7 +245,7 @@ export function TroubleshootingSection() {
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-orange-400 font-bold flex-shrink-0">
+                  <span className="text-brand-light font-bold flex-shrink-0">
                     4.
                   </span>
                   <span className="text-gray-300">
@@ -253,7 +253,7 @@ export function TroubleshootingSection() {
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-orange-400 font-bold flex-shrink-0">
+                  <span className="text-brand-light font-bold flex-shrink-0">
                     5.
                   </span>
                   <span className="text-gray-300">
@@ -266,7 +266,7 @@ export function TroubleshootingSection() {
         </div>
 
         {/* Issue 5 */}
-        <div className="bg-gray-900/50 border border-red-700/30 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-red-700/30 rounded-lg overflow-hidden">
           <div className="bg-red-900/40 border-b border-red-700/50 p-6">
             <h3 className="text-2xl font-bold text-red-400 flex items-center gap-2">
               <span className="text-2xl">🔴</span>
@@ -279,31 +279,31 @@ export function TroubleshootingSection() {
               <p className="text-gray-300 font-semibold mb-3">Solutions:</p>
               <ol className="space-y-3">
                 <li className="flex gap-3">
-                  <span className="text-orange-400 font-bold flex-shrink-0">
+                  <span className="text-brand-light font-bold flex-shrink-0">
                     1.
                   </span>
                   <span className="text-gray-300">
                     Ensure{" "}
-                    <span className="text-orange-400 font-semibold">
+                    <span className="font-semibold text-white">
                       &quot;Use External Configuration&quot;
                     </span>{" "}
                     is ON
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-orange-400 font-bold flex-shrink-0">
+                  <span className="text-brand-light font-bold flex-shrink-0">
                     2.
                   </span>
                   <span className="text-gray-300">
                     Verify{" "}
-                    <span className="text-orange-400 font-semibold">
+                    <span className="font-semibold text-white">
                       Primary Agent ID
                     </span>{" "}
                     is correct
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-orange-400 font-bold flex-shrink-0">
+                  <span className="text-brand-light font-bold flex-shrink-0">
                     3.
                   </span>
                   <span className="text-gray-300">
@@ -311,7 +311,7 @@ export function TroubleshootingSection() {
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-orange-400 font-bold flex-shrink-0">
+                  <span className="text-brand-light font-bold flex-shrink-0">
                     4.
                   </span>
                   <span className="text-gray-300">
@@ -319,7 +319,7 @@ export function TroubleshootingSection() {
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-orange-400 font-bold flex-shrink-0">
+                  <span className="text-brand-light font-bold flex-shrink-0">
                     5.
                   </span>
                   <span className="text-gray-300">

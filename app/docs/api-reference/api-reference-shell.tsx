@@ -1,10 +1,7 @@
 "use client";
 
 import { ReactNode } from "react";
-import SidebarNav from "@/components/docs/sidebar-nav";
-import Breadcrumbs from "@/components/docs/breadcrumbs";
-import OnThisPage from "@/components/docs/on-this-page";
-import CommandPalette from "@/components/docs/search/command-palette";
+import DocsLayoutWrapper from "@/components/docs/docs-layout-wrapper";
 import { LanguageProvider } from "@/components/docs/language-context";
 import { SITE_URL } from "@/lib/site-url";
 interface NavItem {
@@ -27,7 +24,6 @@ export default function ApiReferenceShell({
 }: ApiReferenceShellProps) {
   return (
     <LanguageProvider>
-      <CommandPalette />
       <script
         id="api-reference-schema"
         type="application/ld+json"
@@ -84,20 +80,14 @@ export default function ApiReferenceShell({
           }),
         }}
       />
-      <div className="min-h-screen bg-black text-white pt-20">
-        <div className="flex relative">
-          <SidebarNav items={navItems} />
-
-          <main className="flex-1 lg:ml-64 w-full">
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-              <Breadcrumbs items={breadcrumbs} />
-              {children}
-            </div>
-          </main>
-
-          <OnThisPage />
-        </div>
-      </div>
+      <DocsLayoutWrapper
+        navItems={navItems}
+        breadcrumbs={breadcrumbs}
+        sectionTitle="API Reference"
+        sectionHref="/docs/api-reference"
+      >
+        {children}
+      </DocsLayoutWrapper>
     </LanguageProvider>
   );
 }

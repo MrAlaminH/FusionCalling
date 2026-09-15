@@ -31,7 +31,7 @@ const PATHS = [
 ] as const;
 
 const ACCENT: Record<string, { ring: string; text: string; btn: string }> = {
-  orange: { ring: "hover:border-orange-500/50", text: "text-orange-400", btn: "bg-orange-500 hover:bg-orange-600" },
+  orange: { ring: "hover:border-brand/50", text: "text-brand-light", btn: "bg-brand hover:bg-brand-strong" },
   blue: { ring: "hover:border-blue-500/50", text: "text-blue-400", btn: "bg-blue-500 hover:bg-blue-600" },
   purple: { ring: "hover:border-purple-500/50", text: "text-purple-400", btn: "bg-purple-500 hover:bg-purple-600" },
 };

@@ -1,6 +1,4 @@
-import SidebarNav from "@/components/docs/sidebar-nav";
-import Breadcrumbs from "@/components/docs/breadcrumbs";
-import OnThisPage from "@/components/docs/on-this-page";
+import DocsLayoutWrapper from "@/components/docs/docs-layout-wrapper";
 import SectionHeader from "@/components/docs/section-header";
 import type { Metadata } from "next";
 import { IntroductionSection } from "./components/introduction";
@@ -40,8 +38,8 @@ const navItems = [
 ];
 
 const breadcrumbs = [
-  { label: "Admin Section", href: "/docs/admin-section" },
-  { label: "Guide" },
+  { label: "Documentation", href: "/docs" },
+  { label: "Admin Section" },
 ];
 
 export default function AdminSectionPage() {
@@ -130,18 +128,18 @@ export default function AdminSectionPage() {
           }),
         }}
       />
-      <div className="min-h-screen bg-black text-white pt-20">
-      <div className="flex relative">
-        <SidebarNav items={navItems} />
-
-        <main className="flex-1 lg:ml-64 w-full">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <Breadcrumbs items={breadcrumbs} />
-
-            <SectionHeader
+      <DocsLayoutWrapper
+        navItems={navItems}
+        breadcrumbs={breadcrumbs}
+        sectionTitle="Admin Section"
+        sectionHref="/docs/admin-section"
+      >
+        <SectionHeader
               title="Admin Section Guide"
               description="A complete guide for agency owners to manage their Fusion Calling platform. Learn how to navigate the admin section, manage clients, configure AI providers, handle subscriptions, and more."
-              difficulty="intermediate"
+              difficulty="beginner"
+              readingTime={12}
+              steps={navItems.length}
             />
 
             {/* Sections */}
@@ -155,13 +153,7 @@ export default function AdminSectionPage() {
             <BestPracticesSection />
             <CommonWorkflowsSection />
             <QuickReferenceSection />
-          </div>
-        </main>
-
-        {/* Right Sidebar - On This Page */}
-        <OnThisPage />
-      </div>
-    </div>
+      </DocsLayoutWrapper>
     </>
   );
 }

@@ -93,35 +93,35 @@ export default function LeadsApiSection() {
 
         <Callout type="info" className="mt-5">
           <strong>Phone normalization:</strong> US 10-digit numbers work without a country code.
-          <code className="text-orange-400"> +1 (234) 567-8900</code>,{" "}
-          <code className="text-orange-400">5551234567</code>, and{" "}
-          <code className="text-orange-400">+15551234567</code> all match the same lead.
+          <code className="text-brand-light"> +1 (234) 567-8900</code>,{" "}
+          <code className="text-brand-light">5551234567</code>, and{" "}
+          <code className="text-brand-light">+15551234567</code> all match the same lead.
         </Callout>
 
         <Callout type="warning" className="mt-4">
           <strong>Breaking change (v1.2):</strong> If your integration previously omitted{" "}
-          <code className="text-orange-400">campaign_id</code>, leads now route to the{" "}
+          <code className="text-brand-light">campaign_id</code>, leads now route to the{" "}
           <strong>Default Feed</strong> instead of your oldest campaign.
         </Callout>
 
         <Callout type="info" className="mt-4">
           <strong>Status is system-managed:</strong> every externally-created lead is created with{" "}
-          <code className="text-orange-400">status: &quot;pending&quot;</code> and{" "}
-          <code className="text-orange-400">call_attempts: 0</code>. The <code className="text-orange-400">status</code>{" "}
+          <code className="text-brand-light">status: &quot;pending&quot;</code> and{" "}
+          <code className="text-brand-light">call_attempts: 0</code>. The <code className="text-brand-light">status</code>{" "}
           field is <strong>not</strong> settable through the external API — it progresses as the platform processes the lead.
         </Callout>
 
         <Callout type="warning" className="mt-4">
-          <strong>SMS leads need a campaign:</strong> <code className="text-orange-400">kind: &quot;sms&quot;</code>{" "}
-          <strong>requires</strong> a <code className="text-orange-400">campaign_id</code>. The Default Feed is call-only,
+          <strong>SMS leads need a campaign:</strong> <code className="text-brand-light">kind: &quot;sms&quot;</code>{" "}
+          <strong>requires</strong> a <code className="text-brand-light">campaign_id</code>. The Default Feed is call-only,
           so sending an SMS lead without a campaign returns a validation error.
         </Callout>
 
         <Callout type="info" className="mt-4">
           <strong>Private fields are never accepted or returned:</strong> the API strips and never exposes{" "}
-          <code className="text-orange-400">account_id</code>, <code className="text-orange-400">user_id</code>,{" "}
-          <code className="text-orange-400">phone_normalized</code>, <code className="text-orange-400">failure_reason</code>,{" "}
-          <code className="text-orange-400">cost</code>, and <code className="text-orange-400">sms_marketing_opt_out</code>.
+          <code className="text-brand-light">account_id</code>, <code className="text-brand-light">user_id</code>,{" "}
+          <code className="text-brand-light">phone_normalized</code>, <code className="text-brand-light">failure_reason</code>,{" "}
+          <code className="text-brand-light">cost</code>, and <code className="text-brand-light">sms_marketing_opt_out</code>.
         </Callout>
       </div>
 
@@ -142,9 +142,9 @@ export default function LeadsApiSection() {
         <h3 className="text-lg font-semibold text-white mb-1">Lead Object</h3>
         <p className="text-sm text-gray-400 mb-4">
           The shape returned for a single lead. GET-by-ID and PATCH wrap it under{" "}
-          <code className="text-orange-400">data.lead</code>; phone lookup wraps it under{" "}
-          <code className="text-orange-400">data.lead</code> with a{" "}
-          <code className="text-orange-400">lookup: &quot;phone&quot;</code> marker.
+          <code className="text-brand-light">data.lead</code>; phone lookup wraps it under{" "}
+          <code className="text-brand-light">data.lead</code> with a{" "}
+          <code className="text-brand-light">lookup: &quot;phone&quot;</code> marker.
         </p>
         <CodeBlock
           code={`{
@@ -166,12 +166,12 @@ export default function LeadsApiSection() {
           language="json"
         />
         <p className="mt-3 text-xs text-gray-500">
-          Note: <code className="text-orange-300">account_id</code>,{" "}
-          <code className="text-orange-300">user_id</code>,{" "}
-          <code className="text-orange-300">phone_normalized</code>,{" "}
-          <code className="text-orange-300">failure_reason</code>,{" "}
-          <code className="text-orange-300">cost</code>, and{" "}
-          <code className="text-orange-300">sms_marketing_opt_out</code> are never returned.
+          Note: <code className="text-brand-light">account_id</code>,{" "}
+          <code className="text-brand-light">user_id</code>,{" "}
+          <code className="text-brand-light">phone_normalized</code>,{" "}
+          <code className="text-brand-light">failure_reason</code>,{" "}
+          <code className="text-brand-light">cost</code>, and{" "}
+          <code className="text-brand-light">sms_marketing_opt_out</code> are never returned.
         </p>
       </div>
 

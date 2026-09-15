@@ -12,7 +12,7 @@ export default function ApiHero() {
         Calendar v1.0 · Leads v1.2
       </div>
 
-      <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-4 bg-gradient-to-r from-white via-orange-100 to-orange-400 bg-clip-text text-transparent">
+      <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-4 bg-gradient-to-r from-white via-brand-light to-brand bg-clip-text text-transparent">
         API Reference
       </h1>
       <p className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-2xl mb-6">
@@ -36,7 +36,7 @@ export default function ApiHero() {
         </button>
         <a
           href="#quick-start"
-          className="inline-flex items-center justify-center gap-2 rounded-lg bg-orange-500 hover:bg-orange-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors"
+          className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand hover:bg-brand-strong px-5 py-2.5 text-sm font-semibold text-white transition-colors"
         >
           Get Started <ArrowRight className="h-4 w-4" />
         </a>
@@ -46,7 +46,7 @@ export default function ApiHero() {
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-2 min-w-0">
             <span className="text-gray-500 shrink-0 text-xs sm:text-sm">Base URL</span>
-            <code className="text-orange-400 text-xs sm:text-sm break-all">
+            <code className="text-brand-light text-xs sm:text-sm break-all">
               https://app.fusioncalling.com
             </code>
           </div>

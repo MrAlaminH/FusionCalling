@@ -1,10 +1,10 @@
 export function CommonUseCasesSection() {
   return (
-    <section id="common-use-cases" className="mb-16 scroll-mt-24">
+    <section id="common-use-cases" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">Common Use Cases</h2>
 
       {/* Sales Agent */}
-      <div className="mb-12 bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+      <div className="mb-12 bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
         <div className="bg-gradient-to-r from-green-600 to-green-500 p-6">
           <h3 className="text-2xl font-bold text-white">Sales Agent</h3>
           <p className="text-green-100 mt-2">
@@ -47,7 +47,7 @@ export function CommonUseCasesSection() {
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-6">
+          <div className="border-t border-white/10 pt-6">
             <h4 className="text-xl font-semibold text-green-400 mb-3">
               Example System Prompt
             </h4>
@@ -74,7 +74,7 @@ send them information via email.`}
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-6 bg-blue-900/10 p-4 rounded">
+          <div className="border-t border-white/10 pt-6 bg-blue-900/10 p-4 rounded">
             <p className="text-blue-400 font-semibold mb-2">💡 Pro Tip:</p>
             <p className="text-gray-300 text-sm">
               Qualify leads early to focus on high-potential prospects. Ask
@@ -85,7 +85,7 @@ send them information via email.`}
       </div>
 
       {/* Support Agent */}
-      <div className="mb-12 bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+      <div className="mb-12 bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
         <div className="bg-gradient-to-r from-blue-600 to-blue-500 p-6">
           <h3 className="text-2xl font-bold text-white">Support Agent</h3>
           <p className="text-blue-100 mt-2">
@@ -128,7 +128,7 @@ send them information via email.`}
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-6">
+          <div className="border-t border-white/10 pt-6">
             <h4 className="text-xl font-semibold text-blue-400 mb-3">
               Example System Prompt
             </h4>
@@ -152,7 +152,7 @@ Thank customers for their patience.`}
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-6 bg-blue-900/10 p-4 rounded">
+          <div className="border-t border-white/10 pt-6 bg-blue-900/10 p-4 rounded">
             <p className="text-blue-400 font-semibold mb-2">💡 Pro Tip:</p>
             <p className="text-gray-300 text-sm">
               Empathy is key in support. Start by validating the customer&apos;s
@@ -164,7 +164,7 @@ Thank customers for their patience.`}
       </div>
 
       {/* Appointment Scheduler */}
-      <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+      <div className="bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
         <div className="bg-gradient-to-r from-purple-600 to-purple-500 p-6">
           <h3 className="text-2xl font-bold text-white">
             Appointment Scheduler
@@ -210,7 +210,7 @@ Thank customers for their patience.`}
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-6">
+          <div className="border-t border-white/10 pt-6">
             <h4 className="text-xl font-semibold text-purple-400 mb-3">
               Example System Prompt
             </h4>
@@ -241,7 +241,7 @@ Send a confirmation email to all attendees.`}
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-6 bg-blue-900/10 p-4 rounded">
+          <div className="border-t border-white/10 pt-6 bg-blue-900/10 p-4 rounded">
             <p className="text-blue-400 font-semibold mb-2">💡 Pro Tip:</p>
             <p className="text-gray-300 text-sm">
               Keep appointment scheduling concise (5 minutes max). Confirm
@@ -253,13 +253,13 @@ Send a confirmation email to all attendees.`}
       </div>
 
       {/* Additional Tips */}
-      <div className="mt-12 bg-gradient-to-r from-orange-900/30 to-orange-800/20 border border-orange-700/50 rounded-lg p-8">
-        <h3 className="text-2xl font-bold text-orange-400 mb-6">
+      <div className="mt-12 bg-gradient-to-r from-brand/10 to-brand/5 border border-brand/20 rounded-lg p-8">
+        <h3 className="text-2xl font-bold text-white mb-6">
           Customizing for Your Business
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-gray-900/50 rounded-lg p-6">
-            <p className="text-orange-300 font-semibold mb-3">
+          <div className="bg-zinc-900/50 rounded-lg p-6">
+            <p className="font-semibold text-white mb-3">
               1. Define Your Goals
             </p>
             <p className="text-gray-300 text-sm">
@@ -267,8 +267,8 @@ Send a confirmation email to all attendees.`}
               resolution, or scheduling?
             </p>
           </div>
-          <div className="bg-gray-900/50 rounded-lg p-6">
-            <p className="text-orange-300 font-semibold mb-3">
+          <div className="bg-zinc-900/50 rounded-lg p-6">
+            <p className="font-semibold text-white mb-3">
               2. Match the Tone
             </p>
             <p className="text-gray-300 text-sm">
@@ -276,8 +276,8 @@ Send a confirmation email to all attendees.`}
               friendly? Choose accordingly.
             </p>
           </div>
-          <div className="bg-gray-900/50 rounded-lg p-6">
-            <p className="text-orange-300 font-semibold mb-3">
+          <div className="bg-zinc-900/50 rounded-lg p-6">
+            <p className="font-semibold text-white mb-3">
               3. Include Domain Info
             </p>
             <p className="text-gray-300 text-sm">

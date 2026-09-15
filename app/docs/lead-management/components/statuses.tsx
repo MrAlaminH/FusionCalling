@@ -1,6 +1,6 @@
 export function StatusesSection() {
   return (
-    <section id="understanding-statuses" className="mb-16 scroll-mt-24">
+    <section id="understanding-statuses" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">
         Understanding Lead Statuses
       </h2>
@@ -11,7 +11,7 @@ export function StatusesSection() {
 
       <div className="space-y-6 mb-8">
         {/* Pending */}
-        <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+        <div className="bg-zinc-900 border border-white/10 rounded-lg p-6">
           <div className="flex items-center mb-3">
             <span className="inline-block bg-blue-600/20 text-blue-400 px-3 py-1 rounded-full text-sm font-semibold mr-3">
               Pending
@@ -32,7 +32,7 @@ export function StatusesSection() {
         </div>
 
         {/* In-Progress */}
-        <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+        <div className="bg-zinc-900 border border-white/10 rounded-lg p-6">
           <div className="flex items-center mb-3">
             <span className="inline-block bg-yellow-600/20 text-yellow-400 px-3 py-1 rounded-full text-sm font-semibold mr-3">
               In-Progress
@@ -54,7 +54,7 @@ export function StatusesSection() {
         </div>
 
         {/* Retry */}
-        <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+        <div className="bg-zinc-900 border border-white/10 rounded-lg p-6">
           <div className="flex items-center mb-3">
             <span className="inline-block bg-purple-600/20 text-purple-400 px-3 py-1 rounded-full text-sm font-semibold mr-3">
               Retry
@@ -79,7 +79,7 @@ export function StatusesSection() {
         </div>
 
         {/* Completed */}
-        <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+        <div className="bg-zinc-900 border border-white/10 rounded-lg p-6">
           <div className="flex items-center mb-3">
             <span className="inline-block bg-green-600/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold mr-3">
               Completed
@@ -101,7 +101,7 @@ export function StatusesSection() {
         </div>
 
         {/* Failed */}
-        <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+        <div className="bg-zinc-900 border border-white/10 rounded-lg p-6">
           <div className="flex items-center mb-3">
             <span className="inline-block bg-red-600/20 text-red-400 px-3 py-1 rounded-full text-sm font-semibold mr-3">
               Failed

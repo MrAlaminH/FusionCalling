@@ -1,6 +1,6 @@
 export function InboundSetupSection() {
   return (
-    <section id="receive-inbound-texts" className="mb-16 scroll-mt-24">
+    <section id="receive-inbound-texts" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">
         Part 2 — Receive inbound texts (replies)
       </h2>
@@ -22,7 +22,7 @@ export function InboundSetupSection() {
               href="https://console.twilio.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-orange-400 hover:text-orange-300 underline"
+              className="text-brand-light hover:text-brand-light underline"
             >
               Twilio Console
             </a>
@@ -39,11 +39,11 @@ export function InboundSetupSection() {
           <li>
             Under <strong>&quot;A message comes in&quot;</strong>:
             <div className="mt-3 ml-6 space-y-2">
-              <div className="p-3 rounded bg-gray-900/50 border border-gray-700">
+              <div className="p-3 rounded bg-zinc-900/50 border border-gray-700">
                 <p className="text-sm font-mono text-gray-300 mb-2">
                   <strong>Webhook URL:</strong>
                 </p>
-                <code className="block bg-gray-800 px-3 py-2 rounded text-orange-300 mb-2 overflow-x-auto">
+                <code className="block bg-zinc-800 px-3 py-2 rounded text-brand-light mb-2 overflow-x-auto">
                   https://app.yourdomain.com/api/incoming-sms
                 </code>
                 <p className="text-xs text-gray-400">
@@ -51,10 +51,10 @@ export function InboundSetupSection() {
                   domain — ask your admin if unsure.)
                 </p>
               </div>
-              <div className="p-3 rounded bg-gray-900/50 border border-gray-700">
+              <div className="p-3 rounded bg-zinc-900/50 border border-gray-700">
                 <p className="text-sm font-mono text-gray-300">
                   <strong>HTTP method:</strong>{" "}
-                  <span className="text-orange-300">POST</span>
+                  <span className="text-brand-light">POST</span>
                 </p>
               </div>
             </div>

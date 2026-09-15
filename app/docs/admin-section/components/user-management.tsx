@@ -1,12 +1,12 @@
 export function UserManagementSection() {
   return (
-    <section id="user-management" className="mb-16 scroll-mt-24">
+    <section id="user-management" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">User Management</h2>
 
       <div className="space-y-8">
         {/* Overview */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
-          <h3 className="text-2xl font-semibold mb-4 text-orange-400">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg p-8">
+          <h3 className="text-2xl font-semibold mb-4 text-white">
             Overview
           </h3>
           <p className="text-gray-300">
@@ -17,7 +17,7 @@ export function UserManagementSection() {
         </div>
 
         {/* Viewing Users */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
           <div className="bg-blue-600/20 border-b border-blue-700/50 p-6">
             <h3 className="text-2xl font-bold text-blue-400">Viewing Users</h3>
             <p className="text-blue-200 mt-2">
@@ -46,7 +46,7 @@ export function UserManagementSection() {
               </ul>
             </div>
 
-            <div className="border-t border-gray-800 pt-6">
+            <div className="border-t border-white/10 pt-6">
               <h4 className="text-lg font-semibold text-blue-400 mb-4">
                 Filtering Users
               </h4>
@@ -54,9 +54,9 @@ export function UserManagementSection() {
                 Search and filter users with these options:
               </p>
               <div className="overflow-x-auto">
-                <table className="w-full text-sm border border-gray-800">
+                <table className="w-full text-sm border border-white/10">
                   <thead>
-                    <tr className="bg-gray-800 border-b border-gray-700">
+                    <tr className="bg-zinc-800 border-b border-gray-700">
                       <th className="px-4 py-2 text-left text-blue-400 font-semibold">
                         Filter Type
                       </th>
@@ -69,7 +69,7 @@ export function UserManagementSection() {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="border-b border-gray-800 hover:bg-gray-800/50">
+                    <tr className="border-b border-white/10 hover:bg-zinc-800/50">
                       <td className="px-4 py-2 font-semibold text-white">
                         Search
                       </td>
@@ -80,7 +80,7 @@ export function UserManagementSection() {
                         Find specific users
                       </td>
                     </tr>
-                    <tr className="border-b border-gray-800 hover:bg-gray-800/50">
+                    <tr className="border-b border-white/10 hover:bg-zinc-800/50">
                       <td className="px-4 py-2 font-semibold text-white">
                         Status Filter
                       </td>
@@ -91,7 +91,7 @@ export function UserManagementSection() {
                         View specific states
                       </td>
                     </tr>
-                    <tr className="border-b border-gray-800 hover:bg-gray-800/50">
+                    <tr className="border-b border-white/10 hover:bg-zinc-800/50">
                       <td className="px-4 py-2 font-semibold text-white">
                         Tier Filter
                       </td>
@@ -102,7 +102,7 @@ export function UserManagementSection() {
                         View specific plans
                       </td>
                     </tr>
-                    <tr className="hover:bg-gray-800/50">
+                    <tr className="hover:bg-zinc-800/50">
                       <td className="px-4 py-2 font-semibold text-white">
                         Usage Filter
                       </td>
@@ -121,7 +121,7 @@ export function UserManagementSection() {
         </div>
 
         {/* Account Termination */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
           <div className="bg-red-600/20 border-b border-red-700/50 p-6">
             <h3 className="text-2xl font-bold text-red-400">
               Account Termination
@@ -132,7 +132,7 @@ export function UserManagementSection() {
           </div>
           <div className="p-8 space-y-6">
             <div className="flex gap-4">
-              <div className="bg-orange-500 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
+              <div className="bg-brand/15 text-brand-light border border-brand/30 font-bold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
                 1
               </div>
               <div>
@@ -143,7 +143,7 @@ export function UserManagementSection() {
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="bg-orange-500 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
+              <div className="bg-brand/15 text-brand-light border border-brand/30 font-bold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
                 2
               </div>
               <div>
@@ -154,7 +154,7 @@ export function UserManagementSection() {
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="bg-orange-500 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
+              <div className="bg-brand/15 text-brand-light border border-brand/30 font-bold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
                 3
               </div>
               <div>
@@ -164,26 +164,26 @@ export function UserManagementSection() {
                     Select a termination reason:
                   </p>
                   <div className="space-y-2 text-sm">
-                    <div className="bg-gray-800/50 p-2 rounded text-gray-300">
-                      <span className="text-orange-400 font-semibold">
+                    <div className="bg-zinc-800/50 p-2 rounded text-gray-300">
+                      <span className="font-semibold text-white">
                         Non-Payment
                       </span>{" "}
                       - Client hasn&apos;t paid
                     </div>
-                    <div className="bg-gray-800/50 p-2 rounded text-gray-300">
-                      <span className="text-orange-400 font-semibold">
+                    <div className="bg-zinc-800/50 p-2 rounded text-gray-300">
+                      <span className="font-semibold text-white">
                         Policy Violation
                       </span>{" "}
                       - User violated terms
                     </div>
-                    <div className="bg-gray-800/50 p-2 rounded text-gray-300">
-                      <span className="text-orange-400 font-semibold">
+                    <div className="bg-zinc-800/50 p-2 rounded text-gray-300">
+                      <span className="font-semibold text-white">
                         Inactivity
                       </span>{" "}
                       - Account unused for extended period
                     </div>
-                    <div className="bg-gray-800/50 p-2 rounded text-gray-300">
-                      <span className="text-orange-400 font-semibold">
+                    <div className="bg-zinc-800/50 p-2 rounded text-gray-300">
+                      <span className="font-semibold text-white">
                         Fraud
                       </span>{" "}
                       - Suspicious activity detected
@@ -193,7 +193,7 @@ export function UserManagementSection() {
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="bg-orange-500 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
+              <div className="bg-brand/15 text-brand-light border border-brand/30 font-bold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
                 4
               </div>
               <div>
@@ -212,7 +212,7 @@ export function UserManagementSection() {
         </div>
 
         {/* Account Restoration */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
           <div className="bg-green-600/20 border-b border-green-700/50 p-6">
             <h3 className="text-2xl font-bold text-green-400">
               Account Restoration
@@ -223,7 +223,7 @@ export function UserManagementSection() {
           </div>
           <div className="p-8 space-y-4">
             <div className="flex gap-4">
-              <div className="bg-orange-500 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
+              <div className="bg-brand/15 text-brand-light border border-brand/30 font-bold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
                 1
               </div>
               <div>
@@ -234,7 +234,7 @@ export function UserManagementSection() {
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="bg-orange-500 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
+              <div className="bg-brand/15 text-brand-light border border-brand/30 font-bold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
                 2
               </div>
               <div>
@@ -245,7 +245,7 @@ export function UserManagementSection() {
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="bg-orange-500 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
+              <div className="bg-brand/15 text-brand-light border border-brand/30 font-bold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
                 3
               </div>
               <div>

@@ -59,7 +59,7 @@ function renderPath(path: string) {
   return path.split(/(\{[^}]+\})/g).map((seg, i) => {
     if (/^\{[^}]+\}$/.test(seg)) {
       return (
-        <span key={i} className="text-orange-400">
+        <span key={i} className="text-brand-light">
           {seg}
         </span>
       );
@@ -78,12 +78,12 @@ function Field({
   onChange: (v: string) => void;
 }) {
   const inputCls =
-    "w-full bg-black/40 border border-white/10 rounded-md px-3 py-2 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-orange-500/60 focus:ring-1 focus:ring-orange-500/30 transition-colors";
+    "w-full bg-black/40 border border-white/10 rounded-md px-3 py-2 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-brand/60 focus:ring-1 focus:ring-brand/30 transition-colors";
 
   return (
     <div>
       <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mb-1.5">
-        <code className="text-orange-400 text-sm">{param.name}</code>
+        <code className="text-brand-light text-sm">{param.name}</code>
         <span className="text-[11px] text-gray-500">{param.type}</span>
         {param.required ? (
           <span className="inline-flex items-center gap-0.5 text-[11px] text-red-400">
@@ -243,7 +243,7 @@ export default function EndpointCard({ endpoint }: { endpoint: Endpoint }) {
               >
                 <Icon className="h-4 w-4" />
                 {t.label}
-                {active && <span className="absolute -bottom-px left-0 right-0 h-0.5 bg-orange-500" />}
+                {active && <span className="absolute -bottom-px left-0 right-0 h-0.5 bg-brand" />}
               </button>
             );
           })}
@@ -308,7 +308,7 @@ export default function EndpointCard({ endpoint }: { endpoint: Endpoint }) {
                 <button
                   type="button"
                   onClick={() => setTab("response")}
-                  className="text-orange-400 hover:text-orange-300 underline-offset-2 hover:underline"
+                  className="text-brand-light hover:text-brand-light underline-offset-2 hover:underline"
                 >
                   View the Response tab
                 </button>
@@ -330,7 +330,7 @@ export default function EndpointCard({ endpoint }: { endpoint: Endpoint }) {
                 value={apiKey}
                 onChange={(e) => setApiKey(e.target.value)}
                 placeholder="YOUR_API_KEY"
-                className="w-full bg-black/40 border border-white/10 rounded-md px-3 py-2 text-sm text-white placeholder-gray-600 font-mono focus:outline-none focus:border-orange-500/60 focus:ring-1 focus:ring-orange-500/30"
+                className="w-full bg-black/40 border border-white/10 rounded-md px-3 py-2 text-sm text-white placeholder-gray-600 font-mono focus:outline-none focus:border-brand/60 focus:ring-1 focus:ring-brand/30"
               />
             </div>
 
@@ -381,7 +381,7 @@ export default function EndpointCard({ endpoint }: { endpoint: Endpoint }) {
                   type="button"
                   onClick={onSend}
                   disabled={sendState === "loading"}
-                  className="inline-flex items-center gap-2 h-9 px-3.5 rounded-md bg-orange-500 hover:bg-orange-600 disabled:opacity-60 text-white text-sm font-medium transition-colors"
+                  className="inline-flex items-center gap-2 h-9 px-3.5 rounded-md bg-brand hover:bg-brand-strong disabled:opacity-60 text-white text-sm font-medium transition-colors"
                 >
                   {sendState === "loading" ? (
                     <Loader2 className="h-4 w-4 animate-spin" />

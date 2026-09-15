@@ -10,30 +10,19 @@ import CopyNumberButton from "@/components/sub/CopyNumberButton";
 export default function Component() {
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden pt-16 sm:pt-20 md:pt-24 lg:pt-28 xl:pt-32 relative">
-      {/* Background Pattern SVG */}
-      <svg
-        className="absolute inset-0 h-full w-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] pointer-events-none"
+      {/* Brand glow arc (Bolt) + broadcast signal rings (Scale) */}
+      <div
         aria-hidden="true"
+        className="pointer-events-none absolute -top-48 left-1/2 h-96 w-[120%] -translate-x-1/2 rounded-[100%] bg-brand/15 blur-3xl"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2"
       >
-        <defs>
-          <pattern
-            id="hero-pattern-bg"
-            width="200"
-            height="200"
-            x="100%"
-            y="-1"
-            patternUnits="userSpaceOnUse"
-          >
-            <path d="M.5 200V.5H200" fill="none"></path>
-          </pattern>
-        </defs>
-        <rect
-          width="100%"
-          height="100%"
-          strokeWidth="0"
-          fill="url(#hero-pattern-bg)"
-        ></rect>
-      </svg>
+        <div className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full border border-brand/15" />
+        <div className="absolute left-1/2 top-1/2 h-[28rem] w-[28rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-brand/10" />
+        <div className="absolute left-1/2 top-1/2 h-[44rem] w-[44rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-brand/5" />
+      </div>
 
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl md:py-6 py-10">
         {/* Top pill button */}
@@ -81,7 +70,7 @@ export default function Component() {
         <div className="flex justify-center mb-8 sm:mb-12 lg:mb-16 xl:mb-20">
           <Link
             href="#show-case"
-            className="inline-flex items-center rounded-md bg-white px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm md:text-base font-medium text-black transition hover:bg-gray-200 hover:scale-105 active:scale-[0.98]"
+            className="inline-flex items-center rounded-md bg-brand px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm md:text-base font-medium text-brand-foreground transition hover:bg-brand-strong hover:scale-105 active:scale-[0.98]"
           >
             Start creating with us
             <span className="ml-1 sm:ml-1.5 md:ml-2">→</span>
@@ -100,8 +89,8 @@ export default function Component() {
               borderSize={2}
               borderRadius={24}
               neonColors={{
-                firstColor: "#f97316",
-                secondColor: "#22c55e",
+                firstColor: "#fb923c",
+                secondColor: "#ea580c",
               }}
             >
               <div className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 p-3 sm:p-4 md:p-6 lg:p-8 relative z-50">
@@ -164,7 +153,7 @@ export default function Component() {
                 </div>
 
                 {/* Right Column - Form */}
-                <div className="bg-zinc-900 z-50 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 border border-green-500/20 relative mx-[-12px] sm:mx-0">
+                <div className="bg-zinc-900 z-50 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 border border-brand/20 relative mx-[-12px] sm:mx-0">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-12 h-12 rounded-full flex items-center justify-center">
                       <Image

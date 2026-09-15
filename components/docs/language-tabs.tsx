@@ -25,7 +25,7 @@ export default function LanguageTabs({ className = "" }: LanguageTabsProps) {
             onClick={() => setLanguage(lang.id as CodeLang)}
             className={`px-2.5 py-1 rounded-md text-xs font-medium transition-colors ${
               active
-                ? "bg-orange-500 text-white"
+                ? "bg-brand text-white"
                 : "text-gray-400 hover:text-white hover:bg-white/10"
             }`}
           >

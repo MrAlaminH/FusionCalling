@@ -1,14 +1,14 @@
 export function SubscriptionsManagementSection() {
   return (
-    <section id="subscriptions" className="mb-16 scroll-mt-24">
+    <section id="subscriptions" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">
         Subscriptions Management
       </h2>
 
       <div className="space-y-8">
         {/* Overview */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
-          <h3 className="text-2xl font-semibold mb-4 text-orange-400">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg p-8">
+          <h3 className="text-2xl font-semibold mb-4 text-white">
             Overview
           </h3>
           <p className="text-gray-300">
@@ -18,7 +18,7 @@ export function SubscriptionsManagementSection() {
         </div>
 
         {/* Creating Plans */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
           <div className="bg-green-600/20 border-b border-green-700/50 p-6">
             <h3 className="text-2xl font-bold text-green-400">
               Creating Plans
@@ -29,7 +29,7 @@ export function SubscriptionsManagementSection() {
           </div>
           <div className="p-8 space-y-6">
             <div className="flex gap-4">
-              <div className="bg-orange-500 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
+              <div className="bg-brand/15 text-brand-light border border-brand/30 font-bold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
                 1
               </div>
               <div>
@@ -42,7 +42,7 @@ export function SubscriptionsManagementSection() {
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="bg-orange-500 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
+              <div className="bg-brand/15 text-brand-light border border-brand/30 font-bold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
                 2
               </div>
               <div>
@@ -55,7 +55,7 @@ export function SubscriptionsManagementSection() {
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="bg-orange-500 text-white font-bold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
+              <div className="bg-brand/15 text-brand-light border border-brand/30 font-bold rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
                 3
               </div>
               <div>
@@ -65,38 +65,38 @@ export function SubscriptionsManagementSection() {
                     Fill in the plan configuration:
                   </p>
                   <div className="space-y-2 text-sm text-gray-300">
-                    <div className="bg-gray-800/50 p-2 rounded">
-                      <span className="text-orange-400 font-semibold">
+                    <div className="bg-zinc-800/50 p-2 rounded">
+                      <span className="font-semibold text-white">
                         Plan Name
                       </span>{" "}
                       - Internal identifier (e.g., &quot;starter_monthly&quot;)
                     </div>
-                    <div className="bg-gray-800/50 p-2 rounded">
-                      <span className="text-orange-400 font-semibold">
+                    <div className="bg-zinc-800/50 p-2 rounded">
+                      <span className="font-semibold text-white">
                         Display Name
                       </span>{" "}
                       - What clients see (e.g., &quot;Starter&quot;)
                     </div>
-                    <div className="bg-gray-800/50 p-2 rounded">
-                      <span className="text-orange-400 font-semibold">
+                    <div className="bg-zinc-800/50 p-2 rounded">
+                      <span className="font-semibold text-white">
                         Description
                       </span>{" "}
                       - Explain what&apos;s included
                     </div>
-                    <div className="bg-gray-800/50 p-2 rounded">
-                      <span className="text-orange-400 font-semibold">
+                    <div className="bg-zinc-800/50 p-2 rounded">
+                      <span className="font-semibold text-white">
                         Minutes Allowed
                       </span>{" "}
                       - Credit allocation per billing period
                     </div>
-                    <div className="bg-gray-800/50 p-2 rounded">
-                      <span className="text-orange-400 font-semibold">
+                    <div className="bg-zinc-800/50 p-2 rounded">
+                      <span className="font-semibold text-white">
                         Monthly Price
                       </span>{" "}
                       - Optional pricing
                     </div>
-                    <div className="bg-gray-800/50 p-2 rounded">
-                      <span className="text-orange-400 font-semibold">
+                    <div className="bg-zinc-800/50 p-2 rounded">
+                      <span className="font-semibold text-white">
                         Yearly Price
                       </span>{" "}
                       - Optional (typically 12% discount)
@@ -109,7 +109,7 @@ export function SubscriptionsManagementSection() {
         </div>
 
         {/* Managing Plans */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
           <div className="bg-blue-600/20 border-b border-blue-700/50 p-6">
             <h3 className="text-2xl font-bold text-blue-400">Managing Plans</h3>
             <p className="text-blue-200 mt-2">
@@ -132,7 +132,7 @@ export function SubscriptionsManagementSection() {
               </ul>
             </div>
 
-            <div className="border-t border-gray-800 pt-6">
+            <div className="border-t border-white/10 pt-6">
               <h4 className="text-lg font-semibold text-blue-400 mb-3">
                 Revenue Tracking
               </h4>
@@ -140,19 +140,19 @@ export function SubscriptionsManagementSection() {
                 Monitor financial performance with key metrics:
               </p>
               <div className="space-y-2">
-                <div className="flex justify-between p-2 bg-gray-800/50 rounded text-sm">
+                <div className="flex justify-between p-2 bg-zinc-800/50 rounded text-sm">
                   <span className="font-semibold text-gray-200">MRR</span>
                   <span className="text-gray-300">
                     Monthly Recurring Revenue - Sum of monthly prices
                   </span>
                 </div>
-                <div className="flex justify-between p-2 bg-gray-800/50 rounded text-sm">
+                <div className="flex justify-between p-2 bg-zinc-800/50 rounded text-sm">
                   <span className="font-semibold text-gray-200">ARR</span>
                   <span className="text-gray-300">
                     Annual Recurring Revenue - MRR × 12
                   </span>
                 </div>
-                <div className="flex justify-between p-2 bg-gray-800/50 rounded text-sm">
+                <div className="flex justify-between p-2 bg-zinc-800/50 rounded text-sm">
                   <span className="font-semibold text-gray-200">
                     Per-Plan Revenue
                   </span>
@@ -166,7 +166,7 @@ export function SubscriptionsManagementSection() {
         </div>
 
         {/* Editing Plans */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
           <div className="bg-purple-600/20 border-b border-purple-700/50 p-6">
             <h3 className="text-2xl font-bold text-purple-400">
               Editing Plans
@@ -178,28 +178,28 @@ export function SubscriptionsManagementSection() {
           <div className="p-8">
             <ol className="space-y-3">
               <li className="flex gap-3">
-                <span className="text-orange-400 font-bold">1.</span>
+                <span className="text-brand-light font-bold">1.</span>
                 <span className="text-gray-300">
                   <span className="font-semibold">Locate Plan</span> - Find the
                   plan you want to modify
                 </span>
               </li>
               <li className="flex gap-3">
-                <span className="text-orange-400 font-bold">2.</span>
+                <span className="text-brand-light font-bold">2.</span>
                 <span className="text-gray-300">
                   <span className="font-semibold">Click Edit</span> - Access the
                   edit icon or actions menu
                 </span>
               </li>
               <li className="flex gap-3">
-                <span className="text-orange-400 font-bold">3.</span>
+                <span className="text-brand-light font-bold">3.</span>
                 <span className="text-gray-300">
                   <span className="font-semibold">Update Fields</span> - Modify
                   pricing, features, or descriptions
                 </span>
               </li>
               <li className="flex gap-3">
-                <span className="text-orange-400 font-bold">4.</span>
+                <span className="text-brand-light font-bold">4.</span>
                 <span className="text-gray-300">
                   <span className="font-semibold">Save Changes</span> - Click
                   Save to apply updates immediately
@@ -222,7 +222,7 @@ export function SubscriptionsManagementSection() {
             Remove plans that are no longer needed:
           </p>
           <div className="space-y-3">
-            <div className="bg-gray-800/50 p-4 rounded">
+            <div className="bg-zinc-800/50 p-4 rounded">
               <p className="font-semibold text-gray-200 mb-1">
                 Soft Delete (Recommended)
               </p>
@@ -231,7 +231,7 @@ export function SubscriptionsManagementSection() {
                 access
               </p>
             </div>
-            <div className="bg-gray-800/50 p-4 rounded">
+            <div className="bg-zinc-800/50 p-4 rounded">
               <p className="font-semibold text-gray-200 mb-1">Hard Delete</p>
               <p className="text-gray-300 text-sm">
                 Permanently remove - Completely removes from system (use

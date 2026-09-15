@@ -1,6 +1,6 @@
 export function MessagesInboxSection() {
   return (
-    <section id="using-messages-inbox" className="mb-16 scroll-mt-24">
+    <section id="using-messages-inbox" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">
         Part 3 — Using the Messages inbox
       </h2>
@@ -14,34 +14,34 @@ export function MessagesInboxSection() {
         </h3>
         <ul className="space-y-3 text-gray-300">
           <li className="flex items-start">
-            <span className="text-orange-400 mr-3 mt-1">•</span>
+            <span className="text-brand-light mr-3 mt-1">•</span>
             <span>
               Each row is one <strong>person</strong> (phone number) you have
               texted or who has texted you.
             </span>
           </li>
           <li className="flex items-start">
-            <span className="text-orange-400 mr-3 mt-1">•</span>
+            <span className="text-brand-light mr-3 mt-1">•</span>
             <span>
               You will see the <strong>latest message preview</strong> and{" "}
               <strong>how long ago</strong> it was sent.
             </span>
           </li>
           <li className="flex items-start">
-            <span className="text-orange-400 mr-3 mt-1">•</span>
+            <span className="text-brand-light mr-3 mt-1">•</span>
             <span>
               <strong>Unread</strong> inbound messages are counted on each
               conversation (when configured).
             </span>
           </li>
           <li className="flex items-start">
-            <span className="text-orange-400 mr-3 mt-1">•</span>
+            <span className="text-brand-light mr-3 mt-1">•</span>
             <span>
               Use the <strong>search box</strong> to find a number quickly.
             </span>
           </li>
           <li className="flex items-start">
-            <span className="text-orange-400 mr-3 mt-1">•</span>
+            <span className="text-brand-light mr-3 mt-1">•</span>
             <span>
               Scroll down to load <strong>older conversations</strong> if you
               have many.
@@ -97,13 +97,13 @@ export function MessagesInboxSection() {
         </p>
         <ul className="space-y-2 text-gray-300 ml-4">
           <li className="flex items-start">
-            <span className="text-orange-400 mr-3 mt-1">•</span>
+            <span className="text-brand-light mr-3 mt-1">•</span>
             <span>
               Open the <strong>Messages</strong> page, or
             </span>
           </li>
           <li className="flex items-start">
-            <span className="text-orange-400 mr-3 mt-1">•</span>
+            <span className="text-brand-light mr-3 mt-1">•</span>
             <span>Refresh the page after sending elsewhere.</span>
           </li>
         </ul>

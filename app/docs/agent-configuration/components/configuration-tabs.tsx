@@ -1,6 +1,6 @@
 export function ConfigurationTabsSection() {
   return (
-    <section id="configuration-tabs" className="mb-16 scroll-mt-24">
+    <section id="configuration-tabs" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">
         Agent Configuration Tabs
       </h2>
@@ -11,16 +11,16 @@ export function ConfigurationTabsSection() {
       </p>
 
       {/* General Settings Tab */}
-      <div className="mb-12 bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
-        <div className="bg-gradient-to-r from-orange-600 to-orange-500 p-6">
+      <div className="mb-12 bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
+        <div className="bg-gradient-to-r from-brand/20 to-brand/5 p-6">
           <h3 className="text-2xl font-bold text-white">General Settings</h3>
-          <p className="text-orange-100 mt-2">
+          <p className="text-gray-400 mt-2">
             Configure personality and core agent behavior
           </p>
         </div>
         <div className="p-8 space-y-6">
           <div>
-            <h4 className="text-xl font-semibold text-orange-400 mb-3">
+            <h4 className="text-xl font-semibold text-brand-light mb-3">
               Agent Welcome Message
             </h4>
             <p className="text-gray-300 mb-4">
@@ -47,8 +47,8 @@ Good morning! I'm the {company} AI assistant. How can I make your day better?`}
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-6">
-            <h4 className="text-xl font-semibold text-orange-400 mb-3">
+          <div className="border-t border-white/10 pt-6">
+            <h4 className="text-xl font-semibold text-brand-light mb-3">
               Agent Prompt (System Instructions)
             </h4>
             <p className="text-gray-300 mb-4">
@@ -84,8 +84,8 @@ Good morning! I'm the {company} AI assistant. How can I make your day better?`}
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-6">
-            <h4 className="text-xl font-semibold text-orange-400 mb-3">
+          <div className="border-t border-white/10 pt-6">
+            <h4 className="text-xl font-semibold text-brand-light mb-3">
               Voicemail Message
             </h4>
             <p className="text-gray-300 mb-4">
@@ -101,8 +101,8 @@ Good morning! I'm the {company} AI assistant. How can I make your day better?`}
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-6">
-            <h4 className="text-xl font-semibold text-orange-400 mb-3">
+          <div className="border-t border-white/10 pt-6">
+            <h4 className="text-xl font-semibold text-brand-light mb-3">
               End Call Message
             </h4>
             <p className="text-gray-300 mb-4">
@@ -118,15 +118,15 @@ Good morning! I'm the {company} AI assistant. How can I make your day better?`}
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-6">
-            <h4 className="text-xl font-semibold text-orange-400 mb-3">
+          <div className="border-t border-white/10 pt-6">
+            <h4 className="text-xl font-semibold text-brand-light mb-3">
               First Message Mode
             </h4>
             <p className="text-gray-300 mb-4">
               Choose who speaks first when a call connects:
             </p>
             <div className="space-y-3">
-              <div className="bg-gray-800/50 p-4 rounded">
+              <div className="bg-zinc-800/50 p-4 rounded">
                 <p className="font-semibold text-white">
                   Assistant speaks first
                 </p>
@@ -134,7 +134,7 @@ Good morning! I'm the {company} AI assistant. How can I make your day better?`}
                   Agent immediately starts the conversation (Recommended)
                 </p>
               </div>
-              <div className="bg-gray-800/50 p-4 rounded">
+              <div className="bg-zinc-800/50 p-4 rounded">
                 <p className="font-semibold text-white">
                   Assistant speaks first with model-generated message
                 </p>
@@ -142,7 +142,7 @@ Good morning! I'm the {company} AI assistant. How can I make your day better?`}
                   AI generates an opening line based on context
                 </p>
               </div>
-              <div className="bg-gray-800/50 p-4 rounded">
+              <div className="bg-zinc-800/50 p-4 rounded">
                 <p className="font-semibold text-white">
                   Assistant waits for user
                 </p>
@@ -156,7 +156,7 @@ Good morning! I'm the {company} AI assistant. How can I make your day better?`}
       </div>
 
       {/* LLM Settings Tab */}
-      <div className="mb-12 bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+      <div className="mb-12 bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
         <div className="bg-gradient-to-r from-purple-600 to-purple-500 p-6">
           <h3 className="text-2xl font-bold text-white">LLM Settings</h3>
           <p className="text-purple-100 mt-2">
@@ -169,9 +169,9 @@ Good morning! I'm the {company} AI assistant. How can I make your day better?`}
               Provider Selection
             </h4>
             <div className="overflow-x-auto">
-              <table className="w-full text-sm border border-gray-800 rounded-lg overflow-hidden">
+              <table className="w-full text-sm border border-white/10 rounded-lg overflow-hidden">
                 <thead>
-                  <tr className="bg-gray-800 border-b border-gray-700">
+                  <tr className="bg-zinc-800 border-b border-gray-700">
                     <th className="px-4 py-3 text-left text-purple-400 font-semibold">
                       Provider
                     </th>
@@ -184,7 +184,7 @@ Good morning! I'm the {company} AI assistant. How can I make your day better?`}
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border-b border-gray-800 hover:bg-gray-800/50">
+                  <tr className="border-b border-white/10 hover:bg-zinc-800/50">
                     <td className="px-4 py-3 font-semibold text-white">
                       OpenAI
                     </td>
@@ -195,7 +195,7 @@ Good morning! I'm the {company} AI assistant. How can I make your day better?`}
                       General purpose, complex queries
                     </td>
                   </tr>
-                  <tr className="border-b border-gray-800 hover:bg-gray-800/50">
+                  <tr className="border-b border-white/10 hover:bg-zinc-800/50">
                     <td className="px-4 py-3 font-semibold text-white">
                       Anthropic
                     </td>
@@ -206,7 +206,7 @@ Good morning! I'm the {company} AI assistant. How can I make your day better?`}
                       Detailed analysis, safety-critical
                     </td>
                   </tr>
-                  <tr className="hover:bg-gray-800/50">
+                  <tr className="hover:bg-zinc-800/50">
                     <td className="px-4 py-3 font-semibold text-white">Groq</td>
                     <td className="px-4 py-3 text-gray-300">
                       Fast open-source models
@@ -220,56 +220,56 @@ Good morning! I'm the {company} AI assistant. How can I make your day better?`}
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-6">
+          <div className="border-t border-white/10 pt-6">
             <h4 className="text-xl font-semibold text-purple-400 mb-4">
               Model Selection Guide
             </h4>
             <div className="space-y-4">
-              <div className="bg-gray-800/50 p-4 rounded">
+              <div className="bg-zinc-800/50 p-4 rounded">
                 <p className="font-semibold text-white mb-2">OpenAI Models:</p>
                 <ul className="text-gray-300 text-sm space-y-1">
                   <li>
-                    • <span className="text-orange-400">GPT 4o Mini</span> -
+                    • <span className="text-brand-light">GPT 4o Mini</span> -
                     Best balance of speed and cost
                   </li>
                   <li>
-                    • <span className="text-orange-400">GPT 4o</span> - Most
+                    • <span className="text-brand-light">GPT 4o</span> - Most
                     capable, good for complex tasks
                   </li>
                   <li>
-                    • <span className="text-orange-400">gpt-3.5-turbo</span> -
+                    • <span className="text-brand-light">gpt-3.5-turbo</span> -
                     Fast, cost-effective
                   </li>
                 </ul>
               </div>
-              <div className="bg-gray-800/50 p-4 rounded">
+              <div className="bg-zinc-800/50 p-4 rounded">
                 <p className="font-semibold text-white mb-2">
                   Anthropic Models:
                 </p>
                 <ul className="text-gray-300 text-sm space-y-1">
                   <li>
-                    • <span className="text-orange-400">claude-3.5-sonnet</span>{" "}
+                    • <span className="text-brand-light">claude-3.5-sonnet</span>{" "}
                     - Best overall performance
                   </li>
                   <li>
-                    • <span className="text-orange-400">claude-3.5-haiku</span>{" "}
+                    • <span className="text-brand-light">claude-3.5-haiku</span>{" "}
                     - Fastest, good for quick interactions
                   </li>
                 </ul>
               </div>
-              <div className="bg-gray-800/50 p-4 rounded">
+              <div className="bg-zinc-800/50 p-4 rounded">
                 <p className="font-semibold text-white mb-2">Groq Models:</p>
                 <ul className="text-gray-300 text-sm space-y-1">
                   <li>
                     •{" "}
-                    <span className="text-orange-400">
+                    <span className="text-brand-light">
                       llama-3.1-8b-instant
                     </span>{" "}
                     - Very fast, lightweight
                   </li>
                   <li>
                     •{" "}
-                    <span className="text-orange-400">
+                    <span className="text-brand-light">
                       llama-3.1-70b-versatile
                     </span>{" "}
                     - More capable
@@ -282,7 +282,7 @@ Good morning! I'm the {company} AI assistant. How can I make your day better?`}
       </div>
 
       {/* Voice Settings Tab */}
-      <div className="mb-12 bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+      <div className="mb-12 bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
         <div className="bg-gradient-to-r from-blue-600 to-blue-500 p-6">
           <h3 className="text-2xl font-bold text-white">Voice Settings</h3>
           <p className="text-blue-100 mt-2">Customize how your agent sounds</p>
@@ -296,29 +296,29 @@ Good morning! I'm the {company} AI assistant. How can I make your day better?`}
               Choose from high-quality pre-configured voices:
             </p>
             <div className="space-y-2">
-              <div className="bg-gray-800/50 p-3 rounded text-gray-300">
+              <div className="bg-zinc-800/50 p-3 rounded text-gray-300">
                 <span className="text-blue-400 font-semibold">
                   Liani Mawby (Female)
                 </span>{" "}
                 - Warm, professional
               </div>
-              <div className="bg-gray-800/50 p-3 rounded text-gray-300">
+              <div className="bg-zinc-800/50 p-3 rounded text-gray-300">
                 <span className="text-blue-400 font-semibold">
                   Lori (Female)
                 </span>{" "}
                 - Friendly, approachable
               </div>
-              <div className="bg-gray-800/50 p-3 rounded text-gray-300">
+              <div className="bg-zinc-800/50 p-3 rounded text-gray-300">
                 <span className="text-blue-400 font-semibold">
                   Olya (Female)
                 </span>{" "}
                 - Calm, reassuring
               </div>
-              <div className="bg-gray-800/50 p-3 rounded text-gray-300">
+              <div className="bg-zinc-800/50 p-3 rounded text-gray-300">
                 <span className="text-blue-400 font-semibold">Drew (Male)</span>{" "}
                 - Confident, authoritative
               </div>
-              <div className="bg-gray-800/50 p-3 rounded text-gray-300">
+              <div className="bg-zinc-800/50 p-3 rounded text-gray-300">
                 <span className="text-blue-400 font-semibold">
                   Abraham (Male)
                 </span>{" "}
@@ -327,7 +327,7 @@ Good morning! I'm the {company} AI assistant. How can I make your day better?`}
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-6">
+          <div className="border-t border-white/10 pt-6">
             <h4 className="text-xl font-semibold text-blue-400 mb-3">
               Custom Voice Model
             </h4>
@@ -350,7 +350,7 @@ Good morning! I'm the {company} AI assistant. How can I make your day better?`}
       </div>
 
       {/* Call Settings Tab */}
-      <div className="mb-12 bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+      <div className="mb-12 bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
         <div className="bg-gradient-to-r from-green-600 to-green-500 p-6">
           <h3 className="text-2xl font-bold text-white">Call Settings</h3>
           <p className="text-green-100 mt-2">
@@ -374,7 +374,7 @@ Good morning! I'm the {company} AI assistant. How can I make your day better?`}
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-6">
+          <div className="border-t border-white/10 pt-6">
             <h4 className="text-xl font-semibold text-green-400 mb-3">
               Call Forward Number
             </h4>
@@ -391,7 +391,7 @@ Good morning! I'm the {company} AI assistant. How can I make your day better?`}
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-6">
+          <div className="border-t border-white/10 pt-6">
             <h4 className="text-xl font-semibold text-green-400 mb-3">
               Maximum Call Duration
             </h4>
@@ -399,19 +399,19 @@ Good morning! I'm the {company} AI assistant. How can I make your day better?`}
               Limit how long calls can last (in seconds).
             </p>
             <div className="space-y-2">
-              <div className="bg-gray-800/50 p-3 rounded text-gray-300">
+              <div className="bg-zinc-800/50 p-3 rounded text-gray-300">
                 <span className="text-green-400 font-semibold">
                   300 seconds (5 minutes)
                 </span>{" "}
                 - Quick interactions
               </div>
-              <div className="bg-gray-800/50 p-3 rounded text-gray-300">
+              <div className="bg-zinc-800/50 p-3 rounded text-gray-300">
                 <span className="text-green-400 font-semibold">
                   600 seconds (10 minutes)
                 </span>{" "}
                 - Default, balanced
               </div>
-              <div className="bg-gray-800/50 p-3 rounded text-gray-300">
+              <div className="bg-zinc-800/50 p-3 rounded text-gray-300">
                 <span className="text-green-400 font-semibold">
                   1800 seconds (30 minutes)
                 </span>{" "}
@@ -420,7 +420,7 @@ Good morning! I'm the {company} AI assistant. How can I make your day better?`}
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-6">
+          <div className="border-t border-white/10 pt-6">
             <h4 className="text-xl font-semibold text-green-400 mb-3">
               End Call Data Webhook URL
             </h4>
@@ -447,7 +447,7 @@ Good morning! I'm the {company} AI assistant. How can I make your day better?`}
       </div>
 
       {/* Test Tab */}
-      <div className="mb-12 bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+      <div className="mb-12 bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
         <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 p-6">
           <h3 className="text-2xl font-bold text-white">Test Tab</h3>
           <p className="text-indigo-100 mt-2">
@@ -474,7 +474,7 @@ Good morning! I'm the {company} AI assistant. How can I make your day better?`}
             </ol>
           </div>
 
-          <div className="border-t border-gray-800 pt-6">
+          <div className="border-t border-white/10 pt-6">
             <h4 className="text-xl font-semibold text-indigo-400 mb-3">
               Testing Checklist
             </h4>
@@ -494,7 +494,7 @@ Good morning! I'm the {company} AI assistant. How can I make your day better?`}
       </div>
 
       {/* Settings Tab - External Configuration */}
-      <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+      <div className="bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
         <div className="bg-gradient-to-r from-red-600 to-red-500 p-6">
           <h3 className="text-2xl font-bold text-white">Settings Tab</h3>
           <p className="text-red-100 mt-2">
@@ -511,9 +511,9 @@ Good morning! I'm the {company} AI assistant. How can I make your day better?`}
               them inline.
             </p>
             <div className="overflow-x-auto mb-6">
-              <table className="w-full text-sm border border-gray-800 rounded-lg overflow-hidden">
+              <table className="w-full text-sm border border-white/10 rounded-lg overflow-hidden">
                 <thead>
-                  <tr className="bg-gray-800 border-b border-gray-700">
+                  <tr className="bg-zinc-800 border-b border-gray-700">
                     <th className="px-4 py-3 text-left text-red-400 font-semibold">
                       Platform
                     </th>
@@ -523,13 +523,13 @@ Good morning! I'm the {company} AI assistant. How can I make your day better?`}
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border-b border-gray-800 hover:bg-gray-800/50">
+                  <tr className="border-b border-white/10 hover:bg-zinc-800/50">
                     <td className="px-4 py-3 font-semibold text-white">Vapi</td>
                     <td className="px-4 py-3 text-gray-300">
                       Voice AI platform with advanced agent tools
                     </td>
                   </tr>
-                  <tr className="hover:bg-gray-800/50">
+                  <tr className="hover:bg-zinc-800/50">
                     <td className="px-4 py-3 font-semibold text-white">
                       Retell AI
                     </td>
@@ -542,7 +542,7 @@ Good morning! I'm the {company} AI assistant. How can I make your day better?`}
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-6">
+          <div className="border-t border-white/10 pt-6">
             <h4 className="text-xl font-semibold text-red-400 mb-3">
               Enabling External Configuration
             </h4>

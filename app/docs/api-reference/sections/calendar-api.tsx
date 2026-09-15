@@ -30,7 +30,7 @@ export default function CalendarApiSection() {
             conferencing (Google Meet and Zoom), and attendees management.
           </p>
         </div>
-        <span className="rounded-md bg-orange-500/10 text-orange-300 ring-1 ring-orange-500/20 px-2.5 py-1 text-xs font-medium">
+        <span className="rounded-md bg-brand/10 text-brand-light ring-1 ring-orange-500/20 px-2.5 py-1 text-xs font-medium">
           v2.0
         </span>
       </div>
@@ -77,7 +77,7 @@ export default function CalendarApiSection() {
               {DATETIME_FORMATS.map((d) => (
                 <tr key={d.f} className="border-b border-white/5 last:border-0">
                   <td className="py-2.5 px-4">
-                    <code className="text-orange-400">{d.f}</code>
+                    <code className="text-brand-light">{d.f}</code>
                   </td>
                   <td className="py-2.5 px-4 text-gray-400">{d.note}</td>
                 </tr>
@@ -91,10 +91,10 @@ export default function CalendarApiSection() {
       <div id="cal-video-conferencing" className="scroll-mt-28 mb-12">
         <h3 className="text-lg font-semibold text-white mb-1">Video Conferencing</h3>
         <p className="text-sm text-gray-400 mb-4">
-          Generate meeting links automatically by enabling <code className="text-orange-400">google_meet_enabled</code>{" "}
-          or <code className="text-orange-400">zoom_enabled</code> on create/update. Google Meet returns a{" "}
-          <code className="text-orange-400">meet_link</code>; Zoom returns a{" "}
-          <code className="text-orange-400">zoom_meeting_id</code> and <code className="text-orange-400">zoom_join_url</code>.
+          Generate meeting links automatically by enabling <code className="text-brand-light">google_meet_enabled</code>{" "}
+          or <code className="text-brand-light">zoom_enabled</code> on create/update. Google Meet returns a{" "}
+          <code className="text-brand-light">meet_link</code>; Zoom returns a{" "}
+          <code className="text-brand-light">zoom_meeting_id</code> and <code className="text-brand-light">zoom_join_url</code>.
         </p>
         <Callout type="warning" className="mb-4">
           Only <strong>one</strong> video conference provider can be enabled per event. Enabling both returns a 400
@@ -110,7 +110,7 @@ export default function CalendarApiSection() {
               language="json"
             />
             <p className="mt-2 text-xs text-gray-500">
-              Requires Google Calendar connected. Returns <code className="text-orange-300">meet_link</code>.
+              Requires Google Calendar connected. Returns <code className="text-brand-light">meet_link</code>.
             </p>
           </div>
           <div className="rounded-lg border border-white/10 bg-white/[0.02] p-4">
@@ -123,7 +123,7 @@ export default function CalendarApiSection() {
             />
             <p className="mt-2 text-xs text-gray-500">
               Requires Zoom connected (Settings → Integrations). Returns{" "}
-              <code className="text-orange-300">zoom_join_url</code>.
+              <code className="text-brand-light">zoom_join_url</code>.
             </p>
           </div>
         </div>
@@ -142,7 +142,7 @@ export default function CalendarApiSection() {
         </div>
         <Callout type="info" className="mt-4">
           If the provider isn&apos;t connected, the event is still created/updated but the response includes a{" "}
-          <code className="text-orange-300">warnings</code> array (e.g. <code className="text-orange-300">{`["zoom_not_connected"]`}</code>)
+          <code className="text-brand-light">warnings</code> array (e.g. <code className="text-brand-light">{`["zoom_not_connected"]`}</code>)
           and the corresponding link fields stay <code>null</code>.
         </Callout>
       </div>
@@ -151,9 +151,9 @@ export default function CalendarApiSection() {
       <div id="cal-boolean-fields" className="scroll-mt-28 mb-12">
         <h3 className="text-lg font-semibold text-white mb-1">Boolean Field Rules</h3>
         <p className="text-sm text-gray-400 mb-4">
-          Fields like <code className="text-orange-400">all_day</code>,{" "}
-          <code className="text-orange-400">google_meet_enabled</code>, and{" "}
-          <code className="text-orange-400">zoom_enabled</code> must be real booleans, not strings.
+          Fields like <code className="text-brand-light">all_day</code>,{" "}
+          <code className="text-brand-light">google_meet_enabled</code>, and{" "}
+          <code className="text-brand-light">zoom_enabled</code> must be real booleans, not strings.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="rounded-lg border border-emerald-500/20 bg-emerald-500/[0.04] p-4">
@@ -175,10 +175,10 @@ export default function CalendarApiSection() {
       <div id="cal-attendees" className="scroll-mt-28 mb-12">
         <h3 className="text-lg font-semibold text-white mb-1">Attendees</h3>
         <p className="text-sm text-gray-400 mb-4">
-          Pass an <code className="text-orange-400">attendees</code> array (max 50) on create or update. On update (PATCH)
+          Pass an <code className="text-brand-light">attendees</code> array (max 50) on create or update. On update (PATCH)
           the new attendees are <strong>merged</strong> with the stored list — duplicate emails (matched case-insensitively)
-          are removed, and stored <code className="text-orange-400">display_name</code> /{" "}
-          <code className="text-orange-400">response_status</code> are preserved unless you override them.
+          are removed, and stored <code className="text-brand-light">display_name</code> /{" "}
+          <code className="text-brand-light">response_status</code> are preserved unless you override them.
         </p>
         <CodeBlock
           code={`{
@@ -196,7 +196,7 @@ export default function CalendarApiSection() {
           language="json"
         />
         <p className="mt-4 text-sm text-gray-400 mb-2">
-          <code className="text-orange-400">response_status</code> accepts one of:
+          <code className="text-brand-light">response_status</code> accepts one of:
         </p>
         <div className="flex flex-wrap gap-2">
           {["needsAction", "accepted", "declined", "tentative"].map((s) => (
@@ -241,11 +241,11 @@ export default function CalendarApiSection() {
           language="json"
         />
         <Callout type="warning" className="mt-4">
-          <code className="text-orange-400">caller_phone</code> and{" "}
-          <code className="text-orange-400">caller_name</code> are <strong>create-only (POST)</strong> — they cannot be
-          changed via PATCH. When <code className="text-orange-400">caller_phone</code> is set on create, it triggers an
-          appointment SMS. Internal delivery fields (<code className="text-orange-400">sms_sent</code>,{" "}
-          <code className="text-orange-400">sms_sent_at</code>) exist on the record but are never returned by the external API.
+          <code className="text-brand-light">caller_phone</code> and{" "}
+          <code className="text-brand-light">caller_name</code> are <strong>create-only (POST)</strong> — they cannot be
+          changed via PATCH. When <code className="text-brand-light">caller_phone</code> is set on create, it triggers an
+          appointment SMS. Internal delivery fields (<code className="text-brand-light">sms_sent</code>,{" "}
+          <code className="text-brand-light">sms_sent_at</code>) exist on the record but are never returned by the external API.
         </Callout>
       </div>
     </section>

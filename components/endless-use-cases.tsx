@@ -14,9 +14,22 @@ export default function EndlessUseCases() {
   return (
     <section className="w-full bg-black py-16">
       <div className="container mx-auto max-w-7xl px-4">
-        <h2 className="text-4xl font-bold text-center text-brand-strong mb-12">
-          Real-world usecases
-        </h2>
+        {/* Section header */}
+        <div className="text-center mb-10">
+          <div className="flex justify-center mb-4">
+            <span className="inline-flex items-center rounded-full glass-light border border-brand/20 px-4 py-1.5 text-xs sm:text-sm text-gray-300">
+              Use Cases
+            </span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
+            Real-world <span className="text-brand">use cases</span>
+          </h2>
+          <p className="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto">
+            One AI voice agent for every conversation — outbound outreach that
+            qualifies and books, inbound support that never puts a caller on
+            hold.
+          </p>
+        </div>
 
         {/* Enhanced Tab Switcher - CSS-only animation, no framer-motion */}
         <Card className="w-full max-w-md mx-auto mb-6 p-1.5 bg-zinc-900 border-zinc-800 rounded-xl shadow-2xl">

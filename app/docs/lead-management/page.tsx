@@ -1,6 +1,4 @@
-import SidebarNav from "@/components/docs/sidebar-nav";
-import Breadcrumbs from "@/components/docs/breadcrumbs";
-import OnThisPage from "@/components/docs/on-this-page";
+import DocsLayoutWrapper from "@/components/docs/docs-layout-wrapper";
 import SectionHeader from "@/components/docs/section-header";
 import type { Metadata } from "next";
 import { OverviewSection } from "./components/overview";
@@ -49,8 +47,8 @@ const navItems = [
 ];
 
 const breadcrumbs = [
-  { label: "Lead Management", href: "/docs/lead-management" },
-  { label: "User Guide" },
+  { label: "Documentation", href: "/docs" },
+  { label: "Lead Management" },
 ];
 
 export default function LeadManagementDocsPage() {
@@ -139,18 +137,18 @@ export default function LeadManagementDocsPage() {
           }),
         }}
       />
-      <div className="min-h-screen bg-black text-white pt-20">
-      <div className="flex relative">
-        <SidebarNav items={navItems} />
-
-        <main className="flex-1 lg:ml-64 w-full">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <Breadcrumbs items={breadcrumbs} />
-
-            <SectionHeader
+      <DocsLayoutWrapper
+        navItems={navItems}
+        breadcrumbs={breadcrumbs}
+        sectionTitle="Lead Management"
+        sectionHref="/docs/lead-management"
+      >
+        <SectionHeader
               title="Lead Management User Guide"
               description="The Lead Management system allows you to upload, organize, and automatically call leads using AI-powered calling agents. This guide covers everything you need to know to effectively manage your leads, from adding them to tracking their status through the calling process."
               difficulty="beginner"
+              readingTime={14}
+              steps={navItems.length}
             />
 
             {/* All Sections Imported as Components */}
@@ -165,13 +163,7 @@ export default function LeadManagementDocsPage() {
             <TroubleshootingSection />
             <ErrorClassificationSection />
             <QuickReferenceSection />
-          </div>
-        </main>
-
-        {/* Right Sidebar - On This Page */}
-        <OnThisPage />
-      </div>
-    </div>
+      </DocsLayoutWrapper>
     </>
   );
 }

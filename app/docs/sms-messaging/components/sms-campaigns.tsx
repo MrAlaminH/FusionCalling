@@ -1,6 +1,6 @@
 export function SmsCampaignsSection() {
   return (
-    <section id="sms-campaigns" className="mb-16 scroll-mt-24">
+    <section id="sms-campaigns" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">
         Part 4 — SMS campaigns (automated texting)
       </h2>
@@ -14,7 +14,7 @@ export function SmsCampaignsSection() {
         <h3 className="text-2xl font-semibold mb-4 text-white">
           Overview — the usual workflow
         </h3>
-        <div className="p-4 rounded-lg bg-gray-900/50 border border-gray-700">
+        <div className="p-4 rounded-lg bg-zinc-900/50 border border-gray-700">
           <code className="text-gray-300 font-mono text-sm block whitespace-nowrap overflow-x-auto">
             Connect Twilio &nbsp;→&nbsp; Create SMS campaign &nbsp;→&nbsp; Add
             leads &nbsp;→&nbsp; Configure messages &nbsp;→&nbsp; Start campaign
@@ -51,9 +51,9 @@ export function SmsCampaignsSection() {
           </li>
         </ol>
 
-        <div className="p-4 rounded-lg border border-orange-500/30 bg-orange-500/5 mt-4">
+        <div className="p-4 rounded-lg border border-brand/20 bg-brand/5 mt-4">
           <p className="text-gray-200">
-            <strong className="text-orange-400">⚠️ Note:</strong> You must
+            <strong className="text-brand-light">⚠️ Note:</strong> You must
             connect Twilio first (Part 1). If you skip that, creation will ask
             you to connect.
           </p>
@@ -89,20 +89,20 @@ export function SmsCampaignsSection() {
         </p>
 
         <div className="mb-8 space-y-6">
-          <div className="border-l-4 border-orange-400 pl-6">
+          <div className="border-l-4 border-brand pl-6">
             <h4 className="text-xl font-semibold text-white mb-3">
               Sending identity
             </h4>
             <ul className="space-y-2 text-gray-300">
               <li className="flex items-start">
-                <span className="text-orange-400 mr-3 mt-1">•</span>
+                <span className="text-brand-light mr-3 mt-1">•</span>
                 <span>
                   <strong>From number</strong> — Twilio line for this campaign
                   (must match a number on your account).
                 </span>
               </li>
               <li className="flex items-start">
-                <span className="text-orange-400 mr-3 mt-1">•</span>
+                <span className="text-brand-light mr-3 mt-1">•</span>
                 <span>
                   <strong>Complete lead on any reply</strong> — If turned on,
                   when someone replies after the first outbound text, Fusion
@@ -142,7 +142,7 @@ export function SmsCampaignsSection() {
               </li>
             </ul>
 
-            <div className="mt-3 ml-4 p-3 rounded bg-gray-900/50 border border-gray-700">
+            <div className="mt-3 ml-4 p-3 rounded bg-zinc-900/50 border border-gray-700">
               <code className="text-gray-300 text-sm block">
                 {`{{ first_name }}`} — lead&apos;s first name
               </code>
@@ -155,11 +155,11 @@ export function SmsCampaignsSection() {
               </code>
             </div>
 
-            <div className="mt-4 p-3 rounded bg-gray-900/50 border border-gray-700">
+            <div className="mt-4 p-3 rounded bg-zinc-900/50 border border-gray-700">
               <p className="text-gray-400 text-sm font-mono mb-2">
                 Example Step 1:
               </p>
-              <code className="text-orange-300 text-sm block">
+              <code className="text-brand-light text-sm block">
                 {`Hi {{ first_name }}, thanks for connecting. Reply if you have any questions!`}
               </code>
             </div>
@@ -244,7 +244,7 @@ export function SmsCampaignsSection() {
               </li>
             </ul>
 
-            <div className="p-3 rounded bg-gray-900/50 border border-gray-700 mt-3">
+            <div className="p-3 rounded bg-zinc-900/50 border border-gray-700 mt-3">
               <p className="text-gray-400 text-sm">
                 Most users can leave defaults until they have a very large list.
               </p>
@@ -309,21 +309,21 @@ export function SmsCampaignsSection() {
         </h4>
         <ul className="space-y-3 text-gray-300">
           <li className="flex items-start">
-            <span className="text-orange-400 mr-3 mt-1">•</span>
+            <span className="text-brand-light mr-3 mt-1">•</span>
             <span>
               Fusion Call sends texts <strong>on the server</strong> — you do{" "}
               <strong>not</strong> need to keep the browser open.
             </span>
           </li>
           <li className="flex items-start">
-            <span className="text-orange-400 mr-3 mt-1">•</span>
+            <span className="text-brand-light mr-3 mt-1">•</span>
             <span>
               Texts use the <strong>From number</strong> and{" "}
               <strong>sequence</strong> you saved in settings.
             </span>
           </li>
           <li className="flex items-start">
-            <span className="text-orange-400 mr-3 mt-1">•</span>
+            <span className="text-brand-light mr-3 mt-1">•</span>
             <span>
               If Auto SMS is already on for a <strong>different</strong>{" "}
               campaign, turn that one off first — only one SMS campaign can be
@@ -339,20 +339,20 @@ export function SmsCampaignsSection() {
         </h3>
         <ul className="space-y-3 text-gray-300">
           <li className="flex items-start">
-            <span className="text-orange-400 mr-3 mt-1">•</span>
+            <span className="text-brand-light mr-3 mt-1">•</span>
             <span>
               On the campaign page, check lead <strong>status</strong> (pending,
               completed, etc.).
             </span>
           </li>
           <li className="flex items-start">
-            <span className="text-orange-400 mr-3 mt-1">•</span>
+            <span className="text-brand-light mr-3 mt-1">•</span>
             <span>
               Open a lead to see <strong>SMS activity</strong> for that person.
             </span>
           </li>
           <li className="flex items-start">
-            <span className="text-orange-400 mr-3 mt-1">•</span>
+            <span className="text-brand-light mr-3 mt-1">•</span>
             <span>
               Open <strong>Messages</strong> to read full two-way conversations
               with replies.
@@ -367,21 +367,21 @@ export function SmsCampaignsSection() {
         </h3>
         <ul className="space-y-3 text-gray-300">
           <li className="flex items-start">
-            <span className="text-orange-400 mr-3 mt-1">•</span>
+            <span className="text-brand-light mr-3 mt-1">•</span>
             <span>
               <strong>Pause</strong> the campaign to stop new automated sends
               for that list.
             </span>
           </li>
           <li className="flex items-start">
-            <span className="text-orange-400 mr-3 mt-1">•</span>
+            <span className="text-brand-light mr-3 mt-1">•</span>
             <span>
               Turn <strong>Auto SMS</strong> <strong>OFF</strong> to disarm
               automation (campaign can stay active for manual work).
             </span>
           </li>
           <li className="flex items-start">
-            <span className="text-orange-400 mr-3 mt-1">•</span>
+            <span className="text-brand-light mr-3 mt-1">•</span>
             <span>
               Edit the sequence in <strong>Settings</strong> anytime —{" "}
               <strong>save</strong> after changes.

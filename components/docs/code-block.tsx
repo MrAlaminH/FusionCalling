@@ -30,14 +30,14 @@ export default function CodeBlock({
   return (
     <div className="relative group my-6">
       {filename && (
-        <div className="bg-gray-900 px-4 py-2 text-sm text-gray-400 border-b border-gray-800 rounded-t-lg">
+        <div className="bg-zinc-950 px-4 py-2 text-sm text-gray-400 border-b border-white/10 rounded-t-xl">
           {filename}
         </div>
       )}
       <div className="relative">
         <button
           onClick={copyToClipboard}
-          className="absolute top-3 right-3 z-10 p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition opacity-100 sm:opacity-0 sm:group-hover:opacity-100 focus:opacity-100"
+          className="absolute top-3 right-3 z-10 p-2 bg-zinc-800/90 hover:bg-zinc-700 rounded-lg transition opacity-100 sm:opacity-0 sm:group-hover:opacity-100 focus:opacity-100"
           aria-label="Copy code"
         >
           {copied ? (
@@ -51,7 +51,7 @@ export default function CodeBlock({
           style={vscDarkPlus}
           customStyle={{
             margin: 0,
-            borderRadius: filename ? "0 0 0.5rem 0.5rem" : "0.5rem",
+            borderRadius: filename ? "0 0 0.75rem 0.75rem" : "0.75rem",
             padding: "1.5rem",
             fontSize: "0.875rem",
             lineHeight: "1.6",

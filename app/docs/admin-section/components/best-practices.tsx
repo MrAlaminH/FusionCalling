@@ -1,11 +1,11 @@
 export function BestPracticesSection() {
   return (
-    <section id="best-practices" className="mb-16 scroll-mt-24">
+    <section id="best-practices" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">Best Practices</h2>
 
       <div className="space-y-8">
         {/* Security Management */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
           <div className="bg-red-600/20 border-b border-red-700/50 p-6">
             <h3 className="text-2xl font-bold text-red-400">
               Security Management
@@ -13,7 +13,7 @@ export function BestPracticesSection() {
           </div>
           <div className="p-8 space-y-4">
             <div className="flex gap-3">
-              <span className="text-orange-400 font-bold">1.</span>
+              <span className="text-brand-light font-bold">1.</span>
               <div>
                 <p className="font-semibold text-white">Strong Passwords</p>
                 <p className="text-gray-300 text-sm">
@@ -23,7 +23,7 @@ export function BestPracticesSection() {
               </div>
             </div>
             <div className="flex gap-3">
-              <span className="text-orange-400 font-bold">2.</span>
+              <span className="text-brand-light font-bold">2.</span>
               <div>
                 <p className="font-semibold text-white">API Key Protection</p>
                 <ul className="text-gray-300 text-sm space-y-1 mt-2 ml-4">
@@ -35,7 +35,7 @@ export function BestPracticesSection() {
               </div>
             </div>
             <div className="flex gap-3">
-              <span className="text-orange-400 font-bold">3.</span>
+              <span className="text-brand-light font-bold">3.</span>
               <div>
                 <p className="font-semibold text-white">Access Control</p>
                 <ul className="text-gray-300 text-sm space-y-1 mt-2 ml-4">
@@ -50,7 +50,7 @@ export function BestPracticesSection() {
         </div>
 
         {/* Client Onboarding */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
           <div className="bg-green-600/20 border-b border-green-700/50 p-6">
             <h3 className="text-2xl font-bold text-green-400">
               Client Onboarding
@@ -58,35 +58,35 @@ export function BestPracticesSection() {
           </div>
           <div className="p-8 space-y-4">
             <div className="flex gap-3">
-              <span className="text-orange-400 font-bold">1.</span>
+              <span className="text-brand-light font-bold">1.</span>
               <p className="text-gray-300">
                 <span className="font-semibold">Send Welcome Emails</span> -
                 Provide clear getting started instructions
               </p>
             </div>
             <div className="flex gap-3">
-              <span className="text-orange-400 font-bold">2.</span>
+              <span className="text-brand-light font-bold">2.</span>
               <p className="text-gray-300">
                 <span className="font-semibold">Assign Appropriate Plans</span>{" "}
                 - Don&apos;t over-provision, start with Trial
               </p>
             </div>
             <div className="flex gap-3">
-              <span className="text-orange-400 font-bold">3.</span>
+              <span className="text-brand-light font-bold">3.</span>
               <p className="text-gray-300">
                 <span className="font-semibold">Document Key Workflows</span> -
                 Create guides for common client tasks
               </p>
             </div>
             <div className="flex gap-3">
-              <span className="text-orange-400 font-bold">4.</span>
+              <span className="text-brand-light font-bold">4.</span>
               <p className="text-gray-300">
                 <span className="font-semibold">Monitor Early Activity</span> -
                 Check new clients in first week
               </p>
             </div>
             <div className="flex gap-3">
-              <span className="text-orange-400 font-bold">5.</span>
+              <span className="text-brand-light font-bold">5.</span>
               <p className="text-gray-300">
                 <span className="font-semibold">Provide Support Channels</span>{" "}
                 - Multiple contact options
@@ -96,7 +96,7 @@ export function BestPracticesSection() {
         </div>
 
         {/* Billing Management */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
           <div className="bg-blue-600/20 border-b border-blue-700/50 p-6">
             <h3 className="text-2xl font-bold text-blue-400">
               Billing Management
@@ -104,28 +104,28 @@ export function BestPracticesSection() {
           </div>
           <div className="p-8 space-y-4">
             <div className="flex gap-3">
-              <span className="text-orange-400 font-bold">1.</span>
+              <span className="text-brand-light font-bold">1.</span>
               <p className="text-gray-300">
                 <span className="font-semibold">Track Credit Usage</span> -
                 Identify patterns and potential overages
               </p>
             </div>
             <div className="flex gap-3">
-              <span className="text-orange-400 font-bold">2.</span>
+              <span className="text-brand-light font-bold">2.</span>
               <p className="text-gray-300">
                 <span className="font-semibold">Review Revenue Regularly</span>{" "}
                 - Monitor MRR/ARR trends
               </p>
             </div>
             <div className="flex gap-3">
-              <span className="text-orange-400 font-bold">3.</span>
+              <span className="text-brand-light font-bold">3.</span>
               <p className="text-gray-300">
                 <span className="font-semibold">Plan for Growth</span> - Scale
                 infrastructure as agency grows
               </p>
             </div>
             <div className="flex gap-3">
-              <span className="text-orange-400 font-bold">4.</span>
+              <span className="text-brand-light font-bold">4.</span>
               <p className="text-gray-300">
                 <span className="font-semibold">Backup Data</span> - Regular
                 database backups

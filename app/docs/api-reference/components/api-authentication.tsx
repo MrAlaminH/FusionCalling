@@ -4,12 +4,12 @@ import CodeTabs from "@/components/docs/code-tabs";
 
 export default function ApiAuthentication() {
   return (
-    <div className="bg-gray-900 rounded-lg border border-gray-800 p-6 mb-6">
+    <div className="bg-zinc-900 rounded-lg border border-white/10 p-6 mb-6">
       <h3 className="text-2xl font-bold mb-4 text-white">Authentication</h3>
 
       <p className="text-gray-300 mb-4">
         All Fusion Calling APIs use API key authentication via the{" "}
-        <code className="text-orange-400">Authorization</code> header using the Bearer
+        <code className="text-brand-light">Authorization</code> header using the Bearer
         token format.
       </p>
 
@@ -27,7 +27,7 @@ export default function ApiAuthentication() {
         Using Your API Key
       </h4>
       <p className="text-gray-300 mb-4">
-        Include the API key in the <code className="text-orange-400">Authorization</code>{" "}
+        Include the API key in the <code className="text-brand-light">Authorization</code>{" "}
         header of every request:
       </p>
 
@@ -38,11 +38,11 @@ export default function ApiAuthentication() {
 
       <Callout type="warning" className="mt-5">
         <strong>Header format is strict:</strong> the header must be exactly two whitespace-separated
-        tokens, and the first token <strong>must</strong> be the literal <code className="text-orange-400">Bearer</code>{" "}
+        tokens, and the first token <strong>must</strong> be the literal <code className="text-brand-light">Bearer</code>{" "}
         (case-sensitive). Any other format, an empty key, or using the{" "}
-        <code className="text-orange-400">x-api-key</code> header returns{" "}
-        <code className="text-orange-400">401 Unauthorized</code> — the{" "}
-        <code className="text-orange-400">x-api-key</code> header is <strong>not</strong> supported.
+        <code className="text-brand-light">x-api-key</code> header returns{" "}
+        <code className="text-brand-light">401 Unauthorized</code> — the{" "}
+        <code className="text-brand-light">x-api-key</code> header is <strong>not</strong> supported.
       </Callout>
 
       <h4 className="text-lg font-semibold mb-3 text-white mt-6">
@@ -52,8 +52,8 @@ export default function ApiAuthentication() {
         Fusion Calling uses two distinct error shapes depending on where the failure happens — handle both in your client:
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-2">
-        <div className="bg-gray-800 rounded-lg p-4 border border-gray-700">
-          <p className="text-orange-300 font-semibold text-sm mb-2">Auth failure (401)</p>
+        <div className="bg-zinc-800 rounded-lg p-4 border border-gray-700">
+          <p className="font-semibold text-white text-sm mb-2">Auth failure (401)</p>
           <CodeBlock
             code={`{
   "error": "Unauthorized",
@@ -62,8 +62,8 @@ export default function ApiAuthentication() {
             language="json"
           />
         </div>
-        <div className="bg-gray-800 rounded-lg p-4 border border-gray-700">
-          <p className="text-orange-300 font-semibold text-sm mb-2">Validation / route error</p>
+        <div className="bg-zinc-800 rounded-lg p-4 border border-gray-700">
+          <p className="font-semibold text-white text-sm mb-2">Validation / route error</p>
           <CodeBlock
             code={`{
   "success": false,
@@ -117,7 +117,7 @@ response = requests.get(
         secure secret management.
       </Callout>
 
-      <div className="mt-6 p-4 bg-gray-800 rounded-lg border border-gray-700">
+      <div className="mt-6 p-4 bg-zinc-800 rounded-lg border border-gray-700">
         <h5 className="text-white font-semibold mb-2">Authentication Best Practices</h5>
         <ul className="space-y-2 text-gray-300 text-sm">
           <li>✅ Store API keys in environment variables</li>

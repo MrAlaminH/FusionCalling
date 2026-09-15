@@ -100,7 +100,7 @@ export default function OnThisPage({
   const scrollToHeading = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const offset = 120;
+      const offset = 140;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
 
@@ -126,7 +126,7 @@ export default function OnThisPage({
           On this page
         </h3>
         <nav aria-label="Page sections">
-          <ul className="space-y-1 border-l border-gray-800">
+          <ul className="space-y-1 border-l border-white/10">
             {headings.map((heading) => (
               <li
                 key={heading.id}
@@ -136,7 +136,7 @@ export default function OnThisPage({
                   onClick={() => scrollToHeading(heading.id)}
                   className={`block w-full text-left pl-4 pr-2 py-1.5 text-sm transition-colors border-l-2 ${
                     activeId === heading.id
-                      ? "border-orange-500 text-orange-400 font-medium"
+                      ? "border-brand text-brand-light font-medium"
                       : "border-transparent text-gray-400 hover:text-gray-200 hover:border-gray-600"
                   }`}
                 >

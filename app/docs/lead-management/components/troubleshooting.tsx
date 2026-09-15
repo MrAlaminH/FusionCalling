@@ -1,16 +1,16 @@
 export function TroubleshootingSection() {
   return (
-    <section id="troubleshooting" className="mb-16 scroll-mt-24">
+    <section id="troubleshooting" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">Troubleshooting</h2>
 
       <div className="space-y-8">
         {/* Issue 1 */}
-        <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+        <div className="bg-zinc-900 border border-white/10 rounded-lg p-6">
           <h3 className="text-xl font-semibold text-white mb-4">
             Lead Stuck in &quot;Pending&quot;
           </h3>
-          <div className="bg-orange-900/20 border border-orange-700/50 rounded p-4 mb-4">
-            <p className="text-orange-400 font-semibold mb-2">
+          <div className="bg-brand/5 border border-brand/20 rounded p-4 mb-4">
+            <p className="font-semibold text-white mb-2">
               Possible Causes:
             </p>
             <ul className="space-y-1 text-gray-300 ml-4 text-sm">
@@ -30,12 +30,12 @@ export function TroubleshootingSection() {
         </div>
 
         {/* Issue 2 */}
-        <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+        <div className="bg-zinc-900 border border-white/10 rounded-lg p-6">
           <h3 className="text-xl font-semibold text-white mb-4">
             Lead Stuck in &quot;In-Progress&quot;
           </h3>
-          <div className="bg-orange-900/20 border border-orange-700/50 rounded p-4 mb-4">
-            <p className="text-orange-400 font-semibold mb-2">
+          <div className="bg-brand/5 border border-brand/20 rounded p-4 mb-4">
+            <p className="font-semibold text-white mb-2">
               Possible Causes:
             </p>
             <ul className="space-y-1 text-gray-300 ml-4 text-sm">
@@ -56,12 +56,12 @@ export function TroubleshootingSection() {
         </div>
 
         {/* Issue 3 */}
-        <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+        <div className="bg-zinc-900 border border-white/10 rounded-lg p-6">
           <h3 className="text-xl font-semibold text-white mb-4">
             Lead Marked as &quot;Failed&quot;
           </h3>
-          <div className="bg-orange-900/20 border border-orange-700/50 rounded p-4 mb-4">
-            <p className="text-orange-400 font-semibold mb-2">
+          <div className="bg-brand/5 border border-brand/20 rounded p-4 mb-4">
+            <p className="font-semibold text-white mb-2">
               Possible Causes:
             </p>
             <ul className="space-y-1 text-gray-300 ml-4 text-sm">
@@ -75,7 +75,7 @@ export function TroubleshootingSection() {
             <li>Check lead details for error message</li>
             <li>
               Fix phone number format (must be E.164:{" "}
-              <code className="text-orange-400 bg-gray-950 px-2 py-1 rounded">
+              <code className="text-brand-light bg-gray-950 px-2 py-1 rounded">
                 +countrycode+number
               </code>
               )
@@ -86,12 +86,12 @@ export function TroubleshootingSection() {
         </div>
 
         {/* Issue 4 */}
-        <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+        <div className="bg-zinc-900 border border-white/10 rounded-lg p-6">
           <h3 className="text-xl font-semibold text-white mb-4">
             Lead Not Retrying
           </h3>
-          <div className="bg-orange-900/20 border border-orange-700/50 rounded p-4 mb-4">
-            <p className="text-orange-400 font-semibold mb-2">
+          <div className="bg-brand/5 border border-brand/20 rounded p-4 mb-4">
+            <p className="font-semibold text-white mb-2">
               Possible Causes:
             </p>
             <ul className="space-y-1 text-gray-300 ml-4 text-sm">
@@ -112,12 +112,12 @@ export function TroubleshootingSection() {
         </div>
 
         {/* Issue 5 */}
-        <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+        <div className="bg-zinc-900 border border-white/10 rounded-lg p-6">
           <h3 className="text-xl font-semibold text-white mb-4">
             Custom Fields Not Working (Vapi)
           </h3>
-          <div className="bg-orange-900/20 border border-orange-700/50 rounded p-4 mb-4">
-            <p className="text-orange-400 font-semibold mb-2">
+          <div className="bg-brand/5 border border-brand/20 rounded p-4 mb-4">
+            <p className="font-semibold text-white mb-2">
               Possible Causes:
             </p>
             <ul className="space-y-1 text-gray-300 ml-4 text-sm">
@@ -130,7 +130,7 @@ export function TroubleshootingSection() {
           <ol className="space-y-2 text-gray-300 list-decimal list-inside">
             <li>
               Add{" "}
-              <code className="text-orange-400 bg-gray-950 px-2 py-1 rounded">
+              <code className="text-brand-light bg-gray-950 px-2 py-1 rounded">
                 {"{"}
                 {"{"}your_field_name{"}"}
                 {"}"}
@@ -143,12 +143,12 @@ export function TroubleshootingSection() {
         </div>
 
         {/* Issue 6 */}
-        <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+        <div className="bg-zinc-900 border border-white/10 rounded-lg p-6">
           <h3 className="text-xl font-semibold text-white mb-4">
             Custom Fields Not Working (Retell)
           </h3>
-          <div className="bg-orange-900/20 border border-orange-700/50 rounded p-4 mb-4">
-            <p className="text-orange-400 font-semibold mb-2">
+          <div className="bg-brand/5 border border-brand/20 rounded p-4 mb-4">
+            <p className="font-semibold text-white mb-2">
               Possible Causes:
             </p>
             <ul className="space-y-1 text-gray-300 ml-4 text-sm">
@@ -167,12 +167,12 @@ export function TroubleshootingSection() {
         </div>
 
         {/* Issue 7 - Error Classification */}
-        <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+        <div className="bg-zinc-900 border border-white/10 rounded-lg p-6">
           <h3 className="text-xl font-semibold text-white mb-4">
             Understanding Error Messages
           </h3>
-          <div className="bg-orange-900/20 border border-orange-700/50 rounded p-4 mb-4">
-            <p className="text-orange-400 font-semibold mb-2">
+          <div className="bg-brand/5 border border-brand/20 rounded p-4 mb-4">
+            <p className="font-semibold text-white mb-2">
               Common Error Types:
             </p>
             <ul className="space-y-1 text-gray-300 ml-4 text-sm">
@@ -191,7 +191,7 @@ export function TroubleshootingSection() {
             </li>
             <li>
               Verify phone numbers are in E.164 format:{" "}
-              <code className="text-orange-400 bg-gray-950 px-2 py-1 rounded">
+              <code className="text-brand-light bg-gray-950 px-2 py-1 rounded">
                 +14155551234
               </code>
             </li>
@@ -204,12 +204,12 @@ export function TroubleshootingSection() {
         </div>
 
         {/* Issue 8 - Provider-Specific Errors */}
-        <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+        <div className="bg-zinc-900 border border-white/10 rounded-lg p-6">
           <h3 className="text-xl font-semibold text-white mb-4">
             Provider-Specific Errors (Vapi/Retell)
           </h3>
-          <div className="bg-orange-900/20 border border-orange-700/50 rounded p-4 mb-4">
-            <p className="text-orange-400 font-semibold mb-2">
+          <div className="bg-brand/5 border border-brand/20 rounded p-4 mb-4">
+            <p className="font-semibold text-white mb-2">
               Common Provider Errors:
             </p>
             <ul className="space-y-1 text-gray-300 ml-4 text-sm">

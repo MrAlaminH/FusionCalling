@@ -1,6 +1,4 @@
-import SidebarNav from "@/components/docs/sidebar-nav";
-import Breadcrumbs from "@/components/docs/breadcrumbs";
-import OnThisPage from "@/components/docs/on-this-page";
+import DocsLayoutWrapper from "@/components/docs/docs-layout-wrapper";
 import SectionHeader from "@/components/docs/section-header";
 import type { Metadata } from "next";
 import { OverviewSection } from "./components/overview";
@@ -34,8 +32,8 @@ const navItems = [
 ];
 
 const breadcrumbs = [
-  { label: "Agent Configuration", href: "/docs/agent-configuration" },
-  { label: "Guide" },
+  { label: "Documentation", href: "/docs" },
+  { label: "Agent Configuration" },
 ];
 
 export default function AgentConfigurationPage() {
@@ -124,18 +122,18 @@ export default function AgentConfigurationPage() {
           }),
         }}
       />
-      <div className="min-h-screen bg-black text-white pt-20">
-      <div className="flex relative">
-        <SidebarNav items={navItems} />
-
-        <main className="flex-1 lg:ml-64 w-full">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <Breadcrumbs items={breadcrumbs} />
-
-            <SectionHeader
+      <DocsLayoutWrapper
+        navItems={navItems}
+        breadcrumbs={breadcrumbs}
+        sectionTitle="Agent Configuration"
+        sectionHref="/docs/agent-configuration"
+      >
+        <SectionHeader
               title="Agent Configuration Guide"
               description="A complete guide to creating and configuring AI phone agents in your application. Learn how to set up agents, configure their behavior, and optimize them for your specific use cases."
-              difficulty="intermediate"
+              difficulty="beginner"
+              readingTime={10}
+              steps={navItems.length}
             />
 
             {/* Sections */}
@@ -146,13 +144,7 @@ export default function AgentConfigurationPage() {
             <CommonUseCasesSection />
             <TroubleshootingSection />
             <QuickReferenceSection />
-          </div>
-        </main>
-
-        {/* Right Sidebar - On This Page */}
-        <OnThisPage />
-      </div>
-    </div>
+      </DocsLayoutWrapper>
     </>
   );
 }

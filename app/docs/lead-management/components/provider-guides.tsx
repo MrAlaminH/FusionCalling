@@ -1,6 +1,6 @@
 export function ProviderGuidesSection() {
   return (
-    <section id="provider-guides" className="mb-16 scroll-mt-24">
+    <section id="provider-guides" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">
         Provider-Specific Guides
       </h2>
@@ -17,21 +17,21 @@ export function ProviderGuidesSection() {
           How Lead Data Works with Retell
         </h4>
 
-        <div className="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
-          <h5 className="text-lg font-semibold text-orange-400 mb-3">
+        <div className="bg-zinc-900 border border-white/10 rounded-lg p-6 mb-6">
+          <h5 className="text-lg font-semibold text-brand-light mb-3">
             Automatic Data Transmission
           </h5>
           <ul className="space-y-2 text-gray-300">
             <li className="flex items-start">
-              <span className="text-orange-400 mr-2">✓</span>
+              <span className="text-brand-light mr-2">✓</span>
               <span>All standard fields are automatically sent</span>
             </li>
             <li className="flex items-start">
-              <span className="text-orange-400 mr-2">✓</span>
+              <span className="text-brand-light mr-2">✓</span>
               <span>All custom fields are automatically sent</span>
             </li>
             <li className="flex items-start">
-              <span className="text-orange-400 mr-2">✓</span>
+              <span className="text-brand-light mr-2">✓</span>
               <span>No configuration needed</span>
             </li>
           </ul>
@@ -43,11 +43,11 @@ export function ProviderGuidesSection() {
         <div className="bg-gray-950 rounded-lg p-4 mb-6 overflow-x-auto">
           <table className="w-full text-sm text-gray-300">
             <thead>
-              <tr className="border-b border-gray-800">
-                <th className="text-left py-2 px-3 text-orange-400">
+              <tr className="border-b border-white/10">
+                <th className="text-left py-2 px-3 text-brand-light">
                   Field Name
                 </th>
-                <th className="text-left py-2 px-3 text-orange-400">
+                <th className="text-left py-2 px-3 text-brand-light">
                   Description
                 </th>
               </tr>
@@ -55,7 +55,7 @@ export function ProviderGuidesSection() {
             <tbody className="space-y-1">
               <tr className="border-b border-gray-900">
                 <td className="py-2 px-3">
-                  <code className="bg-gray-900 px-2 py-1 rounded">
+                  <code className="bg-zinc-900 px-2 py-1 rounded">
                     {"{"}
                     {"{"}customer_name{"}"}
                     {"}"}
@@ -65,7 +65,7 @@ export function ProviderGuidesSection() {
               </tr>
               <tr className="border-b border-gray-900">
                 <td className="py-2 px-3">
-                  <code className="bg-gray-900 px-2 py-1 rounded">
+                  <code className="bg-zinc-900 px-2 py-1 rounded">
                     {"{"}
                     {"{"}first_name{"}"}
                     {"}"}
@@ -75,7 +75,7 @@ export function ProviderGuidesSection() {
               </tr>
               <tr className="border-b border-gray-900">
                 <td className="py-2 px-3">
-                  <code className="bg-gray-900 px-2 py-1 rounded">
+                  <code className="bg-zinc-900 px-2 py-1 rounded">
                     {"{"}
                     {"{"}last_name{"}"}
                     {"}"}
@@ -85,7 +85,7 @@ export function ProviderGuidesSection() {
               </tr>
               <tr className="border-b border-gray-900">
                 <td className="py-2 px-3">
-                  <code className="bg-gray-900 px-2 py-1 rounded">
+                  <code className="bg-zinc-900 px-2 py-1 rounded">
                     {"{"}
                     {"{"}email_address{"}"}
                     {"}"}
@@ -95,7 +95,7 @@ export function ProviderGuidesSection() {
               </tr>
               <tr className="border-b border-gray-900">
                 <td className="py-2 px-3">
-                  <code className="bg-gray-900 px-2 py-1 rounded">
+                  <code className="bg-zinc-900 px-2 py-1 rounded">
                     {"{"}
                     {"{"}phone_number{"}"}
                     {"}"}
@@ -105,7 +105,7 @@ export function ProviderGuidesSection() {
               </tr>
               <tr className="border-b border-gray-900">
                 <td className="py-2 px-3">
-                  <code className="bg-gray-900 px-2 py-1 rounded">
+                  <code className="bg-zinc-900 px-2 py-1 rounded">
                     {"{"}
                     {"{"}company_name{"}"}
                     {"}"}
@@ -115,7 +115,7 @@ export function ProviderGuidesSection() {
               </tr>
               <tr>
                 <td className="py-2 px-3">
-                  <code className="bg-gray-900 px-2 py-1 rounded">
+                  <code className="bg-zinc-900 px-2 py-1 rounded">
                     {"{"}
                     {"{"}timezone{"}"}
                     {"}"}
@@ -187,14 +187,14 @@ export function ProviderGuidesSection() {
           How Lead Data Works with Vapi
         </h4>
 
-        <div className="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
-          <h5 className="text-lg font-semibold text-orange-400 mb-3">
+        <div className="bg-zinc-900 border border-white/10 rounded-lg p-6 mb-6">
+          <h5 className="text-lg font-semibold text-brand-light mb-3">
             Template-Based Data Usage
           </h5>
           <p className="text-gray-300 mb-3">
             Lead data is only used if you reference it in your agent&apos;s
             message templates. Use placeholder syntax:{" "}
-            <code className="text-orange-400 bg-gray-950 px-2 py-1 rounded">
+            <code className="text-brand-light bg-gray-950 px-2 py-1 rounded">
               {"{"}
               {"{"}field_name{"}"}
               {"}"}
@@ -210,14 +210,14 @@ export function ProviderGuidesSection() {
           Available Placeholders
         </h5>
         <div className="bg-gray-950 rounded-lg p-4 mb-6 overflow-x-auto">
-          <h6 className="text-orange-400 font-semibold mb-3">
+          <h6 className="font-semibold text-white mb-3">
             Standard Fields
           </h6>
           <table className="w-full text-sm text-gray-300 mb-4">
             <tbody className="space-y-1">
               <tr className="border-b border-gray-900">
                 <td className="py-2 px-3">
-                  <code className="bg-gray-900 px-2 py-1 rounded">
+                  <code className="bg-zinc-900 px-2 py-1 rounded">
                     {"{"}
                     {"{"}name{"}"}
                     {"}"}
@@ -227,7 +227,7 @@ export function ProviderGuidesSection() {
               </tr>
               <tr className="border-b border-gray-900">
                 <td className="py-2 px-3">
-                  <code className="bg-gray-900 px-2 py-1 rounded">
+                  <code className="bg-zinc-900 px-2 py-1 rounded">
                     {"{"}
                     {"{"}first_name{"}"}
                     {"}"}
@@ -237,7 +237,7 @@ export function ProviderGuidesSection() {
               </tr>
               <tr className="border-b border-gray-900">
                 <td className="py-2 px-3">
-                  <code className="bg-gray-900 px-2 py-1 rounded">
+                  <code className="bg-zinc-900 px-2 py-1 rounded">
                     {"{"}
                     {"{"}last_name{"}"}
                     {"}"}
@@ -247,7 +247,7 @@ export function ProviderGuidesSection() {
               </tr>
               <tr className="border-b border-gray-900">
                 <td className="py-2 px-3">
-                  <code className="bg-gray-900 px-2 py-1 rounded">
+                  <code className="bg-zinc-900 px-2 py-1 rounded">
                     {"{"}
                     {"{"}email{"}"}
                     {"}"}
@@ -257,7 +257,7 @@ export function ProviderGuidesSection() {
               </tr>
               <tr className="border-b border-gray-900">
                 <td className="py-2 px-3">
-                  <code className="bg-gray-900 px-2 py-1 rounded">
+                  <code className="bg-zinc-900 px-2 py-1 rounded">
                     {"{"}
                     {"{"}phone{"}"}
                     {"}"}
@@ -267,7 +267,7 @@ export function ProviderGuidesSection() {
               </tr>
               <tr className="border-b border-gray-900">
                 <td className="py-2 px-3">
-                  <code className="bg-gray-900 px-2 py-1 rounded">
+                  <code className="bg-zinc-900 px-2 py-1 rounded">
                     {"{"}
                     {"{"}company{"}"}
                     {"}"}
@@ -277,7 +277,7 @@ export function ProviderGuidesSection() {
               </tr>
               <tr>
                 <td className="py-2 px-3">
-                  <code className="bg-gray-900 px-2 py-1 rounded">
+                  <code className="bg-zinc-900 px-2 py-1 rounded">
                     {"{"}
                     {"{"}timezone{"}"}
                     {"}"}
@@ -288,10 +288,10 @@ export function ProviderGuidesSection() {
             </tbody>
           </table>
 
-          <h6 className="text-orange-400 font-semibold mb-3">Custom Fields</h6>
+          <h6 className="font-semibold text-white mb-3">Custom Fields</h6>
           <p className="text-gray-300 text-sm">
             Use{" "}
-            <code className="bg-gray-900 px-2 py-1 rounded">
+            <code className="bg-zinc-900 px-2 py-1 rounded">
               {"{"}
               {"{"}your_custom_field_name{"}"}
               {"}"}
@@ -301,7 +301,7 @@ export function ProviderGuidesSection() {
           <ul className="mt-2 space-y-1 text-gray-400 text-sm ml-4">
             <li>
               Example: If field is &quot;address&quot;, use{" "}
-              <code className="bg-gray-900 px-1 py-1 rounded">
+              <code className="bg-zinc-900 px-1 py-1 rounded">
                 {"{"}
                 {"{"}address{"}"}
                 {"}"}
@@ -309,7 +309,7 @@ export function ProviderGuidesSection() {
             </li>
             <li>
               Example: If field is &quot;job_title&quot;, use{" "}
-              <code className="bg-gray-900 px-1 py-1 rounded">
+              <code className="bg-zinc-900 px-1 py-1 rounded">
                 {"{"}
                 {"{"}job_title{"}"}
                 {"}"}
@@ -323,8 +323,8 @@ export function ProviderGuidesSection() {
         </h5>
 
         <div className="space-y-4 mb-6">
-          <div className="bg-gray-900 rounded-lg p-4">
-            <h6 className="text-orange-400 font-semibold mb-2">
+          <div className="bg-zinc-900 rounded-lg p-4">
+            <h6 className="font-semibold text-white mb-2">
               First Message (Opening Line)
             </h6>
             <p className="text-gray-500 text-xs mb-1">Vapi</p>
@@ -349,8 +349,8 @@ export function ProviderGuidesSection() {
             </div>
           </div>
 
-          <div className="bg-gray-900 rounded-lg p-4">
-            <h6 className="text-orange-400 font-semibold mb-2">
+          <div className="bg-zinc-900 rounded-lg p-4">
+            <h6 className="font-semibold text-white mb-2">
               System Prompt (Agent Instructions)
             </h6>
             <p className="text-gray-500 text-xs mb-1">Vapi</p>
@@ -383,8 +383,8 @@ export function ProviderGuidesSection() {
             </div>
           </div>
 
-          <div className="bg-gray-900 rounded-lg p-4">
-            <h6 className="text-orange-400 font-semibold mb-2">
+          <div className="bg-zinc-900 rounded-lg p-4">
+            <h6 className="font-semibold text-white mb-2">
               Voicemail Message
             </h6>
             <p className="text-gray-500 text-xs mb-1">Vapi</p>
@@ -410,34 +410,34 @@ export function ProviderGuidesSection() {
           </div>
         </div>
 
-        <div className="bg-orange-900/20 border border-orange-700/50 rounded-lg p-6 mb-6">
-          <h5 className="text-lg font-semibold text-orange-400 mb-3">
+        <div className="bg-brand/5 border border-brand/20 rounded-lg p-6 mb-6">
+          <h5 className="text-lg font-semibold text-brand-light mb-3">
             ⚠️ Important Notes for Vapi
           </h5>
           <ul className="space-y-2 text-gray-300">
             <li className="flex items-start">
-              <span className="text-orange-400 mr-2">•</span>
+              <span className="text-brand-light mr-2">•</span>
               <span>
                 Custom fields are <strong>ONLY</strong> included if you use
                 placeholders in your templates
               </span>
             </li>
             <li className="flex items-start">
-              <span className="text-orange-400 mr-2">•</span>
+              <span className="text-brand-light mr-2">•</span>
               <span>
                 If you don&apos;t reference a custom field, it won&apos;t be
                 available during the call
               </span>
             </li>
             <li className="flex items-start">
-              <span className="text-orange-400 mr-2">•</span>
+              <span className="text-brand-light mr-2">•</span>
               <span>
                 Standard fields also need to be referenced if you want them in
                 messages
               </span>
             </li>
             <li className="flex items-start">
-              <span className="text-orange-400 mr-2">•</span>
+              <span className="text-brand-light mr-2">•</span>
               <span>
                 Placeholders are case-sensitive - use exact field names
               </span>

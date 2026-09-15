@@ -1,55 +1,55 @@
 export function IntroductionSection() {
   return (
-    <section id="introduction" className="mb-16 scroll-mt-24">
+    <section id="introduction" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">
         Introduction to Admin Section
       </h2>
 
       <div className="space-y-8">
         {/* What is Admin Section */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
-          <h3 className="text-2xl font-semibold mb-4 text-orange-400">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg p-8">
+          <h3 className="text-2xl font-semibold mb-4 text-white">
             What is the Admin Section?
           </h3>
           <p className="text-gray-300 mb-6">
             The Admin Section (
-            <span className="text-orange-400 font-mono">/admin</span>) is your
+            <span className="text-brand-light font-mono">/admin</span>) is your
             agency control center where you can manage all aspects of your
             Fusion Calling platform.
           </p>
           <div className="space-y-3">
             <div className="flex items-start gap-3">
-              <span className="text-orange-400 font-bold mt-1">•</span>
+              <span className="text-brand-light font-bold mt-1">•</span>
               <span className="text-gray-300">
                 Manage all client accounts under your agency
               </span>
             </div>
             <div className="flex items-start gap-3">
-              <span className="text-orange-400 font-bold mt-1">•</span>
+              <span className="text-brand-light font-bold mt-1">•</span>
               <span className="text-gray-300">
                 Configure AI calling providers and API keys
               </span>
             </div>
             <div className="flex items-start gap-3">
-              <span className="text-orange-400 font-bold mt-1">•</span>
+              <span className="text-brand-light font-bold mt-1">•</span>
               <span className="text-gray-300">
                 Set up white-label branding for your agency
               </span>
             </div>
             <div className="flex items-start gap-3">
-              <span className="text-orange-400 font-bold mt-1">•</span>
+              <span className="text-brand-light font-bold mt-1">•</span>
               <span className="text-gray-300">
                 Create and manage subscription plans
               </span>
             </div>
             <div className="flex items-start gap-3">
-              <span className="text-orange-400 font-bold mt-1">•</span>
+              <span className="text-brand-light font-bold mt-1">•</span>
               <span className="text-gray-300">
                 Monitor and manage user credits across all accounts
               </span>
             </div>
             <div className="flex items-start gap-3">
-              <span className="text-orange-400 font-bold mt-1">•</span>
+              <span className="text-brand-light font-bold mt-1">•</span>
               <span className="text-gray-300">
                 View detailed user information and account status
               </span>
@@ -79,8 +79,8 @@ export function IntroductionSection() {
         </div>
 
         {/* Navigation Overview */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
-          <h3 className="text-2xl font-semibold mb-6 text-orange-400">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg p-8">
+          <h3 className="text-2xl font-semibold mb-6 text-white">
             Navigation Overview
           </h3>
           <p className="text-gray-300 mb-6">
@@ -88,77 +88,77 @@ export function IntroductionSection() {
             navigation on the left with these main sections:
           </p>
           <div className="overflow-x-auto">
-            <table className="w-full text-sm border border-gray-800 rounded-lg overflow-hidden">
+            <table className="w-full text-sm border border-white/10 rounded-lg overflow-hidden">
               <thead>
-                <tr className="bg-gray-800 border-b border-gray-700">
-                  <th className="px-4 py-3 text-left text-orange-400 font-semibold">
+                <tr className="bg-zinc-800 border-b border-gray-700">
+                  <th className="px-4 py-3 text-left font-semibold text-white">
                     Section
                   </th>
-                  <th className="px-4 py-3 text-left text-orange-400 font-semibold">
+                  <th className="px-4 py-3 text-left font-semibold text-white">
                     Path
                   </th>
-                  <th className="px-4 py-3 text-left text-orange-400 font-semibold">
+                  <th className="px-4 py-3 text-left font-semibold text-white">
                     Purpose
                   </th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b border-gray-800 hover:bg-gray-800/50">
+                <tr className="border-b border-white/10 hover:bg-zinc-800/50">
                   <td className="px-4 py-3 font-semibold text-white">
                     Clients
                   </td>
-                  <td className="px-4 py-3 text-orange-300 font-mono text-xs">
+                  <td className="px-4 py-3 text-brand-light font-mono text-xs">
                     /admin/clients
                   </td>
                   <td className="px-4 py-3 text-gray-300">
                     Manage client accounts
                   </td>
                 </tr>
-                <tr className="border-b border-gray-800 hover:bg-gray-800/50">
+                <tr className="border-b border-white/10 hover:bg-zinc-800/50">
                   <td className="px-4 py-3 font-semibold text-white">Users</td>
-                  <td className="px-4 py-3 text-orange-300 font-mono text-xs">
+                  <td className="px-4 py-3 text-brand-light font-mono text-xs">
                     /admin/users
                   </td>
                   <td className="px-4 py-3 text-gray-300">
                     Manage user accounts
                   </td>
                 </tr>
-                <tr className="border-b border-gray-800 hover:bg-gray-800/50">
+                <tr className="border-b border-white/10 hover:bg-zinc-800/50">
                   <td className="px-4 py-3 font-semibold text-white">
                     Calling Provider
                   </td>
-                  <td className="px-4 py-3 text-orange-300 font-mono text-xs">
+                  <td className="px-4 py-3 text-brand-light font-mono text-xs">
                     /admin/ai-provider
                   </td>
                   <td className="px-4 py-3 text-gray-300">
                     Configure AI providers
                   </td>
                 </tr>
-                <tr className="border-b border-gray-800 hover:bg-gray-800/50">
+                <tr className="border-b border-white/10 hover:bg-zinc-800/50">
                   <td className="px-4 py-3 font-semibold text-white">
                     Branding
                   </td>
-                  <td className="px-4 py-3 text-orange-300 font-mono text-xs">
+                  <td className="px-4 py-3 text-brand-light font-mono text-xs">
                     /admin/branding
                   </td>
                   <td className="px-4 py-3 text-gray-300">
                     White-label settings
                   </td>
                 </tr>
-                <tr className="border-b border-gray-800 hover:bg-gray-800/50">
+                <tr className="border-b border-white/10 hover:bg-zinc-800/50">
                   <td className="px-4 py-3 font-semibold text-white">
                     Subscriptions
                   </td>
-                  <td className="px-4 py-3 text-orange-300 font-mono text-xs">
+                  <td className="px-4 py-3 text-brand-light font-mono text-xs">
                     /admin/subscriptions
                   </td>
                   <td className="px-4 py-3 text-gray-300">Manage plans</td>
                 </tr>
-                <tr className="hover:bg-gray-800/50">
+                <tr className="hover:bg-zinc-800/50">
                   <td className="px-4 py-3 font-semibold text-white">
                     Credits
                   </td>
-                  <td className="px-4 py-3 text-orange-300 font-mono text-xs">
+                  <td className="px-4 py-3 text-brand-light font-mono text-xs">
                     /admin/credits
                   </td>
                   <td className="px-4 py-3 text-gray-300">

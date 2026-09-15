@@ -25,10 +25,10 @@ interface ErrorCardProps {
 
 function ErrorCard({ title, icon, children, type }: ErrorCardProps) {
   return (
-    <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+    <div className="bg-zinc-900 border border-white/10 rounded-lg p-6">
       <div className="flex items-center gap-3 mb-4">
         <div
-          className={`p-2 rounded-lg ${type === "permanent" ? "bg-red-900/30" : type === "temporary" ? "bg-yellow-900/30" : "bg-gray-800"}`}
+          className={`p-2 rounded-lg ${type === "permanent" ? "bg-red-900/30" : type === "temporary" ? "bg-yellow-900/30" : "bg-zinc-800"}`}
         >
           {icon}
         </div>
@@ -59,13 +59,13 @@ function FAQItem({ question, answer }: FAQItemProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border border-gray-800 rounded-lg overflow-hidden">
+    <div className="border border-white/10 rounded-lg overflow-hidden">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between p-4 bg-gray-900 hover:bg-gray-800 transition-colors text-left"
+        className="w-full flex items-center justify-between p-4 bg-zinc-900 hover:bg-zinc-800 transition-colors text-left"
       >
         <div className="flex items-center gap-3">
-          <HelpCircle className="w-5 h-5 text-orange-400 shrink-0" />
+          <HelpCircle className="w-5 h-5 text-brand-light shrink-0" />
           <span className="font-semibold text-white">{question}</span>
         </div>
         {isOpen ? (
@@ -75,7 +75,7 @@ function FAQItem({ question, answer }: FAQItemProps) {
         )}
       </button>
       {isOpen && (
-        <div className="p-4 bg-gray-950 border-t border-gray-800">
+        <div className="p-4 bg-gray-950 border-t border-white/10">
           <div className="text-gray-300 pl-8">{answer}</div>
         </div>
       )}
@@ -85,16 +85,16 @@ function FAQItem({ question, answer }: FAQItemProps) {
 
 export function ErrorClassificationSection() {
   return (
-    <section id="error-classification" className="mb-16 scroll-mt-24">
+    <section id="error-classification" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">
         Error Classification Guide
       </h2>
 
       {/* Overview */}
-      <div className="bg-gradient-to-r from-orange-900/20 to-purple-900/20 border border-orange-500/30 rounded-xl p-6 mb-10">
+      <div className="bg-gradient-to-r from-orange-900/20 to-purple-900/20 border border-brand/20 rounded-xl p-6 mb-10">
         <div className="flex items-start gap-4">
-          <div className="p-3 bg-orange-600/20 rounded-lg shrink-0">
-            <AlertCircle className="w-8 h-8 text-orange-400" />
+          <div className="p-3 bg-brand/15 rounded-lg shrink-0">
+            <AlertCircle className="w-8 h-8 text-brand-light" />
           </div>
           <div>
             <h3 className="text-xl font-semibold text-white mb-2">
@@ -148,8 +148,8 @@ export function ErrorClassificationSection() {
                 </li>
               </ul>
             </div>
-            <div className="bg-gray-900 rounded-lg p-3">
-              <p className="text-orange-400 font-semibold text-sm mb-2">
+            <div className="bg-zinc-900 rounded-lg p-3">
+              <p className="font-semibold text-white text-sm mb-2">
                 Common causes:
               </p>
               <ul className="text-gray-300 text-sm space-y-1 ml-4">
@@ -189,8 +189,8 @@ export function ErrorClassificationSection() {
                 <li>• No manual intervention needed</li>
               </ul>
             </div>
-            <div className="bg-gray-900 rounded-lg p-3">
-              <p className="text-orange-400 font-semibold text-sm mb-2">
+            <div className="bg-zinc-900 rounded-lg p-3">
+              <p className="font-semibold text-white text-sm mb-2">
                 Common causes:
               </p>
               <ul className="text-gray-300 text-sm space-y-1 ml-4">
@@ -226,7 +226,7 @@ export function ErrorClassificationSection() {
                 correctly.
               </p>
               <div className="bg-gray-950 rounded p-3 mb-2">
-                <p className="text-orange-400 font-semibold text-sm mb-1">
+                <p className="font-semibold text-white text-sm mb-1">
                   Common causes:
                 </p>
                 <ul className="text-gray-400 text-sm space-y-1 ml-4">
@@ -373,7 +373,7 @@ export function ErrorClassificationSection() {
               <ol className="text-gray-300 text-sm space-y-1 ml-4">
                 <li>
                   1. Check your environment variables (
-                  <code className="text-orange-400">VAPI_API_KEY</code>)
+                  <code className="text-brand-light">VAPI_API_KEY</code>)
                 </li>
                 <li>2. Generate a new API key from Vapi dashboard if needed</li>
                 <li>3. Ensure the API key has proper permissions</li>
@@ -409,7 +409,7 @@ export function ErrorClassificationSection() {
                 </p>
               </div>
               <div className="bg-gray-950 rounded p-3">
-                <p className="text-orange-400 font-semibold text-sm mb-1">
+                <p className="font-semibold text-white text-sm mb-1">
                   How to handle:
                 </p>
                 <ul className="text-gray-400 text-sm space-y-1 ml-4">
@@ -441,7 +441,7 @@ export function ErrorClassificationSection() {
                 </p>
               </div>
               <div className="bg-gray-950 rounded p-3">
-                <p className="text-orange-400 font-semibold text-sm mb-1">
+                <p className="font-semibold text-white text-sm mb-1">
                   How to handle:
                 </p>
                 <ul className="text-gray-400 text-sm space-y-1 ml-4">
@@ -471,7 +471,7 @@ export function ErrorClassificationSection() {
                 </p>
               </div>
               <div className="bg-gray-950 rounded p-3">
-                <p className="text-orange-400 font-semibold text-sm mb-1">
+                <p className="font-semibold text-white text-sm mb-1">
                   How to handle:
                 </p>
                 <ul className="text-gray-400 text-sm space-y-1 ml-4">
@@ -506,7 +506,7 @@ export function ErrorClassificationSection() {
                 The phone number doesn&apos;t meet Retell&apos;s requirements.
               </p>
               <div className="bg-gray-950 rounded p-3 mb-2">
-                <p className="text-orange-400 font-semibold text-sm mb-1">
+                <p className="font-semibold text-white text-sm mb-1">
                   Common causes:
                 </p>
                 <ul className="text-gray-400 text-sm space-y-1 ml-4">
@@ -629,7 +629,7 @@ export function ErrorClassificationSection() {
               <ol className="text-gray-300 text-sm space-y-1 ml-4">
                 <li>
                   1. Check{" "}
-                  <code className="text-orange-400">RETELL_API_KEY</code>{" "}
+                  <code className="text-brand-light">RETELL_API_KEY</code>{" "}
                   environment variable
                 </li>
                 <li>2. Get a new API key from Retell dashboard</li>
@@ -665,7 +665,7 @@ export function ErrorClassificationSection() {
                 </p>
               </div>
               <div className="bg-gray-950 rounded p-3">
-                <p className="text-orange-400 font-semibold text-sm mb-1">
+                <p className="font-semibold text-white text-sm mb-1">
                   How to handle:
                 </p>
                 <ul className="text-gray-400 text-sm space-y-1 ml-4">
@@ -695,7 +695,7 @@ export function ErrorClassificationSection() {
                 </p>
               </div>
               <div className="bg-gray-950 rounded p-3">
-                <p className="text-orange-400 font-semibold text-sm mb-1">
+                <p className="font-semibold text-white text-sm mb-1">
                   How to handle:
                 </p>
                 <ul className="text-gray-400 text-sm space-y-1 ml-4">
@@ -725,7 +725,7 @@ export function ErrorClassificationSection() {
                 </p>
               </div>
               <div className="bg-gray-950 rounded p-3">
-                <p className="text-orange-400 font-semibold text-sm mb-1">
+                <p className="font-semibold text-white text-sm mb-1">
                   How to handle:
                 </p>
                 <ul className="text-gray-400 text-sm space-y-1 ml-4">
@@ -744,11 +744,11 @@ export function ErrorClassificationSection() {
         General Troubleshooting Steps
       </h3>
 
-      <div className="bg-gray-900 border border-gray-800 rounded-xl p-6 mb-10">
+      <div className="bg-zinc-900 border border-white/10 rounded-xl p-6 mb-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="text-center">
-            <div className="w-12 h-12 bg-orange-600/20 rounded-full flex items-center justify-center mx-auto mb-3">
-              <span className="text-2xl font-bold text-orange-400">1</span>
+            <div className="w-12 h-12 bg-brand/15 rounded-full flex items-center justify-center mx-auto mb-3">
+              <span className="text-2xl font-bold text-brand-light">1</span>
             </div>
             <h4 className="font-semibold text-white mb-2">
               Identify the Error Type
@@ -761,8 +761,8 @@ export function ErrorClassificationSection() {
           </div>
 
           <div className="text-center">
-            <div className="w-12 h-12 bg-orange-600/20 rounded-full flex items-center justify-center mx-auto mb-3">
-              <span className="text-2xl font-bold text-orange-400">2</span>
+            <div className="w-12 h-12 bg-brand/15 rounded-full flex items-center justify-center mx-auto mb-3">
+              <span className="text-2xl font-bold text-brand-light">2</span>
             </div>
             <h4 className="font-semibold text-white mb-2">
               Read the Specific Reason
@@ -774,8 +774,8 @@ export function ErrorClassificationSection() {
           </div>
 
           <div className="text-center">
-            <div className="w-12 h-12 bg-orange-600/20 rounded-full flex items-center justify-center mx-auto mb-3">
-              <span className="text-2xl font-bold text-orange-400">3</span>
+            <div className="w-12 h-12 bg-brand/15 rounded-full flex items-center justify-center mx-auto mb-3">
+              <span className="text-2xl font-bold text-brand-light">3</span>
             </div>
             <h4 className="font-semibold text-white mb-2">Follow the Fix</h4>
             <p className="text-gray-400 text-sm">
@@ -784,8 +784,8 @@ export function ErrorClassificationSection() {
           </div>
 
           <div className="text-center">
-            <div className="w-12 h-12 bg-orange-600/20 rounded-full flex items-center justify-center mx-auto mb-3">
-              <span className="text-2xl font-bold text-orange-400">4</span>
+            <div className="w-12 h-12 bg-brand/15 rounded-full flex items-center justify-center mx-auto mb-3">
+              <span className="text-2xl font-bold text-brand-light">4</span>
             </div>
             <h4 className="font-semibold text-white mb-2">
               Prevent Future Errors
@@ -805,7 +805,7 @@ export function ErrorClassificationSection() {
         </h4>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <h5 className="font-semibold text-orange-400 mb-2">
+            <h5 className="font-semibold text-brand-light mb-2">
               1. Phone Number Format
             </h5>
             <ul className="text-gray-300 text-sm space-y-1 ml-4">
@@ -818,7 +818,7 @@ export function ErrorClassificationSection() {
             </ul>
           </div>
           <div>
-            <h5 className="font-semibold text-orange-400 mb-2">2. API Keys</h5>
+            <h5 className="font-semibold text-brand-light mb-2">2. API Keys</h5>
             <ul className="text-gray-300 text-sm space-y-1 ml-4">
               <li>• Store in environment variables</li>
               <li>• Rotate keys periodically</li>
@@ -826,7 +826,7 @@ export function ErrorClassificationSection() {
             </ul>
           </div>
           <div>
-            <h5 className="font-semibold text-orange-400 mb-2">
+            <h5 className="font-semibold text-brand-light mb-2">
               3. Agent Configuration
             </h5>
             <ul className="text-gray-300 text-sm space-y-1 ml-4">
@@ -836,7 +836,7 @@ export function ErrorClassificationSection() {
             </ul>
           </div>
           <div>
-            <h5 className="font-semibold text-orange-400 mb-2">
+            <h5 className="font-semibold text-brand-light mb-2">
               4. Rate Limiting
             </h5>
             <ul className="text-gray-300 text-sm space-y-1 ml-4">
@@ -964,8 +964,8 @@ export function ErrorClassificationSection() {
                 <li>Followed by phone number</li>
                 <li>No spaces, dashes, or other characters</li>
               </ul>
-              <div className="bg-gray-900 rounded p-3">
-                <p className="text-orange-400 font-semibold text-sm mb-2">
+              <div className="bg-zinc-900 rounded p-3">
+                <p className="font-semibold text-white text-sm mb-2">
                   Examples:
                 </p>
                 <ul className="text-sm space-y-1">
@@ -999,7 +999,7 @@ export function ErrorClassificationSection() {
                 You&apos;re initiating calls too quickly. Providers limit how
                 many calls you can start per minute/hour to prevent abuse.
               </p>
-              <p className="mb-2 font-semibold text-orange-400">Solutions:</p>
+              <p className="mb-2 font-semibold text-brand-light">Solutions:</p>
               <ul className="list-disc ml-4 space-y-1">
                 <li>System will automatically retry with delays</li>
                 <li>Consider upgrading your plan for higher limits</li>
@@ -1012,7 +1012,7 @@ export function ErrorClassificationSection() {
       </div>
 
       {/* Getting Help */}
-      <div className="bg-gray-900 border border-gray-800 rounded-xl p-6 mb-10">
+      <div className="bg-zinc-900 border border-white/10 rounded-xl p-6 mb-10">
         <h3 className="text-xl font-semibold text-white mb-4">Getting Help</h3>
         <p className="text-gray-300 mb-4">
           If you&apos;re still having trouble after following this guide:
@@ -1039,7 +1039,7 @@ export function ErrorClassificationSection() {
       </div>
 
       {/* Summary */}
-      <div className="bg-gradient-to-r from-orange-900/20 to-purple-900/20 border border-orange-500/30 rounded-xl p-6">
+      <div className="bg-gradient-to-r from-orange-900/20 to-purple-900/20 border border-brand/20 rounded-xl p-6">
         <h3 className="text-xl font-semibold text-white mb-4">Summary</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <div className="flex items-start gap-3">

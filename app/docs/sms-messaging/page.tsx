@@ -1,6 +1,4 @@
-import SidebarNav from "@/components/docs/sidebar-nav";
-import Breadcrumbs from "@/components/docs/breadcrumbs";
-import OnThisPage from "@/components/docs/on-this-page";
+import DocsLayoutWrapper from "@/components/docs/docs-layout-wrapper";
 import SectionHeader from "@/components/docs/section-header";
 import type { Metadata } from "next";
 import { OverviewSection } from "./components/overview";
@@ -51,8 +49,8 @@ const navItems = [
 ];
 
 const breadcrumbs = [
-  { label: "SMS & Messages", href: "/docs/sms-messaging" },
-  { label: "User Guide" },
+  { label: "Documentation", href: "/docs" },
+  { label: "SMS & Messages" },
 ];
 
 export default function SmsMessagingDocsPage() {
@@ -141,18 +139,18 @@ export default function SmsMessagingDocsPage() {
           }),
         }}
       />
-      <div className="min-h-screen bg-black text-white pt-20">
-      <div className="flex relative">
-        <SidebarNav items={navItems} />
-
-        <main className="flex-1 lg:ml-64 w-full">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <Breadcrumbs items={breadcrumbs} />
-
-            <SectionHeader
+      <DocsLayoutWrapper
+        navItems={navItems}
+        breadcrumbs={breadcrumbs}
+        sectionTitle="SMS & Messages"
+        sectionHref="/docs/sms-messaging"
+      >
+        <SectionHeader
               title="SMS & Messages User Guide"
               description="This guide is for everyday users of Fusion Call. You do not need to be technical. Learn how to send texts, manage conversations, set up Twilio integration, create automated SMS campaigns, and handle inbound replies. Follow the steps in order the first time you set up texting."
               difficulty="beginner"
+              readingTime={11}
+              steps={navItems.length}
             />
 
             {/* All Sections Imported as Components */}
@@ -166,13 +164,7 @@ export default function SmsMessagingDocsPage() {
             <FaqSection />
             <ComplianceSection />
             <GettingHelpSection />
-          </div>
-        </main>
-
-        {/* Right Sidebar - On This Page */}
-        <OnThisPage />
-      </div>
-    </div>
+      </DocsLayoutWrapper>
     </>
   );
 }

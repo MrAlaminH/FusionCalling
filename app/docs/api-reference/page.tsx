@@ -129,7 +129,7 @@ function RecordingRetentionSection() {
             flow fit your calls. Background reading:{" "}
             <a
               href="/blog/voice-ai-security-compliance"
-              className="text-orange-400 hover:text-orange-300"
+              className="text-brand-light hover:text-brand-light"
             >
               voice AI security and compliance
             </a>
@@ -152,8 +152,8 @@ export default function ApiReferencePage() {
       <RecordingRetentionSection />
       <ReferenceSection />
       <DocFooter
-        prev={{ id: "quick-start", label: "Quick Start" }}
-        next={{ id: "leads-api", label: "Leads API" }}
+        prev={{ href: "#quick-start", label: "Quick Start" }}
+        next={{ href: "#leads-api", label: "Leads API" }}
       />
     </ApiReferenceShell>
   );

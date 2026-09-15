@@ -21,7 +21,7 @@ const languageColors: Record<string, string> = {
   typescript: "bg-blue-500/20 text-blue-400",
   python: "bg-green-500/20 text-green-400",
   bash: "bg-gray-500/20 text-gray-400",
-  json: "bg-orange-500/20 text-orange-400",
+  json: "bg-brand/20 text-brand-light",
   html: "bg-red-500/20 text-red-400",
   css: "bg-blue-400/20 text-blue-300",
 };
@@ -50,9 +50,9 @@ export default function CodeTabs({ examples, filename }: CodeTabsProps) {
   };
 
   return (
-    <div className="relative group my-6 rounded-lg overflow-hidden border border-gray-800">
+    <div className="relative group my-6 rounded-lg overflow-hidden border border-white/10">
       {/* Header with tabs */}
-      <div className="bg-gray-900 border-b border-gray-800 flex items-center justify-between">
+      <div className="bg-zinc-900 border-b border-white/10 flex items-center justify-between">
         <div className="flex">
           {examples.map((example, index) => (
             <button
@@ -66,7 +66,7 @@ export default function CodeTabs({ examples, filename }: CodeTabsProps) {
             >
               {example.label}
               {activeTab === index && (
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-orange-500" />
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand" />
               )}
             </button>
           ))}
@@ -78,7 +78,7 @@ export default function CodeTabs({ examples, filename }: CodeTabsProps) {
           )}
           <button
             onClick={copyToClipboard}
-            className="p-2 hover:bg-gray-800 rounded-lg transition-colors"
+            className="p-2 hover:bg-zinc-800 rounded-lg transition-colors"
             aria-label="Copy code"
           >
             {copied ? (

@@ -1,6 +1,6 @@
 export function BestPracticesSection() {
   return (
-    <section id="best-practices" className="mb-16 scroll-mt-24">
+    <section id="best-practices" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">Best Practices</h2>
 
       <h3 className="text-2xl font-semibold mb-4 text-white">
@@ -9,7 +9,7 @@ export function BestPracticesSection() {
       <ol className="space-y-3 text-gray-300 list-decimal list-inside mb-8">
         <li>
           <strong>Always Use E.164 Format:</strong> Start with{" "}
-          <code className="text-orange-400 bg-gray-900 px-2 py-1 rounded">
+          <code className="text-brand-light bg-zinc-900 px-2 py-1 rounded">
             +
           </code>{" "}
           followed by country code
@@ -61,7 +61,7 @@ export function BestPracticesSection() {
       </h3>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+        <div className="bg-zinc-900 border border-white/10 rounded-lg p-6">
           <h4 className="text-lg font-semibold text-white mb-4">
             Choose Retell If
           </h4>
@@ -81,7 +81,7 @@ export function BestPracticesSection() {
           </ul>
         </div>
 
-        <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+        <div className="bg-zinc-900 border border-white/10 rounded-lg p-6">
           <h4 className="text-lg font-semibold text-white mb-4">
             Choose Vapi If
           </h4>

@@ -1,11 +1,11 @@
 export function CommonWorkflowsSection() {
   return (
-    <section id="workflows" className="mb-16 scroll-mt-24">
+    <section id="workflows" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">Common Workflows</h2>
 
       <div className="space-y-8">
         {/* Workflow 1 */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
           <div className="bg-blue-600/20 border-b border-blue-700/50 p-6">
             <h3 className="text-2xl font-bold text-blue-400">
               Workflow 1: Onboarding New Client
@@ -75,7 +75,7 @@ export function CommonWorkflowsSection() {
         </div>
 
         {/* Workflow 2 */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
           <div className="bg-green-600/20 border-b border-green-700/50 p-6">
             <h3 className="text-2xl font-bold text-green-400">
               Workflow 2: Upgrading Client
@@ -147,7 +147,7 @@ export function CommonWorkflowsSection() {
         </div>
 
         {/* Workflow 3 */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
           <div className="bg-yellow-600/20 border-b border-yellow-700/50 p-6">
             <h3 className="text-2xl font-bold text-yellow-400">
               Workflow 3: Managing Overages
@@ -215,7 +215,7 @@ export function CommonWorkflowsSection() {
         </div>
 
         {/* Workflow 4 */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
           <div className="bg-red-600/20 border-b border-red-700/50 p-6">
             <h3 className="text-2xl font-bold text-red-400">
               Workflow 4: Termination
@@ -283,7 +283,7 @@ export function CommonWorkflowsSection() {
         </div>
 
         {/* Workflow 5 */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
           <div className="bg-purple-600/20 border-b border-purple-700/50 p-6">
             <h3 className="text-2xl font-bold text-purple-400">
               Workflow 5: Migration

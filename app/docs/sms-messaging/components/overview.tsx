@@ -1,6 +1,6 @@
 export function OverviewSection() {
   return (
-    <section id="overview" className="mb-16 scroll-mt-24">
+    <section id="overview" className="mb-16 scroll-mt-36">
       <h2 className="text-4xl font-bold mb-4 text-white">
         SMS & Messages User Guide
       </h2>
@@ -16,16 +16,16 @@ export function OverviewSection() {
         <table className="w-full border-collapse">
           <thead>
             <tr className="border-b border-gray-700">
-              <th className="text-left py-3 px-4 font-semibold text-orange-400">
+              <th className="text-left py-3 px-4 font-semibold text-brand-light">
                 Feature
               </th>
-              <th className="text-left py-3 px-4 font-semibold text-orange-400">
+              <th className="text-left py-3 px-4 font-semibold text-brand-light">
                 What it does
               </th>
             </tr>
           </thead>
           <tbody>
-            <tr className="border-b border-gray-700/50 hover:bg-gray-900/30 transition">
+            <tr className="border-b border-gray-700/50 hover:bg-zinc-900/30 transition">
               <td className="py-3 px-4 font-medium text-white">
                 Messages inbox
               </td>
@@ -35,7 +35,7 @@ export function OverviewSection() {
                 Twilio account.
               </td>
             </tr>
-            <tr className="border-b border-gray-700/50 hover:bg-gray-900/30 transition">
+            <tr className="border-b border-gray-700/50 hover:bg-zinc-900/30 transition">
               <td className="py-3 px-4 font-medium text-white">
                 Send a one-off text
               </td>
@@ -43,7 +43,7 @@ export function OverviewSection() {
                 Compose and send a single SMS from inside Fusion Call.
               </td>
             </tr>
-            <tr className="border-b border-gray-700/50 hover:bg-gray-900/30 transition">
+            <tr className="border-b border-gray-700/50 hover:bg-zinc-900/30 transition">
               <td className="py-3 px-4 font-medium text-white">
                 SMS campaigns
               </td>
@@ -52,7 +52,7 @@ export function OverviewSection() {
                 Message 2, etc.).
               </td>
             </tr>
-            <tr className="hover:bg-gray-900/30 transition">
+            <tr className="hover:bg-zinc-900/30 transition">
               <td className="py-3 px-4 font-medium text-white">
                 Inbound replies
               </td>

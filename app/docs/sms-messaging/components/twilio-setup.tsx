@@ -1,6 +1,6 @@
 export function TwilioSetupSection() {
   return (
-    <section id="connect-twilio" className="mb-16 scroll-mt-24">
+    <section id="connect-twilio" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">
         Part 1 — Connect your Twilio account
       </h2>
@@ -32,7 +32,7 @@ export function TwilioSetupSection() {
               <li>
                 <strong>Twilio Phone Number</strong> (your main/default number,
                 with country code, e.g.{" "}
-                <code className="bg-gray-800 px-2 py-1 rounded text-sm">
+                <code className="bg-zinc-800 px-2 py-1 rounded text-sm">
                   +1…
                 </code>
                 )
@@ -67,14 +67,14 @@ export function TwilioSetupSection() {
         </h3>
         <ul className="space-y-3 text-gray-300">
           <li className="flex items-start">
-            <span className="text-orange-400 mr-3 mt-1">•</span>
+            <span className="text-brand-light mr-3 mt-1">•</span>
             <span>
               Open <strong>Messages</strong> again. You should see your inbox
               (or an empty list if you have not texted anyone yet).
             </span>
           </li>
           <li className="flex items-start">
-            <span className="text-orange-400 mr-3 mt-1">•</span>
+            <span className="text-brand-light mr-3 mt-1">•</span>
             <span>
               If you have <strong>more than one</strong> Twilio number on the
               same account, use the <strong>number picker</strong> at the top of

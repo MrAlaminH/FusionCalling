@@ -1,6 +1,6 @@
 export function GettingStartedSection() {
   return (
-    <section id="getting-started" className="mb-16 scroll-mt-24">
+    <section id="getting-started" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">
         Getting Started: Adding Leads
       </h2>
@@ -63,8 +63,8 @@ export function GettingStartedSection() {
         <li>Review and confirm the import</li>
       </ol>
 
-      <div className="bg-orange-900/20 border border-orange-700/50 rounded-lg p-6 my-6">
-        <h4 className="text-lg font-semibold text-orange-400 mb-2">
+      <div className="bg-brand/5 border border-brand/20 rounded-lg p-6 my-6">
+        <h4 className="text-lg font-semibold text-brand-light mb-2">
           📱 Phone Number Format
         </h4>
         <p className="text-gray-300 mb-3">
@@ -72,40 +72,40 @@ export function GettingStartedSection() {
         </p>
         <ul className="space-y-2 text-gray-300 ml-4">
           <li className="flex items-start">
-            <span className="text-orange-400 mr-2">✓</span>
+            <span className="text-brand-light mr-2">✓</span>
             <span>
               Must start with{" "}
-              <code className="text-orange-400 bg-gray-900/50 px-2 py-1 rounded">
+              <code className="text-brand-light bg-zinc-900/50 px-2 py-1 rounded">
                 +
               </code>{" "}
               followed by country code
             </span>
           </li>
           <li className="flex items-start">
-            <span className="text-orange-400 mr-2">✓</span>
+            <span className="text-brand-light mr-2">✓</span>
             <span>
               Example:{" "}
-              <code className="text-orange-400 bg-gray-900/50 px-2 py-1 rounded">
+              <code className="text-brand-light bg-zinc-900/50 px-2 py-1 rounded">
                 +12125551234
               </code>{" "}
               (US)
             </span>
           </li>
           <li className="flex items-start">
-            <span className="text-orange-400 mr-2">✓</span>
+            <span className="text-brand-light mr-2">✓</span>
             <span>
               Example:{" "}
-              <code className="text-orange-400 bg-gray-900/50 px-2 py-1 rounded">
+              <code className="text-brand-light bg-zinc-900/50 px-2 py-1 rounded">
                 +447911123456
               </code>{" "}
               (UK)
             </span>
           </li>
           <li className="flex items-start">
-            <span className="text-orange-400 mr-2">✓</span>
+            <span className="text-brand-light mr-2">✓</span>
             <span>
               Example:{" "}
-              <code className="text-orange-400 bg-gray-900/50 px-2 py-1 rounded">
+              <code className="text-brand-light bg-zinc-900/50 px-2 py-1 rounded">
                 +8801977317066
               </code>{" "}
               (Bangladesh)

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Search, CornerDownLeft, FileText } from "lucide-react";
 import { ENDPOINTS } from "@/app/docs/api-reference/data/endpoints";
@@ -72,6 +73,7 @@ function rank(item: SearchItem, query: string): number | null {
 }
 
 export default function CommandPalette() {
+  const router = useRouter();
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [active, setActive] = useState(0);
@@ -115,7 +117,12 @@ export default function CommandPalette() {
 
   const choose = (id: string) => {
     setOpen(false);
-    setTimeout(() => scrollToId(id), 60);
+    if (document.getElementById(id)) {
+      setTimeout(() => scrollToId(id), 60);
+    } else {
+      // Anchor lives on the API reference page — navigate there first.
+      router.push(`/docs/api-reference#${id}`);
+    }
   };
 
   const onKeyDown = (e: React.KeyboardEvent) => {

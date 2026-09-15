@@ -35,7 +35,7 @@ const defaultRateLimits: RateLimitConfig[] = [
 
 export default function ApiRateLimiting({ apis = defaultRateLimits }: RateLimitProps) {
   return (
-    <div className="bg-gray-900 rounded-lg border border-gray-800 p-6 mb-6">
+    <div className="bg-zinc-900 rounded-lg border border-white/10 p-6 mb-6">
       <h3 className="text-2xl font-bold mb-4 text-white">Rate Limiting</h3>
 
       <p className="text-gray-300 mb-6">
@@ -45,12 +45,12 @@ export default function ApiRateLimiting({ apis = defaultRateLimits }: RateLimitP
 
       <div className="space-y-4 mb-6">
         {apis.map((api) => (
-          <div key={api.name} className="bg-gray-800 rounded-lg p-4 border border-gray-700">
+          <div key={api.name} className="bg-zinc-800 rounded-lg p-4 border border-gray-700">
             <h4 className="text-lg font-semibold text-white mb-3">{api.name}</h4>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div>
                 <p className="text-gray-400 text-sm mb-1">Limit</p>
-                <p className="text-orange-400 font-semibold">{api.limit}</p>
+                <p className="font-semibold text-white">{api.limit}</p>
               </div>
               <div>
                 <p className="text-gray-400 text-sm mb-1">Window</p>
@@ -70,7 +70,7 @@ export default function ApiRateLimiting({ apis = defaultRateLimits }: RateLimitP
         All API responses include rate limit headers to help you track your usage:
       </p>
 
-      <div className="bg-gray-800 rounded-lg p-4 mb-6">
+      <div className="bg-zinc-800 rounded-lg p-4 mb-6">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-gray-700">
@@ -82,28 +82,28 @@ export default function ApiRateLimiting({ apis = defaultRateLimits }: RateLimitP
           <tbody>
             <tr className="border-b border-gray-700/50">
               <td className="py-2 px-3">
-                <code className="text-orange-400">X-RateLimit-Limit</code>
+                <code className="text-brand-light">X-RateLimit-Limit</code>
               </td>
               <td className="py-2 px-3 text-gray-300">Maximum requests allowed</td>
               <td className="py-2 px-3 text-gray-400">12</td>
             </tr>
             <tr className="border-b border-gray-700/50">
               <td className="py-2 px-3">
-                <code className="text-orange-400">X-RateLimit-Remaining</code>
+                <code className="text-brand-light">X-RateLimit-Remaining</code>
               </td>
               <td className="py-2 px-3 text-gray-300">Requests remaining in current window</td>
               <td className="py-2 px-3 text-gray-400">8</td>
             </tr>
             <tr className="border-b border-gray-700/50">
               <td className="py-2 px-3">
-                <code className="text-orange-400">X-RateLimit-Reset</code>
+                <code className="text-brand-light">X-RateLimit-Reset</code>
               </td>
               <td className="py-2 px-3 text-gray-300">Unix timestamp when limit resets</td>
               <td className="py-2 px-3 text-gray-400">1704067200</td>
             </tr>
             <tr>
               <td className="py-2 px-3">
-                <code className="text-orange-400">Retry-After</code>
+                <code className="text-brand-light">Retry-After</code>
               </td>
               <td className="py-2 px-3 text-gray-300">Seconds to wait before retry (429 only)</td>
               <td className="py-2 px-3 text-gray-400">30</td>
@@ -133,10 +133,10 @@ export default function ApiRateLimiting({ apis = defaultRateLimits }: RateLimitP
       <div className="space-y-3 text-gray-300 text-sm">
         <p>
           When you exceed the rate limit, you&apos;ll receive a <strong>429 Too Many
-          Requests</strong> response with a <code className="text-orange-400">Retry-After</code>{" "}
+          Requests</strong> response with a <code className="text-brand-light">Retry-After</code>{" "}
           header indicating how many seconds to wait before retrying.
         </p>
-        <div className="bg-gray-800 rounded-lg p-4 mt-3">
+        <div className="bg-zinc-800 rounded-lg p-4 mt-3">
           <h5 className="text-white font-semibold mb-2">Best Practices</h5>
           <ul className="space-y-2">
             <li>✅ Implement exponential backoff for retries</li>
@@ -153,7 +153,7 @@ export default function ApiRateLimiting({ apis = defaultRateLimits }: RateLimitP
         throughput, consider using multiple API keys for different services or environments.
       </Callout>
 
-      <div className="mt-6 bg-gray-800 rounded-lg p-4">
+      <div className="mt-6 bg-zinc-800 rounded-lg p-4">
         <h5 className="text-white font-semibold mb-2">Example: Implementing Retry Logic</h5>
         <pre className="text-sm text-gray-300 overflow-x-auto">
 {`async function makeRequestWithRetry(url, options, maxRetries = 3) {

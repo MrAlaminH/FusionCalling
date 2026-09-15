@@ -39,9 +39,9 @@ const calloutConfig = {
   },
   tip: {
     icon: Lightbulb,
-    containerClass: "bg-orange-500/10 border-orange-500/30 text-orange-400",
-    titleClass: "text-orange-400",
-    iconClass: "text-orange-400",
+    containerClass: "bg-brand/10 border-brand/20 text-brand-light",
+    titleClass: "text-brand-light",
+    iconClass: "text-brand-light",
   },
   error: {
     icon: XCircle,

@@ -1,6 +1,6 @@
 export function CustomFieldsSection() {
   return (
-    <section id="custom-fields" className="mb-16 scroll-mt-24">
+    <section id="custom-fields" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">
         Custom Fields Guide
       </h2>
@@ -39,7 +39,7 @@ export function CustomFieldsSection() {
         Using Custom Fields
       </h3>
 
-      <div className="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
+      <div className="bg-zinc-900 border border-white/10 rounded-lg p-6 mb-6">
         <h4 className="text-lg font-semibold text-white mb-4">
           For Retell Users
         </h4>
@@ -65,20 +65,20 @@ export function CustomFieldsSection() {
         </ul>
       </div>
 
-      <div className="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-6">
+      <div className="bg-zinc-900 border border-white/10 rounded-lg p-6 mb-6">
         <h4 className="text-lg font-semibold text-white mb-4">
           For Vapi Users
         </h4>
         <ul className="space-y-2 text-gray-300">
           <li className="flex items-start">
-            <span className="text-orange-400 mr-2">•</span>
+            <span className="text-brand-light mr-2">•</span>
             <span>Must reference custom fields in message templates</span>
           </li>
           <li className="flex items-start">
-            <span className="text-orange-400 mr-2">•</span>
+            <span className="text-brand-light mr-2">•</span>
             <span>
               Use{" "}
-              <code className="text-orange-400 bg-gray-950 px-2 py-1 rounded">
+              <code className="text-brand-light bg-gray-950 px-2 py-1 rounded">
                 {"{"}
                 {"{"}your_field_name{"}"}
                 {"}"}
@@ -87,10 +87,10 @@ export function CustomFieldsSection() {
             </span>
           </li>
           <li className="flex items-start">
-            <span className="text-orange-400 mr-2">•</span>
+            <span className="text-brand-light mr-2">•</span>
             <span>
               Example: If field is &quot;address&quot;, use{" "}
-              <code className="text-orange-400 bg-gray-950 px-2 py-1 rounded">
+              <code className="text-brand-light bg-gray-950 px-2 py-1 rounded">
                 {"{"}
                 {"{"}address{"}"}
                 {"}"}
@@ -98,7 +98,7 @@ export function CustomFieldsSection() {
             </span>
           </li>
           <li className="flex items-start">
-            <span className="text-orange-400 mr-2">•</span>
+            <span className="text-brand-light mr-2">•</span>
             <span>If not referenced, the field won&apos;t be available</span>
           </li>
         </ul>

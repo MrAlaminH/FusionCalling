@@ -21,7 +21,7 @@ function ExampleCell({ example }: { example?: string }) {
   if (!example) return null;
   return (
     <div className="mt-1 text-gray-500">
-      e.g. <code className="text-orange-300/90 break-all">{example}</code>
+      e.g. <code className="text-brand-light/90 break-all">{example}</code>
     </div>
   );
 }
@@ -48,7 +48,7 @@ export default function ParamTable({ params, emptyLabel }: ParamTableProps) {
             {params.map((p) => (
               <tr key={p.name} className="border-b border-white/5 align-top">
                 <td className="py-2.5 pr-4">
-                  <code className="text-orange-400">{p.name}</code>
+                  <code className="text-brand-light">{p.name}</code>
                 </td>
                 <td className="py-2.5 pr-4 text-gray-300 whitespace-nowrap">{p.type}</td>
                 <td className="py-2.5 pr-4 text-xs">
@@ -81,7 +81,7 @@ export default function ParamTable({ params, emptyLabel }: ParamTableProps) {
         {params.map((p) => (
           <div key={p.name} className="rounded-lg border border-white/10 bg-white/[0.03] p-3">
             <div className="flex items-center justify-between gap-2">
-              <code className="text-orange-400 text-sm">{p.name}</code>
+              <code className="text-brand-light text-sm">{p.name}</code>
               <span className="text-xs whitespace-nowrap">
                 <RequiredBadge required={p.required} />
               </span>

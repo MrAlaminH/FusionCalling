@@ -1,14 +1,14 @@
 export function BrandingManagementSection() {
   return (
-    <section id="branding" className="mb-16 scroll-mt-24">
+    <section id="branding" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">
         Branding Management
       </h2>
 
       <div className="space-y-8">
         {/* Overview */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
-          <h3 className="text-2xl font-semibold mb-4 text-orange-400">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg p-8">
+          <h3 className="text-2xl font-semibold mb-4 text-white">
             Overview
           </h3>
           <p className="text-gray-300">
@@ -34,7 +34,7 @@ export function BrandingManagementSection() {
         </div>
 
         {/* Basic Settings */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
           <div className="bg-blue-600/20 border-b border-blue-700/50 p-6">
             <h3 className="text-2xl font-bold text-blue-400">Basic Settings</h3>
             <p className="text-blue-200 mt-2">
@@ -43,9 +43,9 @@ export function BrandingManagementSection() {
           </div>
           <div className="p-8">
             <div className="overflow-x-auto">
-              <table className="w-full text-sm border border-gray-800">
+              <table className="w-full text-sm border border-white/10">
                 <thead>
-                  <tr className="bg-gray-800 border-b border-gray-700">
+                  <tr className="bg-zinc-800 border-b border-gray-700">
                     <th className="px-4 py-2 text-left text-blue-400 font-semibold">
                       Setting
                     </th>
@@ -58,7 +58,7 @@ export function BrandingManagementSection() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border-b border-gray-800 hover:bg-gray-800/50">
+                  <tr className="border-b border-white/10 hover:bg-zinc-800/50">
                     <td className="px-4 py-2 font-semibold text-white">
                       Application Name
                     </td>
@@ -69,7 +69,7 @@ export function BrandingManagementSection() {
                       Keep short and memorable
                     </td>
                   </tr>
-                  <tr className="border-b border-gray-800 hover:bg-gray-800/50">
+                  <tr className="border-b border-white/10 hover:bg-zinc-800/50">
                     <td className="px-4 py-2 font-semibold text-white">
                       Support Email
                     </td>
@@ -80,7 +80,7 @@ export function BrandingManagementSection() {
                       Use monitored email
                     </td>
                   </tr>
-                  <tr className="border-b border-gray-800 hover:bg-gray-800/50">
+                  <tr className="border-b border-white/10 hover:bg-zinc-800/50">
                     <td className="px-4 py-2 font-semibold text-white">
                       Privacy Policy URL
                     </td>
@@ -91,7 +91,7 @@ export function BrandingManagementSection() {
                       Point to your legal page
                     </td>
                   </tr>
-                  <tr className="hover:bg-gray-800/50">
+                  <tr className="hover:bg-zinc-800/50">
                     <td className="px-4 py-2 font-semibold text-white">
                       Hide &quot;Powered By&quot; Badge
                     </td>
@@ -109,7 +109,7 @@ export function BrandingManagementSection() {
         </div>
 
         {/* Domain Configuration */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
           <div className="bg-green-600/20 border-b border-green-700/50 p-6">
             <h3 className="text-2xl font-bold text-green-400">
               Domain Configuration
@@ -126,7 +126,7 @@ export function BrandingManagementSection() {
               <div className="bg-green-900/20 border border-green-700/50 rounded-lg p-4 space-y-3">
                 <p className="text-gray-300">
                   <span className="font-semibold">Format:</span>{" "}
-                  <code className="bg-gray-800 px-2 py-1 rounded text-orange-300">
+                  <code className="bg-zinc-800 px-2 py-1 rounded text-brand-light">
                     youragency.fusioncalling.com
                   </code>
                 </p>
@@ -144,14 +144,14 @@ export function BrandingManagementSection() {
               </div>
             </div>
 
-            <div className="border-t border-gray-800 pt-6">
+            <div className="border-t border-white/10 pt-6">
               <h4 className="text-xl font-semibold text-green-400 mb-4">
                 Option 2: Custom Domain
               </h4>
               <div className="bg-green-900/20 border border-green-700/50 rounded-lg p-4 space-y-3">
                 <p className="text-gray-300">
                   <span className="font-semibold">Format:</span>{" "}
-                  <code className="bg-gray-800 px-2 py-1 rounded text-orange-300">
+                  <code className="bg-zinc-800 px-2 py-1 rounded text-brand-light">
                     app.yourdomain.com
                   </code>
                 </p>
@@ -171,7 +171,7 @@ export function BrandingManagementSection() {
         </div>
 
         {/* Visual Branding */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
           <div className="bg-purple-600/20 border-b border-purple-700/50 p-6">
             <h3 className="text-2xl font-bold text-purple-400">
               Visual Branding
@@ -196,7 +196,7 @@ export function BrandingManagementSection() {
               </ul>
             </div>
 
-            <div className="border-t border-gray-800 pt-6">
+            <div className="border-t border-white/10 pt-6">
               <h4 className="text-lg font-semibold text-purple-400 mb-3">
                 Favicon Upload
               </h4>
@@ -211,7 +211,7 @@ export function BrandingManagementSection() {
               </ul>
             </div>
 
-            <div className="border-t border-gray-800 pt-6">
+            <div className="border-t border-white/10 pt-6">
               <h4 className="text-lg font-semibold text-purple-400 mb-3">
                 Color Configuration
               </h4>

@@ -3,7 +3,7 @@ import { Calculator, ArrowRight } from "lucide-react";
 
 export function QuickReferenceSection() {
   return (
-    <section id="quick-reference" className="mb-16 scroll-mt-24">
+    <section id="quick-reference" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">Quick Reference</h2>
 
       {/* Voice Throughput Calculator Card */}
@@ -23,13 +23,13 @@ export function QuickReferenceSection() {
               campaigns.
             </p>
             <div className="flex flex-wrap gap-2 text-xs text-gray-400">
-              <span className="bg-gray-800/50 px-2 py-1 rounded">
+              <span className="bg-zinc-800/50 px-2 py-1 rounded">
                 Concurrency Planning
               </span>
-              <span className="bg-gray-800/50 px-2 py-1 rounded">
+              <span className="bg-zinc-800/50 px-2 py-1 rounded">
                 Throughput Estimation
               </span>
-              <span className="bg-gray-800/50 px-2 py-1 rounded">
+              <span className="bg-zinc-800/50 px-2 py-1 rounded">
                 Infrastructure Limits
               </span>
             </div>
@@ -48,22 +48,22 @@ export function QuickReferenceSection() {
         Status Meanings
       </h3>
       <div className="overflow-x-auto mb-8">
-        <table className="w-full text-sm border border-gray-800 rounded-lg overflow-hidden">
+        <table className="w-full text-sm border border-white/10 rounded-lg overflow-hidden">
           <thead>
-            <tr className="bg-gray-900 border-b border-gray-800">
-              <th className="px-4 py-3 text-left text-orange-400 font-semibold">
+            <tr className="bg-zinc-900 border-b border-white/10">
+              <th className="px-4 py-3 text-left font-semibold text-white">
                 Status
               </th>
-              <th className="px-4 py-3 text-left text-orange-400 font-semibold">
+              <th className="px-4 py-3 text-left font-semibold text-white">
                 Meaning
               </th>
-              <th className="px-4 py-3 text-left text-orange-400 font-semibold">
+              <th className="px-4 py-3 text-left font-semibold text-white">
                 Action Needed
               </th>
             </tr>
           </thead>
           <tbody>
-            <tr className="border-b border-gray-800 hover:bg-gray-900/50">
+            <tr className="border-b border-white/10 hover:bg-zinc-900/50">
               <td className="px-4 py-3">
                 <span className="inline-block bg-blue-600/20 text-blue-400 px-3 py-1 rounded-full text-xs font-semibold">
                   Pending
@@ -74,7 +74,7 @@ export function QuickReferenceSection() {
                 None - system will call automatically
               </td>
             </tr>
-            <tr className="border-b border-gray-800 hover:bg-gray-900/50">
+            <tr className="border-b border-white/10 hover:bg-zinc-900/50">
               <td className="px-4 py-3">
                 <span className="inline-block bg-yellow-600/20 text-yellow-400 px-3 py-1 rounded-full text-xs font-semibold">
                   In-Progress
@@ -85,7 +85,7 @@ export function QuickReferenceSection() {
                 Wait for call to complete
               </td>
             </tr>
-            <tr className="border-b border-gray-800 hover:bg-gray-900/50">
+            <tr className="border-b border-white/10 hover:bg-zinc-900/50">
               <td className="px-4 py-3">
                 <span className="inline-block bg-purple-600/20 text-purple-400 px-3 py-1 rounded-full text-xs font-semibold">
                   Retry
@@ -98,7 +98,7 @@ export function QuickReferenceSection() {
                 None - system will retry automatically
               </td>
             </tr>
-            <tr className="border-b border-gray-800 hover:bg-gray-900/50">
+            <tr className="border-b border-white/10 hover:bg-zinc-900/50">
               <td className="px-4 py-3">
                 <span className="inline-block bg-green-600/20 text-green-400 px-3 py-1 rounded-full text-xs font-semibold">
                   Completed
@@ -107,7 +107,7 @@ export function QuickReferenceSection() {
               <td className="px-4 py-3 text-gray-300">Finished calling</td>
               <td className="px-4 py-3 text-gray-400">Review call results</td>
             </tr>
-            <tr className="hover:bg-gray-900/50">
+            <tr className="hover:bg-zinc-900/50">
               <td className="px-4 py-3">
                 <span className="inline-block bg-red-600/20 text-red-400 px-3 py-1 rounded-full text-xs font-semibold">
                   Failed
@@ -151,13 +151,13 @@ export function QuickReferenceSection() {
         Error Messages Quick Reference
       </h3>
       <div className="overflow-x-auto mb-8">
-        <table className="w-full text-sm border border-gray-800 rounded-lg overflow-hidden">
+        <table className="w-full text-sm border border-white/10 rounded-lg overflow-hidden">
           <thead>
-            <tr className="bg-gray-900 border-b border-gray-800">
+            <tr className="bg-zinc-900 border-b border-white/10">
               <th className="px-4 py-3 text-left text-red-400 font-semibold">
                 Permanent Errors (Action Required)
               </th>
-              <th className="px-4 py-3 text-left text-orange-400 font-semibold">
+              <th className="px-4 py-3 text-left font-semibold text-white">
                 What It Means
               </th>
               <th className="px-4 py-3 text-left text-green-400 font-semibold">
@@ -166,7 +166,7 @@ export function QuickReferenceSection() {
             </tr>
           </thead>
           <tbody>
-            <tr className="border-b border-gray-800 hover:bg-gray-900/50">
+            <tr className="border-b border-white/10 hover:bg-zinc-900/50">
               <td className="px-4 py-3 text-gray-300 font-mono text-xs">
                 Invalid lead phone number format
               </td>
@@ -177,7 +177,7 @@ export function QuickReferenceSection() {
                 Fix the format to E.164 (+14155551234)
               </td>
             </tr>
-            <tr className="border-b border-gray-800 hover:bg-gray-900/50">
+            <tr className="border-b border-white/10 hover:bg-zinc-900/50">
               <td className="px-4 py-3 text-gray-300 font-mono text-xs">
                 Phone number not registered
               </td>
@@ -188,7 +188,7 @@ export function QuickReferenceSection() {
                 Register phone number in provider dashboard
               </td>
             </tr>
-            <tr className="border-b border-gray-800 hover:bg-gray-900/50">
+            <tr className="border-b border-white/10 hover:bg-zinc-900/50">
               <td className="px-4 py-3 text-gray-300 font-mono text-xs">
                 Agent or assistant not found
               </td>
@@ -199,7 +199,7 @@ export function QuickReferenceSection() {
                 Check agent ID in settings
               </td>
             </tr>
-            <tr className="border-b border-gray-800 hover:bg-gray-900/50">
+            <tr className="border-b border-white/10 hover:bg-zinc-900/50">
               <td className="px-4 py-3 text-gray-300 font-mono text-xs">
                 API key is invalid or missing
               </td>
@@ -210,7 +210,7 @@ export function QuickReferenceSection() {
                 Check/update API key
               </td>
             </tr>
-            <tr className="hover:bg-gray-900/50">
+            <tr className="hover:bg-zinc-900/50">
               <td className="px-4 py-3 text-gray-300 font-mono text-xs">
                 Phone number does not exist
               </td>
@@ -226,13 +226,13 @@ export function QuickReferenceSection() {
       </div>
 
       <div className="overflow-x-auto mb-10">
-        <table className="w-full text-sm border border-gray-800 rounded-lg overflow-hidden">
+        <table className="w-full text-sm border border-white/10 rounded-lg overflow-hidden">
           <thead>
-            <tr className="bg-gray-900 border-b border-gray-800">
+            <tr className="bg-zinc-900 border-b border-white/10">
               <th className="px-4 py-3 text-left text-yellow-400 font-semibold">
                 Temporary Errors (Auto-Retry)
               </th>
-              <th className="px-4 py-3 text-left text-orange-400 font-semibold">
+              <th className="px-4 py-3 text-left font-semibold text-white">
                 What It Means
               </th>
               <th className="px-4 py-3 text-left text-blue-400 font-semibold">
@@ -241,7 +241,7 @@ export function QuickReferenceSection() {
             </tr>
           </thead>
           <tbody>
-            <tr className="border-b border-gray-800 hover:bg-gray-900/50">
+            <tr className="border-b border-white/10 hover:bg-zinc-900/50">
               <td className="px-4 py-3 text-gray-300 font-mono text-xs">
                 Rate limit exceeded
               </td>
@@ -252,7 +252,7 @@ export function QuickReferenceSection() {
                 System waits and retries
               </td>
             </tr>
-            <tr className="border-b border-gray-800 hover:bg-gray-900/50">
+            <tr className="border-b border-white/10 hover:bg-zinc-900/50">
               <td className="px-4 py-3 text-gray-300 font-mono text-xs">
                 Server error
               </td>
@@ -263,7 +263,7 @@ export function QuickReferenceSection() {
                 System retries automatically
               </td>
             </tr>
-            <tr className="border-b border-gray-800 hover:bg-gray-900/50">
+            <tr className="border-b border-white/10 hover:bg-zinc-900/50">
               <td className="px-4 py-3 text-gray-300 font-mono text-xs">
                 Network or connection error
               </td>
@@ -274,7 +274,7 @@ export function QuickReferenceSection() {
                 System retries automatically
               </td>
             </tr>
-            <tr className="hover:bg-gray-900/50">
+            <tr className="hover:bg-zinc-900/50">
               <td className="px-4 py-3 text-gray-300 font-mono text-xs">
                 Unknown error
               </td>
@@ -293,36 +293,36 @@ export function QuickReferenceSection() {
         Provider Comparison
       </h3>
       <div className="overflow-x-auto">
-        <table className="w-full text-sm border border-gray-800 rounded-lg overflow-hidden">
+        <table className="w-full text-sm border border-white/10 rounded-lg overflow-hidden">
           <thead>
-            <tr className="bg-gray-900 border-b border-gray-800">
-              <th className="px-4 py-3 text-left text-orange-400 font-semibold">
+            <tr className="bg-zinc-900 border-b border-white/10">
+              <th className="px-4 py-3 text-left font-semibold text-white">
                 Feature
               </th>
-              <th className="px-4 py-3 text-left text-orange-400 font-semibold">
+              <th className="px-4 py-3 text-left font-semibold text-white">
                 Retell
               </th>
-              <th className="px-4 py-3 text-left text-orange-400 font-semibold">
+              <th className="px-4 py-3 text-left font-semibold text-white">
                 Vapi
               </th>
             </tr>
           </thead>
           <tbody>
-            <tr className="border-b border-gray-800 hover:bg-gray-900/50">
+            <tr className="border-b border-white/10 hover:bg-zinc-900/50">
               <td className="px-4 py-3 text-gray-300 font-semibold">
                 Custom Fields
               </td>
               <td className="px-4 py-3 text-gray-300">Automatic</td>
               <td className="px-4 py-3 text-gray-300">Template-based</td>
             </tr>
-            <tr className="border-b border-gray-800 hover:bg-gray-900/50">
+            <tr className="border-b border-white/10 hover:bg-zinc-900/50">
               <td className="px-4 py-3 text-gray-300 font-semibold">
                 Configuration
               </td>
               <td className="px-4 py-3 text-gray-300">Simple</td>
               <td className="px-4 py-3 text-gray-300">More control</td>
             </tr>
-            <tr className="border-b border-gray-800 hover:bg-gray-900/50">
+            <tr className="border-b border-white/10 hover:bg-zinc-900/50">
               <td className="px-4 py-3 text-gray-300 font-semibold">
                 Data Availability
               </td>
@@ -333,7 +333,7 @@ export function QuickReferenceSection() {
                 Only referenced fields
               </td>
             </tr>
-            <tr className="hover:bg-gray-900/50">
+            <tr className="hover:bg-zinc-900/50">
               <td className="px-4 py-3 text-gray-300 font-semibold">
                 Template Required
               </td>

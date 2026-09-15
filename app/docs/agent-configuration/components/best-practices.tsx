@@ -1,17 +1,17 @@
 export function BestPracticesSection() {
   return (
-    <section id="best-practices" className="mb-16 scroll-mt-24">
+    <section id="best-practices" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">Best Practices</h2>
 
       <div className="space-y-8">
         {/* Practice 1 */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg p-8">
           <div className="flex gap-4">
-            <div className="bg-orange-500 text-white font-bold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 text-lg">
+            <div className="bg-brand/15 text-brand-light border border-brand/30 font-bold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 text-lg">
               1
             </div>
             <div className="flex-1">
-              <h3 className="text-2xl font-semibold text-orange-400 mb-3">
+              <h3 className="text-2xl font-semibold text-white mb-3">
                 Start Simple
               </h3>
               <p className="text-gray-300 mb-4">
@@ -31,13 +31,13 @@ export function BestPracticesSection() {
         </div>
 
         {/* Practice 2 */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg p-8">
           <div className="flex gap-4">
-            <div className="bg-orange-500 text-white font-bold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 text-lg">
+            <div className="bg-brand/15 text-brand-light border border-brand/30 font-bold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 text-lg">
               2
             </div>
             <div className="flex-1">
-              <h3 className="text-2xl font-semibold text-orange-400 mb-3">
+              <h3 className="text-2xl font-semibold text-white mb-3">
                 Iterate and Improve
               </h3>
               <p className="text-gray-300 mb-4">After initial testing:</p>
@@ -55,13 +55,13 @@ export function BestPracticesSection() {
         </div>
 
         {/* Practice 3 */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg p-8">
           <div className="flex gap-4">
-            <div className="bg-orange-500 text-white font-bold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 text-lg">
+            <div className="bg-brand/15 text-brand-light border border-brand/30 font-bold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 text-lg">
               3
             </div>
             <div className="flex-1">
-              <h3 className="text-2xl font-semibold text-orange-400 mb-3">
+              <h3 className="text-2xl font-semibold text-white mb-3">
                 Use Specific Instructions
               </h3>
               <p className="text-gray-300 mb-4">
@@ -96,13 +96,13 @@ Never promise resolution time you can't meet.`}
         </div>
 
         {/* Practice 4 */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg p-8">
           <div className="flex gap-4">
-            <div className="bg-orange-500 text-white font-bold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 text-lg">
+            <div className="bg-brand/15 text-brand-light border border-brand/30 font-bold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 text-lg">
               4
             </div>
             <div className="flex-1">
-              <h3 className="text-2xl font-semibold text-orange-400 mb-3">
+              <h3 className="text-2xl font-semibold text-white mb-3">
                 Handle Edge Cases
               </h3>
               <p className="text-gray-300 mb-4">Consider what happens when:</p>
@@ -120,13 +120,13 @@ Never promise resolution time you can't meet.`}
         </div>
 
         {/* Practice 5 */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg p-8">
           <div className="flex gap-4">
-            <div className="bg-orange-500 text-white font-bold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 text-lg">
+            <div className="bg-brand/15 text-brand-light border border-brand/30 font-bold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 text-lg">
               5
             </div>
             <div className="flex-1">
-              <h3 className="text-2xl font-semibold text-orange-400 mb-3">
+              <h3 className="text-2xl font-semibold text-white mb-3">
                 Test Thoroughly
               </h3>
               <p className="text-gray-300 mb-4">Before going live:</p>
@@ -144,13 +144,13 @@ Never promise resolution time you can't meet.`}
         </div>
 
         {/* Practice 6 */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg p-8">
           <div className="flex gap-4">
-            <div className="bg-orange-500 text-white font-bold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 text-lg">
+            <div className="bg-brand/15 text-brand-light border border-brand/30 font-bold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 text-lg">
               6
             </div>
             <div className="flex-1">
-              <h3 className="text-2xl font-semibold text-orange-400 mb-3">
+              <h3 className="text-2xl font-semibold text-white mb-3">
                 Monitor Performance
               </h3>
               <p className="text-gray-300 mb-4">Regularly review:</p>
@@ -169,13 +169,13 @@ Never promise resolution time you can't meet.`}
         </div>
 
         {/* Practice 7 */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg p-8">
           <div className="flex gap-4">
-            <div className="bg-orange-500 text-white font-bold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 text-lg">
+            <div className="bg-brand/15 text-brand-light border border-brand/30 font-bold rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 text-lg">
               7
             </div>
             <div className="flex-1">
-              <h3 className="text-2xl font-semibold text-orange-400 mb-3">
+              <h3 className="text-2xl font-semibold text-white mb-3">
                 Keep Prompts Updated
               </h3>
               <p className="text-gray-300 mb-4">As your business changes:</p>
@@ -195,31 +195,31 @@ Never promise resolution time you can't meet.`}
       </div>
 
       {/* Summary Box */}
-      <div className="mt-12 bg-gradient-to-r from-orange-900/30 to-orange-800/20 border border-orange-700/50 rounded-lg p-8">
-        <h3 className="text-2xl font-bold text-orange-400 mb-4">
+      <div className="mt-12 bg-gradient-to-r from-brand/10 to-brand/5 border border-brand/20 rounded-lg p-8">
+        <h3 className="text-2xl font-bold text-white mb-4">
           Quick Summary
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-gray-900/50 rounded p-4">
-            <p className="text-orange-300 font-semibold mb-2">Start with:</p>
+          <div className="bg-zinc-900/50 rounded p-4">
+            <p className="font-semibold text-white mb-2">Start with:</p>
             <p className="text-gray-300 text-sm">
               Simple configuration, basic prompts, standard settings
             </p>
           </div>
-          <div className="bg-gray-900/50 rounded p-4">
-            <p className="text-orange-300 font-semibold mb-2">Then:</p>
+          <div className="bg-zinc-900/50 rounded p-4">
+            <p className="font-semibold text-white mb-2">Then:</p>
             <p className="text-gray-300 text-sm">
               Test, gather feedback, iterate, optimize
             </p>
           </div>
-          <div className="bg-gray-900/50 rounded p-4">
-            <p className="text-orange-300 font-semibold mb-2">Continuously:</p>
+          <div className="bg-zinc-900/50 rounded p-4">
+            <p className="font-semibold text-white mb-2">Continuously:</p>
             <p className="text-gray-300 text-sm">
               Monitor, measure, improve, and update
             </p>
           </div>
-          <div className="bg-gray-900/50 rounded p-4">
-            <p className="text-orange-300 font-semibold mb-2">Remember:</p>
+          <div className="bg-zinc-900/50 rounded p-4">
+            <p className="font-semibold text-white mb-2">Remember:</p>
             <p className="text-gray-300 text-sm">
               Detail in prompts = Better agent behavior
             </p>

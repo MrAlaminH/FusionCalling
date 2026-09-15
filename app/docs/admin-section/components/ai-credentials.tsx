@@ -1,14 +1,14 @@
 export function AICredentialsSection() {
   return (
-    <section id="ai-provider" className="mb-16 scroll-mt-24">
+    <section id="ai-provider" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">
         AI Provider Configuration
       </h2>
 
       <div className="space-y-8">
         {/* Overview */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
-          <h3 className="text-2xl font-semibold mb-4 text-orange-400">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg p-8">
+          <h3 className="text-2xl font-semibold mb-4 text-white">
             Overview
           </h3>
           <p className="text-gray-300">
@@ -19,7 +19,7 @@ export function AICredentialsSection() {
         </div>
 
         {/* Provider Selection */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
           <div className="bg-purple-600/20 border-b border-purple-700/50 p-6">
             <h3 className="text-2xl font-bold text-purple-400">
               Provider Selection
@@ -30,9 +30,9 @@ export function AICredentialsSection() {
           </div>
           <div className="p-8">
             <div className="overflow-x-auto mb-6">
-              <table className="w-full text-sm border border-gray-800">
+              <table className="w-full text-sm border border-white/10">
                 <thead>
-                  <tr className="bg-gray-800 border-b border-gray-700">
+                  <tr className="bg-zinc-800 border-b border-gray-700">
                     <th className="px-4 py-2 text-left text-purple-400 font-semibold">
                       Provider
                     </th>
@@ -45,7 +45,7 @@ export function AICredentialsSection() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border-b border-gray-800 hover:bg-gray-800/50">
+                  <tr className="border-b border-white/10 hover:bg-zinc-800/50">
                     <td className="px-4 py-2 font-semibold text-white">
                       External Webhook (n8n)
                     </td>
@@ -56,7 +56,7 @@ export function AICredentialsSection() {
                       Default, full control
                     </td>
                   </tr>
-                  <tr className="border-b border-gray-800 hover:bg-gray-800/50">
+                  <tr className="border-b border-white/10 hover:bg-zinc-800/50">
                     <td className="px-4 py-2 font-semibold text-white">
                       Vapi AI
                     </td>
@@ -67,7 +67,7 @@ export function AICredentialsSection() {
                       Voice AI with advanced tools
                     </td>
                   </tr>
-                  <tr className="hover:bg-gray-800/50">
+                  <tr className="hover:bg-zinc-800/50">
                     <td className="px-4 py-2 font-semibold text-white">
                       Retell AI
                     </td>
@@ -109,7 +109,7 @@ export function AICredentialsSection() {
         </div>
 
         {/* Global API Keys */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
           <div className="bg-green-600/20 border-b border-green-700/50 p-6">
             <h3 className="text-2xl font-bold text-green-400">
               Global API Keys
@@ -131,7 +131,7 @@ export function AICredentialsSection() {
               </ul>
             </div>
 
-            <div className="border-t border-gray-800 pt-6">
+            <div className="border-t border-white/10 pt-6">
               <h4 className="text-lg font-semibold text-green-400 mb-3">
                 Setting Up Global Keys
               </h4>
@@ -181,7 +181,7 @@ export function AICredentialsSection() {
           </p>
 
           <div className="space-y-3">
-            <div className="bg-gray-800/50 p-4 rounded">
+            <div className="bg-zinc-800/50 p-4 rounded">
               <p className="font-semibold text-blue-400 mb-1">
                 Global Key Only
               </p>
@@ -190,7 +190,7 @@ export function AICredentialsSection() {
                 used for all calls
               </p>
             </div>
-            <div className="bg-gray-800/50 p-4 rounded">
+            <div className="bg-zinc-800/50 p-4 rounded">
               <p className="font-semibold text-blue-400 mb-1">
                 Client Override
               </p>
@@ -199,7 +199,7 @@ export function AICredentialsSection() {
                 fallback
               </p>
             </div>
-            <div className="bg-gray-800/50 p-4 rounded">
+            <div className="bg-zinc-800/50 p-4 rounded">
               <p className="font-semibold text-blue-400 mb-1">Redundancy</p>
               <p className="text-gray-300 text-sm">
                 Both keys configured → Automatic switching if primary fails
@@ -209,7 +209,7 @@ export function AICredentialsSection() {
         </div>
 
         {/* Connection Testing */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
           <div className="bg-indigo-600/20 border-b border-indigo-700/50 p-6">
             <h3 className="text-2xl font-bold text-indigo-400">
               Connection Testing
@@ -234,7 +234,7 @@ export function AICredentialsSection() {
               </ol>
             </div>
 
-            <div className="border-t border-gray-800 pt-6">
+            <div className="border-t border-white/10 pt-6">
               <h4 className="text-lg font-semibold text-indigo-400 mb-3">
                 Troubleshooting Failed Tests
               </h4>

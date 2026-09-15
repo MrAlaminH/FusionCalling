@@ -1,12 +1,12 @@
 export function CreditsManagementSection() {
   return (
-    <section id="credits" className="mb-16 scroll-mt-24">
+    <section id="credits" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">Credits Management</h2>
 
       <div className="space-y-8">
         {/* Overview */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-8">
-          <h3 className="text-2xl font-semibold mb-4 text-orange-400">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg p-8">
+          <h3 className="text-2xl font-semibold mb-4 text-white">
             Overview
           </h3>
           <p className="text-gray-300">
@@ -16,7 +16,7 @@ export function CreditsManagementSection() {
         </div>
 
         {/* Viewing Credits */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
           <div className="bg-blue-600/20 border-b border-blue-700/50 p-6">
             <h3 className="text-2xl font-bold text-blue-400">
               Viewing Credits
@@ -31,32 +31,32 @@ export function CreditsManagementSection() {
                 Credit Information Displayed
               </h4>
               <div className="space-y-2">
-                <div className="flex justify-between p-2 bg-gray-800/50 rounded text-sm">
+                <div className="flex justify-between p-2 bg-zinc-800/50 rounded text-sm">
                   <span className="text-gray-300">Email</span>
                   <span className="text-gray-400">
                     User&apos;s email address
                   </span>
                 </div>
-                <div className="flex justify-between p-2 bg-gray-800/50 rounded text-sm">
+                <div className="flex justify-between p-2 bg-zinc-800/50 rounded text-sm">
                   <span className="text-gray-300">Minutes Used</span>
                   <span className="text-gray-400">Total minutes consumed</span>
                 </div>
-                <div className="flex justify-between p-2 bg-gray-800/50 rounded text-sm">
+                <div className="flex justify-between p-2 bg-zinc-800/50 rounded text-sm">
                   <span className="text-gray-300">Minutes Allowed</span>
                   <span className="text-gray-400">Total minutes allocated</span>
                 </div>
-                <div className="flex justify-between p-2 bg-gray-800/50 rounded text-sm">
+                <div className="flex justify-between p-2 bg-zinc-800/50 rounded text-sm">
                   <span className="text-gray-300">Usage Percentage</span>
                   <span className="text-gray-400">Visual progress bar</span>
                 </div>
-                <div className="flex justify-between p-2 bg-gray-800/50 rounded text-sm">
+                <div className="flex justify-between p-2 bg-zinc-800/50 rounded text-sm">
                   <span className="text-gray-300">Last Sign-In</span>
                   <span className="text-gray-400">Most recent login</span>
                 </div>
               </div>
             </div>
 
-            <div className="border-t border-gray-800 pt-6">
+            <div className="border-t border-white/10 pt-6">
               <h4 className="text-lg font-semibold text-blue-400 mb-3">
                 Progress Bar Indicators
               </h4>
@@ -76,7 +76,7 @@ export function CreditsManagementSection() {
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-2 bg-orange-600 rounded"></div>
+                  <div className="w-8 h-2 bg-brand-strong rounded"></div>
                   <span className="text-gray-300 text-sm">
                     <span className="font-semibold">High (76-99%)</span> - Near
                     limit
@@ -95,7 +95,7 @@ export function CreditsManagementSection() {
         </div>
 
         {/* Filtering Users */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
           <div className="bg-green-600/20 border-b border-green-700/50 p-6">
             <h3 className="text-2xl font-bold text-green-400">
               Filtering Users
@@ -115,7 +115,7 @@ export function CreditsManagementSection() {
               </p>
             </div>
 
-            <div className="border-t border-gray-800 pt-6">
+            <div className="border-t border-white/10 pt-6">
               <h4 className="text-lg font-semibold text-green-400 mb-3">
                 Filter by Tier
               </h4>
@@ -130,7 +130,7 @@ export function CreditsManagementSection() {
               </div>
             </div>
 
-            <div className="border-t border-gray-800 pt-6">
+            <div className="border-t border-white/10 pt-6">
               <h4 className="text-lg font-semibold text-green-400 mb-3">
                 Filter by Usage
               </h4>
@@ -138,19 +138,19 @@ export function CreditsManagementSection() {
                 Identify users based on their consumption:
               </p>
               <div className="space-y-2">
-                <div className="flex justify-between p-2 bg-gray-800/50 rounded text-sm">
+                <div className="flex justify-between p-2 bg-zinc-800/50 rounded text-sm">
                   <span className="text-gray-300">Low</span>
                   <span className="text-gray-400">&lt; 50% usage</span>
                 </div>
-                <div className="flex justify-between p-2 bg-gray-800/50 rounded text-sm">
+                <div className="flex justify-between p-2 bg-zinc-800/50 rounded text-sm">
                   <span className="text-gray-300">Medium</span>
                   <span className="text-gray-400">50-75% usage</span>
                 </div>
-                <div className="flex justify-between p-2 bg-gray-800/50 rounded text-sm">
+                <div className="flex justify-between p-2 bg-zinc-800/50 rounded text-sm">
                   <span className="text-gray-300">High</span>
                   <span className="text-gray-400">76-99% usage</span>
                 </div>
-                <div className="flex justify-between p-2 bg-gray-800/50 rounded text-sm">
+                <div className="flex justify-between p-2 bg-zinc-800/50 rounded text-sm">
                   <span className="text-gray-300">Near Limit</span>
                   <span className="text-gray-400">~100% usage</span>
                 </div>
@@ -160,7 +160,7 @@ export function CreditsManagementSection() {
         </div>
 
         {/* Manual Resets */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden">
+        <div className="bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
           <div className="bg-purple-600/20 border-b border-purple-700/50 p-6">
             <h3 className="text-2xl font-bold text-purple-400">
               Manual Resets
@@ -182,24 +182,24 @@ export function CreditsManagementSection() {
               </ul>
             </div>
 
-            <div className="border-t border-gray-800 pt-6">
+            <div className="border-t border-white/10 pt-6">
               <h4 className="text-lg font-semibold text-purple-400 mb-3">
                 Reset Options
               </h4>
               <div className="space-y-2">
-                <div className="bg-gray-800/50 p-3 rounded">
+                <div className="bg-zinc-800/50 p-3 rounded">
                   <p className="font-semibold text-gray-200 text-sm">Admin</p>
                   <p className="text-gray-300 text-xs">
                     Manual override by agency - Use to correct billing errors
                   </p>
                 </div>
-                <div className="bg-gray-800/50 p-3 rounded">
+                <div className="bg-zinc-800/50 p-3 rounded">
                   <p className="font-semibold text-gray-200 text-sm">System</p>
                   <p className="text-gray-300 text-xs">
                     Automated reset by billing - For credit usage tracking
                   </p>
                 </div>
-                <div className="bg-gray-800/50 p-3 rounded">
+                <div className="bg-zinc-800/50 p-3 rounded">
                   <p className="font-semibold text-gray-200 text-sm">Billing</p>
                   <p className="text-gray-300 text-xs">
                     Payment-based reset - On subscription renewal

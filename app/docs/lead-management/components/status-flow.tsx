@@ -1,6 +1,6 @@
 export function StatusFlowSection() {
   return (
-    <section id="status-flow" className="mb-16 scroll-mt-24">
+    <section id="status-flow" className="mb-16 scroll-mt-36">
       <h2 className="text-3xl font-bold mb-6 text-white">
         How Lead Statuses Change
       </h2>
@@ -11,7 +11,7 @@ export function StatusFlowSection() {
       <h3 className="text-2xl font-semibold mb-6 text-white">
         Status Flow Diagram
       </h3>
-      <div className="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-8 overflow-x-auto">
+      <div className="bg-zinc-900 border border-white/10 rounded-lg p-6 mb-8 overflow-x-auto">
         <pre className="text-gray-300 text-sm font-mono">
           {`New Lead Added
     ↓
@@ -43,7 +43,7 @@ Call Ends
 
       <div className="space-y-6">
         {/* Pending to In-Progress */}
-        <div className="border-l-4 border-blue-500 bg-gray-900 rounded-r-lg p-6">
+        <div className="border-l-4 border-blue-500 bg-zinc-900 rounded-r-lg p-6">
           <h4 className="text-xl font-semibold text-white mb-3">
             Pending → In-Progress
           </h4>
@@ -76,7 +76,7 @@ Call Ends
         </div>
 
         {/* In-Progress to Retry */}
-        <div className="border-l-4 border-purple-500 bg-gray-900 rounded-r-lg p-6">
+        <div className="border-l-4 border-purple-500 bg-zinc-900 rounded-r-lg p-6">
           <h4 className="text-xl font-semibold text-white mb-3">
             In-Progress → Retry
           </h4>
@@ -108,7 +108,7 @@ Call Ends
         </div>
 
         {/* In-Progress to Completed */}
-        <div className="border-l-4 border-green-500 bg-gray-900 rounded-r-lg p-6">
+        <div className="border-l-4 border-green-500 bg-zinc-900 rounded-r-lg p-6">
           <h4 className="text-xl font-semibold text-white mb-3">
             In-Progress → Completed
           </h4>
@@ -123,7 +123,7 @@ Call Ends
         </div>
 
         {/* In-Progress to Failed */}
-        <div className="border-l-4 border-red-500 bg-gray-900 rounded-r-lg p-6">
+        <div className="border-l-4 border-red-500 bg-zinc-900 rounded-r-lg p-6">
           <h4 className="text-xl font-semibold text-white mb-3">
             In-Progress → Failed
           </h4>
@@ -151,7 +151,7 @@ Call Ends
         </div>
 
         {/* Retry to Pending */}
-        <div className="border-l-4 border-orange-500 bg-gray-900 rounded-r-lg p-6">
+        <div className="border-l-4 border-brand bg-zinc-900 rounded-r-lg p-6">
           <h4 className="text-xl font-semibold text-white mb-3">
             Retry → Pending
           </h4>
