@@ -1,11 +1,13 @@
 "use client";
 
 import type { ComponentType, ReactNode } from "react";
+import Image from "next/image";
 import {
   Activity,
   ArrowRight,
   AudioLines,
   Bot,
+  Braces,
   Brain,
   Building2,
   CalendarCheck,
@@ -15,6 +17,7 @@ import {
   Globe,
   GraduationCap,
   Headphones,
+  KeyRound,
   Landmark,
   Layers,
   Lock,
@@ -34,6 +37,7 @@ import {
   Users,
   UtensilsCrossed,
   Voicemail,
+  Webhook,
   Workflow,
   Wrench,
   Zap,
@@ -104,64 +108,88 @@ function Chip({ children }: { children: ReactNode }) {
 
 function TitleSlide() {
   return (
-    <SlideShell>
+    <>
+      {/* AI receptionist visual — masked so it dissolves into the slide's dark mesh */}
       <div
-        className="particle left-[8%] top-[15%] h-72 w-72 [animation-delay:0s]"
         aria-hidden
-      />
-      <div
-        className="particle right-[10%] top-[55%] h-80 w-80 [animation-delay:2s]"
-        aria-hidden
-      />
-      <div
-        className="particle left-[55%] bottom-[10%] h-56 w-56 [animation-delay:4s]"
-        aria-hidden
-      />
-      <div className="max-w-4xl">
-        <p className="animate-fade-in-up flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-brand">
-          <PhoneCall className="h-4 w-4" aria-hidden />
-          Fusion Calling — AI Phone Automation
-        </p>
-        <h1 className="animate-fade-in-up mt-6 font-display text-5xl font-bold leading-[1.05] text-white [animation-delay:100ms] md:text-7xl">
-          Turn missed calls into{" "}
-          <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong bg-clip-text text-transparent">
-            revenue.
-          </span>
-        </h1>
-        <p className="animate-fade-in-up mt-6 max-w-2xl text-lg leading-relaxed text-white/70 [animation-delay:200ms] md:text-xl">
-          AI phone call agents that sound and behave like real humans.
-          Inbound and outbound, 24/7 — booking appointments, qualifying
-          leads, answering questions, and following up by SMS.
-        </p>
-        <div className="animate-fade-in-up mt-8 flex flex-wrap gap-2 [animation-delay:300ms]">
-          <Chip>24/7 coverage</Chip>
-          <Chip>Answers in two rings</Chip>
-          <Chip>Unlimited concurrent calls</Chip>
-          <Chip>2,200+ integrations</Chip>
-          <Chip>From $149/mo</Chip>
-        </div>
-        <div className="animate-fade-in-up mt-10 flex flex-wrap items-center gap-4 [animation-delay:400ms]">
-          <a
-            href={DEMO_PHONE_TEL}
-            className="group relative flex items-center gap-3 rounded-card border border-brand/30 bg-brand/10 px-6 py-4 transition-premium hover:border-brand hover:bg-brand/20"
-          >
-            <span className="relative flex h-3 w-3">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-60" />
-              <span className="relative inline-flex h-3 w-3 rounded-full bg-brand" />
-            </span>
-            <span className="font-display text-xl font-semibold tracking-wide text-white">
-              {DEMO_PHONE_DISPLAY}
-            </span>
-            <span className="text-xs text-brand">
-              Call the AI — live, right now
-            </span>
-          </a>
-        </div>
+        className="pointer-events-none absolute inset-y-0 right-0 -z-10 hidden w-[46%] max-w-[720px] md:block"
+      >
+        <Image
+          src="/deck/receptionist.webp"
+          alt=""
+          fill
+          priority
+          sizes="(min-width: 768px) 46vw, 0px"
+          className="animate-fade-in-up object-cover object-[50%_0] opacity-90 [animation-delay:300ms] [mask-image:radial-gradient(ellipse_88%_82%_at_70%_42%,#000_48%,transparent_77%)]"
+        />
       </div>
-      <p className="animate-fade-in-up absolute bottom-6 right-6 hidden text-[11px] text-white/30 [animation-delay:600ms] md:block">
-        Navigate: ← → &nbsp;·&nbsp; Overview: O &nbsp;·&nbsp; Fullscreen: F
-      </p>
-    </SlideShell>
+      <SlideShell>
+        <div
+          className="particle left-[8%] top-[15%] h-72 w-72 [animation-delay:0s]"
+          aria-hidden
+        />
+        <div
+          className="particle right-[10%] top-[55%] h-80 w-80 [animation-delay:2s]"
+          aria-hidden
+        />
+        <div
+          className="particle left-[55%] bottom-[10%] h-56 w-56 [animation-delay:4s]"
+          aria-hidden
+        />
+        <div className="max-w-4xl">
+          <p className="animate-fade-in-up flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-brand">
+            <Image
+              src="/logo.webp"
+              alt=""
+              width={20}
+              height={19}
+              priority
+              aria-hidden
+              className="rounded-[4px]"
+            />
+            Fusion Calling — AI Phone Automation
+          </p>
+          <h1 className="animate-fade-in-up mt-6 font-display text-5xl font-bold leading-[1.05] text-white [animation-delay:100ms] md:text-7xl">
+            Turn missed calls into{" "}
+            <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong bg-clip-text text-transparent">
+              revenue.
+            </span>
+          </h1>
+          <p className="animate-fade-in-up mt-6 max-w-2xl text-lg leading-relaxed text-white/70 [animation-delay:200ms] md:text-xl">
+            AI phone call agents that sound and behave like real humans.
+            Inbound and outbound, 24/7 — booking appointments, qualifying
+            leads, answering questions, and following up by SMS.
+          </p>
+          <div className="animate-fade-in-up mt-8 flex flex-wrap gap-2 [animation-delay:300ms]">
+            <Chip>24/7 coverage</Chip>
+            <Chip>Picks up in seconds</Chip>
+            <Chip>10–20 concurrent calls</Chip>
+            <Chip>Human-like AI voices</Chip>
+            <Chip>2,200+ integrations</Chip>
+          </div>
+          <div className="animate-fade-in-up mt-10 flex flex-wrap items-center gap-4 [animation-delay:400ms]">
+            <a
+              href={DEMO_PHONE_TEL}
+              className="group relative flex items-center gap-3 rounded-card border border-brand/30 bg-brand/10 px-6 py-4 transition-premium hover:border-brand hover:bg-brand/20"
+            >
+              <span className="relative flex h-3 w-3">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-60" />
+                <span className="relative inline-flex h-3 w-3 rounded-full bg-brand" />
+              </span>
+              <span className="font-display text-xl font-semibold tracking-wide text-white">
+                {DEMO_PHONE_DISPLAY}
+              </span>
+              <span className="text-xs text-brand">
+                Call the AI — live, right now
+              </span>
+            </a>
+          </div>
+        </div>
+        <p className="animate-fade-in-up absolute bottom-6 right-6 hidden text-[11px] text-white/30 [animation-delay:600ms] md:block">
+          Navigate: ← → &nbsp;·&nbsp; Overview: O &nbsp;·&nbsp; Fullscreen: F
+        </p>
+      </SlideShell>
+    </>
   );
 }
 
@@ -324,7 +352,7 @@ function ProductSlide() {
     {
       icon: PhoneCall,
       title: "24/7 answering",
-      body: "Every caller greeted in two rings — nights, weekends, holidays. No voicemail, no hold queue.",
+      body: "Every caller answered in seconds — nights, weekends, holidays. No voicemail, no hold queue.",
     },
     {
       icon: CalendarCheck,
@@ -358,37 +386,64 @@ function ProductSlide() {
       <SlideTitle>
         One AI agent. Every call you get — and the ones you should be making.
       </SlideTitle>
-      <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {features.map((f, i) => (
-          <div
-            key={f.title}
-            className={`animate-fade-in-up group rounded-card border border-white/10 bg-white/5 p-6 transition-premium hover:-translate-y-1 hover:border-brand/40 ${
-              [
-                `[animation-delay:200ms]`,
-                `[animation-delay:280ms]`,
-                `[animation-delay:360ms]`,
-                `[animation-delay:440ms]`,
-                `[animation-delay:520ms]`,
-                `[animation-delay:600ms]`,
-              ][i]
-            }`}
-          >
-            <div className="flex h-11 w-11 items-center justify-center rounded-btn bg-brand/15 transition-premium group-hover:bg-brand/25">
-              <f.icon className="h-5 w-5 text-brand" aria-hidden />
+      <div className="mt-10 grid items-center gap-8 lg:grid-cols-5">
+        <div className="grid gap-3 sm:grid-cols-2 lg:col-span-3">
+          {features.map((f, i) => (
+            <div
+              key={f.title}
+              className={`animate-fade-in-up group rounded-card border border-white/10 bg-white/5 p-4 transition-premium hover:border-brand/40 ${
+                [
+                  `[animation-delay:200ms]`,
+                  `[animation-delay:280ms]`,
+                  `[animation-delay:360ms]`,
+                  `[animation-delay:440ms]`,
+                  `[animation-delay:520ms]`,
+                  `[animation-delay:600ms]`,
+                ][i]
+              }`}
+            >
+              <div className="flex items-center gap-2.5">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-btn bg-brand/15 transition-premium group-hover:bg-brand/25">
+                  <f.icon className="h-4 w-4 text-brand" aria-hidden />
+                </div>
+                <h3 className="font-display text-sm font-semibold text-white">
+                  {f.title}
+                </h3>
+              </div>
+              <p className="mt-2 text-xs leading-relaxed text-white/60">
+                {f.body}
+              </p>
             </div>
-            <h3 className="mt-4 font-display text-lg font-semibold text-white">
-              {f.title}
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-white/60">
-              {f.body}
-            </p>
+          ))}
+        </div>
+        <div className="animate-fade-in-up lg:col-span-2 [animation-delay:500ms]">
+          <div className="overflow-hidden rounded-card border border-white/10 bg-black/40 shadow-premium-lg">
+            <div className="flex items-center gap-1.5 border-b border-white/10 px-4 py-2.5">
+              <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
+              <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
+              <span className="h-2.5 w-2.5 rounded-full bg-brand/70" />
+              <span className="ml-3 truncate rounded-pill bg-white/5 px-3 py-1 text-[10px] text-white/40">
+                app.yourcompany.com/overview
+              </span>
+            </div>
+            <Image
+              src="/deck/dashboard.webp"
+              alt="Fusion Calling dashboard — call minutes, call volume over time, and call distribution analytics"
+              width={1660}
+              height={800}
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              className="h-auto w-full"
+            />
           </div>
-        ))}
+          <p className="mt-3 text-center text-xs text-white/40">
+            Live analytics — every call, minute, and outcome in your dashboard.
+          </p>
+        </div>
       </div>
       <p className="animate-fade-in-up mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium text-white/70 [animation-delay:700ms]">
         <span className="flex items-center gap-2">
-          <Zap className="h-4 w-4 text-brand" aria-hidden /> Unlimited
-          concurrent calls
+          <Zap className="h-4 w-4 text-brand" aria-hidden /> 10–20 concurrent
+          calls
         </span>
         <span className="flex items-center gap-2">
           <MessageSquare className="h-4 w-4 text-brand" aria-hidden /> SMS
@@ -408,7 +463,7 @@ function HowItWorksSlide() {
     {
       icon: PhoneCall,
       step: "Connects",
-      body: "Answers in two rings. No phone tree, no hold music.",
+      body: "Picks up in seconds. No phone tree, no hold music.",
     },
     {
       icon: AudioLines,
@@ -531,7 +586,7 @@ function DemoSlide() {
             {DEMO_PHONE_DISPLAY}
           </p>
           <p className="mt-3 text-sm font-medium text-brand">
-            Dial it — the AI picks up in two rings
+            Dial it — the AI picks up in seconds
           </p>
           <p className="mt-2 text-xs leading-relaxed text-white/50">
             Or leave your number on fusioncalling.com and the agent will call
@@ -562,6 +617,111 @@ function DemoSlide() {
           </div>
         </div>
       </div>
+    </SlideShell>
+  );
+}
+
+function ApiSlide() {
+  const apis = [
+    {
+      icon: CalendarCheck,
+      name: "Calendar API",
+      ver: "v1.0",
+      body: "Create, update, and sync events — Google Meet / Zoom links generated for you, appointment SMS fired automatically.",
+      methods: ["GET", "POST", "PATCH", "DELETE"],
+    },
+    {
+      icon: Users,
+      name: "Leads API",
+      ver: "v1.2",
+      body: "Push single leads or atomic batches of 1–100, look up by phone, and sync status back to your CRM.",
+      methods: ["GET", "POST", "PATCH"],
+    },
+  ];
+  return (
+    <SlideShell>
+      <Kicker>For Developers</Kicker>
+      <SlideTitle>Plugs straight into your stack.</SlideTitle>
+      <div className="mt-10 grid items-start gap-8 lg:grid-cols-2">
+        <div className="space-y-4">
+          {apis.map((api, i) => (
+            <div
+              key={api.name}
+              className={`animate-fade-in-up rounded-card border border-white/10 bg-white/5 p-5 transition-premium hover:border-brand/40 ${
+                [`[animation-delay:200ms]`, `[animation-delay:280ms]`][i]
+              }`}
+            >
+              <div className="flex flex-wrap items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-btn bg-brand/15">
+                  <api.icon className="h-5 w-5 text-brand" aria-hidden />
+                </div>
+                <h3 className="font-display text-base font-semibold text-white">
+                  {api.name}{" "}
+                  <span className="ml-0.5 text-xs font-bold text-brand">
+                    {api.ver}
+                  </span>
+                </h3>
+                <span className="ml-auto flex gap-1.5">
+                  {api.methods.map((m) => (
+                    <span
+                      key={m}
+                      className="rounded-pill bg-black/40 px-2 py-0.5 font-mono text-[10px] font-semibold text-brand-light"
+                    >
+                      {m}
+                    </span>
+                  ))}
+                </span>
+              </div>
+              <p className="mt-3 text-sm leading-relaxed text-white/60">
+                {api.body}
+              </p>
+            </div>
+          ))}
+          <div className="animate-fade-in-up flex flex-wrap items-center gap-x-5 gap-y-2 rounded-card border border-white/10 bg-white/5 p-4 text-sm text-white/70 [animation-delay:360ms]">
+            <span className="flex items-center gap-2">
+              <KeyRound className="h-4 w-4 shrink-0 text-brand" aria-hidden />{" "}
+              Bearer API keys
+            </span>
+            <span className="flex items-center gap-2">
+              <Webhook className="h-4 w-4 shrink-0 text-brand" aria-hidden />{" "}
+              GoHighLevel · n8n · Zapier guides
+            </span>
+          </div>
+        </div>
+        <div className="animate-fade-in-up [animation-delay:350ms]">
+          <div className="overflow-hidden rounded-card border border-white/10 bg-black/50 shadow-premium-lg">
+            <div className="flex items-center justify-between border-b border-white/10 px-4 py-2.5">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-white/40">
+                terminal
+              </span>
+              <Braces className="h-3.5 w-3.5 text-brand" aria-hidden />
+            </div>
+            <pre className="overflow-x-auto p-5 font-mono text-xs leading-relaxed text-white/70">
+              <code>
+                {`curl -X POST \\
+  https://app.fusioncalling.com/api/leads/external/v1/leads \\
+  -H "Authorization: Bearer fc_live_xxxxxxxx" \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "first_name": "Dana",
+    "phone": "+1 914 555 0123",
+    "tags": ["plumbing", "emergency"]
+  }'`}
+              </code>
+            </pre>
+          </div>
+          <div className="mt-4 flex flex-wrap gap-2">
+            <Chip>OpenAPI 3.0 spec published</Chip>
+            <Chip>cURL · JS · Python · PHP examples</Chip>
+            <Chip>12–100 req/min rate limits</Chip>
+          </div>
+        </div>
+      </div>
+      <SourceNote>
+        Full reference: fusioncalling.com/docs/api-reference · Published spec:
+        fusioncalling.com/openapi.json · Bearer-key auth · Calendar API 12
+        req/min · Leads API 100 req/min.
+      </SourceNote>
     </SlideShell>
   );
 }
@@ -960,82 +1120,6 @@ function WhiteLabelSlide() {
   );
 }
 
-function AgencyEconomicsSlide() {
-  const packages = [
-    {
-      name: "AI Receptionist",
-      retail: "$197–297/mo",
-      body: "24/7 inbound answering, booking, FAQs for each client",
-    },
-    {
-      name: "Receptionist + Outbound",
-      retail: "$397–597/mo",
-      body: "Adds reminders, lead qualification, and outbound campaigns",
-    },
-    {
-      name: "Growth Engine",
-      retail: "$797–1,497/mo",
-      body: "Managed campaigns: recall, win-back, cold outreach at volume",
-    },
-  ];
-  return (
-    <SlideShell>
-      <Kicker>Agency Economics</Kicker>
-      <SlideTitle>Buy wholesale. Sell retail. Keep 100%.</SlideTitle>
-      <div className="mt-10 grid gap-4 lg:grid-cols-3">
-        {packages.map((p, i) => (
-          <div
-            key={p.name}
-            className={`animate-fade-in-up rounded-card border border-white/10 bg-white/5 p-6 transition-premium hover:border-brand/40 ${
-              [`[animation-delay:200ms]`, `[animation-delay:300ms]`, `[animation-delay:400ms]`][i]
-            }`}
-          >
-            <p className="font-display text-lg font-semibold text-white">
-              {p.name}
-            </p>
-            <p className="mt-2 font-display text-3xl font-bold text-brand">
-              {p.retail}
-            </p>
-            <p className="mt-3 text-sm leading-relaxed text-white/55">
-              {p.body}
-            </p>
-          </div>
-        ))}
-      </div>
-      <div className="animate-fade-in-up mt-6 rounded-card border border-brand/30 bg-gradient-to-r from-brand/15 to-transparent p-6 [animation-delay:500ms]">
-        <div className="flex flex-wrap items-center justify-between gap-6">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand">
-              The payback rule
-            </p>
-            <p className="mt-2 max-w-xl text-lg font-medium leading-relaxed text-white">
-              Clients compare you to a hire or lost revenue — not to minutes.
-              Most partners reach{" "}
-              <span className="font-display font-bold text-brand">
-                positive ROI within their first 1–2 client accounts.
-              </span>
-            </p>
-          </div>
-          <div className="rounded-card border border-white/10 bg-black/40 p-5 text-center">
-            <p className="font-display text-2xl font-bold text-white">
-              $4,970/mo
-            </p>
-            <p className="mt-1 max-w-[220px] text-[11px] leading-relaxed text-white/50">
-              illustration: 10 clients at a $497 average against a $299/mo
-              platform
-            </p>
-          </div>
-        </div>
-      </div>
-      <SourceNote>
-        Retail packaging ranges are Fusion Calling&apos;s published partner
-        guidance (fusioncalling.com/whitelabel FAQ); provider usage costs (Vapi
-        / Retell / ElevenLabs) stay on the partner&apos;s own accounts.
-      </SourceNote>
-    </SlideShell>
-  );
-}
-
 function WhyFusionSlide() {
   const advantages = [
     {
@@ -1058,12 +1142,6 @@ function WhyFusionSlide() {
       title: "Done-with-you onboarding",
       body: "Guided 24-hour launch plus 30 days of support — not a login link and a wiki.",
     },
-  ];
-  const rows = [
-    { name: "ChatDash", entry: "$120/mo · 3 clients" },
-    { name: "Vapify", entry: "from $29/mo · 1 sub-account" },
-    { name: "Thinkrr", entry: "$39/mo · 1 sub-account" },
-    { name: "Synthflow", entry: "enterprise from ~$30K/yr · sales-led" },
   ];
   return (
     <SlideShell>
@@ -1091,37 +1169,6 @@ function WhyFusionSlide() {
           </div>
         ))}
       </div>
-      <div className="animate-fade-in-up mt-6 rounded-card border border-white/10 bg-white/5 p-6 [animation-delay:550ms]">
-        <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand">
-          Entry-level white-label, side by side
-        </p>
-        <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
-          {rows.map((r) => (
-            <div
-              key={r.name}
-              className="rounded-btn border border-white/10 bg-black/30 p-3 text-center"
-            >
-              <p className="font-display text-sm font-semibold text-white/80">
-                {r.name}
-              </p>
-              <p className="mt-1 text-[11px] text-white/45">{r.entry}</p>
-            </div>
-          ))}
-          <div className="rounded-btn border border-brand/50 bg-brand/15 p-3 text-center">
-            <p className="font-display text-sm font-bold text-brand">
-              Fusion Calling
-            </p>
-            <p className="mt-1 text-[11px] font-medium text-white/80">
-              $99/mo · 6 sub-accounts · public pricing · 3-day trial
-            </p>
-          </div>
-        </div>
-      </div>
-      <SourceNote>
-        Competitor figures as published on fusioncalling.com/alternative
-        (September 2026). Synthflow gate: enterprise sales motion from ~$30K/yr
-        vs. self-serve at $99–$499 with a 3-day trial and a 24-hour launch.
-      </SourceNote>
     </SlideShell>
   );
 }
@@ -1267,11 +1314,11 @@ export const slides: SlideDef[] = [
   { id: "product", label: "The Product", Comp: ProductSlide },
   { id: "how", label: "How It Works", Comp: HowItWorksSlide },
   { id: "demo", label: "Hear It Now — Live Demo", Comp: DemoSlide },
+  { id: "api", label: "API & Integrations", Comp: ApiSlide },
   { id: "economics", label: "The Economics — Cost & ROI", Comp: EconomicsSlide },
   { id: "industries", label: "Industries", Comp: IndustriesSlide },
   { id: "results", label: "Proof & Results", Comp: ResultsSlide },
   { id: "whitelabel", label: "The White-Label Offer", Comp: WhiteLabelSlide },
-  { id: "agency-economics", label: "Agency Economics", Comp: AgencyEconomicsSlide },
   { id: "why-fusion", label: "Why Fusion vs Alternatives", Comp: WhyFusionSlide },
   { id: "trust", label: "Trust & Safety", Comp: TrustSlide },
   { id: "cta", label: "Next Steps", Comp: CTASlide },

@@ -1,13 +1,13 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import {
   ChevronLeft,
   ChevronRight,
   Grid3X3,
   Maximize,
   Minimize,
-  PhoneCall,
 } from "lucide-react";
 import { slides } from "./slides";
 
@@ -135,7 +135,14 @@ export default function SalesDeck() {
 
       {/* Wordmark */}
       <div className="absolute bottom-5 left-6 z-20 flex items-center gap-2 text-sm font-semibold tracking-wide text-white/60">
-        <PhoneCall className="h-4 w-4 text-brand" aria-hidden />
+        <Image
+          src="/logo.webp"
+          alt=""
+          width={18}
+          height={17}
+          aria-hidden
+          className="rounded-[3px]"
+        />
         <span className="font-display">
           Fusion<span className="text-brand">Calling</span>
         </span>
