@@ -28,6 +28,28 @@ export const blogFaqs: Record<string, BlogFaq[]> = {
       "answer": "Demand a live call to your own phone number using your scenarios, not the vendor's demo script: interrupt the agent mid-sentence, call from a noisy environment, ask a question that isn't in its knowledge base, say an emergency keyword, and ask to speak to a human. Then check what happens on each failure path — a message taken, a transfer with context, or a hangup. Finally, read the provider's 1-star reviews and recent community threads before trusting its average rating."
     }
   ],
+  "missed-call-text-back-vs-ai-receptionist": [
+    {
+      "question": "Is missed-call text-back free in GoHighLevel?",
+      "answer": "The feature itself is included in every GoHighLevel plan, but you need a plan to run it — Starter is $97/month, Unlimited $297, Agency Pro $497 — and each text-back message counts toward your SMS usage limits. Your numbers also need A2P 10DLC registration (or toll-free verification) or the texts can silently fail."
+    },
+    {
+      "question": "How fast does missed-call text-back send the message?",
+      "answer": "It fires once the call is marked missed — GoHighLevel recommends a 10-20 second ring timeout first, then the text goes out automatically. Any claim of delivery within an exact number of seconds is a vendor figure, not an official one. The important structural point: the caller has already heard voicemail before the text exists."
+    },
+    {
+      "question": "Which is better for after-hours calls?",
+      "answer": "Both work after hours, but they do different things: text-back sends a template text inviting the caller to continue by SMS, while an AI receptionist answers live, answers questions, books appointments, and can escalate an emergency to an on-call human. For emergency-driven businesses like HVAC and plumbing, live answering with keyword escalation is the safer after-hours layer."
+    },
+    {
+      "question": "Can I use both an AI receptionist and text-back together?",
+      "answer": "Yes — and it's the strongest setup. The AI receptionist answers in two rings and books on the first call, so very few calls are ever missed; when one genuinely is, text-back sends the safety-net SMS and the agent can even place an outbound call-back. Agencies can run this whole flow white-labeled in each client's sub-account from $99/month."
+    },
+    {
+      "question": "Does missed-call text-back actually recover leads?",
+      "answer": "Honestly: nobody has published reliable primary research on recovery rates. The 'recovers 20-35% of leads' figure circulating in comparison articles is an unsourced vendor claim, and the '85% of callers won't call back' stat has no original source at all. What is well documented is speed-to-lead: the primary 2007 Oldroyd study found leads contacted within five minutes were roughly 100x more likely to connect than those contacted 30 minutes later — which is an argument for answering the call live, not just texting it back."
+    }
+  ],
   "ai-receptionist-cost": [
     {
       "question": "How much does an AI receptionist cost per month?",
