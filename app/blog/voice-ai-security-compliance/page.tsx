@@ -229,7 +229,11 @@ export default function VoiceAISecurityComplianceBlogPost() {
               Recording has its own rules. Some states need only one party to
               consent, while others need all parties. Many teams play a short
               notice at the start of each recorded call. Check the rules for
-              each state or country you call before you launch.
+              each state or country you call before you launch &mdash; our{" "}
+              <Link href="/blog/ai-receptionist-call-recording-laws" className="text-brand-light hover:text-brand transition-colors">
+                AI receptionist call recording laws guide
+              </Link>{" "}
+              breaks down the federal rules and the state-by-state consent map.
             </p>
           </div>
 

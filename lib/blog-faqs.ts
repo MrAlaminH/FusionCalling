@@ -50,6 +50,28 @@ export const blogFaqs: Record<string, BlogFaq[]> = {
       "answer": "Honestly: nobody has published reliable primary research on recovery rates. The 'recovers 20-35% of leads' figure circulating in comparison articles is an unsourced vendor claim, and the '85% of callers won't call back' stat has no original source at all. What is well documented is speed-to-lead: the primary 2007 Oldroyd study found leads contacted within five minutes were roughly 100x more likely to connect than those contacted 30 minutes later — which is an argument for answering the call live, not just texting it back."
     }
   ],
+  "ai-receptionist-call-recording-laws": [
+    {
+      "question": "Is it legal to use an AI receptionist for my business?",
+      "answer": "Yes. No federal US law prohibits answering your own inbound calls with an AI receptionist. The FCC's February 2024 ruling on AI-generated voices regulates calls your system makes (outbound), not calls it answers. The rules that do apply to inbound use: state call-recording consent laws, the FTC's ban on impersonating people or businesses, and a growing set of state AI-disclosure laws like Utah's."
+    },
+    {
+      "question": "Do I have to tell callers they're talking to an AI?",
+      "answer": "As of September 2026, no federal rule requires AI disclosure on inbound calls. But Utah requires disclosure when consumers ask (and at the outset for regulated occupations), Colorado phases in a general disclosure duty on June 30, 2026, and California requires verbal AI disclaimers in healthcare patient communications. The best practice is simple: a one-line notice at the start of the call — 'this call may be recorded and may be answered by an automated assistant' — which also satisfies state recording-consent exposure."
+    },
+    {
+      "question": "Which states require all-party consent to record phone calls?",
+      "answer": "The commonly counted list is 13 states: California, Connecticut, Delaware, Florida, Illinois, Maryland, Massachusetts, Michigan, Montana, Nevada, New Hampshire, Pennsylvania, and Washington — plus Oregon's hybrid rule (one-party by telephone, all-party in person) and Vermont under common law. In the remaining states, federal-style one-party consent applies. We verified the statute text for 8 of these in our guide and mark which ones; confirm your own state's current statute before standardizing on recording."
+    },
+    {
+      "question": "Does my AI receptionist vendor need to sign a HIPAA BAA?",
+      "answer": "If your practice is a HIPAA covered entity and the vendor creates, receives, maintains, or transmits protected health information on your behalf — which an AI receptionist handling patient calls does — the vendor is a business associate and a written Business Associate Agreement is required (45 CFR 164.502(e) and 164.504(e)). Ask for the BAA before going live, not after the first patient call."
+    },
+    {
+      "question": "What did the FCC's 2024 AI voice ruling actually change?",
+      "answer": "The ruling (FCC 24-17, February 8, 2024) confirmed that AI-generated voices count as 'artificial or prerecorded voice' under the existing TCPA. That means any call your system MAKES with an AI voice to cell phones needs prior express consent — written consent for marketing — with penalties of $500 per call, up to $1,500 for willful violations, plus calling-hour and do-not-call rules. It did not change anything about answering inbound calls with an AI receptionist."
+    }
+  ],
   "ai-receptionist-cost": [
     {
       "question": "How much does an AI receptionist cost per month?",

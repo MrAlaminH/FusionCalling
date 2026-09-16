@@ -246,6 +246,21 @@ An AI receptionist answers the call live in about two rings, 24/7, books into yo
 Which fits: text-back suits solo operators on tight budgets and very low call volume. Emergency-driven trades and booking-heavy offices (dental, med spa, legal) benefit from live answering. Agencies on GoHighLevel get the best result running both layers: white-label voice AI answers in each client sub-account while GHL's native text-back stays as the safety net. See /whitelabel/gohighlevel, /pricing, and the ROI calculator at /calculator.`,
   },
   {
+    slug: "ai-receptionist-call-recording-laws",
+    title: "AI Receptionist Call Recording Laws by State (2026)",
+    description:
+      "Yes, AI receptionists are legal in the US. The verified 2026 map: 13 all-party consent states, FCC AI-voice rules, disclosure laws, and a compliance checklist.",
+    date: "2026-09-16",
+    category: "Security Guide",
+    readTime: "10 min read",
+    image: "/blog/blog3.webp",
+    content: `Answering your own inbound calls with an AI receptionist is legal in the US — no federal law requires you to announce an AI voice on inbound calls. The rules that matter: (1) state call-recording consent — 13 states commonly require all-party consent (CA, CT, DE, FL, IL, MD, MA, MI, MT, NV, NH, PA, WA), plus Oregon's phone/in-person hybrid and Vermont's common-law rule; we verified the statute text for 8 of them and mark which in the article; (2) no impersonating humans — the FTC Impersonation Rule (16 CFR Part 461, effective April 1, 2024); (3) for calls the system makes, the FCC's February 8, 2024 ruling (FCC 24-17) confirmed AI voices are "artificial or prerecorded voice" calls under the TCPA — prior express written consent for marketing to cell phones, 8am-9pm local hours, DNC honored, $500-$1,500 per call in private suits.
+
+Emerging disclosure laws: California AB 2905 (from Jan 1, 2025) requires outbound robocalls with AI voices to disclose it; Utah's SB 149/SB 226 requires disclosure on request and at the outset for regulated occupations (sunset July 1, 2027); Colorado SB 24-205 phases in June 30, 2026; California AB 3030 requires verbal AI disclaimers at the start and end of healthcare audio communications. An FCC proposal to require AI-voice disclosure in outbound robocalls remains pending.
+
+Practical checklist: play a "this call may be recorded" notice at call start (satisfies Connecticut's verbal-notification route and Massachusetts's anti-secret-recording wording), never let the AI claim to be a named human, sign a BAA before handling PHI (45 CFR 164.502(e)/164.504(e)), treat outbound as the regulated zone, and keep transcripts with consent logs. Fusion Calling supports disclosure notices, BAAs for healthcare, and assistant-self-identification with human handoff — from $149/mo direct or white-label from $99/mo. Not legal advice; confirm with counsel.`,
+  },
+  {
     slug: "will-ai-replace-receptionists",
     title: "Will AI Replace Receptionists? What Actually Changes in 2026",
     description:
