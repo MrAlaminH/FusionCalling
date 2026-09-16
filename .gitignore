@@ -14,10 +14,12 @@
 /out/
 /.kilo/
 /.agents/
+/.zcode/
 
 # production
 /build
 /plan
+/research/
 
 # misc
 .DS_Store
