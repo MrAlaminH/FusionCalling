@@ -6,6 +6,28 @@ import type { BlogFaq } from "@/components/blog/PostFaq";
  * never diverge (Google requires FAQ content to be visible on the page).
  */
 export const blogFaqs: Record<string, BlogFaq[]> = {
+  "ai-receptionist-complaints": [
+    {
+      "question": "What is the most common complaint about AI receptionists?",
+      "answer": "In our analysis of 55 public user reports (collected September 16, 2026), the most common failure was callers hanging up on the AI — 9 reports described frustrated callers abandoning calls, often without the business ever finding out. Misunderstanding and endless loops were the next most common call-handling complaint, followed by usage-based billing surprises. Almost all of these trace to one root cause: the agent had no configured way to hand off to a human."
+    },
+    {
+      "question": "Are AI receptionists worth it despite the complaints?",
+      "answer": "Often yes — 16 of the 55 reports in our analysis (29%) were positive, and the happy users share a pattern: they defined exactly what the AI handles, configured escalation triggers to a human, set after-hours rules, and reviewed transcripts weekly. Typical wins were after-hours coverage and replacing voicemail — 'most patients would rather be picked up by an AI than not picked up at all,' as one dentist put it. The complaints concentrate in deployments where the agent was turned on with no exit path."
+    },
+    {
+      "question": "How do I avoid usage-based billing surprises?",
+      "answer": "Ask three questions in writing before signing: what is the per-minute or per-call rate once included minutes run out, is billing per-second or rounded up, and what counts as a billable call? Billing opacity was behind 7 of the 55 reports we analyzed. Flat-rate plans with included minutes — like Fusion Calling's $149–$497/mo business plans with $0 setup and no contracts — remove the surprise entirely."
+    },
+    {
+      "question": "Did the FTC really sue an AI calling company?",
+      "answer": "Yes. In August 2025 the FTC sued Air AI (Air AI Technologies) over alleged false earnings and refund claims sold as business opportunities. The proposed settlement, announced March 24, 2026, included an $18 million monetary judgment and banned the company and its owners from marketing business opportunities or making unsubstantiated earnings claims. It's a useful reminder to buy month-to-month from vendors whose refund and cancellation terms you've actually read."
+    },
+    {
+      "question": "How do I test an AI receptionist honestly before buying?",
+      "answer": "Demand a live call to your own phone number using your scenarios, not the vendor's demo script: interrupt the agent mid-sentence, call from a noisy environment, ask a question that isn't in its knowledge base, say an emergency keyword, and ask to speak to a human. Then check what happens on each failure path — a message taken, a transfer with context, or a hangup. Finally, read the provider's 1-star reviews and recent community threads before trusting its average rating."
+    }
+  ],
   "ai-receptionist-cost": [
     {
       "question": "How much does an AI receptionist cost per month?",

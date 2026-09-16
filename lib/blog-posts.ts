@@ -214,6 +214,23 @@ Where Fusion Calling fits: business plans run $149/mo with 500 included minutes 
 ROI math: compare the flat monthly AI cost against a $3,000+/mo human salary plus benefits and 40-hour-per-week coverage limits — most businesses recover the subscription cost with a handful of captured calls per month. Model your own numbers with the ROI calculator at /calculator and see full pricing at /pricing.`,
   },
   {
+    slug: "ai-receptionist-complaints",
+    title: "AI Receptionist Complaints: 55 Real User Reports Analyzed",
+    description:
+      "We analyzed 55 real user reports of AI receptionists. The five complaints that come up most — hangups, loops, billing shocks — and how to avoid them.",
+    date: "2026-09-16",
+    category: "Buyer's Guide",
+    readTime: "9 min read",
+    image: "/blog/blog5.webp",
+    content: `We analyzed 55 individual user reports of AI receptionists — 42 Reddit discussions, 9 Trustpilot reviews, 4 App Store reviews — plus 10 provider review pages and two FTC enforcement documents, all collected September 16, 2026. Sixteen of 55 reports described failed call handling and 16 were positive (29% — kept deliberately so the analysis isn't a hit piece).
+
+The five complaint patterns that repeat: (1) callers hanging up on the AI with the business never finding out (9 reports); (2) misunderstanding, glitches, and endless loops from agents tuned only for a happy path (5+); (3) usage-based billing shocks — credits, per-call minimums, refund waits (7); (4) booking failures like wrong services and double-bookings (3); (5) the demo-vs-reality gap — polished pre-recorded demos vs messy real deployments (4). The rarest and most expensive: emergency triage failures, like an agent that booked a burst-pipe call for next week.
+
+The root cause behind most complaints isn't robotic voice — it's the missing graceful exit. Happy users configure scope, escalation triggers, after-hours rules, and weekly transcript reviews; the dividing line is designed versus dumped. Before buying, check five red flags: opaque usage pricing, demos not run live on your scenarios, walls of short 5-star onboarding reviews, no human-escalation config, and unread cancellation terms. The FTC's Air AI case (filed Aug 2025, settled Mar 2026 with an $18M judgment) shows the documented worst case.
+
+Fusion Calling is designed around these complaints: human handoff with full context, flat monthly pricing from $149/mo with $0 setup and no contracts, a live unscripted demo, and no lock-in on Vapi/Retell/ElevenLabs. Agencies get the same controls white-label from $99/mo via the reseller program. See /blog/ai-receptionist-cost for pricing and /ai-receptionist for the product.`,
+  },
+  {
     slug: "will-ai-replace-receptionists",
     title: "Will AI Replace Receptionists? What Actually Changes in 2026",
     description:
