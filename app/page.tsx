@@ -25,11 +25,11 @@ const FAQSection = dynamic(() => import("@/components/FAQs"));
 const Calendar = dynamic(() => import("@/components/calendar"), { ssr: false });
 
 export const metadata: Metadata = {
-  title: "AI Phone Call Automation — 24/7 AI Receptionist",
+  title: "AI Phone Call Automation — AI Receptionist",
   description:
     "Fusion Calling AI voice agents answer & place calls 24/7, book appointments, and qualify leads. Live demo, plans from $149/mo.",
   ...buildOpenGraph({
-    title: "AI Phone Call Automation — 24/7 AI Receptionist",
+    title: "AI Phone Call Automation — AI Receptionist",
     description:
       "Fusion Calling AI voice agents answer & place calls 24/7, book appointments, and qualify leads. Live demo, plans from $149/mo.",
     path: "/",

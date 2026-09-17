@@ -210,13 +210,18 @@ const pricingJsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: "Pricing",
+  title: {
+    // Absolute: keeps the $149 hook under the ~60-char SERP limit without the
+    // root template's " | Fusion Calling" suffix (site name shows in the SERP
+    // badge anyway).
+    absolute: "Pricing & Plans — AI Phone Automation from $149/mo",
+  },
   description: "Simple, fair pricing for AI phone call automation. Plans from $149/month with 500-2,100 included minutes. No long-term contracts. 14-day money-back guarantee.",
   alternates: {
     canonical: "/pricing",
   },
   openGraph: {
-    title: "Pricing | Fusion Calling",
+    title: "Pricing & Plans — AI Phone Automation from $149/mo",
     description: "Simple, fair pricing for AI phone call automation. Plans from $149/month with 500-2,100 included minutes. No long-term contracts.",
     url: `${SITE_URL}/pricing`,
     siteName: "Fusion Calling",
@@ -233,7 +238,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@MrAlaminH",
-    title: "Pricing | Fusion Calling",
+    title: "Pricing & Plans — AI Phone Automation from $149/mo",
     description: "Simple, fair pricing for AI phone call automation. Plans from $149/month.",
     images: [`${SITE_URL}/opengraph-image.png`],
   },

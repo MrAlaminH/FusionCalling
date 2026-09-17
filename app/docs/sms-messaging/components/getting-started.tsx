@@ -12,9 +12,9 @@ export function GettingStartedSection() {
         <div className="flex gap-4 p-4 rounded-lg border border-gray-700 bg-zinc-900/50">
           <div className="text-2xl flex-shrink-0">1️⃣</div>
           <div>
-            <h4 className="font-semibold text-white mb-1">
+            <h3 className="font-semibold text-white mb-1">
               Fusion Call Account
-            </h4>
+            </h3>
             <p className="text-gray-300">
               Log in at app.fusioncalling.com (or your custom domain)
             </p>
@@ -24,7 +24,7 @@ export function GettingStartedSection() {
         <div className="flex gap-4 p-4 rounded-lg border border-gray-700 bg-zinc-900/50">
           <div className="text-2xl flex-shrink-0">2️⃣</div>
           <div>
-            <h4 className="font-semibold text-white mb-1">Twilio Account</h4>
+            <h3 className="font-semibold text-white mb-1">Twilio Account</h3>
             <p className="text-gray-300">
               With at least one phone number that can send and receive SMS
             </p>
@@ -34,9 +34,9 @@ export function GettingStartedSection() {
         <div className="flex gap-4 p-4 rounded-lg border border-gray-700 bg-zinc-900/50">
           <div className="text-2xl flex-shrink-0">3️⃣</div>
           <div>
-            <h4 className="font-semibold text-white mb-1">
+            <h3 className="font-semibold text-white mb-1">
               Twilio Credentials
-            </h4>
+            </h3>
             <p className="text-gray-300 mb-2">
               You will need three items from Twilio:
             </p>

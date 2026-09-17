@@ -211,7 +211,7 @@ export default function GlossaryTermPage({ term }: { term: GlossaryTerm }) {
           <p className="text-gray-400 leading-relaxed mb-6">
             Understanding the terminology is the first step. Launching a branded
             voice AI practice is the next. Fusion Calling helps agencies go live in
-            about 7 days, with multi-provider support, done-with-you onboarding,
+            24 hours, with multi-provider support, done-with-you onboarding,
             and full brand ownership.
           </p>
           <Link

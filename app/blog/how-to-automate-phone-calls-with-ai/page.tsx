@@ -29,6 +29,7 @@ export default function HowToAutomatePhoneCallsWithAI() {
               description: post.description,
               image: post.image,
               datePublished: post.date,
+              dateModified: post.updated ?? post.date,
               authorSchemaId: teamAuthor.authorSchemaId,
               faqs,
               crumbName: "How to Automate Phone Calls with AI: Setup to First Live Call",

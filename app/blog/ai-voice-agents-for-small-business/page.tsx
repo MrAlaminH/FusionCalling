@@ -29,6 +29,7 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
               description: post.description,
               image: post.image,
               datePublished: post.date,
+              dateModified: post.updated ?? post.date,
               authorSchemaId: teamAuthor.authorSchemaId,
               faqs,
               crumbName: "AI Voice Agents for Small Business: Use Cases & ROI",
@@ -369,8 +370,8 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
                 </h3>
                 <p className="text-gray-400 text-sm">
                   Our team helps you connect a provider, apply your branding,
-                  and onboard your first clients — typically a launch in about
-                  7 days.
+                  and onboard your first clients — typically a launch in
+                  24 hours.
                 </p>
               </div>
             </div>

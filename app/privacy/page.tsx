@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 const title = "Privacy Policy";
 const description =
-  "Fusion Calling privacy policy covering data collection, usage, retention, security, and your rights.";
+  "Fusion Calling privacy policy covering data collection, usage, retention, security, and your rights. We never sell your data, and you can request deletion at any time.";
 
 export const metadata: Metadata = {
   title,

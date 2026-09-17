@@ -47,7 +47,7 @@ export const authors: Author[] = [
     role: "Product & Voice Engineering",
     bio: "The Fusion Calling team builds and operates the white-label AI voice platform used by 500+ agencies worldwide. Our product and voice engineering team specializes in multi-provider voice AI (Vapi, Retell, ElevenLabs), white-label infrastructure, and agency go-to-market strategies. We publish technical guides, industry benchmarks, and agency playbooks based on production data from millions of automated calls.",
     shortBio:
-      "The engineering and voice AI team behind Fusion Calling's multi-provider platform. Experts in Vapi, Retell, ElevenLabs integration, conversation design, and production voice deployments.",
+      "The engineering team behind Fusion Calling's multi-provider voice AI platform: Vapi, Retell & ElevenLabs integration, conversation design, and production deployments.",
     avatar: "/avatars/female_avatar.svg",
     linkedin: "https://www.linkedin.com/company/fusion-calling/",
     twitter: "https://x.com/MrAlaminH",

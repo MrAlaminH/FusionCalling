@@ -16,7 +16,7 @@ export function StatusesSection() {
             <span className="inline-block bg-blue-600/20 text-blue-400 px-3 py-1 rounded-full text-sm font-semibold mr-3">
               Pending
             </span>
-            <h4 className="text-xl font-semibold text-white">Ready to Call</h4>
+            <h3 className="text-xl font-semibold text-white">Ready to Call</h3>
           </div>
           <p className="text-gray-400 mb-3">
             <strong>Meaning:</strong> Lead is ready to be called right now
@@ -37,7 +37,7 @@ export function StatusesSection() {
             <span className="inline-block bg-yellow-600/20 text-yellow-400 px-3 py-1 rounded-full text-sm font-semibold mr-3">
               In-Progress
             </span>
-            <h4 className="text-xl font-semibold text-white">Call Active</h4>
+            <h3 className="text-xl font-semibold text-white">Call Active</h3>
           </div>
           <p className="text-gray-400 mb-3">
             <strong>Meaning:</strong> A call is currently happening for this
@@ -59,9 +59,9 @@ export function StatusesSection() {
             <span className="inline-block bg-purple-600/20 text-purple-400 px-3 py-1 rounded-full text-sm font-semibold mr-3">
               Retry
             </span>
-            <h4 className="text-xl font-semibold text-white">
+            <h3 className="text-xl font-semibold text-white">
               Waiting for Retry Delay
-            </h4>
+            </h3>
           </div>
           <p className="text-gray-400 mb-3">
             <strong>Meaning:</strong> Call was unsuccessful, waiting for retry
@@ -84,7 +84,7 @@ export function StatusesSection() {
             <span className="inline-block bg-green-600/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold mr-3">
               Completed
             </span>
-            <h4 className="text-xl font-semibold text-white">Finished</h4>
+            <h3 className="text-xl font-semibold text-white">Finished</h3>
           </div>
           <p className="text-gray-400 mb-3">
             <strong>Meaning:</strong> Lead has reached the end of the calling
@@ -106,9 +106,9 @@ export function StatusesSection() {
             <span className="inline-block bg-red-600/20 text-red-400 px-3 py-1 rounded-full text-sm font-semibold mr-3">
               Failed
             </span>
-            <h4 className="text-xl font-semibold text-white">
+            <h3 className="text-xl font-semibold text-white">
               Permanent Error
-            </h4>
+            </h3>
           </div>
           <p className="text-gray-400 mb-3">
             <strong>Meaning:</strong> Lead has a permanent issue that prevents

@@ -46,7 +46,7 @@ const sharedWhyFusion: IndustryAdvantage[] = [
     emoji: "⚡",
     title: "Launch in Days, Not Months",
     description:
-      "Pre-built agent templates and a guided setup get your first client live in about 7 days with a fully branded portal.",
+      "Pre-built agent templates and a guided setup get your first client live in 24 hours with a fully branded portal.",
   },
   {
     emoji: "🎚️",

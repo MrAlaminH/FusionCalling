@@ -4,6 +4,17 @@ import Link from "next/link";
 import Image from "next/image";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { authors, getAuthor } from "@/lib/authors";
+import { blogPosts } from "@/lib/blog-posts";
+
+// Byline authorship lives in each post page (getAuthor/getTeamAuthor calls);
+// this map mirrors it for the author-page article list. Posts not listed here
+// are published by the Fusion Calling team.
+const POSTS_BY_AUTHOR: Record<string, readonly string[]> = {
+  alamin: ["how-to-start-a-voice-ai-agency", "ai-voice-agents-for-small-business"],
+};
+const TEAM_AUTHORED = blogPosts.filter(
+  (p) => !Object.values(POSTS_BY_AUTHOR).flat().includes(p.slug)
+);
 
 export function generateStaticParams() {
   return authors.map((a) => ({ slug: a.slug }));
@@ -64,6 +75,12 @@ export default function TeamMemberPage({
   }
 
   const url = `${SITE_URL}/team/${author.slug}`;
+  const ownSlugs = POSTS_BY_AUTHOR[author.slug];
+  const authorPosts = ownSlugs
+    ? blogPosts.filter((p) => ownSlugs.includes(p.slug))
+    : author.slug === "voice-team"
+      ? TEAM_AUTHORED
+      : [];
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -216,6 +233,31 @@ export default function TeamMemberPage({
               ))}
             </div>
           </div>
+
+          {/* Published articles */}
+          {authorPosts.length > 0 && (
+            <div className="mb-12">
+              <h2 className="text-2xl font-bold text-white mb-6">
+                Published articles
+              </h2>
+              <ul className="space-y-3">
+                {authorPosts.map((post) => (
+                  <li key={post.slug}>
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="text-gray-300 hover:text-brand-light transition-colors"
+                    >
+                      {post.title}
+                    </Link>
+                    <span className="text-gray-500 text-sm">
+                      {" "}
+                      · {post.category}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {/* CTA */}
           <div className="glass rounded-2xl p-8 border border-brand/30 text-center">

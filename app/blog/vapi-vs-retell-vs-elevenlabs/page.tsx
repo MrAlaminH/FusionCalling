@@ -29,6 +29,7 @@ export default function VapiVsRetellVsElevenLabsBlogPost() {
               description: post.description,
               image: post.image,
               datePublished: post.date,
+              dateModified: post.updated ?? post.date,
               authorSchemaId: teamAuthor.authorSchemaId,
               faqs,
               crumbName: "Vapi vs Retell vs ElevenLabs: Choosing the Right Voice AI Provider",
@@ -386,7 +387,7 @@ export default function VapiVsRetellVsElevenLabsBlogPost() {
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
-                <span>Launch your white-label practice in about 7 days</span>
+                <span>Launch your white-label practice in 24 hours</span>
               </li>
             </ul>
           </div>
@@ -406,7 +407,7 @@ export default function VapiVsRetellVsElevenLabsBlogPost() {
               Fusion Calling is the white-label layer that makes that possible —
               unifying all three providers under one branded dashboard so you
               keep full control, keep 100% of your client revenue, and launch in
-              about a week. You can hear it for yourself on our{" "}
+              24 hours. You can hear it for yourself on our{" "}
               <Link href="/#show-case" className="text-brand-light hover:text-brand transition-colors">
                 live homepage demo
               </Link>

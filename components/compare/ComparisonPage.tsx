@@ -107,7 +107,7 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
           </div>
 
           <h1 className="font-display text-4xl md:text-5xl font-bold tracking-tight mb-6 leading-[1.15] text-white">
-            {h1}
+            {h1}{" "}
             <br />
             <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong bg-clip-text text-transparent">
               {h1Highlight}

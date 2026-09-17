@@ -58,7 +58,7 @@ Revenue calculator available at /calculator. Book a discovery call at cal.com/mr
     title: "AI Voice by Industry | Fusion Calling",
     content: `Explore how white-label AI voice agents serve every industry: real estate, dental, insurance, home services, legal, automotive, call centers, finance, e-commerce, education, and restaurants.
 
-Each industry page includes use cases, ROI statistics, agency angle, and why Fusion Calling is the best platform for that vertical. Agencies can deploy pre-built templates in 7 days.`,
+Each industry page includes use cases, ROI statistics, agency angle, and why Fusion Calling is the best platform for that vertical. Agencies can deploy pre-built templates in 24 hours.`,
   },
   ...industries.map((ind) => ({
     path: `/industries/${ind.slug}`,

@@ -29,6 +29,7 @@ export default function RetellAIBlogPost() {
               description: post.description,
               image: post.image,
               datePublished: post.date,
+              dateModified: post.updated ?? post.date,
               authorSchemaId: teamAuthor.authorSchemaId,
               faqs,
               crumbName: "Can You White-Label Retell AI? Here's How",
@@ -115,8 +116,8 @@ export default function RetellAIBlogPost() {
               Think of Fusion Calling as the agency layer that wraps around Retell. You
               bring your Retell account; we provide everything your clients see and
               everything you need to run a multi-client business. This saves you from
-              building the white-label layer yourself — most agencies launch in about{" "}
-              <strong className="text-brand-light">7 days</strong> instead of weeks or
+              building the white-label layer yourself — most agencies launch in{" "}
+              <strong className="text-brand-light">24 hours</strong> instead of weeks or
               months of custom development.
             </p>
 
@@ -166,7 +167,7 @@ export default function RetellAIBlogPost() {
               <p className="text-gray-300 text-sm leading-relaxed">
                 You are not left to figure it out alone. Our team helps you connect your
                 Retell account, apply your branding, and onboard your first clients —
-                typically getting you to launch in around a week.
+                typically getting you to launch within 24 hours.
               </p>
             </div>
           </div>
@@ -333,7 +334,7 @@ export default function RetellAIBlogPost() {
               Retell AI gives you a best-in-class voice engine. Fusion Calling gives you
               the agency layer to sell it: your brand, your client portals, your sub-accounts,
               and your billing. Together, they let you launch a complete, white-label voice
-              AI business in about 7 days.
+              AI business in 24 hours.
             </p>
             <p className="text-gray-300 leading-relaxed mb-8">
               Want to see it in action? There is a{" "}

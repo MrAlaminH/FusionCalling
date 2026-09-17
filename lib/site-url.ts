@@ -1,3 +1,7 @@
+// SEO constraint: next.config.mjs 301s the apex host to www. This URL (used
+// for metadataBase, canonicals, sitemap, and JSON-LD) must stay on www —
+// if NEXT_PUBLIC_SITE_URL is ever set to the apex host, every canonical
+// would point at a URL that redirects, splitting ranking signals.
 const FALLBACK_SITE_URL = "https://www.fusioncalling.com";
 
 export const SITE_URL = (() => {

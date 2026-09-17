@@ -71,7 +71,7 @@ export default function PostLayout({
                 </div>
 
                 <h1 className="font-display text-4xl md:text-5xl font-bold tracking-tight leading-[1.15] text-white mb-6">
-                  {titleLead}
+                  {titleLead}{" "}
                   {titleHighlight ? (
                     <>
                       <br />

@@ -233,7 +233,7 @@ export const blogFaqs: Record<string, BlogFaq[]> = {
     },
     {
       "question": "How long does it take to launch my first client?",
-      "answer": "Most partners get a production-ready agent live in about 7 days with done-with-you onboarding. No code required — just pick a niche template, customize the greeting and qualification questions, connect a number, and test."
+      "answer": "Most partners get a production-ready agent live in 24 hours with done-with-you onboarding. No code required — just pick a niche template, customize the greeting and qualification questions, connect a number, and test."
     },
     {
       "question": "What niche should I pick for my voice AI agency?",
@@ -279,7 +279,7 @@ export const blogFaqs: Record<string, BlogFaq[]> = {
     },
     {
       "question": "How long does it take to white-label my Retell setup?",
-      "answer": "Most partners launch in about 7 days with our done-with-you onboarding. Connect your Retell API key, apply your branding, and start reselling Retell under your own brand."
+      "answer": "Most partners launch in 24 hours with our done-with-you onboarding. Connect your Retell API key, apply your branding, and start reselling Retell under your own brand."
     },
     {
       "question": "Can I use Retell for some clients and Vapi for others?",
@@ -331,7 +331,7 @@ export const blogFaqs: Record<string, BlogFaq[]> = {
     },
     {
       "question": "How long does setup take?",
-      "answer": "Most partners launch in about 7 days thanks to our done-with-you onboarding. Instead of spending months building a custom $45K white-label app, you connect your Vapi account, apply your branding, and start reselling in roughly a week."
+      "answer": "Most partners launch in 24 hours thanks to our done-with-you onboarding. Instead of spending months building a custom $45K white-label app, you connect your Vapi account, apply your branding, and start reselling within 24 hours."
     },
     {
       "question": "Can I use other providers alongside Vapi?",

@@ -7,7 +7,7 @@ import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 
 const title = "AI Lead Qualification Calls";
 const description =
-  "Qualify inbound and outbound leads automatically with AI phone calls. Speed-to-lead in minutes, BANT-style scoring, and every call synced to your CRM with a transcript. From $149/mo.";
+  "Qualify inbound and outbound leads automatically with AI phone calls. Speed-to-lead in minutes, BANT-style scoring, every call synced to your CRM. From $149/mo.";
 
 const qualifiesOn = [
   {

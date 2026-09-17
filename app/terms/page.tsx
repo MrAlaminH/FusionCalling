@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 const title = "Terms of Service";
 const description =
-  "Fusion Calling terms of service describing acceptable use, billing, privacy, and platform obligations.";
+  "Fusion Calling terms of service describing acceptable use, billing, privacy, and platform obligations for our AI phone call automation services.";
 
 export const metadata: Metadata = {
   title,

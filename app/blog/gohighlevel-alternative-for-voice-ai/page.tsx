@@ -29,6 +29,7 @@ export default function GhlAlternativeBlogPost() {
               description: post.description,
               image: post.image,
               datePublished: post.date,
+              dateModified: post.updated ?? post.date,
               authorSchemaId: teamAuthor.authorSchemaId,
               faqs,
               crumbName: "GoHighLevel Alternative for Voice AI: Built-In CRM + Voice Agents",
@@ -356,7 +357,7 @@ export default function GhlAlternativeBlogPost() {
 
             <div className="bg-gradient-to-r from-brand/10 to-brand-strong/5 rounded-xl p-6 border border-brand/30 mb-6">
               <p className="text-center text-brand-light font-semibold text-lg">
-                💡 $0 setup, a 3-day free trial, and launch in about 7 days.
+                💡 $0 setup, a 3-day free trial, and launch in 24 hours.
               </p>
             </div>
 

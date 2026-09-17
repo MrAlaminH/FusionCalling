@@ -2,7 +2,7 @@
  * Data-integrity checks for the content registries the UI renders from.
  * Run: npm run check:data
  */
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import assert from "node:assert/strict";
 import { comparisons } from "../lib/comparisons";
 import {
@@ -127,6 +127,32 @@ for (let i = 1; i < WHOLESALE_PLANS.length; i++) {
   assert.ok(
     WHOLESALE_PLANS[i].price > WHOLESALE_PLANS[i - 1].price,
     `WHOLESALE_PLANS: prices must ascend (${WHOLESALE_PLANS[i].name})`
+  );
+}
+
+// Launch claims: the canonical guided-launch fact is "24 hours"
+// (lib/product-facts LAUNCH.guided). No registry or blog page may reintroduce
+// a 7-day launch claim. First-sale milestones ("application to first sale in
+// ~one week") are a different fact and are allowed.
+const LAUNCH_CLAIM_PATTERN =
+  /7[- ]day (launch|setup)|launch (in|within) (about |around )?7 days|launch in around a week/i;
+const launchClaimFiles: string[] = [
+  "../lib/blog-posts.ts",
+  "../lib/blog-faqs.ts",
+  "../lib/whitelabel-case-studies.ts",
+  "../lib/industries.ts",
+];
+for (const entry of readdirSync(new URL("../app/blog", import.meta.url), {
+  recursive: true,
+})) {
+  if (String(entry).endsWith(".tsx")) launchClaimFiles.push(`../app/blog/${entry}`);
+}
+for (const rel of launchClaimFiles) {
+  const src = readFileSync(new URL(rel, import.meta.url), "utf8");
+  const match = src.match(LAUNCH_CLAIM_PATTERN);
+  assert(
+    !match,
+    `${rel}: 7-day launch claim reintroduced ("${match?.[0]}") — use LAUNCH.guided ("24 hours") from lib/product-facts`
   );
 }
 

@@ -29,6 +29,7 @@ export default function GoHighLevelBlogPost() {
               description: post.description,
               image: post.image,
               datePublished: post.date,
+              dateModified: post.updated ?? post.date,
               authorSchemaId: teamAuthor.authorSchemaId,
               faqs,
               crumbName: "Adding Voice AI to Your GoHighLevel Agency",
@@ -277,7 +278,7 @@ export default function GoHighLevelBlogPost() {
                   Done-With-You Setup
                 </h3>
                 <p className="text-gray-400 text-sm">
-                  Launch your first client&apos;s voice AI in about 7 days with
+                  Launch your first client&apos;s voice AI in 24 hours with
                   guided, done-with-you onboarding.
                 </p>
               </div>

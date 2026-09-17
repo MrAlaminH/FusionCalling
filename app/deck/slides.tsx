@@ -930,7 +930,7 @@ function ResultsSlide() {
       meta: "Digital agency · Austin, TX",
       metric: "$12.4K",
       metricLabel: "monthly recurring revenue",
-      points: ["15 white-label clients", "94% client retention", "First client live in 7 days"],
+      points: ["15 white-label clients", "94% client retention", "Branded platform live in 24 hours"],
       quote:
         "Every new client we onboard takes 15 minutes of setup and generates $500+ a month.",
       author: "Marcus Chen, Founder",

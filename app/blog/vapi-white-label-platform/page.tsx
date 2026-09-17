@@ -29,6 +29,7 @@ export default function VapiWhiteLabelBlogPost() {
               description: post.description,
               image: post.image,
               datePublished: post.date,
+              dateModified: post.updated ?? post.date,
               authorSchemaId: teamAuthor.authorSchemaId,
               faqs,
               crumbName: "White-Labeling Vapi with Fusion Calling",
@@ -116,7 +117,7 @@ export default function VapiWhiteLabelBlogPost() {
               and use Fusion Calling to turn it into a branded, sellable
               product. Instead of building a custom white-label app yourself
               (typically a $45K project and months of work), Fusion Calling
-              gives you everything you need to launch in about 7 days.
+              gives you everything you need to launch in 24 hours.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -165,8 +166,8 @@ export default function VapiWhiteLabelBlogPost() {
                 build-it-yourself approach typically runs about{" "}
                 <strong className="text-brand-light">$45K</strong> and takes
                 months. With Fusion Calling&apos;s done-with-you setup, most
-                agencies launch in about{" "}
-                <strong className="text-brand-light">7 days</strong>.
+                agencies launch in{" "}
+                <strong className="text-brand-light">24 hours</strong>.
               </p>
             </div>
           </div>
@@ -354,7 +355,7 @@ export default function VapiWhiteLabelBlogPost() {
             <p className="text-gray-300 leading-relaxed mb-8">
               Instead of spending months and tens of thousands building a
               custom white-label app, you can launch your branded voice AI
-              practice in about 7 days with done-with-you onboarding. Ready to
+              practice in 24 hours with done-with-you onboarding. Ready to
               see the{" "}
               <Link href="/whitelabel/vapi" className="text-brand-light hover:text-brand transition-colors">
                 white-label Vapi platform

@@ -6,7 +6,7 @@ import { SITE_URL } from "@/lib/site-url";
 
 const title = "AI Voice Agent Capacity Calculator";
 const description =
-  "Calculate how many calls your AI voice agents or AI receptionist can handle. Plan concurrency, forecast call volume, and size infrastructure for Vapi and Retell AI platforms.";
+  "Calculate how many calls your AI voice agents can handle. Plan concurrency, forecast call volume, and size infrastructure for Vapi and Retell AI platforms.";
 
 const calculatorFaqs = [
   {

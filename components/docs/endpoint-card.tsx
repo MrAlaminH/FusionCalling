@@ -267,25 +267,25 @@ export default function EndpointCard({ endpoint }: { endpoint: Endpoint }) {
             )}
             {endpoint.pathParams && endpoint.pathParams.length > 0 && (
               <div>
-                <h5 className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">
+                <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">
                   Path Parameters
-                </h5>
+                </h4>
                 <ParamTable params={endpoint.pathParams} />
               </div>
             )}
             {endpoint.queryParams && endpoint.queryParams.length > 0 && (
               <div>
-                <h5 className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">
+                <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">
                   Query Parameters
-                </h5>
+                </h4>
                 <ParamTable params={endpoint.queryParams} />
               </div>
             )}
             {endpoint.bodyParams && endpoint.bodyParams.length > 0 && (
               <div>
-                <h5 className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">
+                <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">
                   Request Body
-                </h5>
+                </h4>
                 <ParamTable params={endpoint.bodyParams} />
               </div>
             )}
@@ -293,9 +293,9 @@ export default function EndpointCard({ endpoint }: { endpoint: Endpoint }) {
             {/* Quick success response preview */}
             <div className="pt-4 border-t border-white/10">
               <div className="flex items-center gap-2 mb-2">
-                <h5 className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-500">
                   Success Response
-                </h5>
+                </h4>
                 <span
                   className={`inline-flex items-center justify-center h-5 px-1.5 rounded text-[11px] font-bold ring-1 ${statusTone(endpoint.responseStatus)}`}
                 >
@@ -363,9 +363,9 @@ export default function EndpointCard({ endpoint }: { endpoint: Endpoint }) {
             {/* Generated request */}
             <div>
               <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                <h5 className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-500">
                   Request
-                </h5>
+                </h4>
                 <div className="flex items-center gap-2">
                   <LanguageTabs />
                   <CopyButton value={code} iconOnly label="Copy request" />
@@ -431,15 +431,15 @@ export default function EndpointCard({ endpoint }: { endpoint: Endpoint }) {
         {tab === "response" && (
           <div className="space-y-5 animate-fade-in [animation-duration:150ms]">
             <div>
-              <h5 className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">
                 Example Response · {endpoint.responseStatus}
-              </h5>
+              </h4>
               <CodeBlock code={endpoint.responseExample} language="json" />
             </div>
             <div>
-              <h5 className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">
                 Status Codes
-              </h5>
+              </h4>
               <div className="grid sm:grid-cols-2 gap-1.5">
                 {endpoint.statusCodes.map((s) => (
                   <div
@@ -458,9 +458,9 @@ export default function EndpointCard({ endpoint }: { endpoint: Endpoint }) {
             </div>
             {endpoint.commonErrors && endpoint.commonErrors.length > 0 && (
               <div>
-                <h5 className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">
+                <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">
                   Common Errors
-                </h5>
+                </h4>
                 <div className="space-y-2">
                   {endpoint.commonErrors.map((e, i) => (
                     <div

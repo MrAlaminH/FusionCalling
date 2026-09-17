@@ -29,6 +29,7 @@ export default function StartVoiceAIAgencyBlogPost() {
               description: post.description,
               image: post.image,
               datePublished: post.date,
+              dateModified: post.updated ?? post.date,
               authorSchemaId: teamAuthor.authorSchemaId,
               faqs,
               crumbName: "How to Start a Voice AI Agency in 2026",
@@ -242,7 +243,7 @@ export default function StartVoiceAIAgencyBlogPost() {
                   Don&apos;t start from a blank canvas. Use a niche template, customize
                   the greeting and qualification questions, connect a number, and test.
                   With done-with-you onboarding, most partners get a production-ready
-                  agent live in about <strong>7 days</strong> &mdash; no code required.
+                  agent live in <strong>24 hours</strong> &mdash; no code required.
                 </p>
               </div>
 
@@ -407,7 +408,7 @@ export default function StartVoiceAIAgencyBlogPost() {
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
-                <span>Launch your first agent in about 7 days</span>
+                <span>Launch your first agent in 24 hours</span>
               </li>
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />

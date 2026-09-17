@@ -26,11 +26,13 @@ const aboutFaqs = [
 ];
 
 export const metadata: Metadata = {
-  title: "About Fusion Calling | AI Voice Agents",
+  title: {
+    absolute: "About Fusion Calling — AI Voice Agents & Mission",
+  },
   description:
     "Fusion Calling builds human-like AI voice agents that automate inbound and outbound calls. Learn our mission and why 50+ agencies trust us since 2022.",
   ...buildOpenGraph({
-    title: "About Fusion Calling | Our Mission",
+    title: "About Fusion Calling — AI Voice Agents & Mission",
     description:
       "We help businesses and agencies automate phone calls with human-like AI voice agents. 50+ agencies served since 2022.",
     path: "/about",

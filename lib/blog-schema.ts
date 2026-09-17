@@ -1,4 +1,4 @@
-import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { SITE_URL } from "@/lib/site-url";
 import type { Metadata } from "next";
 import { buildOpenGraph } from "@/lib/seo";
 import type { BlogPost } from "@/lib/blog-posts";
@@ -23,7 +23,9 @@ export function buildPostMetadata(post: BlogPost, author: Author): Metadata {
       image: post.image,
       type: "article",
       publishedTime: `${post.date}T00:00:00Z`,
-      modifiedTime: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
+      // Same source the sitemap lastmod uses, so the page's freshness signal
+      // and its sitemap entry can never disagree.
+      modifiedTime: `${post.updated ?? post.date}T00:00:00Z`,
       authors: [author.name],
     }),
   };
@@ -41,6 +43,7 @@ export function buildBlogGraph({
   description,
   image,
   datePublished,
+  dateModified,
   authorSchemaId,
   faqs,
   crumbName,
@@ -50,6 +53,9 @@ export function buildBlogGraph({
   description: string;
   image: string;
   datePublished: string;
+  /** ISO date the post materially changed; falls back to publish date. Keep
+   *  in sync with the sitemap lastmod (both read `post.updated ?? post.date`). */
+  dateModified?: string;
   authorSchemaId: string;
   faqs: BlogFaq[];
   /** Optional breadcrumb label when it differs from the title. */
@@ -82,7 +88,7 @@ export function buildBlogGraph({
         image: `${SITE_URL}${image}`,
         isPartOf: { "@id": `${SITE_URL}/#website` },
         datePublished: `${datePublished}T00:00:00Z`,
-        dateModified: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
+        dateModified: `${dateModified ?? datePublished}T00:00:00Z`,
         author: { "@id": authorSchemaId },
         publisher: { "@id": `${SITE_URL}/#organization` },
         speakable: {

@@ -25,9 +25,9 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "how-to-start-a-voice-ai-agency",
     title: "How to Start a Voice AI Agency in 2026: A Step-by-Step Guide",
-    metaTitle: "Start a Voice AI Agency in 2026: Step-by-Step",
+    metaTitle: "How to Start a Voice AI Agency in 2026",
     description:
-      "Learn how to start an AI voice agency business with a white-label platform and our AI voice agent reseller program. Keep 100% of client revenue, launch in 7 days, scale with Vapi, Retell and ElevenLabs.",
+      "Learn how to start an AI voice agency with a white-label platform. Keep 100% of client revenue, launch in 24 hours, and scale with Vapi, Retell & ElevenLabs.",
     date: "2025-02-13",
     category: "Agency Growth",
     readTime: "9 min read",
@@ -47,7 +47,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "vapi-vs-retell-vs-elevenlabs",
     title: "Vapi vs Retell vs ElevenLabs: Choosing the Right Voice AI Provider",
-    metaTitle: "Vapi vs Retell vs ElevenLabs: Which Is Best?",
+    metaTitle: "Vapi vs Retell vs ElevenLabs: Which Wins?",
     description:
       "A fair, neutral comparison of the three leading voice AI providers, and why you don't have to pick just one when you use Fusion Calling's multi-provider layer.",
     date: "2025-02-14",
@@ -58,7 +58,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "ai-voice-agents-for-small-business",
     title: "AI Voice Agents for Small Business: Use Cases & ROI",
-    metaTitle: "AI Voice Agents for Small Business: 2026 Guide",
+    metaTitle: "AI Voice Agents for Small Business (2026)",
     description:
       "See how restaurants and other small businesses use AI voice agents to answer every call, book appointments, and stay open 24/7. Compare the cost with a Vapi-based build and see the ROI math for a first client.",
     date: "2025-02-15",
@@ -69,7 +69,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "vapi-white-label-platform",
     title: "Does Vapi Offer White Label? How It Works",
-    metaTitle: "White-Label Vapi: Vapi Alone Isn't Resellable",
+    metaTitle: "White-Label Vapi: It's Not Resellable Alone",
     description:
       "Does Vapi offer white label natively? Learn how agencies resell Vapi under their own brand in 2026, what's missing, and the step-by-step setup.",
     date: "2025-02-10",
@@ -102,7 +102,7 @@ export const blogPosts: BlogPost[] = [
     title: "How to Automate Phone Calls with AI: Setup to First Live Call",
     metaTitle: "How to Automate Phone Calls with AI",
     description:
-      "How to automate phone calls with AI in five steps: pick a use case, connect your number, calendar, and CRM, add business knowledge, test calls, then launch with clear handoff rules. Includes AI call automation vs IVR, recording consent, and time-to-launch.",
+      "How to automate phone calls with AI in five steps: pick a use case, connect number, calendar, and CRM, add knowledge, test calls, then launch with handoff rules.",
     date: "2026-09-05",
     category: "How-To Guide",
     readTime: "6 min read",
@@ -133,6 +133,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "ai-receptionist-complaints",
     title: "AI Receptionist Complaints: 55 Real User Reports Analyzed",
+    metaTitle: "AI Receptionist Complaints: 55 Real Reports",
     description:
       "We analyzed 55 real user reports of AI receptionists. The five complaints that come up most — hangups, loops, billing shocks — and how to avoid them.",
     date: "2026-09-16",
@@ -143,6 +144,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "missed-call-text-back-vs-ai-receptionist",
     title: "Missed-Call Text-Back vs AI Receptionist (2026)",
+    metaTitle: "Missed-Call Text-Back vs AI Receptionist",
     description:
       "Missed-call text-back texts callers after the call is already lost; an AI receptionist answers live in two rings and books. Verified pricing, honest stats.",
     date: "2026-09-16",
@@ -153,6 +155,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "ai-receptionist-call-recording-laws",
     title: "AI Receptionist Call Recording Laws by State (2026)",
+    metaTitle: "AI Call Recording Laws by State (2026)",
     description:
       "Yes, AI receptionists are legal in the US. The verified 2026 map: 13 all-party consent states, FCC AI-voice rules, disclosure laws, and a compliance checklist.",
     date: "2026-09-16",
@@ -165,7 +168,7 @@ export const blogPosts: BlogPost[] = [
     title: "Will AI Replace Receptionists? What Actually Changes in 2026",
     metaTitle: "Will AI Replace Receptionists? 2026 Outlook",
     description:
-      "Mostly no: AI receptionists take over routine calls while humans keep judgment, empathy, and relationships. What to automate, what to keep, and what that means for owners and front-desk teams in 2026.",
+      "Mostly no: AI receptionists handle routine calls while humans keep judgment, empathy, and relationships. What to automate, what to keep, and what it means in 2026.",
     date: "2026-09-06",
     category: "Use Cases",
     readTime: "8 min read",

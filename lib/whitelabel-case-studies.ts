@@ -21,7 +21,7 @@ export const whitelabelCaseStudies: WhiteLabelCaseStudy[] = [
     agencyName: "VoiceWave Marketing",
     metaTitle: "VoiceWave: $12K/Mo White-Label AI Voice",
     metaDescription:
-      "Read how VoiceWave Marketing used Fusion Calling to launch a white-label AI voice practice. 15 clients, $12K/month recurring, launched in 7 days.",
+      "Read how VoiceWave Marketing used Fusion Calling to launch a white-label AI voice practice. 15 clients, $12K/month recurring, launched in 24 hours.",
     keywords: [
       "white-label AI voice case study",
       "AI voice reseller success story",
@@ -33,19 +33,19 @@ export const whitelabelCaseStudies: WhiteLabelCaseStudy[] = [
     heroStats: [
       { value: "$12K", label: "Monthly Recurring Revenue" },
       { value: "15", label: "White-Label Clients" },
-      { value: "7 Days", label: "Time to First Client Live" },
+      { value: "24 Hours", label: "Time to Platform Live" },
       { value: "94%", label: "Client Retention Rate" },
     ],
     story: [
       "VoiceWave Marketing had been running a traditional digital agency for 3 years — SEO, paid ads, and web design for local service businesses. Every client asked about phone call handling, but VoiceWave had no good answer. Offshoring was unreliable; virtual receptionist services had thin margins.",
       "When founder Marcus Chen discovered Fusion Calling's white-label program, he saw an immediate opportunity. 'I realized I could offer AI voice agents under my own brand and charge what I wanted. No technology to build, no staff to hire.'",
-      "Within 7 days of applying, VoiceWave had their branded AI voice dashboard live with custom pricing tiers. Marcus started by offering AI voice as an upsell to his 3 best clients at $497/month each. All 3 said yes within the first week.",
+      "Within 24 hours of applying, VoiceWave had their branded AI voice dashboard live with custom pricing tiers. Marcus started by offering AI voice as an upsell to his 3 best clients at $497/month each. All 3 said yes within the first week.",
       "Three months in, VoiceWave has 15 clients on white-label AI voice plans ranging from $297 to $997/month. Their total monthly recurring revenue from AI voice: $12,400. The margins are significantly better than their traditional services because there's zero delivery overhead per client.",
       "'This changed our business model entirely,' Marcus says. 'We went from trading time for money to selling a productized service with infrastructure margins. Every new client we onboard takes 15 minutes of setup and generates $500+ a month.'",
     ],
     testimonial: {
       quote:
-        "Fusion Calling let us launch a whole new revenue stream in a week. Our clients love having their own branded AI receptionist, and we love the recurring revenue with no extra headcount.",
+        "Fusion Calling let us launch a whole new revenue stream in 24 hours. Our clients love having their own branded AI receptionist, and we love the recurring revenue with no extra headcount.",
       attribution: "Marcus Chen",
       role: "Founder, VoiceWave Marketing",
       avatar: "/avatars/marcus-chen.jpg",
@@ -59,9 +59,9 @@ export const whitelabelCaseStudies: WhiteLabelCaseStudy[] = [
       },
       {
         emoji: "⚡",
-        title: "7-Day Launch",
+        title: "24-Hour Launch",
         description:
-          "From application to first paying client in 7 days — no technical development needed.",
+          "From application to a branded platform live in 24 hours — no technical development needed.",
       },
       {
         emoji: "🔄",

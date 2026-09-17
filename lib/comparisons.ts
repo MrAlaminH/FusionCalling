@@ -120,7 +120,7 @@ export const comparisons: Comparison[] = [
     datePublished: "2025-01-20T00:00:00Z",
     heroEmoji: "💬",
     heroImage: "/alternative/alternative1.webp",
-    metaTitle: "ChatDash Alternatives for Voice AI Agencies (2026 Comparison)",
+    metaTitle: "ChatDash Alternatives for Voice AI Agencies (2026)",
     metaDescription:
       "Fusion Calling vs ChatDash (2026 comparison): the white-label voice AI for agencies. 6 sub-accounts from $99/mo, multi-provider support, live demo, guided 24-hour onboarding.",
     keywords: [
@@ -1489,7 +1489,7 @@ export const comparisons: Comparison[] = [
     datePublished: "2026-09-05T00:00:00Z",
     heroEmoji: "🎙️",
     heroImage: "/blog/blog3.webp",
-    metaTitle: "Best Vapi Alternatives for White-Label Voice AI Agencies (2026)",
+    metaTitle: "Best Vapi Alternatives for White-Label Agencies (2026)",
     metaDescription:
       "Vapi alternative guide (2026): true Vapi cost vs 7 competitors — when to stay on Vapi vs resell white-labeled from $99/mo.",
     keywords: [
@@ -1704,7 +1704,7 @@ export const comparisons: Comparison[] = [
     datePublished: "2026-09-05T00:00:00Z",
     heroEmoji: "📞",
     heroImage: "/blog/blog6.webp",
-    metaTitle: "Best Retell AI Alternatives for White-Label Voice Agencies (2026)",
+    metaTitle: "Best Retell AI Alternatives for White-Label Agencies (2026)",
     metaDescription:
       "Looking for a Retell AI alternative? Compare Fusion Calling vs Retell AI on white-label reselling, pricing from $99/mo, sub-accounts & 24-hour guided launch (2026).",
     keywords: [
@@ -2339,7 +2339,7 @@ export const comparisons: Comparison[] = [
     datePublished: "2026-09-06T00:00:00Z",
     heroEmoji: "🐦",
     heroImage: "/blog/blog4.webp",
-    metaTitle: "BirdCall AI Alternatives for White-Label Voice AI Agencies (2026)",
+    metaTitle: "BirdCall AI Alternatives for White-Label Agencies (2026)",
     metaDescription:
       "Evaluating BirdCall AI for a white-label voice AI agency? Use this checklist on branding, sub-accounts, billing, and onboarding vs Fusion Calling from $99/mo.",
     keywords: [
@@ -2909,7 +2909,7 @@ export const comparisons: Comparison[] = [
     datePublished: "2026-09-06T00:00:00Z",
     heroEmoji: "📞",
     heroImage: "/blog/blog1.webp",
-    metaTitle: "Famulor Alternatives for White-Label Voice AI Agencies (2026)",
+    metaTitle: "Famulor Alternatives for White-Label Agencies (2026)",
     metaDescription:
       "Famulor offers white-label voice AI on a single engine. Compare it against Fusion Calling's multi-provider model — Vapi + Retell + ElevenLabs from $99/mo.",
     keywords: [
