@@ -4,7 +4,7 @@ import Image from "next/image";
 import { comparisons } from "@/lib/comparisons";
 import { SITE_URL } from "@/lib/site-url";
 import { breadcrumbSchema, buildOpenGraph, faqSchema } from "@/lib/seo";
-import { LAUNCH, PROVIDERS, WHOLESALE_PLANS } from "@/lib/product-facts";
+import { LAUNCH, PROVIDERS, WHOLESALE_STARTER } from "@/lib/product-facts";
 import { primaryButton } from "@/components/ui/button-styles";
 
 const title = `${comparisons.length} White-Label Voice AI Alternatives (2026)`;
@@ -151,7 +151,7 @@ export default function CompareHubPage() {
                       </span>
                     </td>
                     <td className="py-4 px-4 text-brand-light font-medium">
-                      ${WHOLESALE_PLANS[0].price}/mo ({WHOLESALE_PLANS[0].subAccounts} sub-accounts)
+                      ${WHOLESALE_STARTER.price}/mo ({WHOLESALE_STARTER.subAccounts} sub-accounts)
                     </td>
                     <td className="py-4 px-4 text-brand-light font-medium">
                       {PROVIDERS.plus}

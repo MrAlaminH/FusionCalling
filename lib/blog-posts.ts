@@ -14,6 +14,11 @@ export type BlogPost = {
   readTime: string;
   image: string;
   /**
+   * Author slug from lib/authors. Omit for the default Fusion Calling team
+   * byline. Single source for post bylines and the /team/<slug> article list.
+   */
+  author?: string;
+  /**
    * Real last-updated date, once a post has materially changed. Falls back to
    * `date` in the sitemap until set. ponytail: nothing populates this yet —
    * set it when you actually revise a post.
@@ -32,13 +37,14 @@ export const blogPosts: BlogPost[] = [
     category: "Agency Growth",
     readTime: "9 min read",
     image: "/blog/blog1.webp",
+    author: "alamin",
   },
   {
     slug: "gohighlevel-alternative-for-voice-ai",
     title: "GoHighLevel Alternative for Voice AI: Built-In CRM + Voice Agents",
     metaTitle: "GoHighLevel Alternative for Voice AI (2026)",
     description:
-      "For voice-first agencies, Fusion Calling bundles AI voice agents with a built-in CRM, so you don't need an expensive GoHighLevel subscription just to run a voice AI agency.",
+      "Fusion Calling bundles AI voice agents with a built-in CRM for voice-first agencies — no GoHighLevel subscription needed to run a voice AI agency.",
     date: "2025-02-16",
     category: "Buyer's Guide",
     readTime: "9 min read",
@@ -60,11 +66,12 @@ export const blogPosts: BlogPost[] = [
     title: "AI Voice Agents for Small Business: Use Cases & ROI",
     metaTitle: "AI Voice Agents for Small Business (2026)",
     description:
-      "See how restaurants and other small businesses use AI voice agents to answer every call, book appointments, and stay open 24/7. Compare the cost with a Vapi-based build and see the ROI math for a first client.",
+      "How restaurants and small businesses use AI voice agents to answer every call, book appointments, and stay open 24/7 — plus the ROI math for a first client.",
     date: "2025-02-15",
     category: "Use Cases",
     readTime: "8 min read",
     image: "/blog/blog4.webp",
+    author: "alamin",
   },
   {
     slug: "vapi-white-label-platform",
@@ -81,7 +88,7 @@ export const blogPosts: BlogPost[] = [
     slug: "retell-ai-white-label",
     title: "Can You White-Label Retell AI? Here's How",
     description:
-      "Learn how agencies resell Retell AI under their own brand for clients like dental clinics, and how it compares with Vapi on cost and setup. Follow the step-by-step path before you launch.",
+      "How agencies white-label Retell AI for clients like dental clinics, how it compares with Vapi on cost and setup, and the step-by-step path to launch.",
     date: "2025-02-11",
     category: "Integration Guide",
     readTime: "7 min read",
@@ -102,7 +109,7 @@ export const blogPosts: BlogPost[] = [
     title: "How to Automate Phone Calls with AI: Setup to First Live Call",
     metaTitle: "How to Automate Phone Calls with AI",
     description:
-      "How to automate phone calls with AI in five steps: pick a use case, connect number, calendar, and CRM, add knowledge, test calls, then launch with handoff rules.",
+      "How to automate phone calls with AI in five steps: pick a use case, connect number, calendar, and CRM, add knowledge, test calls, launch with handoff rules.",
     date: "2026-09-05",
     category: "How-To Guide",
     readTime: "6 min read",
@@ -113,7 +120,7 @@ export const blogPosts: BlogPost[] = [
     title: "Voice AI Security & Compliance: Encryption, GDPR, Interruption Handling",
     metaTitle: "Voice AI Security & Compliance Guide (2026)",
     description:
-      "How is call audio encrypted at rest and in transit? TLS plus SRTP in transit, AES-256 at rest, GDPR retention, TCPA outbound and recording consent, barge-in (80-150 ms), and synthetic-voice safeguards — with NIST SP 800-52/57 baselines.",
+      "How call audio is encrypted in transit and at rest (TLS/SRTP, AES-256), plus GDPR, TCPA consent, barge-in, and NIST baselines for voice AI compliance.",
     date: "2026-09-05",
     category: "Security Guide",
     readTime: "7 min read",
@@ -168,7 +175,7 @@ export const blogPosts: BlogPost[] = [
     title: "Will AI Replace Receptionists? What Actually Changes in 2026",
     metaTitle: "Will AI Replace Receptionists? 2026 Outlook",
     description:
-      "Mostly no: AI receptionists handle routine calls while humans keep judgment, empathy, and relationships. What to automate, what to keep, and what it means in 2026.",
+      "Mostly no: AI receptionists handle routine calls while humans keep judgment, empathy, and relationships. What to automate, what to keep, and the 2026 outlook.",
     date: "2026-09-06",
     category: "Use Cases",
     readTime: "8 min read",

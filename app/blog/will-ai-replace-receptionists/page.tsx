@@ -10,10 +10,10 @@ import { primaryButton } from "@/components/ui/button-styles";
 /* eslint-disable react/no-unescaped-entities */
 
 const post = getBlogPost("will-ai-replace-receptionists")!;
-const teamAuthor = getAuthor("voice-team")!;
+const author = getAuthor(post.author ?? "voice-team")!
 const faqs = blogFaqs["will-ai-replace-receptionists"];
 
-export const metadata: Metadata = buildPostMetadata(post, teamAuthor);
+export const metadata: Metadata = buildPostMetadata(post, author);
 
 export default function WillAIReplaceReceptionistsBlogPost() {
   return (
@@ -30,7 +30,7 @@ export default function WillAIReplaceReceptionistsBlogPost() {
               image: post.image,
               datePublished: post.date,
               dateModified: post.updated,
-              authorSchemaId: teamAuthor.authorSchemaId,
+              authorSchemaId: author.authorSchemaId,
               faqs,
               crumbName: "Will AI Replace Receptionists? What Actually Changes in 2026",
             })
@@ -51,7 +51,7 @@ export default function WillAIReplaceReceptionistsBlogPost() {
             actually changes in 2026, for owners and front-desk teams alike.
           </>
         }
-        author={teamAuthor}
+        author={author}
         faqs={faqs}
         toc={[
           { id: "the-short-answer", title: "The Short Answer" },

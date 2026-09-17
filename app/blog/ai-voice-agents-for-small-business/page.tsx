@@ -10,10 +10,10 @@ import PostLayout from "@/components/blog/PostLayout";
 import { primaryButton } from "@/components/ui/button-styles";
 
 const post = getBlogPost("ai-voice-agents-for-small-business")!;
-const teamAuthor = getAuthor("alamin")!;
+const author = getAuthor(post.author ?? "voice-team")!
 const faqs = blogFaqs["ai-voice-agents-for-small-business"];
 
-export const metadata: Metadata = buildPostMetadata(post, teamAuthor);
+export const metadata: Metadata = buildPostMetadata(post, author);
 
 export default function SmallBusinessVoiceAgentsBlogPost() {
   return (
@@ -30,7 +30,7 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
               image: post.image,
               datePublished: post.date,
               dateModified: post.updated,
-              authorSchemaId: teamAuthor.authorSchemaId,
+              authorSchemaId: author.authorSchemaId,
               faqs,
               crumbName: "AI Voice Agents for Small Business: Use Cases & ROI",
             })
@@ -49,7 +49,7 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
             businesses and the agencies that serve them.
           </>
         }
-        author={teamAuthor}
+        author={author}
         faqs={faqs}
         toc={[
           { id: "hidden-cost", title: "The Hidden Cost of Every Missed Call" },

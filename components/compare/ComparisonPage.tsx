@@ -4,7 +4,7 @@ import type { Comparison } from "@/lib/comparisons";
 import { getRelatedComparisons } from "@/lib/comparisons";
 import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/seo";
-import { LAUNCH, WHOLESALE_PLANS } from "@/lib/product-facts";
+import { LAUNCH, WHOLESALE_STARTER } from "@/lib/product-facts";
 import { BenchmarkTable } from "@/components/compare/BenchmarkTable";
 import { primaryButton } from "@/components/ui/button-styles";
 import PostFaq from "@/components/blog/PostFaq";
@@ -454,7 +454,7 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
               >
                 AI voice agent reseller program
               </Link>{" "}
-              — wholesale from ${WHOLESALE_PLANS[0].price}/mo, your brand, your pricing.
+              — wholesale from ${WHOLESALE_STARTER.price}/mo, your brand, your pricing.
             </p>
 
             {/* Related Comparisons */}

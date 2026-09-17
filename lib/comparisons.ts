@@ -1,4 +1,4 @@
-import { LAUNCH, OFFER, PROVIDERS, WHOLESALE_PLANS } from "@/lib/product-facts";
+import { LAUNCH, OFFER, PROVIDERS, WHOLESALE_STARTER } from "@/lib/product-facts";
 
 export type ComparisonRow = {
   label: string;
@@ -104,7 +104,7 @@ const sharedAdvantages: Advantage[] = [
 ];
 
 export const FUSION_ECONOMICS_POINTS = [
-  `Subscription pricing from $${WHOLESALE_PLANS[0].price}/month with no setup fee`,
+  `Subscription pricing from $${WHOLESALE_STARTER.price}/month with no setup fee`,
   "Keep 100% of the revenue you charge your clients",
   `Start risk-free with a ${OFFER.trial} free trial and $0 setup`,
   `Launch your branded agency in ${LAUNCH.guided} with ${LAUNCH.supportWindow} support`,

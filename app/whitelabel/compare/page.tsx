@@ -7,11 +7,11 @@ import { comparisons } from "@/lib/comparisons";
 import { SITE_URL } from "@/lib/site-url";
 import { breadcrumbSchema, faqSchema, webPageSchema } from "@/lib/seo";
 import { buildOpenGraph } from "@/lib/seo";
-import { LAUNCH, PROVIDERS, WHOLESALE_PLANS } from "@/lib/product-facts";
+import { LAUNCH, PROVIDERS, WHOLESALE_STARTER } from "@/lib/product-facts";
 import { truncateAtWord } from "@/lib/utils";
 
 const title = "Best White-Label AI Voice Platforms Compared";
-const description = `Compare white-label AI voice platforms side-by-side: pricing, sub-accounts, features & multi-provider import for Vapi, Retell & ElevenLabs. From $${WHOLESALE_PLANS[0].price}/mo.`;
+const description = `Compare white-label AI voice platforms side-by-side: pricing, sub-accounts, features & multi-provider import for Vapi, Retell & ElevenLabs. From $${WHOLESALE_STARTER.price}/mo.`;
 
 // Single source of truth: the FAQPage schema and the visible FAQ list must
 // render the exact same questions/answers (Google requires visible content).
@@ -57,7 +57,7 @@ const WHITELABEL_COMPARISON_ROWS = [
       );
       return row?.competitor ?? "—";
     },
-    fusionValue: `$${WHOLESALE_PLANS[0].price}/mo`,
+    fusionValue: `$${WHOLESALE_STARTER.price}/mo`,
   },
   {
     label: "Voice Providers Supported",

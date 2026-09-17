@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getTeamAuthor } from "@/lib/authors";
+import { getAuthor } from "@/lib/authors";
 import { getBlogPost } from "@/lib/blog-posts";
 import { blogFaqs } from "@/lib/blog-faqs";
 import { buildBlogGraph, buildPostMetadata } from "@/lib/blog-schema";
@@ -10,10 +10,10 @@ import { primaryButton } from "@/components/ui/button-styles";
 /* eslint-disable react/no-unescaped-entities */
 
 const post = getBlogPost("voice-ai-security-compliance")!;
-const teamAuthor = getTeamAuthor();
+const author = getAuthor(post.author ?? "voice-team")!
 const faqs = blogFaqs["voice-ai-security-compliance"];
 
-export const metadata: Metadata = buildPostMetadata(post, teamAuthor);
+export const metadata: Metadata = buildPostMetadata(post, author);
 
 export default function VoiceAISecurityComplianceBlogPost() {
   return (
@@ -30,7 +30,7 @@ export default function VoiceAISecurityComplianceBlogPost() {
               image: post.image,
               datePublished: post.date,
               dateModified: post.updated,
-              authorSchemaId: teamAuthor.authorSchemaId,
+              authorSchemaId: author.authorSchemaId,
               faqs,
               crumbName: "Voice AI Security & Compliance: Encryption, GDPR, Interruption Handling",
             })
@@ -49,7 +49,7 @@ export default function VoiceAISecurityComplianceBlogPost() {
             plain English, so you know what to ask any vendor.
           </>
         }
-        author={teamAuthor}
+        author={author}
         faqs={faqs}
         toc={[
           { id: "why-security-questions", title: "Why Security Questions Come First" },

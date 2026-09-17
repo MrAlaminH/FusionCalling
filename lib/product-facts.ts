@@ -36,6 +36,9 @@ export const WHOLESALE_PLANS: WholesalePlan[] = [
   { name: "Scale", price: 499, priceYearly: 449, subAccounts: "unlimited" },
 ];
 
+/** Cheapest wholesale tier — the "from $X" hook across comparison surfaces. */
+export const WHOLESALE_STARTER = WHOLESALE_PLANS[0];
+
 export const DIRECT_PLANS: DirectPlan[] = [
   { name: "Starter", price: 149, includedMinutes: 500, setupFee: 0, overageRate: "$0.30/min" },
   { name: "Pro", price: 249, includedMinutes: 1050, setupFee: 799, overageRate: "$0.25/min" },

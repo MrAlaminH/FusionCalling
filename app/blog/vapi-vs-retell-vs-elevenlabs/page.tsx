@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getTeamAuthor } from "@/lib/authors";
+import { getAuthor } from "@/lib/authors";
 import { getBlogPost } from "@/lib/blog-posts";
 import { blogFaqs } from "@/lib/blog-faqs";
 import { buildBlogGraph, buildPostMetadata } from "@/lib/blog-schema";
@@ -10,10 +10,10 @@ import { primaryButton } from "@/components/ui/button-styles";
 /* eslint-disable react/no-unescaped-entities */
 
 const post = getBlogPost("vapi-vs-retell-vs-elevenlabs")!;
-const teamAuthor = getTeamAuthor();
+const author = getAuthor(post.author ?? "voice-team")!
 const faqs = blogFaqs["vapi-vs-retell-vs-elevenlabs"];
 
-export const metadata: Metadata = buildPostMetadata(post, teamAuthor);
+export const metadata: Metadata = buildPostMetadata(post, author);
 
 export default function VapiVsRetellVsElevenLabsBlogPost() {
   return (
@@ -30,7 +30,7 @@ export default function VapiVsRetellVsElevenLabsBlogPost() {
               image: post.image,
               datePublished: post.date,
               dateModified: post.updated,
-              authorSchemaId: teamAuthor.authorSchemaId,
+              authorSchemaId: author.authorSchemaId,
               faqs,
               crumbName: "Vapi vs Retell vs ElevenLabs: Choosing the Right Voice AI Provider",
             })
@@ -49,7 +49,7 @@ export default function VapiVsRetellVsElevenLabsBlogPost() {
             unifies all three under one white-label dashboard.
           </>
         }
-        author={teamAuthor}
+        author={author}
         faqs={faqs}
         toc={[
           { id: "core-providers", title: "Voice AI Is Built From a Few Core Providers" },

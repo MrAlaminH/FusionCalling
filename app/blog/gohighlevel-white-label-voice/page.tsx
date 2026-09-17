@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getTeamAuthor } from "@/lib/authors";
+import { getAuthor } from "@/lib/authors";
 import { getBlogPost } from "@/lib/blog-posts";
 import { blogFaqs } from "@/lib/blog-faqs";
 import { buildBlogGraph, buildPostMetadata } from "@/lib/blog-schema";
@@ -10,10 +10,10 @@ import PostLayout from "@/components/blog/PostLayout";
 import { primaryButton } from "@/components/ui/button-styles";
 
 const post = getBlogPost("gohighlevel-white-label-voice")!;
-const teamAuthor = getTeamAuthor();
+const author = getAuthor(post.author ?? "voice-team")!
 const faqs = blogFaqs["gohighlevel-white-label-voice"];
 
-export const metadata: Metadata = buildPostMetadata(post, teamAuthor);
+export const metadata: Metadata = buildPostMetadata(post, author);
 
 export default function GoHighLevelBlogPost() {
   return (
@@ -30,7 +30,7 @@ export default function GoHighLevelBlogPost() {
               image: post.image,
               datePublished: post.date,
               dateModified: post.updated,
-              authorSchemaId: teamAuthor.authorSchemaId,
+              authorSchemaId: author.authorSchemaId,
               faqs,
               crumbName: "Adding Voice AI to Your GoHighLevel Agency",
             })
@@ -57,7 +57,7 @@ export default function GoHighLevelBlogPost() {
             </p>
           </>
         }
-        author={teamAuthor}
+        author={author}
         faqs={faqs}
         toc={[
           { id: "perfect-fit", title: "Why GHL Agencies Are a Perfect Fit for Voice AI" },

@@ -9,10 +9,10 @@ import PostLayout from "@/components/blog/PostLayout";
 /* eslint-disable react/no-unescaped-entities */
 
 const post = getBlogPost("ai-receptionist-cost")!;
-const teamAuthor = getAuthor("voice-team")!;
+const author = getAuthor(post.author ?? "voice-team")!
 const faqs = blogFaqs["ai-receptionist-cost"];
 
-export const metadata: Metadata = buildPostMetadata(post, teamAuthor);
+export const metadata: Metadata = buildPostMetadata(post, author);
 
 export default function AIReceptionistCostBlogPost() {
   return (
@@ -29,7 +29,7 @@ export default function AIReceptionistCostBlogPost() {
               image: post.image,
               datePublished: post.date,
               dateModified: post.updated,
-              authorSchemaId: teamAuthor.authorSchemaId,
+              authorSchemaId: author.authorSchemaId,
               faqs,
               crumbName: "How Much Does an AI Receptionist Cost in 2026?",
             })
@@ -53,7 +53,7 @@ export default function AIReceptionistCostBlogPost() {
             ROI.
           </>
         }
-        author={teamAuthor}
+        author={author}
         faqs={faqs}
         toc={[
           { id: "cost-tiers", title: "What does an AI receptionist cost in 2026?" },

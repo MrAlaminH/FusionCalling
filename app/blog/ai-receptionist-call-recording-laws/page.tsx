@@ -9,10 +9,10 @@ import PostLayout from "@/components/blog/PostLayout";
 /* eslint-disable react/no-unescaped-entities */
 
 const post = getBlogPost("ai-receptionist-call-recording-laws")!;
-const teamAuthor = getAuthor("voice-team")!;
+const author = getAuthor(post.author ?? "voice-team")!
 const faqs = blogFaqs["ai-receptionist-call-recording-laws"];
 
-export const metadata: Metadata = buildPostMetadata(post, teamAuthor);
+export const metadata: Metadata = buildPostMetadata(post, author);
 
 export default function AIReceptionistCallRecordingLawsBlogPost() {
   return (
@@ -29,7 +29,7 @@ export default function AIReceptionistCallRecordingLawsBlogPost() {
               image: post.image,
               datePublished: post.date,
               dateModified: post.updated,
-              authorSchemaId: teamAuthor.authorSchemaId,
+              authorSchemaId: author.authorSchemaId,
               faqs,
               crumbName: "AI Receptionist Call Recording Laws by State",
             })
@@ -56,7 +56,7 @@ export default function AIReceptionistCallRecordingLawsBlogPost() {
             the verified map, statutes linked, current as of September 2026.
           </>
         }
-        author={teamAuthor}
+        author={author}
         faqs={faqs}
         toc={[
           { id: "federal-rules", title: "What federal law actually says" },

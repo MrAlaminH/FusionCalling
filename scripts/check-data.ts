@@ -12,8 +12,10 @@ import {
   getRelatedPosts,
 } from "../lib/blog-posts";
 import { blogFaqs } from "../lib/blog-faqs";
+import { authors } from "../lib/authors";
 import { whitelabelProviders } from "../lib/whitelabel-providers";
 import {
+  DIRECT_PLANS,
   FEATURE_UPDATES,
   LAUNCH,
   WHOLESALE_PLANS,
@@ -56,11 +58,20 @@ for (const name of BENCHMARKED) {
   );
 }
 
-// Every post with a slug has FAQ data, and every FAQ key maps to a real post.
+// Every post with a slug has FAQ data, its author (if set) resolves to a real
+// author, and the meta description fits the ~160-char SERP limit.
 for (const post of blogPosts) {
   assert.ok(
     blogFaqs[post.slug]?.length,
     `blogFaqs: missing entries for post "${post.slug}"`
+  );
+  assert(
+    !post.author || authors.some((a) => a.slug === post.author),
+    `${post.slug}: author "${post.author}" does not exist in lib/authors`
+  );
+  assert.ok(
+    post.description.length <= 160,
+    `${post.slug}: description is ${post.description.length} chars (max 160)`
   );
 }
 for (const slug of Object.keys(blogFaqs)) {
@@ -122,11 +133,17 @@ for (const c of comparisons) {
   );
 }
 
-// Wholesale pricing is ordered and the FAQ prose summary matches the tiers.
+// Pricing registries are ordered and the FAQ prose summary matches the tiers.
 for (let i = 1; i < WHOLESALE_PLANS.length; i++) {
   assert.ok(
     WHOLESALE_PLANS[i].price > WHOLESALE_PLANS[i - 1].price,
     `WHOLESALE_PLANS: prices must ascend (${WHOLESALE_PLANS[i].name})`
+  );
+}
+for (let i = 1; i < DIRECT_PLANS.length; i++) {
+  assert.ok(
+    DIRECT_PLANS[i].price > DIRECT_PLANS[i - 1].price,
+    `DIRECT_PLANS: prices must ascend (${DIRECT_PLANS[i].name})`
   );
 }
 
@@ -134,8 +151,9 @@ for (let i = 1; i < WHOLESALE_PLANS.length; i++) {
 // (lib/product-facts LAUNCH.guided). No registry or blog page may reintroduce
 // a 7-day launch claim. First-sale milestones ("application to first sale in
 // ~one week") are a different fact and are allowed.
+// "guided"/"onboarding" catch prose variants like "7-day guided onboarding".
 const LAUNCH_CLAIM_PATTERN =
-  /7[- ]day (launch|setup)|launch (in|within) (about |around )?7 days|launch in around a week/i;
+  /7[- ]day (launch|setup|guided|onboarding)|launch (in|within) (about |around )?7 days|launch in around a week/i;
 const launchClaimFiles: string[] = [
   "../lib/blog-posts.ts",
   "../lib/blog-faqs.ts",

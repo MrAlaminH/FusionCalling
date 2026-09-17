@@ -3,8 +3,29 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { DIRECT_PLANS, type DirectPlan } from "@/lib/product-facts";
 
 const PricingSection = dynamic(() => import("@/components/pricing-section"), { ssr: true });
+
+const fmt = (n: number) => n.toLocaleString("en-US");
+const FROM_PRICE = Math.min(...DIRECT_PLANS.map((p) => p.price));
+const MIN_MINUTES = Math.min(...DIRECT_PLANS.map((p) => p.includedMinutes));
+const MAX_MINUTES = Math.max(...DIRECT_PLANS.map((p) => p.includedMinutes));
+// Meta, OG, JSON-LD, and the FAQ prose all quote from DIRECT_PLANS via these
+// so a price or minutes change on the plan records lands everywhere at once.
+const PRICING_SUMMARY = `Plans from $${FROM_PRICE}/month with ${MIN_MINUTES}-${MAX_MINUTES} included minutes.`;
+
+const setupFeeAnswer =
+  DIRECT_PLANS.map((p) =>
+    p.setupFee
+      ? `${p.name} has a one-time $${fmt(p.setupFee)} setup fee.`
+      : `${p.name} has no setup fee.`
+  ).join(" ") +
+  " Setup includes agent configuration, integration setup, testing, and launch support.";
+
+const overageAnswer = `Additional minutes are billed at the plan's overage rate. ${DIRECT_PLANS.map(
+  (p) => `${p.name}: ${p.overageRate}`
+).join(", ")}. You'll receive notifications at 80% and 95% usage.`;
 
 const pricingFaqs = [
   {
@@ -14,13 +35,11 @@ const pricingFaqs = [
   },
   {
     question: "Is there a setup fee?",
-    answer:
-      "Starter has no setup fee. Pro has a one-time $799 setup fee. Enterprise has a one-time $1,250 setup fee. Setup includes agent configuration, integration setup, testing, and launch support.",
+    answer: setupFeeAnswer,
   },
   {
     question: "What happens if I exceed my monthly minutes?",
-    answer:
-      "Additional minutes are billed at the plan's overage rate. Starter: $0.30/min, Pro: $0.25/min, Enterprise: $0.20/min. You'll receive notifications at 80% and 95% usage.",
+    answer: overageAnswer,
   },
   {
     question: "Can I change plans later?",
@@ -38,6 +57,89 @@ const pricingFaqs = [
       "We offer a 14-day money-back guarantee on all plans. Try the platform risk-free and if it's not a fit, request a full refund within 14 days.",
   },
 ];
+
+// Per-plan editorial copy keyed by plan name — a renamed plan is a compile
+// error. Prices and minute counts are data, not copy: they come from
+// DIRECT_PLANS at render time.
+const PLAN_DETAIL: Record<
+  DirectPlan["name"],
+  { sku: string; tagline: string; includes: string; offerIncludes: string }
+> = {
+  Starter: {
+    sku: "FC-STARTER-001",
+    tagline: "Perfect for small teams",
+    includes:
+      "full portal access, all integrations, CRM and lead routing, auto-tagging, 24/7 performance",
+    offerIncludes:
+      "full portal access, all integrations, CRM & lead routing, auto-tagging & logging",
+  },
+  Pro: {
+    sku: "FC-PRO-001",
+    tagline: "For growing businesses",
+    includes:
+      "everything in Starter, inbound/outbound call handling, outbound routing, private Slack support, advanced FAQ handling, custom LLM integration",
+    offerIncludes:
+      "inbound/outbound handling, outbound routing, private Slack support, advanced FAQ, custom LLM",
+  },
+  Enterprise: {
+    sku: "FC-ENTERPRISE-001",
+    tagline: "For large organizations",
+    includes:
+      "everything in Pro, custom trained voice, dedicated support and developer, extensive scripting, extensive testing",
+    offerIncludes:
+      "custom trained voice, dedicated support & developer, extensive scripting & testing",
+  },
+};
+
+// Offer fields shared verbatim by every plan's Offer node.
+const OFFER_BASE = {
+  priceCurrency: "USD",
+  validFrom: "2026-01-15T09:00:00-05:00",
+  priceValidUntil: "2027-12-31",
+  itemCondition: "https://schema.org/NewCondition",
+  availability: "https://schema.org/InStock",
+  url: `${SITE_URL}/pricing`,
+  seller: { "@type": "Organization", name: "Fusion Calling", "@id": `${SITE_URL}/#organization` },
+  hasMerchantReturnPolicy: {
+    "@type": "MerchantReturnPolicy",
+    applicableCountry: "US",
+    returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+    merchantReturnDays: 14,
+    returnMethod: "https://schema.org/ReturnByMail",
+    returnFees: "https://schema.org/FreeReturn",
+  },
+  shippingDetails: {
+    "@type": "OfferShippingDetails",
+    shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "USD" },
+    shippingDestination: { "@type": "DefinedRegion", addressCountry: "US" },
+    deliveryTime: {
+      "@type": "ShippingDeliveryTime",
+      handlingTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 0, unitCode: "DAY" },
+      transitTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 0, unitCode: "DAY" },
+    },
+  },
+};
+
+const productNodes = DIRECT_PLANS.map((plan) => {
+  const detail = PLAN_DETAIL[plan.name];
+  return {
+    "@type": "Product",
+    "@id": `${SITE_URL}/pricing#${plan.name.toLowerCase()}`,
+    name: `Fusion Calling ${plan.name} Plan`,
+    description: `${detail.tagline}. Includes ${fmt(plan.includedMinutes)} minutes/month, ${detail.includes}.`,
+    image: `${SITE_URL}/cardImage.jpg`,
+    sku: detail.sku,
+    brand: { "@type": "Brand", name: "Fusion Calling" },
+    category: "Business Automation",
+    offers: {
+      "@type": "Offer",
+      name: `${plan.name} Plan - Monthly`,
+      price: plan.price.toFixed(2),
+      ...OFFER_BASE,
+      description: `${fmt(plan.includedMinutes)} minutes/month, ${detail.offerIncludes}`,
+    },
+  };
+});
 
 const pricingJsonLd = {
   "@context": "https://schema.org",
@@ -65,135 +167,13 @@ const pricingJsonLd = {
       "@id": `${SITE_URL}/pricing#webpage`,
       url: `${SITE_URL}/pricing`,
       name: "Pricing | Fusion Calling",
-      description: "Simple, fair pricing for AI phone call automation. Plans from $149/month with 500-2,100 included minutes. No long-term contracts. 14-day money-back guarantee.",
+      description: `Simple, fair pricing for AI phone call automation. ${PRICING_SUMMARY} No long-term contracts. 14-day money-back guarantee.`,
       inLanguage: "en-US",
       dateModified: CONTENT_LAST_UPDATED,
       isPartOf: { "@id": `${SITE_URL}/#website` },
       breadcrumb: { "@id": `${SITE_URL}/pricing#breadcrumb` },
     },
-    {
-      "@type": "Product",
-      "@id": `${SITE_URL}/pricing#starter`,
-      name: "Fusion Calling Starter Plan",
-      description: "Perfect for small teams. Includes 500 minutes/month, full portal access, all integrations, CRM and lead routing, auto-tagging, 24/7 performance.",
-      image: `${SITE_URL}/cardImage.jpg`,
-      sku: "FC-STARTER-001",
-      brand: { "@type": "Brand", name: "Fusion Calling" },
-      category: "Business Automation",
-      offers: {
-        "@type": "Offer",
-        name: "Starter Plan - Monthly",
-        price: "149.00",
-        priceCurrency: "USD",
-        validFrom: "2026-01-15T09:00:00-05:00",
-        priceValidUntil: "2027-12-31",
-        itemCondition: "https://schema.org/NewCondition",
-        availability: "https://schema.org/InStock",
-        url: `${SITE_URL}/pricing`,
-        description: "500 minutes/month, full portal access, all integrations, CRM & lead routing, auto-tagging & logging",
-        seller: { "@type": "Organization", name: "Fusion Calling", "@id": `${SITE_URL}/#organization` },
-        hasMerchantReturnPolicy: {
-          "@type": "MerchantReturnPolicy",
-          applicableCountry: "US",
-          returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-          merchantReturnDays: 14,
-          returnMethod: "https://schema.org/ReturnByMail",
-          returnFees: "https://schema.org/FreeReturn",
-        },
-        shippingDetails: {
-          "@type": "OfferShippingDetails",
-          shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "USD" },
-          shippingDestination: { "@type": "DefinedRegion", addressCountry: "US" },
-          deliveryTime: {
-            "@type": "ShippingDeliveryTime",
-            handlingTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 0, unitCode: "DAY" },
-            transitTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 0, unitCode: "DAY" },
-          },
-        },
-      },
-    },
-    {
-      "@type": "Product",
-      "@id": `${SITE_URL}/pricing#pro`,
-      name: "Fusion Calling Pro Plan",
-      description: "For growing businesses. Includes 1,050 minutes/month, everything in Starter, inbound/outbound call handling, outbound routing, private Slack support, advanced FAQ handling, custom LLM integration.",
-      image: `${SITE_URL}/cardImage.jpg`,
-      sku: "FC-PRO-001",
-      brand: { "@type": "Brand", name: "Fusion Calling" },
-      category: "Business Automation",
-      offers: {
-        "@type": "Offer",
-        name: "Pro Plan - Monthly",
-        price: "249.00",
-        priceCurrency: "USD",
-        validFrom: "2026-01-15T09:00:00-05:00",
-        priceValidUntil: "2027-12-31",
-        itemCondition: "https://schema.org/NewCondition",
-        availability: "https://schema.org/InStock",
-        url: `${SITE_URL}/pricing`,
-        description: "1,050 minutes/month, inbound/outbound handling, outbound routing, private Slack support, advanced FAQ, custom LLM",
-        seller: { "@type": "Organization", name: "Fusion Calling", "@id": `${SITE_URL}/#organization` },
-        hasMerchantReturnPolicy: {
-          "@type": "MerchantReturnPolicy",
-          applicableCountry: "US",
-          returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-          merchantReturnDays: 14,
-          returnMethod: "https://schema.org/ReturnByMail",
-          returnFees: "https://schema.org/FreeReturn",
-        },
-        shippingDetails: {
-          "@type": "OfferShippingDetails",
-          shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "USD" },
-          shippingDestination: { "@type": "DefinedRegion", addressCountry: "US" },
-          deliveryTime: {
-            "@type": "ShippingDeliveryTime",
-            handlingTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 0, unitCode: "DAY" },
-            transitTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 0, unitCode: "DAY" },
-          },
-        },
-      },
-    },
-    {
-      "@type": "Product",
-      "@id": `${SITE_URL}/pricing#enterprise`,
-      name: "Fusion Calling Enterprise Plan",
-      description: "For large organizations. Includes 2,100 minutes/month, everything in Pro, custom trained voice, dedicated support and developer, extensive scripting, extensive testing.",
-      image: `${SITE_URL}/cardImage.jpg`,
-      sku: "FC-ENTERPRISE-001",
-      brand: { "@type": "Brand", name: "Fusion Calling" },
-      category: "Business Automation",
-      offers: {
-        "@type": "Offer",
-        name: "Enterprise Plan - Monthly",
-        price: "497.00",
-        priceCurrency: "USD",
-        validFrom: "2026-01-15T09:00:00-05:00",
-        priceValidUntil: "2027-12-31",
-        itemCondition: "https://schema.org/NewCondition",
-        availability: "https://schema.org/InStock",
-        url: `${SITE_URL}/pricing`,
-        description: "2,100 minutes/month, custom trained voice, dedicated support & developer, extensive scripting & testing",
-        seller: { "@type": "Organization", name: "Fusion Calling", "@id": `${SITE_URL}/#organization` },
-        hasMerchantReturnPolicy: {
-          "@type": "MerchantReturnPolicy",
-          applicableCountry: "US",
-          returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-          merchantReturnDays: 14,
-          returnMethod: "https://schema.org/ReturnByMail",
-          returnFees: "https://schema.org/FreeReturn",
-        },
-        shippingDetails: {
-          "@type": "OfferShippingDetails",
-          shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "USD" },
-          shippingDestination: { "@type": "DefinedRegion", addressCountry: "US" },
-          deliveryTime: {
-            "@type": "ShippingDeliveryTime",
-            handlingTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 0, unitCode: "DAY" },
-            transitTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 0, unitCode: "DAY" },
-          },
-        },
-      },
-    },
+    ...productNodes,
     {
       "@type": "FAQPage",
       "@id": `${SITE_URL}/pricing#faqpage`,
@@ -211,18 +191,18 @@ const pricingJsonLd = {
 
 export const metadata: Metadata = {
   title: {
-    // Absolute: keeps the $149 hook under the ~60-char SERP limit without the
-    // root template's " | Fusion Calling" suffix (site name shows in the SERP
-    // badge anyway).
-    absolute: "Pricing & Plans — AI Phone Automation from $149/mo",
+    // Absolute: keeps the $from-price hook under the ~60-char SERP limit
+    // without the root template's " | Fusion Calling" suffix (site name shows
+    // in the SERP badge anyway).
+    absolute: `Pricing & Plans — AI Phone Automation from $${FROM_PRICE}/mo`,
   },
-  description: "Simple, fair pricing for AI phone call automation. Plans from $149/month with 500-2,100 included minutes. No long-term contracts. 14-day money-back guarantee.",
+  description: `Simple, fair pricing for AI phone call automation. ${PRICING_SUMMARY} No long-term contracts. 14-day money-back guarantee.`,
   alternates: {
     canonical: "/pricing",
   },
   openGraph: {
-    title: "Pricing & Plans — AI Phone Automation from $149/mo",
-    description: "Simple, fair pricing for AI phone call automation. Plans from $149/month with 500-2,100 included minutes. No long-term contracts.",
+    title: `Pricing & Plans — AI Phone Automation from $${FROM_PRICE}/mo`,
+    description: `Simple, fair pricing for AI phone call automation. ${PRICING_SUMMARY} No long-term contracts.`,
     url: `${SITE_URL}/pricing`,
     siteName: "Fusion Calling",
     type: "website",
@@ -238,8 +218,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@MrAlaminH",
-    title: "Pricing & Plans — AI Phone Automation from $149/mo",
-    description: "Simple, fair pricing for AI phone call automation. Plans from $149/month.",
+    title: `Pricing & Plans — AI Phone Automation from $${FROM_PRICE}/mo`,
+    description: `Simple, fair pricing for AI phone call automation. Plans from $${FROM_PRICE}/month.`,
     images: [`${SITE_URL}/opengraph-image.png`],
   },
 };

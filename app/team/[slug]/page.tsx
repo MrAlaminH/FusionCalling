@@ -6,15 +6,9 @@ import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { authors, getAuthor } from "@/lib/authors";
 import { blogPosts } from "@/lib/blog-posts";
 
-// Byline authorship lives in each post page (getAuthor/getTeamAuthor calls);
-// this map mirrors it for the author-page article list. Posts not listed here
-// are published by the Fusion Calling team.
-const POSTS_BY_AUTHOR: Record<string, readonly string[]> = {
-  alamin: ["how-to-start-a-voice-ai-agency", "ai-voice-agents-for-small-business"],
-};
-const TEAM_AUTHORED = blogPosts.filter(
-  (p) => !Object.values(POSTS_BY_AUTHOR).flat().includes(p.slug)
-);
+// Bylines live on the BlogPost record (post.author, lib/blog-posts.ts);
+// voice-team owns everything not explicitly attributed.
+const TEAM_AUTHORED = blogPosts.filter((p) => !p.author);
 
 export function generateStaticParams() {
   return authors.map((a) => ({ slug: a.slug }));
@@ -75,12 +69,10 @@ export default function TeamMemberPage({
   }
 
   const url = `${SITE_URL}/team/${author.slug}`;
-  const ownSlugs = POSTS_BY_AUTHOR[author.slug];
-  const authorPosts = ownSlugs
-    ? blogPosts.filter((p) => ownSlugs.includes(p.slug))
-    : author.slug === "voice-team"
+  const authorPosts =
+    author.slug === "voice-team"
       ? TEAM_AUTHORED
-      : [];
+      : blogPosts.filter((p) => p.author === author.slug);
 
   const jsonLd = {
     "@context": "https://schema.org",

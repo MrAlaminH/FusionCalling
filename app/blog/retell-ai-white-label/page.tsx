@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getTeamAuthor } from "@/lib/authors";
+import { getAuthor } from "@/lib/authors";
 import { getBlogPost } from "@/lib/blog-posts";
 import { blogFaqs } from "@/lib/blog-faqs";
 import { buildBlogGraph, buildPostMetadata } from "@/lib/blog-schema";
@@ -10,10 +10,10 @@ import { primaryButton } from "@/components/ui/button-styles";
 /* eslint-disable react/no-unescaped-entities */
 
 const post = getBlogPost("retell-ai-white-label")!;
-const teamAuthor = getTeamAuthor();
+const author = getAuthor(post.author ?? "voice-team")!
 const faqs = blogFaqs["retell-ai-white-label"];
 
-export const metadata: Metadata = buildPostMetadata(post, teamAuthor);
+export const metadata: Metadata = buildPostMetadata(post, author);
 
 export default function RetellAIBlogPost() {
   return (
@@ -30,7 +30,7 @@ export default function RetellAIBlogPost() {
               image: post.image,
               datePublished: post.date,
               dateModified: post.updated,
-              authorSchemaId: teamAuthor.authorSchemaId,
+              authorSchemaId: author.authorSchemaId,
               faqs,
               crumbName: "Can You White-Label Retell AI? Here's How",
             })
@@ -50,7 +50,7 @@ export default function RetellAIBlogPost() {
             billing so you can resell Retell under your own brand.
           </>
         }
-        author={teamAuthor}
+        author={author}
         faqs={faqs}
         toc={[
           { id: "great-voice-engine", title: "A Great Voice Engine, Now a Sellable Product" },

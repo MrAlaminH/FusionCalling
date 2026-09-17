@@ -9,10 +9,10 @@ import PostLayout from "@/components/blog/PostLayout";
 /* eslint-disable react/no-unescaped-entities */
 
 const post = getBlogPost("ai-receptionist-complaints")!;
-const teamAuthor = getAuthor("voice-team")!;
+const author = getAuthor(post.author ?? "voice-team")!
 const faqs = blogFaqs["ai-receptionist-complaints"];
 
-export const metadata: Metadata = buildPostMetadata(post, teamAuthor);
+export const metadata: Metadata = buildPostMetadata(post, author);
 
 function Quote({
   children,
@@ -46,7 +46,7 @@ export default function AIReceptionistComplaintsBlogPost() {
               image: post.image,
               datePublished: post.date,
               dateModified: post.updated,
-              authorSchemaId: teamAuthor.authorSchemaId,
+              authorSchemaId: author.authorSchemaId,
               faqs,
               crumbName: "AI Receptionist Complaints: 55 Real User Reports Analyzed",
             })
@@ -72,7 +72,7 @@ export default function AIReceptionistComplaintsBlogPost() {
             .
           </>
         }
-        author={teamAuthor}
+        author={author}
         faqs={faqs}
         toc={[
           { id: "what-we-analyzed", title: "What we analyzed (and how)" },

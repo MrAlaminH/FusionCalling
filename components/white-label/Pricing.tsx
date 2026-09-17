@@ -5,7 +5,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { Check, Star, ArrowRight, DollarSign, Timer, LockOpen } from "lucide-react";
 import { BillingToggle, type BillingCycle } from "@/components/ui/billing-toggle";
 import { SectionHeader } from "@/components/ui/section-header";
-import { WHOLESALE_PLANS } from "@/lib/product-facts";
+import { WHOLESALE_PLANS, type WholesalePlan } from "@/lib/product-facts";
 
 export default function Pricing() {
   const [billing, setBilling] = useState<BillingCycle>("monthly");
@@ -13,7 +13,7 @@ export default function Pricing() {
   // Prices, tiers, and sub-account counts come from lib/product-facts; only
   // presentation copy lives here so the two can never disagree.
   const PLAN_COPY: Record<
-    string,
+    WholesalePlan["name"],
     { description: string; popular: boolean; features: string[] }
   > = {
     Starter: {

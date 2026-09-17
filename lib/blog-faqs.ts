@@ -193,7 +193,7 @@ export const blogFaqs: Record<string, BlogFaq[]> = {
     },
     {
       "question": "How long does the integration take to set up?",
-      "answer": "API + webhook configuration typically takes 1-2 hours. Our team provides done-with-you setup guidance as part of the 7-day guided onboarding."
+      "answer": "API + webhook configuration typically takes 1-2 hours. Our team provides done-with-you setup guidance as part of the guided 24-hour launch."
     }
   ],
   "how-to-automate-phone-calls-with-ai": [

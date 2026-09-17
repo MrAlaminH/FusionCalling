@@ -9,10 +9,10 @@ import PostLayout from "@/components/blog/PostLayout";
 /* eslint-disable react/no-unescaped-entities */
 
 const post = getBlogPost("missed-call-text-back-vs-ai-receptionist")!;
-const teamAuthor = getAuthor("voice-team")!;
+const author = getAuthor(post.author ?? "voice-team")!
 const faqs = blogFaqs["missed-call-text-back-vs-ai-receptionist"];
 
-export const metadata: Metadata = buildPostMetadata(post, teamAuthor);
+export const metadata: Metadata = buildPostMetadata(post, author);
 
 function Quote({
   children,
@@ -46,7 +46,7 @@ export default function MissedCallTextBackVsAIReceptionistBlogPost() {
               image: post.image,
               datePublished: post.date,
               dateModified: post.updated,
-              authorSchemaId: teamAuthor.authorSchemaId,
+              authorSchemaId: author.authorSchemaId,
               faqs,
               crumbName: "Missed-Call Text-Back vs AI Receptionist",
             })
@@ -70,7 +70,7 @@ export default function MissedCallTextBackVsAIReceptionistBlogPost() {
             can pick &mdash; or do what smart agencies do and run both.
           </>
         }
-        author={teamAuthor}
+        author={author}
         faqs={faqs}
         toc={[
           { id: "what-is-mctb", title: "What missed-call text-back actually does" },

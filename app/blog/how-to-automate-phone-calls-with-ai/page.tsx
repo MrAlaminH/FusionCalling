@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getTeamAuthor } from "@/lib/authors";
+import { getAuthor } from "@/lib/authors";
 import { getBlogPost } from "@/lib/blog-posts";
 import { blogFaqs } from "@/lib/blog-faqs";
 import { buildBlogGraph, buildPostMetadata } from "@/lib/blog-schema";
@@ -10,10 +10,10 @@ import PostLayout from "@/components/blog/PostLayout";
 import { primaryButton } from "@/components/ui/button-styles";
 
 const post = getBlogPost("how-to-automate-phone-calls-with-ai")!;
-const teamAuthor = getTeamAuthor();
+const author = getAuthor(post.author ?? "voice-team")!
 const faqs = blogFaqs["how-to-automate-phone-calls-with-ai"];
 
-export const metadata: Metadata = buildPostMetadata(post, teamAuthor);
+export const metadata: Metadata = buildPostMetadata(post, author);
 
 export default function HowToAutomatePhoneCallsWithAI() {
   return (
@@ -30,7 +30,7 @@ export default function HowToAutomatePhoneCallsWithAI() {
               image: post.image,
               datePublished: post.date,
               dateModified: post.updated,
-              authorSchemaId: teamAuthor.authorSchemaId,
+              authorSchemaId: author.authorSchemaId,
               faqs,
               crumbName: "How to Automate Phone Calls with AI: Setup to First Live Call",
             })
@@ -59,7 +59,7 @@ export default function HowToAutomatePhoneCallsWithAI() {
             </p>
           </>
         }
-        author={teamAuthor}
+        author={author}
         faqs={faqs}
         toc={[
           { id: "what-ai-call-automation-does", title: "What AI Call Automation Does" },
