@@ -68,7 +68,7 @@ export default function HeroForm() {
         aria-invalid={touched.name && name.trim().length < 2}
       />
       {touched.name && name.trim().length < 2 && (
-        <p className="-mt-2 mb-2 text-xs text-red-400">
+        <p className="-mt-2 mb-2 text-xs text-red-400 animate-fade-in [animation-duration:150ms]">
           Please enter your name (at least 2 characters).
         </p>
       )}
@@ -91,7 +91,7 @@ export default function HeroForm() {
         aria-invalid={touched.email && !isValidEmail(email.trim())}
       />
       {touched.email && !isValidEmail(email.trim()) && (
-        <p className="-mt-2 mb-2 text-xs text-red-400">
+        <p className="-mt-2 mb-2 text-xs text-red-400 animate-fade-in [animation-duration:150ms]">
           Please enter a valid email address.
         </p>
       )}
@@ -116,7 +116,7 @@ export default function HeroForm() {
         />
       </div>
       {touched.phone && phoneNumber.trim().length < 10 && (
-        <p className="-mt-2 mb-2 text-xs text-red-400">
+        <p className="-mt-2 mb-2 text-xs text-red-400 animate-fade-in [animation-duration:150ms]">
           Please enter a valid phone number (min. 10 digits).
         </p>
       )}
@@ -144,7 +144,7 @@ export default function HeroForm() {
         <option value="insurance-agent">insurance Agent</option>
       </select>
       {touched.agent && selectedAgent === "" && (
-        <p className="-mt-2 mb-2 text-xs text-red-400">
+        <p className="-mt-2 mb-2 text-xs text-red-400 animate-fade-in [animation-duration:150ms]">
           Please select an agent.
         </p>
       )}

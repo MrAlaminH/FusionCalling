@@ -253,7 +253,7 @@ export default function EndpointCard({ endpoint }: { endpoint: Endpoint }) {
       {/* Body */}
       <div className="p-4 sm:p-5">
         {tab === "params" && (
-          <div className="space-y-5">
+          <div className="space-y-5 animate-fade-in [animation-duration:150ms]">
             {endpoint.useCases && endpoint.useCases.length > 0 && (
               <div className="text-xs text-gray-400">
                 <span className="text-gray-500">Use cases: </span>
@@ -319,7 +319,7 @@ export default function EndpointCard({ endpoint }: { endpoint: Endpoint }) {
         )}
 
         {tab === "try" && (
-          <div className="space-y-5">
+          <div className="space-y-5 animate-fade-in [animation-duration:150ms]">
             {/* API key */}
             <div>
               <label className="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1.5">
@@ -429,7 +429,7 @@ export default function EndpointCard({ endpoint }: { endpoint: Endpoint }) {
         )}
 
         {tab === "response" && (
-          <div className="space-y-5">
+          <div className="space-y-5 animate-fade-in [animation-duration:150ms]">
             <div>
               <h5 className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">
                 Example Response · {endpoint.responseStatus}

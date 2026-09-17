@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import {
   Zap,
   BarChart3,
@@ -12,6 +12,7 @@ import {
   Activity,
   CalendarDays,
 } from "lucide-react";
+import CountUp from "@/app/deck/CountUp";
 
 export default function VoiceCalculator() {
   // State
@@ -20,6 +21,23 @@ export default function VoiceCalculator() {
   const [duration, setDuration] = useState(1);
   const [accounts, setAccounts] = useState(1);
   const [cronInterval, setCronInterval] = useState(3); // Minutes
+
+  // Stats count up once on first view, then render instantly — numbers the
+  // user is reading on every slider move must not re-animate. The window
+  // outlives CountUp's default 1200ms duration so a count never restarts.
+  const [revealing, setRevealing] = useState(true);
+  useEffect(() => {
+    const t = setTimeout(() => setRevealing(false), 1400);
+    return () => clearTimeout(t);
+  }, []);
+
+  // Same formatting CountUp uses, so values render identically before and
+  // after the reveal instead of flipping between toFixed and toLocaleString.
+  const fmt = (n: number, decimals: number) =>
+    n.toLocaleString("en-US", {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals,
+    });
 
   // Sync concurrency when provider changes
   const handleProviderChange = (p: string) => {
@@ -64,42 +82,54 @@ export default function VoiceCalculator() {
   const stats = [
     {
       label: "Every Minute (Avg)",
-      value: calculations.min.toFixed(1),
+      value: fmt(calculations.min, 1),
+      num: calculations.min,
+      decimals: 1,
       color: "text-brand",
       bg: "bg-brand/10",
       border: "border-brand/20",
     },
     {
       label: "Per Cron Run (3m)",
-      value: calculations.threeMin.toFixed(0),
+      value: fmt(calculations.threeMin, 0),
+      num: calculations.threeMin,
+      decimals: 0,
       color: "text-brand-light",
       bg: "bg-brand-light/10",
       border: "border-brand-light/20",
     },
     {
       label: "Every 10 Minutes",
-      value: calculations.tenMin.toFixed(0),
+      value: fmt(calculations.tenMin, 0),
+      num: calculations.tenMin,
+      decimals: 0,
       color: "text-brand-strong",
       bg: "bg-brand-strong/10",
       border: "border-brand-strong/20",
     },
     {
       label: "Every Hour",
-      value: calculations.hour.toFixed(0),
+      value: fmt(calculations.hour, 0),
+      num: calculations.hour,
+      decimals: 0,
       color: "text-brand",
       bg: "bg-brand/10",
       border: "border-brand/20",
     },
     {
       label: "Per 8-Hour Shift",
-      value: calculations.eightHours.toLocaleString(),
+      value: fmt(calculations.eightHours, 0),
+      num: calculations.eightHours,
+      decimals: 0,
       color: "text-brand-light",
       bg: "bg-brand-light/10",
       border: "border-brand-light/20",
     },
     {
       label: "Per 24 Hours",
-      value: calculations.day.toLocaleString(),
+      value: fmt(calculations.day, 0),
+      num: calculations.day,
+      decimals: 0,
       color: "text-brand-strong",
       bg: "bg-brand-strong/10",
       border: "border-brand-strong/20",
@@ -124,16 +154,35 @@ export default function VoiceCalculator() {
               Accurate lead processing forecasts accounting for Batch Frequency.
             </p>
           </div>
-          <div className="flex gap-2 bg-zinc-900 p-1.5 rounded-xl border border-brand/20">
+          {/* Provider toggle — sliding pill (same pattern as billing-toggle)
+              instead of the gradient jumping between buttons. Clicking it also
+              ends the stat reveal (it sits outside the controls panel below). */}
+          <div
+            className="relative flex gap-0 bg-zinc-900 p-1.5 rounded-xl border border-brand/20"
+            onClickCapture={() => setRevealing(false)}
+          >
+            <div
+              aria-hidden="true"
+              className="absolute top-1.5 bottom-1.5 left-1.5 rounded-lg bg-gradient-to-r from-brand to-brand-strong shadow-premium transition-transform duration-200 ease-[var(--ease-out)]"
+              style={{
+                width: "calc(50% - 0.375rem)",
+                transform:
+                  provider === "vapi" ? "translateX(0)" : "translateX(100%)",
+              }}
+            />
             <button
               onClick={() => handleProviderChange("vapi")}
-              className={`px-6 py-2 rounded-lg font-bold transition ${provider === "vapi" ? "bg-gradient-to-r from-brand to-brand-strong text-white shadow-premium" : "text-gray-400 hover:bg-zinc-800"}`}
+              className={`relative z-10 flex-1 px-6 py-2 rounded-lg font-bold transition-colors duration-200 ${
+                provider === "vapi" ? "text-white" : "text-gray-400 hover:bg-zinc-800"
+              }`}
             >
               Vapi
             </button>
             <button
               onClick={() => handleProviderChange("retail")}
-              className={`px-6 py-2 rounded-lg font-bold transition ${provider === "retail" ? "bg-gradient-to-r from-brand to-brand-strong text-white shadow-premium" : "text-gray-400 hover:bg-zinc-800"}`}
+              className={`relative z-10 flex-1 px-6 py-2 rounded-lg font-bold transition-colors duration-200 ${
+                provider === "retail" ? "text-white" : "text-gray-400 hover:bg-zinc-800"
+              }`}
             >
               Retell
             </button>
@@ -142,7 +191,11 @@ export default function VoiceCalculator() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Controls Panel */}
-          <div className="lg:col-span-4 space-y-6">
+          <div
+            className="lg:col-span-4 space-y-6"
+            onChangeCapture={() => setRevealing(false)}
+            onClickCapture={() => setRevealing(false)}
+          >
             <div className="bg-zinc-900 rounded-2xl border border-brand/20 p-6">
               <h2 className="text-lg font-bold mb-6 flex items-center gap-2 border-b border-brand/20 pb-4">
                 <Zap size={18} className="text-brand" />
@@ -290,7 +343,7 @@ export default function VoiceCalculator() {
                   Actual Throughput
                 </h2>
                 {calculations.isCronBottleneck && (
-                  <div className="flex items-center gap-2 text-[10px] font-black text-brand-light bg-brand/20 px-3 py-1.5 rounded-full uppercase border border-brand/40">
+                  <div className="flex items-center gap-2 text-[10px] font-black text-brand-light bg-brand/20 px-3 py-1.5 rounded-full uppercase border border-brand/40 animate-fade-in [animation-duration:200ms]">
                     <AlertCircle size={12} className="text-brand" /> Cron Bottlenecked
                   </div>
                 )}
@@ -307,8 +360,12 @@ export default function VoiceCalculator() {
                         {stat.label}
                       </p>
                       <div className="flex items-baseline gap-1 relative z-10">
-                        <span className={`text-3xl font-black ${stat.color}`}>
-                          {stat.value}
+                        <span className={`text-3xl font-black ${stat.color} tabular-nums`}>
+                          {revealing ? (
+                            <CountUp to={stat.num} decimals={stat.decimals} />
+                          ) : (
+                            stat.value
+                          )}
                         </span>
                         <span className="text-sm font-bold text-gray-500 uppercase">
                           leads

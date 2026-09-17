@@ -38,7 +38,7 @@ export default function CopyButton({
         aria-label={copied ? copiedLabel : label}
         className={`inline-flex items-center justify-center h-9 w-9 rounded-md text-gray-400 hover:text-white hover:bg-white/10 transition-colors ${className}`}
       >
-        {copied ? <Check className="h-4 w-4 text-green-400" /> : <Copy className="h-4 w-4" />}
+        {copied ? <Check className="h-4 w-4 text-green-400 animate-scale-in" /> : <Copy className="h-4 w-4" />}
       </button>
     );
   }
@@ -53,7 +53,7 @@ export default function CopyButton({
           : "bg-white/5 text-gray-300 hover:bg-white/10 ring-1 ring-white/10"
       } ${className}`}
     >
-      {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+      {copied ? <Check className="h-4 w-4 animate-scale-in" /> : <Copy className="h-4 w-4" />}
       {copied ? copiedLabel : label}
     </button>
   );

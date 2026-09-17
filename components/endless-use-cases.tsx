@@ -38,9 +38,10 @@ export default function EndlessUseCases() {
             aria-label="Use case call direction"
             className="relative flex gap-1 bg-zinc-900 rounded-lg"
           >
-            {/* Animated Background Indicator - CSS transform */}
+            {/* Animated Background Indicator - CSS transform, ease-out so the
+                pill responds immediately to the tap */}
             <div
-              className="absolute top-0 bottom-0 bg-brand/20 rounded-lg transition-transform duration-300 ease-[var(--ease-drawer)]"
+              className="absolute top-0 bottom-0 bg-brand/20 rounded-lg transition-transform duration-200 ease-[var(--ease-out)]"
               style={{
                 width: "50%",
                 transform:

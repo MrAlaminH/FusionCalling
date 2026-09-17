@@ -38,6 +38,7 @@ export default function SlideToCall({
   });
 
   const [showToast, setShowToast] = useState(false);
+  const [toastClosing, setToastClosing] = useState(false);
   const [toastMessage, setToastMessage] = useState(VALIDATION_MESSAGE);
 
   const sliderRef = useRef<HTMLDivElement>(null);
@@ -46,12 +47,27 @@ export default function SlideToCall({
   const dragStartRef = useRef(0);
   const toastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const showToastMessage = useCallback((message: string) => {
-    setToastMessage(message);
-    setShowToast(true);
+  // Two-phase close: play the toast's exit transition, then unmount.
+  // The 200ms must match Toast's duration-200 exit transition.
+  const closeToast = useCallback(() => {
+    setToastClosing(true);
     if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
-    toastTimerRef.current = setTimeout(() => setShowToast(false), 4000);
+    toastTimerRef.current = setTimeout(() => {
+      setShowToast(false);
+      setToastClosing(false);
+    }, 200);
   }, []);
+
+  const showToastMessage = useCallback(
+    (message: string) => {
+      setToastMessage(message);
+      setToastClosing(false);
+      setShowToast(true);
+      if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
+      toastTimerRef.current = setTimeout(closeToast, 4000);
+    },
+    [closeToast]
+  );
 
   useEffect(
     () => () => {
@@ -202,7 +218,8 @@ export default function SlideToCall({
           <Toast
             message={toastMessage}
             type="error"
-            onClose={() => setShowToast(false)}
+            closing={toastClosing}
+            onClose={closeToast}
           />
         </div>
       )}

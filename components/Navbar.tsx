@@ -116,15 +116,26 @@ const Navbar = () => {
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
             >
+              {/* Hamburger↔X morph: both paths crossfade + rotate in place */}
               <path
+                className={cn(
+                  "origin-center transition-[opacity,transform] duration-200 [transform-box:fill-box]",
+                  isMenuOpen ? "rotate-45 opacity-0" : "rotate-0 opacity-100"
+                )}
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d={
-                  isMenuOpen
-                    ? "M6 18L18 6M6 6l12 12"
-                    : "M4 6h16M4 12h16M4 18h16"
-                }
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+              <path
+                className={cn(
+                  "origin-center transition-[opacity,transform] duration-200 [transform-box:fill-box]",
+                  isMenuOpen ? "rotate-0 opacity-100" : "-rotate-45 opacity-0"
+                )}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
               />
             </svg>
           </button>
@@ -138,7 +149,7 @@ const Navbar = () => {
                 <Link
                   href={item.href}
                   className={cn(
-                    "block rounded-full px-3.5 py-2 text-sm font-medium transition-colors duration-300",
+                    "block rounded-full px-3.5 py-2 text-sm font-medium transition-colors duration-200",
                     item.label === "Home"
                       ? "text-brand-strong"
                       : "text-gray-300 hover:bg-white/5 hover:text-white"
@@ -154,11 +165,11 @@ const Navbar = () => {
                 type="button"
                 aria-haspopup="true"
                 aria-expanded="false"
-                className="flex items-center gap-1 rounded-full px-3.5 py-2 text-sm font-medium text-gray-300 transition-colors duration-300 hover:bg-white/5 hover:text-white group-focus-within:bg-white/5 group-focus-within:text-white group-hover:text-white cursor-pointer"
+                className="flex items-center gap-1 rounded-full px-3.5 py-2 text-sm font-medium text-gray-300 transition-colors duration-200 hover:bg-white/5 hover:text-white group-focus-within:bg-white/5 group-focus-within:text-white group-hover:text-white cursor-pointer"
               >
                 More
                 <ChevronDown
-                  className="h-3.5 w-3.5 transition-transform duration-300 group-hover:rotate-180 group-focus-within:rotate-180"
+                  className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180"
                   aria-hidden="true"
                 />
               </button>
@@ -196,7 +207,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-2">
           <Link
             href="/whitelabel"
-            className="hidden lg:inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-transparent px-4 py-2 text-sm font-medium text-white transition duration-300 hover:bg-white/5"
+            className="hidden lg:inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-transparent px-4 py-2 text-sm font-medium text-white transition duration-200 hover:bg-white/5"
           >
             Partner Program
             <ArrowRight className="h-3.5 w-3.5" />
@@ -205,20 +216,27 @@ const Navbar = () => {
             href={CONTACT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-strong px-5 py-2 text-sm font-medium text-black shadow-lg shadow-brand/25 transition duration-300 hover:from-brand-light hover:to-brand active:scale-[0.98]"
+            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-strong px-5 py-2 text-sm font-medium text-black shadow-lg shadow-brand/25 transition duration-200 active:duration-150 hover:from-brand-light hover:to-brand active:scale-[0.98]"
           >
             Contact Us
           </Link>
         </div>
       </div>
 
-      {/* Mobile dropdown */}
-      {isMenuOpen && (
-        <div
-          ref={menuRef}
-          id="mobile-menu"
-          className="absolute inset-x-3 top-full mt-2 origin-top rounded-3xl border border-white/10 bg-zinc-950/95 p-4 shadow-premium-lg backdrop-blur-xl animate-scale-in [animation-duration:180ms] lg:hidden"
-        >
+      {/* Mobile dropdown — kept mounted so closing plays the exit transition;
+          `invisible` (flipped at transition end) drops it from the tab order. */}
+      <div
+        ref={menuRef}
+        id="mobile-menu"
+        aria-hidden={!isMenuOpen}
+        className={cn(
+          "absolute inset-x-3 top-full mt-2 origin-top rounded-3xl border border-white/10 bg-zinc-950/95 p-4 shadow-premium-lg backdrop-blur-xl lg:hidden",
+          "transition-[opacity,transform,visibility] duration-200 ease-[var(--ease-out)]",
+          isMenuOpen
+            ? "visible translate-y-0 scale-100 opacity-100"
+            : "invisible -translate-y-2 scale-[0.98] opacity-0"
+        )}
+      >
           <ul className="flex flex-col space-y-1">
             {[...NAV_LINKS, ...MORE_LINKS].map((item, i) => (
               <li key={item.label}>
@@ -227,7 +245,7 @@ const Navbar = () => {
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
                   className={cn(
-                    "block rounded-xl px-4 py-3 font-medium transition duration-300 active:scale-[0.98]",
+                    "block rounded-xl px-4 py-3 font-medium transition duration-200 active:scale-[0.98]",
                     item.label === "Home"
                       ? "bg-brand/10 text-brand-strong"
                       : "text-gray-300 hover:bg-white/5 hover:text-white"
@@ -241,7 +259,7 @@ const Navbar = () => {
               <Link
                 href="/whitelabel"
                 onClick={() => setIsMenuOpen(false)}
-                className="flex items-center justify-center gap-2 rounded-xl border border-white/15 px-4 py-3 font-medium text-white transition duration-300 hover:bg-white/5"
+                className="flex items-center justify-center gap-2 rounded-xl border border-white/15 px-4 py-3 font-medium text-white transition duration-200 active:duration-150 hover:bg-white/5 active:scale-[0.98]"
               >
                 Partner Program
                 <ArrowRight className="h-4 w-4" />
@@ -250,14 +268,13 @@ const Navbar = () => {
                 href={CONTACT_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center rounded-xl bg-gradient-to-r from-brand to-brand-strong px-4 py-3 font-medium text-black shadow-lg shadow-brand/25 transition duration-300 hover:from-brand-light hover:to-brand"
+                className="flex items-center justify-center rounded-xl bg-gradient-to-r from-brand to-brand-strong px-4 py-3 font-medium text-black shadow-lg shadow-brand/25 transition duration-200 active:duration-150 hover:from-brand-light hover:to-brand active:scale-[0.98]"
               >
                 Contact Us
               </a>
             </li>
           </ul>
         </div>
-      )}
     </nav>
   );
 };

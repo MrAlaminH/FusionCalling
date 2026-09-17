@@ -34,8 +34,10 @@ export default function StickyMobileCta({
     <div
       aria-hidden={!visible}
       className={cn(
-        "fixed bottom-0 left-0 right-0 z-40 lg:hidden transition-transform duration-300",
-        visible ? "translate-y-0" : "translate-y-full"
+        "fixed bottom-0 left-0 right-0 z-40 lg:hidden transition-[transform,visibility] duration-300 ease-[var(--ease-drawer)]",
+        // `invisible` when hidden drops the CTA from the tab order and
+        // hit-testing (it flips at transition end, so the slide-out plays).
+        visible ? "visible translate-y-0" : "invisible translate-y-full"
       )}
     >
       {/* Fade out the very bottom edge into the bar */}
@@ -43,7 +45,7 @@ export default function StickyMobileCta({
       <div className="bg-black/95 backdrop-blur border-t border-brand/30 px-4 py-3 pr-20">
         <a
           href={href}
-          className="flex w-full items-center justify-center gap-2 rounded-pill bg-gradient-to-r from-brand to-brand-strong px-6 py-3 text-sm font-semibold text-brand-foreground shadow-lg shadow-brand/30"
+          className="flex w-full items-center justify-center gap-2 rounded-pill bg-gradient-to-r from-brand to-brand-strong px-6 py-3 text-sm font-semibold text-brand-foreground shadow-lg shadow-brand/30 transition duration-200 active:duration-150 active:scale-[0.98]"
         >
           <PhoneCall className="h-4 w-4" />
           {label}

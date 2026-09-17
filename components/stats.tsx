@@ -55,12 +55,14 @@ const AnimatedStatistics = () => {
     const animate = (timestamp: number) => {
       const elapsed = timestamp - start;
       const progress = Math.min(elapsed / duration, 1);
+      // Cubic ease-out: numbers rush in fast, settle gently.
+      const eased = 1 - Math.pow(1 - progress, 3);
 
       setCounters({
-        projects: Math.floor(targets.current.projects * progress),
-        satisfaction: Math.floor(targets.current.satisfaction * progress),
-        hours: Math.floor(targets.current.hours * progress),
-        calls: Math.floor(targets.current.calls * progress),
+        projects: Math.floor(targets.current.projects * eased),
+        satisfaction: Math.floor(targets.current.satisfaction * eased),
+        hours: Math.floor(targets.current.hours * eased),
+        calls: Math.floor(targets.current.calls * eased),
       });
 
       if (progress < 1) {
@@ -108,7 +110,7 @@ const AnimatedStatistics = () => {
         {statItems.map((item, index) => (
           <div
             key={index}
-            className="bg-black/40 border-2 border-brand/20 rounded-2xl p-8 transition duration-300 hover:shadow-lg hover:shadow-brand-strong hover:-translate-y-1 min-h-[200px]"
+            className="bg-black/40 border-2 border-brand/20 rounded-2xl p-8 min-h-[200px]"
           >
             <h2 className="text-lg md:text-xl font-medium mb-3">
               {item.title}

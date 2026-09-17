@@ -155,6 +155,18 @@ html {
   }
 }
 
+/* Sales deck: after the first manual navigation, slide entrances collapse to
+   instant — replaying the staggered choreography on every arrow press read as
+   input lag. Same mechanics as the reduced-motion kill switch, scoped to the
+   deck stage (the first slide still plays in full). */
+.deck-nav-instant,
+.deck-nav-instant *,
+.deck-nav-instant *::before,
+.deck-nav-instant *::after {
+  animation-duration: 0.01ms !important;
+  animation-delay: 0s !important;
+}
+
 /* Progressive enhancement: animate native <details> open/close where the
    browser supports ::details-content + interpolate-size. Unsupported
    browsers ignore these rules and keep the instant default. */

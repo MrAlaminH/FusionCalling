@@ -89,11 +89,46 @@ function MarqueeRow({
         contentRef.current.style.transform = `translate3d(${x}%,0,0)`;
       }
 
-      raf = requestAnimationFrame(tick);
+      if (raf) raf = requestAnimationFrame(tick);
     };
 
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
+    // Pause the loop entirely while off-screen — previously it spun forever
+    // from first intersect on. Resume resets the clock so the capped delta
+    // doesn't inject a velocity spike.
+    const start = () => {
+      if (raf) return;
+      lastT = performance.now();
+      lastY = window.scrollY;
+      raf = requestAnimationFrame(tick);
+    };
+    const stop = () => {
+      if (raf) {
+        cancelAnimationFrame(raf);
+        raf = 0;
+      }
+    };
+
+    let io: IntersectionObserver | null = null;
+    if (
+      typeof IntersectionObserver !== "undefined" &&
+      containerRef.current
+    ) {
+      io = new IntersectionObserver(
+        (entries) => {
+          if (entries.some((e) => e.isIntersecting)) start();
+          else stop();
+        },
+        { rootMargin: "100px" }
+      );
+      io.observe(containerRef.current);
+    } else {
+      start();
+    }
+
+    return () => {
+      io?.disconnect();
+      stop();
+    };
   }, [baseVelocity, repetitions]);
 
   return (

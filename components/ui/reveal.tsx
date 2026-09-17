@@ -119,7 +119,7 @@ export function Reveal({
     <Tag
       ref={ref}
       className={cn(
-        "transition-[opacity,transform] duration-700 ease-out",
+        "transition-[opacity,transform] duration-700 ease-[var(--ease-out)]",
         isVisible ? "opacity-100 translate-x-0 translate-y-0 scale-100" : cn("opacity-0", hiddenOffset),
         className,
       )}

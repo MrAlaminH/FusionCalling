@@ -28,6 +28,27 @@ export default function SalesDeck() {
   const next = useCallback(() => setIndex((i) => Math.min(total - 1, i + 1)), [total]);
   const prev = useCallback(() => setIndex((i) => Math.max(0, i - 1)), []);
 
+  // The first slide plays its full staggered choreography; after the first
+  // manual navigation, entrance animation collapses to instant so arrow-key
+  // navigation (dozens of presses per presentation) feels immediate.
+  // Deep-linking via hash keeps the full entrance on purpose.
+  const [hasNavigated, setHasNavigated] = useState(false);
+  const navNext = useCallback(() => {
+    setHasNavigated(true);
+    next();
+  }, [next]);
+  const navPrev = useCallback(() => {
+    setHasNavigated(true);
+    prev();
+  }, [prev]);
+  const navGo = useCallback(
+    (target: number) => {
+      setHasNavigated(true);
+      go(target);
+    },
+    [go]
+  );
+
   const toggleFs = useCallback(() => {
     if (document.fullscreenElement) {
       void document.exitFullscreen();
@@ -60,19 +81,19 @@ export default function SalesDeck() {
         case "PageDown":
         case " ":
           e.preventDefault();
-          next();
+          navNext();
           break;
         case "ArrowLeft":
         case "ArrowUp":
         case "PageUp":
           e.preventDefault();
-          prev();
+          navPrev();
           break;
         case "Home":
-          go(0);
+          navGo(0);
           break;
         case "End":
-          go(total - 1);
+          navGo(total - 1);
           break;
         case "Escape":
           setOverview(false);
@@ -84,7 +105,7 @@ export default function SalesDeck() {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [next, prev, go, total, toggleFs]);
+  }, [navNext, navPrev, navGo, total, toggleFs]);
 
   useEffect(() => {
     const onFsChange = () => setIsFs(Boolean(document.fullscreenElement));
@@ -99,8 +120,8 @@ export default function SalesDeck() {
     if (touchX.current === null) return;
     const dx = (e.changedTouches[0]?.clientX ?? touchX.current) - touchX.current;
     if (Math.abs(dx) > 48) {
-      if (dx < 0) next();
-      else prev();
+      if (dx < 0) navNext();
+      else navPrev();
     }
     touchX.current = null;
   };
@@ -114,13 +135,20 @@ export default function SalesDeck() {
       aria-roledescription="presentation"
       aria-label="Fusion Calling sales deck"
     >
-      {/* Slide stage — keyed so entrance animations replay on every visit */}
+      {/* Slide stage — keyed so entrance animations replay on every visit;
+          after the first manual navigation, .deck-nav-instant collapses them
+          to instant (see globals.css) so keyboard nav feels immediate */}
       <div
         className="absolute inset-0"
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
       >
-        <div key={index} className="h-full w-full animate-fade-in">
+        <div
+          key={index}
+          className={`h-full w-full animate-fade-in ${
+            hasNavigated ? "deck-nav-instant" : ""
+          }`}
+        >
           <Current />
         </div>
       </div>
@@ -128,8 +156,8 @@ export default function SalesDeck() {
       {/* Progress bar */}
       <div className="absolute inset-x-0 top-0 z-20 h-[3px] bg-white/10">
         <div
-          className="h-full bg-gradient-to-r from-brand-strong via-brand to-brand-light transition-[width] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]"
-          style={{ width: `${pct}%` }}
+          className="h-full w-full origin-left bg-gradient-to-r from-brand-strong via-brand to-brand-light transition-transform duration-500 ease-[var(--ease-drawer)]"
+          style={{ transform: `scaleX(${pct / 100})` }}
         />
       </div>
 
@@ -204,7 +232,7 @@ export default function SalesDeck() {
                 key={s.id}
                 type="button"
                 onClick={() => {
-                  go(i);
+                  navGo(i);
                   setOverview(false);
                 }}
                 className={`group flex items-center gap-4 rounded-card border p-4 text-left transition-premium ${

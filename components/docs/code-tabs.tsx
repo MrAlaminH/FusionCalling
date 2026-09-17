@@ -82,7 +82,7 @@ export default function CodeTabs({ examples, filename }: CodeTabsProps) {
             aria-label="Copy code"
           >
             {copied ? (
-              <Check className="w-4 h-4 text-green-400" />
+              <Check className="w-4 h-4 text-green-400 animate-scale-in" />
             ) : (
               <Copy className="w-4 h-4 text-gray-400" />
             )}
@@ -90,8 +90,8 @@ export default function CodeTabs({ examples, filename }: CodeTabsProps) {
         </div>
       </div>
 
-      {/* Code content */}
-      <div className="relative">
+      {/* Code content — keyed remount replays a quick fade on tab switch */}
+      <div key={activeTab} className="relative animate-fade-in [animation-duration:150ms]">
         <SyntaxHighlighter
           language={activeExample.language}
           style={vscDarkPlus}

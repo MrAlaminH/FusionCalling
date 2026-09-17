@@ -21,17 +21,17 @@ export default function Error({
       <div className="grain-overlay" aria-hidden />
 
       <div className="relative z-10 max-w-lg">
-        <p className="font-display text-6xl sm:text-7xl font-bold bg-gradient-to-r from-brand to-brand-strong bg-clip-text text-transparent">
+        <p className="font-display text-6xl sm:text-7xl font-bold bg-gradient-to-r from-brand to-brand-strong bg-clip-text text-transparent animate-fade-in-up">
           Oops
         </p>
-        <h1 className="font-display mt-2 text-2xl sm:text-3xl font-bold text-white">
+        <h1 className="font-display mt-2 text-2xl sm:text-3xl font-bold text-white animate-fade-in-up [animation-delay:100ms]">
           Something went wrong
         </h1>
-        <p className="mt-4 text-sm sm:text-base text-gray-400">
+        <p className="mt-4 text-sm sm:text-base text-gray-400 animate-fade-in-up [animation-delay:200ms]">
           An unexpected error occurred. Please try again.
         </p>
 
-        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row animate-fade-in-up [animation-delay:300ms]">
           <button
             type="button"
             onClick={reset}

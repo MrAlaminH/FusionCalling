@@ -4,9 +4,11 @@ interface ToastProps {
   message: string;
   onClose: () => void;
   type?: "error" | "success" | "info";
+  /** While true the toast plays its exit transition; the parent unmounts it after. */
+  closing?: boolean;
 }
 
-const Toast: React.FC<ToastProps> = ({ message, onClose, type = "error" }) => {
+const Toast: React.FC<ToastProps> = ({ message, onClose, type = "error", closing = false }) => {
   // Define styles based on toast type
   const getToastStyles = () => {
     switch (type) {
@@ -32,13 +34,15 @@ const Toast: React.FC<ToastProps> = ({ message, onClose, type = "error" }) => {
     <div
       role="alert"
       className={`fixed top-20 left-1/2 -translate-x-1/2 ${getToastStyles()} text-white px-4 py-3 rounded-lg shadow-xl transition-[opacity,transform] duration-200 ease-out z-50 border-2 flex items-center justify-between min-w-[300px] max-w-md ${
-        entered ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2"
+        entered && !closing
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 -translate-y-2"
       }`}
     >
       <span className="font-semibold text-sm">{message}</span>
       <button
         onClick={onClose}
-        className="ml-4 text-white hover:text-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 bg-transparent border border-white/30 rounded-full w-6 h-6 flex items-center justify-center"
+        className="ml-4 text-white hover:text-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 bg-transparent border border-white/30 rounded-full w-6 h-6 flex items-center justify-center transition-transform duration-150 active:scale-90"
         aria-label="Close"
       >
         ✖

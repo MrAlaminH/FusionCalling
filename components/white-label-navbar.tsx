@@ -129,7 +129,7 @@ const WhiteLabelNavbar = ({ links }: WhiteLabelNavbarProps) => {
             href={CONTACT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-10 items-center justify-center rounded-xl border border-brand-strong bg-brand-strong px-4 font-medium text-black transition-colors duration-200 hover:bg-brand active:scale-[0.98] lg:px-5"
+            className="inline-flex h-10 items-center justify-center rounded-xl border border-brand-strong bg-brand-strong px-4 font-medium text-black transition duration-200 active:duration-150 hover:bg-brand active:scale-[0.98] lg:px-5"
           >
             Contact Us
           </a>
@@ -137,7 +137,7 @@ const WhiteLabelNavbar = ({ links }: WhiteLabelNavbarProps) => {
             href={APP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-10 items-center justify-center gap-2 rounded-xl border-2 border-brand-strong bg-transparent px-4 font-medium text-white transition-colors duration-200 hover:bg-brand-strong/20 active:scale-[0.98] lg:px-5"
+            className="inline-flex h-10 items-center justify-center gap-2 rounded-xl border-2 border-brand-strong bg-transparent px-4 font-medium text-white transition duration-200 active:duration-150 hover:bg-brand-strong/20 active:scale-[0.98] lg:px-5"
           >
             Open app
             <ExternalLink className="h-4 w-4" />
@@ -162,27 +162,44 @@ const WhiteLabelNavbar = ({ links }: WhiteLabelNavbarProps) => {
             xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true"
           >
+            {/* Hamburger↔X morph: both paths crossfade + rotate in place */}
             <path
+              className={cn(
+                "origin-center transition-[opacity,transform] duration-200 [transform-box:fill-box]",
+                isMenuOpen ? "rotate-45 opacity-0" : "rotate-0 opacity-100"
+              )}
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth={2}
-              d={
-                isMenuOpen
-                  ? "M6 18L18 6M6 6l12 12"
-                  : "M4 6h16M4 12h16M4 18h16"
-              }
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+            <path
+              className={cn(
+                "origin-center transition-[opacity,transform] duration-200 [transform-box:fill-box]",
+                isMenuOpen ? "rotate-0 opacity-100" : "-rotate-45 opacity-0"
+              )}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M6 18L18 6M6 6l12 12"
             />
           </svg>
         </button>
       </div>
 
-      {/* Mobile dropdown */}
-      {isMenuOpen && (
-        <div
-          ref={menuRef}
-          id="wl-mobile-menu"
-          className="border-t border-brand-strong/30 bg-black/90 backdrop-blur-md lg:hidden"
-        >
+      {/* Mobile dropdown — kept mounted so closing plays the exit transition;
+          `invisible` (flipped at transition end) drops it from the tab order. */}
+      <div
+        ref={menuRef}
+        id="wl-mobile-menu"
+        aria-hidden={!isMenuOpen}
+        className={cn(
+          "border-t border-brand-strong/30 bg-black/90 backdrop-blur-md lg:hidden transition-[opacity,transform,visibility] duration-200 ease-[var(--ease-out)] origin-top",
+          isMenuOpen
+            ? "visible translate-y-0 scale-y-100 opacity-100"
+            : "invisible -translate-y-2 scale-y-[0.98] opacity-0"
+        )}
+      >
           <div className="mx-auto max-w-screen-xl px-4 py-4 sm:px-6">
             <ul className="flex flex-col space-y-1">
               {navLinks.map((item, i) => (
@@ -192,7 +209,7 @@ const WhiteLabelNavbar = ({ links }: WhiteLabelNavbarProps) => {
                     href={item.href}
                     onClick={() => setIsMenuOpen(false)}
                     className={cn(
-                      "block rounded-lg px-4 py-3 font-medium transition duration-300 hover:bg-brand-strong hover:text-white",
+                      "block rounded-lg px-4 py-3 font-medium transition duration-200 active:scale-[0.98] hover:bg-brand-strong hover:text-white",
                       item.label === "Home" ? "text-brand-light" : "text-gray-200"
                     )}
                   >
@@ -208,7 +225,7 @@ const WhiteLabelNavbar = ({ links }: WhiteLabelNavbarProps) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMenuOpen(false)}
-                className="inline-flex items-center justify-center rounded-xl bg-brand-strong px-4 py-3 text-center font-semibold text-black shadow-lg shadow-brand-strong/30 transition duration-300 hover:bg-brand"
+                className="inline-flex items-center justify-center rounded-xl bg-brand-strong px-4 py-3 text-center font-semibold text-black shadow-lg shadow-brand-strong/30 transition duration-200 active:duration-150 hover:bg-brand active:scale-[0.98]"
               >
                 Contact Us
               </a>
@@ -217,7 +234,7 @@ const WhiteLabelNavbar = ({ links }: WhiteLabelNavbarProps) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMenuOpen(false)}
-                className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-brand-strong px-4 py-3 text-center font-semibold text-white transition duration-300 hover:bg-brand-strong/20"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-brand-strong px-4 py-3 text-center font-semibold text-white transition duration-200 active:duration-150 hover:bg-brand-strong/20 active:scale-[0.98]"
               >
                 Open app
                 <ExternalLink className="h-4 w-4" />
@@ -225,7 +242,6 @@ const WhiteLabelNavbar = ({ links }: WhiteLabelNavbarProps) => {
             </div>
           </div>
         </div>
-      )}
     </nav>
   );
 };

@@ -52,13 +52,19 @@ export default function BlogGrid({ posts }: { posts: BlogPost[] }) {
         })}
       </div>
 
-      {/* Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-        {visible.map((post) => (
+      {/* Grid — keyed by filter so switching categories replays a short
+          staggered entrance instead of teleporting the cards. SSR-rendered
+          initial markup is unchanged, so crawlers still see every post. */}
+      <div
+        key={active}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+      >
+        {visible.map((post, i) => (
           <Link
             key={post.slug}
             href={`/blog/${post.slug}`}
-            className="group glass-light flex flex-col rounded-2xl border border-brand/20 hover:border-brand/40 hover:shadow-premium transition-premium overflow-hidden"
+            style={{ animationDelay: `${Math.min(i * 50, 300)}ms` }}
+            className="group glass-light flex flex-col rounded-2xl border border-brand/20 hover:border-brand/40 hover:shadow-premium transition-premium overflow-hidden animate-fade-in-up"
           >
             <div className="relative aspect-video overflow-hidden">
               <Image

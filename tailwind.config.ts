@@ -76,6 +76,11 @@ const config: Config = {
    			btn: '0.75rem',
    			pill: '9999px'
    		},
+  		/* Bare `transition` utilities use the house curve instead of Tailwind's
+  		   weak default, matching the tokens in globals.css. */
+  		transitionTimingFunction: {
+  			DEFAULT: 'var(--ease-out)'
+  		},
   		keyframes: {
   			'logo-cloud': {
   				from: {
@@ -202,8 +207,10 @@ const config: Config = {
   			marquee: 'marquee var(--duration) infinite linear',
   			marquee2: 'marquee2 25s linear infinite',
   			'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
-  			'background-position-spin': 'background-position-spin 3000ms infinite alternate',
-  			'shiny-text': 'shiny-text 8s infinite',
+  			'background-position-spin': 'background-position-spin 6000ms infinite alternate',
+  			/* Constant motion reads as linear; the per-segment `ease` default
+  			   made the shine sweep visibly surge and pause. */
+  			'shiny-text': 'shiny-text 8s linear infinite',
   			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
   			'fade-in': 'fade-in 0.2s var(--ease-out) both',
   			'fade-in-up': 'fade-in-up 0.5s var(--ease-out) both',

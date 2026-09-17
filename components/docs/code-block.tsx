@@ -41,7 +41,7 @@ export default function CodeBlock({
           aria-label="Copy code"
         >
           {copied ? (
-            <Check className="w-4 h-4 text-green-400" />
+            <Check className="w-4 h-4 text-green-400 animate-scale-in" />
           ) : (
             <Copy className="w-4 h-4 text-gray-400" />
           )}

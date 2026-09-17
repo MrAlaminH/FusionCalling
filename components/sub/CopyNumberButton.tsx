@@ -31,7 +31,10 @@ export default function CopyNumberButton() {
         aria-hidden="true"
       >
         {copySuccess ? (
-          <polyline points="20 6 9 17 4 12"></polyline>
+          <polyline
+            points="20 6 9 17 4 12"
+            className="animate-scale-in origin-center [transform-box:fill-box]"
+          ></polyline>
         ) : (
           <>
             <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>

@@ -166,7 +166,7 @@ export default function SidebarNav({
           )}
         </button>
         {hasChildren && item.children && isExpanded && (
-          <div className="mt-1 space-y-1">
+          <div className="mt-1 space-y-1 animate-fade-in [animation-duration:150ms]">
             {item.children.map((child) => renderNavItem(child, level + 1))}
           </div>
         )}
@@ -177,7 +177,7 @@ export default function SidebarNav({
   return (
     <>
       <aside
-        className={`fixed lg:sticky top-20 left-0 h-[calc(100vh-5rem)] w-72 lg:w-64 flex-shrink-0 bg-black/95 backdrop-blur-sm border-r border-white/10 overflow-y-auto z-40 transition-transform duration-300 ${
+        className={`fixed lg:sticky top-20 left-0 h-[calc(100vh-5rem)] w-72 lg:w-64 flex-shrink-0 bg-black/95 backdrop-blur-sm border-r border-white/10 overflow-y-auto z-40 transition-transform duration-300 ease-[var(--ease-drawer)] ${
           open ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
         }`}
       >
@@ -236,13 +236,17 @@ export default function SidebarNav({
         </nav>
       </aside>
 
-      {/* Overlay for mobile */}
-      {open && (
-        <div
-          className="lg:hidden fixed inset-0 bg-black/60 z-30"
-          onClick={() => onOpenChange(false)}
-        />
-      )}
+      {/* Overlay for mobile — kept mounted so it fades with the drawer
+          instead of teleporting; pointer-events drop when closed. */}
+      <div
+        className={`lg:hidden fixed inset-0 bg-black/60 z-30 transition-opacity duration-300 ease-[var(--ease-out)] ${
+          open
+            ? "opacity-100"
+            : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => onOpenChange(false)}
+        aria-hidden
+      />
     </>
   );
 }

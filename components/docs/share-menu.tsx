@@ -63,7 +63,7 @@ export default function ShareMenu() {
           className="inline-flex items-center gap-2 px-3 h-9 text-sm font-medium bg-white/5 hover:bg-white/10 text-gray-200 transition-colors"
         >
           {copied ? (
-            <Check className="h-4 w-4 text-green-400" />
+            <Check className="h-4 w-4 text-green-400 animate-scale-in" />
           ) : (
             <Copy className="h-4 w-4" />
           )}

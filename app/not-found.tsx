@@ -14,17 +14,17 @@ export default function NotFound() {
       <div className="grain-overlay" aria-hidden />
 
       <div className="relative z-10 max-w-lg">
-        <p className="font-display text-[8rem] sm:text-[12rem] font-bold leading-none bg-gradient-to-r from-brand to-brand-strong bg-clip-text text-transparent">
+        <p className="font-display text-[8rem] sm:text-[12rem] font-bold leading-none bg-gradient-to-r from-brand to-brand-strong bg-clip-text text-transparent animate-fade-in-up">
           404
         </p>
-        <h1 className="font-display mt-2 text-2xl sm:text-3xl font-bold text-white">
+        <h1 className="font-display mt-2 text-2xl sm:text-3xl font-bold text-white animate-fade-in-up [animation-delay:100ms]">
           Page not found
         </h1>
-        <p className="mt-4 text-sm sm:text-base text-gray-400">
+        <p className="mt-4 text-sm sm:text-base text-gray-400 animate-fade-in-up [animation-delay:200ms]">
           The page you&apos;re looking for doesn&apos;t exist or has been moved.
         </p>
 
-        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row animate-fade-in-up [animation-delay:300ms]">
           <Link
             href="/"
             className="inline-flex w-full items-center justify-center rounded-pill bg-gradient-to-r from-brand to-brand-strong px-6 py-3 text-sm font-semibold text-black transition-transform hover:-translate-y-0.5 sm:w-auto"

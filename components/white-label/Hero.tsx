@@ -189,9 +189,11 @@ export default function Hero() {
                         {/* Play Button Container */}
                         <div className="absolute inset-0 flex items-center justify-center z-20">
                           <div className="relative flex items-center justify-center">
-                            {/* Outer ping ring (CSS-only, single ring) */}
+                            {/* Outer ping ring — capped at 4 iterations so it
+                                draws attention, then settles (final ping frame
+                                is opacity-0, so it fades out cleanly) */}
                             <span className="absolute inline-flex h-full w-full items-center justify-center">
-                              <span className="absolute inline-flex w-full aspect-square rounded-full border-2 border-brand/50 animate-ping [animation-duration:3s]" />
+                              <span className="absolute inline-flex w-full aspect-square rounded-full border-2 border-brand/50 animate-ping [animation-duration:3s] [animation-iteration-count:4]" />
                             </span>
 
                             {/* Enhanced glow backdrop (static) */}

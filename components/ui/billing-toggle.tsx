@@ -20,10 +20,12 @@ export function BillingToggle({
         aria-label="Billing cycle"
         className="relative flex w-full max-w-[360px] items-center rounded-full border border-white/10 bg-zinc-900/80 p-1.5 shadow-premium backdrop-blur"
       >
-        {/* Sliding pill — compositor-only transform slide (rigid body, no overlap/squeeze). */}
+        {/* Sliding pill — compositor-only transform slide (rigid body, no
+            overlap/squeeze). Ease-out, not the drawer curve: a tap response
+            must start fast. */}
         <div
           aria-hidden="true"
-          className="absolute top-1.5 bottom-1.5 left-1.5 rounded-full bg-gradient-to-r from-brand to-brand-strong shadow-lg shadow-brand/40 ring-1 ring-brand/30 transition-transform duration-300 motion-reduce:transition-none ease-[var(--ease-drawer)]"
+          className="absolute top-1.5 bottom-1.5 left-1.5 rounded-full bg-gradient-to-r from-brand to-brand-strong shadow-lg shadow-brand/40 ring-1 ring-brand/30 transition-transform duration-200 motion-reduce:transition-none ease-[var(--ease-out)]"
           style={{
             width: "calc(50% - 0.375rem)",
             transform:

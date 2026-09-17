@@ -141,9 +141,11 @@ export function VoiceCard({
           )}
         </button>
         <div className="flex-1 h-1 bg-[#333333] rounded-full overflow-hidden">
+          {/* scaleX, not width: the 10fps interval stays, but the bar animates
+              on the compositor and interpolates smoothly between updates */}
           <div
-            className="h-full bg-orange-500 group-hover:bg-orange-400 transition duration-300 rounded-full"
-            style={{ width: `${progress}%` }}
+            className="h-full w-full bg-orange-500 group-hover:bg-orange-400 origin-left rounded-full transition-transform duration-100 ease-linear"
+            style={{ transform: `scaleX(${progress / 100})` }}
           />
         </div>
         <span className="text-gray-400 text-xs tabular-nums group-hover:text-white/90 min-w-[40px]">
