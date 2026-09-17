@@ -1,35 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { getAuthor } from "@/lib/authors";
-import { buildOpenGraph } from "@/lib/seo";
-import { blogPosts } from "@/lib/blog-posts";
+import { getBlogPost } from "@/lib/blog-posts";
 import { blogFaqs } from "@/lib/blog-faqs";
-import { buildBlogGraph } from "@/lib/blog-schema";
+import { buildBlogGraph, buildPostMetadata } from "@/lib/blog-schema";
 import PostLayout from "@/components/blog/PostLayout";
 
 /* eslint-disable react/no-unescaped-entities */
 
-const post = blogPosts.find(
-  (p) => p.slug === "missed-call-text-back-vs-ai-receptionist"
-)!;
+const post = getBlogPost("missed-call-text-back-vs-ai-receptionist")!;
 const teamAuthor = getAuthor("voice-team")!;
 const faqs = blogFaqs["missed-call-text-back-vs-ai-receptionist"];
 
-export const metadata: Metadata = {
-  title: "Missed-Call Text-Back vs AI Receptionist (2026)",
-  description: post.description,
-  ...buildOpenGraph({
-    title: "Missed-Call Text-Back vs AI Receptionist (2026)",
-    description: post.description,
-    path: "/blog/missed-call-text-back-vs-ai-receptionist",
-    image: "/blog/blog7.webp",
-    type: "article",
-    publishedTime: `${post.date}T00:00:00Z`,
-    modifiedTime: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
-    authors: ["Fusion Calling"],
-  }),
-};
+export const metadata: Metadata = buildPostMetadata(post, teamAuthor);
 
 function Quote({
   children,

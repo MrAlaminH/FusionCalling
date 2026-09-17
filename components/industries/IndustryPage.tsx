@@ -3,6 +3,7 @@ import type { Industry } from "@/lib/industries";
 import { getRelatedIndustries } from "@/lib/industries";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { generateIndustryStats, generateIndustryExpertQuote } from "@/lib/industry-seo";
+import { LAUNCH, SATISFACTION, UPTIME_SLA } from "@/lib/product-facts";
 
 function formatDate(iso: string): string {
   const d = new Date(iso);
@@ -224,15 +225,15 @@ export default function IndustryPage({ industry }: { industry: Industry }) {
 
               <div className="grid md:grid-cols-3 gap-4 text-center">
                 <div className="bg-green-500/10 rounded-lg p-4 border border-green-500/20">
-                  <div className="text-2xl font-bold text-green-400 mb-1">7 Days</div>
+                  <div className="text-2xl font-bold text-green-400 mb-1">{LAUNCH.guided}</div>
                   <div className="text-xs text-gray-400">Setup Time vs 30+ days</div>
                 </div>
                 <div className="bg-green-500/10 rounded-lg p-4 border border-green-500/20">
-                  <div className="text-2xl font-bold text-green-400 mb-1">4.8/5</div>
+                  <div className="text-2xl font-bold text-green-400 mb-1">{SATISFACTION}</div>
                   <div className="text-xs text-gray-400">Client Satisfaction</div>
                 </div>
                 <div className="bg-green-500/10 rounded-lg p-4 border border-green-500/20">
-                  <div className="text-2xl font-bold text-green-400 mb-1">99.9%</div>
+                  <div className="text-2xl font-bold text-green-400 mb-1">{UPTIME_SLA}</div>
                   <div className="text-xs text-gray-400">Uptime SLA</div>
                 </div>
               </div>
@@ -329,7 +330,7 @@ export default function IndustryPage({ industry }: { industry: Industry }) {
               </h2>
               <p className="text-gray-300 leading-relaxed mb-6">
                 Launch a branded AI voice service for {name.toLowerCase()} clients
-                in about 7 days, with multi-provider support, done-with-you
+                in {LAUNCH.guided}, with multi-provider support, done-with-you
                 onboarding, and full brand ownership.
               </p>
               <ul className="space-y-3 text-gray-300 mb-8">

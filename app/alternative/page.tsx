@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { comparisons } from "@/lib/comparisons";
 import { SITE_URL } from "@/lib/site-url";
-import { buildOpenGraph } from "@/lib/seo";
+import { breadcrumbSchema, buildOpenGraph, faqSchema } from "@/lib/seo";
+import { LAUNCH, PROVIDERS, WHOLESALE_PLANS } from "@/lib/product-facts";
 import { primaryButton } from "@/components/ui/button-styles";
 
 const title = `${comparisons.length} White-Label Voice AI Alternatives (2026)`;
@@ -35,75 +36,51 @@ const matrixRows = comparisons.map((c) => {
 });
 
 export default function CompareHubPage() {
+  // Fusion's own matrix row is sourced from lib/product-facts so the hub can
+  // never contradict the detailed comparison pages it links to.
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      breadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "Alternative", path: "/alternative" },
+      ]),
+      {
+        "@type": "CollectionPage",
+        "@id": `${SITE_URL}/alternative#collectionpage`,
+        url: `${SITE_URL}/alternative`,
+        name: "White-Label Voice AI Platform Comparisons",
+        description:
+          "Side-by-side comparisons of the top white-label voice AI platforms for agencies.",
+        inLanguage: "en-US",
+        isPartOf: { "@id": `${SITE_URL}/#website` },
+      },
+      faqSchema(
+        [
+          {
+            question: "How does Fusion Calling compare to other white-label voice AI platforms?",
+            answer: `Fusion Calling is the only multi-provider white-label platform supporting Vapi, Retell AI, and ElevenLabs simultaneously. Competitors typically lock you into one provider. We also offer guided ${LAUNCH.guided} launch, full brand ownership on your domain, and you keep 100% of revenue.`,
+          },
+          {
+            question: "Which white-label voice AI platform is best for agencies?",
+            answer: "For agencies wanting multi-provider flexibility, full brand control, and fastest time-to-revenue, Fusion Calling leads. Vapify and ChatDash are Vapi-only. Synthflow and Bland AI are single-provider. VoiceAIWrapper is a basic wrapper. Fusion Calling's multi-provider layer + guided launch is unique.",
+          },
+          {
+            question: "Can I switch providers later if I start with one?",
+            answer: "With Fusion Calling, yes — you can add or switch between Vapi, Retell, and ElevenLabs agents anytime within the same dashboard. Other platforms typically require rebuilding on a new platform. Fusion Calling's abstraction layer prevents vendor lock-in.",
+          },
+        ],
+        `${SITE_URL}/alternative#faqpage`
+      ),
+    ],
+  };
+
   return (
     <>
 <script
         id="alternative-index-schema"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@type": "BreadcrumbList",
-                itemListElement: [
-                  {
-                    "@type": "ListItem",
-                    position: 1,
-                    name: "Home",
-                    item: `${SITE_URL}/`,
-                  },
-                  {
-                    "@type": "ListItem",
-                    position: 2,
-                    name: "Alternative",
-                    item: `${SITE_URL}/alternative`,
-                  },
-                ],
-              },
-              {
-                "@type": "CollectionPage",
-                "@id": `${SITE_URL}/alternative#collectionpage`,
-                url: `${SITE_URL}/alternative`,
-                name: "White-Label Voice AI Platform Comparisons",
-                description:
-                  "Side-by-side comparisons of the top white-label voice AI platforms for agencies.",
-                inLanguage: "en-US",
-                isPartOf: { "@id": `${SITE_URL}/#website` },
-              },
-              {
-                "@type": "FAQPage",
-                "@id": `${SITE_URL}/alternative#faqpage`,
-                mainEntity: [
-                  {
-                    "@type": "Question",
-                    name: "How does Fusion Calling compare to other white-label voice AI platforms?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "Fusion Calling is the only multi-provider white-label platform supporting Vapi, Retell AI, and ElevenLabs simultaneously. Competitors typically lock you into one provider. We also offer guided 7-day launch, full brand ownership on your domain, and you keep 100% of revenue.",
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: "Which white-label voice AI platform is best for agencies?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "For agencies wanting multi-provider flexibility, full brand control, and fastest time-to-revenue, Fusion Calling leads. Vapify and ChatDash are Vapi-only. Synthflow and Bland AI are single-provider. VoiceAIWrapper is a basic wrapper. Fusion Calling's multi-provider layer + guided launch is unique.",
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: "Can I switch providers later if I start with one?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "With Fusion Calling, yes — you can add or switch between Vapi, Retell, and ElevenLabs agents anytime within the same dashboard. Other platforms typically require rebuilding on a new platform. Fusion Calling's abstraction layer prevents vendor lock-in.",
-                    },
-                  },
-                ],
-              },
-            ],
-          }),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
       <div className="min-h-screen bg-gradient-to-b from-black via-black to-gray-900 text-white py-8 md:py-16">
@@ -174,13 +151,13 @@ export default function CompareHubPage() {
                       </span>
                     </td>
                     <td className="py-4 px-4 text-brand-light font-medium">
-                      $99/mo (6 sub-accounts)
+                      ${WHOLESALE_PLANS[0].price}/mo ({WHOLESALE_PLANS[0].subAccounts} sub-accounts)
                     </td>
                     <td className="py-4 px-4 text-brand-light font-medium">
-                      Vapi + Retell + ElevenLabs
+                      {PROVIDERS.plus}
                     </td>
                     <td className="py-4 px-4 text-brand-light font-bold">
-                      Guided, ~7 days
+                      Guided, {LAUNCH.guided}
                     </td>
                   </tr>
                 </tbody>

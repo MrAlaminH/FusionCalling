@@ -11,6 +11,7 @@ import { industries } from "../lib/industries";
 import { comparisons } from "../lib/comparisons";
 import { glossaryTerms } from "../lib/glossary";
 import { blogPosts } from "../lib/blog-posts";
+import { blogFaqs } from "../lib/blog-faqs";
 import { whitelabelCaseStudies } from "../lib/whitelabel-case-studies";
 import { whitelabelLocations } from "../lib/whitelabel-locations";
 import { whitelabelProviders } from "../lib/whitelabel-providers";
@@ -93,8 +94,12 @@ Comparison criteria: starting price, sub-accounts included, voice providers supp
   },
   ...blogPosts.map((p) => ({
     path: `/blog/${p.slug}`,
-    title: p.title,
-    content: `${p.description} ${p.content || ""}`,
+    title: p.metaTitle ?? p.title,
+    // Derived from the maintained record (description + rendered FAQs) so the
+    // published text can never drift from the live article.
+    content: `${p.description} FAQs: ${(blogFaqs[p.slug] ?? [])
+      .map((f) => `Q: ${f.question} A: ${f.answer}`)
+      .join(" ")}`,
   })),
   {
     path: "/calculator",

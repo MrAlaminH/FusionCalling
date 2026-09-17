@@ -1,33 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { getAuthor } from "@/lib/authors";
-import { buildOpenGraph } from "@/lib/seo";
-import { blogPosts } from "@/lib/blog-posts";
+import { getBlogPost } from "@/lib/blog-posts";
 import { blogFaqs } from "@/lib/blog-faqs";
-import { buildBlogGraph } from "@/lib/blog-schema";
+import { buildBlogGraph, buildPostMetadata } from "@/lib/blog-schema";
 import PostLayout from "@/components/blog/PostLayout";
 
 /* eslint-disable react/no-unescaped-entities */
 
-const post = blogPosts.find((p) => p.slug === "ai-receptionist-cost")!;
+const post = getBlogPost("ai-receptionist-cost")!;
 const teamAuthor = getAuthor("voice-team")!;
 const faqs = blogFaqs["ai-receptionist-cost"];
 
-export const metadata: Metadata = {
-  title: "AI Receptionist Cost in 2026: Real Pricing",
-  description: post.description,
-  ...buildOpenGraph({
-    title: "AI Receptionist Cost in 2026: Real Pricing",
-    description: post.description,
-    path: "/blog/ai-receptionist-cost",
-    image: "/blog/blog2.webp",
-    type: "article",
-    publishedTime: `${post.date}T00:00:00Z`,
-    modifiedTime: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
-    authors: ["Fusion Calling"],
-  }),
-};
+export const metadata: Metadata = buildPostMetadata(post, teamAuthor);
 
 export default function AIReceptionistCostBlogPost() {
   return (

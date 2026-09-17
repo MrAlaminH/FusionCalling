@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import WhiteLabelNavbar from "@/components/white-label-navbar";
-import Footer from "@/components/Footer";
 import CTA from "@/components/white-label/CTA";
-import StickyMobileCta from "@/components/sticky-mobile-cta";
 import { primaryButton, secondaryButton } from "@/components/ui/button-styles";
 import { whitelabelCaseStudies } from "@/lib/whitelabel-case-studies";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
@@ -169,8 +167,6 @@ export default function WhitelabelCaseStudiesHub() {
           <CTA />
         </div>
       </main>
-      <Footer />
-      <StickyMobileCta href="#cta" label="Book a Free Call" />
     </>
   );
 }

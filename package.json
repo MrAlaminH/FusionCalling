@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "dev": "next dev",
-    "build": "npm run llms:gen && next build",
+    "build": "npm run llms:gen && npm run check:data && next build",
     "start": "next start",
     "lint": "next lint",
     "check:data": "npx --yes tsx scripts/check-data.ts",

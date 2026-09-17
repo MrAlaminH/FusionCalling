@@ -2,7 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Comparison } from "@/lib/comparisons";
 import { getRelatedComparisons } from "@/lib/comparisons";
-import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/seo";
+import { LAUNCH, WHOLESALE_PLANS } from "@/lib/product-facts";
 import { BenchmarkTable } from "@/components/compare/BenchmarkTable";
 import { primaryButton } from "@/components/ui/button-styles";
 import PostFaq from "@/components/blog/PostFaq";
@@ -52,7 +54,6 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
   } = comparison;
 
   const related = getRelatedComparisons(slug, 3);
-  const articleUrl = `${SITE_URL}/alternative/${slug}`;
   const launch = splitStat(keyStatistics.timeToLaunch);
   const clients = splitStat(keyStatistics.clientsIncluded);
 
@@ -62,51 +63,22 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: "Alternative",
-            item: `${SITE_URL}/alternative`
-          },
-          {
-            "@type": "ListItem",
-            position: 3,
-            name: competitorName,
-            item: articleUrl
-          },
-        ],
-      },
-      {
-        "@type": "Article",
-        "@id": `${articleUrl}#article`,
-        url: articleUrl,
+      breadcrumbSchema(
+        [
+          { name: "Home", path: "/" },
+          { name: "Alternative", path: "/alternative" },
+          { name: competitorName, path: `/alternative/${slug}` },
+        ]
+      ),
+      articleSchema({
+        path: `/alternative/${slug}`,
         name: metaTitle,
         headline: `${h1} ${h1Highlight}`,
         description: metaDescription,
-        image: heroImage ? `${SITE_URL}${heroImage}` : `${SITE_URL}/cardImage.jpg`,
-        inLanguage: "en-US",
-        isPartOf: { "@id": `${SITE_URL}/#website` },
+        image: heroImage || "/cardImage.jpg",
         datePublished,
-        dateModified: CONTENT_LAST_UPDATED,
-        author: { "@id": `${SITE_URL}/team/voice-team#person` },
-        publisher: { "@id": `${SITE_URL}/#organization` },
-        speakable: {
-          "@type": "SpeakableSpecification",
-          cssSelector: ["h1", ".prose"]
-        },
-      },
-      {
-        "@type": "FAQPage",
-        mainEntity: faqs.map((f) => ({
-          "@type": "Question",
-          name: f.question,
-          acceptedAnswer: { "@type": "Answer", text: f.answer },
-        })),
-      },
+      }),
+      faqSchema(faqs),
     ],
   };
 
@@ -449,7 +421,7 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
               <ul className="space-y-3 text-gray-300 mb-8">
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
-                  <span>Launch your branded agency in as little as 7 days</span>
+                  <span>Launch your branded agency in {LAUNCH.guided}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
@@ -482,7 +454,7 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
               >
                 AI voice agent reseller program
               </Link>{" "}
-              — wholesale from $99/mo, your brand, your pricing.
+              — wholesale from ${WHOLESALE_PLANS[0].price}/mo, your brand, your pricing.
             </p>
 
             {/* Related Comparisons */}

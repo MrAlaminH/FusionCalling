@@ -1,36 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { getTeamAuthor } from "@/lib/authors";
-import { buildOpenGraph } from "@/lib/seo";
-import { blogPosts } from "@/lib/blog-posts";
+import { getBlogPost } from "@/lib/blog-posts";
 import { blogFaqs } from "@/lib/blog-faqs";
-import { buildBlogGraph } from "@/lib/blog-schema";
+import { buildBlogGraph, buildPostMetadata } from "@/lib/blog-schema";
 import PostLayout from "@/components/blog/PostLayout";
 import { primaryButton } from "@/components/ui/button-styles";
 
 /* eslint-disable react/no-unescaped-entities */
 
-const post = blogPosts.find((p) => p.slug === "retell-ai-white-label")!;
+const post = getBlogPost("retell-ai-white-label")!;
 const teamAuthor = getTeamAuthor();
 const faqs = blogFaqs["retell-ai-white-label"];
 
-export const metadata: Metadata = {
-  title: "Can You White-Label Retell AI? Here's How",
-  description:
-    "Retell AI powers conversations. Fusion Calling adds the white-label agency layer: branding, client portals, and billing, so you can resell Retell under your own brand.",
-  ...buildOpenGraph({
-    title: "Can You White-Label Retell AI? Here's How",
-    description:
-      "Retell AI powers great conversations. Fusion Calling adds the white-label agency layer — branding, client portals, multi-client management, and client billing — so you can resell Retell under your own brand.",
-    path: "/blog/retell-ai-white-label",
-    image: "/blog/blog6.webp",
-    type: "article",
-    publishedTime: `${post.date}T00:00:00Z`,
-    modifiedTime: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
-    authors: ["Fusion Calling"],
-  }),
-};
+export const metadata: Metadata = buildPostMetadata(post, teamAuthor);
 
 export default function RetellAIBlogPost() {
   return (

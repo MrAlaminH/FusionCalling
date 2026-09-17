@@ -1,3 +1,7 @@
+import { SITE_URL } from "@/lib/site-url";
+import { breadcrumbSchema, faqSchema, webPageSchema } from "@/lib/seo";
+import { wholesalePricingSummary } from "@/lib/product-facts";
+
 export type WhiteLabelProvider = {
   slug: string;
   name: string;
@@ -105,7 +109,7 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
       {
         question: "How does Vapi white-label pricing work?",
         answer:
-          "You pay a wholesale monthly rate to Fusion Calling (starting at $99/month for 6 sub-accounts, $299 for 20, $499 for unlimited) and keep 100% of what you charge your clients. Minute rebilling lets you control margin on every client. Your Vapi API usage costs are separate and handled through your Vapi account.",
+          `You pay a wholesale monthly rate to Fusion Calling (${wholesalePricingSummary()}) and keep 100% of what you charge your clients. Minute rebilling lets you control margin on every client. Your Vapi API usage costs are separate and handled through your Vapi account.`,
       },
       {
         question: "Can I use Vapi's full feature set through the white-label platform?",
@@ -205,7 +209,7 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
       {
         question: "How does Retell AI white-label pricing work?",
         answer:
-          "You pay a wholesale monthly rate to Fusion Calling (starting at $99/month for 6 sub-accounts, $299 for 20, $499 for unlimited) and keep 100% of what you charge your clients. Minute rebilling lets you control margin on every client. Your Retell API usage costs remain separate through your Retell account.",
+          `You pay a wholesale monthly rate to Fusion Calling (${wholesalePricingSummary()}) and keep 100% of what you charge your clients. Minute rebilling lets you control margin on every client. Your Retell API usage costs remain separate through your Retell account.`,
       },
       {
         question: "Can I still use Retell AI's full capabilities through the white-label platform?",
@@ -301,7 +305,7 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
       {
         question: "How does ElevenLabs white-label pricing work?",
         answer:
-          "You pay a wholesale monthly rate to Fusion Calling (starting at $99/month for 6 sub-accounts, $299 for 20, $499 for unlimited) and keep 100% of what you charge your clients. Minute rebilling lets you control margin. Your ElevenLabs API usage costs remain separate through your ElevenLabs account.",
+          `You pay a wholesale monthly rate to Fusion Calling (${wholesalePricingSummary()}) and keep 100% of what you charge your clients. Minute rebilling lets you control margin. Your ElevenLabs API usage costs remain separate through your ElevenLabs account.`,
       },
       {
         question: "Can I use ElevenLabs' full feature set through the white-label platform?",
@@ -420,3 +424,48 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
     ],
   },
 ];
+
+/**
+ * JSON-LD @graph shared by the four provider pages (WebPage + Service +
+ * BreadcrumbList + FAQPage). Pages pass only what genuinely varies per page:
+ * the audience line and any page-local FAQs.
+ */
+export function buildProviderGraph(
+  provider: WhiteLabelProvider,
+  {
+    audience,
+    extraFaqs = [],
+  }: { audience: string; extraFaqs?: { question: string; answer: string }[] }
+) {
+  const base = `/whitelabel/${provider.slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      webPageSchema({
+        path: base,
+        name: provider.title,
+        description: provider.description,
+        breadcrumbId: `${SITE_URL}${base}#breadcrumb`,
+        speakable: ["h1", "h2", "p"],
+      }),
+      {
+        "@type": "Service",
+        "@id": `${SITE_URL}${base}#service`,
+        name: `White-label AI Voice Agents for ${provider.name}`,
+        description: provider.description,
+        provider: { "@id": `${SITE_URL}/#organization` },
+        areaServed: { "@type": "Country", name: "United States" },
+        audience: { "@type": "Audience", audienceType: audience },
+      },
+      breadcrumbSchema(
+        [
+          { name: "Home", path: "/" },
+          { name: "White-label Partner Program", path: "/whitelabel" },
+          { name: provider.name, path: base },
+        ],
+        `${SITE_URL}${base}#breadcrumb`
+      ),
+      faqSchema([...provider.faqs, ...extraFaqs], `${SITE_URL}${base}#faqpage`),
+    ],
+  };
+}

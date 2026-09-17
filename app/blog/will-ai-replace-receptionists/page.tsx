@@ -1,36 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { getAuthor } from "@/lib/authors";
-import { buildOpenGraph } from "@/lib/seo";
-import { blogPosts } from "@/lib/blog-posts";
+import { getBlogPost } from "@/lib/blog-posts";
 import { blogFaqs } from "@/lib/blog-faqs";
-import { buildBlogGraph } from "@/lib/blog-schema";
+import { buildBlogGraph, buildPostMetadata } from "@/lib/blog-schema";
 import PostLayout from "@/components/blog/PostLayout";
 import { primaryButton } from "@/components/ui/button-styles";
 
 /* eslint-disable react/no-unescaped-entities */
 
-const post = blogPosts.find((p) => p.slug === "will-ai-replace-receptionists")!;
+const post = getBlogPost("will-ai-replace-receptionists")!;
 const teamAuthor = getAuthor("voice-team")!;
 const faqs = blogFaqs["will-ai-replace-receptionists"];
 
-export const metadata: Metadata = {
-  title: "Will AI Replace Receptionists? 2026 Outlook",
-  description:
-    "Mostly no — AI receptionists handle routine calls while humans keep judgment and relationships. What to automate, what to keep, and what it means for owners and front-desk teams in 2026.",
-  ...buildOpenGraph({
-    title: "Will AI Replace Receptionists? 2026 Outlook",
-    description:
-      "Mostly no — AI receptionists handle routine calls while humans keep judgment and relationships. What to automate, what to keep, and what it means for owners and front-desk teams in 2026.",
-    path: "/blog/will-ai-replace-receptionists",
-    image: "/blog/blog3.webp",
-    type: "article",
-    publishedTime: `${post.date}T00:00:00Z`,
-    modifiedTime: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
-    authors: ["Fusion Calling"],
-  }),
-};
+export const metadata: Metadata = buildPostMetadata(post, teamAuthor);
 
 export default function WillAIReplaceReceptionistsBlogPost() {
   return (

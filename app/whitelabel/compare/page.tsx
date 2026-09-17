@@ -1,18 +1,17 @@
 import type { Metadata } from "next";
 import WhiteLabelNavbar from "@/components/white-label-navbar";
-import Footer from "@/components/Footer";
 import CTA from "@/components/white-label/CTA";
-import StickyMobileCta from "@/components/sticky-mobile-cta";
 import PostFaq from "@/components/blog/PostFaq";
 import { primaryButton, secondaryButton } from "@/components/ui/button-styles";
 import { comparisons } from "@/lib/comparisons";
-import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { SITE_URL } from "@/lib/site-url";
+import { breadcrumbSchema, faqSchema, webPageSchema } from "@/lib/seo";
 import { buildOpenGraph } from "@/lib/seo";
+import { LAUNCH, PROVIDERS, WHOLESALE_PLANS } from "@/lib/product-facts";
 import { truncateAtWord } from "@/lib/utils";
 
 const title = "Best White-Label AI Voice Platforms Compared";
-const description =
-  "Compare white-label AI voice platforms side-by-side: pricing, sub-accounts, features & multi-provider import for Vapi, Retell & ElevenLabs. From $99/mo.";
+const description = `Compare white-label AI voice platforms side-by-side: pricing, sub-accounts, features & multi-provider import for Vapi, Retell & ElevenLabs. From $${WHOLESALE_PLANS[0].price}/mo.`;
 
 // Single source of truth: the FAQPage schema and the visible FAQ list must
 // render the exact same questions/answers (Google requires visible content).
@@ -58,7 +57,7 @@ const WHITELABEL_COMPARISON_ROWS = [
       );
       return row?.competitor ?? "—";
     },
-    fusionValue: "$99/mo",
+    fusionValue: `$${WHOLESALE_PLANS[0].price}/mo`,
   },
   {
     label: "Voice Providers Supported",
@@ -68,7 +67,7 @@ const WHITELABEL_COMPARISON_ROWS = [
       );
       return row?.competitor ?? "—";
     },
-    fusionValue: "Vapi, Retell AI, ElevenLabs",
+    fusionValue: PROVIDERS.plus,
   },
   {
     label: "Sub-Accounts Included",
@@ -138,7 +137,7 @@ const WHITELABEL_COMPARISON_ROWS = [
       );
       return row?.competitor ?? "—";
     },
-    fusionValue: "Guided self-serve (1–2 days)",
+    fusionValue: `Guided (${LAUNCH.guided})`,
   },
   {
     label: "API Access",
@@ -168,55 +167,21 @@ export default function WhitelabelComparePage() {
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "WebPage",
-        "@id": `${SITE_URL}/whitelabel/compare#webpage`,
-        url: `${SITE_URL}/whitelabel/compare`,
+      webPageSchema({
+        path: "/whitelabel/compare",
         name: title,
         description,
-        inLanguage: "en-US",
-        isPartOf: { "@id": `${SITE_URL}/#website` },
-        dateModified: CONTENT_LAST_UPDATED,
-        breadcrumb: {
-          "@id": `${SITE_URL}/whitelabel/compare#breadcrumb`,
-        },
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": `${SITE_URL}/whitelabel/compare#breadcrumb`,
-        itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            name: "Home",
-            item: `${SITE_URL}/`,
-          },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: "White-label Partner Program",
-            item: `${SITE_URL}/whitelabel`,
-          },
-          {
-            "@type": "ListItem",
-            position: 3,
-            name: "Compare White-Label Platforms",
-            item: `${SITE_URL}/whitelabel/compare`,
-          },
+        breadcrumbId: `${SITE_URL}/whitelabel/compare#breadcrumb`,
+      }),
+      breadcrumbSchema(
+        [
+          { name: "Home", path: "/" },
+          { name: "White-label Partner Program", path: "/whitelabel" },
+          { name: "Compare White-Label Platforms", path: "/whitelabel/compare" },
         ],
-      },
-      {
-        "@type": "FAQPage",
-        "@id": `${SITE_URL}/whitelabel/compare#faqpage`,
-        mainEntity: COMPARE_FAQS.map((faq) => ({
-          "@type": "Question",
-          name: faq.question,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: faq.answer,
-          },
-        })),
-      },
+        `${SITE_URL}/whitelabel/compare#breadcrumb`
+      ),
+      faqSchema(COMPARE_FAQS, `${SITE_URL}/whitelabel/compare#faqpage`),
     ],
   };
 
@@ -373,8 +338,6 @@ export default function WhitelabelComparePage() {
           <CTA />
         </div>
       </main>
-      <Footer />
-      <StickyMobileCta href="#cta" label="Book a Free Call" />
     </>
   );
 }

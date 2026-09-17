@@ -58,7 +58,7 @@ function lastmodFor(path: string): Date {
   const blogPost = BLOG_PATHS.includes(path)
     ? blogPosts.find((p) => `/blog/${p.slug}` === path)
     : undefined;
-  if (blogPost?.date) return new Date(blogPost.date);
+  if (blogPost) return new Date(blogPost.updated ?? blogPost.date);
   if (path.startsWith("/glossary")) return new Date(GLOSSARY_LAST_UPDATED);
   return new Date(CONTENT_LAST_UPDATED);
 }

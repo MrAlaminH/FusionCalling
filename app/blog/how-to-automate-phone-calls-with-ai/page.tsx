@@ -1,36 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { getTeamAuthor } from "@/lib/authors";
-import { buildOpenGraph } from "@/lib/seo";
-import { blogPosts } from "@/lib/blog-posts";
+import { getBlogPost } from "@/lib/blog-posts";
 import { blogFaqs } from "@/lib/blog-faqs";
-import { buildBlogGraph } from "@/lib/blog-schema";
+import { buildBlogGraph, buildPostMetadata } from "@/lib/blog-schema";
 import PostLayout from "@/components/blog/PostLayout";
 
 /* eslint-disable react/no-unescaped-entities */
 import { primaryButton } from "@/components/ui/button-styles";
 
-const post = blogPosts.find((p) => p.slug === "how-to-automate-phone-calls-with-ai")!;
+const post = getBlogPost("how-to-automate-phone-calls-with-ai")!;
 const teamAuthor = getTeamAuthor();
 const faqs = blogFaqs["how-to-automate-phone-calls-with-ai"];
 
-export const metadata: Metadata = {
-  title: "How to Automate Phone Calls with AI",
-  description:
-    "Learn how to automate phone calls with AI in five simple steps: pick a use case, connect your number, calendar, and CRM, add business knowledge, test calls, then launch with clear handoff rules.",
-  ...buildOpenGraph({
-    title: "How to Automate Phone Calls with AI",
-    description:
-      "Learn how to automate phone calls with AI in five simple steps: pick a use case, connect your number, calendar, and CRM, add business knowledge, test calls, then launch with clear handoff rules.",
-    path: "/blog/how-to-automate-phone-calls-with-ai",
-    image: "/blog/blog4.webp",
-    type: "article",
-    publishedTime: `${post.date}T00:00:00Z`,
-    modifiedTime: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
-    authors: ["Fusion Calling"],
-  }),
-};
+export const metadata: Metadata = buildPostMetadata(post, teamAuthor);
 
 export default function HowToAutomatePhoneCallsWithAI() {
   return (

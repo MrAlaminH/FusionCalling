@@ -1,3 +1,5 @@
+import { LAUNCH, OFFER, PROVIDERS, WHOLESALE_PLANS } from "@/lib/product-facts";
+
 export type ComparisonRow = {
   label: string;
   competitor: string;
@@ -73,7 +75,7 @@ export type Comparison = {
   faqs: Faq[];
 };
 
-const fusionProviders = "Vapi + Retell + ElevenLabs";
+const fusionProviders = PROVIDERS.plus;
 
 const sharedAdvantages: Advantage[] = [
   {
@@ -97,16 +99,15 @@ const sharedAdvantages: Advantage[] = [
   {
     emoji: "",
     title: "Done-With-You Onboarding",
-    description:
-      "Launch your branded agency in 24 hours with our team's help. Plus get 30 days of ongoing support to ensure your success.",
+    description: `Launch your branded agency in ${LAUNCH.guided} with our team's help. Plus get ${LAUNCH.supportWindow} of ongoing support to ensure your success.`,
   },
 ];
 
 export const FUSION_ECONOMICS_POINTS = [
-  "Subscription pricing from $99/month with no setup fee",
+  `Subscription pricing from $${WHOLESALE_PLANS[0].price}/month with no setup fee`,
   "Keep 100% of the revenue you charge your clients",
-  "Start risk-free with a 3-day free trial and $0 setup",
-  "Launch your branded agency in 24 hours with 30 days support",
+  `Start risk-free with a ${OFFER.trial} free trial and $0 setup`,
+  `Launch your branded agency in ${LAUNCH.guided} with ${LAUNCH.supportWindow} support`,
 ];
 
 export const comparisons: Comparison[] = [

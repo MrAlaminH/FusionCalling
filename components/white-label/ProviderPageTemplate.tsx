@@ -4,11 +4,9 @@ import type { WhiteLabelProvider } from "@/lib/whitelabel-providers";
 import WhiteLabelNavbar, {
   type NavbarLink,
 } from "@/components/white-label-navbar";
-import Footer from "@/components/Footer";
 import Pricing from "@/components/white-label/Pricing";
 import CTA from "@/components/white-label/CTA";
 import ProviderCrossLinks from "@/components/white-label/ProviderCrossLinks";
-import StickyMobileCta from "@/components/sticky-mobile-cta";
 import PostFaq from "@/components/blog/PostFaq";
 import { primaryButton, secondaryButton } from "@/components/ui/button-styles";
 import { Reveal } from "@/components/ui/reveal";
@@ -301,8 +299,6 @@ export default function ProviderPageTemplate({
           <CTA />
         </div>
       </main>
-      <Footer />
-      <StickyMobileCta href="#cta" label="Book a Free Call" />
     </>
   );
 }

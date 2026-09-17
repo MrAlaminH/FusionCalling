@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
-import { whitelabelProviders } from "@/lib/whitelabel-providers";
+import { whitelabelProviders, buildProviderGraph } from "@/lib/whitelabel-providers";
 import { buildOpenGraph } from "@/lib/seo";
 import { Reveal } from "@/components/ui/reveal";
 import ProviderPageTemplate from "@/components/white-label/ProviderPageTemplate";
@@ -10,73 +9,9 @@ const provider = whitelabelProviders.find((p) => p.slug === "gohighlevel")!;
 const title = provider.title;
 const description = provider.description;
 
-const schema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": `${SITE_URL}/whitelabel/gohighlevel#webpage`,
-      url: `${SITE_URL}/whitelabel/gohighlevel`,
-      name: title,
-      description,
-      inLanguage: "en-US",
-      isPartOf: { "@id": `${SITE_URL}/#website` },
-      dateModified: CONTENT_LAST_UPDATED,
-      breadcrumb: {
-        "@id": `${SITE_URL}/whitelabel/gohighlevel#breadcrumb`,
-      },
-      speakable: {
-        "@type": "SpeakableSpecification",
-        cssSelector: ["h1", "h2", "p"],
-      },
-    },
-    {
-      "@type": "Service",
-      "@id": `${SITE_URL}/whitelabel/gohighlevel#service`,
-      name: "White-label AI Voice Agents for GoHighLevel",
-      description,
-      provider: { "@id": `${SITE_URL}/#organization` },
-      areaServed: { "@type": "Country", name: "United States" },
-      audience: {
-        "@type": "Audience",
-        audienceType: "GoHighLevel agencies, marketing agencies, SaaS resellers",
-      },
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": `${SITE_URL}/whitelabel/gohighlevel#breadcrumb`,
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: `${SITE_URL}/`,
-        },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "White-label Partner Program",
-          item: `${SITE_URL}/whitelabel`,
-        },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: "GoHighLevel",
-          item: `${SITE_URL}/whitelabel/gohighlevel`,
-        },
-      ],
-    },
-    {
-      "@type": "FAQPage",
-      "@id": `${SITE_URL}/whitelabel/gohighlevel#faqpage`,
-      mainEntity: provider.faqs.map((f) => ({
-        "@type": "Question",
-        name: f.question,
-        acceptedAnswer: { "@type": "Answer", text: f.answer },
-      })),
-    },
-  ],
-};
+const schema = buildProviderGraph(provider, {
+  audience: "GoHighLevel agencies, marketing agencies, SaaS resellers",
+});
 
 export const metadata: Metadata = {
   title,

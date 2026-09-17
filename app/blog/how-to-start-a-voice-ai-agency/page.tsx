@@ -1,36 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { getAuthor } from "@/lib/authors";
-import { buildOpenGraph } from "@/lib/seo";
-import { blogPosts } from "@/lib/blog-posts";
+import { getBlogPost } from "@/lib/blog-posts";
 import { blogFaqs } from "@/lib/blog-faqs";
-import { buildBlogGraph } from "@/lib/blog-schema";
+import { buildBlogGraph, buildPostMetadata } from "@/lib/blog-schema";
 import PostLayout from "@/components/blog/PostLayout";
 
 /* eslint-disable react/no-unescaped-entities */
 import { primaryButton } from "@/components/ui/button-styles";
 
-const post = blogPosts.find((p) => p.slug === "how-to-start-a-voice-ai-agency")!;
+const post = getBlogPost("how-to-start-a-voice-ai-agency")!;
 const teamAuthor = getAuthor("alamin")!;
 const faqs = blogFaqs["how-to-start-a-voice-ai-agency"];
 
-export const metadata: Metadata = {
-  title: "Start a Voice AI Agency in 2026: Step-by-Step",
-  description:
-    "Learn how to start an AI voice agency business with a white-label platform and our AI voice agent reseller program. Keep 100% of client revenue, launch in 7 days, scale with Vapi, Retell and ElevenLabs.",
-  ...buildOpenGraph({
-    title: "Start a Voice AI Agency in 2026: Step-by-Step",
-    description:
-      "Learn how to start a profitable voice AI agency in 2026 by partnering with a white-label platform. Keep 100% of client revenue, launch in 7 days.",
-    path: "/blog/how-to-start-a-voice-ai-agency",
-    image: "/blog/blog1.webp",
-    type: "article",
-    publishedTime: `${post.date}T00:00:00Z`,
-    modifiedTime: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
-    authors: ["Fusion Calling"],
-  }),
-};
+export const metadata: Metadata = buildPostMetadata(post, teamAuthor);
 
 export default function StartVoiceAIAgencyBlogPost() {
   return (

@@ -5,16 +5,19 @@ import { Reveal } from "@/components/ui/reveal";
 import { Check, Star, ArrowRight, DollarSign, Timer, LockOpen } from "lucide-react";
 import { BillingToggle, type BillingCycle } from "@/components/ui/billing-toggle";
 import { SectionHeader } from "@/components/ui/section-header";
+import { WHOLESALE_PLANS } from "@/lib/product-facts";
 
 export default function Pricing() {
   const [billing, setBilling] = useState<BillingCycle>("monthly");
 
-  const plans = [
-    {
-      name: "Starter",
+  // Prices, tiers, and sub-account counts come from lib/product-facts; only
+  // presentation copy lives here so the two can never disagree.
+  const PLAN_COPY: Record<
+    string,
+    { description: string; popular: boolean; features: string[] }
+  > = {
+    Starter: {
       description: "Launch your first voice AI clients under your own brand.",
-      priceMonthly: 99,
-      priceYearly: 89,
       popular: false,
       features: [
         "6 Sub-Accounts",
@@ -24,13 +27,9 @@ export default function Pricing() {
         "Vapi + Retell Support",
         "Minute Rebilling",
       ],
-      cta: "Book a Demo",
     },
-    {
-      name: "Growth",
+    Growth: {
       description: "Scale to more clients with priority support and deeper insights.",
-      priceMonthly: 299,
-      priceYearly: 269,
       popular: true,
       features: [
         "20 Sub-Accounts",
@@ -39,13 +38,9 @@ export default function Pricing() {
         "Advanced Analytics",
         "Custom Onboarding",
       ],
-      cta: "Book a Demo",
     },
-    {
-      name: "Scale",
+    Scale: {
       description: "Unlimited clients with a dedicated manager and API access.",
-      priceMonthly: 499,
-      priceYearly: 449,
       popular: false,
       features: [
         "Unlimited Sub-Accounts",
@@ -55,9 +50,13 @@ export default function Pricing() {
         "Custom Integrations",
         "Early Feature Access",
       ],
-      cta: "Book a Demo",
     },
-  ];
+  };
+
+  const plans = WHOLESALE_PLANS.map((plan) => ({
+    ...plan,
+    ...PLAN_COPY[plan.name],
+  }));
 
   return (
     <section className="w-full bg-black relative section-rhythm">
@@ -144,13 +143,13 @@ export default function Pricing() {
                     <div className="flex items-baseline gap-2 flex-wrap">
                       {billing === "yearly" && (
                         <span className="font-display text-2xl md:text-3xl font-medium text-white/70 line-through">
-                          ${plan.priceMonthly}
+                          ${plan.price}
                         </span>
                       )}
                       <span
                         className={`font-display text-4xl md:text-5xl lg:text-6xl font-bold ${plan.popular ? "text-black" : "text-brand"}`}
                       >
-                        ${billing === "yearly" ? plan.priceYearly : plan.priceMonthly}
+                        ${billing === "yearly" ? plan.priceYearly : plan.price}
                       </span>
                       <span
                         className={`text-sm md:text-base ${plan.popular ? "text-black/75" : "text-gray-400"}`}
@@ -164,7 +163,7 @@ export default function Pricing() {
                             billed annually
                           </span>
                           <span className={`rounded-full px-2 py-0.5 text-[10px] md:text-xs font-semibold ring-1 ring-inset ${plan.popular ? "bg-black/15 text-black ring-black/25" : "bg-brand/15 text-brand-light ring-brand/30"}`}>
-                            Save ${(plan.priceMonthly - plan.priceYearly) * 12}/yr
+                            Save ${(plan.price - plan.priceYearly) * 12}/yr
                           </span>
                         </div>
                       )}
@@ -205,7 +204,7 @@ export default function Pricing() {
                       : "bg-white/10 text-white hover:bg-white/20 border border-white/20"
                   }`}
                 >
-                  {plan.cta}
+                  Book a Demo
                   <ArrowRight className="inline ml-2 w-4 h-4" />
                 </a>
               </div>

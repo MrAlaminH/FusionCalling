@@ -1,4 +1,4 @@
-import { SITE_URL } from "@/lib/site-url";
+import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 
 /**
  * Authoritative external references used to add GEO source citations.
@@ -118,6 +118,173 @@ export function buildOpenGraph({
     },
     alternates: {
       canonical: path,
+    },
+  };
+}
+
+/**
+ * ---- JSON-LD builders ----
+ *
+ * Structural nodes for the site's schema.org @graphs. Pages pass facts; these
+ * builders own the shape, the @id wiring against the root layout's
+ * Organization/WebSite registry, and required fields, so copied fragments
+ * can't drift apart between pages. Any Faq-like {question, answer} object
+ * satisfies FaqItem structurally (comparisons, providers, industries, blog).
+ */
+
+export type FaqItem = { question: string; answer: string };
+
+export function faqSchema(faqs: readonly FaqItem[], id?: string) {
+  return {
+    "@type": "FAQPage",
+    ...(id ? { "@id": id } : {}),
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  };
+}
+
+export function breadcrumbSchema(
+  items: { name: string; path: string }[],
+  id?: string
+) {
+  return {
+    "@type": "BreadcrumbList",
+    ...(id ? { "@id": id } : {}),
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      item: `${SITE_URL}${item.path.startsWith("/") ? item.path : `/${item.path}`}`,
+    })),
+  };
+}
+
+export function webPageSchema({
+  path,
+  name,
+  description,
+  breadcrumbId,
+  speakable,
+}: {
+  path: string;
+  name: string;
+  description: string;
+  /** @id of the BreadcrumbList node this page references. */
+  breadcrumbId?: string;
+  /** CSS selectors for the SpeakableSpecification (e.g. ["h1"]). */
+  speakable?: string[];
+}) {
+  return {
+    "@type": "WebPage",
+    "@id": `${SITE_URL}${path}#webpage`,
+    url: `${SITE_URL}${path}`,
+    name,
+    description,
+    inLanguage: "en-US",
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    dateModified: CONTENT_LAST_UPDATED,
+    ...(breadcrumbId ? { breadcrumb: { "@id": breadcrumbId } } : {}),
+    ...(speakable
+      ? {
+          speakable: {
+            "@type": "SpeakableSpecification",
+            cssSelector: speakable,
+          },
+        }
+      : {}),
+  };
+}
+
+export function articleSchema({
+  path,
+  name,
+  headline,
+  description,
+  image,
+  datePublished,
+  authorSchemaId = `${SITE_URL}/team/voice-team#person`,
+}: {
+  path: string;
+  name: string;
+  headline: string;
+  description: string;
+  /** Image path or absolute URL. */
+  image?: string;
+  datePublished: string;
+  authorSchemaId?: string;
+}) {
+  return {
+    "@type": "Article",
+    "@id": `${SITE_URL}${path}#article`,
+    url: `${SITE_URL}${path}`,
+    name,
+    headline,
+    description,
+    ...(image
+      ? {
+          image: image.startsWith("http")
+            ? image
+            : `${SITE_URL}${image.startsWith("/") ? image : `/${image}`}`,
+        }
+      : {}),
+    inLanguage: "en-US",
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    datePublished,
+    dateModified: CONTENT_LAST_UPDATED,
+    author: { "@id": authorSchemaId },
+    publisher: { "@id": `${SITE_URL}/#organization` },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", ".prose"],
+    },
+  };
+}
+
+/** Product Offer node with the merchant return policy + digital-goods shipping details. */
+export function offerSchema({
+  name,
+  price,
+  path,
+}: {
+  name: string;
+  price: number;
+  path: string;
+}) {
+  return {
+    "@type": "Offer",
+    name,
+    price: price.toFixed(2),
+    priceCurrency: "USD",
+    validFrom: "2026-01-15T09:00:00-05:00",
+    priceValidUntil: "2027-12-31",
+    itemCondition: "https://schema.org/NewCondition",
+    availability: "https://schema.org/InStock",
+    url: `${SITE_URL}${path}`,
+    seller: {
+      "@type": "Organization",
+      name: "Fusion Calling",
+    },
+    hasMerchantReturnPolicy: {
+      "@type": "MerchantReturnPolicy",
+      applicableCountry: "US",
+      returnPolicyCategory:
+        "https://schema.org/MerchantReturnFiniteReturnWindow",
+      merchantReturnDays: 14,
+      returnMethod: "https://schema.org/ReturnByMail",
+      returnFees: "https://schema.org/FreeReturn",
+    },
+    shippingDetails: {
+      "@type": "OfferShippingDetails",
+      shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "USD" },
+      shippingDestination: { "@type": "DefinedRegion", addressCountry: "US" },
+      deliveryTime: {
+        "@type": "ShippingDeliveryTime",
+        handlingTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 0, unitCode: "DAY" },
+        transitTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 0, unitCode: "DAY" },
+      },
     },
   };
 }

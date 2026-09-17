@@ -1,36 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { getTeamAuthor } from "@/lib/authors";
-import { buildOpenGraph } from "@/lib/seo";
-import { blogPosts } from "@/lib/blog-posts";
+import { getBlogPost } from "@/lib/blog-posts";
 import { blogFaqs } from "@/lib/blog-faqs";
-import { buildBlogGraph } from "@/lib/blog-schema";
+import { buildBlogGraph, buildPostMetadata } from "@/lib/blog-schema";
 import PostLayout from "@/components/blog/PostLayout";
 import { primaryButton } from "@/components/ui/button-styles";
 
 /* eslint-disable react/no-unescaped-entities */
 
-const post = blogPosts.find((p) => p.slug === "voice-ai-security-compliance")!;
+const post = getBlogPost("voice-ai-security-compliance")!;
 const teamAuthor = getTeamAuthor();
 const faqs = blogFaqs["voice-ai-security-compliance"];
 
-export const metadata: Metadata = {
-  title: "Voice AI Security & Compliance Guide (2026)",
-  description:
-    "How is call audio encrypted at rest and in transit? How do GDPR retention, outbound dialing rules, and barge-in work? A plain-English guide to evaluating voice AI security.",
-  ...buildOpenGraph({
-    title: "Voice AI Security & Compliance Guide (2026)",
-    description:
-      "How is call audio encrypted at rest and in transit? How do GDPR retention, outbound dialing rules, and barge-in work? A plain-English guide to evaluating voice AI security with Fusion Calling.",
-    path: "/blog/voice-ai-security-compliance",
-    image: "/blog/blog3.webp",
-    type: "article",
-    publishedTime: `${post.date}T00:00:00Z`,
-    modifiedTime: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
-    authors: ["Fusion Calling"],
-  }),
-};
+export const metadata: Metadata = buildPostMetadata(post, teamAuthor);
 
 export default function VoiceAISecurityComplianceBlogPost() {
   return (

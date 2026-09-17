@@ -1,36 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { getTeamAuthor } from "@/lib/authors";
-import { buildOpenGraph } from "@/lib/seo";
-import { blogPosts } from "@/lib/blog-posts";
+import { getBlogPost } from "@/lib/blog-posts";
 import { blogFaqs } from "@/lib/blog-faqs";
-import { buildBlogGraph } from "@/lib/blog-schema";
+import { buildBlogGraph, buildPostMetadata } from "@/lib/blog-schema";
 import PostLayout from "@/components/blog/PostLayout";
 import { primaryButton } from "@/components/ui/button-styles";
 
 /* eslint-disable react/no-unescaped-entities */
 
-const post = blogPosts.find((p) => p.slug === "vapi-white-label-platform")!;
+const post = getBlogPost("vapi-white-label-platform")!;
 const teamAuthor = getTeamAuthor();
 const faqs = blogFaqs["vapi-white-label-platform"];
 
-export const metadata: Metadata = {
-  title: "White-Label Vapi: Vapi Alone Isn't Resellable",
-  description:
-    "Vapi is great voice AI but has no native white-label: you can't resell it under your brand. Fusion Calling adds branding, portals, and billing to resell Vapi.",
-  ...buildOpenGraph({
-    title: "White-Label Vapi: Vapi Alone Isn't Resellable",
-    description:
-      "Vapi is excellent voice AI infrastructure, but it has no native white-label. Fusion Calling is the white-label layer that lets agencies resell Vapi under their own brand.",
-    path: "/blog/vapi-white-label-platform",
-    image: "/blog/blog5.webp",
-    type: "article",
-    publishedTime: `${post.date}T00:00:00Z`,
-    modifiedTime: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
-    authors: ["Fusion Calling"],
-  }),
-};
+export const metadata: Metadata = buildPostMetadata(post, teamAuthor);
 
 export default function VapiWhiteLabelBlogPost() {
   return (

@@ -1,5 +1,33 @@
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import type { Metadata } from "next";
+import { buildOpenGraph } from "@/lib/seo";
+import type { BlogPost } from "@/lib/blog-posts";
+import type { Author } from "@/lib/authors";
 import type { BlogFaq } from "@/components/blog/PostFaq";
+
+/**
+ * The post record is the single source for <title>, meta description, and the
+ * OG/Twitter block — pages can't diverge from it because they don't restate it.
+ * `post.metaTitle` (optional, on the record) is the SERP-shortened variant;
+ * everything else derives from the record verbatim.
+ */
+export function buildPostMetadata(post: BlogPost, author: Author): Metadata {
+  const title = post.metaTitle ?? post.title;
+  return {
+    title,
+    description: post.description,
+    ...buildOpenGraph({
+      title,
+      description: post.description,
+      path: `/blog/${post.slug}`,
+      image: post.image,
+      type: "article",
+      publishedTime: `${post.date}T00:00:00Z`,
+      modifiedTime: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
+      authors: [author.name],
+    }),
+  };
+}
 
 /**
  * Single implementation of the blog post JSON-LD @graph (BreadcrumbList +

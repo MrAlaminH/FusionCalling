@@ -2,11 +2,9 @@ import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import type { Metadata } from "next";
 import Link from "next/link";
 import WhiteLabelNavbar from "@/components/white-label-navbar";
-import Footer from "@/components/Footer";
 import Pricing from "@/components/white-label/Pricing";
 import { primaryButton, secondaryButton } from "@/components/ui/button-styles";
 import PostFaq from "@/components/blog/PostFaq";
-import StickyMobileCta from "@/components/sticky-mobile-cta";
 import CTA from "@/components/white-label/CTA";
 import { buildOpenGraph } from "@/lib/seo";
 
@@ -463,8 +461,6 @@ export default function ResellerProgramPage() {
           <CTA />
         </div>
       </main>
-      <Footer />
-      <StickyMobileCta href="#cta" label="Book a Free Call" />
     </>
   );
 }

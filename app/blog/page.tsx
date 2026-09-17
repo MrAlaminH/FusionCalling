@@ -2,8 +2,8 @@ import { SITE_URL } from "@/lib/site-url";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { buildOpenGraph } from "@/lib/seo";
-import { blogPosts as blogPostData } from "@/lib/blog-posts";
+import { breadcrumbSchema, buildOpenGraph } from "@/lib/seo";
+import { blogPostsByDate, getFeaturedPost } from "@/lib/blog-posts";
 import BlogGrid from "@/components/blog/BlogGrid";
 
 export const revalidate = 3600;
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   }),
 };
 
-const blogPosts = blogPostData;
-const [featured, ...restPosts] = blogPosts;
+const featured = getFeaturedPost();
+const restPosts = blogPostsByDate.filter((p) => p.slug !== featured.slug);
 
 export default function BlogPage() {
   return (
@@ -34,23 +34,10 @@ export default function BlogPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@graph": [
-              {
-                "@type": "BreadcrumbList",
-                itemListElement: [
-                  {
-                    "@type": "ListItem",
-                    position: 1,
-                    name: "Home",
-                    item: `${SITE_URL}/`,
-                  },
-                  {
-                    "@type": "ListItem",
-                    position: 2,
-                    name: "Blog",
-                    item: `${SITE_URL}/blog`,
-                  },
-                ],
-              },
+              breadcrumbSchema([
+                { name: "Home", path: "/" },
+                { name: "Blog", path: "/blog" },
+              ]),
               {
                 "@type": "CollectionPage",
                 "@id": `${SITE_URL}/blog#collectionpage`,

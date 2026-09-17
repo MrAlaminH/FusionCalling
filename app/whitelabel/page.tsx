@@ -1,6 +1,7 @@
 import { SITE_URL } from "@/lib/site-url";
+import { breadcrumbSchema, faqSchema, offerSchema, webPageSchema, buildOpenGraph } from "@/lib/seo";
+import { WHOLESALE_PLANS } from "@/lib/product-facts";
 import WhiteLabelNavbar from "@/components/white-label-navbar";
-import Footer from "@/components/Footer";
 import Hero from "@/components/white-label/Hero";
 import ValueProp from "@/components/white-label/ValueProp";
 import Features from "@/components/white-label/Features";
@@ -11,10 +12,7 @@ import FAQ from "@/components/white-label/FAQ";
 import CTA from "@/components/white-label/CTA";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { Reveal } from "@/components/ui/reveal";
-import StickyMobileCta from "@/components/sticky-mobile-cta";
-import { buildOpenGraph } from "@/lib/seo";
 import { whitelabelFaqs } from "@/lib/whitelabel-faqs";
 import { SectionHeader } from "@/components/ui/section-header";
 
@@ -54,239 +52,117 @@ export const metadata: Metadata = {
 };
 
 export default function WhiteLabelPage() {
+  // Product facts are sourced from lib/product-facts; the Offer nodes are
+  // built from the wholesale plans so schema prices can't drift from the UI.
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": `${SITE_URL}/whitelabel#service`,
+        name: "White-label AI Voice Solution",
+        description: "Partner program allowing agencies and resellers to offer AI phone call automation under their own brand. Includes full white-label dashboard, custom voice training, and subscription-based pricing you control.",
+        provider: {
+          "@id": `${SITE_URL}/#organization`
+        },
+        audience: {
+          "@type": "Audience",
+          audienceType: "Marketing agencies, call centers, SaaS resellers, consultants"
+        },
+      },
+      breadcrumbSchema(
+        [
+          { name: "Home", path: "/" },
+          { name: "White-label Partner Program", path: "/whitelabel" },
+        ],
+        `${SITE_URL}/whitelabel#breadcrumb`
+      ),
+      webPageSchema({
+        path: "/whitelabel",
+        name: "White-label AI Voice Solution | Fusion Calling Partner Program",
+        description: "Become a Fusion Calling partner and white-label our AI voice solution. Offer powerful AI phone automation under your own brand.",
+        breadcrumbId: `${SITE_URL}/whitelabel#breadcrumb`,
+        speakable: ["h1"],
+      }),
+      {
+        "@type": "Product",
+        "@id": `${SITE_URL}/whitelabel#product`,
+        name: "Fusion Calling White-label AI Voice Solution",
+        description:
+          "Become a Fusion Calling partner and white-label our AI voice solution. Offer powerful AI phone automation under your own brand.",
+        image: `${SITE_URL}/cardImage.jpg`,
+        sku: "FC-WHITELABEL-001",
+        brand: {
+          "@type": "Brand",
+          name: "Fusion Calling",
+        },
+        category: "Business Software",
+        offers: WHOLESALE_PLANS.map((plan) =>
+          offerSchema({
+            name: `${plan.name} Plan`,
+            price: plan.price,
+            path: "/whitelabel",
+          })
+        ),
+      },
+      faqSchema(whitelabelFaqs, `${SITE_URL}/whitelabel#faqpage`),
+      {
+        "@type": "HowTo",
+        "@id": `${SITE_URL}/whitelabel#howto`,
+        name: "How to Launch Your White-label AI Voice Business",
+        description:
+          "From application to first sale in as little as one week. We handle the technology, you focus on growing your agency.",
+        step: [
+          {
+            "@type": "HowToStep",
+            name: "Apply for Partnership",
+            text: "Submit your application and get approved within 48 hours. We review your agency to ensure a successful partnership.",
+          },
+          {
+            "@type": "HowToStep",
+            name: "Customize Your Brand",
+            text: "Set up your white-label environment with your logo, colors, and domain. Launch your branded AI solution.",
+          },
+          {
+            "@type": "HowToStep",
+            name: "Set Your Pricing",
+            text: "Define your pricing model and margins. You have complete control over what you charge your clients.",
+          },
+          {
+            "@type": "HowToStep",
+            name: "Start Selling & Earning",
+            text: "Begin onboarding clients and generating recurring revenue. Scale as fast as you want with our infrastructure.",
+          },
+        ],
+      },
+      {
+        "@type": "VideoObject",
+        "@id": `${SITE_URL}/whitelabel#video`,
+        name: "Fusion Calling White-label AI Voice Demo",
+        description:
+          "See the Fusion Calling white-label AI voice platform in action: branded dashboard, sub-account management, and live AI phone agents under your own domain.",
+        thumbnailUrl:
+          `${SITE_URL}/new-hero-thumbnail.png`,
+        uploadDate: "2026-01-15T09:00:00-05:00",
+        datePublished: "2026-01-15T09:00:00-05:00",
+        duration: "PT2M0S",
+        contentUrl: "https://vimeo.com/1225047351",
+        embedUrl: "https://player.vimeo.com/video/1225047351",
+        regionsAllowed: ["US", "CA", "GB", "AU"],
+        isFamilyFriendly: true,
+        publisher: {
+          "@id": `${SITE_URL}/#organization`,
+        },
+      },
+    ],
+  };
+
   return (
     <>
           <script
             id="whitelabel-schema"
             type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@graph": [
-                  {
-                    "@type": "Service",
-                    "@id": `${SITE_URL}/whitelabel#service`,
-                    name: "White-label AI Voice Solution",
-                    description: "Partner program allowing agencies and resellers to offer AI phone call automation under their own brand. Includes full white-label dashboard, custom voice training, and subscription-based pricing you control.",
-                    provider: {
-                      "@id": `${SITE_URL}/#organization`
-                    },
-                    audience: {
-                      "@type": "Audience",
-                      audienceType: "Marketing agencies, call centers, SaaS resellers, consultants"
-                    },
-                  },
-                  {
-                    "@type": "BreadcrumbList",
-                    "@id": `${SITE_URL}/whitelabel#breadcrumb`,
-                    itemListElement: [
-                      {
-                        "@type": "ListItem",
-                        position: 1,
-                        name: "Home",
-                        item: `${SITE_URL}/`,
-                      },
-                      {
-                        "@type": "ListItem",
-                        position: 2,
-                        name: "White-label Partner Program",
-                        item: `${SITE_URL}/whitelabel`,
-                      },
-                    ],
-                  },
-                  {
-                    "@type": "WebPage",
-                    "@id": `${SITE_URL}/whitelabel#webpage`,
-                    url: `${SITE_URL}/whitelabel`,
-                    name: "White-label AI Voice Solution | Fusion Calling Partner Program",
-                    description: "Become a Fusion Calling partner and white-label our AI voice solution. Offer powerful AI phone automation under your own brand.",
-                    inLanguage: "en-US",
-                    isPartOf: { "@id": `${SITE_URL}/#website` },
-                    dateModified: CONTENT_LAST_UPDATED,
-                    breadcrumb: { "@id": `${SITE_URL}/whitelabel#breadcrumb` },
-                    speakable: {
-                      "@type": "SpeakableSpecification",
-                      cssSelector: ["h1"]
-                    }
-                  },
-                  {
-                    "@type": "Product",
-                    "@id": `${SITE_URL}/whitelabel#product`,
-                    name: "Fusion Calling White-label AI Voice Solution",
-                    description:
-                      "Become a Fusion Calling partner and white-label our AI voice solution. Offer powerful AI phone automation under your own brand.",
-                    image: `${SITE_URL}/cardImage.jpg`,
-                    sku: "FC-WHITELABEL-001",
-                    brand: {
-                      "@type": "Brand",
-                      name: "Fusion Calling",
-                    },
-                    category: "Business Software",
-                    offers: [
-                      {
-                        "@type": "Offer",
-                        name: "Starter Plan",
-                        price: "99.00",
-                        priceCurrency: "USD",
-                        validFrom: "2026-01-15T09:00:00-05:00",
-                        priceValidUntil: "2027-12-31",
-                        itemCondition: "https://schema.org/NewCondition",
-                        availability: "https://schema.org/InStock",
-                        url: `${SITE_URL}/whitelabel`,
-                        seller: {
-                          "@type": "Organization",
-                          name: "Fusion Calling",
-                        },
-                        hasMerchantReturnPolicy: {
-                          "@type": "MerchantReturnPolicy",
-                          applicableCountry: "US",
-                          returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-                          merchantReturnDays: 14,
-                          returnMethod: "https://schema.org/ReturnByMail",
-                          returnFees: "https://schema.org/FreeReturn",
-                        },
-                        shippingDetails: {
-                          "@type": "OfferShippingDetails",
-                          shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "USD" },
-                          shippingDestination: { "@type": "DefinedRegion", addressCountry: "US" },
-                          deliveryTime: {
-                            "@type": "ShippingDeliveryTime",
-                            handlingTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 0, unitCode: "DAY" },
-                            transitTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 0, unitCode: "DAY" },
-                          },
-                        },
-                      },
-                      {
-                        "@type": "Offer",
-                        name: "Growth Plan",
-                        price: "299.00",
-                        priceCurrency: "USD",
-                        validFrom: "2026-01-15T09:00:00-05:00",
-                        priceValidUntil: "2027-12-31",
-                        itemCondition: "https://schema.org/NewCondition",
-                        availability: "https://schema.org/InStock",
-                        url: `${SITE_URL}/whitelabel`,
-                        seller: {
-                          "@type": "Organization",
-                          name: "Fusion Calling",
-                        },
-                        hasMerchantReturnPolicy: {
-                          "@type": "MerchantReturnPolicy",
-                          applicableCountry: "US",
-                          returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-                          merchantReturnDays: 14,
-                          returnMethod: "https://schema.org/ReturnByMail",
-                          returnFees: "https://schema.org/FreeReturn",
-                        },
-                        shippingDetails: {
-                          "@type": "OfferShippingDetails",
-                          shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "USD" },
-                          shippingDestination: { "@type": "DefinedRegion", addressCountry: "US" },
-                          deliveryTime: {
-                            "@type": "ShippingDeliveryTime",
-                            handlingTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 0, unitCode: "DAY" },
-                            transitTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 0, unitCode: "DAY" },
-                          },
-                        },
-                      },
-                      {
-                        "@type": "Offer",
-                        name: "Scale Plan",
-                        price: "499.00",
-                        priceCurrency: "USD",
-                        validFrom: "2026-01-15T09:00:00-05:00",
-                        priceValidUntil: "2027-12-31",
-                        itemCondition: "https://schema.org/NewCondition",
-                        availability: "https://schema.org/InStock",
-                        url: `${SITE_URL}/whitelabel`,
-                        seller: {
-                          "@type": "Organization",
-                          name: "Fusion Calling",
-                        },
-                        hasMerchantReturnPolicy: {
-                          "@type": "MerchantReturnPolicy",
-                          applicableCountry: "US",
-                          returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-                          merchantReturnDays: 14,
-                          returnMethod: "https://schema.org/ReturnByMail",
-                          returnFees: "https://schema.org/FreeReturn",
-                        },
-                        shippingDetails: {
-                          "@type": "OfferShippingDetails",
-                          shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "USD" },
-                          shippingDestination: { "@type": "DefinedRegion", addressCountry: "US" },
-                          deliveryTime: {
-                            "@type": "ShippingDeliveryTime",
-                            handlingTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 0, unitCode: "DAY" },
-                            transitTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 0, unitCode: "DAY" },
-                          },
-                        },
-                      },
-                    ],
-                  },
-                  {
-                    "@type": "FAQPage",
-                    "@id": `${SITE_URL}/whitelabel#faqpage`,
-                    mainEntity: whitelabelFaqs.map((faq) => ({
-                      "@type": "Question",
-                      name: faq.question,
-                      acceptedAnswer: {
-                        "@type": "Answer",
-                        text: faq.answer,
-                      },
-                    })),
-                  },
-                  {
-                    "@type": "HowTo",
-                    "@id": `${SITE_URL}/whitelabel#howto`,
-                    name: "How to Launch Your White-label AI Voice Business",
-                    description:
-                      "From application to first sale in as little as one week. We handle the technology, you focus on growing your agency.",
-                    step: [
-                      {
-                        "@type": "HowToStep",
-                        name: "Apply for Partnership",
-                        text: "Submit your application and get approved within 48 hours. We review your agency to ensure a successful partnership.",
-                      },
-                      {
-                        "@type": "HowToStep",
-                        name: "Customize Your Brand",
-                        text: "Set up your white-label environment with your logo, colors, and domain. Launch your branded AI solution.",
-                      },
-                      {
-                        "@type": "HowToStep",
-                        name: "Set Your Pricing",
-                        text: "Define your pricing model and margins. You have complete control over what you charge your clients.",
-                      },
-                      {
-                        "@type": "HowToStep",
-                        name: "Start Selling & Earning",
-                        text: "Begin onboarding clients and generating recurring revenue. Scale as fast as you want with our infrastructure.",
-                      },
-                    ],
-                  },
-                  {
-                    "@type": "VideoObject",
-                    "@id": `${SITE_URL}/whitelabel#video`,
-                    name: "Fusion Calling White-label AI Voice Demo",
-                    description:
-                      "See the Fusion Calling white-label AI voice platform in action: branded dashboard, sub-account management, and live AI phone agents under your own domain.",
-                    thumbnailUrl:
-                      `${SITE_URL}/new-hero-thumbnail.png`,
-                    uploadDate: "2026-01-15T09:00:00-05:00",
-                    datePublished: "2026-01-15T09:00:00-05:00",
-                    duration: "PT2M0S",
-                    contentUrl: "https://vimeo.com/1225047351",
-                    embedUrl: "https://player.vimeo.com/video/1225047351",
-                    regionsAllowed: ["US", "CA", "GB", "AU"],
-                    isFamilyFriendly: true,
-                    publisher: {
-                      "@id": `${SITE_URL}/#organization`,
-                    },
-                  },
-                ],
-              }),
-            }}
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
           />
       <main id="main" className="min-h-screen w-full bg-black">
       <WhiteLabelNavbar />
@@ -464,8 +340,6 @@ export default function WhiteLabelPage() {
       <section id="cta" className="scroll-mt-24">
         <CTA />
       </section>
-      <Footer />
-      <StickyMobileCta href="#cta" label="Book a Free Call" />
     </main>
     </>
   );

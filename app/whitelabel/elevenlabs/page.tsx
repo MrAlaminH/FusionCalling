@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
-import { whitelabelProviders } from "@/lib/whitelabel-providers";
+import { whitelabelProviders, buildProviderGraph } from "@/lib/whitelabel-providers";
 import { buildOpenGraph } from "@/lib/seo";
 import { truncateAtWord } from "@/lib/utils";
 import ProviderPageTemplate from "@/components/white-label/ProviderPageTemplate";
@@ -11,74 +10,9 @@ const metaDescription = truncateAtWord(provider.description, 158);
 const title = provider.title;
 const description = metaDescription;
 
-const schema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": `${SITE_URL}/whitelabel/elevenlabs#webpage`,
-      url: `${SITE_URL}/whitelabel/elevenlabs`,
-      name: title,
-      description,
-      inLanguage: "en-US",
-      isPartOf: { "@id": `${SITE_URL}/#website` },
-      dateModified: CONTENT_LAST_UPDATED,
-      breadcrumb: {
-        "@id": `${SITE_URL}/whitelabel/elevenlabs#breadcrumb`,
-      },
-      speakable: {
-        "@type": "SpeakableSpecification",
-        cssSelector: ["h1", "h2", "p"],
-      },
-    },
-    {
-      "@type": "Service",
-      "@id": `${SITE_URL}/whitelabel/elevenlabs#service`,
-      name: "White-label AI Voice Agents for ElevenLabs",
-      description,
-      provider: { "@id": `${SITE_URL}/#organization` },
-      areaServed: { "@type": "Country", name: "United States" },
-      audience: {
-        "@type": "Audience",
-        audienceType:
-          "ElevenLabs agencies, marketing agencies, SaaS resellers",
-      },
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": `${SITE_URL}/whitelabel/elevenlabs#breadcrumb`,
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: `${SITE_URL}/`,
-        },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "White-label Partner Program",
-          item: `${SITE_URL}/whitelabel`,
-        },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: "ElevenLabs",
-          item: `${SITE_URL}/whitelabel/elevenlabs`,
-        },
-      ],
-    },
-    {
-      "@type": "FAQPage",
-      "@id": `${SITE_URL}/whitelabel/elevenlabs#faqpage`,
-      mainEntity: provider.faqs.map((f) => ({
-        "@type": "Question",
-        name: f.question,
-        acceptedAnswer: { "@type": "Answer", text: f.answer },
-      })),
-    },
-  ],
-};
+const schema = buildProviderGraph(provider, {
+  audience: "ElevenLabs agencies, marketing agencies, SaaS resellers",
+});
 
 export const metadata: Metadata = {
   title,

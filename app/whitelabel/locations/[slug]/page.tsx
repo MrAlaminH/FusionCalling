@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import WhiteLabelNavbar from "@/components/white-label-navbar";
-import Footer from "@/components/Footer";
 import Pricing from "@/components/white-label/Pricing";
 import CTA from "@/components/white-label/CTA";
 import {
@@ -206,7 +205,6 @@ export default function LocationDetailPage({
           <CTA />
         </div>
       </main>
-      <Footer />
     </>
   );
 }

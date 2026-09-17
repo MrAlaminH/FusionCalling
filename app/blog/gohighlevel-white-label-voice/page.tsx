@@ -1,36 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { getTeamAuthor } from "@/lib/authors";
-import { buildOpenGraph } from "@/lib/seo";
-import { blogPosts } from "@/lib/blog-posts";
+import { getBlogPost } from "@/lib/blog-posts";
 import { blogFaqs } from "@/lib/blog-faqs";
-import { buildBlogGraph } from "@/lib/blog-schema";
+import { buildBlogGraph, buildPostMetadata } from "@/lib/blog-schema";
 import PostLayout from "@/components/blog/PostLayout";
 
 /* eslint-disable react/no-unescaped-entities */
 import { primaryButton } from "@/components/ui/button-styles";
 
-const post = blogPosts.find((p) => p.slug === "gohighlevel-white-label-voice")!;
+const post = getBlogPost("gohighlevel-white-label-voice")!;
 const teamAuthor = getTeamAuthor();
 const faqs = blogFaqs["gohighlevel-white-label-voice"];
 
-export const metadata: Metadata = {
-  title: "White-Label Voice AI for GoHighLevel: Costs",
-  description:
-    "GoHighLevel agencies: keep GHL as your CRM and add a dedicated white-label voice AI layer with Fusion Calling. Integrates via API and webhooks.",
-  ...buildOpenGraph({
-    title: "White-Label Voice AI for GoHighLevel: Costs",
-    description:
-      "A partnership guide for GoHighLevel agencies. Keep GHL as your CRM and add a dedicated, white-label voice AI layer with Fusion Calling via API and webhooks.",
-    path: "/blog/gohighlevel-white-label-voice",
-    image: "/blog/blog7.webp",
-    type: "article",
-    publishedTime: `${post.date}T00:00:00Z`,
-    modifiedTime: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
-    authors: ["Fusion Calling"],
-  }),
-};
+export const metadata: Metadata = buildPostMetadata(post, teamAuthor);
 
 export default function GoHighLevelBlogPost() {
   return (

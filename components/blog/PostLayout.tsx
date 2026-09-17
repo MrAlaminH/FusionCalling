@@ -9,7 +9,7 @@ import { formatDate } from "@/lib/utils";
 import PostFaq from "@/components/blog/PostFaq";
 import PostToc from "@/components/blog/PostToc";
 import ReadingProgress from "@/components/docs/reading-progress";
-import { blogPosts } from "@/lib/blog-posts";
+import { getRelatedPosts } from "@/lib/blog-posts";
 
 export type PostTocItem = { id: string; title: string };
 
@@ -40,12 +40,7 @@ export default function PostLayout({
   children: ReactNode;
 }) {
   // Topical related posts: same category first, then most recent others.
-  const related = [
-    ...blogPosts.filter((p) => p.slug !== post.slug && p.category === post.category),
-    ...blogPosts.filter(
-      (p) => p.slug !== post.slug && p.category !== post.category
-    ),
-  ].slice(0, 3);
+  const related = getRelatedPosts(post);
 
   return (
     <>

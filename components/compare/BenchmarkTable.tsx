@@ -1,3 +1,5 @@
+import { comparisons } from "@/lib/comparisons";
+import { FEATURE_UPDATES, LAUNCH, SATISFACTION, UPTIME_SLA } from "@/lib/product-facts";
 import { CONTENT_LAST_UPDATED_LABEL } from "@/lib/site-url";
 
 /**
@@ -6,46 +8,57 @@ import { CONTENT_LAST_UPDATED_LABEL } from "@/lib/site-url";
  * No "industry average" fallbacks, no derived claim columns: every cell is a
  * plain number/time so the table can be quoted by readers and answer engines
  * without overstatement.
+ *
+ * Fusion-column facts come from lib/product-facts; the feature-update
+ * competitor stat is parsed from the same comparison entry that renders above
+ * the table ("8+/month vs 3/month"), so the two can never disagree.
  */
 type BenchmarkRow = { metric: string; competitor: string; fusion: string };
 
 const FUSION = {
-  setup: "24 hours (guided)",
-  satisfaction: "4.8/5",
-  featureUpdates: "8+/month",
-  uptime: "99.9%",
+  setup: `${LAUNCH.guided} (guided)`,
+  satisfaction: SATISFACTION,
+  featureUpdates: FEATURE_UPDATES,
+  uptime: UPTIME_SLA,
 };
+
+const FEATURE_UPDATES_METRIC = "Feature Updates/Month";
+
+function competitorFeatureUpdates(competitorName: string): string | undefined {
+  const entry = comparisons.find((c) => c.competitorName === competitorName);
+  return entry?.keyStatistics.featureUpdates.split(" vs ")[1]?.trim();
+}
 
 const BENCHMARKS: Record<string, BenchmarkRow[]> = {
   VoiceAIWrapper: [
     { metric: "Client Satisfaction", competitor: "4.5/5", fusion: FUSION.satisfaction },
-    { metric: "Feature Updates/Month", competitor: "4/month", fusion: FUSION.featureUpdates },
+    { metric: FEATURE_UPDATES_METRIC, competitor: "4/month", fusion: FUSION.featureUpdates },
   ],
   Synthflow: [
     { metric: "Average Setup Time", competitor: "4–6 weeks (sales-led)", fusion: FUSION.setup },
     { metric: "Client Satisfaction", competitor: "4.3/5", fusion: FUSION.satisfaction },
-    { metric: "Feature Updates/Month", competitor: "3/month", fusion: FUSION.featureUpdates },
+    { metric: FEATURE_UPDATES_METRIC, competitor: "3/month", fusion: FUSION.featureUpdates },
   ],
   Thinkrr: [
     { metric: "Average Setup Time", competitor: "14 days (self-serve)", fusion: FUSION.setup },
     { metric: "Client Satisfaction", competitor: "4.4/5", fusion: FUSION.satisfaction },
-    { metric: "Feature Updates/Month", competitor: "2/month", fusion: FUSION.featureUpdates },
+    { metric: FEATURE_UPDATES_METRIC, competitor: "2/month", fusion: FUSION.featureUpdates },
     { metric: "Uptime", competitor: "99.5%", fusion: FUSION.uptime },
   ],
   ChatDash: [
     { metric: "Client Satisfaction", competitor: "4.3/5", fusion: FUSION.satisfaction },
-    { metric: "Feature Updates/Month", competitor: "3/month", fusion: FUSION.featureUpdates },
+    { metric: FEATURE_UPDATES_METRIC, competitor: "4/month", fusion: FUSION.featureUpdates },
     { metric: "Uptime", competitor: "99.5%", fusion: FUSION.uptime },
   ],
   Vapify: [
     { metric: "Client Satisfaction", competitor: "4.2/5", fusion: FUSION.satisfaction },
-    { metric: "Feature Updates/Month", competitor: "2/month", fusion: FUSION.featureUpdates },
+    { metric: FEATURE_UPDATES_METRIC, competitor: "2/month", fusion: FUSION.featureUpdates },
     { metric: "Uptime", competitor: "99.0%", fusion: FUSION.uptime },
   ],
   Voicerr: [
     { metric: "Average Setup Time", competitor: "14 days (self-serve)", fusion: FUSION.setup },
     { metric: "Client Satisfaction", competitor: "4.4/5", fusion: FUSION.satisfaction },
-    { metric: "Feature Updates/Month", competitor: "3/month", fusion: FUSION.featureUpdates },
+    { metric: FEATURE_UPDATES_METRIC, competitor: "2/month", fusion: FUSION.featureUpdates },
     { metric: "Uptime", competitor: "99.0%", fusion: FUSION.uptime },
   ],
 };
@@ -55,8 +68,16 @@ export function hasBenchmarks(competitorName: string): boolean {
 }
 
 export function BenchmarkTable({ competitorName }: { competitorName: string }) {
-  const rows = BENCHMARKS[competitorName];
-  if (!rows || rows.length === 0) return null;
+  const rows = (BENCHMARKS[competitorName] ?? []).map((row) =>
+    row.metric === FEATURE_UPDATES_METRIC
+      ? {
+          ...row,
+          competitor:
+            competitorFeatureUpdates(competitorName) ?? row.competitor,
+        }
+      : row
+  );
+  if (rows.length === 0) return null;
 
   return (
     <section className="glass-light rounded-2xl p-6 md:p-8 border border-brand/20">

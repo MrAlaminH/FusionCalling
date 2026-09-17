@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
-import { whitelabelProviders } from "@/lib/whitelabel-providers";
+import { whitelabelProviders, buildProviderGraph } from "@/lib/whitelabel-providers";
 import { buildOpenGraph } from "@/lib/seo";
 import { truncateAtWord } from "@/lib/utils";
 import ProviderPageTemplate from "@/components/white-label/ProviderPageTemplate";
@@ -21,76 +20,10 @@ const extraFaqs = [
   },
 ];
 
-const faqs = [...provider.faqs, ...extraFaqs];
-
-const schema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": `${SITE_URL}/whitelabel/retell#webpage`,
-      url: `${SITE_URL}/whitelabel/retell`,
-      name: provider.title,
-      description: provider.description,
-      inLanguage: "en-US",
-      isPartOf: { "@id": `${SITE_URL}/#website` },
-      dateModified: CONTENT_LAST_UPDATED,
-      breadcrumb: {
-        "@id": `${SITE_URL}/whitelabel/retell#breadcrumb`,
-      },
-      speakable: {
-        "@type": "SpeakableSpecification",
-        cssSelector: ["h1", "h2", "p"],
-      },
-    },
-    {
-      "@type": "Service",
-      "@id": `${SITE_URL}/whitelabel/retell#service`,
-      name: "White-label AI Voice Agents for Retell AI",
-      description: provider.description,
-      provider: { "@id": `${SITE_URL}/#organization` },
-      areaServed: { "@type": "Country", name: "United States" },
-      audience: {
-        "@type": "Audience",
-        audienceType:
-          "Retell AI partners, AI voice agencies, SaaS resellers",
-      },
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": `${SITE_URL}/whitelabel/retell#breadcrumb`,
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: `${SITE_URL}/`,
-        },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "White-label Partner Program",
-          item: `${SITE_URL}/whitelabel`,
-        },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: "Retell AI",
-          item: `${SITE_URL}/whitelabel/retell`,
-        },
-      ],
-    },
-    {
-      "@type": "FAQPage",
-      "@id": `${SITE_URL}/whitelabel/retell#faqpage`,
-      mainEntity: faqs.map((f) => ({
-        "@type": "Question",
-        name: f.question,
-        acceptedAnswer: { "@type": "Answer", text: f.answer },
-      })),
-    },
-  ],
-};
+const schema = buildProviderGraph(provider, {
+  audience: "Retell AI partners, AI voice agencies, SaaS resellers",
+  extraFaqs,
+});
 
 export const metadata: Metadata = {
   title: provider.title,

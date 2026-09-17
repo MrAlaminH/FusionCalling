@@ -1,36 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { getTeamAuthor } from "@/lib/authors";
-import { buildOpenGraph } from "@/lib/seo";
-import { blogPosts } from "@/lib/blog-posts";
+import { getBlogPost } from "@/lib/blog-posts";
 import { blogFaqs } from "@/lib/blog-faqs";
-import { buildBlogGraph } from "@/lib/blog-schema";
+import { buildBlogGraph, buildPostMetadata } from "@/lib/blog-schema";
 import PostLayout from "@/components/blog/PostLayout";
 
 /* eslint-disable react/no-unescaped-entities */
 import { primaryButton } from "@/components/ui/button-styles";
 
-const post = blogPosts.find((p) => p.slug === "gohighlevel-alternative-for-voice-ai")!;
+const post = getBlogPost("gohighlevel-alternative-for-voice-ai")!;
 const teamAuthor = getTeamAuthor();
 const faqs = blogFaqs["gohighlevel-alternative-for-voice-ai"];
 
-export const metadata: Metadata = {
-  title: "GoHighLevel Alternative for Voice AI (2026)",
-  description:
-    "GoHighLevel is a powerful CRM, but voice-first agencies pay for unused features. Fusion Calling bundles AI voice agents, a built-in CRM, portals, and white-label in one.",
-  ...buildOpenGraph({
-    title: "GoHighLevel Alternative for Voice AI (2026)",
-    description:
-      "GoHighLevel is a powerful CRM and marketing suite — but for a voice-first agency, paying for the full platform just to get a CRM is expensive overhead. Fusion Calling bundles AI voice agents together with a built-in CRM, client portals, and white-label in one platform.",
-    path: "/blog/gohighlevel-alternative-for-voice-ai",
-    image: "/blog/blog2.webp",
-    type: "article",
-    publishedTime: `${post.date}T00:00:00Z`,
-    modifiedTime: `${CONTENT_LAST_UPDATED}T00:00:00Z`,
-    authors: ["Fusion Calling"],
-  }),
-};
+export const metadata: Metadata = buildPostMetadata(post, teamAuthor);
 
 export default function GhlAlternativeBlogPost() {
   return (
