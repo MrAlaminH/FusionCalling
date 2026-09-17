@@ -29,7 +29,7 @@ export default function RetellAIBlogPost() {
               description: post.description,
               image: post.image,
               datePublished: post.date,
-              dateModified: post.updated ?? post.date,
+              dateModified: post.updated,
               authorSchemaId: teamAuthor.authorSchemaId,
               faqs,
               crumbName: "Can You White-Label Retell AI? Here's How",

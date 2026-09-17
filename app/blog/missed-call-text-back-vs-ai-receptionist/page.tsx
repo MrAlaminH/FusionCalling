@@ -45,7 +45,7 @@ export default function MissedCallTextBackVsAIReceptionistBlogPost() {
               description: post.description,
               image: post.image,
               datePublished: post.date,
-              dateModified: post.updated ?? post.date,
+              dateModified: post.updated,
               authorSchemaId: teamAuthor.authorSchemaId,
               faqs,
               crumbName: "Missed-Call Text-Back vs AI Receptionist",

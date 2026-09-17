@@ -45,7 +45,7 @@ export default function AIReceptionistComplaintsBlogPost() {
               description: post.description,
               image: post.image,
               datePublished: post.date,
-              dateModified: post.updated ?? post.date,
+              dateModified: post.updated,
               authorSchemaId: teamAuthor.authorSchemaId,
               faqs,
               crumbName: "AI Receptionist Complaints: 55 Real User Reports Analyzed",

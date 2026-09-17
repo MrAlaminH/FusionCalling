@@ -29,7 +29,7 @@ export default function StartVoiceAIAgencyBlogPost() {
               description: post.description,
               image: post.image,
               datePublished: post.date,
-              dateModified: post.updated ?? post.date,
+              dateModified: post.updated,
               authorSchemaId: teamAuthor.authorSchemaId,
               faqs,
               crumbName: "How to Start a Voice AI Agency in 2026",

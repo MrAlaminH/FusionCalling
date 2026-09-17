@@ -29,7 +29,7 @@ export default function GhlAlternativeBlogPost() {
               description: post.description,
               image: post.image,
               datePublished: post.date,
-              dateModified: post.updated ?? post.date,
+              dateModified: post.updated,
               authorSchemaId: teamAuthor.authorSchemaId,
               faqs,
               crumbName: "GoHighLevel Alternative for Voice AI: Built-In CRM + Voice Agents",

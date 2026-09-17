@@ -28,7 +28,7 @@ export default function AIReceptionistCallRecordingLawsBlogPost() {
               description: post.description,
               image: post.image,
               datePublished: post.date,
-              dateModified: post.updated ?? post.date,
+              dateModified: post.updated,
               authorSchemaId: teamAuthor.authorSchemaId,
               faqs,
               crumbName: "AI Receptionist Call Recording Laws by State",

@@ -29,7 +29,7 @@ export default function WillAIReplaceReceptionistsBlogPost() {
               description: post.description,
               image: post.image,
               datePublished: post.date,
-              dateModified: post.updated ?? post.date,
+              dateModified: post.updated,
               authorSchemaId: teamAuthor.authorSchemaId,
               faqs,
               crumbName: "Will AI Replace Receptionists? What Actually Changes in 2026",

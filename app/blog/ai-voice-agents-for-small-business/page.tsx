@@ -29,7 +29,7 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
               description: post.description,
               image: post.image,
               datePublished: post.date,
-              dateModified: post.updated ?? post.date,
+              dateModified: post.updated,
               authorSchemaId: teamAuthor.authorSchemaId,
               faqs,
               crumbName: "AI Voice Agents for Small Business: Use Cases & ROI",

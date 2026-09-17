@@ -29,7 +29,7 @@ export default function VoiceAISecurityComplianceBlogPost() {
               description: post.description,
               image: post.image,
               datePublished: post.date,
-              dateModified: post.updated ?? post.date,
+              dateModified: post.updated,
               authorSchemaId: teamAuthor.authorSchemaId,
               faqs,
               crumbName: "Voice AI Security & Compliance: Encryption, GDPR, Interruption Handling",

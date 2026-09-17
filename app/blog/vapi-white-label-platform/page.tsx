@@ -29,7 +29,7 @@ export default function VapiWhiteLabelBlogPost() {
               description: post.description,
               image: post.image,
               datePublished: post.date,
-              dateModified: post.updated ?? post.date,
+              dateModified: post.updated,
               authorSchemaId: teamAuthor.authorSchemaId,
               faqs,
               crumbName: "White-Labeling Vapi with Fusion Calling",

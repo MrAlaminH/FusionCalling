@@ -28,7 +28,7 @@ export default function AIReceptionistCostBlogPost() {
               description: post.description,
               image: post.image,
               datePublished: post.date,
-              dateModified: post.updated ?? post.date,
+              dateModified: post.updated,
               authorSchemaId: teamAuthor.authorSchemaId,
               faqs,
               crumbName: "How Much Does an AI Receptionist Cost in 2026?",
