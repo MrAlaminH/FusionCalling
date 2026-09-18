@@ -15,6 +15,8 @@ import { industries } from "@/lib/industries";
 const STATIC_PATHS: string[] = [
   "/",
   "/about",
+  "/contact",
+  "/faq",
   "/docs",
   "/docs/api-reference",
   "/docs/lead-management",

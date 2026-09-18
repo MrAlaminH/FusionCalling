@@ -118,6 +118,12 @@ export function buildOpenGraph({
     },
     alternates: {
       canonical: path,
+      // Feed discovery on every page that uses this builder. Pages override
+      // the whole `alternates` key (shallow merge), so the layout-level copy
+      // alone never renders on them — it must live here too.
+      types: {
+        "application/rss+xml": `${SITE_URL}/feed.xml`,
+      },
     },
   };
 }

@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import "./globals.css";
 import { PostHogProvider } from "./providers";
 import { SITE_URL } from "@/lib/site-url";
+import { DIRECT_PLANS } from "@/lib/product-facts";
 
 // Chat widget is below-the-fold UI (fixed button) with its own client JS.
 // Loaded client-only and deferred so it never competes with LCP/hydration.
@@ -39,6 +40,11 @@ export const metadata: Metadata = {
   title: {
     default: "Fusion Calling | AI Phone Call Automation for Businesses",
     template: "%s | Fusion Calling",
+  },
+  alternates: {
+    types: {
+      "application/rss+xml": `${SITE_URL}/feed.xml`,
+    },
   },
   description:
     "Boost business efficiency with Fusion Calling's AI-powered phone call automation. Streamline customer interactions, save time, and increase productivity.",
@@ -123,6 +129,7 @@ export default function RootLayout({
                   "@type": "Organization",
                   "@id": `${SITE_URL}/#organization`,
                   name: "Fusion Calling",
+                  alternateName: "FusionCalling",
                   url: `${SITE_URL}/`,
                   logo: {
                     "@type": "ImageObject",
@@ -132,6 +139,17 @@ export default function RootLayout({
                   },
                   description:
                     "AI-powered phone call automation for businesses. Streamline customer interactions, save time, and increase productivity with advanced voice technology.",
+                  foundingDate: "2022",
+                  founder: {
+                    "@type": "Person",
+                    name: "Alamin",
+                    url: `${SITE_URL}/team/alamin`,
+                  },
+                  address: {
+                    "@type": "PostalAddress",
+                    addressCountry: "US",
+                  },
+                  areaServed: "US",
                   sameAs: [
                     "https://x.com/MrAlaminH",
                     "https://www.linkedin.com/company/fusion-calling/",
@@ -143,6 +161,27 @@ export default function RootLayout({
                     areaServed: "US",
                     availableLanguage: "English",
                     email: "hello@fusioncalling.com",
+                  },
+                },
+                {
+                  "@type": "Service",
+                  "@id": `${SITE_URL}/#service`,
+                  name: "AI Phone Call Automation",
+                  serviceType: "AI phone call automation and AI receptionist",
+                  provider: { "@id": `${SITE_URL}/#organization` },
+                  areaServed: "US",
+                  description:
+                    "Human-like AI voice agents that handle inbound and outbound business calls 24/7: answering, appointment booking, lead qualification, and white-label reselling for agencies.",
+                  hasOfferCatalog: {
+                    "@type": "OfferCatalog",
+                    name: "Fusion Calling business plans",
+                    itemListElement: DIRECT_PLANS.map((plan) => ({
+                      "@type": "Offer",
+                      name: `${plan.name} plan`,
+                      price: plan.price,
+                      priceCurrency: "USD",
+                      description: `${plan.includedMinutes} included minutes per month, ${plan.overageRate} overage.`,
+                    })),
                   },
                 },
                 {

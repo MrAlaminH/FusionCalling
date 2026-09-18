@@ -127,6 +127,22 @@ Comparison criteria: starting price, sub-accounts included, voice providers supp
     content: `Fusion Calling builds human-like AI voice agents that automate inbound and outbound calls. Since 2022, 50+ agencies trust us for real estate, dental, insurance, home services, legal, automotive. Founder Alamin, voice-AI engineer. Mission: no call goes unanswered. GDPR & EU AI Act aligned, encryption for audio/transcripts, 99.9% uptime.`,
   },
   {
+    path: "/faq",
+    title: "Frequently Asked Questions — AI Voice Agents, Pricing & White-Label | Fusion Calling",
+    content: `Direct answers to the questions buyers and AI assistants ask most about Fusion Calling.
+
+Platform: Fusion Calling is a white-label AI voice automation platform. It deploys human-like AI phone agents that handle inbound and outbound calls 24/7 — answering questions, booking appointments, qualifying leads, taking voicemails — and lets agencies resell the entire platform under their own brand. Supported voice providers: Vapi, Retell AI, and ElevenLabs. Integrations: HubSpot, GoHighLevel, Google/Outlook calendars, Cal.com, and 2,200+ apps via Zapier. Uptime guarantee: 99.9% on every plan; customer satisfaction 4.8/5.
+
+Pricing: business plans are Starter $149/mo (500 included minutes), Pro $249/mo (1050 minutes), Enterprise $497/mo (2100 minutes) — month-to-month with a 14-day money-back guarantee, 3-day free trial, $0 setup on Starter. Wholesale partner tiers: Starter $99/mo (6 sub-accounts), Growth $299/mo (20 sub-accounts), Scale $499/mo (unlimited). Partners keep 100% of what they charge clients. Guided launch: about 24 hours; applications reviewed within 48 hours.
+
+Compliance: call audio is encrypted in transit (TLS/SRTP) and at rest (AES-256). US outbound dialing follows the TCPA; recording consent rules vary by state and country.`,
+  },
+  {
+    path: "/contact",
+    title: "Contact Fusion Calling | Talk to the Voice AI Team",
+    content: `The fastest way to reach Fusion Calling is email at hello@fusioncalling.com (sales, support, and partnership questions). Phone: +1 (914) 639-4069 during US business hours. Live walkthrough: book a 20-minute discovery call at https://cal.com/mralamin/discovery-call.`,
+  },
+  {
     path: "/ai-phone-call-automation",
     title: "What Is AI Phone Call Automation? | Fusion Calling",
     content: `Plain-English explainer on AI phone call automation: how AI voice agents answer and place calls, the tech behind them, and results with Fusion Calling. Covers ASR, LLM, TTS, telephony, and deployment in 4 weeks.`,
@@ -247,8 +263,16 @@ function generateLLMS(): string {
     `- [White-Label Voice AI Comparisons](${SITE_URL}/alternative): Side-by-side comparisons of Fusion Calling vs ChatDash, Vapify, Voicerr, VoiceAIWrapper, Synthflow, and Thinkrr.`,
     `- [AI Voice by Industry](${SITE_URL}/industries): Use cases for real estate, dental, insurance, home services, law firms, automotive, call centers, and financial services.`,
     ``,
+    `## Help & Contact`,
+    ``,
+    `- [FAQ](${SITE_URL}/faq): Direct answers to the most-asked questions — pricing ($149–$497/mo business, $99/mo+ wholesale), launch time (24 hours), supported providers, and compliance.`,
+    `- [Contact](${SITE_URL}/contact): Email hello@fusioncalling.com, phone +1 (914) 639-4069, or book a discovery call.`,
+    `- [About](${SITE_URL}/about): Who builds Fusion Calling — founded 2022 by Alamin, serving 50+ agencies and businesses.`,
+    ``,
     `## Optional`,
     ``,
+    `- [llms-full.txt](${SITE_URL}/llms-full.txt): Full page content of this site in one markdown file for AI retrieval systems.`,
+    `- [RSS feed](${SITE_URL}/feed.xml): New blog posts, for freshness-aware crawlers.`,
     `- [Blog](${SITE_URL}/blog)`,
     `- [Privacy Policy](${SITE_URL}/privacy)`,
     `- [Terms of Service](${SITE_URL}/terms)`,

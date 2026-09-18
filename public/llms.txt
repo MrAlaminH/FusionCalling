@@ -44,8 +44,16 @@ The platform integrates with leading voice-AI providers. Agencies can bring exis
 - [White-Label Voice AI Comparisons](https://www.fusioncalling.com/alternative): Side-by-side comparisons of Fusion Calling vs ChatDash, Vapify, Voicerr, VoiceAIWrapper, Synthflow, and Thinkrr.
 - [AI Voice by Industry](https://www.fusioncalling.com/industries): Use cases for real estate, dental, insurance, home services, law firms, automotive, call centers, and financial services.
 
+## Help & Contact
+
+- [FAQ](https://www.fusioncalling.com/faq): Direct answers to the most-asked questions — pricing ($149–$497/mo business, $99/mo+ wholesale), launch time (24 hours), supported providers, and compliance.
+- [Contact](https://www.fusioncalling.com/contact): Email hello@fusioncalling.com, phone +1 (914) 639-4069, or book a discovery call.
+- [About](https://www.fusioncalling.com/about): Who builds Fusion Calling — founded 2022 by Alamin, serving 50+ agencies and businesses.
+
 ## Optional
 
+- [llms-full.txt](https://www.fusioncalling.com/llms-full.txt): Full page content of this site in one markdown file for AI retrieval systems.
+- [RSS feed](https://www.fusioncalling.com/feed.xml): New blog posts, for freshness-aware crawlers.
 - [Blog](https://www.fusioncalling.com/blog)
 - [Privacy Policy](https://www.fusioncalling.com/privacy)
 - [Terms of Service](https://www.fusioncalling.com/terms)

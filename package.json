@@ -23,7 +23,8 @@
     "optimize-images": "node scripts/optimize-images.mjs",
     "openapi:gen": "npx --yes tsx scripts/generate-openapi.ts",
     "indexnow:submit": "npx --yes tsx scripts/indexnow-submit.ts",
-    "llms:gen": "npx --yes tsx scripts/generate-llms.ts"
+    "llms:gen": "npx --yes tsx scripts/generate-llms.ts",
+    "geo:check": "node scripts/geo-check.mjs"
   },
   "dependencies": {
     "@calcom/embed-react": "^1.5.2",

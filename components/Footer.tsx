@@ -23,6 +23,7 @@ const productLinks = [
 
 const resourceLinks = [
   { label: "Blog", href: "/blog" },
+  { label: "FAQ", href: "/faq" },
   { label: "AI Phone Call Automation Guide", href: "/ai-phone-call-automation" },
   { label: "Case Studies", href: "/whitelabel/case-studies" },
   { label: "Platform Comparison", href: "/whitelabel/compare" },
@@ -38,6 +39,7 @@ const resourceLinks = [
 const companyLinks = [
   { label: "About Us", href: "/about" },
   { label: "Team", href: "/team" },
+  { label: "Contact", href: "/contact" },
   { label: "Privacy Policy", href: "/privacy" },
   { label: "Terms of Service", href: "/terms" },
   { label: "Book a Call", href: "https://cal.com/mralamin/discovery-call" },

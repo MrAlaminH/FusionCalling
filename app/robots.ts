@@ -57,7 +57,47 @@ export default function robots(): MetadataRoute.Robots {
         disallow,
       },
       {
+        userAgent: "Claude-User",
+        allow: "/",
+        disallow,
+      },
+      {
+        userAgent: "Claude-SearchBot",
+        allow: "/",
+        disallow,
+      },
+      {
         userAgent: "anthropic-ai",
+        allow: "/",
+        disallow,
+      },
+      // OpenAI's search index crawler (ChatGPT Search results).
+      {
+        userAgent: "OAI-SearchBot",
+        allow: "/",
+        disallow,
+      },
+      // OpenAI's ads-fetching bot (newest member of OpenAI's crawler family).
+      {
+        userAgent: "OAI-AdsBot",
+        allow: "/",
+        disallow,
+      },
+      // Perplexity's user-initiated fetch bot (cited answers).
+      {
+        userAgent: "Perplexity-User",
+        allow: "/",
+        disallow,
+      },
+      // Meta AI web crawler.
+      {
+        userAgent: "meta-externalagent",
+        allow: "/",
+        disallow,
+      },
+      // Apple Intelligence training crawler (Siri/Spotlight use Applebot).
+      {
+        userAgent: "Applebot-Extended",
         allow: "/",
         disallow,
       },

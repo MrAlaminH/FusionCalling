@@ -1,7 +1,7 @@
 # Fusion Calling - Full Content for AI Crawlers
 # Generated at build time. Contains all indexable page content.
 # Source: https://www.fusioncalling.com
-# Last updated: 2026-09-17
+# Last updated: 2026-09-18
 
 ## AI Phone Call Automation & AI Receptionist | Fusion Calling
 URL: https://www.fusioncalling.com/
@@ -961,6 +961,26 @@ Simple, fair pricing for AI phone call automation. Starter $149/mo (500 min, 0 s
 URL: https://www.fusioncalling.com/about
 
 Fusion Calling builds human-like AI voice agents that automate inbound and outbound calls. Since 2022, 50+ agencies trust us for real estate, dental, insurance, home services, legal, automotive. Founder Alamin, voice-AI engineer. Mission: no call goes unanswered. GDPR & EU AI Act aligned, encryption for audio/transcripts, 99.9% uptime.
+
+---
+
+## Frequently Asked Questions — AI Voice Agents, Pricing & White-Label | Fusion Calling
+URL: https://www.fusioncalling.com/faq
+
+Direct answers to the questions buyers and AI assistants ask most about Fusion Calling.
+
+Platform: Fusion Calling is a white-label AI voice automation platform. It deploys human-like AI phone agents that handle inbound and outbound calls 24/7 — answering questions, booking appointments, qualifying leads, taking voicemails — and lets agencies resell the entire platform under their own brand. Supported voice providers: Vapi, Retell AI, and ElevenLabs. Integrations: HubSpot, GoHighLevel, Google/Outlook calendars, Cal.com, and 2,200+ apps via Zapier. Uptime guarantee: 99.9% on every plan; customer satisfaction 4.8/5.
+
+Pricing: business plans are Starter $149/mo (500 included minutes), Pro $249/mo (1050 minutes), Enterprise $497/mo (2100 minutes) — month-to-month with a 14-day money-back guarantee, 3-day free trial, $0 setup on Starter. Wholesale partner tiers: Starter $99/mo (6 sub-accounts), Growth $299/mo (20 sub-accounts), Scale $499/mo (unlimited). Partners keep 100% of what they charge clients. Guided launch: about 24 hours; applications reviewed within 48 hours.
+
+Compliance: call audio is encrypted in transit (TLS/SRTP) and at rest (AES-256). US outbound dialing follows the TCPA; recording consent rules vary by state and country.
+
+---
+
+## Contact Fusion Calling | Talk to the Voice AI Team
+URL: https://www.fusioncalling.com/contact
+
+The fastest way to reach Fusion Calling is email at hello@fusioncalling.com (sales, support, and partnership questions). Phone: +1 (914) 639-4069 during US business hours. Live walkthrough: book a 20-minute discovery call at https://cal.com/mralamin/discovery-call.
 
 ---
 
