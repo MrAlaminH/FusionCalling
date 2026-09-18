@@ -44,6 +44,37 @@ The platform integrates with leading voice-AI providers. Agencies can bring exis
 - [White-Label Voice AI Comparisons](https://www.fusioncalling.com/alternative): Side-by-side comparisons of Fusion Calling vs ChatDash, Vapify, Voicerr, VoiceAIWrapper, Synthflow, and Thinkrr.
 - [AI Voice by Industry](https://www.fusioncalling.com/industries): Use cases for real estate, dental, insurance, home services, law firms, automotive, call centers, and financial services.
 
+## Blog (how-to guides & comparisons)
+
+- [How to Start a Voice AI Agency in 2026](https://www.fusioncalling.com/blog/how-to-start-a-voice-ai-agency): Learn how to start an AI voice agency with a white-label platform. Keep 100% of client revenue, launch in 24 hours, and scale with Vapi, Retell & ElevenLabs.
+- [GoHighLevel Alternative for Voice AI (2026)](https://www.fusioncalling.com/blog/gohighlevel-alternative-for-voice-ai): Fusion Calling bundles AI voice agents with a built-in CRM for voice-first agencies — no GoHighLevel subscription needed to run a voice AI agency.
+- [Vapi vs Retell vs ElevenLabs: Which Wins?](https://www.fusioncalling.com/blog/vapi-vs-retell-vs-elevenlabs): A fair, neutral comparison of the three leading voice AI providers, and why you don't have to pick just one when you use Fusion Calling's multi-provider layer.
+- [AI Voice Agents for Small Business (2026)](https://www.fusioncalling.com/blog/ai-voice-agents-for-small-business): How restaurants and small businesses use AI voice agents to answer every call, book appointments, and stay open 24/7 — plus the ROI math for a first client.
+- [White-Label Vapi: It's Not Resellable Alone](https://www.fusioncalling.com/blog/vapi-white-label-platform): Does Vapi offer white label natively? Learn how agencies resell Vapi under their own brand in 2026, what's missing, and the step-by-step setup.
+- [Can You White-Label Retell AI? Here's How](https://www.fusioncalling.com/blog/retell-ai-white-label): How agencies white-label Retell AI for clients like dental clinics, how it compares with Vapi on cost and setup, and the step-by-step path to launch.
+- [White-Label Voice AI for GoHighLevel: Costs](https://www.fusioncalling.com/blog/gohighlevel-white-label-voice): Step-by-step guide to adding white-label voice AI to GoHighLevel: webhook setup, per-client costs, pricing math, and pitfalls to avoid before launch.
+- [How to Automate Phone Calls with AI](https://www.fusioncalling.com/blog/how-to-automate-phone-calls-with-ai): How to automate phone calls with AI in five steps: pick a use case, connect number, calendar, and CRM, add knowledge, test calls, launch with handoff rules.
+- [Voice AI Security & Compliance Guide (2026)](https://www.fusioncalling.com/blog/voice-ai-security-compliance): How call audio is encrypted in transit and at rest (TLS/SRTP, AES-256), plus GDPR, TCPA consent, barge-in, and NIST baselines for voice AI compliance.
+- [AI Receptionist Cost in 2026: Real Pricing](https://www.fusioncalling.com/blog/ai-receptionist-cost): Real 2026 AI receptionist pricing: per-minute vs per-month models, hidden costs like setup fees and overages, and where Fusion Calling sits from $149/mo.
+- [AI Receptionist Complaints: 55 Real Reports](https://www.fusioncalling.com/blog/ai-receptionist-complaints): We analyzed 55 real user reports of AI receptionists. The five complaints that come up most — hangups, loops, billing shocks — and how to avoid them.
+- [Missed-Call Text-Back vs AI Receptionist](https://www.fusioncalling.com/blog/missed-call-text-back-vs-ai-receptionist): Missed-call text-back texts callers after the call is already lost; an AI receptionist answers live in two rings and books. Verified pricing, honest stats.
+- [AI Call Recording Laws by State (2026)](https://www.fusioncalling.com/blog/ai-receptionist-call-recording-laws): Yes, AI receptionists are legal in the US. The verified 2026 map: 13 all-party consent states, FCC AI-voice rules, disclosure laws, and a compliance checklist.
+- [Will AI Replace Receptionists? 2026 Outlook](https://www.fusioncalling.com/blog/will-ai-replace-receptionists): Mostly no: AI receptionists handle routine calls while humans keep judgment, empathy, and relationships. What to automate, what to keep, and the 2026 outlook.
+
+## Industry Use Cases
+
+- [AI Receptionist for Real Estate: Leads & Showings](https://www.fusioncalling.com/industries/ai-voice-for-real-estate)
+- [AI Receptionist for Dental Offices: Booking & Recall](https://www.fusioncalling.com/industries/ai-voice-for-dental)
+- [AI Voice for Insurance Agencies: Quotes & Renewals](https://www.fusioncalling.com/industries/ai-voice-for-insurance)
+- [AI Voice for Home Services: HVAC, Plumbing & Roofing](https://www.fusioncalling.com/industries/ai-voice-for-home-services)
+- [AI Voice for Law Firms: Intake & Consultations](https://www.fusioncalling.com/industries/ai-voice-for-law-firms)
+- [AI Voice for Auto Dealers & Service: Booking & Recall](https://www.fusioncalling.com/industries/ai-voice-for-automotive)
+- [AI Voice for Call Centers & BPOs: Scale & Cut Costs](https://www.fusioncalling.com/industries/ai-voice-for-call-centers)
+- [AI Receptionist for Financial Services & Advisors](https://www.fusioncalling.com/industries/ai-voice-for-financial-services)
+- [AI Receptionist for Ecommerce: Support & Cart Recovery](https://www.fusioncalling.com/industries/ai-voice-for-ecommerce-retail)
+- [AI Voice for Education & Tutoring: Enroll & Schedule](https://www.fusioncalling.com/industries/ai-voice-for-education-tutoring)
+- [AI Receptionist for Restaurants: Reservations & Orders](https://www.fusioncalling.com/industries/ai-voice-for-restaurants-hospitality)
+
 ## Help & Contact
 
 - [FAQ](https://www.fusioncalling.com/faq): Direct answers to the most-asked questions — pricing ($149–$497/mo business, $99/mo+ wholesale), launch time (24 hours), supported providers, and compliance.
@@ -53,6 +84,7 @@ The platform integrates with leading voice-AI providers. Agencies can bring exis
 ## Optional
 
 - [llms-full.txt](https://www.fusioncalling.com/llms-full.txt): Full page content of this site in one markdown file for AI retrieval systems.
+- [ai.txt](https://www.fusioncalling.com/ai.txt): Key platform facts in plain key-value lines for quick machine parsing.
 - [RSS feed](https://www.fusioncalling.com/feed.xml): New blog posts, for freshness-aware crawlers.
 - [Blog](https://www.fusioncalling.com/blog)
 - [Privacy Policy](https://www.fusioncalling.com/privacy)

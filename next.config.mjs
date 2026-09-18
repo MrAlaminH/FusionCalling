@@ -103,10 +103,15 @@ const nextConfig = {
       },
       // Host canonicalization: serve one canonical host (www) so we never
       // split ranking signals across apex/www if platform config drifts.
+      // Machine-readable discovery files are exempt: they carry no ranking
+      // signals (nothing canonicalizes between hosts), and the simple HTTP
+      // fetchers that consume them (AI agents, audit crawlers) often don't
+      // follow the apex→www 308 — they'd see nothing at all.
       {
-        source: "/:path*",
+        source:
+          "/:path((?!llms\\.txt|llms-full\\.txt|feed\\.xml|ai\\.txt|sitemap\\.xml|robots\\.txt|\\.well-known/).*)",
         has: [{ type: "host", value: "fusioncalling.com" }],
-        destination: "https://www.fusioncalling.com/:path*",
+        destination: "https://www.fusioncalling.com/:path",
         permanent: true,
       },
     ];

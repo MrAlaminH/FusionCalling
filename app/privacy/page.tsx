@@ -31,7 +31,7 @@ export default function PrivacyPolicy() {
 
       <div className="prose prose-invert max-w-none">
         <p className="mb-6 text-gray-300">
-          Welcome to FusionCalling.com (&quot;we,&quot; &quot;our,&quot; or
+          Welcome to Fusion Calling (&quot;we,&quot; &quot;our,&quot; or
           &quot;us&quot;). This Privacy Policy explains how we collect, use,
           disclose, and safeguard your information when you visit our website
           and use our AI-powered calling services. We are committed to

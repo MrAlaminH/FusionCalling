@@ -31,7 +31,7 @@ export default function TermsOfUse() {
 
       <div className="prose prose-invert max-w-none">
         <p className="mb-6 text-gray-300">
-          Welcome to FusionCalling.com (&quot;Service,&quot;
+          Welcome to Fusion Calling (&quot;Service,&quot;
           &quot;Platform,&quot; &quot;we,&quot; &quot;us,&quot; or
           &quot;our&quot;). These Terms of Service (&quot;Terms&quot;) govern
           your use of our AI-powered calling platform and related services. By

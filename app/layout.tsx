@@ -139,6 +139,14 @@ export default function RootLayout({
                   },
                   description:
                     "AI-powered phone call automation for businesses. Streamline customer interactions, save time, and increase productivity with advanced voice technology.",
+                  slogan: "No call goes unanswered.",
+                  knowsAbout: [
+                    "AI Phone Call Automation",
+                    "AI Receptionists",
+                    "White-Label Voice AI",
+                    "Voice AI Agencies",
+                    "Conversational AI",
+                  ],
                   foundingDate: "2022",
                   founder: {
                     "@type": "Person",

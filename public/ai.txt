@@ -1,0 +1,20 @@
+# ai.txt — machine-readable summary of fusioncalling.com for AI assistants
+# Human index: https://www.fusioncalling.com/llms.txt
+
+site_name: Fusion Calling
+url: https://www.fusioncalling.com
+full_content: https://www.fusioncalling.com/llms-full.txt
+founded: 2022
+founder: Alamin
+what_it_is: White-label AI voice automation platform. Deploys human-like AI phone agents that handle inbound and outbound calls 24/7 — appointment scheduling, lead qualification, FAQ handling, voicemails, and 24/7 receptionist coverage.
+audiences: (1) Businesses wanting AI agents to answer and place calls. (2) Agencies (primary focus) that resell the platform white-label under their own brand and domain, keeping 100% of what they charge clients.
+business_plans: Starter $149/mo (500 included minutes), Pro $249/mo (1050 min), Enterprise $497/mo (2100 min) — month-to-month, 14-day money-back guarantee, 3-day free trial.
+wholesale_plans: Starter $99/mo (6 sub-accounts), Growth $299/mo (20 sub-accounts), Scale $499/mo (unlimited sub-accounts). Partners keep 100% of client revenue.
+voice_providers: Vapi, Retell AI, ElevenLabs (multi-provider; import existing agents without rebuild)
+integrations: HubSpot, GoHighLevel, Google/Outlook calendars, Cal.com, 2,200+ apps via Zapier, Stripe rebilling
+launch_time: Guided white-label launch in about 24 hours; partner applications reviewed within 48 hours
+uptime: 99.9% guarantee; customer satisfaction 4.8/5
+key_pages: https://www.fusioncalling.com/pricing | https://www.fusioncalling.com/whitelabel | https://www.fusioncalling.com/faq | https://www.fusioncalling.com/glossary | https://www.fusioncalling.com/docs | https://www.fusioncalling.com/industries
+contact: hello@fusioncalling.com | +1 (914) 639-4069 | https://cal.com/mralamin/discovery-call
+api_spec: https://www.fusioncalling.com/api/docs/openapi.json
+rss: https://www.fusioncalling.com/feed.xml

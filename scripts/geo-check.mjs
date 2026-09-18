@@ -56,7 +56,32 @@ await check("llms.txt: H1, blockquote, and key links", () => {
   for (const path of ["/faq", "/contact", "/llms-full.txt", "/feed.xml", "/pricing", "/whitelabel"]) {
     assert.ok(llms.text.includes(`fusioncalling.com${path}`), `llms.txt missing link to ${path}`);
   }
+  const blogLinks = llms.text.match(/fusioncalling\.com\/blog\//g)?.length ?? 0;
+  assert.ok(blogLinks >= 10, `expected >=10 blog links, got ${blogLinks}`);
 });
+
+// -- ai.txt -------------------------------------------------------------------
+const aiTxt = await get("/ai.txt");
+await check("ai.txt: machine-readable summary", () => {
+  assert.equal(aiTxt.status, 200);
+  assert.match(aiTxt.text, /^site_name: Fusion Calling/m);
+  for (const key of ["what_it_is:", "business_plans:", "wholesale_plans:", "full_content"]) {
+    assert.ok(aiTxt.text.includes(key), `ai.txt missing ${key}`);
+  }
+});
+
+// Apex host: machine files must be served directly (not redirected), since the
+// simple fetchers that consume them often don't follow 301/308s. Only
+// checkable against the production domain — localhost has no apex.
+if (BASE.includes("fusioncalling.com")) {
+  const apex = BASE.replace(/^https?:\/\/www\./, "https://");
+  for (const path of ["/llms.txt", "/llms-full.txt", "/ai.txt", "/feed.xml", "/robots.txt", "/sitemap.xml", "/.well-known/ai-plugin.json"]) {
+    const res = await fetch(`${apex}${path}`, { redirect: "manual" });
+    await check(`apex ${path}: served directly (no redirect)`, () => {
+      assert.equal(res.status, 200, `apex returned ${res.status}; redirect exemption missing in next.config.mjs`);
+    });
+  }
+}
 
 const llmsFull = await get("/llms-full.txt");
 await check("llms-full.txt: served and covers FAQ/Contact", () => {
@@ -134,6 +159,8 @@ await check("/ : Organization (entity signals) + Service + WebSite schema", () =
   assert.ok(org, "no Organization node");
   assert.ok(org.sameAs?.length >= 2, "Organization needs sameAs links");
   assert.ok(org.foundingDate, "Organization missing foundingDate");
+  assert.ok(org.knowsAbout?.length >= 3, "Organization missing knowsAbout");
+  assert.ok(org.slogan, "Organization missing slogan");
   assert.ok(org.contactPoint?.telephone, "Organization missing contactPoint.telephone");
   assert.ok(nodes.some((n) => n["@type"] === "Service"), "no Service node");
   const website = nodes.find((n) => n["@type"] === "WebSite");

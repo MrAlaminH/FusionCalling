@@ -176,7 +176,7 @@ export default function IndustryPage({ industry }: { industry: Industry }) {
                 {name} AI Phone Automation: 2026 Leadership Data
               </h3>
               <p className="text-gray-400 mb-6">
-                FusionCalling leads the industry with superior performance metrics and client satisfaction
+                Fusion Calling leads the industry with superior performance metrics and client satisfaction
               </p>
               
               <div className="grid md:grid-cols-2 gap-6 mb-6">
@@ -189,7 +189,7 @@ export default function IndustryPage({ industry }: { industry: Industry }) {
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
-                      <span>Average cost savings: <span className="text-brand font-bold">{industryStats.costSavings}</span> with FusionCalling</span>
+                      <span>Average cost savings: <span className="text-brand font-bold">{industryStats.costSavings}</span> with Fusion Calling</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
@@ -208,7 +208,7 @@ export default function IndustryPage({ industry }: { industry: Industry }) {
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold text-white mb-3 text-lg">💎 Expert Perspective on FusionCalling</h4>
+                  <h4 className="font-semibold text-white mb-3 text-lg">💎 Expert Perspective on Fusion Calling</h4>
                   <blockquote className="text-gray-300 italic border-l-4 border-brand pl-4 mb-3">
                     &quot;{expertQuote.quote}&quot;
                   </blockquote>
