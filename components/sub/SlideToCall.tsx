@@ -120,10 +120,8 @@ export default function SlideToCall({
       resetInputs();
       console.log("Resetting inputs...");
 
-      // Schedule call initiation and reset
+      // Schedule the reset
       setTimeout(() => {
-        if (phoneNumber) window.location.href = `tel:${phoneNumber}`;
-
         setTimeout(() => {
           setSlideState({ isDragging: false, position: 0, isSuccess: false });
           callInitiatedRef.current = false;
