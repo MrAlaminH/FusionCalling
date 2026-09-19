@@ -120,8 +120,8 @@ export default function LeadQualificationPage() {
           {
             "@type": "ListItem",
             position: 2,
-            name: "AI Phone Call Receptionist",
-            item: `${SITE_URL}/ai-phone-call-receptionist`,
+            name: "AI Phone Call Automation",
+            item: `${SITE_URL}/ai-phone-call-automation`,
           },
           {
             "@type": "ListItem",

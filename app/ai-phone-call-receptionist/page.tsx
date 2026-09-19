@@ -441,14 +441,28 @@ export default function AiPhoneCallReceptionistPage() {
               <Link href="/calculator" className="text-brand hover:underline">
                 Run the ROI calculator
               </Link>
+              , explore the full{" "}
+              <Link
+                href="/ai-phone-call-automation"
+                className="text-brand hover:underline"
+              >
+                AI phone call automation platform
+              </Link>
               ,{" "}
               <Link href="/" className="text-brand hover:underline">
                 get an AI phone call receptionist with a live demo on the
                 homepage
               </Link>
-              , or{" "}
+              ,{" "}
               <Link href="/#show-case" className="text-brand hover:underline">
                 watch live demo calls
+              </Link>
+              , or compare buying options in the{" "}
+              <Link
+                href="/ai-answering-service"
+                className="text-brand hover:underline"
+              >
+                AI answering service guide
               </Link>
               .
             </p>

@@ -74,6 +74,9 @@ The platform integrates with leading voice-AI providers. Agencies can bring exis
 - [AI Receptionist for Ecommerce: Support & Cart Recovery](https://www.fusioncalling.com/industries/ai-voice-for-ecommerce-retail)
 - [AI Voice for Education & Tutoring: Enroll & Schedule](https://www.fusioncalling.com/industries/ai-voice-for-education-tutoring)
 - [AI Receptionist for Restaurants: Reservations & Orders](https://www.fusioncalling.com/industries/ai-voice-for-restaurants-hospitality)
+- [AI Receptionist for Medical Practices: Scheduling & Triage](https://www.fusioncalling.com/industries/ai-voice-for-medical-practices)
+- [AI Receptionist for Salons & Spas: Bookings 24/7](https://www.fusioncalling.com/industries/ai-voice-for-beauty-wellness)
+- [AI Receptionist for Vet Clinics: Scheduling & Triage](https://www.fusioncalling.com/industries/ai-voice-for-veterinary)
 
 ## Help & Contact
 

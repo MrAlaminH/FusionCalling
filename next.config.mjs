@@ -80,14 +80,9 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // Keyword retarget: the explainer moved from the "automation" slug to
-      // the higher-intent "AI phone call receptionist" query. 301 preserves
-      // any accrued signals; child use-case guides stay on their own URLs.
-      {
-        source: "/ai-phone-call-automation",
-        destination: "/ai-phone-call-receptionist",
-        permanent: true,
-      },
+      // NOTE: /ai-phone-call-automation used to 301 here. It is now a live
+      // pillar page (app/ai-phone-call-automation/page.tsx) hubbing the three
+      // child use-case guides, so the redirect was removed. Do not re-add it.
       // Author-entity consolidation: the old team slug 404'd; every schema
       // reference now points at /team/voice-team.
       {
@@ -99,6 +94,19 @@ const nextConfig = {
       // Google impressions (e.g. /compare/vapify-alternative Pos 8.75).
       // Preserve ranking signals by 301ing them to /alternative equivalents.
       // NOTE: /whitelabel/compare is a separate live page and is untouched.
+      // Legacy "-alternative" suffixed URLs (e.g. /compare/vapify-alternative)
+      // must strip the suffix — /alternative/vapify-alternative 404s, the live
+      // slug is /alternative/vapify. Explicit rules first (first match wins).
+      {
+        source: "/compare/vapify-alternative",
+        destination: "/alternative/vapify",
+        permanent: true,
+      },
+      {
+        source: "/compare/synthflow-alternative",
+        destination: "/alternative/synthflow",
+        permanent: true,
+      },
       {
         source: "/compare",
         destination: "/alternative",
@@ -107,6 +115,19 @@ const nextConfig = {
       {
         source: "/compare/:slug",
         destination: "/alternative/:slug",
+        permanent: true,
+      },
+      // Case canonicalization: GSC shows impressions for /Privacy and /Terms
+      // (capitalized). Next.js routes are lowercase, so those 404 today and
+      // leak the accrued signals. 301 them to the live lowercase URLs.
+      {
+        source: "/Privacy",
+        destination: "/privacy",
+        permanent: true,
+      },
+      {
+        source: "/Terms",
+        destination: "/terms",
         permanent: true,
       },
       // Host canonicalization: serve one canonical host (www) so we never

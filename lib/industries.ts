@@ -1201,6 +1201,294 @@ export const industries: Industry[] = [
       },
     ],
   },
+  {
+    slug: "ai-voice-for-medical-practices",
+    name: "Medical Practices",
+    emoji: "🩺",
+    category: "Industry Use Case",
+    readTime: "7 min read",
+    datePublished: "2026-09-19T00:00:00Z",
+    productSupported: true,
+    metaTitle: "AI Receptionist for Medical Practices: Scheduling & Triage",
+    metaDescription:
+      "AI voice agents for medical practices answer every call, schedule visits, run recalls, and route urgent cases 24/7. White-label the AI receptionist for your agency.",
+    keywords: [
+      "ai voice medical practice",
+      "ai receptionist medical office",
+      "medical scheduling ai",
+      "patient recall ai",
+      "ai voice healthcare",
+      "hipaa voice ai",
+    ],
+    h1: "AI Voice for",
+    h1Highlight: "Medical Practices",
+    subtitle:
+      "Every patient call answered, every visit scheduled, every urgent case routed — with an AI receptionist that never puts care on hold.",
+    intro: [
+      "Medical practices run on the phone: appointment requests, prescription refills, lab-result questions, and the urgent calls that can't wait. When the front desk is rooming patients, the phone goes to voicemail — and patients who can't get through book elsewhere.",
+      "Fusion Calling gives practices, and the agencies serving them, a branded AI receptionist that answers every call instantly, schedules into the practice calendar, runs recall and reminder campaigns, and escalates clinical or urgent calls to staff with full context.",
+    ],
+    receptionistSection: {
+      heading: "Your AI receptionist for medical practices",
+      body:
+        "An AI receptionist answers every patient call in two rings, books and reschedules visits, handles refills routing and routine questions, and passes clinical concerns to your team immediately. The front desk stops choosing between the patient in front of them and the one on the phone.",
+      bullets: [
+        "Books, reschedules, and confirms visits on the call",
+        "Recall and reminder campaigns that fill the schedule",
+        "Routes refills, billing, and routine questions correctly",
+        "Escalates urgent or clinical calls to staff with context",
+      ],
+    },
+    useCases: [
+      {
+        emoji: "🗓️",
+        title: "Visit Scheduling",
+        description:
+          "Book, reschedule, and cancel visits directly into the practice calendar, including new-patient intake details.",
+      },
+      {
+        emoji: "🔔",
+        title: "Recalls & Reminders",
+        description:
+          "Outbound campaigns bring overdue patients back and cut no-shows with confirmations and rebooking offers.",
+      },
+      {
+        emoji: "🚨",
+        title: "Urgent Call Triage",
+        description:
+          "Symptom-urgency routing rules escalate concerning calls to on-call staff instantly instead of queueing them.",
+      },
+      {
+        emoji: "💊",
+        title: "Refills & Routine Requests",
+        description:
+          "Prescription refill requests, lab-result status, and billing questions route to the right queue with notes attached.",
+      },
+    ],
+    stats: [
+      { value: "30%", label: "average no-show reduction with reminders" },
+      { value: "100%", label: "of after-hours patient calls answered" },
+      { value: "0", label: "additional front-desk headcount required" },
+    ],
+    agencyAngle:
+      "Medical practices are premium retainer clients: high call volumes, measurable scheduling pain, and compliance needs that justify expert setup.",
+    agencyPoints: [
+      "Phones ring off the hook while staff room patients",
+      "Unfilled slots and no-shows are dollarized, visible pain",
+      "Recall campaigns show results in the first month",
+      "Compliance-aware deployments fit HIPAA-conscious buyers",
+    ],
+    whyFusion: sharedWhyFusion,
+    faqs: [
+      {
+        question: "Is AI voice suitable for medical practices?",
+        answer:
+          "Yes. Practices use Fusion Calling to answer calls, schedule and confirm visits, run patient recall, and route refills and routine questions — freeing staff for in-person care. Urgent or clinical calls escalate to your team immediately with full context.",
+      },
+      {
+        question: "How does urgent call handling work?",
+        answer:
+          "You define urgency routing rules up front: concerning symptoms, post-op issues, and anything you flag transfers to on-call staff instantly with the transcript and patient details, so nothing urgent waits in a queue.",
+      },
+      {
+        question: "Can I sell this to medical clients under my brand?",
+        answer:
+          "Yes. White-label partners deploy a fully branded AI receptionist per practice, set their own pricing, and keep 100% of client revenue.",
+      },
+    ],
+  },
+  {
+    slug: "ai-voice-for-beauty-wellness",
+    name: "Beauty & Wellness",
+    emoji: "💅",
+    category: "Industry Use Case",
+    readTime: "7 min read",
+    datePublished: "2026-09-19T00:00:00Z",
+    productSupported: true,
+    metaTitle: "AI Receptionist for Salons & Spas: Bookings 24/7",
+    metaDescription:
+      "AI voice agents for salons, spas, and clinics book appointments, fill cancellations, and answer questions 24/7. White-label the AI receptionist for your agency.",
+    keywords: [
+      "ai voice salon",
+      "ai receptionist spa",
+      "salon booking ai",
+      "spa appointment ai",
+      "ai voice beauty business",
+      "wellness clinic ai receptionist",
+    ],
+    h1: "AI Voice for",
+    h1Highlight: "Beauty & Wellness",
+    subtitle:
+      "Chairs stay full while hands stay busy — an AI receptionist that books, confirms, and backfills appointments around the clock.",
+    intro: [
+      "Salons, spas, and wellness clinics take bookings exactly when staff can't pick up: mid-treatment, mid-class, mid-rush. Every call that hits voicemail is a client booking with the competitor down the street.",
+      "Fusion Calling gives venues, and the agencies serving them, a branded AI receptionist that answers every call instantly, books into the real schedule, confirms and reminds automatically, and offers waitlisted clients newly opened slots the moment cancellations land.",
+    ],
+    receptionistSection: {
+      heading: "Your AI receptionist for salons and spas",
+      body:
+        "An AI receptionist answers every client call in two rings, books and reschedules services, sends confirmations and reminders, and fills cancellations from the waitlist — while your team keeps their hands on clients, not phones.",
+      bullets: [
+        "Books, reschedules, and confirms appointments on the call",
+        "Reminder calls that cut no-shows and late cancels",
+        "Waitlist backfill the moment a slot opens",
+        "Answers services, pricing, hours, and location questions",
+      ],
+    },
+    useCases: [
+      {
+        emoji: "🗓️",
+        title: "24/7 Service Booking",
+        description:
+          "Book cuts, treatments, and classes directly into the schedule — including evenings and weekends when clients actually plan.",
+      },
+      {
+        emoji: "🔔",
+        title: "Reminders That Protect Revenue",
+        description:
+          "Confirmation and reminder calls cut no-shows; rescheduling happens on the call instead of becoming an empty chair.",
+      },
+      {
+        emoji: "📋",
+        title: "Waitlist Backfill",
+        description:
+          "When a cancellation lands, waitlisted clients get offered the slot automatically — prime time stays sold.",
+      },
+      {
+        emoji: "🆕",
+        title: "New Client Intake",
+        description:
+          "Capture first-timer details, preferences, and how they found you, so the visit starts personal.",
+      },
+    ],
+    stats: [
+      { value: "40-60%", label: "no-show reduction with reminder calls" },
+      { value: "100%", label: "of after-hours booking calls answered" },
+      { value: "0", label: "missed bookings during treatments" },
+    ],
+    agencyAngle:
+      "Beauty and wellness venues are fast-closing retainer clients: obvious pain, simple deployments, and owners who feel every empty chair.",
+    agencyPoints: [
+      "Staff can't answer mid-treatment — the core pain is self-evident",
+      "Empty chairs and no-shows are counted daily by owners",
+      "Deployments are simple: booking plus reminders plus waitlist",
+      "High venue density means referrals travel fast",
+    ],
+    whyFusion: sharedWhyFusion,
+    faqs: [
+      {
+        question: "Is AI voice suitable for salons and spas?",
+        answer:
+          "Yes. Venues use Fusion Calling to answer every call, book into the live schedule, confirm and remind automatically, and backfill cancellations from the waitlist — all while staff stay with clients.",
+      },
+      {
+        question: "Can it handle complex service menus?",
+        answer:
+          "Yes. You provide services, durations, prices, and staff specialties in plain language, and the agent books correctly — including add-ons and the right provider for the requested treatment.",
+      },
+      {
+        question: "Can I sell this to salon and spa clients under my brand?",
+        answer:
+          "Yes. White-label partners deploy a fully branded AI receptionist per venue, set their own pricing, and keep 100% of client revenue.",
+      },
+    ],
+  },
+  {
+    slug: "ai-voice-for-veterinary",
+    name: "Veterinary",
+    emoji: "🐾",
+    category: "Industry Use Case",
+    readTime: "7 min read",
+    datePublished: "2026-09-19T00:00:00Z",
+    productSupported: true,
+    metaTitle: "AI Receptionist for Vet Clinics: Scheduling & Triage",
+    metaDescription:
+      "AI voice agents for veterinary clinics answer every call, book visits, run vaccine reminders, and escalate emergencies 24/7. White-label for your agency.",
+    keywords: [
+      "ai voice veterinary",
+      "ai receptionist vet clinic",
+      "vet appointment ai",
+      "veterinary reminder calls ai",
+      "ai voice animal hospital",
+      "vet triage ai",
+    ],
+    h1: "AI Voice for",
+    h1Highlight: "Veterinary Clinics",
+    subtitle:
+      "Every worried pet owner answered, every visit booked, every emergency escalated — even mid-surgery.",
+    intro: [
+      "Vet clinics live on an emotional phone line: appointment requests, vaccine schedules, post-op questions, and the urgent calls that can't wait. When the team is in surgery or with patients, the phone rings out — and anxious owners call the next clinic.",
+      "Fusion Calling gives clinics, and the agencies serving them, a branded AI receptionist that answers every call instantly, books into the practice calendar, runs vaccine and checkup reminders, and escalates emergencies to staff with full context.",
+    ],
+    receptionistSection: {
+      heading: "Your AI receptionist for vet clinics",
+      body:
+        "An AI receptionist answers every owner call in two rings, books and reschedules visits, handles vaccine reminders and routine questions, and passes emergencies straight to your team. The front desk stops triaging from memory while the phone rings.",
+      bullets: [
+        "Books, reschedules, and confirms visits on the call",
+        "Vaccine and wellness reminder campaigns",
+        "Answers hours, services, pricing, and prep questions",
+        "Escalates emergencies to staff instantly with context",
+      ],
+    },
+    useCases: [
+      {
+        emoji: "🗓️",
+        title: "Visit Scheduling",
+        description:
+          "Book wellness exams, vaccinations, surgeries, and follow-ups directly into the clinic calendar with prep instructions.",
+      },
+      {
+        emoji: "💉",
+        title: "Vaccine & Wellness Reminders",
+        description:
+          "Outbound campaigns bring overdue patients back for shots and annuals — recurring revenue on autopilot.",
+      },
+      {
+        emoji: "🚨",
+        title: "Emergency Escalation",
+        description:
+          "Urgency rules route concerning symptoms to staff immediately instead of queueing worried owners.",
+      },
+      {
+        emoji: "❓",
+        title: "Routine Questions",
+        description:
+          "Hours, services, pricing, boarding, and post-op care FAQs answered instantly, day or night.",
+      },
+    ],
+    stats: [
+      { value: "30%", label: "average no-show reduction with reminders" },
+      { value: "100%", label: "of after-hours owner calls answered" },
+      { value: "0", label: "additional front-desk headcount required" },
+    ],
+    agencyAngle:
+      "Vet clinics are loyal, high-retention clients: emotional buyer motivation, recurring reminder revenue, and underserved competition.",
+    agencyPoints: [
+      "Owners call anxious — instant answers win loyalty fast",
+      "Vaccine and wellness recalls create recurring campaign value",
+      "Few competitors serve vet specifically, so positioning is open",
+      "Multi-doctor practices scale minutes quickly",
+    ],
+    whyFusion: sharedWhyFusion,
+    faqs: [
+      {
+        question: "Is AI voice suitable for veterinary clinics?",
+        answer:
+          "Yes. Clinics use Fusion Calling to answer every call, book and confirm visits, run vaccine and wellness reminders, and route routine questions — while emergencies escalate to staff instantly with full context.",
+      },
+      {
+        question: "How are pet emergencies handled?",
+        answer:
+          "You define urgency rules up front: breathing issues, injuries, post-op concerns, and anything you flag transfers to staff immediately with the transcript and owner details. Routine calls never block urgent ones.",
+      },
+      {
+        question: "Can I sell this to vet clients under my brand?",
+        answer:
+          "Yes. White-label partners deploy a fully branded AI receptionist per clinic, set their own pricing, and keep 100% of client revenue.",
+      },
+    ],
+  },
 ];
 
 export function getIndustry(slug: string): Industry | undefined {

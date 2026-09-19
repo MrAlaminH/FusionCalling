@@ -483,6 +483,13 @@ export default function AiReceptionistPage() {
               <Link href="/whitelabel" className="text-brand hover:underline">
                 resell it under your agency brand
               </Link>
+              . Small business? Start with{" "}
+              <Link
+                href="/ai-receptionist-for-small-business"
+                className="text-brand hover:underline"
+              >
+                AI receptionist for small business
+              </Link>
               .
             </p>
           </div>

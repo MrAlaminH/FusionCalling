@@ -50,6 +50,7 @@ const COMPARISON_GLOSSARY_TERMS: Record<string, string[]> = {
   synthflow: ["White-Label", "SaaS", "Text-to-Speech"],
   thinkrr: ["White-Label", "Reseller", "SaaS"],
   "bland-ai": ["API", "Latency", "Automatic Speech Recognition"],
+  "smith-ai": ["AI Receptionist", "White-Label", "Human Handoff"],
   "air-ai": ["AI Voice Agent", "Latency", "White-Label"],
   vapi: ["Vapi", "Bring Your Own Key", "White-Label"],
   retell: ["Retell AI", "Latency", "White-Label"],

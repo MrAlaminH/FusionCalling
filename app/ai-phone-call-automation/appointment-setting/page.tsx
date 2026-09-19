@@ -5,115 +5,119 @@ import Footer from "@/components/Footer";
 import { buildOpenGraph } from "@/lib/seo";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 
-const title = "AI Cold Calling Software";
+const title = "AI Appointment Setting Services";
 const description =
-  "AI cold calling software that dials your lists, holds natural conversations, qualifies prospects, and books meetings — with TCPA-conscious workflows. From $149/mo.";
+  "AI appointment setting that calls new inquiries in minutes and books them into your calendar — speed-to-lead plus outbound setting campaigns. From $149/mo.";
 
 const handles = [
   {
-    title: "Outbound dialing at scale",
-    text: "Upload your prospect list and the agent places calls in parallel — re-engagement runs, follow-ups, and appointment-setting campaigns without adding dialers or staff.",
+    title: "Speed-to-lead in minutes",
+    text: "New web inquiries, ad leads, and missed calls get a live call within minutes — while intent is hot — instead of waiting for tomorrow's callback queue.",
   },
   {
-    title: "Natural two-way conversation",
-    text: "Prospects interrupt, ask questions, and change topics; the agent keeps up with sub-second responses and realistic pacing instead of reading a rigid script.",
+    title: "Real qualification conversations",
+    text: "The agent asks your budget, timeline, and fit questions naturally, so only sales-ready prospects reach your calendar — not every curious clicker.",
   },
   {
-    title: "Qualification & meeting booking",
-    text: "The agent asks your qualification questions, scores the prospect, books interested callers straight into your calendar, and logs everything to your CRM.",
+    title: "Direct calendar booking",
+    text: "Qualified prospects are booked into real availability on the call, with SMS confirmations in writing. No phone tag, no scheduling links ignored.",
   },
   {
-    title: "TCPA-conscious workflows",
-    text: "Support for consent-aware calling, time-of-day windows, and opt-out handling so your outbound programs stay respectful of regulations like the TCPA. You stay in control of the rules.",
+    title: "Outbound setting campaigns",
+    text: "Beyond inbound speed-to-lead, run proactive campaigns over stalled quotes, old inquiries, and dormant lists to refill the diary on demand.",
   },
   {
-    title: "Every call transcribed",
-    text: "Full transcripts and outcomes for every dial, so you can see what converts, tune the script, and prove ROI on every campaign.",
+    title: "Every attempt logged",
+    text: "Calls, outcomes, transcripts, and bookings write to your CRM automatically — you see contact rates and set-rates per source, not guesses.",
   },
   {
-    title: "Human handoff that closes",
-    text: "When a prospect is hot or asks for a person, the agent warm-transfers to your closer with the transcript and context — no restart, no lost momentum.",
+    title: "Human handoff for hot leads",
+    text: "High-value or complex prospects warm-transfer to your closers instantly with the full conversation attached — momentum preserved.",
   },
 ];
 
 const howItWorks = [
   {
-    title: "You load the campaign",
-    text: "Bring your prospect list, define the goal (book a meeting, re-engage, follow up), and set the qualification questions and objection handling in plain language — no code.",
+    title: "Leads flow in automatically",
+    text: "Web forms, ad platforms, and missed calls route straight to the agent. You define which sources trigger instant outreach and which qualify for campaigns.",
   },
   {
-    title: "The agent dials and converses",
-    text: "Calls go out in parallel within your time-of-day rules. The agent opens with your intro, handles questions and objections, and adapts to what the prospect actually says.",
+    title: "The agent calls and qualifies",
+    text: "Within minutes, the prospect gets a natural call: confirming interest, asking your qualification questions, handling objections, and proposing times.",
   },
   {
-    title: "Outcomes are captured instantly",
-    text: "Interested prospects are booked into your calendar or warm-transferred to your team. Every call ends with a transcript, outcome tag, and CRM record — nothing lives in someone's notebook.",
+    title: "Booked prospects land staffed",
+    text: "Set appointments appear in your calendar with notes and transcripts. No-shows get reminder calls automatically, and cancellations trigger rebooking.",
   },
 ];
 
 const useCases = [
   {
-    name: "Insurance",
-    href: "/industries/ai-voice-for-insurance",
-    text: "Follow up on quote requests, renewals, and lapses — consistently and within TCPA-conscious windows.",
-  },
-  {
     name: "Home Services",
     href: "/industries/ai-voice-for-home-services",
-    text: "Re-engage past customers for seasonal maintenance and book estimates straight into the calendar.",
+    text: "Quote requests called back in minutes and booked as estimates — before the homeowner calls the next contractor.",
   },
   {
-    name: "Automotive",
-    href: "/industries/ai-voice-for-automotive",
-    text: "Service reminders, recall outreach, and lease-end follow-ups that actually reach people.",
+    name: "Real Estate",
+    href: "/industries/ai-voice-for-real-estate",
+    text: "Portal inquiries answered instantly, buyers qualified, showings scheduled while competing agents sleep.",
   },
   {
     name: "Financial Services",
     href: "/industries/ai-voice-for-financial-services",
-    text: "Qualify inbound interest, schedule advisor meetings, and follow up on applications.",
+    text: "Application and inquiry follow-ups that book advisor meetings instead of decaying in a queue.",
+  },
+  {
+    name: "Beauty & Wellness",
+    href: "/industries/ai-voice-for-beauty-wellness",
+    text: "Booking inquiries converted to reserved chairs — first-time callers rarely wait for a callback.",
   },
 ];
 
 const faqs = [
   {
-    question: "Is AI cold calling legal?",
+    question: "What is AI appointment setting?",
     answer:
-      "Outbound calling rules depend on your jurisdiction — in the US, the TCPA governs consent, calling hours, and do-not-call obligations. AI cold calling software does not exempt you from those rules. Fusion Calling supports TCPA-conscious workflows like time-of-day windows and opt-out handling, but compliance decisions and list consent remain your responsibility. Consult counsel for your specific program.",
+      "AI appointment setting uses voice agents to call new leads within minutes of inquiry, qualify them in natural conversation, and book the sales-ready ones directly into your calendar. It combines speed-to-lead on inbound inquiries with proactive outbound campaigns over stalled or dormant leads.",
   },
   {
-    question: "Does cold calling still work?",
+    question: "How is this different from AI cold calling?",
     answer:
-      "It works when speed and consistency are on your side — the two things AI improves most. The agent dials every lead, follows up on time, and never tires of the tenth objection. Most teams use it for re-engagement, follow-up, and appointment setting rather than top-of-funnel cold lists.",
+      "Cold calling dials broad prospect lists to create interest from scratch; appointment setting works warm demand — fresh inquiries, quotes, and follow-ups — where speed decides who wins. Fusion Calling runs both on the same platform: read the AI cold calling software guide for the outbound side.",
   },
   {
-    question: "Can prospects tell the caller is an AI?",
+    question: "How fast does it contact new leads?",
     answer:
-      "The conversation sounds natural: sub-second replies, realistic pacing, and it handles interruptions. Many businesses introduce the agent by name. What matters to prospects is getting useful answers quickly — and a warm transfer to a human the moment they ask for one.",
+      "Minutes. Web forms, ad leads, and missed calls route to the agent automatically, and outreach starts while intent is highest. Teams typically see contact rates far above next-day manual callbacks.",
   },
   {
-    question: "How many calls can an AI agent make at once?",
+    question: "What does AI appointment setting cost?",
     answer:
-      "AI agents run many calls in parallel — capacity scales with your plan's included minutes rather than headcount. Plans start at $149/month with 500 minutes and scale to $497/month with 2,100 minutes, with no setup fee or long-term contract.",
+      "Fusion Calling plans start at $149/month with 500 included minutes and scale to $497/month for 2,100 minutes — no setup fee, no long-term contract. One extra booked job a month usually covers the plan; model your volume with the ROI calculator.",
   },
   {
-    question: "How much does AI cold calling software cost?",
+    question: "Does it integrate with my CRM and calendar?",
     answer:
-      "Fusion Calling plans start at $149/month with 500 included minutes and scale to $497/month for 2,100 minutes — no setup fee, no long-term contract. Compare that to SDR hours or per-seat dialers, and model your own numbers with the ROI calculator.",
+      "Yes. Bookings land in your real calendar availability, and every call writes outcomes, transcripts, and contact records to your CRM — plus Zapier links to 2,200+ apps. Nothing lives in a rep's notebook.",
   },
   {
-    question: "What happens when a prospect wants a human?",
+    question: "What happens to unqualified or uninterested leads?",
     answer:
-      "The agent warm-transfers instantly to you or your team with the full transcript, the prospect's details, and the reason for the handoff. Hot prospects reach a closer while they are still interested — the AI handles the dialing; your people close.",
+      "They're tagged with the reason and recycled correctly: nurture sequences, future campaigns, or suppression. Your closers only spend time on prospects worth calling — and the data shows exactly why the rest didn't convert.",
   },
 ];
 
 export const metadata: Metadata = {
   title,
   description,
-  ...buildOpenGraph({ title, description, path: "/ai-phone-call-automation/cold-calling" }),
+  ...buildOpenGraph({
+    title,
+    description,
+    path: "/ai-phone-call-automation/appointment-setting",
+  }),
 };
 
-export default function AiColdCallingPage() {
+export default function AiAppointmentSettingPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -135,27 +139,27 @@ export default function AiColdCallingPage() {
           {
             "@type": "ListItem",
             position: 3,
-            name: "AI Cold Calling Software",
-            item: `${SITE_URL}/ai-phone-call-automation/cold-calling`,
+            name: "AI Appointment Setting Services",
+            item: `${SITE_URL}/ai-phone-call-automation/appointment-setting`,
           },
         ],
       },
       {
         "@type": "WebPage",
-        "@id": `${SITE_URL}/ai-phone-call-automation/cold-calling#webpage`,
-        url: `${SITE_URL}/ai-phone-call-automation/cold-calling`,
+        "@id": `${SITE_URL}/ai-phone-call-automation/appointment-setting#webpage`,
+        url: `${SITE_URL}/ai-phone-call-automation/appointment-setting`,
         name: title,
         description,
         inLanguage: "en-US",
         dateModified: CONTENT_LAST_UPDATED,
         isPartOf: { "@id": `${SITE_URL}/#website` },
         breadcrumb: {
-          "@id": `${SITE_URL}/ai-phone-call-automation/cold-calling#breadcrumb`,
+          "@id": `${SITE_URL}/ai-phone-call-automation/appointment-setting#breadcrumb`,
         },
       },
       {
         "@type": "FAQPage",
-        "@id": `${SITE_URL}/ai-phone-call-automation/cold-calling#faqpage`,
+        "@id": `${SITE_URL}/ai-phone-call-automation/appointment-setting#faqpage`,
         mainEntity: faqs.map((f) => ({
           "@type": "Question",
           name: f.question,
@@ -168,7 +172,7 @@ export default function AiColdCallingPage() {
   return (
     <>
       <script
-        id="ai-cold-calling-schema"
+        id="ai-appointment-setting-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
@@ -186,22 +190,18 @@ export default function AiColdCallingPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               AI{" "}
               <span className="bg-gradient-to-r from-brand to-brand-strong text-transparent bg-clip-text">
-                Cold Calling
+                Appointment Setting
               </span>{" "}
-              Software That Books Meetings
+              That Calls Leads in Minutes
             </h1>
             <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
-              Dial your lists with agents that hold real conversations,
-              qualify prospects, and book meetings into your calendar — with
-              TCPA-conscious workflows and every call transcribed.{" "}
+              Speed-to-lead on every inquiry plus outbound setting campaigns —
+              qualified prospects booked straight into your calendar.{" "}
               <Link href="/pricing" className="text-brand hover:underline">
                 View pricing
               </Link>{" "}
               or{" "}
-              <Link
-                href="/#show-case"
-                className="text-brand hover:underline"
-              >
+              <Link href="/#show-case" className="text-brand hover:underline">
                 hear live demo calls
               </Link>
               .
@@ -226,31 +226,33 @@ export default function AiColdCallingPage() {
         <section id="what-is" className="w-full bg-black py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              What is AI cold calling software?
+              What is AI appointment setting?
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-4">
-              AI cold calling software places outbound sales calls with voice
-              agents instead of people. The agent dials your list, holds a
-              natural two-way conversation, handles questions and objections,
-              qualifies the prospect, books meetings, and logs the outcome to
-              your CRM — all while staying inside the calling rules you
-              configure.
+              AI appointment setting calls new leads within minutes of their
+              inquiry, qualifies them in natural conversation, and books the
+              ready ones into your calendar — then keeps working stalled and
+              dormant leads with outbound campaigns. It is the bridge between
+              marketing spend and sales conversations.
             </p>
             <p className="text-gray-400 text-lg leading-relaxed">
-              It is part of the broader shift toward{" "}
+              It runs on the same platform as{" "}
               <Link
                 href="/ai-phone-call-automation"
                 className="text-brand hover:underline"
               >
                 AI phone call automation
               </Link>
-              : routine call work runs on software, and your team spends its
-              hours on the conversations that actually need a person. Running
-              inbound too? Pair it with the{" "}
-              <Link href="/ai-receptionist" className="text-brand hover:underline">
-                AI receptionist
+              : inbound inquiries get instant outreach, outbound lists get
+              systematic follow-up, and your closers only meet qualified
+              prospects. Pair it with{" "}
+              <Link
+                href="/ai-phone-call-automation/lead-qualification"
+                className="text-brand hover:underline"
+              >
+                AI lead qualification
               </Link>{" "}
-              so no call — inbound or outbound — goes uncovered.
+              for deeper screening.
             </p>
           </div>
         </section>
@@ -258,7 +260,7 @@ export default function AiColdCallingPage() {
         <section id="what-it-handles" className="w-full bg-black py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-10">
-              What the AI caller handles
+              What the AI setter handles
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {handles.map((h) => (
@@ -281,7 +283,7 @@ export default function AiColdCallingPage() {
         <section id="how-it-works" className="w-full bg-black py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-10">
-              How AI cold calling works
+              How AI appointment setting works
             </h2>
             <div className="space-y-8">
               {howItWorks.map((step, i) => (
@@ -304,11 +306,10 @@ export default function AiColdCallingPage() {
         <section id="use-cases" className="w-full bg-black py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Industries getting the most from AI cold calling
+              Businesses that book more with AI setters
             </h2>
             <p className="text-gray-400 leading-relaxed mb-10">
-              The best fit is follow-up-heavy businesses where consistent
-              outbound touches directly create bookings:
+              Any business where the fastest responder wins the job:
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {useCases.map((uc) => (
@@ -318,7 +319,7 @@ export default function AiColdCallingPage() {
                   className="group rounded-xl border border-brand/20 bg-black/40 p-5 hover:border-brand/40 transition-colors"
                 >
                   <h3 className="font-semibold text-brand-light mb-2 group-hover:text-brand transition-colors">
-                    AI cold calling for {uc.name}
+                    AI appointment setting for {uc.name}
                   </h3>
                   <p className="text-sm text-gray-400 leading-relaxed">
                     {uc.text}
@@ -332,13 +333,13 @@ export default function AiColdCallingPage() {
         <section id="pricing" className="w-full bg-black py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              AI cold calling pricing
+              AI appointment setting pricing
             </h2>
             <p className="text-gray-400 leading-relaxed mb-10">
-              Outbound runs on the same plans as everything else: $149/month
+              Setting runs on the same plans as everything else: $149/month
               with 500 included minutes, scaling to $497/month for 2,100
-              minutes — no setup fee, no long-term contract. Estimate your
-              campaign capacity with the{" "}
+              minutes — no setup fee, no long-term contract. Estimate capacity
+              with the{" "}
               <Link href="/calculator" className="text-brand hover:underline">
                 call volume calculator
               </Link>{" "}
@@ -346,14 +347,7 @@ export default function AiColdCallingPage() {
               <Link href="/pricing" className="text-brand hover:underline">
                 full plan breakdown
               </Link>
-              . Agency reselling outbound as a service? The{" "}
-              <Link
-                href="/whitelabel/reseller-program"
-                className="text-brand hover:underline"
-              >
-                AI voice agent reseller program
-              </Link>{" "}
-              starts at $99/month.
+              .
             </p>
           </div>
         </section>
@@ -381,14 +375,17 @@ export default function AiColdCallingPage() {
             <p className="text-gray-400 mt-8">
               Keep exploring:{" "}
               <Link
-                href="/ai-phone-call-receptionist"
+                href="/ai-phone-call-automation/cold-calling"
                 className="text-brand hover:underline"
               >
-                how an AI phone call receptionist works
+                AI cold calling software
               </Link>
-              , the{" "}
-              <Link href="/ai-receptionist" className="text-brand hover:underline">
-                AI receptionist for inbound calls
+              ,{" "}
+              <Link
+                href="/ai-phone-call-automation"
+                className="text-brand hover:underline"
+              >
+                the automation platform guide
               </Link>
               , or{" "}
               <Link href="/pricing" className="text-brand hover:underline">
