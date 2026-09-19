@@ -151,8 +151,8 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
                     Every call gets answered, qualified, and routed or booked
                     so revenue stops leaking to voicemail. New to the
                     concept? Start with our{" "}
-                    <Link href="/ai-phone-call-automation" className="text-brand-light hover:text-brand transition-colors">
-                      guide to AI phone call automation
+                    <Link href="/ai-phone-call-receptionist" className="text-brand-light hover:text-brand transition-colors">
+                      guide to AI phone call receptionists
                     </Link>
                     . This is the core pitch for{" "}
                     <Link href="/industries/ai-voice-for-home-services" className="text-brand-light hover:text-brand transition-colors">

@@ -52,8 +52,8 @@ export default function HowToAutomatePhoneCallsWithAI() {
             </p>
             <p className="text-brand-light font-semibold mb-8">
               New to the topic? Start with our{" "}
-              <Link href="/ai-phone-call-automation" className="underline hover:text-brand transition-colors">
-                guide to AI call automation
+              <Link href="/ai-phone-call-receptionist" className="underline hover:text-brand transition-colors">
+                guide to AI phone call receptionists
               </Link>
               .
             </p>
@@ -228,8 +228,8 @@ export default function HowToAutomatePhoneCallsWithAI() {
             </p>
             <p className="text-gray-300 leading-relaxed mb-8">
               Want the bigger picture first? Read our{" "}
-              <Link href="/ai-phone-call-automation" className="text-brand-light hover:text-brand transition-colors">
-                guide to AI phone call automation
+              <Link href="/ai-phone-call-receptionist" className="text-brand-light hover:text-brand transition-colors">
+                guide to AI phone call receptionists
               </Link>
               , or check current plans and start your setup today.
             </p>

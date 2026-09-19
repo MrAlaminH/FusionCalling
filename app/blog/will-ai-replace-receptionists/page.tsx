@@ -318,8 +318,8 @@ export default function WillAIReplaceReceptionistsBlogPost() {
                 AI receptionist platform
               </Link>{" "}
               gets you live fast, and{" "}
-              <Link href="/ai-phone-call-automation" className="text-brand-light hover:text-brand transition-colors">
-                how AI phone call automation works
+              <Link href="/ai-phone-call-receptionist" className="text-brand-light hover:text-brand transition-colors">
+                how an AI phone call receptionist works
               </Link>{" "}
               explains what&apos;s happening under the hood before you
               commit. Business plans run from $149/mo with 500 included

@@ -24,7 +24,7 @@ const productLinks = [
 const resourceLinks = [
   { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/faq" },
-  { label: "AI Phone Call Automation Guide", href: "/ai-phone-call-automation" },
+  { label: "AI Phone Call Receptionist Guide", href: "/ai-phone-call-receptionist" },
   { label: "Case Studies", href: "/whitelabel/case-studies" },
   { label: "Platform Comparison", href: "/whitelabel/compare" },
   { label: "Locations", href: "/whitelabel/locations" },

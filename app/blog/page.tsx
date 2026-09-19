@@ -120,10 +120,10 @@ export default function BlogPage() {
               </h2>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-8">
                 <Link
-                  href="/ai-phone-call-automation"
+                  href="/ai-phone-call-receptionist"
                   className="text-brand-light hover:text-brand transition-colors underline-offset-4 hover:underline"
                 >
-                  Call automation guide
+                  AI phone call receptionist guide
                 </Link>
                 <Link
                   href="/alternative"

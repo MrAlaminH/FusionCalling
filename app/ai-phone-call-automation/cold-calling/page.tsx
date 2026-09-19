@@ -129,8 +129,8 @@ export default function AiColdCallingPage() {
           {
             "@type": "ListItem",
             position: 2,
-            name: "AI Phone Call Automation",
-            item: `${SITE_URL}/ai-phone-call-automation`,
+            name: "AI Phone Call Receptionist",
+            item: `${SITE_URL}/ai-phone-call-receptionist`,
           },
           {
             "@type": "ListItem",
@@ -239,7 +239,7 @@ export default function AiColdCallingPage() {
             <p className="text-gray-400 text-lg leading-relaxed">
               It is part of the broader shift toward{" "}
               <Link
-                href="/ai-phone-call-automation"
+                href="/ai-phone-call-receptionist"
                 className="text-brand hover:underline"
               >
                 AI phone call automation
@@ -381,10 +381,10 @@ export default function AiColdCallingPage() {
             <p className="text-gray-400 mt-8">
               Keep exploring:{" "}
               <Link
-                href="/ai-phone-call-automation"
+                href="/ai-phone-call-receptionist"
                 className="text-brand hover:underline"
               >
-                how AI phone call automation works
+                how an AI phone call receptionist works
               </Link>
               , the{" "}
               <Link href="/ai-receptionist" className="text-brand hover:underline">

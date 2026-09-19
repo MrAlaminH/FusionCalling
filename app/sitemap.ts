@@ -30,7 +30,7 @@ const STATIC_PATHS: string[] = [
   "/whitelabel/gohighlevel",
   "/whitelabel/reseller-program",
   "/whitelabel/locations",
-  "/ai-phone-call-automation",
+  "/ai-phone-call-receptionist",
   "/ai-phone-call-automation/appointment-reminders",
   "/ai-phone-call-automation/cold-calling",
   "/ai-phone-call-automation/lead-qualification",

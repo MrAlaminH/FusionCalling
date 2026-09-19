@@ -1,7 +1,7 @@
 # Fusion Calling - Full Content for AI Crawlers
 # Generated at build time. Contains all indexable page content.
 # Source: https://www.fusioncalling.com
-# Last updated: 2026-09-18
+# Last updated: 2026-09-19
 
 ## AI Phone Call Automation & AI Receptionist | Fusion Calling
 URL: https://www.fusioncalling.com/
@@ -984,10 +984,10 @@ The fastest way to reach Fusion Calling is email at hello@fusioncalling.com (sal
 
 ---
 
-## What Is AI Phone Call Automation? | Fusion Calling
-URL: https://www.fusioncalling.com/ai-phone-call-automation
+## What Is an AI Phone Call Receptionist? | Fusion Calling
+URL: https://www.fusioncalling.com/ai-phone-call-receptionist
 
-Plain-English explainer on AI phone call automation: how AI voice agents answer and place calls, the tech behind them, and results with Fusion Calling. Covers ASR, LLM, TTS, telephony, and deployment in 4 weeks.
+Plain-English explainer on the AI phone call receptionist: how AI voice agents answer and place calls, the tech behind them, and results with Fusion Calling. Covers ASR, LLM, TTS, telephony, and deployment in days.
 
 ---
 

@@ -143,9 +143,9 @@ Compliance: call audio is encrypted in transit (TLS/SRTP) and at rest (AES-256).
     content: `The fastest way to reach Fusion Calling is email at hello@fusioncalling.com (sales, support, and partnership questions). Phone: +1 (914) 639-4069 during US business hours. Live walkthrough: book a 20-minute discovery call at https://cal.com/mralamin/discovery-call.`,
   },
   {
-    path: "/ai-phone-call-automation",
-    title: "What Is AI Phone Call Automation? | Fusion Calling",
-    content: `Plain-English explainer on AI phone call automation: how AI voice agents answer and place calls, the tech behind them, and results with Fusion Calling. Covers ASR, LLM, TTS, telephony, and deployment in 4 weeks.`,
+    path: "/ai-phone-call-receptionist",
+    title: "What Is an AI Phone Call Receptionist? | Fusion Calling",
+    content: `Plain-English explainer on the AI phone call receptionist: how AI voice agents answer and place calls, the tech behind them, and results with Fusion Calling. Covers ASR, LLM, TTS, telephony, and deployment in days.`,
   },
   {
     path: "/privacy",

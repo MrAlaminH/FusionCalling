@@ -120,8 +120,8 @@ export default function LeadQualificationPage() {
           {
             "@type": "ListItem",
             position: 2,
-            name: "AI Phone Call Automation",
-            item: `${SITE_URL}/ai-phone-call-automation`,
+            name: "AI Phone Call Receptionist",
+            item: `${SITE_URL}/ai-phone-call-receptionist`,
           },
           {
             "@type": "ListItem",
@@ -224,10 +224,10 @@ export default function LeadQualificationPage() {
               prospect usually wins the conversation. Curious how the calling
               itself works? Read{" "}
               <Link
-                href="/ai-phone-call-automation"
+                href="/ai-phone-call-receptionist"
                 className="text-brand hover:underline"
               >
-                how AI phone call automation works
+                how an AI phone call receptionist works
               </Link>
               .
             </p>
@@ -353,10 +353,10 @@ export default function LeadQualificationPage() {
             <p className="text-gray-400 mt-8">
               Want qualification alongside inbound coverage? Learn{" "}
               <Link
-                href="/ai-phone-call-automation"
+                href="/ai-phone-call-receptionist"
                 className="text-brand hover:underline"
               >
-                how AI phone call automation works
+                how an AI phone call receptionist works
               </Link>
               , meet the{" "}
               <Link href="/ai-receptionist" className="text-brand hover:underline">

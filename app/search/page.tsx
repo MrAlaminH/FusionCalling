@@ -42,10 +42,10 @@ const PAGES: Result[] = [
   },
   {
     type: "Page",
-    title: "AI Phone Call Automation Explainer",
+    title: "AI Phone Call Receptionist Explainer",
     description:
-      "Plain-English guide to AI phone call automation: how voice agents answer and place calls, the tech behind them, and results.",
-    href: "/ai-phone-call-automation",
+      "Plain-English guide to the AI phone call receptionist: how voice agents answer and place calls, the tech behind them, and results.",
+    href: "/ai-phone-call-receptionist",
   },
   {
     type: "Page",

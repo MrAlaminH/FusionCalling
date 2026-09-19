@@ -80,6 +80,14 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // Keyword retarget: the explainer moved from the "automation" slug to
+      // the higher-intent "AI phone call receptionist" query. 301 preserves
+      // any accrued signals; child use-case guides stay on their own URLs.
+      {
+        source: "/ai-phone-call-automation",
+        destination: "/ai-phone-call-receptionist",
+        permanent: true,
+      },
       // Author-entity consolidation: the old team slug 404'd; every schema
       // reference now points at /team/voice-team.
       {

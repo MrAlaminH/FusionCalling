@@ -7,14 +7,14 @@ import Sources from "@/components/sources";
 import { buildOpenGraph } from "@/lib/seo";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 
-const title = "AI Phone Call Automation: 2026 Guide";
+const title = "AI Phone Call Receptionist: 2026 Guide";
 const description =
-  "Learn how AI phone call automation works: ASR to LLM to TTS, IVR vs AI handling, telephony automation, and conversational AI for phone calls — plain-English 2026 guide with FAQs.";
+  "How an AI phone call receptionist works: the ASR, LLM, and TTS pipeline behind it, what it handles on calls, and how it compares to IVR and human staff.";
 
 const howItWorksSteps = [
   {
     title: "The call connects",
-    text: "An inbound caller reaches your business number — or the AI agent places an outbound call from your number. There is no phone tree and no hold music; a natural voice answers on the first ring, in your brand's tone.",
+    text: "An inbound caller reaches your business number — or the AI receptionist places an outbound call from your number. There is no phone tree and no hold music; a natural voice answers on the first ring, in your brand's tone.",
   },
   {
     title: "Speech is transcribed in real time",
@@ -26,11 +26,11 @@ const howItWorksSteps = [
   },
   {
     title: "Voice synthesis replies naturally",
-    text: "Text-to-speech renders the response in a selected voice with realistic pacing, pauses, and intonation. Callers can interrupt (barge-in), change topics mid-sentence, or switch languages, and the agent follows.",
+    text: "Text-to-speech renders the response in a selected voice with realistic pacing, pauses, and intonation. Callers can interrupt (barge-in), change topics mid-sentence, or switch languages, and the receptionist follows.",
   },
   {
     title: "Actions happen during the call",
-    text: "The agent books the appointment in your calendar, writes the lead to your CRM, sends an SMS confirmation, processes common requests end-to-end, and transfers to a human teammate when judgment or empathy demands it.",
+    text: "The receptionist books the appointment in your calendar, writes the lead to your CRM, sends an SMS confirmation, processes common requests end-to-end, and transfers to a human teammate when judgment or empathy demands it.",
   },
 ];
 
@@ -69,9 +69,20 @@ const useCases = [
 
 const faqs = [
   {
-    question: "Is AI phone call automation the same as an IVR menu?",
+    question: "What does an AI phone call receptionist do?",
     answer:
-      "No. A traditional IVR forces callers through numbered menus ('press 1 for sales'). AI phone call automation uses conversational voice agents that understand free-form speech, remember context within the call, and complete tasks like booking or CRM updates — callers simply say what they need.",
+      "An AI phone call receptionist answers your business lines around the clock: it greets callers, answers questions about your services, hours, and policies, books and reschedules appointments, takes detailed messages, sends SMS follow-ups, and transfers urgent or sensitive calls to your team with full context.",
+  },
+  {
+    question:
+      "Is an AI phone call receptionist the same as AI phone call automation?",
+    answer:
+      "They are closely related. AI phone call automation is the underlying capability — software that handles inbound and outbound calls without a human. The AI receptionist is its business-facing application: a named voice agent that answers your line, follows your rules for greetings, booking, and handoffs, and behaves like a front-desk employee. People searching either term usually want the same thing.",
+  },
+  {
+    question: "Is an AI phone call receptionist the same as an IVR menu?",
+    answer:
+      "No. A traditional IVR forces callers through numbered menus ('press 1 for sales'). An AI receptionist uses conversational voice agents that understand free-form speech, remember context within the call, and complete tasks like booking or CRM updates — callers simply say what they need.",
   },
   {
     question: "Can callers tell they are talking to an AI?",
@@ -84,7 +95,7 @@ const faqs = [
       "Well-configured agents detect situations that require human judgment — complex disputes, emotional conversations, unusual requests — and transfer the call to your team with full context: a transcript, the caller's details, and the reason for the handoff.",
   },
   {
-    question: "How much does AI phone call automation cost?",
+    question: "How much does an AI phone call receptionist cost?",
     answer:
       "Fusion Calling plans start at $149/month with 500 included minutes, scale to $497/month for 2,100 minutes, and require no long-term contracts. Use our ROI calculator to estimate savings against missed calls and staffing costs.",
   },
@@ -128,10 +139,10 @@ const faqs = [
 export const metadata: Metadata = {
   title,
   description,
-  ...buildOpenGraph({ title, description, path: "/ai-phone-call-automation" }),
+  ...buildOpenGraph({ title, description, path: "/ai-phone-call-receptionist" }),
 };
 
-export default function AiPhoneCallAutomationPage() {
+export default function AiPhoneCallReceptionistPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -147,15 +158,15 @@ export default function AiPhoneCallAutomationPage() {
           {
             "@type": "ListItem",
             position: 2,
-            name: "What Is AI Phone Call Automation?",
-            item: `${SITE_URL}/ai-phone-call-automation`,
+            name: "What Is an AI Phone Call Receptionist?",
+            item: `${SITE_URL}/ai-phone-call-receptionist`,
           },
         ],
       },
       {
         "@type": "Article",
-        "@id": `${SITE_URL}/ai-phone-call-automation#article`,
-        headline: "AI Phone Call Automation, Explained",
+        "@id": `${SITE_URL}/ai-phone-call-receptionist#article`,
+        headline: "AI Phone Call Receptionist, Explained",
         description,
         inLanguage: "en-US",
         datePublished: "2026-01-15",
@@ -164,31 +175,31 @@ export default function AiPhoneCallAutomationPage() {
         publisher: { "@id": `${SITE_URL}/#organization` },
         mainEntityOfPage: {
           "@type": "WebPage",
-          "@id": `${SITE_URL}/ai-phone-call-automation`,
+          "@id": `${SITE_URL}/ai-phone-call-receptionist`,
         },
         about: {
           "@type": "DefinedTerm",
-          name: "AI phone call automation",
+          name: "AI phone call receptionist",
           description:
-            "The use of AI voice agents to automatically place and answer business phone calls without a human on the line.",
+            "A voice agent that answers a business's phone lines around the clock — greeting callers, answering questions, booking appointments, and handing complex calls to the team.",
         },
       },
       {
         "@type": "WebPage",
-        "@id": `${SITE_URL}/ai-phone-call-automation#webpage`,
-        url: `${SITE_URL}/ai-phone-call-automation`,
+        "@id": `${SITE_URL}/ai-phone-call-receptionist#webpage`,
+        url: `${SITE_URL}/ai-phone-call-receptionist`,
         name: title,
         description,
         inLanguage: "en-US",
         dateModified: CONTENT_LAST_UPDATED,
         isPartOf: { "@id": `${SITE_URL}/#website` },
         breadcrumb: {
-          "@id": `${SITE_URL}/ai-phone-call-automation#breadcrumb`,
+          "@id": `${SITE_URL}/ai-phone-call-receptionist#breadcrumb`,
         },
       },
       {
         "@type": "FAQPage",
-        "@id": `${SITE_URL}/ai-phone-call-automation#faqpage`,
+        "@id": `${SITE_URL}/ai-phone-call-receptionist#faqpage`,
         mainEntity: faqs.map((f) => ({
           "@type": "Question",
           name: f.question,
@@ -201,7 +212,7 @@ export default function AiPhoneCallAutomationPage() {
   return (
     <>
       <script
-        id="ai-phone-call-automation-schema"
+        id="ai-phone-call-receptionist-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
@@ -218,19 +229,20 @@ export default function AiPhoneCallAutomationPage() {
               Voice AI 101
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              What Is{" "}
+              What Is an{" "}
               <span className="bg-gradient-to-r from-brand to-brand-strong text-transparent bg-clip-text">
-                AI Phone Call Automation
+                AI Phone Call Receptionist
               </span>
               ?
             </h1>
             <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
-              A complete, plain-English guide to how AI voice agents place and
-              answer calls, the technology that powers them, and the results
-              businesses see — plus the standards Fusion Calling follows. Ready
-              to buy?{" "}
+              A complete, plain-English guide to how an AI receptionist answers
+              and acts on business calls, the technology that powers it, and the
+              results businesses see — plus the standards Fusion Calling
+              follows. Ready to buy?{" "}
               <Link href="/" className="text-brand hover:underline">
-                Get AI phone automation for your business with live demo calls
+                Get an AI phone call receptionist for your business with live
+                demo calls
               </Link>{" "}
               or{" "}
               <Link href="/pricing" className="text-brand hover:underline">
@@ -262,7 +274,7 @@ export default function AiPhoneCallAutomationPage() {
         <section id="how-it-works" className="w-full bg-black py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-10">
-              How AI phone call automation works
+              How an AI phone call receptionist works
             </h2>
             <div className="space-y-8">
               {howItWorksSteps.map((step, i) => (
@@ -289,8 +301,9 @@ export default function AiPhoneCallAutomationPage() {
               What businesses use it for
             </h2>
             <p className="text-gray-400 leading-relaxed mb-10">
-              Any business that loses revenue to missed calls benefits from AI
-              phone automation. These verticals see the fastest payback:
+              Any business that loses revenue to missed calls benefits from an
+              AI phone call receptionist. These verticals see the fastest
+              payback:
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {useCases.map((uc) => (
@@ -300,7 +313,7 @@ export default function AiPhoneCallAutomationPage() {
                   className="group rounded-xl border border-brand/20 bg-black/40 p-5 hover:border-brand/40 transition-colors"
                 >
                   <h3 className="font-semibold text-brand-light mb-2 group-hover:text-brand transition-colors">
-                    AI phone automation for {uc.name}
+                    AI receptionist for {uc.name}
                   </h3>
                   <p className="text-sm text-gray-400 leading-relaxed">
                     {uc.text}
@@ -389,12 +402,13 @@ export default function AiPhoneCallAutomationPage() {
               </div>
               <div className="rounded-xl border border-white/10 p-5">
                 <h3 className="font-semibold text-white mb-1">
-                  vs. hiring a receptionist
+                  vs. a human receptionist
                 </h3>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  A full-time receptionist covers ~40 hours a week and one call
-                  at a time. AI agents handle unlimited concurrent calls, never
-                  take leave, and cost a fraction of a salary.
+                  A full-time human receptionist covers ~40 hours a week and one
+                  call at a time. An AI receptionist handles unlimited
+                  concurrent calls, never takes leave, and costs a fraction of a
+                  salary.
                 </p>
               </div>
             </div>
@@ -429,7 +443,8 @@ export default function AiPhoneCallAutomationPage() {
               </Link>
               ,{" "}
               <Link href="/" className="text-brand hover:underline">
-                get AI phone automation with a live demo on the homepage
+                get an AI phone call receptionist with a live demo on the
+                homepage
               </Link>
               , or{" "}
               <Link href="/#show-case" className="text-brand hover:underline">

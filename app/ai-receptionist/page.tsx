@@ -313,10 +313,10 @@ export default function AiReceptionistPage() {
               to your existing number, calendar, and CRM, so it works inside
               the workflow you already run. Curious about the technology? Read{" "}
               <Link
-                href="/ai-phone-call-automation"
+                href="/ai-phone-call-receptionist"
                 className="text-brand hover:underline"
               >
-                how AI phone automation works
+                how an AI phone call receptionist works
               </Link>
               .
             </p>

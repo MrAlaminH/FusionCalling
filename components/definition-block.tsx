@@ -1,8 +1,8 @@
 export const definitionBlockData = {
-  eyebrow: "What is AI phone call automation?",
-  heading: "AI phone call automation, explained",
+  eyebrow: "What is an AI phone call receptionist?",
+  heading: "AI phone call receptionist, explained",
   intro:
-    "AI phone call automation is the use of artificial intelligence voice agents to automatically place and answer business phone calls — without a human on the line. Powered by speech recognition, large language models, and text-to-speech, these agents hold natural, two-way conversations that book appointments, qualify leads, answer FAQs, and route complex calls to your team, 24/7.",
+    "An AI phone call receptionist is a voice agent that answers and places business phone calls for you — without a human on the line. Powered by speech recognition, large language models, and text-to-speech, it holds natural, two-way conversations that book appointments, qualify leads, answer FAQs, and route complex calls to your team, 24/7.",
   detail:
     "Unlike a traditional IVR menu or a basic chatbot, a modern AI receptionist understands context, remembers details within a call, and integrates with your CRM, calendar, and helpdesk in real time.",
   stats: [

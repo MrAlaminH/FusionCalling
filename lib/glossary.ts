@@ -66,7 +66,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     whyItMatters:
       "AI calling turns the phone channel — the highest-intent channel most businesses miss — into an always-on operation, which is why agencies package it as their flagship white-label offer.",
     related: ["AI Voice Agent", "Conversational AI", "Outbound Calls"],
-    platform: { label: "How AI phone call automation works", href: "/ai-phone-call-automation" },
+    platform: { label: "How an AI phone call receptionist works", href: "/ai-phone-call-receptionist" },
   },
   {
     term: "AI Voice Agent",
@@ -76,7 +76,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     whyItMatters:
       "Voice agents let businesses answer every call instantly and operate 24/7, which is the core value agencies resell through a white-label platform.",
     related: ["Conversational AI", "AI Receptionist", "Large Language Model"],
-    platform: { label: "See how AI voice agents work in practice", href: "/ai-phone-call-automation" },
+    platform: { label: "See how AI voice agents work in practice", href: "/ai-phone-call-receptionist" },
   },
   {
     term: "AI Receptionist",

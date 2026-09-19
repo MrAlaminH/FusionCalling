@@ -25,11 +25,11 @@ const FAQSection = dynamic(() => import("@/components/FAQs"));
 const Calendar = dynamic(() => import("@/components/calendar"), { ssr: false });
 
 export const metadata: Metadata = {
-  title: "AI Phone Call Automation — AI Receptionist",
+  title: "AI Phone Call Receptionist — AI Call Automation",
   description:
     "Fusion Calling AI voice agents answer & place calls 24/7, book appointments, and qualify leads. Live demo, plans from $149/mo.",
   ...buildOpenGraph({
-    title: "AI Phone Call Automation — AI Receptionist",
+    title: "AI Phone Call Receptionist — AI Call Automation",
     description:
       "Fusion Calling AI voice agents answer & place calls 24/7, book appointments, and qualify leads. Live demo, plans from $149/mo.",
     path: "/",
@@ -309,10 +309,10 @@ export default function Home() {
           </Link>
           . New to the technology?{" "}
           <Link
-            href="/ai-phone-call-automation"
+            href="/ai-phone-call-receptionist"
             className="text-brand hover:text-brand-light underline underline-offset-4 hover:underline transition-colors"
           >
-            Learn how call automation works in the 2026 guide
+            Learn how an AI phone call receptionist works in the 2026 guide
           </Link>
           .
         </p>

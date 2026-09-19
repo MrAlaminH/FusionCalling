@@ -120,8 +120,8 @@ export default function AppointmentRemindersPage() {
           {
             "@type": "ListItem",
             position: 2,
-            name: "AI Phone Call Automation",
-            item: `${SITE_URL}/ai-phone-call-automation`,
+            name: "AI Phone Call Receptionist",
+            item: `${SITE_URL}/ai-phone-call-receptionist`,
           },
           {
             "@type": "ListItem",
@@ -224,10 +224,10 @@ export default function AppointmentRemindersPage() {
               chair, the table, or the tech sits idle either way. Want the
               underlying technology first? Read{" "}
               <Link
-                href="/ai-phone-call-automation"
+                href="/ai-phone-call-receptionist"
                 className="text-brand hover:underline"
               >
-                how AI phone call automation works
+                how an AI phone call receptionist works
               </Link>
               .
             </p>
@@ -353,10 +353,10 @@ export default function AppointmentRemindersPage() {
             <p className="text-gray-400 mt-8">
               Want reminders as part of a full phone agent? Learn{" "}
               <Link
-                href="/ai-phone-call-automation"
+                href="/ai-phone-call-receptionist"
                 className="text-brand hover:underline"
               >
-                how AI phone call automation works
+                how an AI phone call receptionist works
               </Link>
               , see the{" "}
               <Link href="/ai-receptionist" className="text-brand hover:underline">

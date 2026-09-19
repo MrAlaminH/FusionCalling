@@ -49,9 +49,9 @@ export default function Component() {
             Transform Your Business
             <br className="hidden sm:block" />
             <span className="whitespace-nowrap"> </span>
-            with{" "}
+            with an{" "}
             <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
-              AI Phone Call Automation
+              AI Phone Call Receptionist
             </span>
           </h1>
         </div>
