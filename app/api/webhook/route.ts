@@ -1,33 +1,73 @@
-import { NextResponse } from 'next/server';
+import { NextResponse } from "next/server";
+import { VAPI_AGENTS, VAPI_PHONE_NUMBER_ID } from "@/lib/vapi-agents";
+
+const VAPI_API_URL = "https://api.vapi.ai/call";
+const DEMO_MAX_DURATION_SECONDS = 300;
+const VAPI_TIMEOUT_MS = 10_000;
+
+type DemoCallRequest = {
+  phoneNumber?: unknown;
+  name?: unknown;
+  email?: unknown;
+  selectedAgent?: unknown;
+};
+
+const asStringOrEmpty = (value: unknown) => (typeof value === "string" ? value : "");
 
 export async function POST(request: Request) {
-    const { phoneNumber, name, email, selectedAgent } = await request.json();
+  const body = (await request.json().catch(() => null)) as DemoCallRequest | null;
+  const agentId =
+    typeof body?.selectedAgent === "string" ? VAPI_AGENTS[body.selectedAgent] : undefined;
+  const apiKey = process.env.VAPI_API_KEY;
 
-    // Replace with your actual webhook URL
-    const webhookUrl = 'https://n8n.deployify.xyz/webhook/0c3c493b-d14f-49ca-ab8e-62d7d7a8c9c1';
+  if (!body || typeof body.phoneNumber !== "string" || !agentId) {
+    return NextResponse.json({ error: "Invalid demo call request" }, { status: 400 });
+  }
+  if (!apiKey) {
+    console.error("[demo-call] VAPI_API_KEY is not configured");
+    return NextResponse.json({ error: "Calling is not configured" }, { status: 500 });
+  }
 
-    try {
-        const response = await fetch(webhookUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                phoneNumber,
-                name,
-                email,
-                selectedAgent,
-                timestamp: new Date().toISOString(),
-            }),
-        });
+  try {
+    const response = await fetch(VAPI_API_URL, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        assistantId: agentId,
+        phoneNumberId: VAPI_PHONE_NUMBER_ID,
+        customer: {
+          number: body.phoneNumber,
+          name: asStringOrEmpty(body.name),
+          email: asStringOrEmpty(body.email),
+        },
+        assistantOverrides: {
+          // Enforce the 5-minute limit the form promises.
+          maxDurationSeconds: DEMO_MAX_DURATION_SECONDS,
+        },
+        metadata: {
+          source: "website-demo",
+          agent: asStringOrEmpty(body.selectedAgent),
+          name: asStringOrEmpty(body.name),
+          email: asStringOrEmpty(body.email),
+        },
+      }),
+      signal: AbortSignal.timeout(VAPI_TIMEOUT_MS),
+    });
 
-        if (!response.ok) {
-            throw new Error('Webhook trigger failed');
-        }
-
-        return NextResponse.json({ message: 'Webhook triggered successfully' });
-    } catch (error) {
-        console.error('Error triggering webhook:', error);
-        return NextResponse.json({ error: 'Failed to trigger webhook' }, { status: 500 });
+    if (!response.ok) {
+      const detail = await response.text().catch(() => "");
+      console.error(`[demo-call] Vapi error ${response.status}:`, detail);
+      return NextResponse.json({ error: "Failed to start call" }, { status: 502 });
     }
+
+    const call = (await response.json()) as { id?: string };
+    console.log(`[demo-call] started ${call.id ?? "(no id)"} agent=${asStringOrEmpty(body.selectedAgent)}`);
+    return NextResponse.json({ message: "Call started", callId: call.id });
+  } catch (error) {
+    console.error("[demo-call] Vapi request failed:", error);
+    return NextResponse.json({ error: "Failed to start call" }, { status: 502 });
+  }
 }
