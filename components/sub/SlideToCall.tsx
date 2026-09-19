@@ -17,7 +17,7 @@ interface SlideToCallProps {
 
 const HANDLE_WIDTH = 48;
 const VIBRATION_DURATION = 50;
-const SUCCESS_DELAY = 6000;
+const COUNTDOWN_SECONDS = 10;
 const RESET_DELAY = 6000;
 const VALIDATION_MESSAGE =
   "Please fill in all fields correctly: valid name, valid email, phone number, and select an agent";
@@ -36,6 +36,7 @@ export default function SlideToCall({
     position: 0,
     isSuccess: false,
   });
+  const [countdown, setCountdown] = useState<number | null>(null);
 
   const [showToast, setShowToast] = useState(false);
   const [toastClosing, setToastClosing] = useState(false);
@@ -46,6 +47,7 @@ export default function SlideToCall({
   const callInitiatedRef = useRef(false);
   const dragStartRef = useRef(0);
   const toastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const countdownTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   // Two-phase close: play the toast's exit transition, then unmount.
   // The 200ms must match Toast's duration-200 exit transition.
@@ -72,6 +74,7 @@ export default function SlideToCall({
   useEffect(
     () => () => {
       if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
+      if (countdownTimerRef.current) clearInterval(countdownTimerRef.current);
     },
     []
   );
@@ -90,21 +93,9 @@ export default function SlideToCall({
     }
   }, []);
 
-  const initiateCall = useCallback(async () => {
-    if (disabled) return;
-    if (callInitiatedRef.current) return;
-    callInitiatedRef.current = true;
-
+  const placeCall = useCallback(async () => {
     try {
-      vibrate();
-      setSlideState((prev) => ({ ...prev, isSuccess: true }));
-
-      console.log("Sending values:", {
-        phoneNumber,
-        name,
-        email,
-        selectedAgent,
-      });
+      setCountdown(null);
 
       const response = await fetch("/api/webhook", {
         method: "POST",
@@ -112,25 +103,20 @@ export default function SlideToCall({
         body: JSON.stringify({ phoneNumber, name, email, selectedAgent }),
       });
 
-      if (!response.ok) throw new Error("Webhook failed");
+      if (!response.ok) throw new Error("Call request failed");
 
       onCallComplete?.();
-
-      // Reset inputs first
       resetInputs();
-      console.log("Resetting inputs...");
 
-      // Schedule the reset
       setTimeout(() => {
-        setTimeout(() => {
-          setSlideState({ isDragging: false, position: 0, isSuccess: false });
-          callInitiatedRef.current = false;
-        }, RESET_DELAY);
-      }, SUCCESS_DELAY);
+        setSlideState({ isDragging: false, position: 0, isSuccess: false });
+        callInitiatedRef.current = false;
+      }, RESET_DELAY);
     } catch (error) {
       console.error("Call initiation failed:", error);
       setSlideState({ isDragging: false, position: 0, isSuccess: false });
       callInitiatedRef.current = false;
+      setCountdown(null);
       showToastMessage(
         "The call couldn't start. Please check your details and try again."
       );
@@ -141,11 +127,33 @@ export default function SlideToCall({
     email,
     selectedAgent,
     onCallComplete,
-    vibrate,
     resetInputs,
-    disabled,
     showToastMessage,
   ]);
+
+  const initiateCall = useCallback(() => {
+    if (disabled) return;
+    if (callInitiatedRef.current) return;
+    callInitiatedRef.current = true;
+
+    vibrate();
+    setSlideState((prev) => ({ ...prev, isSuccess: true }));
+    setCountdown(COUNTDOWN_SECONDS);
+
+    // Hold the dial for COUNTDOWN_SECONDS so the user has time to get
+    // ready to answer, with a haptic tick each second.
+    let remaining = COUNTDOWN_SECONDS;
+    countdownTimerRef.current = setInterval(() => {
+      remaining -= 1;
+      vibrate();
+      if (remaining > 0) {
+        setCountdown(remaining);
+        return;
+      }
+      if (countdownTimerRef.current) clearInterval(countdownTimerRef.current);
+      void placeCall();
+    }, 1000);
+  }, [disabled, vibrate, placeCall]);
 
   const handleDragEnd = useCallback(() => {
     const effectiveWidth = getEffectiveWidth();
@@ -183,16 +191,19 @@ export default function SlideToCall({
   const handlePointerDown = useCallback(
     (e: React.PointerEvent) => {
       e.preventDefault();
+      if (slideState.isSuccess) return;
       if (disabled) {
         showToastMessage(VALIDATION_MESSAGE);
         return;
       }
+      // Re-measure per gesture: a cached width goes stale after resize/rotation.
+      widthRef.current = 0;
       dragStartRef.current = performance.now();
       vibrate();
       setSlideState((prev) => ({ ...prev, isDragging: true }));
       handleDrag(e.clientX);
     },
-    [vibrate, handleDrag, disabled, showToastMessage]
+    [slideState.isSuccess, vibrate, handleDrag, disabled, showToastMessage]
   );
 
   const handlePointerMove = useCallback(
@@ -293,10 +304,13 @@ export default function SlideToCall({
 
           {slideState.isSuccess && (
             <span
+              key={countdown ?? "connecting"}
               className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
               text-white font-semibold animate-fade-in"
             >
-              Initiating Call...
+              {countdown !== null
+                ? `Answer in ${countdown}s…`
+                : "Connecting…"}
             </span>
           )}
         </div>
