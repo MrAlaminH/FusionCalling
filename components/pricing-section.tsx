@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Check, Star } from "lucide-react";
 import { BillingToggle, type BillingCycle } from "@/components/ui/billing-toggle";
 import { cn } from "@/lib/utils";
@@ -247,7 +248,15 @@ export default function PricingSection({
 
         {/* Footnote */}
         <p className="text-center text-gray-400 mt-6 md:mt-8 text-xs">
-          *All plans include 24/7 support and 99.9% uptime guarantee
+          *All plans include 24/7 support and 99.9% uptime guarantee. Not sure
+          what you need?{" "}
+          <Link
+            href="/calculator"
+            className="text-brand hover:text-brand-light underline underline-offset-4 hover:underline transition-colors"
+          >
+            Estimate your call capacity with the free calculator
+          </Link>
+          .
         </p>
       </div>
     </section>

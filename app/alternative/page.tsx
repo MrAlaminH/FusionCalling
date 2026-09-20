@@ -299,6 +299,16 @@ export default function CompareHubPage() {
                 Explore the Partner Program
                 <span className="ml-2">→</span>
               </Link>
+              <p className="mt-4 text-sm text-gray-400">
+                Already comparing costs?{" "}
+                <Link
+                  href="/pricing"
+                  className="text-brand-light hover:text-brand underline-offset-4 hover:underline transition-colors"
+                >
+                  Compare plans and pricing
+                </Link>
+                .
+              </p>
             </div>
           </div>
         </div>

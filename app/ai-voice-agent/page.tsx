@@ -134,6 +134,7 @@ export default function AiVoiceAgentPage() {
     "@graph": [
       {
         "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/ai-voice-agent#breadcrumb`,
         itemListElement: [
           {
             "@type": "ListItem",

@@ -140,6 +140,7 @@ export default function AiReceptionistForSmallBusinessPage() {
     "@graph": [
       {
         "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/ai-receptionist-for-small-business#breadcrumb`,
         itemListElement: [
           {
             "@type": "ListItem",

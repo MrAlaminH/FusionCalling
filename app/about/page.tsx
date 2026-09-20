@@ -238,7 +238,13 @@ export default function AboutPage() {
           Ready to automate your calls?
         </h2>
         <p className="text-gray-400 mb-6">
-          Explore the platform or talk with our team about a custom voice agent.
+          <Link
+            href="/ai-phone-call-automation"
+            className="text-brand hover:underline"
+          >
+            Explore the platform
+          </Link>{" "}
+          or talk with our team about a custom voice agent.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-3">
           <Link

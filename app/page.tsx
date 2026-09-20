@@ -127,13 +127,7 @@ export default function Home() {
         "uploadDate": "2026-01-15T09:00:00-05:00",
         "datePublished": "2026-01-15T09:00:00-05:00",
         "duration": "PT2M30S",
-        "contentUrl": "https://www.youtube.com/watch?v=Oua1TyixaoA",
         "embedUrl": "https://www.youtube.com/embed/Oua1TyixaoA",
-        "interactionStatistic": {
-          "@type": "InteractionCounter",
-          "interactionType": "https://schema.org/WatchAction",
-          "userInteractionCount": 1250
-        },
         "regionsAllowed": ["US", "CA", "GB", "AU"],
         "isFamilyFriendly": true,
         "publisher": {
@@ -313,6 +307,13 @@ export default function Home() {
             className="text-brand hover:text-brand-light underline underline-offset-4 hover:underline transition-colors"
           >
             Learn how an AI phone call receptionist works in the 2026 guide
+          </Link>{" "}
+          or{" "}
+          <Link
+            href="/ai-phone-call-automation"
+            className="text-brand hover:text-brand-light underline underline-offset-4 hover:underline transition-colors"
+          >
+            explore the AI phone call automation platform
           </Link>
           .
         </p>

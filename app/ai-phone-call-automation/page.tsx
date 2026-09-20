@@ -179,6 +179,7 @@ export default function AiPhoneCallAutomationPage() {
     "@graph": [
       {
         "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/ai-phone-call-automation#breadcrumb`,
         itemListElement: [
           {
             "@type": "ListItem",

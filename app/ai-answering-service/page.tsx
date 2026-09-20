@@ -126,6 +126,7 @@ export default function AiAnsweringServicePage() {
     "@graph": [
       {
         "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/ai-answering-service#breadcrumb`,
         itemListElement: [
           {
             "@type": "ListItem",

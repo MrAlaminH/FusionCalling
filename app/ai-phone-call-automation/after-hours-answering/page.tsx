@@ -123,6 +123,7 @@ export default function AfterHoursAnsweringPage() {
     "@graph": [
       {
         "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/ai-phone-call-automation/after-hours-answering#breadcrumb`,
         itemListElement: [
           {
             "@type": "ListItem",

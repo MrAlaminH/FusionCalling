@@ -148,6 +148,7 @@ export default function AiPhoneCallReceptionistPage() {
     "@graph": [
       {
         "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/ai-phone-call-receptionist#breadcrumb`,
         itemListElement: [
           {
             "@type": "ListItem",

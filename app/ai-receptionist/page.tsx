@@ -183,6 +183,7 @@ export default function AiReceptionistPage() {
     "@graph": [
       {
         "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/ai-receptionist#breadcrumb`,
         itemListElement: [
           {
             "@type": "ListItem",
@@ -311,7 +312,14 @@ export default function AiReceptionistPage() {
               because it maps directly to money: missed calls are missed
               bookings. Fusion Calling&apos;s AI receptionist software connects
               to your existing number, calendar, and CRM, so it works inside
-              the workflow you already run. Curious about the technology? Read{" "}
+              the workflow you already run. See how it fits into the full{" "}
+              <Link
+                href="/ai-phone-call-automation"
+                className="text-brand hover:underline"
+              >
+                AI phone call automation platform
+              </Link>
+              . Curious about the technology? Read{" "}
               <Link
                 href="/ai-phone-call-receptionist"
                 className="text-brand hover:underline"

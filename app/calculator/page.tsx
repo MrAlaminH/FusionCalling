@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import VoiceCalculator from "./VoiceCalculator";
 import { buildOpenGraph, GEO_SOURCES } from "@/lib/seo";
 import Footer from "@/components/Footer";
@@ -100,6 +101,24 @@ export default function CalculatorPage() {
         </div>
       </section>
       <VoiceCalculator />
+      <section className="bg-black text-white border-t border-brand/20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl py-14 text-center">
+          <h2 className="text-2xl font-bold text-white mb-3">
+            Know your volume? See what it costs.
+          </h2>
+          <p className="text-gray-400 leading-relaxed mb-6">
+            Match your call volume to a plan — every tier includes 24/7
+            support and a 99.9% uptime guarantee.{" "}
+            <Link
+              href="/pricing"
+              className="text-brand-light hover:text-brand underline-offset-4 hover:underline transition-colors font-medium"
+            >
+              Compare plans and pricing
+            </Link>
+            .
+          </p>
+        </div>
+      </section>
       <section className="bg-black text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl py-14">
           <h2 className="text-2xl font-bold text-white mb-6">

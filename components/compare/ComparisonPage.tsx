@@ -401,6 +401,23 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
                 <p className="text-center text-brand-light font-semibold text-lg">
                   {highlight}
                 </p>
+                <p className="text-center text-gray-400 text-sm mt-3">
+                  See{" "}
+                  <Link
+                    href="/pricing"
+                    className="text-brand-light hover:text-brand underline-offset-4 hover:underline transition-colors"
+                  >
+                    Fusion Calling plans and pricing
+                  </Link>{" "}
+                  or{" "}
+                  <Link
+                    href="/calculator"
+                    className="text-brand-light hover:text-brand underline-offset-4 hover:underline transition-colors"
+                  >
+                    estimate your call capacity
+                  </Link>
+                  .
+                </p>
               </div>
             </div>
 

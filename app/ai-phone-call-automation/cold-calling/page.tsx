@@ -119,6 +119,7 @@ export default function AiColdCallingPage() {
     "@graph": [
       {
         "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/ai-phone-call-automation/cold-calling#breadcrumb`,
         itemListElement: [
           {
             "@type": "ListItem",

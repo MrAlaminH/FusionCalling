@@ -123,6 +123,7 @@ export default function AiAppointmentSettingPage() {
     "@graph": [
       {
         "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/ai-phone-call-automation/appointment-setting#breadcrumb`,
         itemListElement: [
           {
             "@type": "ListItem",
