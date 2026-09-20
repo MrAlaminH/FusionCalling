@@ -5,7 +5,7 @@ import { SITE_URL } from "@/lib/site-url";
 import { buildOpenGraph } from "@/lib/seo";
 
 // No hardcoded "| Fusion Calling" — the root layout title template appends it.
-const title = "AI Voice by Industry";
+const title = "AI Voice Agents by Industry: Use Cases & ROI";
 const description =
   "Explore how white-label AI voice agents serve every industry: real estate, dental, insurance, home services, legal, automotive, call centers, finance.";
 
@@ -46,7 +46,7 @@ export default function IndustriesHubPage() {
                 "@type": "CollectionPage",
                 "@id": `${SITE_URL}/industries#collectionpage`,
                 url: `${SITE_URL}/industries`,
-                name: "AI Voice by Industry",
+                name: "AI Voice Agents by Industry: Use Cases & ROI",
                 description:
                   "Explore how white-label AI voice agents serve every industry.",
                 inLanguage: "en-US",

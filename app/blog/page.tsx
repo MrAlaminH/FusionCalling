@@ -9,11 +9,11 @@ import BlogGrid from "@/components/blog/BlogGrid";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Blog | White-Label Voice AI Insights",
+  title: "White-Label Voice AI Blog: Agency Guides",
   description:
     "Expert insights on white-label AI voice platforms, agency growth strategies, and voice automation trends. Learn how to build profitable AI voice businesses.",
   ...buildOpenGraph({
-    title: "Blog | White-Label Voice AI Insights",
+    title: "White-Label Voice AI Blog: Agency Guides",
     description:
       "Expert insights on white-label AI voice platforms, agency growth strategies, and voice automation trends. Learn how to build profitable AI voice businesses.",
     path: "/blog",

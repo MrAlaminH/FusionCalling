@@ -127,7 +127,7 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
     slug: "retell",
     name: "Retell AI",
     badge: "Built for Retell AI Partners",
-    title: "Retell White-Label Agents for Agencies",
+    title: "Retell White-Label Agents for Agencies: Launch in 24 Hours",
     description:
       "Resell Retell AI voice agents under your own brand via Fusion Calling. Bring your existing Retell agent configurations and API keys, set your pricing, and keep 100% of the revenue — with full white-label dashboard, client management, and rebilling.",
     h1Prefix: "White-Label AI Voice Agents for",
