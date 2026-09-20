@@ -239,6 +239,17 @@ export default function Footer() {
                 >
                   Docs
                 </Link>
+                {/* Google Preferred Sources button — lets visitors pick Fusion
+                    Calling as a preferred source for AI Mode / AI Overviews.
+                    The pill is rendered and styled by Google's publisher.js
+                    widget (loaded sitewide in app/layout.tsx). */}
+                <div
+                  {...({
+                    "google-add-preferred-source-btn": "",
+                  } as Record<string, string>)}
+                  data-theme="dark"
+                  data-lang="en"
+                />
               </div>
             </div>
           </div>

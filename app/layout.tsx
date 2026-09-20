@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
+import Script from "next/script";
 import dynamic from "next/dynamic";
 import "./globals.css";
 import { PostHogProvider } from "./providers";
@@ -242,6 +243,15 @@ export default function RootLayout({
         />
       </head>
       <body className="relative bg-black">
+        {/* Google "Preferred Sources" widget — the flow that lets visitors mark
+            fusioncalling.com as a preferred source in AI Mode / AI Overviews.
+            Without `preferred-sources-control="manual"` it auto-renders every
+            [google-add-preferred-source-btn] element (see components/Footer.tsx).
+            afterInteractive keeps it out of the critical path entirely. */}
+        <Script
+          src="https://news.google.com/swg/js/v1/publisher.js"
+          strategy="afterInteractive"
+        />
         {/* Subtle film-grain texture across the whole site */}
         <div className="grain-overlay" aria-hidden />
         <a
