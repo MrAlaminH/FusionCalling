@@ -113,7 +113,7 @@ export default function ProviderPageTemplate({
               <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
                 {provider.h1Highlight}
               </span>{" "}
-              Agencies
+              {provider.h1Suffix}
             </h1>
             <p className="mt-6 max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-gray-400 leading-relaxed">
               {heroIntro ?? provider.description}

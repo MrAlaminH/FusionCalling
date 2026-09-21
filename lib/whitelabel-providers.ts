@@ -10,6 +10,7 @@ export type WhiteLabelProvider = {
   description: string;
   h1Prefix: string;
   h1Highlight: string;
+  h1Suffix: string;
   keywords: string[];
   features: { title: string; description: string }[];
   differentiators: { heading: string; text: string }[];
@@ -22,16 +23,22 @@ export type WhiteLabelProvider = {
   relatedCaseStudySlugs?: string[];
 };
 
+/** Full visible H1, assembled from the three hero parts — also the schema page/service name. */
+export function providerH1(provider: WhiteLabelProvider): string {
+  return `${provider.h1Prefix} ${provider.h1Highlight} ${provider.h1Suffix}`;
+}
+
 export const whitelabelProviders: WhiteLabelProvider[] = [
   {
     slug: "vapi",
     name: "Vapi",
     badge: "Built for Vapi Partners",
-    title: "Vapi White-Label Agents for Agencies",
+    title: "White Label Vapi AI Voice Agents",
     description:
-      "Resell Vapi AI voice agents under your own brand via Fusion Calling. Import your existing Vapi agent configurations and API keys, set your pricing, and keep 100% of revenue — with full white-label dashboard, client portals, and rebilling.",
-    h1Prefix: "White-Label AI Voice Agents for",
-    h1Highlight: "Vapi",
+      "White label Vapi AI voice agents under your own brand. Import your Vapi agents and API keys, wrap them in a branded dashboard, and keep 100% of revenue.",
+    h1Prefix: "White-Label",
+    h1Highlight: "Vapi AI Voice Agents",
+    h1Suffix: "Under Your Own Brand",
     blogGuide: {
       href: "/blog/vapi-white-label-platform",
       label: "How to White-Label Vapi AI Voice Agents (Agency Guide)",
@@ -52,16 +59,14 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
       },
     ],
     keywords: [
-      "white label Vapi AI voice",
-      "resell Vapi agents",
-      "Vapi white-label reseller",
-      "Vapi AI voice for agencies",
-      "Vapi partner program",
-      "import Vapi agents white label",
-      "Vapi AI reseller program",
-      "Vapi white-label dashboard",
-      "resell Vapi phone automation",
-      "Vapi agency partnership",
+      "white label vapi",
+      "white label vapi ai",
+      "vapi ai white label",
+      "can you white label vapi",
+      "vapi white label dashboard",
+      "resell vapi agents",
+      "vapi reseller program",
+      "white label ai voice agents",
     ],
     features: [
       {
@@ -97,7 +102,7 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
     ],
     faqs: [
       {
-        question: "Can I import my existing Vapi agents into Fusion Calling's white-label platform?",
+        question: "Can I white label Vapi AI voice agents?",
         answer:
           "Yes. Fusion Calling is purpose-built for multi-provider white-label reselling. You bring your existing Vapi agent configurations and API keys. We layer white-label branding, client portals, lead management, and rebilling on top so you resell your Vapi agents under one branded dashboard — no agent rebuild needed.",
       },
@@ -132,11 +137,12 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
     slug: "retell",
     name: "Retell AI",
     badge: "Built for Retell AI Partners",
-    title: "Retell White-Label Agents for Agencies",
+    title: "White Label Retell AI Voice Agents",
     description:
-      "Resell Retell AI voice agents under your own brand via Fusion Calling. Bring your existing Retell agent configurations and API keys, set your pricing, and keep 100% of the revenue — with full white-label dashboard, client management, and rebilling.",
-    h1Prefix: "White-Label AI Voice Agents for",
-    h1Highlight: "Retell AI",
+      "White label Retell AI voice agents under your own brand. Import your Retell agents, launch branded client portals in ~24 hours, and keep 100% of revenue.",
+    h1Prefix: "White-Label",
+    h1Highlight: "Retell AI Voice Agents",
+    h1Suffix: "Under Your Own Brand",
     blogGuide: {
       href: "/blog/retell-ai-white-label",
       label: "How to White-Label Retell AI Voice Agents (Agency Guide)",
@@ -157,16 +163,13 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
       },
     ],
     keywords: [
-      "white label Retell AI voice",
-      "resell Retell AI agents",
-      "Retell AI white-label reseller",
-      "Retell AI voice for agencies",
-      "Retell AI partner program",
-      "import Retell AI agents white label",
-      "Retell AI reseller program",
-      "Retell AI white-label dashboard",
-      "resell Retell phone automation",
-      "Retell AI agency partnership",
+      "white label retell ai",
+      "retell ai white label",
+      "can you white label retell ai",
+      "retell ai reseller",
+      "white label retell agents",
+      "resell retell ai agents",
+      "white label ai voice agents",
     ],
     features: [
       {
@@ -202,7 +205,7 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
     ],
     faqs: [
       {
-        question: "Can I import my existing Retell AI agents into Fusion Calling's white-label platform?",
+        question: "Can I white label Retell AI voice agents?",
         answer:
           "Yes. Fusion Calling supports Retell AI out of the box. Bring your existing Retell agent configurations and API keys. We layer white-label branding, client portals, lead management, and rebilling on top — so you resell under one branded dashboard with zero agent rebuild.",
       },
@@ -237,11 +240,12 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
     slug: "elevenlabs",
     name: "ElevenLabs",
     badge: "Built for ElevenLabs Partners",
-    title: "ElevenLabs White-Label Agents for Agencies",
+    title: "White Label ElevenLabs AI Voice Agents",
     description:
-      "Resell ElevenLabs voice agents under your own brand via Fusion Calling. Bring your existing ElevenLabs agent configurations and API keys, set your pricing, and keep 100% of the revenue — with full white-label dashboard, client portals, and rebilling.",
-    h1Prefix: "White-Label AI Voice Agents for",
-    h1Highlight: "ElevenLabs",
+      "White label ElevenLabs AI voice agents under your own brand. Ship premium voices and voice clones under your logo, domain, and pricing — keep 100% of revenue.",
+    h1Prefix: "White-Label",
+    h1Highlight: "ElevenLabs AI Voice Agents",
+    h1Suffix: "Under Your Own Brand",
     relatedCaseStudySlugs: ["voicewave-marketing"],
     differentiators: [
       {
@@ -258,16 +262,11 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
       },
     ],
     keywords: [
-      "white label ElevenLabs voice",
-      "resell ElevenLabs AI agents",
-      "ElevenLabs white-label reseller",
-      "ElevenLabs voice for agencies",
-      "ElevenLabs partner program",
-      "import ElevenLabs agents white label",
-      "ElevenLabs reseller program",
-      "ElevenLabs white-label dashboard",
-      "resell ElevenLabs phone automation",
-      "ElevenLabs agency partnership",
+      "white label elevenlabs",
+      "can you white label elevenlabs",
+      "elevenlabs white label agent",
+      "resell elevenlabs ai agents",
+      "white label ai voice agents",
     ],
     features: [
       {
@@ -303,7 +302,7 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
     ],
     faqs: [
       {
-        question: "Can I import my existing ElevenLabs agents into Fusion Calling's white-label platform?",
+        question: "Can I white label ElevenLabs AI voice agents?",
         answer:
           "Yes. Fusion Calling supports ElevenLabs out of the box. Bring your existing ElevenLabs agent configurations and API keys. We add white-label branding, client portals, lead management, and rebilling — zero agent rebuild needed.",
       },
@@ -338,11 +337,12 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
     slug: "gohighlevel",
     name: "GoHighLevel",
     badge: "Built for GoHighLevel Agencies",
-    title: "White-Label AI Voice for GoHighLevel",
+    title: "White Label GoHighLevel AI Voice Agents",
     description:
-      "Deploy white-label AI voice agents in GoHighLevel client sub-accounts. Import Vapi, Retell & ElevenLabs agents, deliver 24/7 calls, keep 100% of revenue.",
+      "White label AI voice agents for GoHighLevel sub-accounts. Run Vapi, Retell, or ElevenLabs agents in each client account — keep 100% of revenue.",
     h1Prefix: "White-Label AI Voice Agents for",
     h1Highlight: "GoHighLevel",
+    h1Suffix: "Sub-Accounts",
     crossLinkTitle: "GoHighLevel Voice AI Integration",
     blogGuide: {
       href: "/blog/gohighlevel-white-label-voice",
@@ -351,16 +351,13 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
     relatedCaseStudySlugs: ["voicewave-marketing", "callflow-solutions"],
     differentiators: [],
     keywords: [
-      "white label AI voice GoHighLevel",
-      "GoHighLevel voice AI integration",
-      "AI voice agents GHL sub-accounts",
-      "white label voice AI for GoHighLevel",
-      "GoHighLevel missed call text back AI",
-      "resell AI voice to GHL clients",
-      "GoHighLevel AI caller",
-      "voice AI rebilling GoHighLevel",
-      "GHL agency voice AI white label",
-      "GoHighLevel AI receptionist integration",
+      "gohighlevel ai voice agent",
+      "white label ai voice gohighlevel",
+      "gohighlevel voice ai",
+      "white label ai voice for agencies",
+      "resell ai voice to ghl clients",
+      "ghl agency voice ai white label",
+      "white label ai voice agents",
     ],
     features: [
       {
@@ -397,7 +394,7 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
     faqs: [
       {
         question:
-          "Can I deploy Fusion Calling's AI voice agents inside GoHighLevel client sub-accounts?",
+          "Can I white label AI voice agents inside GoHighLevel?",
         answer:
           "Yes. Fusion Calling is built to drop into your GoHighLevel stack so you can launch AI voice agents for each client sub-account under your own brand. Your clients interact only with your logo, domain, and pricing — Fusion Calling stays invisible.",
       },
@@ -458,7 +455,7 @@ export function buildProviderGraph(
     "@graph": [
       webPageSchema({
         path: base,
-        name: provider.title,
+        name: providerH1(provider),
         description: provider.description,
         breadcrumbId: `${SITE_URL}${base}#breadcrumb`,
         speakable: ["h1", "h2", "p"],
@@ -466,7 +463,7 @@ export function buildProviderGraph(
       {
         "@type": "Service",
         "@id": `${SITE_URL}${base}#service`,
-        name: `White-label AI Voice Agents for ${provider.name}`,
+        name: providerH1(provider),
         description: provider.description,
         provider: { "@id": `${SITE_URL}/#organization` },
         areaServed: { "@type": "Country", name: "United States" },
