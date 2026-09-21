@@ -4,7 +4,6 @@ import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Tools from "@/components/Tools";
 import Footer from "@/components/Footer";
-import ScrollLaunchBadge from "@/components/ScrollLaunchBadge";
 import type { Metadata } from "next";
 import { CONTENT_LAST_UPDATED, SITE_URL } from "@/lib/site-url";
 import { buildOpenGraph } from "@/lib/seo";
@@ -339,10 +338,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* As featured in */}
-      <section aria-label="As featured in" className="pb-8">
-        <ScrollLaunchBadge />
-      </section>
+      {/* Featured-on badges live inside the footer bottom strip so future
+          launches / press logos have one compact, extensible home. */}
 
       <Footer />
     </main>

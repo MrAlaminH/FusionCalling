@@ -162,6 +162,8 @@ export default function RootLayout({
                   sameAs: [
                     "https://x.com/MrAlaminH",
                     "https://www.linkedin.com/company/fusion-calling/",
+                    "https://www.facebook.com/fusioncalling",
+                    "https://www.instagram.com/fusioncalling",
                   ],
                   contactPoint: {
                     "@type": "ContactPoint",
