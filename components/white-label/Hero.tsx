@@ -179,7 +179,7 @@ export default function Hero() {
                           alt="Preview of the Fusion Calling white-label AI voice dashboard"
                           fill
                           priority
-                          sizes="(max-width: 1024px) 100vw, 60vw"
+                          sizes="(max-width: 1200px) 100vw, 1152px"
                           className="object-cover"
                         />
 
