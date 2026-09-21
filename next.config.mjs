@@ -117,19 +117,11 @@ const nextConfig = {
         destination: "/alternative/:slug",
         permanent: true,
       },
-      // Case canonicalization: GSC shows impressions for /Privacy and /Terms
-      // (capitalized). Next.js routes are lowercase, so those 404 today and
-      // leak the accrued signals. 301 them to the live lowercase URLs.
-      {
-        source: "/Privacy",
-        destination: "/privacy",
-        permanent: true,
-      },
-      {
-        source: "/Terms",
-        destination: "/terms",
-        permanent: true,
-      },
+      // NOTE: do NOT add /Privacy → /privacy or /Terms → /terms redirects.
+      // Next.js matches redirect sources CASE-INSENSITIVELY, so those rules
+      // also matched the lowercase canonical URLs and produced an infinite
+      // 308 loop (live on production from Sep 2026 until removed). GSC
+      // impressions on capitalized variants resolve harmlessly via 404.
       // Host canonicalization: serve one canonical host (www) so we never
       // split ranking signals across apex/www if platform config drifts.
       // Machine-readable discovery files are exempt: they carry no ranking
