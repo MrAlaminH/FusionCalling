@@ -201,7 +201,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@MrAlaminH",
+    site: "@fusioncalling",
     title: `Pricing & Plans — AI Phone Automation from $${FROM_PRICE}/mo`,
     description: `Simple, fair pricing for AI phone call automation. Plans from $${FROM_PRICE}/month.`,
     images: [`${SITE_URL}/opengraph-image.png`],

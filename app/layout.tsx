@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     "Boost business efficiency with Fusion Calling's AI-powered phone call automation. Streamline customer interactions, save time, and increase productivity.",
   twitter: {
     card: "summary_large_image",
-    site: "@MrAlaminH",
+    site: "@fusioncalling",
     title: "Fusion Calling | AI Phone Call Automation for Businesses",
     description:
       "Boost business efficiency with Fusion Calling's AI-powered phone call automation. Streamline customer interactions, save time, and increase productivity.",
@@ -169,9 +169,10 @@ export default function RootLayout({
                   areaServed: "US",
                   // Only profiles that verifiably belong to Fusion Calling.
                   // facebook.com/fusioncalling is a different company's page;
-                  // X is the founder's personal handle (kept on Person nodes).
+                  // the founder's personal X stays on Person nodes only.
                   sameAs: [
                     "https://www.linkedin.com/company/fusion-calling/",
+                    "https://x.com/fusioncalling",
                   ],
                   contactPoint: {
                     "@type": "ContactPoint",
@@ -217,7 +218,7 @@ export default function RootLayout({
                   image: `${SITE_URL}/avatars/female_avatar.png`,
                   sameAs: [
                     "https://www.linkedin.com/company/fusion-calling/",
-                    "https://x.com/MrAlaminH",
+                    "https://x.com/fusioncalling",
                   ],
                   email: "team@fusioncalling.com",
                   knowsAbout: [

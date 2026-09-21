@@ -74,7 +74,7 @@ const footerGroups: FooterGroup[] = [
 // to someone else's page corrupts the org entity (facebook.com/fusioncalling
 // is a different company; FB/IG return when real profiles exist).
 const socialLinks = [
-  { label: "Twitter / X", href: "https://x.com/MrAlaminH", Icon: Twitter },
+  { label: "Twitter / X", href: "https://x.com/fusioncalling", Icon: Twitter },
   { label: "LinkedIn", href: "https://www.linkedin.com/company/fusion-calling/", Icon: Linkedin },
 ];
 

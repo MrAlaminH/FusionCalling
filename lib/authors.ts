@@ -50,7 +50,7 @@ export const authors: Author[] = [
       "The engineering team behind Fusion Calling's multi-provider voice AI platform: Vapi, Retell & ElevenLabs integration, conversation design, and production deployments.",
     avatar: "/avatars/female_avatar.png",
     linkedin: "https://www.linkedin.com/company/fusion-calling/",
-    twitter: "https://x.com/MrAlaminH",
+    twitter: "https://x.com/fusioncalling",
     email: "team@fusioncalling.com",
     authorSchemaId: `${SITE_URL}/team/voice-team#person`,
     longBio: [

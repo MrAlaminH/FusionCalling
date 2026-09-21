@@ -43,7 +43,7 @@ export type GeoCitation = { label: string; url: string };
 export const BRAND = {
   name: "Fusion Calling",
   siteName: "Fusion Calling",
-  twitter: "@MrAlaminH",
+  twitter: "@fusioncalling",
   locale: "en_US",
   defaultOgImage: "/opengraph-image.png",
 } as const;
