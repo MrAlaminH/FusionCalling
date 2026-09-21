@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
 import dynamic from "next/dynamic";
@@ -35,6 +35,11 @@ const jakarta = Plus_Jakarta_Sans({
   fallback: ["system-ui", "Arial", "sans-serif"],
   adjustFontFallback: true,
 });
+
+export const viewport: Viewport = {
+  // Matches manifest theme_color so browser UI matches PWA install color.
+  themeColor: "#ff7d00",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${SITE_URL}/`),
@@ -151,6 +156,9 @@ export default function RootLayout({
                   foundingDate: "2022",
                   founder: {
                     "@type": "Person",
+                    // Canonical @id shared with /team/alamin + /about Person
+                    // nodes so the founder is one entity, not three fragments.
+                    "@id": `${SITE_URL}/team/alamin#person`,
                     name: "Alamin",
                     url: `${SITE_URL}/team/alamin`,
                   },
@@ -159,11 +167,11 @@ export default function RootLayout({
                     addressCountry: "US",
                   },
                   areaServed: "US",
+                  // Only profiles that verifiably belong to Fusion Calling.
+                  // facebook.com/fusioncalling is a different company's page;
+                  // X is the founder's personal handle (kept on Person nodes).
                   sameAs: [
-                    "https://x.com/MrAlaminH",
                     "https://www.linkedin.com/company/fusion-calling/",
-                    "https://www.facebook.com/fusioncalling",
-                    "https://www.instagram.com/fusioncalling",
                   ],
                   contactPoint: {
                     "@type": "ContactPoint",
@@ -206,7 +214,7 @@ export default function RootLayout({
                   },
                   description:
                     "The team behind Fusion Calling's voice AI platform. 500+ agencies, millions of calls automated.",
-                  image: `${SITE_URL}/avatars/team.webp`,
+                  image: `${SITE_URL}/avatars/female_avatar.png`,
                   sameAs: [
                     "https://www.linkedin.com/company/fusion-calling/",
                     "https://x.com/MrAlaminH",

@@ -175,11 +175,11 @@ export default function Hero() {
                         onClick={() => setIsVideoPlaying(true)}
                       >
                         <Image
-                          src="/new-hero-thumbnail.png"
+                          src="/new-hero-thumbnail.webp"
                           alt="Preview of the Fusion Calling white-label AI voice dashboard"
                           fill
                           priority
-                          sizes="100vw"
+                          sizes="(max-width: 1024px) 100vw, 60vw"
                           className="object-cover"
                         />
 

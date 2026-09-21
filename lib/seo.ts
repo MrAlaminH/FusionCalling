@@ -249,7 +249,11 @@ export function articleSchema({
   };
 }
 
-/** Product Offer node with the merchant return policy + digital-goods shipping details. */
+/**
+ * Product Offer node. Digital SaaS subscriptions: price/availability/seller only.
+ * No hasMerchantReturnPolicy/shippingDetails — physical-goods fields on software
+ * produce invalid merchant-listing data (Google guidelines).
+ */
 export function offerSchema({
   name,
   price,
@@ -272,25 +276,6 @@ export function offerSchema({
     seller: {
       "@type": "Organization",
       name: "Fusion Calling",
-    },
-    hasMerchantReturnPolicy: {
-      "@type": "MerchantReturnPolicy",
-      applicableCountry: "US",
-      returnPolicyCategory:
-        "https://schema.org/MerchantReturnFiniteReturnWindow",
-      merchantReturnDays: 14,
-      returnMethod: "https://schema.org/ReturnByMail",
-      returnFees: "https://schema.org/FreeReturn",
-    },
-    shippingDetails: {
-      "@type": "OfferShippingDetails",
-      shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "USD" },
-      shippingDestination: { "@type": "DefinedRegion", addressCountry: "US" },
-      deliveryTime: {
-        "@type": "ShippingDeliveryTime",
-        handlingTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 0, unitCode: "DAY" },
-        transitTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 0, unitCode: "DAY" },
-      },
     },
   };
 }

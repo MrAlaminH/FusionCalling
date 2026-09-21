@@ -23,7 +23,7 @@ export const authors: Author[] = [
     bio: "Alamin is the founder and CEO of Fusion Calling, a white-label AI voice automation platform helping agencies launch branded voice AI businesses. With a background in building scalable SaaS products and voice AI infrastructure, he has helped 500+ agencies deploy AI phone agents across real estate, healthcare, insurance, home services, and more. He writes about voice AI strategy, agency growth, and the future of conversational automation.",
     shortBio:
       "Founder of Fusion Calling. Building the infrastructure for 500+ agencies to launch white-label voice AI businesses. Previously scaled B2B SaaS to 7-figures ARR.",
-    avatar: "/avatars/male_avatar.svg",
+    avatar: "/avatars/male_avatar.png",
     linkedin: "https://www.linkedin.com/company/fusion-calling/",
     twitter: "https://x.com/MrAlaminH",
     email: "alamin@fusioncalling.com",
@@ -48,7 +48,7 @@ export const authors: Author[] = [
     bio: "The Fusion Calling team builds and operates the white-label AI voice platform used by 500+ agencies worldwide. Our product and voice engineering team specializes in multi-provider voice AI (Vapi, Retell, ElevenLabs), white-label infrastructure, and agency go-to-market strategies. We publish technical guides, industry benchmarks, and agency playbooks based on production data from millions of automated calls.",
     shortBio:
       "The engineering team behind Fusion Calling's multi-provider voice AI platform: Vapi, Retell & ElevenLabs integration, conversation design, and production deployments.",
-    avatar: "/avatars/female_avatar.svg",
+    avatar: "/avatars/female_avatar.png",
     linkedin: "https://www.linkedin.com/company/fusion-calling/",
     twitter: "https://x.com/MrAlaminH",
     email: "team@fusioncalling.com",

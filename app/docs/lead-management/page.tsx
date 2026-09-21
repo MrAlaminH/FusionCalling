@@ -130,7 +130,7 @@ export default function LeadManagementDocsPage() {
                   "@id": `${SITE_URL}/#website`,
                 },
                 about: {
-                  "@id": `${SITE_URL}/#product`,
+                  "@id": `${SITE_URL}/#service`,
                 },
               },
             ],

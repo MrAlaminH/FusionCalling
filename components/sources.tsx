@@ -101,13 +101,41 @@ export default function Sources() {
             className="text-brand-strong hover:text-brand underline underline-offset-2 transition-colors"
           >
             white-label program
-          </Link>{" "}
-          or read the{" "}
+          </Link>
+          , read the{" "}
           <Link
             href="/docs"
             className="text-brand-strong hover:text-brand underline underline-offset-2 transition-colors"
           >
             documentation
+          </Link>
+          , compare{" "}
+          <Link
+            href="/pricing"
+            className="text-brand-strong hover:text-brand underline underline-offset-2 transition-colors"
+          >
+            pricing plans
+          </Link>
+          , browse more{" "}
+          <Link
+            href="/blog"
+            className="text-brand-strong hover:text-brand underline underline-offset-2 transition-colors"
+          >
+            guides on the blog
+          </Link>
+          , or get answers in the{" "}
+          <Link
+            href="/faq"
+            className="text-brand-strong hover:text-brand underline underline-offset-2 transition-colors"
+          >
+            FAQ
+          </Link>{" "}
+          and{" "}
+          <Link
+            href="/contact"
+            className="text-brand-strong hover:text-brand underline underline-offset-2 transition-colors"
+          >
+            contact our team
           </Link>
           .
         </p>

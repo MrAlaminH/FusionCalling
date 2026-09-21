@@ -71,8 +71,11 @@ const aboutJsonLd = {
       },
     },
     {
+      // Canonical founder entity — same @id the /team/alamin profile page
+      // emits, so all pages describe one Person instead of three fragments.
       "@type": "Person",
-      "@id": `${SITE_URL}/about#founder`,
+      "@id": `${SITE_URL}/team/alamin#person`,
+      url: `${SITE_URL}/team/alamin`,
       name: "Alamin",
       jobTitle: "Founder",
       worksFor: { "@id": `${SITE_URL}/#organization` },
@@ -152,7 +155,7 @@ export default function AboutPage() {
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl py-10 md:py-14">
         <div className="rounded-2xl border border-brand/20 bg-black/40 p-6 md:p-8 flex flex-col sm:flex-row gap-6 items-start">
           <Image
-            src="/avatars/male_avatar.svg"
+            src="/avatars/male_avatar.png"
             alt="Alamin, founder of Fusion Calling — voice AI engineer"
             width={80}
             height={80}

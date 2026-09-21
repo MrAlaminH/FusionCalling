@@ -9,9 +9,11 @@ import { primaryButton } from "@/components/ui/button-styles";
 import PostFaq from "@/components/blog/PostFaq";
 
 const title = `Voice AI Platform Comparisons (2026)`;
-const description = `Compare Fusion Calling vs Vapi, Retell AI, Synthflow, Bland AI, Air AI + ${
+// Head-to-head directory angle — /whitelabel/compare owns the feature-matrix
+// framing, this hub owns the "vs each competitor" framing.
+const description = `Head-to-head comparisons: Fusion Calling vs Vapi, Retell AI, Synthflow, Smith.ai + ${
   comparisons.length - 5
-} more: pricing from $99/mo, providers, sub-accounts, onboarding. Live demo included.`;
+} more. Pricing, features, white-label support — pick the right platform.`;
 
 export const metadata: Metadata = {
   title,

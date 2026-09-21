@@ -70,6 +70,37 @@ export default function GlossaryTermPage({ term }: { term: GlossaryTerm }) {
   // one identical CTA paragraph.
   const cta = CTA_VARIANTS[hashSlug(slug) % CTA_VARIANTS.length];
 
+  // Secondary "keep researching" link mapped from the term's category, so the
+  // glossary's 80 pages vote for the receptionist/agent/automation money pages
+  // they're actually about — not only the whitelabel program.
+  const CATEGORY_GUIDES: Record<string, { href: string; label: string }> = {
+    "Core AI & Voice": {
+      href: "/ai-receptionist",
+      label: "how an AI receptionist works",
+    },
+    "Speech Technology": {
+      href: "/ai-voice-agent",
+      label: "what an AI voice agent is",
+    },
+    Telephony: {
+      href: "/ai-phone-call-automation",
+      label: "AI phone call automation, end to end",
+    },
+    "Conversational Design": {
+      href: "/ai-phone-call-receptionist",
+      label: "the AI phone call receptionist guide",
+    },
+    "Compliance & Security": {
+      href: "/ai-phone-call-receptionist",
+      label: "running a compliant AI receptionist",
+    },
+    "Business & Operations": {
+      href: "/ai-answering-service",
+      label: "the AI answering service buyer's guide",
+    },
+  };
+  const categoryGuide = CATEGORY_GUIDES[term.category];
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -250,6 +281,18 @@ export default function GlossaryTermPage({ term }: { term: GlossaryTerm }) {
             {cta.cta}
             <span className="ml-2">→</span>
           </Link>
+          {categoryGuide ? (
+            <p className="mt-5 text-sm text-gray-400">
+              Just researching? See{" "}
+              <Link
+                href={categoryGuide.href}
+                className="text-brand-light hover:text-brand transition-colors"
+              >
+                {categoryGuide.label}
+              </Link>
+              .
+            </p>
+          ) : null}
         </div>
       </article>
     </>

@@ -102,7 +102,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "gohighlevel-white-label-voice",
-    title: "White-Label Voice AI for GoHighLevel: Costs",
+    // Informational "integration" angle — the transactional "white-label AI
+    // voice for GoHighLevel" query is owned by /whitelabel/gohighlevel.
+    title: "GoHighLevel Voice AI Integration: Setup & Costs",
     description:
       "Step-by-step guide to adding white-label voice AI to GoHighLevel: webhook setup, per-client costs, pricing math, and pitfalls to avoid before launch.",
     date: "2025-02-12",

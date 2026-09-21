@@ -18,7 +18,9 @@ const NAV_LINKS = [
 const MORE_LINKS = [
   { label: "Blog", href: "/blog", description: "Guides & insights" },
   { label: "Docs", href: "/docs", description: "Platform documentation" },
-  { label: "FAQs", href: "/#faqs", description: "Common questions" },
+  // The /faq hub, not the homepage section — the hub needs the internal links.
+  { label: "FAQs", href: "/faq", description: "Common questions" },
+  { label: "About", href: "/about", description: "Who we are" },
 ];
 
 const CONTACT_URL = "https://cal.com/mralamin/discovery-call";

@@ -121,6 +121,16 @@ const verticals = [
     href: "/industries/ai-voice-for-financial-services",
     text: "Schedule advisor meetings and follow up on applications without adding staff.",
   },
+  {
+    name: "Restaurants & hospitality",
+    href: "/industries/ai-voice-for-restaurants-hospitality",
+    text: "Capture reservations, answer hours-and-menu questions, and confirm bookings automatically.",
+  },
+  {
+    name: "Ecommerce & retail",
+    href: "/industries/ai-voice-for-ecommerce-retail",
+    text: "Handle order-status calls, returns, and pre-purchase questions without queueing customers.",
+  },
 ];
 
 const faqs = [

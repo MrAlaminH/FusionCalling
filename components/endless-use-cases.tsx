@@ -88,19 +88,26 @@ export default function EndlessUseCases() {
           </div>
         </Card>
 
-        {/* Content - CSS fade keyed by tab (remount replays the animation) */}
-        <div
-          key={activeTab}
-          id={
-            activeTab === "outbound"
-              ? "usecase-panel-outbound"
-              : "usecase-panel-inbound"
-          }
-          role="tabpanel"
-          aria-labelledby={`usecase-tab-${activeTab}`}
-          className="animate-fade-in"
-        >
-          {activeTab === "outbound" ? <OutboundCalls /> : <InboundCalls />}
+        {/* Content — BOTH panels always rendered so the hidden tab's copy is
+            in the SSR HTML (Google indexes it); `key` remounts on switch to
+            replay the fade animation. */}
+        <div key={activeTab} className="animate-fade-in">
+          <div
+            id="usecase-panel-outbound"
+            role="tabpanel"
+            aria-labelledby="usecase-tab-outbound"
+            className={activeTab === "outbound" ? undefined : "hidden"}
+          >
+            <OutboundCalls />
+          </div>
+          <div
+            id="usecase-panel-inbound"
+            role="tabpanel"
+            aria-labelledby="usecase-tab-inbound"
+            className={activeTab === "inbound" ? undefined : "hidden"}
+          >
+            <InboundCalls />
+          </div>
         </div>
       </div>
     </section>

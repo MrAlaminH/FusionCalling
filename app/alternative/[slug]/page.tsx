@@ -6,6 +6,8 @@ import ComparisonPage from "@/components/compare/ComparisonPage";
 import { comparisons, getComparison } from "@/lib/comparisons";
 import { glossaryTerms, slugifyTerm } from "@/lib/glossary";
 import { buildOpenGraph } from "@/lib/seo";
+import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { truncateAtWord } from "@/lib/utils";
 
 export function generateStaticParams() {
   return comparisons.map((c) => ({ slug: c.slug }));
@@ -23,17 +25,21 @@ export function generateMetadata({
 
   return {
     title: comparison.metaTitle,
-    description: comparison.metaDescription,
+    // Data-file descriptions run up to 178 chars — truncate at render like
+    // the locations/provider pages do.
+    description: truncateAtWord(comparison.metaDescription, 158),
     ...buildOpenGraph({
       title: comparison.metaTitle,
-      description: comparison.metaDescription,
+      description: truncateAtWord(comparison.metaDescription, 158),
       path: `/alternative/${comparison.slug}`,
       image: comparison.heroImage,
       imageWidth: 1376,
       imageHeight: 768,
       type: "article",
       publishedTime: comparison.datePublished,
-      modifiedTime: comparison.datePublished,
+      // Matches the visible "Updated" label + JSON-LD dateModified; the
+      // data files' datePublished is the original-publish date.
+      modifiedTime: CONTENT_LAST_UPDATED,
       authors: ["Fusion Calling"],
     }),
   };

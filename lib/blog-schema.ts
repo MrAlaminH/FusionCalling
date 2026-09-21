@@ -81,6 +81,14 @@ export function buildBlogGraph({
           description: authorPerson.shortBio,
           image: `${SITE_URL}${authorPerson.avatar}`,
           worksFor: { "@id": `${SITE_URL}/#organization` },
+          // Entity disambiguation — same data /team/[slug] already emits.
+          ...(authorPerson.linkedin || authorPerson.twitter
+            ? {
+                sameAs: [authorPerson.linkedin, authorPerson.twitter].filter(
+                  Boolean
+                ),
+              }
+            : {}),
         },
       ]
     : [];

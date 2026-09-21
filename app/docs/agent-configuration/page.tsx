@@ -115,7 +115,7 @@ export default function AgentConfigurationPage() {
                   "@id": `${SITE_URL}/#website`,
                 },
                 about: {
-                  "@id": `${SITE_URL}/#product`,
+                  "@id": `${SITE_URL}/#service`,
                 },
               },
             ],

@@ -91,7 +91,9 @@ const PLAN_DETAIL: Record<
   },
 };
 
-// Offer fields shared verbatim by every plan's Offer node.
+// Offer fields shared verbatim by every plan's Offer node. Digital SaaS —
+// no return-policy/shipping fields (physical-goods markup on software is
+// invalid merchant data per Google guidelines).
 const OFFER_BASE = {
   priceCurrency: "USD",
   validFrom: "2026-01-15T09:00:00-05:00",
@@ -100,24 +102,6 @@ const OFFER_BASE = {
   availability: "https://schema.org/InStock",
   url: `${SITE_URL}/pricing`,
   seller: { "@type": "Organization", name: "Fusion Calling", "@id": `${SITE_URL}/#organization` },
-  hasMerchantReturnPolicy: {
-    "@type": "MerchantReturnPolicy",
-    applicableCountry: "US",
-    returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-    merchantReturnDays: 14,
-    returnMethod: "https://schema.org/ReturnByMail",
-    returnFees: "https://schema.org/FreeReturn",
-  },
-  shippingDetails: {
-    "@type": "OfferShippingDetails",
-    shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "USD" },
-    shippingDestination: { "@type": "DefinedRegion", addressCountry: "US" },
-    deliveryTime: {
-      "@type": "ShippingDeliveryTime",
-      handlingTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 0, unitCode: "DAY" },
-      transitTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 0, unitCode: "DAY" },
-    },
-  },
 };
 
 const productNodes = DIRECT_PLANS.map((plan) => {

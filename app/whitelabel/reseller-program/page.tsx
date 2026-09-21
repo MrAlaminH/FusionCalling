@@ -7,6 +7,7 @@ import { primaryButton, secondaryButton } from "@/components/ui/button-styles";
 import PostFaq from "@/components/blog/PostFaq";
 import CTA from "@/components/white-label/CTA";
 import { buildOpenGraph } from "@/lib/seo";
+import { WHOLESALE_PLANS } from "@/lib/product-facts";
 
 const title = "AI Voice Agent Reseller Program";
 const description =
@@ -138,35 +139,17 @@ const rpSchema = {
         audienceType:
           "Marketing agencies, MSPs, telecom consultants, GoHighLevel agencies, SaaS resellers",
       },
-      offers: [
-        {
-          "@type": "Offer",
-          name: "Starter Partner Plan",
-          price: "99.00",
-          priceCurrency: "USD",
-          priceValidUntil: "2027-12-31",
-          availability: "https://schema.org/InStock",
-          url: `${SITE_URL}/whitelabel/reseller-program`,
-        },
-        {
-          "@type": "Offer",
-          name: "Growth Partner Plan",
-          price: "299.00",
-          priceCurrency: "USD",
-          priceValidUntil: "2027-12-31",
-          availability: "https://schema.org/InStock",
-          url: `${SITE_URL}/whitelabel/reseller-program`,
-        },
-        {
-          "@type": "Offer",
-          name: "Scale Partner Plan",
-          price: "499.00",
-          priceCurrency: "USD",
-          priceValidUntil: "2027-12-31",
-          availability: "https://schema.org/InStock",
-          url: `${SITE_URL}/whitelabel/reseller-program`,
-        },
-      ],
+      // Prices from WHOLESALE_PLANS — can't drift from the visible pricing
+      // section the way hardcoded literals did.
+      offers: WHOLESALE_PLANS.map((plan) => ({
+        "@type": "Offer",
+        name: `${plan.name} Partner Plan`,
+        price: plan.price.toFixed(2),
+        priceCurrency: "USD",
+        priceValidUntil: "2027-12-31",
+        availability: "https://schema.org/InStock",
+        url: `${SITE_URL}/whitelabel/reseller-program`,
+      })),
     },
     {
       "@type": "BreadcrumbList",

@@ -13,6 +13,46 @@ import { getRelatedPosts } from "@/lib/blog-posts";
 export type PostTocItem = { id: string; title: string };
 
 /**
+ * Per-post contextual CTA in the author box. Defaults to the whitelabel
+ * partner program; posts about a specific money page vote for that page
+ * instead, so 13 posts don't funnel every anchor to one URL.
+ */
+const POST_CTAS: Record<string, { href: string; label: string }> = {
+  "ai-voice-agents-for-small-business": {
+    href: "/ai-receptionist-for-small-business",
+    label: "AI Receptionists for Small Business →",
+  },
+  "will-ai-replace-receptionists": {
+    href: "/ai-receptionist",
+    label: "How the AI Receptionist Works →",
+  },
+  "ai-receptionist-cost": {
+    href: "/ai-receptionist",
+    label: "AI Receptionist Plans & Pricing →",
+  },
+  "ai-receptionist-complaints": {
+    href: "/ai-receptionist",
+    label: "See the AI Receptionist →",
+  },
+  "ai-receptionist-call-recording-laws": {
+    href: "/ai-receptionist",
+    label: "AI Receptionist with Call Recordings →",
+  },
+  "missed-call-text-back-vs-ai-receptionist": {
+    href: "/ai-receptionist",
+    label: "Meet the AI Receptionist →",
+  },
+  "how-to-automate-phone-calls-with-ai": {
+    href: "/ai-phone-call-automation",
+    label: "AI Phone Call Automation →",
+  },
+};
+const DEFAULT_POST_CTA = {
+  href: "/whitelabel",
+  label: "Partner Program →",
+};
+
+/**
  * Shared blog post chrome: header, byline, hero image, sticky TOC, visible
  * FAQ, related articles, and author bio. The post body (children) keeps its
  * own markup and is normalized by the `.post-body` styles in globals.css.
@@ -40,6 +80,7 @@ export default function PostLayout({
 }) {
   // Topical related posts: same category first, then most recent others.
   const related = getRelatedPosts(post);
+  const cta = POST_CTAS[post.slug] ?? DEFAULT_POST_CTA;
 
   return (
     <>
@@ -210,10 +251,10 @@ export default function PostLayout({
                           </a>
                         ) : null}
                         <Link
-                          href="/whitelabel"
+                          href={cta.href}
                           className="text-brand-light hover:text-brand transition-colors"
                         >
-                          Partner Program →
+                          {cta.label}
                         </Link>
                       </div>
                     </div>

@@ -7,8 +7,10 @@ import { buildOpenGraph } from "@/lib/seo";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 
 const title = "AI Answering Service: 2026 Buyer's Guide";
+// Buyer's-guide angle — deliberately different structure from
+// /ai-receptionist's description so the two never render as clones.
 const description =
-  "An AI answering service picks up every business call 24/7 — booking, messages, transfers, SMS follow-ups — from $149/mo. Compare vs human services.";
+  "2026 buyer's guide to AI answering services: what they cost, how they compare to human answering services, and which features actually matter.";
 
 const included = [
   {

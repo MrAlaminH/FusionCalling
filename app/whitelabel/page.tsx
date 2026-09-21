@@ -115,7 +115,7 @@ export default function WhiteLabelPage() {
         step: [
           {
             "@type": "HowToStep",
-            name: "Apply for Partnership",
+            name: "Schedule a call or email to apply",
             text: "Submit your application and get approved within 48 hours. We review your agency to ensure a successful partnership.",
           },
           {
@@ -142,7 +142,7 @@ export default function WhiteLabelPage() {
         description:
           "See the Fusion Calling white-label AI voice platform in action: branded dashboard, sub-account management, and live AI phone agents under your own domain.",
         thumbnailUrl:
-          `${SITE_URL}/new-hero-thumbnail.png`,
+          `${SITE_URL}/whitelabel-video-thumb.jpg`,
         uploadDate: "2026-09-08T16:03:39+00:00",
         datePublished: "2026-09-08T16:03:39+00:00",
         duration: "PT6M27S",

@@ -5,8 +5,6 @@ import {
   Mail,
   Phone,
   Twitter,
-  Facebook,
-  Instagram,
   ArrowRight,
 } from "lucide-react";
 
@@ -72,11 +70,12 @@ const footerGroups: FooterGroup[] = [
   },
 ];
 
+// Only profiles that actually belong to Fusion Calling — a sameAs/footer link
+// to someone else's page corrupts the org entity (facebook.com/fusioncalling
+// is a different company; FB/IG return when real profiles exist).
 const socialLinks = [
   { label: "Twitter / X", href: "https://x.com/MrAlaminH", Icon: Twitter },
   { label: "LinkedIn", href: "https://www.linkedin.com/company/fusion-calling/", Icon: Linkedin },
-  { label: "Facebook", href: "https://www.facebook.com/fusioncalling", Icon: Facebook },
-  { label: "Instagram", href: "https://www.instagram.com/fusioncalling", Icon: Instagram },
 ];
 
 // "Featured on" badges — small, muted, extensible. Add future launches /
