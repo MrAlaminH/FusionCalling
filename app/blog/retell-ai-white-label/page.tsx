@@ -25,7 +25,8 @@ export default function RetellAIBlogPost() {
           __html: JSON.stringify(
             buildBlogGraph({
               slug: post.slug,
-              title: post.title,
+              // Headline = visible H1 text.
+              title: "White-Labeling Retell AI with Fusion Calling",
               description: post.description,
               image: post.image,
               datePublished: post.date,

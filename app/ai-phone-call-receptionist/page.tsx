@@ -97,7 +97,7 @@ const faqs = [
   {
     question: "How much does an AI phone call receptionist cost?",
     answer:
-      "Fusion Calling plans start at $149/month with 500 included minutes, scale to $497/month for 2,100 minutes, and require no long-term contracts. Use our ROI calculator to estimate savings against missed calls and staffing costs.",
+      "Plans start at $149/month with 500 included minutes — see /pricing for every tier, and use the ROI calculator to estimate savings against missed calls.",
   },
   {
     question: "How long does it take to launch?",

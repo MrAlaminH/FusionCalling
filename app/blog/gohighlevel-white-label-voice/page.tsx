@@ -25,7 +25,8 @@ export default function GoHighLevelBlogPost() {
           __html: JSON.stringify(
             buildBlogGraph({
               slug: post.slug,
-              title: post.title,
+              // Headline = visible H1 text.
+              title: "Adding Voice AI to Your GoHighLevel Agency",
               description: post.description,
               image: post.image,
               datePublished: post.date,

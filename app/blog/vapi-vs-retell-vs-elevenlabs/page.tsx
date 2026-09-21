@@ -25,7 +25,8 @@ export default function VapiVsRetellVsElevenLabsBlogPost() {
           __html: JSON.stringify(
             buildBlogGraph({
               slug: post.slug,
-              title: post.title,
+              // Headline = visible H1 text.
+              title: "Vapi vs Retell vs ElevenLabs: Choosing the Right Provider",
               description: post.description,
               image: post.image,
               datePublished: post.date,

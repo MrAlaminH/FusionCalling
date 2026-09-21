@@ -4,7 +4,6 @@ import { buildOpenGraph } from "@/lib/seo";
 import type { BlogPost } from "@/lib/blog-posts";
 import type { Author } from "@/lib/authors";
 import type { BlogFaq } from "@/components/blog/PostFaq";
-
 /**
  * The post record is the single source for <title>, meta description, and the
  * OG/Twitter block — pages can't diverge from it because they don't restate it.
@@ -47,6 +46,7 @@ export function buildBlogGraph({
   authorSchemaId,
   faqs,
   crumbName,
+  authorPerson,
 }: {
   slug: string;
   title: string;
@@ -60,7 +60,30 @@ export function buildBlogGraph({
   faqs: BlogFaq[];
   /** Optional breadcrumb label when it differs from the title. */
   crumbName?: string;
+  /**
+   * Full author record for non-team bylines. The root layout @graph only
+   * carries the voice-team Person, so a post bylined to anyone else must
+   * embed its own Person node — otherwise `author.@id` dangles inside the
+   * served page. Pass the page's `author` when it isn't the voice team.
+   */
+  authorPerson?: Author;
 }) {
+  // Person node for non-team authors, so every author @id in this graph
+  // resolves to a node in the same served page (layout graph + page graph).
+  const authorNode = authorPerson
+    ? [
+        {
+          "@type": "Person",
+          "@id": authorPerson.authorSchemaId,
+          name: authorPerson.name,
+          url: `${SITE_URL}/team/${authorPerson.slug}`,
+          jobTitle: authorPerson.role,
+          description: authorPerson.shortBio,
+          image: `${SITE_URL}${authorPerson.avatar}`,
+          worksFor: { "@id": `${SITE_URL}/#organization` },
+        },
+      ]
+    : [];
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -104,6 +127,7 @@ export function buildBlogGraph({
           acceptedAnswer: { "@type": "Answer", text: faq.answer },
         })),
       },
+      ...authorNode,
     ],
   };
 }

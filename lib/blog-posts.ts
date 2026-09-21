@@ -20,8 +20,8 @@ export type BlogPost = {
   author?: string;
   /**
    * Real last-updated date, once a post has materially changed. Falls back to
-   * `date` in the sitemap until set. ponytail: nothing populates this yet —
-   * set it when you actually revise a post.
+   * `date` in the sitemap until set. Set to the 2026 rewrite date on the
+   * seven Feb-2025 posts; set it when you actually revise any other post.
    */
   updated?: string;
 };
@@ -34,6 +34,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "Learn how to start an AI voice agency with a white-label platform. Keep 100% of client revenue, launch in 24 hours, and scale with Vapi, Retell & ElevenLabs.",
     date: "2025-02-13",
+    updated: "2026-09-19",
     category: "Agency Growth",
     readTime: "9 min read",
     image: "/blog/blog1.webp",
@@ -46,6 +47,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "Fusion Calling bundles AI voice agents with a built-in CRM for voice-first agencies — no GoHighLevel subscription needed to run a voice AI agency.",
     date: "2025-02-16",
+    updated: "2026-09-19",
     category: "Buyer's Guide",
     readTime: "9 min read",
     image: "/blog/blog2.webp",
@@ -57,6 +59,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "A fair, neutral comparison of the three leading voice AI providers, and why you don't have to pick just one when you use Fusion Calling's multi-provider layer.",
     date: "2025-02-14",
+    updated: "2026-09-19",
     category: "Buyer's Guide",
     readTime: "8 min read",
     image: "/blog/blog3.webp",
@@ -68,6 +71,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "How restaurants and small businesses use AI voice agents to answer every call, book appointments, and stay open 24/7 — plus the ROI math for a first client.",
     date: "2025-02-15",
+    updated: "2026-09-19",
     category: "Use Cases",
     readTime: "8 min read",
     image: "/blog/blog4.webp",
@@ -80,6 +84,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "Does Vapi offer white label natively? Learn how agencies resell Vapi under their own brand in 2026, what's missing, and the step-by-step setup.",
     date: "2025-02-10",
+    updated: "2026-09-19",
     category: "Integration Guide",
     readTime: "7 min read",
     image: "/blog/blog5.webp",
@@ -90,6 +95,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "How agencies white-label Retell AI for clients like dental clinics, how it compares with Vapi on cost and setup, and the step-by-step path to launch.",
     date: "2025-02-11",
+    updated: "2026-09-19",
     category: "Integration Guide",
     readTime: "7 min read",
     image: "/blog/blog6.webp",
@@ -100,6 +106,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "Step-by-step guide to adding white-label voice AI to GoHighLevel: webhook setup, per-client costs, pricing math, and pitfalls to avoid before launch.",
     date: "2025-02-12",
+    updated: "2026-09-19",
     category: "Integration Guide",
     readTime: "8 min read",
     image: "/blog/blog7.webp",

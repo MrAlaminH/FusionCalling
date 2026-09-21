@@ -7,7 +7,7 @@ import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 
 const title = "AI Cold Calling Software";
 const description =
-  "AI cold calling software that dials your lists, holds natural conversations, qualifies prospects, and books meetings — with TCPA-conscious workflows. From $149/mo.";
+  "AI cold calling software dials your lists, holds natural conversations, qualifies prospects, and books meetings — with TCPA-conscious workflows. From $149/mo.";
 
 const handles = [
   {
@@ -93,12 +93,12 @@ const faqs = [
   {
     question: "How many calls can an AI agent make at once?",
     answer:
-      "AI agents run many calls in parallel — capacity scales with your plan's included minutes rather than headcount. Plans start at $149/month with 500 minutes and scale to $497/month with 2,100 minutes, with no setup fee or long-term contract.",
+      "AI agents run many calls in parallel — capacity scales with your plan's included minutes rather than headcount; plans start at $149/month, details on /pricing.",
   },
   {
     question: "How much does AI cold calling software cost?",
     answer:
-      "Fusion Calling plans start at $149/month with 500 included minutes and scale to $497/month for 2,100 minutes — no setup fee, no long-term contract. Compare that to SDR hours or per-seat dialers, and model your own numbers with the ROI calculator.",
+      "Plans start at $149/month with 500 included minutes — compare tiers on /pricing or model your numbers with the ROI calculator.",
   },
   {
     question: "What happens when a prospect wants a human?",
@@ -336,14 +336,8 @@ export default function AiColdCallingPage() {
               AI cold calling pricing
             </h2>
             <p className="text-gray-400 leading-relaxed mb-10">
-              Outbound runs on the same plans as everything else: $149/month
-              with 500 included minutes, scaling to $497/month for 2,100
-              minutes — no setup fee, no long-term contract. Estimate your
-              campaign capacity with the{" "}
-              <Link href="/calculator" className="text-brand hover:underline">
-                call volume calculator
-              </Link>{" "}
-              or see the{" "}
+              Outbound runs on the same plans as everything else — starting at
+              $149/month. See the{" "}
               <Link href="/pricing" className="text-brand hover:underline">
                 full plan breakdown
               </Link>

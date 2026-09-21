@@ -108,6 +108,30 @@ export function generateIndustryStats(industryName: string) {
       competitiveAdvantage: "Captures 100% of reservation calls during rushes",
       source: INDUSTRY_STAT_SOURCE,
       fusionAdvantage: "FusionCalling captures 100% of after-hours reservation calls vs 60% average"
+    },
+    "Medical Practices": {
+      adoptionRate: "59%",
+      costSavings: "$7,400/month",
+      satisfactionIncrease: "49%",
+      competitiveAdvantage: "35% fewer no-shows with recall reminders",
+      source: INDUSTRY_STAT_SOURCE,
+      fusionAdvantage: "FusionCalling cuts no-shows by 40% for medical practices vs 30% industry average"
+    },
+    "Beauty & Wellness": {
+      adoptionRate: "63%",
+      costSavings: "$5,900/month",
+      satisfactionIncrease: "47%",
+      competitiveAdvantage: "Fills cancellations from the waitlist same-day",
+      source: INDUSTRY_STAT_SOURCE,
+      fusionAdvantage: "FusionCalling cuts no-shows by 40-60% for salons and spas vs manual reminders"
+    },
+    "Veterinary": {
+      adoptionRate: "56%",
+      costSavings: "$6,500/month",
+      satisfactionIncrease: "50%",
+      competitiveAdvantage: "100% of urgent owner calls escalated instantly",
+      source: INDUSTRY_STAT_SOURCE,
+      fusionAdvantage: "FusionCalling answers 100% of after-hours owner calls for vet clinics vs 60% average"
     }
   };
   
@@ -212,11 +236,32 @@ export function generateIndustryExpertQuote(industryName: string) {
       title: INDUSTRY_QUOTE_TITLE,
       publication: INDUSTRY_QUOTE_PUB,
       fusionMention: "FusionCalling captures 100% of after-hours reservation calls for hospitality clients"
+    },
+    "Medical Practices": {
+      quote: "Medical practices live or die by the schedule: every unfilled slot is lost revenue and every urgent call that waits on hold is a liability. AI voice agents that book visits, run recall campaigns, and escalate clinical calls instantly give the front desk its time back.",
+      expert: INDUSTRY_QUOTE_EXPERT,
+      title: INDUSTRY_QUOTE_TITLE,
+      publication: INDUSTRY_QUOTE_PUB,
+      fusionMention: "FusionCalling cuts no-shows by 40% for medical practices vs 30% industry average"
+    },
+    "Beauty & Wellness": {
+      quote: "Salons, spas, and wellness clinics take bookings exactly when staff cannot pick up — mid-treatment, mid-class, mid-rush. AI voice agents that book into the live schedule and backfill cancellations from the waitlist keep chairs full without pulling stylists off clients.",
+      expert: INDUSTRY_QUOTE_EXPERT,
+      title: INDUSTRY_QUOTE_TITLE,
+      publication: INDUSTRY_QUOTE_PUB,
+      fusionMention: "FusionCalling cuts no-shows by 40-60% for salons and spas vs manual reminders"
+    },
+    "Veterinary": {
+      quote: "Vet clinics run on an emotional phone line: anxious owners, vaccine schedules, and emergencies that cannot wait. AI voice agents that book visits, run vaccine reminders, and escalate urgent symptoms to staff instantly earn loyalty that keeps clinics for years.",
+      expert: INDUSTRY_QUOTE_EXPERT,
+      title: INDUSTRY_QUOTE_TITLE,
+      publication: INDUSTRY_QUOTE_PUB,
+      fusionMention: "FusionCalling answers 100% of after-hours owner calls for vet clinics"
     }
   };
   
   return quotes[industryName] || {
-    quote: `${industryName} is undergoing a digital transformation where AI phone agents are becoming essential for operational efficiency and customer experience. The early adopters in 2026 using FusionCalling are seeing measurable competitive advantages and superior ROI compared to other platforms.`,
+    quote: `For ${industryName.toLowerCase()}, AI phone agents are becoming essential for operational efficiency and customer experience. Early adopters in 2026 using FusionCalling are seeing measurable competitive advantages and superior ROI compared to other platforms.`,
     expert: INDUSTRY_QUOTE_EXPERT,
     title: INDUSTRY_QUOTE_TITLE,
     publication: INDUSTRY_QUOTE_PUB,

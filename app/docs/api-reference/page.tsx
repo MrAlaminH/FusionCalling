@@ -82,6 +82,7 @@ const navItems = [
     label: "Reference",
     isSection: true,
     children: [
+      { id: "webhooks", label: "Webhooks" },
       { id: "recording-retention", label: "Recording & Retention" },
       { id: "error-codes", label: "Error Codes" },
       { id: "rate-limiting", label: "Rate Limiting" },
@@ -96,6 +97,57 @@ const breadcrumbs = [
   { label: "Documentation", href: "/docs" },
   { label: "API Reference" },
 ];
+
+function WebhooksSection() {
+  return (
+    <section id="webhooks" className="mb-16 scroll-mt-28">
+      <div className="mb-8">
+        <h2 className="font-display text-2xl sm:text-3xl font-bold text-white mb-2">
+          Webhooks
+        </h2>
+        <p className="text-gray-400 text-sm">
+          Fusion Calling pushes call outcomes, lead events, and transcriptions
+          to your endpoints as JSON POST requests, so every booking, message,
+          and completed call syncs into your CRM or automation in real time.
+          Register a URL per event type, verify the signature header on each
+          delivery, and return 2xx quickly — failed deliveries retry with
+          exponential backoff.
+        </p>
+      </div>
+      <div className="rounded-xl border border-white/10 bg-zinc-950 overflow-hidden">
+        <div className="px-4 py-2.5 border-b border-white/10 text-xs text-gray-500 font-mono">
+          POST https://your-app.com/webhooks/fusion-calling
+        </div>
+        <pre className="p-4 text-xs sm:text-sm font-mono leading-relaxed overflow-x-auto">
+          <code>
+            <span className="text-gray-400">{"{"}</span>
+            {"\n  "}
+            <span className="text-gray-300">&quot;event&quot;</span>
+            <span className="text-gray-400">: </span>
+            <span className="text-emerald-300">&quot;call.completed&quot;</span>
+            <span className="text-gray-400">,</span>
+            {"\n  "}
+            <span className="text-gray-300">&quot;call_id&quot;</span>
+            <span className="text-gray-400">: </span>
+            <span className="text-emerald-300">&quot;call_9f2k41&quot;</span>
+            <span className="text-gray-400">,</span>
+            {"\n  "}
+            <span className="text-gray-300">&quot;outcome&quot;</span>
+            <span className="text-gray-400">: </span>
+            <span className="text-emerald-300">&quot;booked&quot;</span>
+            <span className="text-gray-400">,</span>
+            {"\n  "}
+            <span className="text-gray-300">&quot;transcript_url&quot;</span>
+            <span className="text-gray-400">: </span>
+            <span className="text-emerald-300">&quot;https://…/t/call_9f2k41&quot;</span>
+            {"\n"}
+            <span className="text-gray-400">{"}"}</span>
+          </code>
+        </pre>
+      </div>
+    </section>
+  );
+}
 
 function RecordingRetentionSection() {
   return (
@@ -149,6 +201,7 @@ export default function ApiReferencePage() {
       <CalendarApiSection />
       <LeadsApiSection />
       <IntegrationGuidesSection />
+      <WebhooksSection />
       <RecordingRetentionSection />
       <ReferenceSection />
       <DocFooter

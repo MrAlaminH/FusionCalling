@@ -9,6 +9,7 @@ import { SectionHeader } from "@/components/ui/section-header";
 import { primaryButton } from "@/components/ui/button-styles";
 import { cn } from "@/lib/utils";
 import { whitelabelFaqs } from "@/lib/whitelabel-faqs";
+import { renderFaqAnswer } from "@/components/blog/PostFaq";
 import Link from "next/link";
 
 export default function FAQ() {
@@ -41,7 +42,7 @@ export default function FAQ() {
                   </span>
                 </AccordionTrigger>
                 <AccordionContent className="font-body text-gray-400 text-sm md:text-base leading-relaxed">
-                  {faq.answer}
+                  {renderFaqAnswer(faq.answer)}
                 </AccordionContent>
               </AccordionItem>
             ))}

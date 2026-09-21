@@ -7,6 +7,8 @@ import {
   whitelabelCaseStudies,
   type WhiteLabelCaseStudy,
 } from "@/lib/whitelabel-case-studies";
+import { whitelabelProviders } from "@/lib/whitelabel-providers";
+import { whitelabelLocations } from "@/lib/whitelabel-locations";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { buildOpenGraph } from "@/lib/seo";
 
@@ -43,6 +45,20 @@ export default function CaseStudyDetailPage({
 }) {
   const cs = whitelabelCaseStudies.find((c) => c.slug === params.slug);
   if (!cs) notFound();
+
+  const otherCaseStudies = whitelabelCaseStudies.filter(
+    (c) => c.slug !== cs.slug
+  );
+  // Providers this story ran on (reverse of relatedCaseStudySlugs) and the
+  // same-state location page, so no case study is a dead-end.
+  const relatedProviders = whitelabelProviders.filter((p) =>
+    p.relatedCaseStudySlugs?.includes(cs.slug)
+  );
+  const relatedLocation = whitelabelLocations.find(
+    (l) =>
+      cs.location.endsWith(`, ${l.abbreviation}`) ||
+      cs.location.includes(l.stateName)
+  );
 
   return (
     <>
@@ -161,6 +177,92 @@ export default function CaseStudyDetailPage({
                     {r.description}
                   </p>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* More case studies + related engines/locations */}
+        <section className="w-full bg-black section-spacing">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center mb-4">
+              More client stories
+            </h2>
+            <p className="text-gray-400 text-base sm:text-lg text-center mb-12">
+              {relatedProviders.length > 0 ? (
+                <>
+                  {cs.agencyName} runs on{" "}
+                  {relatedProviders.map((p, i) => (
+                    <span key={p.slug}>
+                      {i > 0 ? " + " : null}
+                      <Link
+                        href={`/whitelabel/${p.slug}`}
+                        className="text-brand-light hover:text-brand underline underline-offset-4 transition-colors"
+                      >
+                        {p.crossLinkTitle ?? `White-Label ${p.name}`}
+                      </Link>
+                    </span>
+                  ))}
+                  {relatedLocation ? (
+                    <>
+                      {" "}
+                      — agencies in {relatedLocation.stateName} can start from
+                      the{" "}
+                      <Link
+                        href={`/whitelabel/locations/${relatedLocation.slug}`}
+                        className="text-brand-light hover:text-brand underline underline-offset-4 transition-colors"
+                      >
+                        white-label AI voice in {relatedLocation.stateName}{" "}
+                        page
+                      </Link>
+                    </>
+                  ) : (
+                    <>
+                      {" "}
+                      — or{" "}
+                      <Link
+                        href="/whitelabel/locations"
+                        className="text-brand-light hover:text-brand underline underline-offset-4 transition-colors"
+                      >
+                        browse white-label AI voice by state
+                      </Link>
+                    </>
+                  )}
+                  .
+                </>
+              ) : (
+                <>
+                  Keep exploring{" "}
+                  <Link
+                    href="/whitelabel/case-studies"
+                    className="text-brand-light hover:text-brand underline underline-offset-4 transition-colors"
+                  >
+                    all partner case studies
+                  </Link>
+                  .
+                </>
+              )}
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {otherCaseStudies.map((other) => (
+                <Link
+                  key={other.slug}
+                  href={`/whitelabel/case-studies/${other.slug}`}
+                  className="group glass-light rounded-2xl p-6 border border-brand/20 hover:border-brand/40 transition-premium"
+                >
+                  <p className="text-xs font-medium text-brand-light mb-2">
+                    {other.industry} &middot; {other.location}
+                  </p>
+                  <h3 className="text-lg font-bold text-white group-hover:text-brand-light transition-colors mb-2">
+                    {other.metaTitle}
+                  </h3>
+                  <p className="text-sm text-gray-400 leading-relaxed mb-4 line-clamp-2">
+                    {other.metaDescription}
+                  </p>
+                  <span className="text-xs font-semibold text-brand-light">
+                    Read the {other.agencyName} story &rarr;
+                  </span>
+                </Link>
               ))}
             </div>
           </div>

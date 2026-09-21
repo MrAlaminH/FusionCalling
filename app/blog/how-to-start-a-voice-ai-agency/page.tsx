@@ -25,7 +25,8 @@ export default function StartVoiceAIAgencyBlogPost() {
           __html: JSON.stringify(
             buildBlogGraph({
               slug: post.slug,
-              title: post.title,
+              // Headline = visible H1 text ("How to Start a Voice AI Agency in 2026").
+              title: "How to Start a Voice AI Agency in 2026",
               description: post.description,
               image: post.image,
               datePublished: post.date,
@@ -33,6 +34,7 @@ export default function StartVoiceAIAgencyBlogPost() {
               authorSchemaId: author.authorSchemaId,
               faqs,
               crumbName: "How to Start a Voice AI Agency in 2026",
+              authorPerson: author,
             })
           ),
         }}

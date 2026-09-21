@@ -8,31 +8,67 @@ import {
 } from "@/lib/glossary";
 import { SITE_URL } from "@/lib/site-url";
 
+function hashSlug(s: string): number {
+  let h = 0;
+  for (let i = 0; i < s.length; i += 1) h = (h * 31 + s.charCodeAt(i)) | 0;
+  return Math.abs(h);
+}
+
+const CTA_VARIANTS = [
+  {
+    heading: "Put Voice AI to Work for Your Agency",
+    text: "Understanding the terminology is the first step. Launching a branded voice AI practice is the next. Fusion Calling helps agencies go live in 24 hours, with multi-provider support, done-with-you onboarding, and full brand ownership.",
+    cta: "Explore the Partner Program",
+  },
+  {
+    heading: "Turn This Concept Into Client Revenue",
+    text: "Every term in this glossary maps to something you can resell: an agent that books, reminds, and follows up under your brand. Partner plans start at $99/month for 6 sub-accounts with Stripe rebilling built in.",
+    cta: "See Partner Pricing",
+  },
+  {
+    heading: "Hear It on a Live Call First",
+    text: "Reading about voice AI only goes so far. Listen to recorded demo calls on the homepage, then bring your own test script — most agencies know within one call whether this fits their clients.",
+    cta: "Hear the Live Demo",
+  },
+  {
+    heading: "Launch Your First Voice Agent in 24 Hours",
+    text: "Pick one use case — after-hours answering is the fastest win — and ship it branded this week. Guided setup covers voices, calendars, and transfer rules, so you sell while we handle the plumbing.",
+    cta: "Start With Agent Setup",
+  },
+];
+
 export default function GlossaryTermPage({ term }: { term: GlossaryTerm }) {
   const slug = slugifyTerm(term.term);
   const related = getRelatedTerms(term, 6);
   const sources = getGlossaryCitations(term.category);
   const articleUrl = `${SITE_URL}/glossary/${slug}`;
 
-  // Answer-first FAQ derived from the term's own definition + related terms.
-  // Emitted as FAQPage schema (a top GEO signal) and rendered for readers.
+  // Answer-first FAQ. Q1/Q2 deliberately ask DIFFERENT questions than the
+  // Definition / Why-it-matters blocks above (no verbatim restating), so each
+  // answer adds new information. Emitted as FAQPage schema and rendered.
   const relatedNames = related.map((r) => r.term);
+  const relatedList =
+    relatedNames.slice(0, 3).join(", ") ||
+    "booking, handoff, and follow-up basics";
+  const firstRelated = relatedNames[0] ?? "call transcripts";
   const faqs = [
     {
-      question: `What is ${term.term}?`,
-      answer: term.definition,
+      question: `How is ${term.term} used on a real phone call?`,
+      answer: `On a live call, ${term.term} shows up in the moments that decide whether a caller books, waits, or hangs up. It sits in the ${term.category} layer of the voice stack and works alongside ${relatedList} — evaluate it on real calls with background noise and interruptions before trusting it in production.`,
     },
     {
       question: `Why does ${term.term} matter for AI voice agents?`,
-      answer: term.whyItMatters,
+      answer: `${term.whyItMatters} In practice, teams confirm it in the first weeks of ${firstRelated} review: when bookings hold and handoffs stay clean, the deployment is earning its keep.`,
     },
     {
       question: `How is ${term.term} used in AI phone call automation?`,
-      answer: `In AI phone call automation, ${term.term} is part of the ${term.category} foundation. ${term.whyItMatters} It connects closely to related concepts like ${relatedNames
-        .slice(0, 3)
-        .join(", ")}, which together shape how a voice agent understands callers and completes real tasks such as booking appointments and qualifying leads.`,
+      answer: `In AI phone call automation, ${term.term} is part of the ${term.category} foundation. It connects closely to related concepts like ${relatedList}, which together shape how a voice agent understands callers and completes real tasks such as booking appointments and qualifying leads.`,
     },
   ];
+
+  // Cross-sell boilerplate rotated by slug hash so 77 term pages don't share
+  // one identical CTA paragraph.
+  const cta = CTA_VARIANTS[hashSlug(slug) % CTA_VARIANTS.length];
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -203,22 +239,15 @@ export default function GlossaryTermPage({ term }: { term: GlossaryTerm }) {
           </div>
         )}
 
-        {/* CTA */}
+        {/* CTA — variant rotated by slug hash to avoid site-wide duplication */}
         <div className="glass rounded-2xl p-8 border border-brand/30">
-          <h2 className="text-2xl font-bold text-white mb-3">
-            Put Voice AI to Work for Your Agency
-          </h2>
-          <p className="text-gray-400 leading-relaxed mb-6">
-            Understanding the terminology is the first step. Launching a branded
-            voice AI practice is the next. Fusion Calling helps agencies go live in
-            24 hours, with multi-provider support, done-with-you onboarding,
-            and full brand ownership.
-          </p>
+          <h2 className="text-2xl font-bold text-white mb-3">{cta.heading}</h2>
+          <p className="text-gray-400 leading-relaxed mb-6">{cta.text}</p>
           <Link
             href="/whitelabel"
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-brand to-brand-strong text-white font-semibold rounded-xl hover:from-brand-strong hover:to-brand-strong transition shadow-premium hover:shadow-premium-lg hover:scale-105"
           >
-            Explore the Partner Program
+            {cta.cta}
             <span className="ml-2">→</span>
           </Link>
         </div>

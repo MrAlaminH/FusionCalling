@@ -8,7 +8,7 @@ import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 
 const title = "AI Voice Agent: 2026 Guide";
 const description =
-  "What is an AI voice agent? How speech recognition, language models, and voice synthesis hold real phone conversations — plus types, use cases, and pricing from $149/mo.";
+  "What is an AI voice agent? How speech recognition, language models, and voice synthesis hold real phone conversations — plus uses and pricing from $149/mo.";
 
 const pipeline = [
   {
@@ -103,7 +103,7 @@ const faqs = [
   {
     question: "How much does an AI voice agent cost?",
     answer:
-      "Fusion Calling plans start at $149/month with 500 included minutes and scale to $497/month for 2,100 minutes — no setup fee, no long-term contract. Compare that against a full-time hire ($3,000+/month for 40 hours a week, one call at a time) or human answering services ($1–3 per minute).",
+      "Plans start at $149/month with 500 included minutes — compare every tier on /pricing.",
   },
   {
     question: "Do callers know they're talking to an AI?",
@@ -339,13 +339,8 @@ export default function AiVoiceAgentPage() {
               AI voice agent pricing
             </h2>
             <p className="text-gray-400 leading-relaxed mb-10">
-              $149/month with 500 included minutes, scaling to $497/month for
-              2,100 minutes — no setup fee, no long-term contract. Estimate
-              your volume with the{" "}
-              <Link href="/calculator" className="text-brand hover:underline">
-                call volume calculator
-              </Link>{" "}
-              or compare tiers on the{" "}
+              Starting at $149/month with 500 included minutes — compare tiers
+              on the{" "}
               <Link href="/pricing" className="text-brand hover:underline">
                 pricing page
               </Link>

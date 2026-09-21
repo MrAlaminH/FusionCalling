@@ -8,6 +8,7 @@ import {
   whitelabelLocations,
   type WhiteLabelLocation,
 } from "@/lib/whitelabel-locations";
+import { whitelabelCaseStudies } from "@/lib/whitelabel-case-studies";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { buildOpenGraph } from "@/lib/seo";
 import { truncateAtWord } from "@/lib/utils";
@@ -44,6 +45,17 @@ export default function LocationDetailPage({
 }) {
   const loc = whitelabelLocations.find((l) => l.slug === params.slug);
   if (!loc) notFound();
+
+  // Same-state client stories first (e.g. Florida → the Miami case study);
+  // states without a local story fall back to all partner stories so no
+  // location page is a dead-end.
+  const localCaseStudies = whitelabelCaseStudies.filter(
+    (cs) =>
+      cs.location.endsWith(`, ${loc.abbreviation}`) ||
+      cs.location.includes(loc.stateName)
+  );
+  const caseStudiesToShow =
+    localCaseStudies.length > 0 ? localCaseStudies : whitelabelCaseStudies;
 
   return (
     <>
@@ -163,6 +175,81 @@ export default function LocationDetailPage({
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Partner proof + engines — contextual cross-links */}
+        <section className="w-full bg-black section-spacing">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+            <div className="text-center mb-12">
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
+                Proof from agencies like yours
+              </h2>
+              <p className="text-gray-400 text-base sm:text-lg">
+                Real partner results on the same platform you would resell in{" "}
+                {loc.stateName} — plus the engines you can run per client.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+              {caseStudiesToShow.map((cs) => (
+                <Link
+                  key={cs.slug}
+                  href={`/whitelabel/case-studies/${cs.slug}`}
+                  className="group glass-light rounded-2xl p-6 border border-brand/20 hover:border-brand/40 transition-premium"
+                >
+                  <p className="text-xs font-medium text-brand-light mb-2">
+                    {cs.industry} &middot; {cs.location}
+                  </p>
+                  <h3 className="text-lg font-bold text-white group-hover:text-brand-light transition-colors mb-2">
+                    {cs.metaTitle}
+                  </h3>
+                  <p className="text-sm text-gray-400 leading-relaxed mb-4 line-clamp-2">
+                    {cs.metaDescription}
+                  </p>
+                  <span className="text-xs font-semibold text-brand-light">
+                    Read the {cs.agencyName} story &rarr;
+                  </span>
+                </Link>
+              ))}
+            </div>
+            <p className="text-center text-gray-400 text-sm sm:text-base">
+              Run it on your engine:{" "}
+              <Link
+                href="/whitelabel/vapi"
+                className="text-brand-light hover:text-brand underline underline-offset-4 transition-colors"
+              >
+                white-label Vapi agents
+              </Link>
+              {" · "}
+              <Link
+                href="/whitelabel/retell"
+                className="text-brand-light hover:text-brand underline underline-offset-4 transition-colors"
+              >
+                white-label Retell AI agents
+              </Link>
+              {" · "}
+              <Link
+                href="/whitelabel/elevenlabs"
+                className="text-brand-light hover:text-brand underline underline-offset-4 transition-colors"
+              >
+                white-label ElevenLabs agents
+              </Link>
+              {" · "}
+              <Link
+                href="/whitelabel/gohighlevel"
+                className="text-brand-light hover:text-brand underline underline-offset-4 transition-colors"
+              >
+                white-label voice for GoHighLevel
+              </Link>{" "}
+              — or{" "}
+              <Link
+                href="/whitelabel/case-studies"
+                className="text-brand-light hover:text-brand underline underline-offset-4 transition-colors"
+              >
+                see all partner case studies
+              </Link>
+              .
+            </p>
           </div>
         </section>
 

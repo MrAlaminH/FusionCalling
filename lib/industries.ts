@@ -77,7 +77,7 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2025-02-01T00:00:00Z",
     productSupported: true,
-    metaTitle: "AI Receptionist for Real Estate: Leads & Showings",
+    metaTitle: "Real Estate AI Receptionist: 24/7 Leads",
     metaDescription:
       "AI voice agents help real estate teams capture leads, book showings, and follow up 24/7. Launch a white-label AI calling agent for your agency.",
     keywords: [
@@ -173,7 +173,7 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2025-02-02T00:00:00Z",
     productSupported: true,
-    metaTitle: "AI Receptionist for Dental Offices: Booking & Recall",
+    metaTitle: "Dental AI Receptionist: Booking & Recall",
     metaDescription:
       "AI voice agents for dental & healthcare book appointments, run recalls, and cut no-shows 24/7. White-label the AI receptionist for your agency.",
     keywords: [
@@ -269,7 +269,7 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2025-02-03T00:00:00Z",
     productSupported: true,
-    metaTitle: "AI Voice for Insurance Agencies: Quotes & Renewals",
+    metaTitle: "Insurance AI Voice: Quotes & Renewals",
     metaDescription:
       "AI voice agents for insurance agencies capture quotes, retain renewals, and qualify leads 24/7. White-label voice AI for your agency clients.",
     keywords: [
@@ -354,7 +354,7 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2025-02-04T00:00:00Z",
     productSupported: false,
-    metaTitle: "AI Voice for Home Services: HVAC, Plumbing & Roofing",
+    metaTitle: "Home Services AI Voice: HVAC & Plumbing",
     metaDescription:
       "AI voice agents for home services answer every call 24/7 — dispatch, book HVAC/plumbing/roofing jobs, and follow up. White-label for contractors.",
     keywords: [
@@ -457,7 +457,7 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2025-02-05T00:00:00Z",
     productSupported: false,
-    metaTitle: "AI Voice for Law Firms: Intake & Consultations",
+    metaTitle: "Law Firm AI Voice: Intake & Consults",
     metaDescription:
       "AI voice agents for law firms capture every case, qualify leads, and book consultations 24/7. White-label legal intake for your agency.",
     keywords: [
@@ -542,7 +542,7 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2025-02-06T00:00:00Z",
     productSupported: false,
-    metaTitle: "AI Voice for Auto Dealers & Service: Booking & Recall",
+    metaTitle: "Auto Dealer AI Voice: Booking & Recall",
     metaDescription:
       "AI voice agents for auto dealers & service centers book appointments, run recalls, and qualify sales leads 24/7. White-label for agencies.",
     keywords: [
@@ -627,7 +627,7 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2025-02-07T00:00:00Z",
     productSupported: false,
-    metaTitle: "AI Voice for Call Centers & BPOs: Scale & Cut Costs",
+    metaTitle: "Call Center AI Voice: Scale & Cut Costs",
     metaDescription:
       "AI voice agents for call centers & BPOs handle high-volume inbound/outbound calls, triage tier-1, and scale. White-label AI capacity for agencies.",
     keywords: [
@@ -712,7 +712,7 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2025-02-08T00:00:00Z",
     productSupported: false,
-    metaTitle: "AI Receptionist for Financial Services & Advisors",
+    metaTitle: "Financial AI Receptionist: 24/7 Booking",
     metaDescription:
       "AI voice agents for financial advisors, lenders & fintechs qualify leads, book meetings, and follow up 24/7. White-label for your agency.",
     keywords: [
@@ -826,7 +826,7 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2025-02-09T00:00:00Z",
     productSupported: true,
-    metaTitle: "AI Receptionist for Ecommerce: Support & Cart Recovery",
+    metaTitle: "Ecommerce AI Receptionist: 24/7 Support",
     metaDescription:
       "AI voice agent for ecommerce & retail: order status via Shopify/WooCommerce, returns, cart-recovery & back-in-stock calls 24/7. From $149/mo.",
     keywords: [
@@ -959,7 +959,7 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2025-02-10T00:00:00Z",
     productSupported: false,
-    metaTitle: "AI Voice for Education & Tutoring: Enroll & Schedule",
+    metaTitle: "Education AI Voice: Enroll & Schedule",
     metaDescription:
       "AI voice agents for tutoring, schools & edtech enroll students, book trials, and cut no-shows 24/7. White-label education voice AI for agencies.",
     keywords: [
@@ -1062,7 +1062,7 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2025-02-11T00:00:00Z",
     productSupported: false,
-    metaTitle: "AI Receptionist for Restaurants: Reservations & Orders",
+    metaTitle: "Restaurant AI Voice: Orders & Bookings",
     metaDescription:
       "AI voice agent for restaurants & hotels: reservations via OpenTable/Resy, phone orders via Toast/Square, catering & after-hours answering 24/7. From $149/mo.",
     keywords: [
@@ -1209,7 +1209,7 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2026-09-19T00:00:00Z",
     productSupported: true,
-    metaTitle: "AI Receptionist for Medical Practices: Scheduling & Triage",
+    metaTitle: "Medical AI Receptionist: Scheduling",
     metaDescription:
       "AI voice agents for medical practices answer every call, schedule visits, run recalls, and route urgent cases 24/7. White-label the AI receptionist for your agency.",
     keywords: [
@@ -1305,7 +1305,7 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2026-09-19T00:00:00Z",
     productSupported: true,
-    metaTitle: "AI Receptionist for Salons & Spas: Bookings 24/7",
+    metaTitle: "Salon AI Receptionist: Bookings 24/7",
     metaDescription:
       "AI voice agents for salons, spas, and clinics book appointments, fill cancellations, and answer questions 24/7. White-label the AI receptionist for your agency.",
     keywords: [
@@ -1401,7 +1401,7 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2026-09-19T00:00:00Z",
     productSupported: true,
-    metaTitle: "AI Receptionist for Vet Clinics: Scheduling & Triage",
+    metaTitle: "Vet Clinic AI Receptionist: Scheduling",
     metaDescription:
       "AI voice agents for veterinary clinics answer every call, book visits, run vaccine reminders, and escalate emergencies 24/7. White-label for your agency.",
     keywords: [

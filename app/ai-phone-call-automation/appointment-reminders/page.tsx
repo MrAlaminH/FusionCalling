@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Sources from "@/components/sources";
 import { buildOpenGraph } from "@/lib/seo";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 
 const title = "Automated Appointment Reminder Calls";
 const description =
-  "Reduce no-shows with automated appointment reminder calls. AI confirms bookings, rebooks cancellations from your waitlist, and sends SMS confirmations. From $149/mo.";
+  "Reduce no-shows with automated appointment reminder calls. AI confirms bookings, rebooks cancellations, and sends SMS confirmations. From $149/mo.";
 
 const benefits = [
   {
@@ -84,7 +85,7 @@ const faqs = [
   {
     question: "How much do automated reminder calls cost?",
     answer:
-      "Reminder calls are included in Fusion Calling business plans, which start at $149/month with 500 included minutes and scale to $497/month for 2,100 minutes. There is no setup fee and no long-term contract, so reminders draw from the same minute pool as your inbound answering — one plan, one bill.",
+      "Reminder calls draw from the same minute pool as inbound answering — plans start at $149/month; full tiers on /pricing.",
   },
   {
     question: "Will callers know it is an AI calling?",
@@ -286,16 +287,10 @@ export default function AppointmentRemindersPage() {
               Automated reminder call pricing
             </h2>
             <p className="text-gray-400 leading-relaxed mb-10">
-              Business plans start at $149/month with 500 included minutes and
-              scale to $497/month for 2,100 minutes — no setup fee, no
-              long-term contract. Reminder calls draw from the same plan as
-              your inbound answering, so there is nothing extra to buy. See the{" "}
+              Reminders draw from the same plan as inbound answering — starting
+              at $149/month. See the{" "}
               <Link href="/pricing" className="text-brand hover:underline">
                 full plan breakdown
-              </Link>{" "}
-              or run your own numbers in the{" "}
-              <Link href="/calculator" className="text-brand hover:underline">
-                ROI calculator
               </Link>
               .
             </p>
@@ -371,6 +366,7 @@ export default function AppointmentRemindersPage() {
           </div>
         </section>
 
+        <Sources />
         <Footer />
       </main>
     </>

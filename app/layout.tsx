@@ -136,7 +136,7 @@ export default function RootLayout({
                     "@type": "ImageObject",
                     url: `${SITE_URL}/logo.webp`,
                     width: 512,
-                    height: 512,
+                    height: 492,
                   },
                   description:
                     "AI-powered phone call automation for businesses. Streamline customer interactions, save time, and increase productivity with advanced voice technology.",

@@ -4,7 +4,6 @@ import type { ReactNode } from "react";
 import type { BlogPost } from "@/lib/blog-posts";
 import type { Author } from "@/lib/authors";
 import type { BlogFaq } from "@/components/blog/PostFaq";
-import { CONTENT_LAST_UPDATED_LABEL } from "@/lib/site-url";
 import { formatDate } from "@/lib/utils";
 import PostFaq from "@/components/blog/PostFaq";
 import PostToc from "@/components/blog/PostToc";
@@ -103,7 +102,9 @@ export default function PostLayout({
                     <span>{author.name}</span>
                   </Link>
                   <span aria-hidden="true">•</span>
-                  <span>Last updated: {CONTENT_LAST_UPDATED_LABEL}</span>
+                  <span>
+                    Last updated: {formatDate(post.updated ?? post.date)}
+                  </span>
                 </div>
               </header>
 

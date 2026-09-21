@@ -106,11 +106,11 @@ export const metadata: Metadata = {
     absolute: "Fusion Calling FAQ — Pricing, White-Label & Providers",
   },
   description:
-    "Direct answers about Fusion Calling: what it costs ($99–$497/month), how fast you can launch (24 hours), which voice AI providers are supported, and how compliance works.",
+    "Direct answers about Fusion Calling: business pricing ($149–$497/mo), 24-hour white-label launch, supported voice providers, and compliance.",
   ...buildOpenGraph({
-    title: "Frequently Asked Questions — AI Voice Agents, Pricing & White-Label",
+    title: "Fusion Calling FAQ — Pricing, White-Label & Providers",
     description:
-      "Direct answers about Fusion Calling pricing, white-label reselling, voice AI providers, and call compliance.",
+      "Direct answers about Fusion Calling: business pricing ($149–$497/mo), 24-hour white-label launch, supported voice providers, and compliance.",
     path: "/faq",
   }),
 };

@@ -24,7 +24,8 @@ export default function AIReceptionistCallRecordingLawsBlogPost() {
           __html: JSON.stringify(
             buildBlogGraph({
               slug: post.slug,
-              title: post.title,
+              // Headline = visible H1 text.
+              title: "Are AI Receptionists Legal? Recording & Disclosure Laws by State",
               description: post.description,
               image: post.image,
               datePublished: post.date,

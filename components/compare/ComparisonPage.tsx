@@ -119,7 +119,9 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-b border-white/10 pb-8 text-sm text-gray-400">
             <span>{formatDate(datePublished)}</span>
             <span aria-hidden="true">•</span>
-            <span>By Fusion Calling Team</span>
+            <Link href="/team/voice-team" className="hover:text-brand-light transition-colors">
+              By Fusion Calling Team
+            </Link>
             <span aria-hidden="true">•</span>
             <span>Updated {formatDate(CONTENT_LAST_UPDATED)}</span>
           </div>
@@ -522,8 +524,8 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
               </p>
               <p className="text-gray-400 text-sm leading-relaxed mb-4">
                 We&apos;re the team behind Fusion Calling&apos;s white-label AI voice
-                platform. Having helped 50+ agencies launch profitable voice AI
-                practices since 2025, we specialize in helping businesses scale their
+                platform. Having helped 500+ agencies launch profitable voice AI
+                practices since 2022, we specialize in helping businesses scale their
                 phone operations with cutting-edge automation technology.
               </p>
               <div className="flex items-center gap-4 text-sm">

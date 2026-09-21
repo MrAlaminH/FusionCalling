@@ -49,20 +49,21 @@ export default function Component() {
             Transform Your Business
             <br className="hidden sm:block" />
             <span className="whitespace-nowrap"> </span>
-            with an{" "}
+            with{" "}
             <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
-              AI Phone Call Receptionist
+              AI Call Agents
             </span>
           </h1>
         </div>
 
         {/* Subheading — rendered visible at first paint */}
         <div className="max-w-2xl mx-auto text-center mb-6 sm:mb-8 lg:mb-10 px-2 sm:px-4 md:px-6">
-          <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-400 leading-relaxed">
-            Fusion Calling is an AI phone automation platform that handles
-            inbound and outbound calls 24/7. Our AI voice agents book
-            appointments, qualify leads, answer customer questions, and scale
-            your phone operations with human-like conversations
+          <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-400 leading-relaxed text-balance">
+            Fusion Calling is an AI call agent solution for businesses that
+            answers and places calls 24/7.
+            <br className="hidden md:block" /> Our AI call agents book
+            appointments, qualify leads, and answer customer questions — so
+            no call goes unanswered
           </p>
         </div>
 

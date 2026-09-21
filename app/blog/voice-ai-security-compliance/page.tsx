@@ -25,7 +25,8 @@ export default function VoiceAISecurityComplianceBlogPost() {
           __html: JSON.stringify(
             buildBlogGraph({
               slug: post.slug,
-              title: post.title,
+              // Headline = visible H1 text.
+              title: "Voice AI Security & Compliance",
               description: post.description,
               image: post.image,
               datePublished: post.date,

@@ -125,7 +125,9 @@ export default function IndustryPage({ industry }: { industry: Industry }) {
           <div className="flex items-center gap-6 text-sm text-gray-500">
             <span>{formatDate(datePublished)}</span>
             <span>•</span>
-            <span>By Fusion Calling Team</span>
+            <Link href="/team/voice-team" className="hover:text-brand-light transition-colors">
+              By Fusion Calling Team
+            </Link>
           </div>
         </div>
 
@@ -436,7 +438,7 @@ export default function IndustryPage({ industry }: { industry: Industry }) {
               </p>
               <p className="text-gray-400 text-sm leading-relaxed mb-4">
                 We&apos;re the team behind Fusion Calling&apos;s white-label AI voice
-                platform. Having helped 50+ agencies launch profitable voice AI
+                platform. Having helped 500+ agencies launch profitable voice AI
                 practices since 2022, we specialize in helping businesses scale their
                 phone operations with cutting-edge automation technology.
               </p>

@@ -207,9 +207,22 @@ export default function WhitelabelComparePage() {
               </span>
             </h1>
             <p className="mt-6 max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-gray-400 leading-relaxed">
-              Compare the top white-label AI voice platforms for agencies.
-              We&apos;ve analyzed pricing, features, sub-account support, and
-              white-label capabilities so you can make the right choice.
+              Compare the top white-label AI voice platforms for agencies
+              reselling voice AI under their own brand. We&apos;ve analyzed
+              wholesale pricing, sub-accounts, Stripe rebilling, and
+              multi-provider import so you can pick the resale platform with
+              the best margin.
+            </p>
+            <p className="mt-4 max-w-3xl mx-auto text-sm sm:text-base text-gray-500 leading-relaxed">
+              Buying voice AI for your own business calls instead of reselling
+              to clients? See our{" "}
+              <a
+                href="/alternative"
+                className="text-brand-light hover:text-brand underline underline-offset-4 transition-colors"
+              >
+                end-user voice AI platform comparisons
+              </a>
+              .
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <a href="#cta" className={primaryButton}>
@@ -326,7 +339,15 @@ export default function WhitelabelComparePage() {
                 Frequently Asked Questions
               </h2>
               <p className="text-gray-400 text-base sm:text-lg">
-                Common questions about white-label AI voice platforms.
+                Common questions from agencies about reselling white-label AI
+                voice. Buying for your own team instead? See the{" "}
+                <a
+                  href="/alternative"
+                  className="text-brand-light hover:text-brand underline underline-offset-4 transition-colors"
+                >
+                  end-user voice AI platform comparisons
+                </a>
+                .
               </p>
             </div>
             <PostFaq faqs={COMPARE_FAQS} title="" />

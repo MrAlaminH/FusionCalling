@@ -24,7 +24,8 @@ export default function AIReceptionistCostBlogPost() {
           __html: JSON.stringify(
             buildBlogGraph({
               slug: post.slug,
-              title: post.title,
+              // Headline = visible H1 text.
+              title: "How Much Does an AI Receptionist Cost in 2026?",
               description: post.description,
               image: post.image,
               datePublished: post.date,

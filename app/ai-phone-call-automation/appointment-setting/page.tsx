@@ -93,7 +93,7 @@ const faqs = [
   {
     question: "What does AI appointment setting cost?",
     answer:
-      "Fusion Calling plans start at $149/month with 500 included minutes and scale to $497/month for 2,100 minutes — no setup fee, no long-term contract. One extra booked job a month usually covers the plan; model your volume with the ROI calculator.",
+      "Plans start at $149/month with 500 included minutes — one extra booked job a month usually covers it; full tiers on /pricing.",
   },
   {
     question: "Does it integrate with my CRM and calendar?",
@@ -337,14 +337,8 @@ export default function AiAppointmentSettingPage() {
               AI appointment setting pricing
             </h2>
             <p className="text-gray-400 leading-relaxed mb-10">
-              Setting runs on the same plans as everything else: $149/month
-              with 500 included minutes, scaling to $497/month for 2,100
-              minutes — no setup fee, no long-term contract. Estimate capacity
-              with the{" "}
-              <Link href="/calculator" className="text-brand hover:underline">
-                call volume calculator
-              </Link>{" "}
-              or see the{" "}
+              Setting runs on the same plans as everything else — starting at
+              $149/month. See the{" "}
               <Link href="/pricing" className="text-brand hover:underline">
                 full plan breakdown
               </Link>

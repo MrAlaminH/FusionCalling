@@ -16,7 +16,7 @@ const aboutFaqs = [
   {
     question: "When was Fusion Calling founded?",
     answer:
-      "Fusion Calling was founded in 2022 by Alamin, a voice-AI engineer, and has since helped 50+ agencies and businesses launch profitable voice-AI practices.",
+      "Fusion Calling was founded in 2022 by Alamin, a voice-AI engineer, and has since helped 500+ agencies and businesses launch profitable voice-AI practices.",
   },
   {
     question: "Which industries use Fusion Calling?",
@@ -30,11 +30,11 @@ export const metadata: Metadata = {
     absolute: "About Fusion Calling — AI Voice Agents & Mission",
   },
   description:
-    "Fusion Calling builds human-like AI voice agents that automate inbound and outbound calls. Learn our mission and why 50+ agencies trust us since 2022.",
+    "Fusion Calling builds human-like AI voice agents that automate inbound and outbound calls. Learn our mission and why 500+ agencies trust us since 2022.",
   ...buildOpenGraph({
     title: "About Fusion Calling — AI Voice Agents & Mission",
     description:
-      "We help businesses and agencies automate phone calls with human-like AI voice agents. 50+ agencies served since 2022.",
+      "We help businesses and agencies automate phone calls with human-like AI voice agents. 500+ agencies served since 2022.",
     path: "/about",
     type: "website",
   }),
@@ -49,7 +49,7 @@ const aboutJsonLd = {
       url: `${SITE_URL}/about`,
       name: "About Fusion Calling",
       description:
-        "Fusion Calling builds human-like AI voice agents that automate inbound and outbound business calls. Learn about our team, our mission, and why 50+ agencies trust us since 2022.",
+        "Fusion Calling builds human-like AI voice agents that automate inbound and outbound business calls. Learn about our team, our mission, and why 500+ agencies trust us since 2022.",
       inLanguage: "en-US",
       isPartOf: { "@id": `${SITE_URL}/#website` },
       breadcrumb: {
@@ -134,7 +134,7 @@ export default function AboutPage() {
           phone work.
         </p>
         <p className="text-gray-400 leading-relaxed">
-          Since 2022 we&apos;ve helped 50+ agencies and businesses launch
+          Since 2022 we&apos;ve helped 500+ agencies and businesses launch
           profitable voice-AI practices, and we&apos;ve shipped white-label
           infrastructure used across real estate, dental, insurance, home
           services, legal, and automotive teams.

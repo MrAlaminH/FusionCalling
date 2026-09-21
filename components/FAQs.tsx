@@ -157,7 +157,7 @@ const faqItems = [
   {
     question: "How realistic do AI voice agents sound?",
     answer:
-      "Our AI voice agents are 95% indistinguishable from human speakers. We use advanced text-to-speech technology from providers like ElevenLabs and offer voice customization options, including the ability to clone your own voice or choose from our library of natural-sounding voices in multiple languages and accents.",
+      "Customers report our AI voice agents are up to 95% indistinguishable from human speakers in blind listening tests. We use advanced text-to-speech technology from providers like ElevenLabs and offer voice customization options, including the ability to clone your own voice or choose from our library of natural-sounding voices in multiple languages and accents.",
   },
   {
     question: "How long does deployment take?",

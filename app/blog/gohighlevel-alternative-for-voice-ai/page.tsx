@@ -25,7 +25,8 @@ export default function GhlAlternativeBlogPost() {
           __html: JSON.stringify(
             buildBlogGraph({
               slug: post.slug,
-              title: post.title,
+              // Headline = visible H1 text.
+              title: "GoHighLevel Alternative for Voice AI Agencies",
               description: post.description,
               image: post.image,
               datePublished: post.date,
@@ -366,7 +367,12 @@ export default function GhlAlternativeBlogPost() {
               integrates <strong className="text-brand-light">with GoHighLevel via API
               and webhooks</strong>, connecting to 2,200+ apps — so if a client
               already runs on GHL, voice AI and lead capture can flow straight into
-              their existing setup. Curious what that saves you? Run your numbers
+              their existing setup. For the step-by-step setup inside GHL
+              sub-accounts, see our{" "}
+              <Link href="/blog/gohighlevel-white-label-voice" className="text-brand-light hover:text-brand transition-colors">
+                GoHighLevel white-label voice guide
+              </Link>
+              . Curious what that saves you? Run your numbers
               through the{" "}
               <Link href="/calculator" className="text-brand-light hover:text-brand transition-colors">
                 voice AI ROI calculator

@@ -47,13 +47,13 @@ export default function ElevenLabsWhiteLabelPage() {
       compareLinks={[
         {
           href: "/whitelabel/vapi",
-          title: "ElevenLabs vs Vapi",
-          note: "Premium voices or cost-effective calls.",
+          title: "Vapi white-label",
+          note: "Resell Vapi agents under your own brand.",
         },
         {
           href: "/whitelabel/retell",
-          title: "ElevenLabs vs Retell",
-          note: "Which engine fits each client use case.",
+          title: "Retell white-label",
+          note: "Resell Retell agents under your own brand.",
         },
         {
           href: "/whitelabel/gohighlevel",

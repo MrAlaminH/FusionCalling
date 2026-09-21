@@ -24,7 +24,7 @@ export const authors: Author[] = [
     shortBio:
       "Founder of Fusion Calling. Building the infrastructure for 500+ agencies to launch white-label voice AI businesses. Previously scaled B2B SaaS to 7-figures ARR.",
     avatar: "/avatars/male_avatar.svg",
-    linkedin: "https://www.linkedin.com/in/alamin",
+    linkedin: "https://www.linkedin.com/company/fusion-calling/",
     twitter: "https://x.com/MrAlaminH",
     email: "alamin@fusioncalling.com",
     authorSchemaId: `${SITE_URL}/team/alamin#person`,
@@ -56,7 +56,7 @@ export const authors: Author[] = [
     longBio: [
       "The Fusion Calling Voice Team comprises conversation designers, voice engineers, and platform architects who have collectively deployed 10,000+ AI voice agents across real estate, healthcare, insurance, home services, and legal verticals.",
       "They specialize in optimizing latency, barge-in handling, endpointing accuracy, and multi-turn conversation flows. The team maintains direct partnerships with Vapi, Retell, and ElevenLabs engineering teams to ensure Fusion Calling customers get early access to new features and priority support.",
-      "Their published work includes the industry's most comprehensive voice AI glossary (76 terms), benchmark studies on provider performance, and open-source tooling for voice agent testing.",
+      "Their published work includes the industry's most comprehensive voice AI glossary (77 terms), benchmark studies on provider performance, and open-source tooling for voice agent testing.",
     ],
     specialties: [
       "Conversation Design",

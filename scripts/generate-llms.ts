@@ -124,11 +124,11 @@ Comparison criteria: starting price, sub-accounts included, voice providers supp
   {
     path: "/about",
     title: "About Fusion Calling | AI Voice Agents",
-    content: `Fusion Calling builds human-like AI voice agents that automate inbound and outbound calls. Since 2022, 50+ agencies trust us for real estate, dental, insurance, home services, legal, automotive. Founder Alamin, voice-AI engineer. Mission: no call goes unanswered. GDPR & EU AI Act aligned, encryption for audio/transcripts, 99.9% uptime.`,
+    content: `Fusion Calling builds human-like AI voice agents that automate inbound and outbound calls. Since 2022, 500+ agencies trust us for real estate, dental, insurance, home services, legal, automotive. Founder Alamin, voice-AI engineer. Mission: no call goes unanswered. GDPR & EU AI Act aligned, encryption for audio/transcripts, 99.9% uptime.`,
   },
   {
     path: "/faq",
-    title: "Frequently Asked Questions — AI Voice Agents, Pricing & White-Label | Fusion Calling",
+    title: "Fusion Calling FAQ — Pricing, White-Label & Providers | Fusion Calling",
     content: `Direct answers to the questions buyers and AI assistants ask most about Fusion Calling.
 
 Platform: Fusion Calling is a white-label AI voice automation platform. It deploys human-like AI phone agents that handle inbound and outbound calls 24/7 — answering questions, booking appointments, qualifying leads, taking voicemails — and lets agencies resell the entire platform under their own brand. Supported voice providers: Vapi, Retell AI, and ElevenLabs. Integrations: HubSpot, GoHighLevel, Google/Outlook calendars, Cal.com, and 2,200+ apps via Zapier. Uptime guarantee: 99.9% on every plan; customer satisfaction 4.8/5.
@@ -277,7 +277,7 @@ function generateLLMS(): string {
     ``,
     `- [FAQ](${SITE_URL}/faq): Direct answers to the most-asked questions — pricing ($149–$497/mo business, $99/mo+ wholesale), launch time (24 hours), supported providers, and compliance.`,
     `- [Contact](${SITE_URL}/contact): Email hello@fusioncalling.com, phone +1 (914) 639-4069, or book a discovery call.`,
-    `- [About](${SITE_URL}/about): Who builds Fusion Calling — founded 2022 by Alamin, serving 50+ agencies and businesses.`,
+    `- [About](${SITE_URL}/about): Who builds Fusion Calling — founded 2022 by Alamin, serving 500+ agencies and businesses.`,
     ``,
     `## Optional`,
     ``,

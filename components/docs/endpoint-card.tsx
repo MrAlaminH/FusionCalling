@@ -250,10 +250,14 @@ export default function EndpointCard({ endpoint }: { endpoint: Endpoint }) {
         </div>
       </div>
 
-      {/* Body */}
+      {/* Body — all panels render server-side so crawlers see every
+          tab's content; active tab is toggled with CSS `hidden`. */}
       <div className="p-4 sm:p-5">
-        {tab === "params" && (
-          <div className="space-y-5 animate-fade-in [animation-duration:150ms]">
+        <div
+          role="tabpanel"
+          aria-hidden={tab !== "params"}
+          className={`space-y-5 ${tab === "params" ? "animate-fade-in [animation-duration:150ms]" : "hidden"}`}
+        >
             {endpoint.useCases && endpoint.useCases.length > 0 && (
               <div className="text-xs text-gray-400">
                 <span className="text-gray-500">Use cases: </span>
@@ -315,11 +319,13 @@ export default function EndpointCard({ endpoint }: { endpoint: Endpoint }) {
                 .
               </p>
             </div>
-          </div>
-        )}
+        </div>
 
-        {tab === "try" && (
-          <div className="space-y-5 animate-fade-in [animation-duration:150ms]">
+        <div
+          role="tabpanel"
+          aria-hidden={tab !== "try"}
+          className={`space-y-5 ${tab === "try" ? "animate-fade-in [animation-duration:150ms]" : "hidden"}`}
+        >
             {/* API key */}
             <div>
               <label className="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1.5">
@@ -425,11 +431,13 @@ export default function EndpointCard({ endpoint }: { endpoint: Endpoint }) {
                 </div>
               )}
             </div>
-          </div>
-        )}
+        </div>
 
-        {tab === "response" && (
-          <div className="space-y-5 animate-fade-in [animation-duration:150ms]">
+        <div
+          role="tabpanel"
+          aria-hidden={tab !== "response"}
+          className={`space-y-5 ${tab === "response" ? "animate-fade-in [animation-duration:150ms]" : "hidden"}`}
+        >
             <div>
               <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">
                 Example Response · {endpoint.responseStatus}
@@ -480,8 +488,7 @@ export default function EndpointCard({ endpoint }: { endpoint: Endpoint }) {
                 </div>
               </div>
             )}
-          </div>
-        )}
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import { SITE_URL } from "@/lib/site-url";
-import { breadcrumbSchema, faqSchema, webPageSchema } from "@/lib/seo";
-import { wholesalePricingSummary } from "@/lib/product-facts";
+import { breadcrumbSchema, faqSchema, offerSchema, webPageSchema } from "@/lib/seo";
+import { WHOLESALE_PLANS, wholesalePricingSummary } from "@/lib/product-facts";
 
 export type WhiteLabelProvider = {
   slug: string;
@@ -121,13 +121,18 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
         answer:
           "No technical expertise required. Importing your Vapi agents takes minutes. We provide a fully managed white-label solution so you focus on sales and client relationships while we handle integrations, updates, and maintenance.",
       },
+      {
+        question: "What developer-level control do I keep when white-labeling Vapi?",
+        answer:
+          "All of it. Vapi is the developer-flexibility engine: you keep your assistants, functions and tool calls, pipeline and model settings, and BYOK billing on your own Vapi account. Fusion Calling only wraps that setup in branded sub-accounts, client portals, and Stripe rebilling — so technical clients get full Vapi programmability without ever seeing raw tooling.",
+      },
     ],
   },
   {
     slug: "retell",
     name: "Retell AI",
     badge: "Built for Retell AI Partners",
-    title: "Retell White-Label Agents for Agencies: Launch in 24 Hours",
+    title: "Retell White-Label Agents for Agencies",
     description:
       "Resell Retell AI voice agents under your own brand via Fusion Calling. Bring your existing Retell agent configurations and API keys, set your pricing, and keep 100% of the revenue — with full white-label dashboard, client management, and rebilling.",
     h1Prefix: "White-Label AI Voice Agents for",
@@ -140,7 +145,7 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
     differentiators: [
       {
         heading: "Fastest path from Retell agent to branded client launch",
-        text: "Retell's agent builder is one of the quickest to production, and white-labeling keeps it that way: import your Retell agents unchanged, add your logo and domain, and a client-ready portal goes live in about 24 hours — without rebuilding a single workflow.",
+        text: "Retell's agent builder is one of the quickest to production, and white-labeling keeps it that way: import your Retell agents unchanged, add your logo and domain, and a client-ready portal goes live in about 24 hours — without rebuilding a single workflow. On the call itself, Retell's low-latency engine and fast interruption handling keep conversations natural, with the agent yielding in a fraction of a second when callers barge in.",
       },
       {
         heading: "Best for agencies standardizing on one engine",
@@ -221,6 +226,11 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
         answer:
           "No. Importing your Retell agents takes minutes with guided setup. We handle all technical aspects — integrations, updates, and maintenance — so you focus on selling and growing your agency.",
       },
+      {
+        question: "How fast do Retell agents respond, and do they handle interruptions?",
+        answer:
+          "That is Retell's signature strength: low-latency turn-taking with fast interruption handling, so callers can barge in mid-sentence and the agent yields naturally instead of talking over them. White-labeled through Fusion Calling you keep that sub-second responsiveness, plus branded sub-accounts, call logs with transcripts for renewals, and minute rebilling at prices you set.",
+      },
     ],
   },
   {
@@ -236,7 +246,7 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
     differentiators: [
       {
         heading: "Premium voices for brand-critical phone experiences",
-        text: "ElevenLabs is the engine agencies reach for when the voice itself is the product — receptionist front doors, premium client accounts, and brands where a robotic caller costs deals. White-labeled, that voice quality ships under your logo and your domain.",
+        text: "ElevenLabs is the engine agencies reach for when the voice itself is the product — receptionist front doors, premium client accounts, and brands where a robotic caller costs deals. That means industry-leading neural text-to-speech plus custom voice cloning, so each client gets a distinctive on-brand persona. White-labeled, that voice quality ships under your logo and your domain.",
       },
       {
         heading: "Best for client-facing, high-touch deployments",
@@ -316,6 +326,11 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
         question: "Do I need technical expertise to white-label ElevenLabs?",
         answer:
           "No. Importing your ElevenLabs agents takes minutes with guided setup. We handle all technical aspects — integrations, updates, and maintenance — so you focus on selling and growing your agency.",
+      },
+      {
+        question: "How do ElevenLabs voice quality and voice cloning work under white-label?",
+        answer:
+          "You build the voice in your own ElevenLabs account — including custom cloned voices matched to each client's brand — and Fusion Calling ships it under your logo, domain, and pricing. Clients hear ElevenLabs' premium neural voices on every call but never see ElevenLabs branding; you keep per-client voice personas, portals, and rebilling in one dashboard.",
       },
     ],
   },
@@ -456,6 +471,16 @@ export function buildProviderGraph(
         provider: { "@id": `${SITE_URL}/#organization` },
         areaServed: { "@type": "Country", name: "United States" },
         audience: { "@type": "Audience", audienceType: audience },
+        // Real wholesale prices from lib/product-facts — the same tiers the
+        // on-page <Pricing /> table renders, so schema and visible pricing
+        // can never disagree.
+        offers: WHOLESALE_PLANS.map((plan) =>
+          offerSchema({
+            name: `${plan.name} white-label plan`,
+            price: plan.price,
+            path: base,
+          })
+        ),
       },
       breadcrumbSchema(
         [

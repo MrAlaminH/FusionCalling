@@ -25,7 +25,8 @@ export default function HowToAutomatePhoneCallsWithAI() {
           __html: JSON.stringify(
             buildBlogGraph({
               slug: post.slug,
-              title: post.title,
+              // Headline = visible H1 text (colon joins the two H1 lines).
+              title: "How to Automate Phone Calls with AI: Setup to First Live Call",
               description: post.description,
               image: post.image,
               datePublished: post.date,

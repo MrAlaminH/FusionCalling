@@ -8,7 +8,7 @@ import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 
 const title = "AI Answering Service: 2026 Buyer's Guide";
 const description =
-  "An AI answering service picks up every business call 24/7 — booking, messages, transfers, SMS follow-ups — from $149/mo. Compare vs human services and see plans.";
+  "An AI answering service picks up every business call 24/7 — booking, messages, transfers, SMS follow-ups — from $149/mo. Compare vs human services.";
 
 const included = [
   {
@@ -85,7 +85,7 @@ const faqs = [
   {
     question: "How much does an AI answering service cost?",
     answer:
-      "Fusion Calling starts at $149/month with 500 included minutes and scales to $497/month for 2,100 minutes — no setup fee, no long-term contract. Human answering services typically bill $1–3 per minute plus base fees, so 500 minutes with a human service often costs $750–$1,500. Estimate your volume with the call volume calculator.",
+      "Plans start at $149/month with 500 included minutes — see /pricing for the full breakdown, and estimate your volume with the call volume calculator.",
   },
   {
     question: "Can I keep my existing business number?",
@@ -323,14 +323,8 @@ export default function AiAnsweringServicePage() {
               AI answering service pricing
             </h2>
             <p className="text-gray-400 leading-relaxed mb-10">
-              Flat monthly plans, minutes included, no per-minute surprises:
-              $149/month with 500 minutes, scaling to $497/month for 2,100
-              minutes — no setup fee, no long-term contract. Work out your
-              volume with the{" "}
-              <Link href="/calculator" className="text-brand hover:underline">
-                call volume calculator
-              </Link>{" "}
-              or compare every tier on the{" "}
+              Flat monthly plans starting at $149/month — compare every tier on
+              the{" "}
               <Link href="/pricing" className="text-brand hover:underline">
                 pricing page
               </Link>

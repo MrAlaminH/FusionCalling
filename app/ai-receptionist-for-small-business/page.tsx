@@ -85,12 +85,12 @@ const faqs = [
   {
     question: "Is an AI receptionist worth it for a small business?",
     answer:
-      "Usually the math decides quickly: if a single new customer is worth a few hundred dollars, one saved job or booking covers the $149/month starting plan. Small businesses miss most calls that arrive mid-job or after hours, and most first-time callers who reach voicemail never call back — an AI receptionist answers every one of those calls live.",
+      "For owner-operators the test is simpler than enterprise ROI math: you are usually mid-job, mid-route, or mid-dinner when the phone rings. If one rescued booking a month outweighs a $149 starting plan — and 500 included minutes covers most single locations with no contract — the answer is yes within the first billing cycle.",
   },
   {
     question: "How much does an AI receptionist cost for a small business?",
     answer:
-      "Fusion Calling starts at $149/month with 500 included minutes — enough for most single-location businesses — and scales to $497/month for 2,100 minutes. No setup fee, no long-term contract, no per-minute surprises. Compare that to $1–3 per minute for human answering services or $3,000+/month for a hire.",
+      "Plans start at $149/month with 500 included minutes — enough for most single locations; full tiers on /pricing.",
   },
   {
     question: "Do I need technical skills to set it up?",
@@ -342,23 +342,10 @@ export default function AiReceptionistForSmallBusinessPage() {
               Small business pricing
             </h2>
             <p className="text-gray-400 leading-relaxed mb-10">
-              Start at $149/month with 500 included minutes — most
-              single-location businesses fit comfortably — and scale to
-              $497/month for 2,100 minutes when you grow. No setup fee, no
-              contract. Run your numbers in the{" "}
-              <Link href="/calculator" className="text-brand hover:underline">
-                ROI calculator
-              </Link>{" "}
-              or see every tier on the{" "}
+              Start at $149/month with 500 included minutes — see every tier on
+              the{" "}
               <Link href="/pricing" className="text-brand hover:underline">
                 pricing page
-              </Link>
-              . Want the service-level view? Read the{" "}
-              <Link
-                href="/ai-answering-service"
-                className="text-brand hover:underline"
-              >
-                AI answering service guide
               </Link>
               .
             </p>

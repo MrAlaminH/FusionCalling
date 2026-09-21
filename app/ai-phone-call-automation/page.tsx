@@ -6,9 +6,9 @@ import Sources from "@/components/sources";
 import { buildOpenGraph } from "@/lib/seo";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 
-const title = "AI Phone Call Automation: 2026 Platform Guide";
+const title = "AI Phone Call Automation Guide (2026)";
 const description =
-  "AI phone call automation handles inbound and outbound calls end to end — receptionist answering, cold calling, lead qualification, and appointment reminders — on one Fusion Calling platform. From $149/mo.";
+  "AI phone call automation handles inbound and outbound calls — receptionist answering, cold calling, lead qualification, and reminders. From $149/mo.";
 
 const directions = [
   {
@@ -143,7 +143,7 @@ const faqs = [
   {
     question: "How much does AI phone call automation cost?",
     answer:
-      "Fusion Calling plans start at $149/month with 500 included minutes and scale to $497/month for 2,100 minutes — no setup fee, no long-term contract. Agencies reselling automation start at $99/month through the reseller program. Model your own capacity with the call volume calculator.",
+      "Plans start at $149/month with 500 included minutes — agencies resell from $99/month; full tiers on /pricing.",
   },
   {
     question: "How long does it take to set up?",
@@ -452,14 +452,8 @@ export default function AiPhoneCallAutomationPage() {
               AI phone call automation pricing
             </h2>
             <p className="text-gray-400 leading-relaxed mb-10">
-              Every workflow runs on the same plans: $149/month with 500
-              included minutes, scaling to $497/month for 2,100 minutes — no
-              setup fee, no long-term contract. Estimate your inbound plus
-              outbound volume with the{" "}
-              <Link href="/calculator" className="text-brand hover:underline">
-                call volume calculator
-              </Link>{" "}
-              or see the{" "}
+              Every workflow runs on the same plans — starting at $149/month.
+              See the{" "}
               <Link href="/pricing" className="text-brand hover:underline">
                 full plan breakdown
               </Link>

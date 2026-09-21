@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Sources from "@/components/sources";
 import { buildOpenGraph } from "@/lib/seo";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 
 const title = "AI Receptionist for Business Calls";
 const description =
-  "An AI receptionist answers your business calls 24/7: bookings, messages, smart transfers, and SMS follow-ups. See how it works, what it handles, and pricing from $149/mo.";
+  "An AI receptionist answers your business calls 24/7 — bookings, messages, smart transfers, SMS follow-ups. See how it works and pricing from $149/mo.";
 
 const handles = [
   {
@@ -137,7 +138,7 @@ const faqs = [
   {
     question: "How much does an AI receptionist cost?",
     answer:
-      "Fusion Calling plans start at $149/month with 500 included minutes and scale to $497/month for 2,100 minutes, with no long-term contracts. For comparison, a human receptionist typically costs $3,000+/month for 40 hours of coverage, and human answering services bill $1–3 per minute.",
+      "Plans start at $149/month with 500 included minutes — see /pricing for the full breakdown across all tiers.",
   },
   {
     question: "Will AI replace receptionists?",
@@ -152,7 +153,7 @@ const faqs = [
   {
     question: "Can callers tell they are talking to an AI?",
     answer:
-      "The conversation feels natural: sub-second responses, realistic pacing, and it handles interruptions and topic changes. Most businesses introduce the receptionist by name in the greeting. Callers care about getting help fast — an instant, accurate answer beats hold music or voicemail.",
+      "Owners usually settle this from transcripts, not theory: callers who get an instant correct booking rarely ask whether the voice was human. Best practice is a named greeting up front plus disclosure when asked, with a human-transfer rule for anything emotional — speed plus honesty beats both hold music and a surprise reveal.",
   },
   {
     question: "What happens when the AI cannot help a caller?",
@@ -326,6 +327,27 @@ export default function AiReceptionistPage() {
               >
                 how an AI phone call receptionist works
               </Link>
+              . For outbound workflows, see{" "}
+              <Link
+                href="/ai-phone-call-automation/cold-calling"
+                className="text-brand hover:underline"
+              >
+                AI cold calling
+              </Link>
+              ,{" "}
+              <Link
+                href="/ai-phone-call-automation/lead-qualification"
+                className="text-brand hover:underline"
+              >
+                lead qualification calls
+              </Link>
+              , and{" "}
+              <Link
+                href="/ai-phone-call-automation/appointment-reminders"
+                className="text-brand hover:underline"
+              >
+                appointment reminder calls
+              </Link>
               .
             </p>
           </div>
@@ -410,20 +432,9 @@ export default function AiReceptionistPage() {
               AI receptionist pricing
             </h2>
             <p className="text-gray-400 leading-relaxed mb-10">
-              Business plans start at $149/month with 500 included minutes and
-              scale to $497/month for 2,100 minutes — no setup fee, no
-              long-term contract. Every plan includes 24/7 answering, booking,
-              SMS follow-ups, and warm transfer. Run your own numbers in the{" "}
-              <Link href="/calculator" className="text-brand hover:underline">
-                ROI calculator
-              </Link>{" "}
-              or see the{" "}
+              Plans start at $149/month with 500 included minutes — see the{" "}
               <Link href="/pricing" className="text-brand hover:underline">
                 full plan breakdown
-              </Link>
-              . Running an agency? Resell it white-label from $99/month on the{" "}
-              <Link href="/whitelabel" className="text-brand hover:underline">
-                partner program
               </Link>
               .
             </p>
@@ -498,11 +509,30 @@ export default function AiReceptionistPage() {
               >
                 AI receptionist for small business
               </Link>
+              . Need specific workflows? See{" "}
+              <Link
+                href="/ai-phone-call-automation/appointment-setting"
+                className="text-brand hover:underline"
+              >
+                AI appointment setting
+              </Link>
+              ,{" "}
+              <Link
+                href="/ai-phone-call-automation/after-hours-answering"
+                className="text-brand hover:underline"
+              >
+                after-hours answering
+              </Link>
+              , and{" "}
+              <Link href="/ai-voice-agent" className="text-brand hover:underline">
+                what an AI voice agent is
+              </Link>
               .
             </p>
           </div>
         </section>
 
+        <Sources />
         <Footer />
       </main>
     </>

@@ -63,26 +63,26 @@ The platform integrates with leading voice-AI providers. Agencies can bring exis
 
 ## Industry Use Cases
 
-- [AI Receptionist for Real Estate: Leads & Showings](https://www.fusioncalling.com/industries/ai-voice-for-real-estate)
-- [AI Receptionist for Dental Offices: Booking & Recall](https://www.fusioncalling.com/industries/ai-voice-for-dental)
-- [AI Voice for Insurance Agencies: Quotes & Renewals](https://www.fusioncalling.com/industries/ai-voice-for-insurance)
-- [AI Voice for Home Services: HVAC, Plumbing & Roofing](https://www.fusioncalling.com/industries/ai-voice-for-home-services)
-- [AI Voice for Law Firms: Intake & Consultations](https://www.fusioncalling.com/industries/ai-voice-for-law-firms)
-- [AI Voice for Auto Dealers & Service: Booking & Recall](https://www.fusioncalling.com/industries/ai-voice-for-automotive)
-- [AI Voice for Call Centers & BPOs: Scale & Cut Costs](https://www.fusioncalling.com/industries/ai-voice-for-call-centers)
-- [AI Receptionist for Financial Services & Advisors](https://www.fusioncalling.com/industries/ai-voice-for-financial-services)
-- [AI Receptionist for Ecommerce: Support & Cart Recovery](https://www.fusioncalling.com/industries/ai-voice-for-ecommerce-retail)
-- [AI Voice for Education & Tutoring: Enroll & Schedule](https://www.fusioncalling.com/industries/ai-voice-for-education-tutoring)
-- [AI Receptionist for Restaurants: Reservations & Orders](https://www.fusioncalling.com/industries/ai-voice-for-restaurants-hospitality)
-- [AI Receptionist for Medical Practices: Scheduling & Triage](https://www.fusioncalling.com/industries/ai-voice-for-medical-practices)
-- [AI Receptionist for Salons & Spas: Bookings 24/7](https://www.fusioncalling.com/industries/ai-voice-for-beauty-wellness)
-- [AI Receptionist for Vet Clinics: Scheduling & Triage](https://www.fusioncalling.com/industries/ai-voice-for-veterinary)
+- [Real Estate AI Receptionist: 24/7 Leads](https://www.fusioncalling.com/industries/ai-voice-for-real-estate)
+- [Dental AI Receptionist: Booking & Recall](https://www.fusioncalling.com/industries/ai-voice-for-dental)
+- [Insurance AI Voice: Quotes & Renewals](https://www.fusioncalling.com/industries/ai-voice-for-insurance)
+- [Home Services AI Voice: HVAC & Plumbing](https://www.fusioncalling.com/industries/ai-voice-for-home-services)
+- [Law Firm AI Voice: Intake & Consults](https://www.fusioncalling.com/industries/ai-voice-for-law-firms)
+- [Auto Dealer AI Voice: Booking & Recall](https://www.fusioncalling.com/industries/ai-voice-for-automotive)
+- [Call Center AI Voice: Scale & Cut Costs](https://www.fusioncalling.com/industries/ai-voice-for-call-centers)
+- [Financial AI Receptionist: 24/7 Booking](https://www.fusioncalling.com/industries/ai-voice-for-financial-services)
+- [Ecommerce AI Receptionist: 24/7 Support](https://www.fusioncalling.com/industries/ai-voice-for-ecommerce-retail)
+- [Education AI Voice: Enroll & Schedule](https://www.fusioncalling.com/industries/ai-voice-for-education-tutoring)
+- [Restaurant AI Voice: Orders & Bookings](https://www.fusioncalling.com/industries/ai-voice-for-restaurants-hospitality)
+- [Medical AI Receptionist: Scheduling](https://www.fusioncalling.com/industries/ai-voice-for-medical-practices)
+- [Salon AI Receptionist: Bookings 24/7](https://www.fusioncalling.com/industries/ai-voice-for-beauty-wellness)
+- [Vet Clinic AI Receptionist: Scheduling](https://www.fusioncalling.com/industries/ai-voice-for-veterinary)
 
 ## Help & Contact
 
 - [FAQ](https://www.fusioncalling.com/faq): Direct answers to the most-asked questions — pricing ($149–$497/mo business, $99/mo+ wholesale), launch time (24 hours), supported providers, and compliance.
 - [Contact](https://www.fusioncalling.com/contact): Email hello@fusioncalling.com, phone +1 (914) 639-4069, or book a discovery call.
-- [About](https://www.fusioncalling.com/about): Who builds Fusion Calling — founded 2022 by Alamin, serving 50+ agencies and businesses.
+- [About](https://www.fusioncalling.com/about): Who builds Fusion Calling — founded 2022 by Alamin, serving 500+ agencies and businesses.
 
 ## Optional
 

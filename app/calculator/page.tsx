@@ -5,7 +5,7 @@ import { buildOpenGraph, GEO_SOURCES } from "@/lib/seo";
 import Footer from "@/components/Footer";
 import { SITE_URL } from "@/lib/site-url";
 
-const title = "AI Voice Agent Capacity Calculator";
+const title = "Voice Throughput Calculator";
 const description =
   "Calculate how many calls your AI voice agents can handle. Plan concurrency, forecast call volume, and size infrastructure for Vapi and Retell AI platforms.";
 
@@ -44,7 +44,7 @@ const calculatorJsonLd = {
     },
     {
       "@type": "SoftwareApplication",
-      name: "Fusion Calling AI Voice Agent Calculator",
+      name: "Voice Throughput Calculator",
       url: `${SITE_URL}/calculator`,
       description,
       applicationCategory: "BusinessApplication",

@@ -93,7 +93,7 @@ const faqs = [
   {
     question: "What does an AI after-hours service cost?",
     answer:
-      "Fusion Calling plans start at $149/month with 500 included minutes and scale to $497/month for 2,100 minutes — no setup fee, no long-term contract. Human after-hours services typically bill per minute plus base fees, with after-hours premiums on top.",
+      "Plans start at $149/month with 500 included minutes — full tiers on /pricing; human after-hours services typically bill per minute plus base fees.",
   },
   {
     question: "Can it book appointments overnight?",
@@ -337,14 +337,8 @@ export default function AfterHoursAnsweringPage() {
               After-hours answering pricing
             </h2>
             <p className="text-gray-400 leading-relaxed mb-10">
-              Coverage runs on the same plans as everything else: $149/month
-              with 500 included minutes, scaling to $497/month for 2,100
-              minutes — no setup fee, no long-term contract, no after-hours
-              premiums. Estimate your overnight volume with the{" "}
-              <Link href="/calculator" className="text-brand hover:underline">
-                call volume calculator
-              </Link>{" "}
-              or see the{" "}
+              Coverage runs on the same plans as everything else — starting at
+              $149/month with no after-hours premiums. See the{" "}
               <Link href="/pricing" className="text-brand hover:underline">
                 full plan breakdown
               </Link>

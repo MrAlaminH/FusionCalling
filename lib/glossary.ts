@@ -220,7 +220,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: "Wake Word Detection",
     category: "Speech Technology",
     definition:
-      "Wake word detection is the ability of a voice system to recognize a specific trigger word or phrase that activates it, commonly used in smart speakers and assistants.",
+      "Wake word detection is the ability of a voice system to recognize a specific trigger word or phrase that activates it, commonly used in smart speakers and assistants. Vendors tune it for false-accept versus false-reject trade-offs, since a missed trigger loses the request and a phantom trigger starts recording unprompted.",
     whyItMatters:
       "Wake words matter for hands-free and embedded voice experiences, though phone-based agents typically engage on call connect instead.",
     related: ["Voice User Interface", "Hotword Detection", "Natural Language Processing"],
@@ -229,7 +229,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: "Hotword Detection",
     category: "Speech Technology",
     definition:
-      "Hotword detection, similar to wake word detection, is the recognition of a specific phrase that signals the system to start listening or take an action.",
+      "Hotword detection, similar to wake word detection, is the recognition of a specific phrase that signals the system to start listening or take an action. On phone calls it doubles as a safety net, letting callers say a keyword like human to request a live person at any point.",
     whyItMatters:
       "Hotword capabilities enable always-on voice features in apps and devices beyond traditional phone calls.",
     related: ["Wake Word Detection", "Keyword Spotting", "Voice User Interface"],
@@ -238,7 +238,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: "Keyword Spotting",
     category: "Speech Technology",
     definition:
-      "Keyword spotting is the technique of identifying specific words or phrases within continuous speech, used for triggering actions, routing calls, or detecting topics.",
+      "Keyword spotting is the technique of identifying specific words or phrases within continuous speech, used for triggering actions, routing calls, or detecting topics. Agencies configure it for high-stakes phrases — emergency, cancel, manager — so those calls escalate even when the broader conversation stays automated.",
     whyItMatters:
       "Keyword spotting helps agents recognize intent-critical phrases, like an emergency mention, to route calls correctly.",
     related: ["Intent Recognition", "Wake Word Detection", "Natural Language Processing"],
@@ -247,7 +247,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: "Noise Suppression",
     category: "Speech Technology",
     definition:
-      "Noise suppression is audio processing that reduces background noise to improve speech clarity and recognition accuracy, important when callers are in noisy environments.",
+      "Noise suppression is audio processing that reduces background noise to improve speech clarity and recognition accuracy, important when callers are in noisy environments. Road noise, shop floors, and restaurant dining rooms are the usual test cases — if the agent holds up there, it holds up anywhere.",
     whyItMatters:
       "Effective noise suppression keeps recognition accurate on mobile and outdoor calls where background sound is unpredictable.",
     related: ["Automatic Speech Recognition", "Audio Processing", "Speech-to-Text"],
@@ -274,7 +274,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: "Deepgram",
     category: "Speech Technology",
     definition:
-      "Deepgram is a leading automatic speech recognition provider known for fast, accurate, real-time speech-to-text. It is commonly used as the STT engine within voice AI stacks.",
+      "Deepgram is a leading automatic speech recognition provider known for fast, accurate, real-time speech-to-text. It is commonly used as the STT engine within voice AI stacks, prized for low-latency streaming transcription that keeps agent responses feeling instant.",
     whyItMatters:
       "Choosing a strong STT provider like Deepgram improves recognition accuracy and responsiveness in production voice agents.",
     related: ["Automatic Speech Recognition", "Speech-to-Text", "ElevenLabs"],
@@ -645,7 +645,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: "Churn",
     category: "Business & Operations",
     definition:
-      "Churn is the rate at which clients cancel a subscription over time. Lowering churn is critical to growing and preserving recurring revenue in a voice AI agency.",
+      "Churn is the rate at which clients cancel a subscription over time. Lowering churn is critical to growing and preserving recurring revenue in a voice AI agency, and monthly transcript reviews that prove booked appointments are the most reliable retention lever.",
     whyItMatters:
       "Managing churn directly affects the long-term value and profitability of an agency's client base.",
     related: ["Recurring Revenue", "SaaS", "Customer Retention"],
@@ -708,7 +708,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: "Vapi",
     category: "Business & Operations",
     definition:
-      "Vapi is a popular voice AI platform and API for building and deploying voice agents. It is one of the core providers supported by Fusion Calling and many white-label wrappers in the market.",
+      "Vapi is a popular voice AI platform and API for building and deploying voice agents. It is one of the core providers supported by Fusion Calling and many white-label wrappers in the market, favored by technical teams that want deep pipeline control and bring-your-own-key economics.",
     whyItMatters:
       "Vapi is a leading underlying engine; supporting it gives agencies flexibility and access to a mature provider.",
     related: ["Retell AI", "ElevenLabs", "White-Label"],
@@ -718,7 +718,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: "Retell AI",
     category: "Business & Operations",
     definition:
-      "Retell AI is a conversational voice AI platform used to build voice agents. Alongside Vapi and ElevenLabs, it is one of the providers supported by Fusion Calling.",
+      "Retell AI is a conversational voice AI platform used to build voice agents. Alongside Vapi and ElevenLabs, it is one of the providers supported by Fusion Calling, known for fast deployment and low-latency conversations with natural interruption handling.",
     whyItMatters:
       "Multi-provider support, including Retell, lets agencies match each client to the best engine.",
     related: ["Vapi", "ElevenLabs", "White-Label"],

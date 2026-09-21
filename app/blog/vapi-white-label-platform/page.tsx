@@ -25,7 +25,8 @@ export default function VapiWhiteLabelBlogPost() {
           __html: JSON.stringify(
             buildBlogGraph({
               slug: post.slug,
-              title: post.title,
+              // Headline = visible H1 text.
+              title: "White-Labeling Vapi with Fusion Calling",
               description: post.description,
               image: post.image,
               datePublished: post.date,

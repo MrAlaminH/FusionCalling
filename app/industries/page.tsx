@@ -3,6 +3,28 @@ import type { Metadata } from "next";
 import { industries } from "@/lib/industries";
 import { SITE_URL } from "@/lib/site-url";
 import { buildOpenGraph } from "@/lib/seo";
+import PostFaq from "@/components/blog/PostFaq";
+
+// Single source for the hub FAQ: the FAQPage schema node and the visible
+// FAQ section below both render THIS array, so schema text and page text
+// can never diverge.
+const industriesFaqs = [
+  {
+    question: "Which industries can use AI voice agents?",
+    answer:
+      "AI voice agents work across any phone-intensive industry. Popular verticals include real estate, dental, insurance, home services, legal, automotive, call centers, financial services, e-commerce, education, restaurants, and more. If your business relies on phone calls, AI voice can automate them.",
+  },
+  {
+    question: "Can I white-label AI voice agents for different industries?",
+    answer:
+      "Yes. Fusion Calling's white-label platform lets you create industry-specific agent templates for each vertical you serve. You can customize scripts, integrations, and branding per industry while managing everything from one dashboard.",
+  },
+  {
+    question: "Do I need separate accounts for each industry?",
+    answer:
+      "No. One white-label partner account supports unlimited sub-accounts across all industries. Each client gets their own branded portal with industry-specific agent configurations, but you manage everything centrally.",
+  },
+];
 
 // No hardcoded "| Fusion Calling" — the root layout title template appends it.
 const title = "AI Voice Agents by Industry: Use Cases & ROI";
@@ -55,32 +77,14 @@ export default function IndustriesHubPage() {
               {
                 "@type": "FAQPage",
                 "@id": `${SITE_URL}/industries#faqpage`,
-                mainEntity: [
-                  {
-                    "@type": "Question",
-                    name: "Which industries can use AI voice agents?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "AI voice agents work across any phone-intensive industry. Popular verticals include real estate, dental, insurance, home services, legal, automotive, call centers, financial services, e-commerce, education, restaurants, and more. If your business relies on phone calls, AI voice can automate them.",
-                    },
+                mainEntity: industriesFaqs.map((faq) => ({
+                  "@type": "Question",
+                  name: faq.question,
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: faq.answer,
                   },
-                  {
-                    "@type": "Question",
-                    name: "Can I white-label AI voice agents for different industries?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "Yes. Fusion Calling's white-label platform lets you create industry-specific agent templates for each vertical you serve. You can customize scripts, integrations, and branding per industry while managing everything from one dashboard.",
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: "Do I need separate accounts for each industry?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "No. One white-label partner account supports unlimited sub-accounts across all industries. Each client gets their own branded portal with industry-specific agent configurations, but you manage everything centrally.",
-                    },
-                  },
-                ],
+                })),
               },
             ],
           }),
@@ -202,6 +206,12 @@ export default function IndustriesHubPage() {
                 <span className="ml-2">→</span>
               </Link>
             </div>
+          </div>
+
+          {/* Visible FAQ — renders industriesFaqs verbatim, the same array
+              the FAQPage schema node above is built from. */}
+          <div className="max-w-4xl mx-auto mb-16">
+            <PostFaq faqs={industriesFaqs} />
           </div>
         </div>
       </div>

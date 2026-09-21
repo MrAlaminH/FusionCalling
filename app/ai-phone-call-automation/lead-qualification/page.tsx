@@ -84,7 +84,7 @@ const faqs = [
   {
     question: "How much do AI lead qualification calls cost?",
     answer:
-      "Qualification calls run on the same business plans: Fusion Calling starts at $149/month with 500 included minutes and scales to $497/month for 2,100 minutes, with no setup fee and no long-term contracts. Because every lead is called in minutes, most teams recover the cost from leads that used to go cold.",
+      "Qualification calls run on the same business plans, starting at $149/month — most teams recover it from leads that used to go cold; full tiers on /pricing.",
   },
   {
     question: "What happens to qualified leads?",
@@ -286,16 +286,10 @@ export default function LeadQualificationPage() {
               AI lead qualification pricing
             </h2>
             <p className="text-gray-400 leading-relaxed mb-10">
-              Business plans start at $149/month with 500 included minutes and
-              scale to $497/month for 2,100 minutes — no setup fee, no
-              long-term contract. Inbound answering and outbound qualification
-              share one plan and one bill. See the{" "}
+              Qualification shares one plan and one bill with inbound answering —
+              starting at $149/month. See the{" "}
               <Link href="/pricing" className="text-brand hover:underline">
                 full plan breakdown
-              </Link>{" "}
-              or model the pipeline impact in the{" "}
-              <Link href="/calculator" className="text-brand hover:underline">
-                ROI calculator
               </Link>
               .
             </p>

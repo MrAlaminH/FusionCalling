@@ -23,15 +23,18 @@ export function generateMetadata({
     return { title: "Industry Not Found" };
   }
 
-  const agencyDescription = `White-label AI voice agents for ${industry.name}: 24/7 calls, booking, lead qualification you resell with Fusion Calling.`;
+  // THE description: the registry's hand-written metaDescription is the
+  // single source — never a templated fallback, so all 14 pages stay unique.
+  const description = industry.metaDescription;
 
   return {
     title: industry.metaTitle,
-    description: agencyDescription,
+    description,
     ...buildOpenGraph({
       title: industry.metaTitle,
-      description: agencyDescription,
+      description,
       path: `/industries/${industry.slug}`,
+      image: "/cardImage.jpg",
       type: "article",
       publishedTime: industry.datePublished,
       modifiedTime: industry.datePublished,

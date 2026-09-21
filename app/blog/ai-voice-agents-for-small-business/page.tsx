@@ -25,7 +25,8 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
           __html: JSON.stringify(
             buildBlogGraph({
               slug: post.slug,
-              title: post.title,
+              // Headline = visible H1 text ("AI Voice Agents for Small Business").
+              title: "AI Voice Agents for Small Business",
               description: post.description,
               image: post.image,
               datePublished: post.date,
@@ -33,6 +34,7 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
               authorSchemaId: author.authorSchemaId,
               faqs,
               crumbName: "AI Voice Agents for Small Business: Use Cases & ROI",
+              authorPerson: author,
             })
           ),
         }}
@@ -97,8 +99,15 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
             </h2>
             <p className="text-gray-300 leading-relaxed mb-6">
               The numbers tell a familiar story for anyone who has run a small
-              business. These are typical industry benchmarks, intended to
-              illustrate the problem — not Fusion Calling–specific guarantees.
+              business. These are illustrative industry estimates, intended to
+              show the scale of the problem — not Fusion Calling–specific
+              guarantees. A note on sourcing: figures like the 62% unanswered
+              rate below circulate widely but trace back to a vendor study whose
+              original page is now dead, as we document in our{" "}
+              <Link href="/blog/missed-call-text-back-vs-ai-receptionist" className="text-brand-light hover:text-brand transition-colors">
+                missed-call text-back vs AI receptionist breakdown
+              </Link>
+              . Treat them as directional, not precise.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -125,7 +134,11 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
 
             <p className="text-gray-500 text-xs mt-4 italic">
               Figures are illustrative industry estimates to show the scale of
-              the missed-call problem.
+              the missed-call problem — see our{" "}
+              <Link href="/blog/missed-call-text-back-vs-ai-receptionist" className="text-brand-light hover:text-brand transition-colors">
+                evidence-quality breakdown
+              </Link>{" "}
+              for which stats hold up and which don&apos;t.
             </p>
           </div>
 

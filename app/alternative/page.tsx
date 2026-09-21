@@ -6,8 +6,9 @@ import { SITE_URL } from "@/lib/site-url";
 import { breadcrumbSchema, buildOpenGraph, faqSchema } from "@/lib/seo";
 import { LAUNCH, PROVIDERS, WHOLESALE_STARTER } from "@/lib/product-facts";
 import { primaryButton } from "@/components/ui/button-styles";
+import PostFaq from "@/components/blog/PostFaq";
 
-const title = `${comparisons.length} White-Label Voice AI Alternatives (2026)`;
+const title = `Voice AI Platform Comparisons (2026)`;
 const description = `Compare Fusion Calling vs Vapi, Retell AI, Synthflow, Bland AI, Air AI + ${
   comparisons.length - 5
 } more: pricing from $99/mo, providers, sub-accounts, onboarding. Live demo included.`;
@@ -18,6 +19,23 @@ export const metadata: Metadata = {
   ...buildOpenGraph({ title, description, path: "/alternative" }),
 };
 
+// Single source for the hub FAQ: the FAQPage schema node and the visible
+// FAQ section below both render THIS array, so schema text and page text
+// can never diverge.
+const alternativeFaqs = [
+  {
+    question: "How does Fusion Calling compare to other white-label voice AI platforms?",
+    answer: `Fusion Calling is the only multi-provider white-label platform supporting Vapi, Retell AI, and ElevenLabs simultaneously. Competitors typically lock you into one provider. We also offer guided ${LAUNCH.guided} launch, full brand ownership on your domain, and you keep 100% of revenue.`,
+  },
+  {
+    question: "Which white-label voice AI platform is best for agencies?",
+    answer: "For agencies wanting multi-provider flexibility, full brand control, and fastest time-to-revenue, Fusion Calling leads. Vapify and ChatDash are Vapi-only. Synthflow and Bland AI are single-provider. VoiceAIWrapper is a basic wrapper. Fusion Calling's multi-provider layer + guided launch is unique.",
+  },
+  {
+    question: "Can I switch providers later if I start with one?",
+    answer: "With Fusion Calling, yes — you can add or switch between Vapi, Retell, and ElevenLabs agents anytime within the same dashboard. Other platforms typically require rebuilding on a new platform. Fusion Calling's abstraction layer prevents vendor lock-in.",
+  },
+];
 // Compact at-a-glance matrix values per competitor (kept short for the table).
 const matrixRows = comparisons.map((c) => {
   const entry = c.comparisonRows.find((r) => r.label === "Starting monthly cost");
@@ -49,29 +67,14 @@ export default function CompareHubPage() {
         "@type": "CollectionPage",
         "@id": `${SITE_URL}/alternative#collectionpage`,
         url: `${SITE_URL}/alternative`,
-        name: "White-Label Voice AI Platform Comparisons",
+        // Name = visible H1 text.
+        name: "Voice AI Platform Comparisons",
         description:
-          "Side-by-side comparisons of the top white-label voice AI platforms for agencies.",
+          "Side-by-side voice AI platform comparisons for teams evaluating end-user fit.",
         inLanguage: "en-US",
         isPartOf: { "@id": `${SITE_URL}/#website` },
       },
-      faqSchema(
-        [
-          {
-            question: "How does Fusion Calling compare to other white-label voice AI platforms?",
-            answer: `Fusion Calling is the only multi-provider white-label platform supporting Vapi, Retell AI, and ElevenLabs simultaneously. Competitors typically lock you into one provider. We also offer guided ${LAUNCH.guided} launch, full brand ownership on your domain, and you keep 100% of revenue.`,
-          },
-          {
-            question: "Which white-label voice AI platform is best for agencies?",
-            answer: "For agencies wanting multi-provider flexibility, full brand control, and fastest time-to-revenue, Fusion Calling leads. Vapify and ChatDash are Vapi-only. Synthflow and Bland AI are single-provider. VoiceAIWrapper is a basic wrapper. Fusion Calling's multi-provider layer + guided launch is unique.",
-          },
-          {
-            question: "Can I switch providers later if I start with one?",
-            answer: "With Fusion Calling, yes — you can add or switch between Vapi, Retell, and ElevenLabs agents anytime within the same dashboard. Other platforms typically require rebuilding on a new platform. Fusion Calling's abstraction layer prevents vendor lock-in.",
-          },
-        ],
-        `${SITE_URL}/alternative#faqpage`
-      ),
+      faqSchema(alternativeFaqs, `${SITE_URL}/alternative#faqpage`),
     ],
   };
 
@@ -92,9 +95,21 @@ export default function CompareHubPage() {
               <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong bg-clip-text text-transparent"> Comparisons</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed px-4">
-              Honest, side-by-side comparisons of the leading white-label voice AI
-              platforms for agencies. See how Fusion Calling stacks up on providers,
-              pricing, onboarding, and how you get paid.
+              Honest, side-by-side voice AI platform comparisons for teams
+              choosing software for their own calls. See how Fusion Calling
+              stacks up on providers, pricing, onboarding, and support —
+              written for buyers evaluating end-user fit.
+            </p>
+            <p className="mt-4 text-sm sm:text-base text-gray-500 max-w-3xl mx-auto leading-relaxed px-4">
+              Reselling voice AI to clients under your own brand instead? See
+              our{" "}
+              <Link
+                href="/whitelabel/compare"
+                className="text-brand-light hover:text-brand underline underline-offset-4 transition-colors"
+              >
+                white-label comparison
+              </Link>{" "}
+              of reseller platforms with sub-accounts and rebilling.
             </p>
           </div>
 
@@ -307,9 +322,22 @@ export default function CompareHubPage() {
                 >
                   Compare plans and pricing
                 </Link>
+                . Reselling to clients?{" "}
+                <Link
+                  href="/whitelabel/compare"
+                  className="text-brand-light hover:text-brand underline-offset-4 hover:underline transition-colors"
+                >
+                  See the white-label comparison
+                </Link>
                 .
               </p>
             </div>
+          </div>
+
+          {/* Visible FAQ — renders alternativeFaqs verbatim, the same array
+              the FAQPage schema node above is built from. */}
+          <div className="max-w-4xl mx-auto mb-16">
+            <PostFaq faqs={alternativeFaqs} />
           </div>
         </div>
       </div>

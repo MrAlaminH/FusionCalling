@@ -13,7 +13,7 @@ export default function manifest(): MetadataRoute.Manifest {
     icons: [
       {
         src: "/logo.webp",
-        sizes: "512x512",
+        sizes: "512x492",
         type: "image/webp",
         purpose: "any",
       },

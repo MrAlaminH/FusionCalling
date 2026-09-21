@@ -112,9 +112,9 @@ const AnimatedStatistics = () => {
             key={index}
             className="bg-black/40 border-2 border-brand/20 rounded-2xl p-8 min-h-[200px]"
           >
-            <h2 className="text-lg md:text-xl font-medium mb-3">
+            <h3 className="text-lg md:text-xl font-medium mb-3">
               {item.title}
-            </h2>
+            </h3>
             <p className="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-strong mb-4">
               {item.value}
             </p>

@@ -41,7 +41,8 @@ export default function MissedCallTextBackVsAIReceptionistBlogPost() {
           __html: JSON.stringify(
             buildBlogGraph({
               slug: post.slug,
-              title: post.title,
+              // Headline = visible H1 text.
+              title: "Missed-Call Text-Back vs AI Receptionist: Which Wins?",
               description: post.description,
               image: post.image,
               datePublished: post.date,

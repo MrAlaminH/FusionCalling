@@ -25,11 +25,11 @@ const FAQSection = dynamic(() => import("@/components/FAQs"));
 const Calendar = dynamic(() => import("@/components/calendar"), { ssr: false });
 
 export const metadata: Metadata = {
-  title: "AI Phone Call Receptionist — AI Call Automation",
+  title: "AI Call Agent Solution for Businesses",
   description:
     "Fusion Calling AI voice agents answer & place calls 24/7, book appointments, and qualify leads. Live demo, plans from $149/mo.",
   ...buildOpenGraph({
-    title: "AI Phone Call Receptionist — AI Call Automation",
+    title: "AI Call Agent Solution for Businesses",
     description:
       "Fusion Calling AI voice agents answer & place calls 24/7, book appointments, and qualify leads. Live demo, plans from $149/mo.",
     path: "/",
@@ -55,68 +55,6 @@ export default function Home() {
         },
         dateModified: CONTENT_LAST_UPDATED,
         inLanguage: "en-US"
-      },
-      {
-        "@type": "Service",
-        "@id": `${SITE_URL}/#service`,
-        name: "AI Phone Call Automation",
-        description: "Automate inbound and outbound phone calls with human-like AI voice agents. Our AI receptionist handles customer service, lead qualification, appointment booking, and more 24/7.",
-        provider: {
-          "@id": `${SITE_URL}/#organization`
-        },
-        offers: {
-          "@type": "Offer",
-          name: "AI Phone Automation Service",
-          priceRange: "$149-$497/month",
-          priceCurrency: "USD",
-          availability: "https://schema.org/InStock",
-          url: `${SITE_URL}/`,
-          description: "Plans include 500-2100 minutes per month with unlimited AI agents, custom voice training, and dedicated support"
-        },
-        areaServed: {
-          "@type": "Country",
-          name: "United States"
-        },
-        audience: {
-          "@type": "Audience",
-          audienceType: "Business owners, call centers, real estate agencies, healthcare providers, insurance companies"
-        },
-        hasOfferCatalog: {
-          "@type": "OfferCatalog",
-          name: "AI Phone Automation Plans",
-          itemListElement: [
-            {
-              "@type": "Offer",
-              itemOffered: {
-                "@type": "Service",
-                name: "Starter Plan"
-              },
-              price: "149",
-              priceCurrency: "USD",
-              description: "500 minutes/month"
-            },
-            {
-              "@type": "Offer",
-              itemOffered: {
-                "@type": "Service",
-                name: "Pro Plan"
-              },
-              price: "249",
-              priceCurrency: "USD",
-              description: "1,050 minutes/month"
-            },
-            {
-              "@type": "Offer",
-              itemOffered: {
-                "@type": "Service",
-                name: "Enterprise Plan"
-              },
-              price: "497",
-              priceCurrency: "USD",
-              description: "2,100 minutes/month"
-            }
-          ]
-        }
       },
       {
         "@type": "VideoObject",
@@ -188,7 +126,7 @@ export default function Home() {
             name: "How realistic do AI voice agents sound?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Our AI voice agents are 95% indistinguishable from human speakers. We use advanced text-to-speech technology from providers like ElevenLabs and offer voice customization options, including the ability to clone your own voice or choose from our library of natural-sounding voices in multiple languages and accents.",
+              text: "Customers report our AI voice agents are up to 95% indistinguishable from human speakers in blind listening tests. We use advanced text-to-speech technology from providers like ElevenLabs and offer voice customization options, including the ability to clone your own voice or choose from our library of natural-sounding voices in multiple languages and accents.",
             },
           },
           {
@@ -281,6 +219,54 @@ export default function Home() {
               className="text-brand hover:text-brand-light underline underline-offset-4 hover:underline transition-colors"
             >
               AI voice for dental
+            </Link>
+          </p>
+        </div>
+      </section>
+      <section aria-label="AI phone call automation workflows" className="w-full bg-black pb-4">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <p className="text-center text-gray-400 text-sm sm:text-base">
+            Explore automation workflows:{" "}
+            <Link
+              href="/ai-phone-call-automation/appointment-setting"
+              className="text-brand hover:text-brand-light underline underline-offset-4 hover:underline transition-colors"
+            >
+              AI appointment setting
+            </Link>
+            {" · "}
+            <Link
+              href="/ai-phone-call-automation/after-hours-answering"
+              className="text-brand hover:text-brand-light underline underline-offset-4 hover:underline transition-colors"
+            >
+              after-hours answering
+            </Link>
+            {" · "}
+            <Link
+              href="/ai-phone-call-automation/cold-calling"
+              className="text-brand hover:text-brand-light underline underline-offset-4 hover:underline transition-colors"
+            >
+              AI cold calling
+            </Link>
+            {" · "}
+            <Link
+              href="/ai-phone-call-automation/lead-qualification"
+              className="text-brand hover:text-brand-light underline underline-offset-4 hover:underline transition-colors"
+            >
+              lead qualification calls
+            </Link>
+            {" · "}
+            <Link
+              href="/ai-phone-call-automation/appointment-reminders"
+              className="text-brand hover:text-brand-light underline underline-offset-4 hover:underline transition-colors"
+            >
+              appointment reminder calls
+            </Link>
+            {" · "}
+            <Link
+              href="/ai-voice-agent"
+              className="text-brand hover:text-brand-light underline underline-offset-4 hover:underline transition-colors"
+            >
+              what an AI voice agent is
             </Link>
           </p>
         </div>

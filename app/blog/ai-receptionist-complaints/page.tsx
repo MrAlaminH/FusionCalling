@@ -41,7 +41,8 @@ export default function AIReceptionistComplaintsBlogPost() {
           __html: JSON.stringify(
             buildBlogGraph({
               slug: post.slug,
-              title: post.title,
+              // Headline = visible H1 text.
+              title: "AI Receptionist Complaints: 55 Real User Reports, Analyzed",
               description: post.description,
               image: post.image,
               datePublished: post.date,
