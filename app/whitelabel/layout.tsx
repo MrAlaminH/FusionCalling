@@ -1,10 +1,9 @@
 import Footer from "@/components/Footer";
-import StickyMobileCta from "@/components/sticky-mobile-cta";
 
 /**
  * Whitelabel family chrome, rendered once for every /whitelabel route.
- * Pages keep their own navbar — provider pages pass in-page anchor links —
- * but footer + sticky CTA are the family's, so a page can't forget them.
+ * Pages keep their own navbar — provider pages pass in-page anchor links.
+ * No sticky mobile CTA bar: it overlapped content and CTAs on small screens.
  */
 export default function WhiteLabelLayout({
   children,
@@ -15,7 +14,6 @@ export default function WhiteLabelLayout({
     <>
       {children}
       <Footer />
-      <StickyMobileCta href="#cta" label="Book a Free Call" />
     </>
   );
 }

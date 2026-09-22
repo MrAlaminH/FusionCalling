@@ -187,17 +187,21 @@ const WhiteLabelNavbar = ({ links }: WhiteLabelNavbarProps) => {
         </button>
       </div>
 
-      {/* Mobile dropdown — kept mounted so closing plays the exit transition;
-          `invisible` (flipped at transition end) drops it from the tab order. */}
+      {/* Mobile dropdown — absolutely positioned under the header bar so the
+          closed (invisible, opacity-0) panel occupies zero layout space.
+          In-flow would keep its full height inside the fixed <nav>, stretching
+          the nav's bg + backdrop-blur over the hero and swallowing taps.
+          `pointer-events-none` when closed is defense-in-depth beyond
+          `invisible`; exit transition still plays because it stays mounted. */}
       <div
         ref={menuRef}
         id="wl-mobile-menu"
         aria-hidden={!isMenuOpen}
         className={cn(
-          "border-t border-brand-strong/30 bg-black/90 backdrop-blur-md lg:hidden transition-[opacity,transform,visibility] duration-200 ease-[var(--ease-out)] origin-top",
+          "absolute inset-x-0 top-full max-h-[calc(100dvh-72px)] overflow-y-auto border-t border-brand-strong/30 bg-black/90 shadow-premium-lg backdrop-blur-md lg:hidden transition-[opacity,transform,visibility] duration-200 ease-[var(--ease-out)] origin-top",
           isMenuOpen
-            ? "visible translate-y-0 scale-y-100 opacity-100"
-            : "invisible -translate-y-2 scale-y-[0.98] opacity-0"
+            ? "pointer-events-auto visible translate-y-0 scale-y-100 opacity-100"
+            : "pointer-events-none invisible -translate-y-2 scale-y-[0.98] opacity-0"
         )}
       >
           <div className="mx-auto max-w-screen-xl px-4 py-4 sm:px-6">
