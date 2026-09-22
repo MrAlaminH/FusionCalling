@@ -220,7 +220,7 @@ const Navbar = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-strong px-5 py-2 text-sm font-medium text-black shadow-lg shadow-brand/25 transition duration-200 active:duration-150 hover:from-brand-light hover:to-brand active:scale-[0.98]"
           >
-            Contact Us
+            Book a Demo
           </Link>
         </div>
       </div>
@@ -272,7 +272,7 @@ const Navbar = () => {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center rounded-xl bg-gradient-to-r from-brand to-brand-strong px-4 py-3 font-medium text-black shadow-lg shadow-brand/25 transition duration-200 active:duration-150 hover:from-brand-light hover:to-brand active:scale-[0.98]"
               >
-                Contact Us
+                Book a Demo
               </a>
             </li>
           </ul>

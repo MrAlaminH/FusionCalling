@@ -131,7 +131,7 @@ const WhiteLabelNavbar = ({ links }: WhiteLabelNavbarProps) => {
             rel="noopener noreferrer"
             className="inline-flex h-10 items-center justify-center rounded-xl border border-brand-strong bg-brand-strong px-4 font-medium text-black transition duration-200 active:duration-150 hover:bg-brand active:scale-[0.98] lg:px-5"
           >
-            Contact Us
+            Book a Demo
           </a>
           <Link
             href={APP_URL}
@@ -231,7 +231,7 @@ const WhiteLabelNavbar = ({ links }: WhiteLabelNavbarProps) => {
                 onClick={() => setIsMenuOpen(false)}
                 className="inline-flex items-center justify-center rounded-xl bg-brand-strong px-4 py-3 text-center font-semibold text-black shadow-lg shadow-brand-strong/30 transition duration-200 active:duration-150 hover:bg-brand active:scale-[0.98]"
               >
-                Contact Us
+                Book a Demo
               </a>
               <Link
                 href={APP_URL}
