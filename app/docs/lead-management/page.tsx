@@ -15,9 +15,9 @@ import { ErrorClassificationSection } from "./components/error-classification";
 import { buildOpenGraph } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site-url";
 
-const title = "Lead Management User Guide";
+const title = "AI Voice Lead Management Guide";
 const description =
-  "Complete guide to managing leads in Fusion Calling: adding leads, statuses, configuring providers, custom fields, retry system, and best practices.";
+  "Manage Fusion Calling leads: statuses, providers, custom fields, retries, and best practices for AI voice campaigns.";
 
 export const metadata: Metadata = {
   title,

@@ -7,7 +7,7 @@ import { buildOpenGraph } from "@/lib/seo";
 
 export const revalidate = 86400;
 
-const title = "Our Team";
+const title = "Our Voice AI Team";
 const description = "Meet the team behind Fusion Calling — founders, voice AI engineers, and agency growth experts building the future of white-label voice automation.";
 
 export const metadata: Metadata = {

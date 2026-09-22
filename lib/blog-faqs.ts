@@ -97,43 +97,43 @@ export const blogFaqs: Record<string, BlogFaq[]> = {
   "ai-voice-agents-for-small-business": [
     {
       "question": "Can a small business afford AI voice?",
-      "answer": "Yes. Fusion Calling starts at $99/mo with $0 setup, and recovered calls typically pay for the subscription many times over. A single saved job per month often covers the entire plan."
+      "answer": "Yes. Fusion Calling business plans start at $149/mo with $0 setup and no contracts, including 500 minutes, calendar booking, and SMS. Most small businesses find a single saved job per month covers the subscription, since missed calls that once went to voicemail now get answered, booked, and followed up automatically."
     },
     {
       "question": "Do callers know it's AI?",
-      "answer": "Modern AI voice agents sound natural and conversational, so most callers don't notice. You can also offer a live handoff to a human whenever a caller prefers or a situation needs it."
+      "answer": "Modern AI voice agents sound natural and conversational, so most callers simply continue the conversation without noticing. Voices, greetings, and scripts are customized to your business, and you can always offer a live handoff — the agent transfers to a human with full context whenever a caller asks or a situation needs judgment."
     },
     {
       "question": "Can my agency offer this to clients?",
-      "answer": "Yes. You can white-label Fusion Calling under your own brand and offer voice AI to your small-business clients — and you keep 100% of what you charge them."
+      "answer": "Yes. Fusion Calling's white-label partner plans start at $99/mo for 6 sub-accounts, letting you resell voice AI under your own brand, domain, and pricing. Each client gets a branded portal with their own agents and billing while you manage everything centrally — and you keep 100% of what you charge them."
     },
     {
       "question": "What's the ROI for a typical small business?",
-      "answer": "A 5-person HVAC company missing 15 calls/week at $500 avg job value = $390K/year in lost revenue. At $149/mo, AI agents capturing 90%+ = $350K+ recovered. ROI often exceeds 2000%."
+      "answer": "A 5-person HVAC company missing 15 calls a week at a $500 average job value leaves roughly $390K a year on the table. At $149/mo, an AI agent capturing the majority of those calls recovers a multiple of its cost — which is why busy trades routinely report ROI figures above 2000% once after-hours and overflow calls are covered."
     },
     {
       "question": "Which industries benefit most from AI voice agents?",
-      "answer": "Home services (HVAC, plumbing, roofing), dental/healthcare, legal, real estate, automotive, and any business where missed calls = lost revenue. These verticals have high call volumes, after-hours inquiries, and clear ROI per captured lead."
+      "answer": "Home services like HVAC, plumbing, and roofing see the fastest payback, followed by dental and healthcare practices, legal offices, real estate teams, automotive shops, and restaurants. The common thread is simple: high call volumes, after-hours inquiries, and clear revenue per captured lead — anywhere a missed call means a lost customer, AI voice pays for itself."
     },
     {
       "question": "Can AI agents book appointments into my calendar?",
-      "answer": "Yes. Fusion Calling agents check real-time calendar availability (Google Calendar, Outlook, Cal.com) and book appointments directly. They can also reschedule, cancel, and send confirmations via SMS."
+      "answer": "Yes. Fusion Calling agents check real-time availability across Google Calendar, Outlook, and Cal.com, then book, reschedule, or cancel appointments directly during the call. Confirmations and reminders go out automatically by SMS, which cuts no-shows without your staff lifting a finger."
     },
     {
       "question": "What happens if the AI can't handle a call?",
-      "answer": "The agent gracefully transfers to a human with full context — call summary, captured details, and the reason for transfer. You set the escalation rules (complex questions, emotional callers, specific keywords)."
+      "answer": "The agent transfers gracefully to a human with full context — a call summary, captured details, and the reason for transfer. You define the escalation rules up front: complex questions, emotional callers, specific keywords, or VIP clients all route to your team instantly while routine calls stay automated."
     },
     {
       "question": "How quickly can a small business deploy an AI voice agent?",
-      "answer": "With Fusion Calling's done-with-you onboarding, most small businesses go live in 7-14 days. Pick a template, customize the script, connect a number, and test. No engineering required."
+      "answer": "With done-with-you onboarding, most small businesses go live in 7–14 days. You pick a proven template for your trade, customize the greeting and booking rules, connect your phone number and calendar, then test with real calls before customers hear a thing. No engineering or IT staff required at any step."
     },
     {
       "question": "What does an AI voice agent cost a small team each month?",
-      "answer": "Small teams usually start at $99/mo for a single location, which covers the platform, call handling, and transcripts. Per-minute voice usage is billed by the provider, and most teams find one recovered job a month covers the full cost."
+      "answer": "Small teams typically start on the $149/mo business plan, which covers the platform, AI call handling, transcripts, calendar booking, and 500 included minutes. There is $0 setup and no contract. Since one recovered job a month usually exceeds $149 in value, the plan tends to pay for itself quickly."
     },
     {
       "question": "How long does launch take for a small team with no tech staff?",
-      "answer": "Most non-technical teams launch in 7-14 days with done-with-you onboarding. You pick a template for your trade, we help connect your number and calendar, and you test with real calls before going live."
+      "answer": "Most non-technical teams launch in 7–14 days with done-with-you onboarding. You pick a template for your trade, we help connect your number and calendar, you test with real calls before going live — and the team tunes greetings and booking rules with you until every call sounds right."
     }
   ],
   "gohighlevel-alternative-for-voice-ai": [

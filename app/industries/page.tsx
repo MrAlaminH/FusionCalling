@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { industries } from "@/lib/industries";
 import { SITE_URL } from "@/lib/site-url";
-import { buildOpenGraph } from "@/lib/seo";
+import { buildOpenGraph, itemListSchema } from "@/lib/seo";
 import PostFaq from "@/components/blog/PostFaq";
 
 // Single source for the hub FAQ: the FAQPage schema node and the visible
@@ -27,7 +27,7 @@ const industriesFaqs = [
 ];
 
 // No hardcoded "| Fusion Calling" — the root layout title template appends it.
-const title = "AI Voice Agents by Industry: Use Cases & ROI";
+const title = "AI Voice Agents by Industry: Uses & ROI";
 const description =
   "Explore how white-label AI voice agents serve every industry: real estate, dental, insurance, home services, legal, automotive, call centers, finance.";
 
@@ -86,6 +86,14 @@ export default function IndustriesHubPage() {
                   },
                 })),
               },
+              itemListSchema(
+                industries.map((industry) => ({
+                  name: industry.metaTitle,
+                  path: `/industries/${industry.slug}`,
+                })),
+                `${SITE_URL}/industries#itemlist`,
+                "AI voice agents by industry",
+              ),
             ],
           }),
         }}

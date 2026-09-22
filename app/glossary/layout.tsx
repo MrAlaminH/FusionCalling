@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Voice AI Glossary",
+  title: "Voice AI Glossary & Definitions",
   description:
     "A complete glossary of voice AI terms for agencies, with plain-English definitions across speech technology, telephony, compliance, and more.",
   alternates: {

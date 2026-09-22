@@ -8,7 +8,6 @@ export const revalidate = 86400;
 import { industries, getIndustry } from "@/lib/industries";
 import { glossaryTerms, slugifyTerm } from "@/lib/glossary";
 import { buildOpenGraph } from "@/lib/seo";
-import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
 
 export function generateStaticParams() {
   return industries.map((i) => ({ slug: i.slug }));
@@ -36,11 +35,6 @@ export function generateMetadata({
       description,
       path: `/industries/${industry.slug}`,
       image: "/cardImage.jpg",
-      type: "article",
-      publishedTime: industry.datePublished,
-      // Matches the visible "Updated" label + JSON-LD dateModified.
-      modifiedTime: CONTENT_LAST_UPDATED,
-      authors: ["Fusion Calling"],
     }),
   };
 }

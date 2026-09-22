@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   ...buildOpenGraph({
     title: "About Fusion Calling — AI Voice Agents & Mission",
     description:
-      "We help businesses and agencies automate phone calls with human-like AI voice agents. 500+ agencies served since 2022.",
+      "Fusion Calling builds human-like AI voice agents that automate inbound and outbound calls. Learn our mission and why 500+ agencies trust us since 2022.",
     path: "/about",
     type: "website",
   }),

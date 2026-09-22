@@ -13,9 +13,9 @@ export const metadata: Metadata = {
   description:
     "Reach Fusion Calling at hello@fusioncalling.com or +1 (914) 639-4069, or book a discovery call. Sales, support, and white-label partnership questions.",
   ...buildOpenGraph({
-    title: "Contact Fusion Calling — Talk to the Voice AI Team",
+    title: "Contact Fusion Calling — Email, Phone & Discovery Call",
     description:
-      "Email, phone, and discovery-call booking for Fusion Calling's AI phone automation platform.",
+      "Reach Fusion Calling at hello@fusioncalling.com or +1 (914) 639-4069, or book a discovery call. Sales, support, and white-label partnership questions.",
     path: "/contact",
   }),
 };

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { comparisons } from "@/lib/comparisons";
 import { SITE_URL } from "@/lib/site-url";
-import { breadcrumbSchema, buildOpenGraph, faqSchema } from "@/lib/seo";
+import { breadcrumbSchema, buildOpenGraph, faqSchema, itemListSchema } from "@/lib/seo";
 import { LAUNCH, PROVIDERS, WHOLESALE_STARTER } from "@/lib/product-facts";
 import { primaryButton } from "@/components/ui/button-styles";
 import PostFaq from "@/components/blog/PostFaq";
@@ -77,6 +77,14 @@ export default function CompareHubPage() {
         isPartOf: { "@id": `${SITE_URL}/#website` },
       },
       faqSchema(alternativeFaqs, `${SITE_URL}/alternative#faqpage`),
+      itemListSchema(
+        comparisons.map((c) => ({
+          name: c.competitorName,
+          path: `/alternative/${c.slug}`,
+        })),
+        `${SITE_URL}/alternative#itemlist`,
+        "Voice AI platform comparisons",
+      ),
     ],
   };
 

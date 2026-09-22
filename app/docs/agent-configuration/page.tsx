@@ -11,9 +11,9 @@ import { QuickReferenceSection } from "./components/quick-reference";
 import { buildOpenGraph } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site-url";
 
-const title = "Agent Configuration Guide";
+const title = "AI Voice Agent Configuration Guide";
 const description =
-  "Complete guide to creating and configuring AI phone agents: agent setup, configuration tabs, best practices, common use cases, and troubleshooting.";
+  "Set up Fusion Calling AI phone agents: configuration tabs, best practices, use cases, and troubleshooting for voice AI teams.";
 
 export const metadata: Metadata = {
   title,

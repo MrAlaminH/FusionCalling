@@ -8,7 +8,7 @@ import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 
 const title = "AI Receptionist for Small Business (2026)";
 const description =
-  "AI receptionist for small business: every call answered 24/7, bookings and messages handled, from $149/mo with setup in days. See the math, the fit, and live demos.";
+  "AI receptionist for small business: every call answered 24/7, bookings handled, from $149/mo. See the math, fit, and live demos.";
 
 const mathPoints = [
   {

@@ -14,9 +14,9 @@ import { QuickReferenceSection } from "./components/quick-reference";
 import { buildOpenGraph } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site-url";
 
-const title = "Admin Section Guide";
+const title = "White-Label Admin Guide for Agencies";
 const description =
-  "Complete guide for agency owners to manage Fusion Calling: client and user management, AI provider setup, branding, credits, subscriptions, and best practices.";
+  "Agency owners: manage Fusion Calling clients, AI providers, white-label branding, credits, and subscriptions in one admin.";
 
 export const metadata: Metadata = {
   title,

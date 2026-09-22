@@ -11,7 +11,7 @@ import { WHOLESALE_PLANS } from "@/lib/product-facts";
 
 const title = "AI Voice Agent Reseller Program";
 const description =
-  "Resell AI voice agents under your own brand. Wholesale from $99/mo with 6 sub-accounts, Stripe rebilling, and 100% margin control. Launch your reseller business in 24 hours.";
+  "Resell AI voice agents under your brand. Wholesale from $99/mo, 6 sub-accounts, Stripe rebilling, 100% margins. Launch in 24 hours.";
 
 const programSteps = [
   {

@@ -13,9 +13,9 @@ import { ComplianceSection, GettingHelpSection } from "./components/compliance";
 import { buildOpenGraph } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site-url";
 
-const title = "SMS & Messages User Guide";
+const title = "AI Voice SMS & Messaging Guide";
 const description =
-  "Complete guide to SMS and messaging in Fusion Calling: send texts, manage conversations, set up Twilio, build automated campaigns, and handle inbound replies.";
+  "Send texts in Fusion Calling: Twilio setup, conversations, automated SMS campaigns, and inbound replies for voice AI teams.";
 
 export const metadata: Metadata = {
   title,

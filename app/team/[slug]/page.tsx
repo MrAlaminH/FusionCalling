@@ -33,7 +33,12 @@ export function generateMetadata({
     // Absolute keeps a single brand mention and stays under ~580px.
     title: { absolute: title },
     description: author.shortBio,
-    alternates: { canonical: `/team/${author.slug}` },
+    alternates: {
+      canonical: `/team/${author.slug}`,
+      types: {
+        "application/rss+xml": `${SITE_URL}/feed.xml`,
+      },
+    },
     openGraph: {
       title,
       description: author.shortBio,

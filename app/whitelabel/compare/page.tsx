@@ -10,7 +10,7 @@ import { buildOpenGraph } from "@/lib/seo";
 import { LAUNCH, PROVIDERS, WHOLESALE_STARTER } from "@/lib/product-facts";
 import { truncateAtWord } from "@/lib/utils";
 
-const title = "Best White-Label AI Voice Platforms Compared";
+const title = "White-Label AI Voice Platforms Compared";
 const description = `Compare white-label AI voice platforms side-by-side: pricing, sub-accounts, features & multi-provider import for Vapi, Retell & ElevenLabs. From $${WHOLESALE_STARTER.price}/mo.`;
 
 // Single source of truth: the FAQPage schema and the visible FAQ list must

@@ -2,7 +2,7 @@ import { SITE_URL } from "@/lib/site-url";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { breadcrumbSchema, buildOpenGraph } from "@/lib/seo";
+import { breadcrumbSchema, buildOpenGraph, itemListSchema } from "@/lib/seo";
 import { blogPostsByDate, getFeaturedPost } from "@/lib/blog-posts";
 import BlogGrid from "@/components/blog/BlogGrid";
 
@@ -50,6 +50,14 @@ export default function BlogPage() {
                   "@id": `${SITE_URL}/#website`,
                 },
               },
+              itemListSchema(
+                blogPostsByDate.map((post) => ({
+                  name: post.title,
+                  path: `/blog/${post.slug}`,
+                })),
+                `${SITE_URL}/blog#itemlist`,
+                "Voice AI agency guides",
+              ),
             ],
           }),
         }}

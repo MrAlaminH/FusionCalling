@@ -5,7 +5,7 @@ import CTA from "@/components/white-label/CTA";
 import { primaryButton, secondaryButton } from "@/components/ui/button-styles";
 import { whitelabelLocations } from "@/lib/whitelabel-locations";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
-import { buildOpenGraph } from "@/lib/seo";
+import { buildOpenGraph, itemListSchema } from "@/lib/seo";
 import { truncateAtWord } from "@/lib/utils";
 
 const title = "White-Label AI Voice Agents by US State";
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title,
   description,
   ...buildOpenGraph({
-    title: `${title} | Fusion Calling Partner Program`,
+    title,
     description: truncateAtWord(description, 158),
     path: "/whitelabel/locations",
   }),
@@ -74,6 +74,14 @@ export default function WhitelabelLocationsHub() {
           url: `${SITE_URL}/whitelabel/locations/${loc.slug}`,
         })),
       },
+      itemListSchema(
+        whitelabelLocations.map((loc) => ({
+          name: loc.metaTitle,
+          path: `/whitelabel/locations/${loc.slug}`,
+        })),
+        `${SITE_URL}/whitelabel/locations#itemlist`,
+        "White-label AI voice agents by US state",
+      ),
     ],
   };
 

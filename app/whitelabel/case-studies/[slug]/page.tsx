@@ -11,6 +11,7 @@ import { whitelabelProviders } from "@/lib/whitelabel-providers";
 import { whitelabelLocations } from "@/lib/whitelabel-locations";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { buildOpenGraph } from "@/lib/seo";
+import { truncateAtWord } from "@/lib/utils";
 
 
 export function generateStaticParams() {
@@ -28,10 +29,10 @@ export function generateMetadata({
 
   return {
     title: cs.metaTitle,
-    description: cs.metaDescription,
+    description: truncateAtWord(cs.metaDescription, 158),
     ...buildOpenGraph({
       title: cs.metaTitle,
-      description: cs.metaDescription,
+      description: truncateAtWord(cs.metaDescription, 158),
       path: `/whitelabel/case-studies/${cs.slug}`,
       type: "article",
     }),

@@ -168,6 +168,26 @@ export function breadcrumbSchema(
   };
 }
 
+export type ItemListEntry = { name: string; path: string };
+
+export function itemListSchema(
+  items: readonly ItemListEntry[],
+  id?: string,
+  name?: string
+) {
+  return {
+    "@type": "ItemList",
+    ...(id ? { "@id": id } : {}),
+    ...(name ? { name } : {}),
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      url: `${SITE_URL}${item.path.startsWith("/") ? item.path : `/${item.path}`}`,
+    })),
+  };
+}
+
 export function webPageSchema({
   path,
   name,
