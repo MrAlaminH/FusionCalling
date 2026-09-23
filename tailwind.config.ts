@@ -151,6 +151,16 @@ const config: Config = {
   					transform: 'translateY(calc(-100% - var(--gap)))'
   				}
   			},
+  			/* Voice-activity bars for the call-UI mockups: scaleY around the
+  			   bar's center, so only transform is animated. */
+  			waveform: {
+  				'0%, 100%': {
+  					transform: 'scaleY(0.3)'
+  				},
+  				'50%': {
+  					transform: 'scaleY(1)'
+  				}
+  			},
   			'fade-in': {
   				from: {
   					opacity: '0'
@@ -212,6 +222,7 @@ const config: Config = {
   			   made the shine sweep visibly surge and pause. */
   			'shiny-text': 'shiny-text 8s linear infinite',
   			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
+  			waveform: 'waveform 1.1s ease-in-out infinite',
   			'fade-in': 'fade-in 0.2s var(--ease-out) both',
   			'fade-in-up': 'fade-in-up 0.5s var(--ease-out) both',
   			'fade-in-left': 'fade-in-left 0.5s var(--ease-out) both',
