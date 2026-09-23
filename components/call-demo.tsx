@@ -1,24 +1,38 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import {
   ArrowUpRight,
   AudioLines,
   CalendarCheck,
   Check,
+  MessageSquareText,
+  Siren,
   UserRound,
 } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
 import { cn } from "@/lib/utils";
 
-type Turn =
+export type CallDemoTurn =
   | { kind: "line"; speaker: "ai" | "caller"; at: string; text: string }
-  | { kind: "event"; icon: "calendar" | "transfer"; text: string };
+  | {
+      kind: "event";
+      icon: "calendar" | "transfer" | "escalate" | "sms";
+      text: string;
+    };
 
-/**
- * Example call rendered as the dashboard call-detail view: transcript,
- * mid-call actions, and the auto-logged outcome. Server-rendered — every
- * word is crawlable text, and the only animation is a CSS waveform.
- */
-const callTurns: Turn[] = [
+type CallDemoProps = {
+  headerTitle?: string;
+  headerSubtitle?: string;
+  /** First name shown on AI turn labels; defaults to Rachel (dental example). */
+  aiName?: string;
+  liveTime?: string;
+  turns?: CallDemoTurn[];
+  outcomeLabel?: string;
+  outcomeChips?: string[];
+  caption?: ReactNode;
+};
+
+const receptionistTurns: CallDemoTurn[] = [
   {
     kind: "line",
     speaker: "ai",
@@ -68,19 +82,32 @@ const callTurns: Turn[] = [
   },
 ];
 
-const outcomeChips = [
+const receptionistChips = [
   "Rescheduled to Thu 10:00 AM",
   "SMS confirmation sent",
   "Calendar + CRM updated",
   "Handled without staff",
 ];
 
-function EventIcon({ name }: { name: "calendar" | "transfer" }) {
-  const Icon = name === "calendar" ? CalendarCheck : ArrowUpRight;
+const EVENT_ICONS = {
+  calendar: CalendarCheck,
+  transfer: ArrowUpRight,
+  escalate: Siren,
+  sms: MessageSquareText,
+} as const;
+
+function EventIcon({ name }: { name: keyof typeof EVENT_ICONS }) {
+  const Icon = EVENT_ICONS[name];
   return <Icon className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />;
 }
 
-function TurnRow({ turn }: { turn: Turn }) {
+function TurnRow({
+  turn,
+  aiName,
+}: {
+  turn: CallDemoTurn;
+  aiName: string;
+}) {
   if (turn.kind === "event") {
     return (
       <div className="flex justify-center">
@@ -128,7 +155,7 @@ function TurnRow({ turn }: { turn: Turn }) {
               isAi ? "text-brand-light" : "text-gray-300"
             )}
           >
-            {isAi ? "Rachel · AI Receptionist" : "Caller · (312) 555-0134"}
+            {isAi ? `${aiName} · AI Receptionist` : "Caller · (312) 555-0134"}
           </span>
           <span className="text-gray-500 tabular-nums">{turn.at}</span>
         </p>
@@ -138,7 +165,40 @@ function TurnRow({ turn }: { turn: Turn }) {
   );
 }
 
-export default function CallDemo() {
+function DefaultCaption() {
+  return (
+    <figcaption className="text-center text-sm text-gray-500 mt-5 max-w-xl mx-auto">
+      An example AI receptionist call, shown as it appears in your Fusion
+      Calling dashboard — full transcript, actions taken mid-call, and the
+      outcome logged automatically.{" "}
+      <Link
+        href="/#show-case"
+        className="text-brand-light hover:text-brand transition-colors underline-offset-4 hover:underline"
+      >
+        Hear real demo calls
+      </Link>
+      .
+    </figcaption>
+  );
+}
+
+/**
+ * Example call rendered as the dashboard call-detail view: transcript,
+ * mid-call actions, and the auto-logged outcome. Server-rendered — every
+ * word is crawlable text, and the only animation is a CSS waveform.
+ * With no props it renders the receptionist example call; pages pass their
+ * own turns/caption to show a scenario-specific call.
+ */
+export default function CallDemo({
+  headerTitle = "Rachel — AI Receptionist",
+  headerSubtitle = "Bright Smile Dental · Inbound",
+  aiName = "Rachel",
+  liveTime = "00:47",
+  turns = receptionistTurns,
+  outcomeLabel = "After the call",
+  outcomeChips = receptionistChips,
+  caption,
+}: CallDemoProps) {
   return (
     <figure className="relative max-w-3xl mx-auto">
       <div
@@ -156,10 +216,10 @@ export default function CallDemo() {
           </span>
           <span className="min-w-0">
             <span className="block text-sm font-semibold text-white truncate">
-              Rachel — AI Receptionist
+              {headerTitle}
             </span>
             <span className="block text-[11px] text-gray-500 truncate">
-              Bright Smile Dental · Inbound
+              {headerSubtitle}
             </span>
           </span>
           <span className="ml-auto flex items-center gap-3">
@@ -180,21 +240,21 @@ export default function CallDemo() {
                 className="w-1.5 h-1.5 rounded-full bg-brand animate-pulse"
                 aria-hidden="true"
               />
-              Live · <span className="tabular-nums">00:47</span>
+              Live · <span className="tabular-nums">{liveTime}</span>
             </span>
           </span>
         </div>
 
         {/* Transcript */}
         <div className="m-1.5 rounded-xl border border-white/5 bg-black/50 p-3.5 sm:p-5 space-y-3">
-          {callTurns.map((turn, i) => (
+          {turns.map((turn, i) => (
             <Reveal
               key={i}
               animation="animate-fade-in-up"
               delay={Math.min(i * 0.08, 0.5)}
               duration={0.4}
             >
-              <TurnRow turn={turn} />
+              <TurnRow turn={turn} aiName={aiName} />
             </Reveal>
           ))}
         </div>
@@ -202,7 +262,7 @@ export default function CallDemo() {
         {/* Auto-logged outcome */}
         <div className="px-3 pb-2.5 pt-1">
           <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-500 mb-2">
-            After the call
+            {outcomeLabel}
           </p>
           <ul className="flex flex-wrap gap-2">
             {outcomeChips.map((chip) => (
@@ -217,18 +277,7 @@ export default function CallDemo() {
           </ul>
         </div>
       </div>
-      <figcaption className="text-center text-sm text-gray-500 mt-5 max-w-xl mx-auto">
-        An example AI receptionist call, shown as it appears in your Fusion
-        Calling dashboard — full transcript, actions taken mid-call, and the
-        outcome logged automatically.{" "}
-        <Link
-          href="/#show-case"
-          className="text-brand-light hover:text-brand transition-colors underline-offset-4 hover:underline"
-        >
-          Hear real demo calls
-        </Link>
-        .
-      </figcaption>
+      {caption ?? <DefaultCaption />}
     </figure>
   );
 }
