@@ -29,6 +29,7 @@ The platform integrates with leading voice-AI providers. Agencies can bring exis
 - [Home](https://www.fusioncalling.com/): AI phone call automation overview with a live demo.
 - [Pricing](https://www.fusioncalling.com/pricing): Starter $149/mo, Pro $249/mo, Enterprise $497/mo — month-to-month, 14-day guarantee.
 - [Live Demo](https://www.fusioncalling.com/#show-case): Try an outbound or inbound AI call instantly.
+- [After-Hours Answering Service with AI](https://www.fusioncalling.com/ai-phone-call-automation/after-hours-answering): AI coverage for nights, weekends, and holidays — emergency triage with warm transfers, next-day booking, morning transcripts. From $149/mo.
 
 ## Documentation
 

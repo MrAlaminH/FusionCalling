@@ -148,6 +148,11 @@ Compliance: call audio is encrypted in transit (TLS/SRTP) and at rest (AES-256).
     content: `Plain-English explainer on the AI phone call receptionist: how AI voice agents answer and place calls, the tech behind them, and results with Fusion Calling. Covers ASR, LLM, TTS, telephony, and deployment in days.`,
   },
   {
+    path: "/ai-phone-call-automation/after-hours-answering",
+    title: "After-Hours Answering Service with AI",
+    content: `AI after-hours answering service for nights, weekends, and holidays: every caller reaches a live answer on the first ring instead of voicemail. Urgency rules decide what can't wait — emergencies warm-transfer to on-call staff instantly with transcript and caller details, routine callers book into tomorrow's real availability with SMS confirmations, and every overnight call arrives transcribed and tagged by morning. Covers overflow at peak hours with unlimited parallel calls. Works with your existing phone number via conditional forwarding; greetings state the time context. One workflow of AI phone call automation and the starting point before full 24/7 coverage with an AI receptionist. Pricing: same plans as everything else, from $149/mo with 500 included minutes — no night or weekend premium. FAQs: Q: Will emergencies reach a human? A: Yes — matching calls warm-transfer immediately with the transcript and caller details; everything else becomes a booking or message. Q: Can it book appointments overnight? A: Yes, into your next available slots with SMS confirmations. Q: How fast can it go live? A: Most deployments launch within days: forward the number, set urgency rules and greetings, run test calls, switch on.`,
+  },
+  {
     path: "/privacy",
     title: "Privacy Policy | Fusion Calling",
     content: `Privacy Policy for Fusion Calling at https://www.fusioncalling.com/privacy. Covers data collection, usage, and rights.`,
@@ -248,6 +253,7 @@ function generateLLMS(): string {
     `- [Home](${SITE_URL}/): AI phone call automation overview with a live demo.`,
     `- [Pricing](${SITE_URL}/pricing): Starter $149/mo, Pro $249/mo, Enterprise $497/mo — month-to-month, 14-day guarantee.`,
     `- [Live Demo](${SITE_URL}/#show-case): Try an outbound or inbound AI call instantly.`,
+    `- [After-Hours Answering Service with AI](${SITE_URL}/ai-phone-call-automation/after-hours-answering): AI coverage for nights, weekends, and holidays — emergency triage with warm transfers, next-day booking, morning transcripts. From $149/mo.`,
     ``,
     `## Documentation`,
     ``,

@@ -1019,6 +1019,13 @@ Plain-English explainer on the AI phone call receptionist: how AI voice agents a
 
 ---
 
+## After-Hours Answering Service with AI
+URL: https://www.fusioncalling.com/ai-phone-call-automation/after-hours-answering
+
+AI after-hours answering service for nights, weekends, and holidays: every caller reaches a live answer on the first ring instead of voicemail. Urgency rules decide what can't wait — emergencies warm-transfer to on-call staff instantly with transcript and caller details, routine callers book into tomorrow's real availability with SMS confirmations, and every overnight call arrives transcribed and tagged by morning. Covers overflow at peak hours with unlimited parallel calls. Works with your existing phone number via conditional forwarding; greetings state the time context. One workflow of AI phone call automation and the starting point before full 24/7 coverage with an AI receptionist. Pricing: same plans as everything else, from $149/mo with 500 included minutes — no night or weekend premium. FAQs: Q: Will emergencies reach a human? A: Yes — matching calls warm-transfer immediately with the transcript and caller details; everything else becomes a booking or message. Q: Can it book appointments overnight? A: Yes, into your next available slots with SMS confirmations. Q: How fast can it go live? A: Most deployments launch within days: forward the number, set urgency rules and greetings, run test calls, switch on.
+
+---
+
 ## Privacy Policy | Fusion Calling
 URL: https://www.fusioncalling.com/privacy
 
