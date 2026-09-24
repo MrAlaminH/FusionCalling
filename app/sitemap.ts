@@ -32,7 +32,7 @@ const STATIC_PATHS: string[] = [
   "/whitelabel/locations",
   "/ai-phone-call-receptionist",
   "/ai-phone-call-automation",
-  "/ai-answering-service",
+  "/ai-phone-answering-service",
   "/ai-voice-agent",
   "/ai-receptionist-for-small-business",
   "/ai-phone-call-automation/appointment-reminders",
@@ -109,7 +109,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
           path === "/whitelabel/gohighlevel" ||
           path === "/whitelabel/locations" ||
           path === "/ai-phone-call-automation" ||
-          path === "/ai-answering-service" ||
+          path === "/ai-phone-answering-service" ||
           path === "/ai-voice-agent" ||
           path === "/ai-receptionist-for-small-business" ||
           path === "/alternative" ||

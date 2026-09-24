@@ -95,7 +95,7 @@ export default function GlossaryTermPage({ term }: { term: GlossaryTerm }) {
       label: "running a compliant AI receptionist",
     },
     "Business & Operations": {
-      href: "/ai-answering-service",
+      href: "/ai-phone-answering-service",
       label: "the AI answering service buyer's guide",
     },
   };

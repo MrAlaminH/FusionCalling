@@ -90,6 +90,16 @@ const nextConfig = {
         destination: "/team/voice-team",
         permanent: true,
       },
+      // Keyword retarget: page moved from /ai-answering-service to
+      // /ai-phone-answering-service (2026-09-24). The old slug is indexed
+      // with backlinks — this permanent redirect preserves its signals.
+      // Safe from the case-insensitivity loop trap: source and destination
+      // differ beyond case.
+      {
+        source: "/ai-answering-service",
+        destination: "/ai-phone-answering-service",
+        permanent: true,
+      },
       // Legacy root /compare URLs (pre-rename to /alternative) still get
       // Google impressions (e.g. /compare/vapify-alternative Pos 8.75).
       // Preserve ranking signals by 301ing them to /alternative equivalents.

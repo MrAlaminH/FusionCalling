@@ -926,7 +926,7 @@ export default function AfterHoursAnsweringPage() {
             <p className="text-gray-400 mt-8">
               Keep exploring:{" "}
               <Link
-                href="/ai-answering-service"
+                href="/ai-phone-answering-service"
                 className="text-brand hover:underline"
               >
                 the AI phone answering service guide

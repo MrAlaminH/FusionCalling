@@ -694,7 +694,7 @@ export default function AiPhoneCallReceptionistPage() {
               </Link>
               , or compare buying options in the{" "}
               <Link
-                href="/ai-answering-service"
+                href="/ai-phone-answering-service"
                 className="text-brand hover:underline"
               >
                 AI answering service guide

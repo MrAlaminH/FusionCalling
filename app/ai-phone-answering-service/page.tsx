@@ -119,7 +119,7 @@ const faqs = [
 export const metadata: Metadata = {
   title,
   description,
-  ...buildOpenGraph({ title, description, path: "/ai-answering-service" }),
+  ...buildOpenGraph({ title, description, path: "/ai-phone-answering-service" }),
 };
 
 export default function AiAnsweringServicePage() {
@@ -128,7 +128,7 @@ export default function AiAnsweringServicePage() {
     "@graph": [
       {
         "@type": "BreadcrumbList",
-        "@id": `${SITE_URL}/ai-answering-service#breadcrumb`,
+        "@id": `${SITE_URL}/ai-phone-answering-service#breadcrumb`,
         itemListElement: [
           {
             "@type": "ListItem",
@@ -140,13 +140,13 @@ export default function AiAnsweringServicePage() {
             "@type": "ListItem",
             position: 2,
             name: "AI Phone Answering Service",
-            item: `${SITE_URL}/ai-answering-service`,
+            item: `${SITE_URL}/ai-phone-answering-service`,
           },
         ],
       },
       {
         "@type": "Article",
-        "@id": `${SITE_URL}/ai-answering-service#article`,
+        "@id": `${SITE_URL}/ai-phone-answering-service#article`,
         headline: "AI Phone Answering Service, Explained",
         description,
         inLanguage: "en-US",
@@ -156,7 +156,7 @@ export default function AiAnsweringServicePage() {
         publisher: { "@id": `${SITE_URL}/#organization` },
         mainEntityOfPage: {
           "@type": "WebPage",
-          "@id": `${SITE_URL}/ai-answering-service`,
+          "@id": `${SITE_URL}/ai-phone-answering-service`,
         },
         about: {
           "@type": "DefinedTerm",
@@ -167,20 +167,20 @@ export default function AiAnsweringServicePage() {
       },
       {
         "@type": "WebPage",
-        "@id": `${SITE_URL}/ai-answering-service#webpage`,
-        url: `${SITE_URL}/ai-answering-service`,
+        "@id": `${SITE_URL}/ai-phone-answering-service#webpage`,
+        url: `${SITE_URL}/ai-phone-answering-service`,
         name: title,
         description,
         inLanguage: "en-US",
         dateModified: CONTENT_LAST_UPDATED,
         isPartOf: { "@id": `${SITE_URL}/#website` },
         breadcrumb: {
-          "@id": `${SITE_URL}/ai-answering-service#breadcrumb`,
+          "@id": `${SITE_URL}/ai-phone-answering-service#breadcrumb`,
         },
       },
       {
         "@type": "FAQPage",
-        "@id": `${SITE_URL}/ai-answering-service#faqpage`,
+        "@id": `${SITE_URL}/ai-phone-answering-service#faqpage`,
         mainEntity: faqs.map((f) => ({
           "@type": "Question",
           name: f.question,
@@ -193,7 +193,7 @@ export default function AiAnsweringServicePage() {
   return (
     <>
       <script
-        id="ai-answering-service-schema"
+        id="ai-phone-answering-service-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />

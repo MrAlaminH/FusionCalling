@@ -346,7 +346,7 @@ export default function AiVoiceAgentPage() {
               </Link>
               . Buying coverage as a service? See the{" "}
               <Link
-                href="/ai-answering-service"
+                href="/ai-phone-answering-service"
                 className="text-brand hover:underline"
               >
                 AI answering service
