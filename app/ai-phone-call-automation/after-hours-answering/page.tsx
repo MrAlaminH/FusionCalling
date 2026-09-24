@@ -929,7 +929,7 @@ export default function AfterHoursAnsweringPage() {
                 href="/ai-answering-service"
                 className="text-brand hover:underline"
               >
-                the AI answering service guide
+                the AI phone answering service guide
               </Link>
               ,{" "}
               <Link

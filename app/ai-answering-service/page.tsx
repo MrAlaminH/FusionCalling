@@ -6,11 +6,11 @@ import Sources from "@/components/sources";
 import { buildOpenGraph } from "@/lib/seo";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 
-const title = "AI Answering Service: 2026 Buyer's Guide";
+const title = "AI Phone Answering Service: 2026 Buyer's Guide";
 // Buyer's-guide angle — deliberately different structure from
 // /ai-receptionist's description so the two never render as clones.
 const description =
-  "2026 buyer's guide to AI answering services: what they cost, how they compare to human answering services, and which features actually matter.";
+  "2026 buyer's guide to AI phone answering services: what they cost, how they compare to human answering services, and which features actually matter.";
 
 const included = [
   {
@@ -77,7 +77,7 @@ const faqs = [
   {
     question: "What is an AI answering service?",
     answer:
-      "An AI answering service is a subscription service where voice agents answer your business calls around the clock: greeting callers, answering questions, booking appointments, taking messages, transferring urgent calls, and sending SMS follow-ups. Unlike a human answering service with per-minute billing and shift staffing, it answers instantly at a flat monthly rate — Fusion Calling plans start at $149/month with 500 included minutes.",
+      "An AI phone answering service — often just called an AI answering service — is a subscription service where voice agents answer your business calls around the clock: greeting callers, answering questions, booking appointments, taking messages, transferring urgent calls, and sending SMS follow-ups. Unlike a human answering service with per-minute billing and shift staffing, it answers instantly at a flat monthly rate — Fusion Calling plans start at $149/month with 500 included minutes.",
   },
   {
     question: "How is it different from an AI receptionist?",
@@ -139,7 +139,7 @@ export default function AiAnsweringServicePage() {
           {
             "@type": "ListItem",
             position: 2,
-            name: "AI Answering Service",
+            name: "AI Phone Answering Service",
             item: `${SITE_URL}/ai-answering-service`,
           },
         ],
@@ -147,7 +147,7 @@ export default function AiAnsweringServicePage() {
       {
         "@type": "Article",
         "@id": `${SITE_URL}/ai-answering-service#article`,
-        headline: "AI Answering Service, Explained",
+        headline: "AI Phone Answering Service, Explained",
         description,
         inLanguage: "en-US",
         datePublished: "2026-09-19",
@@ -160,7 +160,7 @@ export default function AiAnsweringServicePage() {
         },
         about: {
           "@type": "DefinedTerm",
-          name: "AI answering service",
+          name: "AI phone answering service",
           description:
             "A subscription service where AI voice agents answer a business's calls around the clock — booking, messaging, transferring, and follow-ups at a flat monthly rate.",
         },
@@ -211,7 +211,7 @@ export default function AiAnsweringServicePage() {
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               <span className="bg-gradient-to-r from-brand to-brand-strong text-transparent bg-clip-text">
-                AI Answering Service
+                AI Phone Answering Service
               </span>{" "}
               That Picks Up Every Call
             </h1>
@@ -322,7 +322,7 @@ export default function AiAnsweringServicePage() {
         <section id="pricing" className="w-full bg-black py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              AI answering service pricing
+              AI phone answering service pricing
             </h2>
             <p className="text-gray-400 leading-relaxed mb-10">
               Flat monthly plans starting at $149/month — compare every tier on
