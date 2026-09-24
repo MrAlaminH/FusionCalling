@@ -358,6 +358,23 @@ html {
   pointer-events: none;
 }
 
+/* Live-call waveform bars (homepage call-flow card) — decorative; frozen by
+   the global prefers-reduced-motion rule. */
+@keyframes wave {
+  0%,
+  100% {
+    transform: scaleY(0.35);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+.wave-bar {
+  transform-origin: center;
+  animation: wave 1.2s ease-in-out infinite;
+}
+
 /* Performance guards for decorative effects:
    - The full-viewport feTurbulence grain layer and blurred animated particles
      are expensive to composite on low-end mobile GPUs. Hide both below md.

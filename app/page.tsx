@@ -13,15 +13,21 @@ import { buildOpenGraph } from "@/lib/seo";
 // for SEO and content, except Calendar which is a client-only cal.com widget.
 const TryDemo = dynamic(() => import("@/components/Try-Demo"));
 const Features = dynamic(() => import("@/components/Features"));
+const DashboardSection = dynamic(() => import("@/components/dashboard-section"));
 const SlideText = dynamic(() => import("@/components/Slide-Text"));
 const StatisticsComponent = dynamic(() => import("@/components/stats"));
+const CallFlowSection = dynamic(() => import("@/components/call-flow"));
 const HowItWorks = dynamic(() => import("@/components/steps"));
 const EndlessUseCases = dynamic(() => import("@/components/endless-use-cases"));
 const VoiceCarousel = dynamic(() => import("@/components/voice-carousel"));
 const Testimonials = dynamic(() => import("@/components/Testimonial"));
+const ComparisonTableSection = dynamic(
+  () => import("@/components/comparison-table-section")
+);
 const PricingSection = dynamic(() => import("@/components/pricing-section"));
 const FAQSection = dynamic(() => import("@/components/FAQs"));
 const Calendar = dynamic(() => import("@/components/calendar"), { ssr: false });
+import { callFlowSteps } from "@/components/call-flow";
 
 export const metadata: Metadata = {
   title: "AI Call Agent Solution for Businesses",
@@ -102,6 +108,19 @@ export default function Home() {
         ]
       },
       {
+        "@type": "HowTo",
+        "@id": `${SITE_URL}/#howto`,
+        name: "How an AI call agent handles a business call",
+        description:
+          "The four stages of every Fusion Calling call, from the first ring to the completed follow-up.",
+        step: callFlowSteps.map((s, i) => ({
+          "@type": "HowToStep",
+          position: i + 1,
+          name: s.title,
+          text: s.text,
+        })),
+      },
+      {
         "@type": "FAQPage",
         "@id": `${SITE_URL}/#faqpage`,
         mainEntity: [
@@ -170,11 +189,17 @@ export default function Home() {
       <section id="features" className="scroll-mt-24">
         <Features />
       </section>
+      <section id="product" className="scroll-mt-24">
+        <DashboardSection />
+      </section>
       <section id="slide-text" className="scroll-mt-24">
         <SlideText />
       </section>
       <section id="StatisticsComponent" className="scroll-mt-24">
         <StatisticsComponent />
+      </section>
+      <section id="call-flow" className="scroll-mt-24">
+        <CallFlowSection />
       </section>
       <section id="HowItWorks" className="scroll-mt-24">
         <HowItWorks />
@@ -276,6 +301,9 @@ export default function Home() {
       </section>
       <section id="testimonials" className="scroll-mt-24">
         <Testimonials />
+      </section>
+      <section id="compare" className="scroll-mt-24">
+        <ComparisonTableSection />
       </section>
       <section id="pricing" className="scroll-mt-24">
         <PricingSection />
