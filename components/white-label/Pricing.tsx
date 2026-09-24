@@ -59,7 +59,7 @@ export default function Pricing() {
   }));
 
   return (
-    <section className="w-full bg-black relative section-rhythm">
+    <section className="w-full relative section-rhythm">
       {/* Background effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div

@@ -29,6 +29,7 @@ import PostFaq from "@/components/blog/PostFaq";
 import { primaryButton, secondaryButton } from "@/components/ui/button-styles";
 import { Reveal } from "@/components/ui/reveal";
 import { cn } from "@/lib/utils";
+import AmbientBackground from "@/components/ambient-background";
 import { whitelabelCaseStudies } from "@/lib/whitelabel-case-studies";
 
 export type CompareLink = { href: string; title: string; note: string };
@@ -137,7 +138,8 @@ export default function ProviderPageTemplate({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       <WhiteLabelNavbar links={navbarLinks} />
-      <main id="main" className="min-h-screen w-full bg-black">
+      <main id="main" className="relative isolate min-h-screen w-full bg-[#0b0705]">
+        <AmbientBackground />
         {/* Breadcrumb */}
         <nav aria-label="Breadcrumb" className="pt-24 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-5xl">
@@ -235,7 +237,7 @@ export default function ProviderPageTemplate({
         </section>
 
         {/* Features — bento grid */}
-        <section id={`${slug}-features`} className="w-full bg-black section-spacing">
+        <section id={`${slug}-features`} className="w-full section-spacing">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <Reveal className="text-center mb-12 md:mb-16">
               <p className={sectionEyebrow}>Platform</p>
@@ -301,7 +303,7 @@ export default function ProviderPageTemplate({
           (provider.differentiators.length > 0 && (
             <section
               id={`${slug}-differentiators`}
-              className="w-full bg-black section-spacing"
+              className="w-full section-spacing"
             >
               <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
                 <Reveal className="mb-10 md:mb-12 max-w-2xl">
@@ -342,7 +344,7 @@ export default function ProviderPageTemplate({
 
         {/* Partner proof — real case-study testimonial + published stats */}
         {featuredCaseStudy && (
-          <section className="w-full bg-black section-spacing">
+          <section className="w-full section-spacing">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
               <Reveal className="text-center mb-10 md:mb-12">
                 <p className={sectionEyebrow}>Partner results</p>
@@ -398,7 +400,7 @@ export default function ProviderPageTemplate({
         {/* Compare providers — keep comparison intent on-site */}
         <nav
           aria-label="Compare white-label providers"
-          className="w-full bg-black section-spacing"
+          className="w-full section-spacing"
         >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <Reveal className="text-center mb-10 md:mb-12">
@@ -433,7 +435,7 @@ export default function ProviderPageTemplate({
         </nav>
 
         {/* FAQ */}
-        <section id={`${slug}-faq`} className="w-full bg-black section-spacing">
+        <section id={`${slug}-faq`} className="w-full section-spacing">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <Reveal className="text-center mb-12 md:mb-16">
               <p className={sectionEyebrow}>FAQs</p>
@@ -447,7 +449,7 @@ export default function ProviderPageTemplate({
         </section>
 
         {/* Resources & cross-links */}
-        <section id={`${slug}-resources`} className="w-full bg-black section-spacing">
+        <section id={`${slug}-resources`} className="w-full section-spacing">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <Reveal className="text-center mb-10 md:mb-12">
               <p className={sectionEyebrow}>Resources</p>

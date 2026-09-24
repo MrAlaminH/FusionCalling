@@ -15,7 +15,7 @@ export default function ProviderCrossLinks({
   if (others.length === 0) return null;
 
   return (
-    <section className="w-full bg-black section-spacing">
+    <section className="w-full section-spacing">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         <div className="text-center mb-10 md:mb-12">
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">

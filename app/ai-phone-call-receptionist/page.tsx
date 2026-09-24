@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
+import AmbientBackground from "@/components/ambient-background";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DefinitionBlock from "@/components/definition-block";
@@ -13,7 +14,7 @@ import { SITE_URL } from "@/lib/site-url";
 
 const title = "AI Phone Call Receptionist: 2026 Guide";
 const description =
-  "How an AI phone call receptionist works: the ASR, LLM, and TTS pipeline behind it, what it handles on calls, and how it compares to IVR and human staff.";
+  "See how an AI phone call receptionist answers, books, and routes business calls 24/7 — plus how it compares to IVR menus, answering services, and a human hire.";
 
 /** This page's content revision — page-local so other pages' schema is unaffected. */
 const pageUpdated = "2026-09-24";
@@ -173,7 +174,7 @@ const faqs = [
   {
     question: "How much does an AI phone call receptionist cost?",
     answer:
-      "Plans start at $149/month with 500 included minutes — see /pricing for every tier, and use the ROI calculator to estimate savings against missed calls.",
+      "Plans start at $149/month with 500 included minutes. Compare every tier on the pricing page, and estimate your savings against missed calls with the ROI calculator.",
   },
   {
     question: "How long does it take to launch?",
@@ -306,13 +307,15 @@ export default function AiPhoneCallReceptionistPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <main id="main" className="min-h-screen w-full bg-black">
+      <main id="main" className="relative isolate min-h-screen w-full bg-[#0b0705]">
         <Navbar />
+
+        <AmbientBackground />
 
         {/* Hero */}
         <section
           id="overview"
-          className="relative w-full overflow-hidden bg-gradient-to-b from-zinc-950 via-black to-black pt-32 pb-16 md:pt-40 md:pb-20"
+          className="relative w-full overflow-hidden bg-gradient-to-b from-[#1a0e08] via-[#0e0906] to-transparent pt-32 pb-16 md:pt-40 md:pb-20"
         >
           <div
             aria-hidden="true"
@@ -330,19 +333,11 @@ export default function AiPhoneCallReceptionistPage() {
               ?
             </h1>
             <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
-              A complete, plain-English guide to how an AI receptionist answers
-              and acts on business calls, the technology that powers it, and the
-              results businesses see — plus the standards Fusion Calling
-              follows. Ready to buy?{" "}
-              <Link href="/" className="text-brand hover:underline">
-                Get an AI phone call receptionist for your business with live
-                demo calls
-              </Link>{" "}
-              or{" "}
-              <Link href="/pricing" className="text-brand hover:underline">
-                view pricing
-              </Link>
-              .
+              An AI phone call receptionist is a voice agent that answers your
+              business line on the first ring, understands what callers need in
+              plain speech, and gets things done — bookings, answers, messages,
+              transfers. This guide breaks down exactly how it works, what it
+              can handle, and where it beats an IVR menu or a human hire.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link href="/#show-case" className={primaryButton}>
@@ -369,7 +364,7 @@ export default function AiPhoneCallReceptionistPage() {
         {/* Example call — product UI as proof */}
         <section
           id="call-example"
-          className="w-full overflow-hidden bg-black py-16 md:py-20"
+          className="w-full overflow-hidden py-16 md:py-20"
         >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <Reveal className="text-center mb-10 md:mb-12">
@@ -410,7 +405,7 @@ export default function AiPhoneCallReceptionistPage() {
         <DefinitionBlock />
 
         {/* How it works */}
-        <section id="how-it-works" className="w-full bg-black py-16 md:py-24">
+        <section id="how-it-works" className="w-full py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <Reveal className="mb-10 md:mb-12 max-w-2xl">
               <p className={sectionEyebrow}>The pipeline</p>
@@ -449,7 +444,7 @@ export default function AiPhoneCallReceptionistPage() {
         </section>
 
         {/* Use cases */}
-        <section id="use-cases" className="w-full bg-black py-16 md:py-24">
+        <section id="use-cases" className="w-full py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <Reveal className="mb-10 max-w-2xl">
               <p className={sectionEyebrow}>Use cases</p>
@@ -457,9 +452,8 @@ export default function AiPhoneCallReceptionistPage() {
                 What businesses use it for
               </h2>
               <p className="text-gray-400 leading-relaxed">
-                Any business that loses revenue to missed calls benefits from an
-                AI phone call receptionist. These verticals see the fastest
-                payback:
+                Any business that loses revenue to missed calls benefits. These
+                verticals see the fastest payback:
               </p>
             </Reveal>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -487,7 +481,7 @@ export default function AiPhoneCallReceptionistPage() {
           </div>
         </section>
 
-        <section id="use-case-guides" className="w-full bg-black py-16 md:py-24">
+        <section id="use-case-guides" className="w-full py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <Reveal className="mb-10 max-w-2xl">
               <p className={sectionEyebrow}>Guides</p>
@@ -536,7 +530,7 @@ export default function AiPhoneCallReceptionistPage() {
         </section>
 
         {/* Comparison */}
-        <section id="comparison" className="w-full bg-black py-16 md:py-24">
+        <section id="comparison" className="w-full py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <Reveal className="mb-10 max-w-2xl">
               <p className={sectionEyebrow}>Compare</p>
@@ -650,7 +644,7 @@ export default function AiPhoneCallReceptionistPage() {
         </section>
 
         {/* FAQ */}
-        <section id="faq" className="w-full bg-black py-16 md:py-24">
+        <section id="faq" className="w-full py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <Reveal className="mb-10 max-w-2xl">
               <p className={sectionEyebrow}>FAQs</p>
@@ -676,21 +670,9 @@ export default function AiPhoneCallReceptionistPage() {
               <Link href="/calculator" className="text-brand hover:underline">
                 Run the ROI calculator
               </Link>
-              , explore the full{" "}
-              <Link
-                href="/ai-phone-call-automation"
-                className="text-brand hover:underline"
-              >
-                AI phone call automation platform
-              </Link>
-              ,{" "}
-              <Link href="/" className="text-brand hover:underline">
-                get an AI phone call receptionist with a live demo on the
-                homepage
-              </Link>
               ,{" "}
               <Link href="/#show-case" className="text-brand hover:underline">
-                watch live demo calls
+                hear live demo calls
               </Link>
               , or compare buying options in the{" "}
               <Link

@@ -23,6 +23,7 @@ import {
   Wrench,
   Zap,
 } from "lucide-react";
+import AmbientBackground from "@/components/ambient-background";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Sources from "@/components/sources";
@@ -455,20 +456,12 @@ export default function AiAnsweringServicePage() {
       <main id="main" className="relative isolate min-h-screen w-full bg-[#0b0705]">
         <Navbar />
 
-        {/* Ambient depth — warm near-black base with faint brand glow */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[900px] bg-[radial-gradient(70%_55%_at_50%_0%,rgba(249,115,22,0.07),transparent_72%)]"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-[800px] bg-[radial-gradient(60%_50%_at_50%_100%,rgba(234,88,12,0.05),transparent_70%)]"
-        />
+        <AmbientBackground />
 
         {/* Hero */}
         <section
           id="overview"
-          className="relative w-full overflow-hidden bg-gradient-to-b from-zinc-950 via-black to-black pt-32 pb-16 md:pt-40 md:pb-20"
+          className="relative w-full overflow-hidden bg-gradient-to-b from-[#1a0e08] via-[#0e0906] to-transparent pt-32 pb-16 md:pt-40 md:pb-20"
         >
           <div
             aria-hidden="true"
@@ -514,7 +507,7 @@ export default function AiAnsweringServicePage() {
         </section>
 
         {/* The numbers — plan facts, not vanity counters */}
-        <section id="numbers" className="w-full bg-black pb-16 md:pb-20">
+        <section id="numbers" className="w-full pb-16 md:pb-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {stats.map((s, i) => {
@@ -541,7 +534,7 @@ export default function AiAnsweringServicePage() {
         </section>
 
         {/* What's included */}
-        <section id="included" className="w-full bg-black py-16 md:py-24">
+        <section id="included" className="w-full py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <Reveal className="text-center mb-10 md:mb-12">
               <p className={sectionEyebrow}>What&apos;s included</p>
@@ -580,7 +573,7 @@ export default function AiAnsweringServicePage() {
         </section>
 
         {/* Example call — product UI as proof */}
-        <section id="call-example" className="w-full bg-black py-16 md:py-20">
+        <section id="call-example" className="w-full py-16 md:py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <Reveal className="text-center mb-10 md:mb-12">
               <p className={sectionEyebrow}>Example call</p>
@@ -635,7 +628,7 @@ export default function AiAnsweringServicePage() {
         </section>
 
         {/* Switching */}
-        <section id="switching" className="w-full bg-black py-16 md:py-24">
+        <section id="switching" className="w-full py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <Reveal className="mb-10 max-w-2xl">
               <p className={sectionEyebrow}>Getting started</p>
@@ -679,7 +672,7 @@ export default function AiAnsweringServicePage() {
         </section>
 
         {/* Comparison */}
-        <section id="comparison" className="w-full bg-black py-16 md:py-24">
+        <section id="comparison" className="w-full py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <Reveal className="mb-10 max-w-2xl">
               <p className={sectionEyebrow}>Compare</p>
@@ -767,7 +760,7 @@ export default function AiAnsweringServicePage() {
         </section>
 
         {/* Who it's for */}
-        <section id="use-cases" className="w-full bg-black py-16 md:py-24">
+        <section id="use-cases" className="w-full py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <Reveal className="text-center mb-10 md:mb-12">
               <p className={sectionEyebrow}>Who it&apos;s for</p>
@@ -807,7 +800,7 @@ export default function AiAnsweringServicePage() {
         </section>
 
         {/* Pricing */}
-        <section id="pricing" className="w-full bg-black py-16 md:py-24">
+        <section id="pricing" className="w-full py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <Reveal className="text-center mb-10 md:mb-12">
               <p className={sectionEyebrow}>Pricing</p>
@@ -882,7 +875,7 @@ export default function AiAnsweringServicePage() {
         </section>
 
         {/* FAQ */}
-        <section id="faq" className="w-full bg-black py-16 md:py-24">
+        <section id="faq" className="w-full py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <Reveal className="mb-10 max-w-2xl">
               <p className={sectionEyebrow}>FAQ</p>
@@ -934,7 +927,7 @@ export default function AiAnsweringServicePage() {
         </section>
 
         {/* Final CTA */}
-        <section id="cta" className="w-full bg-black pb-20 md:pb-28">
+        <section id="cta" className="w-full pb-20 md:pb-28">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <Reveal>
               <div className="relative glass-light rounded-2xl border border-brand/25 px-6 py-12 md:py-16 text-center overflow-hidden">

@@ -95,7 +95,7 @@ export default function GHLWhiteLabelPage() {
       extraSection={
         <section
           id="gohighlevel-missed-call-text-back"
-          className="w-full bg-black section-spacing"
+          className="w-full section-spacing"
         >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <Reveal className="text-center mb-12 md:mb-16">

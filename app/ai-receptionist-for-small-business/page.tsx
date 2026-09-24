@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
+import AmbientBackground from "@/components/ambient-background";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Sources from "@/components/sources";
@@ -12,7 +13,7 @@ import { SITE_URL } from "@/lib/site-url";
 
 const title = "AI Receptionist for Small Business (2026)";
 const description =
-  "AI receptionist for small business: every call answered 24/7, bookings handled, from $149/mo. See the math, fit, and live demos.";
+  "An AI receptionist for your small business: every call answered 24/7, jobs booked on the call, from $149/month flat. See the math and hear live demos.";
 
 /** This page's content revision — page-local so other pages' schema is unaffected. */
 const pageUpdated = "2026-09-24";
@@ -253,7 +254,7 @@ const faqs = [
   {
     question: "How much does an AI receptionist cost for a small business?",
     answer:
-      "Plans start at $149/month with 500 included minutes — enough for most single locations; full tiers on /pricing.",
+      "Plans start at $149/month with 500 included minutes — enough for most single locations. Compare every tier on the pricing page.",
   },
   {
     question: "Do I need technical skills to set it up?",
@@ -385,13 +386,15 @@ export default function AiReceptionistForSmallBusinessPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <main id="main" className="min-h-screen w-full bg-black">
+      <main id="main" className="relative isolate min-h-screen w-full bg-[#0b0705]">
         <Navbar />
+
+        <AmbientBackground />
 
         {/* Hero */}
         <section
           id="overview"
-          className="relative w-full overflow-hidden bg-gradient-to-b from-zinc-950 via-black to-black pt-32 pb-16 md:pt-40 md:pb-20"
+          className="relative w-full overflow-hidden bg-gradient-to-b from-[#1a0e08] via-[#0e0906] to-transparent pt-32 pb-16 md:pt-40 md:pb-20"
         >
           <div
             aria-hidden="true"
@@ -408,23 +411,16 @@ export default function AiReceptionistForSmallBusinessPage() {
               for Small Business
             </h1>
             <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
-              Every call answered 24/7, jobs booked while you&apos;re on the
-              tools — from $149/month, live in days, no IT needed.{" "}
-              <Link href="/#show-case" className="text-brand hover:underline">
-                Hear what your callers would hear
-              </Link>{" "}
-              or{" "}
-              <Link href="/pricing" className="text-brand hover:underline">
-                view pricing
-              </Link>
-              .
+              You&apos;re mid-job, mid-drive, or mid-dinner when the phone
+              rings — and by the time you&apos;re free, the caller has hired
+              someone else. An AI receptionist answers every call on the first
+              ring, books jobs into your real calendar, and texts the
+              confirmation before the caller hangs up. From $149/month, live in
+              days, no IT needed.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link href="/#show-case" className={primaryButton}>
                 Hear It in Action
-              </Link>
-              <Link href="/calculator" className={secondaryButton}>
-                Calculate Your ROI
               </Link>
             </div>
             <ul className="mt-8 flex flex-wrap items-center justify-center gap-2.5">
@@ -444,7 +440,7 @@ export default function AiReceptionistForSmallBusinessPage() {
         {/* Example call — product UI as proof */}
         <section
           id="call-example"
-          className="w-full overflow-hidden bg-black py-16 md:py-20"
+          className="w-full overflow-hidden py-16 md:py-20"
         >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <Reveal className="text-center mb-10 md:mb-12">
@@ -501,7 +497,7 @@ export default function AiReceptionistForSmallBusinessPage() {
         </section>
 
         {/* The math */}
-        <section id="math" className="w-full bg-black py-16 md:py-24">
+        <section id="math" className="w-full py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <Reveal className="mb-10 max-w-2xl">
               <p className={sectionEyebrow}>The numbers</p>
@@ -537,7 +533,7 @@ export default function AiReceptionistForSmallBusinessPage() {
         </section>
 
         {/* Comparison */}
-        <section id="comparison" className="w-full bg-black py-16 md:py-24">
+        <section id="comparison" className="w-full py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <Reveal className="mb-10 max-w-2xl">
               <p className={sectionEyebrow}>Compare</p>
@@ -627,7 +623,7 @@ export default function AiReceptionistForSmallBusinessPage() {
         </section>
 
         {/* Who it's for */}
-        <section id="who" className="w-full bg-black py-16 md:py-24">
+        <section id="who" className="w-full py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <Reveal className="mb-10 max-w-2xl">
               <p className={sectionEyebrow}>Who it&apos;s for</p>
@@ -666,7 +662,7 @@ export default function AiReceptionistForSmallBusinessPage() {
         </section>
 
         {/* Setup */}
-        <section id="setup" className="w-full bg-black py-16 md:py-24">
+        <section id="setup" className="w-full py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <Reveal className="mb-10 md:mb-12 max-w-2xl">
               <p className={sectionEyebrow}>Getting started</p>
@@ -705,7 +701,7 @@ export default function AiReceptionistForSmallBusinessPage() {
         </section>
 
         {/* Objections */}
-        <section id="objections" className="w-full bg-black py-16 md:py-24">
+        <section id="objections" className="w-full py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <Reveal className="mb-10 max-w-2xl">
               <p className={sectionEyebrow}>Straight answers</p>
@@ -731,7 +727,7 @@ export default function AiReceptionistForSmallBusinessPage() {
         </section>
 
         {/* Pricing */}
-        <section id="pricing" className="w-full bg-black py-16 md:py-24">
+        <section id="pricing" className="w-full py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <div className="grid grid-cols-1 md:grid-cols-[1fr,340px] gap-8 md:gap-12 items-center">
               <Reveal>
@@ -790,7 +786,7 @@ export default function AiReceptionistForSmallBusinessPage() {
         </section>
 
         {/* FAQ */}
-        <section id="faq" className="w-full bg-black py-16 md:py-24">
+        <section id="faq" className="w-full py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <Reveal className="mb-10 max-w-2xl">
               <p className={sectionEyebrow}>FAQs</p>
@@ -835,7 +831,7 @@ export default function AiReceptionistForSmallBusinessPage() {
         {/* Final CTA */}
         <section
           id="cta"
-          className="w-full overflow-hidden bg-black pb-20 md:pb-28"
+          className="w-full overflow-hidden pb-20 md:pb-28"
         >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <Reveal>
