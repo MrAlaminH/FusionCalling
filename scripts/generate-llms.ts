@@ -148,6 +148,11 @@ Compliance: call audio is encrypted in transit (TLS/SRTP) and at rest (AES-256).
     content: `Plain-English explainer on the AI phone call receptionist: how AI voice agents answer and place calls, the tech behind them, and results with Fusion Calling. Covers ASR, LLM, TTS, telephony, and deployment in days.`,
   },
   {
+    path: "/ai-answering-service",
+    title: "AI Phone Answering Service: 2026 Buyer's Guide | Fusion Calling",
+    content: `2026 buyer's guide to the AI phone answering service: what an AI answering service includes (24/7 live answering on every call, appointment booking into your real calendar, message-taking and screening, smart transfers with transcripts, SMS follow-ups), what it costs — flat monthly plans from $149/mo with 500 included minutes, no per-minute billing — and how it compares to human answering services, voicemail, and hiring in-house. Covers switching from a current service in days while keeping your existing number, warm-transfer rules for calls the AI can't handle, identical after-hours and weekend coverage, and encrypted caller-data handling.`,
+  },
+  {
     path: "/ai-phone-call-automation/after-hours-answering",
     title: "After-Hours Answering Service with AI",
     content: `AI after-hours answering service for nights, weekends, and holidays: every caller reaches a live answer on the first ring instead of voicemail. Urgency rules decide what can't wait — emergencies warm-transfer to on-call staff instantly with transcript and caller details, routine callers book into tomorrow's real availability with SMS confirmations, and every overnight call arrives transcribed and tagged by morning. Covers overflow at peak hours with unlimited parallel calls. Works with your existing phone number via conditional forwarding; greetings state the time context. One workflow of AI phone call automation and the starting point before full 24/7 coverage with an AI receptionist. Pricing: same plans as everything else, from $149/mo with 500 included minutes — no night or weekend premium. FAQs: Q: Will emergencies reach a human? A: Yes — matching calls warm-transfer immediately with the transcript and caller details; everything else becomes a booking or message. Q: Can it book appointments overnight? A: Yes, into your next available slots with SMS confirmations. Q: How fast can it go live? A: Most deployments launch within days: forward the number, set urgency rules and greetings, run test calls, switch on.`,
@@ -254,6 +259,7 @@ function generateLLMS(): string {
     `- [Pricing](${SITE_URL}/pricing): Starter $149/mo, Pro $249/mo, Enterprise $497/mo — month-to-month, 14-day guarantee.`,
     `- [Live Demo](${SITE_URL}/#show-case): Try an outbound or inbound AI call instantly.`,
     `- [After-Hours Answering Service with AI](${SITE_URL}/ai-phone-call-automation/after-hours-answering): AI coverage for nights, weekends, and holidays — emergency triage with warm transfers, next-day booking, morning transcripts. From $149/mo.`,
+    `- [AI Phone Answering Service Buyer's Guide](${SITE_URL}/ai-answering-service): What an AI phone answering service includes, what it costs ($149/mo flat, no per-minute billing), and how it beats voicemail, human services, and in-house hires.`,
     ``,
     `## Documentation`,
     ``,
