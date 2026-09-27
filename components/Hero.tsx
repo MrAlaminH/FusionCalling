@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Sparkles } from "lucide-react";
 import { NeonGradientCard } from "@/components/ui/neon-gradient-card";
 import Image from "next/image";
-import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import { cn } from "@/lib/utils";
 import HeroForm from "@/components/sub/HeroForm";
 import CopyNumberButton from "@/components/sub/CopyNumberButton";
@@ -33,37 +32,34 @@ export default function Component() {
               "group inline-flex items-center rounded-full bg-white/10 px-2.5 sm:px-3 md:px-4 py-1 sm:py-1.5 text-[10px] xxs:text-xs sm:text-sm transition-colors hover:bg-white/20",
             )}
           >
-            <Sparkles className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4 mr-1 sm:mr-1.5 md:mr-2" />
-            <AnimatedShinyText className="text-white hover:text-white/90">
+            <Sparkles className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4 mr-1 sm:mr-1.5 md:mr-2 text-brand" />
+            <span className="text-brand font-medium">
               Manage Business Call Smartly
               <span className="ml-1 sm:ml-1.5 md:ml-2 group-hover:translate-x-0.5 transition-transform inline-block">
                 →
               </span>
-            </AnimatedShinyText>
+            </span>
           </Link>
         </div>
 
         {/* Main heading — rendered visible at first paint (LCP) */}
         <div className="text-center mb-3 sm:mb-4 md:mb-6 px-2 sm:px-4 md:px-6">
           <h1 className="font-display text-2xl xxs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1]">
-            AI Phone Call Agents
-            <br className="hidden sm:block" />
-            <span className="whitespace-nowrap"> </span>
-            for Your Business{" "}
-            <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
+            <span className="block">AI Phone Call Agents{" "}</span>
+            <span className="block">for Your Business{" "}</span>
+            <span className="block bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
               Answer Every Call 24/7
             </span>
           </h1>
         </div>
 
         {/* Subheading — rendered visible at first paint */}
-        <div className="max-w-2xl mx-auto text-center mb-6 sm:mb-8 lg:mb-10 px-2 sm:px-4 md:px-6">
+        <div className="max-w-3xl mx-auto text-center mb-6 sm:mb-8 lg:mb-10 px-2 sm:px-4 md:px-6">
           <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-400 leading-relaxed text-balance">
-            Fusion Calling is an AI phone call solution for businesses — AI
-            call agents answer and place calls 24/7.
-            <br className="hidden md:block" /> They book appointments, qualify
-            leads, and catch every missed call — so
-            no call goes unanswered
+            Fusion Calling is an AI phone call solution for businesses. AI
+            call agents answer and place calls 24/7, book appointments,
+            qualify leads, and catch every missed call — so no call goes
+            unanswered.
           </p>
         </div>
 

@@ -135,6 +135,14 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Page-level horizontal overflow guard: a single nowrap heading or wide
+   marquee row must never stretch <body> and shift centered content on
+   phones. `clip` (not `hidden`) preserves position:sticky descendants. */
+html,
+body {
+  overflow-x: clip;
+}
+
 /* Respect users who prefer reduced motion: freeze all non-essential
    animations/transitions. This lowers main-thread load and is a PageSpeed
    accessibility best practice.

@@ -93,7 +93,7 @@ export default function TestimonialsSection() {
           animation="animate-fade-in-up"
           className="flex flex-col items-center justify-center space-y-4 text-center"
         >
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-3xl md:text-4xl whitespace-nowrap">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-3xl md:text-4xl sm:whitespace-nowrap">
             <span className="text-brand-strong">Customer</span>{" "}
             <span className="text-white">Success Stories</span>
           </h2>
