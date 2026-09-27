@@ -47,7 +47,7 @@ export default function HowItWorks() {
             as="h2"
             className="text-brand-strong text-center font-bold text-3xl md:text-4xl pb-4"
           >
-            How It Works
+            How AI Phone Call Automation Works
           </Reveal>
           <Reveal
             animation="animate-fade-in-up"

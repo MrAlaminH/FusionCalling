@@ -115,7 +115,7 @@ export default function TryDemo() {
         {/* Header Section */}
         <Reveal animation="animate-fade-in-up" className="flex flex-col items-center">
           <h2 className="text-brand-strong text-center font-bold text-3xl md:text-4xl pb-2">
-            Show Case
+            Hear AI Phone Call Agents in Action
           </h2>
           <p className="text-gray-400 text-center md:text-xl mb-12">
             Check out some examples of how our AI handles calls.

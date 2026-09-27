@@ -78,7 +78,7 @@ export default function FAQSection() {
                 <span className="font-bold text-2xl">FAQ</span>
               </div>
               <h2 className="text-4xl font-bold text-white">
-                Frequently asked questions
+                AI phone call FAQs
               </h2>
             </div>
 
@@ -168,5 +168,26 @@ const faqItems = [
     question: "Can AI agents handle complex conversations?",
     answer:
       "Yes, our AI agents can handle multi-turn conversations, context switching, and complex scenarios. They're trained on your specific business knowledge, can access information in real-time (like checking calendars or databases), and know when to transfer to a human agent for situations requiring human judgment or empathy.",
+  },
+  {
+    question: "What happens to missed calls?",
+    answer:
+      "Missed calls get answered, not lost. Your AI phone call agent picks up 24/7 — nights, weekends, and holidays — takes a message or books the caller straight into your calendar, then follows up by SMS. Every call-back, transcript, and recording lands in one dashboard so no lead slips through.",
+  },
+  {
+    question: "Can AI phone call agents do outbound and cold calling?",
+    answer:
+      "Yes. Import your lead list and your AI call agent runs outbound campaigns automatically: it dials, qualifies prospects with natural conversation, books interested leads into your calendar, and logs every outcome to your CRM. Inbound answering and outbound calling run on the same platform, 24/7.",
+  },
+  {
+    question:
+      "Is there a tool that automatically calls leads and books appointments without human intervention?",
+    answer:
+      "Yes — that is exactly what Fusion Calling does. The AI calls your leads, holds a natural conversation, books appointments directly into your calendar, sends automated reminders, and logs everything to your CRM. Try it yourself with the live demo call on this page.",
+  },
+  {
+    question: "How does Fusion Calling compare to other AI calling platforms?",
+    answer:
+      "Fusion Calling is provider-agnostic across Vapi, Retell, and ElevenLabs, so each call runs on the best engine instead of locking you into one. Plans from $149/month include minutes, calendar and CRM integrations, SMS follow-ups, and a live demo before you commit — compare side by side in the table above.",
   },
 ];

@@ -8,7 +8,7 @@ export default function Features() {
     <section className="w-full bg-black">
       <Reveal animation="animate-fade-in-up" className="flex flex-col items-center">
         <h2 className="text-brand-strong text-center font-bold text-3xl md:text-4xl  pb-4">
-          Calling Features
+          AI Phone Call Features That Book Revenue
         </h2>
         <p className="text-gray-400 text-center md:text-xl mb-6">
           Turn missed calls into revenue with <br /> AI phone call agents that

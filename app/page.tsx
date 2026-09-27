@@ -30,13 +30,13 @@ const Calendar = dynamic(() => import("@/components/calendar"), { ssr: false });
 import { callFlowSteps } from "@/components/call-flow";
 
 export const metadata: Metadata = {
-  title: "AI Call Agent Solution for Businesses",
+  title: "AI Phone Call Agents That Answer & Book 24/7 | Fusion Calling",
   description:
-    "Fusion Calling AI voice agents answer & place calls 24/7, book appointments, and qualify leads. Live demo, plans from $149/mo.",
+    "AI phone call agents answer & place calls 24/7, book appointments, qualify leads. Live demo, plans from $149/mo.",
   ...buildOpenGraph({
-    title: "AI Call Agent Solution for Businesses",
+    title: "AI Phone Call Agents That Answer & Book 24/7 | Fusion Calling",
     description:
-      "Fusion Calling AI voice agents answer & place calls 24/7, book appointments, and qualify leads. Live demo, plans from $149/mo.",
+      "AI phone call agents answer & place calls 24/7, book appointments, qualify leads. Live demo, plans from $149/mo.",
     path: "/",
   }),
 };
@@ -49,8 +49,8 @@ export default function Home() {
         "@type": "WebPage",
         "@id": `${SITE_URL}/#webpage`,
         url: `${SITE_URL}/`,
-        name: "AI Call Agent Solution for Businesses",
-        description: "Fusion Calling AI voice agents answer & place calls 24/7, book appointments, and qualify leads. Live demo, plans from $149/mo.",
+        name: "AI Phone Call Agents That Answer & Book 24/7 | Fusion Calling",
+        description: "AI phone call agents answer & place calls 24/7, book appointments, qualify leads. Live demo, plans from $149/mo.",
         isPartOf: {
           "@id": `${SITE_URL}/#website`
         },
@@ -164,6 +164,38 @@ export default function Home() {
               text: "Yes, our AI agents can handle multi-turn conversations, context switching, and complex scenarios. They're trained on your specific business knowledge, can access information in real-time (like checking calendars or databases), and know when to transfer to a human agent for situations requiring human judgment or empathy.",
             },
           },
+          {
+            "@type": "Question",
+            name: "What happens to missed calls?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Missed calls get answered, not lost. Your AI phone call agent picks up 24/7 — nights, weekends, and holidays — takes a message or books the caller straight into your calendar, then follows up by SMS. Every call-back, transcript, and recording lands in one dashboard so no lead slips through.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Can AI phone call agents do outbound and cold calling?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. Import your lead list and your AI call agent runs outbound campaigns automatically: it dials, qualifies prospects with natural conversation, books interested leads into your calendar, and logs every outcome to your CRM. Inbound answering and outbound calling run on the same platform, 24/7.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Is there a tool that automatically calls leads and books appointments without human intervention?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes — that is exactly what Fusion Calling does. The AI calls your leads, holds a natural conversation, books appointments directly into your calendar, sends automated reminders, and logs everything to your CRM. Try it yourself with the live demo call on this page.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How does Fusion Calling compare to other AI calling platforms?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Fusion Calling is provider-agnostic across Vapi, Retell, and ElevenLabs, so each call runs on the best engine instead of locking you into one. Plans from $149/month include minutes, calendar and CRM integrations, SMS follow-ups, and a live demo before you commit — compare side by side in the table above.",
+            },
+          },
         ],
       }
     ]
@@ -264,6 +296,13 @@ export default function Home() {
               className="text-brand hover:text-brand-light underline underline-offset-4 hover:underline transition-colors"
             >
               after-hours answering
+            </Link>
+            {" · "}
+            <Link
+              href="/ai-phone-call-automation/after-hours-answering"
+              className="text-brand hover:text-brand-light underline underline-offset-4 hover:underline transition-colors"
+            >
+              missed-call handling
             </Link>
             {" · "}
             <Link

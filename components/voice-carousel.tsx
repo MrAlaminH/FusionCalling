@@ -11,7 +11,7 @@ export default function VoiceCarousel() {
       <div className="mb-12 max-w-none mx-auto">
         <Reveal animation="animate-fade-in-up" className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-brand-strong mb-4">
-            Test Out Some Used Voices
+            Try Our AI Voices
           </h2>
           <p className="text-gray-400">
             We offer voices in multiple languages, with different genders and
