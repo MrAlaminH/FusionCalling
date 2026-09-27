@@ -85,7 +85,7 @@ export default function Pricing() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Header */}
         <SectionHeader
-          title="White-Label Voice AI Pricing Plans"
+          title="White-Label AI Voice Agent Pricing — From $99/mo"
           highlight="Pricing Plans"
           subtitle="Choose the plan that fits your agency's needs. Scale up as you grow."
         />

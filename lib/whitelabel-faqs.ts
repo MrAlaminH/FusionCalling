@@ -76,4 +76,19 @@ export const whitelabelFaqs: WhitelabelFaq[] = [
     answer:
       "No — position it honestly and it sells better. The AI takes the routine volume: after-hours calls, overflow, bookings, reminders, and common questions. Client staff keep judgment calls, sensitive conversations, and in-person service. Agencies that pitch the AI as a 24/7 first line (not a headcount replacement) see faster buy-in and lower churn.",
   },
+  {
+    question: "Can I resell white-label cold calling and outbound AI agents?",
+    answer:
+      "Yes. Fusion Calling supports outbound white-label cold calling on the same platform: import Vapi or Retell outbound agents, run them in per-client sub-accounts, and set your own per-minute or retainer pricing with Stripe rebilling. Plans start at $99/month for 6 sub-accounts, and most partners launch outbound pilots in about 24 hours.",
+  },
+  {
+    question: "Can I white-label AI call answering and call tracking per client?",
+    answer:
+      "Yes. Each client sub-account gets 24/7 white-label call answering with booking, messages, and transfers, plus per-client call tracking with logs, transcripts, and recordings for renewals. You set pricing, bill on your Stripe account, and keep 100% of the margin above the $99/month Starter plan.",
+  },
+  {
+    question: "Does white-label replace Missed Call Text Back?",
+    answer:
+      "It makes it rarely needed. The white-label AI voice agent answers in two rings, 24/7, so fewer calls are missed. When a call is genuinely missed, GoHighLevel's native Missed Call Text Back still fires in your client's brand, and the AI agent can place a call-back that qualifies and books the lead inside each sub-account.",
+  },
 ];

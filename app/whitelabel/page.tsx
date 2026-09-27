@@ -1,6 +1,5 @@
 import { SITE_URL } from "@/lib/site-url";
-import { breadcrumbSchema, faqSchema, offerSchema, webPageSchema, buildOpenGraph } from "@/lib/seo";
-import { WHOLESALE_PLANS } from "@/lib/product-facts";
+import { breadcrumbSchema, faqSchema, webPageSchema, buildOpenGraph } from "@/lib/seo";
 import WhiteLabelNavbar from "@/components/white-label-navbar";
 import Hero from "@/components/white-label/Hero";
 import ValueProp from "@/components/white-label/ValueProp";
@@ -20,17 +19,17 @@ const PROVIDER_LINKS = [
   {
     href: "/whitelabel/vapi",
     title: "Vapi white-label reselling",
-    description: "Import Vapi agents, brand them as your own, and resell with pricing you control.",
+    description: "Import Vapi agents, brand them as your own, and resell as white-label Vapi voice agents with pricing you control.",
   },
   {
     href: "/whitelabel/retell",
     title: "Retell AI white-label reselling",
-    description: "Bring Retell AI agents into your branded dashboard and keep 100% of client revenue.",
+    description: "Bring Retell AI agents into your branded dashboard and keep 100% of client revenue as a Retell AI white-label reseller.",
   },
   {
     href: "/whitelabel/elevenlabs",
     title: "ElevenLabs white-label reselling",
-    description: "Resell ElevenLabs voice agents under your agency brand with your own domain and portal.",
+    description: "Resell ElevenLabs voice agents under your agency brand with your own domain and portal — ElevenLabs white-label built in.",
   },
   {
     href: "/whitelabel/gohighlevel",
@@ -40,13 +39,13 @@ const PROVIDER_LINKS = [
 ];
 
 export const metadata: Metadata = {
-  title: "White-Label AI Voice Agents From $99/mo",
+  title: "White Label AI Voice Agent Platform — From $99/mo",
   description:
-    "White-label AI voice platform for agencies: resell under your brand. 6 sub-accounts, 24-hour launch, Stripe rebilling.",
+    "White-label AI voice agent platform for agencies: resell Vapi, Retell & ElevenLabs under your brand. 6 sub-accounts, 24-hr launch, Stripe rebilling.",
   ...buildOpenGraph({
-    title: "White-Label AI Voice Agents From $99/mo",
+    title: "White Label AI Voice Agent Platform — From $99/mo",
     description:
-      "White-label AI voice platform for agencies: resell under your brand. 6 sub-accounts, 24-hour launch, Stripe rebilling.",
+      "White-label AI voice agent platform for agencies: resell Vapi, Retell & ElevenLabs under your brand. 6 sub-accounts, 24-hr launch, Stripe rebilling.",
     path: "/whitelabel",
   }),
 };
@@ -84,27 +83,6 @@ export default function WhiteLabelPage() {
         breadcrumbId: `${SITE_URL}/whitelabel#breadcrumb`,
         speakable: ["h1"],
       }),
-      {
-        "@type": "Product",
-        "@id": `${SITE_URL}/whitelabel#product`,
-        name: "Fusion Calling White-label AI Voice Solution",
-        description:
-          "Become a Fusion Calling partner and white-label our AI voice solution. Offer powerful AI phone automation under your own brand.",
-        image: `${SITE_URL}/cardImage.jpg`,
-        sku: "FC-WHITELABEL-001",
-        brand: {
-          "@type": "Brand",
-          name: "Fusion Calling",
-        },
-        category: "Business Software",
-        offers: WHOLESALE_PLANS.map((plan) =>
-          offerSchema({
-            name: `${plan.name} Plan`,
-            price: plan.price,
-            path: "/whitelabel",
-          })
-        ),
-      },
       faqSchema(whitelabelFaqs, `${SITE_URL}/whitelabel#faqpage`),
       {
         "@type": "HowTo",

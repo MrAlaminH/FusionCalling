@@ -66,14 +66,14 @@ export default function FAQ() {
               href="/whitelabel/compare"
               className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors"
             >
-              See how we compare
+              Compare white-label AI voice agent platforms
             </Link>{" "}
             or{" "}
             <Link
               href="/pricing"
               className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors"
             >
-              see pricing details
+              see white-label AI voice agent pricing
             </Link>
             .
           </p>

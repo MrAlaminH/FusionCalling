@@ -110,7 +110,7 @@ export default function Features() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Header */}
         <SectionHeader
-          title="Complete White-label Solution"
+          title="White-Label AI Voice Agent Software — Complete Solution"
           highlight="Solution"
           subtitle="Everything you need to launch and scale your AI phone automation business under your own brand. No technical expertise required."
         />

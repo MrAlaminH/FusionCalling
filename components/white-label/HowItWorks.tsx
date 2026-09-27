@@ -50,8 +50,8 @@ export default function HowItWorks() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Header */}
         <SectionHeader
-          title="How to Launch Your White-label Business"
-          highlight="White-label Business"
+          title="How to Launch Your White-Label AI Voice Agent Business"
+          highlight="White-Label Business"
           subtitle="From application to first sale in as little as one week. We handle the technology, you focus on growing your agency."
         />
 
