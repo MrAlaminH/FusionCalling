@@ -51,16 +51,17 @@ export const metadata: Metadata = {
 };
 
 export default function WhiteLabelPage() {
-  // Product facts are sourced from lib/product-facts; the Offer nodes are
-  // built from the wholesale plans so schema prices can't drift from the UI.
+  // Schema @graph mirrors the visible page: Service + WebPage names match the
+  // title/H1 ("Platform" wording), FAQPage is generated from whitelabelFaqs so
+  // schema answers can't drift from the visible accordion.
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "Service",
         "@id": `${SITE_URL}/whitelabel#service`,
-        name: "White-label AI Voice Solution",
-        description: "Partner program allowing agencies and resellers to offer AI phone call automation under their own brand. Includes full white-label dashboard, custom voice training, and subscription-based pricing you control.",
+        name: "White-Label AI Voice Agent Platform",
+        description: "Partner program allowing agencies and resellers to offer AI voice agents under their own brand. Includes full white-label dashboard, custom voice training, and subscription-based pricing you control.",
         provider: {
           "@id": `${SITE_URL}/#organization`
         },
@@ -78,8 +79,8 @@ export default function WhiteLabelPage() {
       ),
       webPageSchema({
         path: "/whitelabel",
-        name: "White-label AI Voice Solution | Fusion Calling Partner Program",
-        description: "Become a Fusion Calling partner and white-label our AI voice solution. Offer powerful AI phone automation under your own brand.",
+        name: "White-Label AI Voice Agent Platform | Fusion Calling Partner Program",
+        description: "Become a Fusion Calling partner and white-label our AI voice agent platform. Resell Vapi, Retell & ElevenLabs under your own brand.",
         breadcrumbId: `${SITE_URL}/whitelabel#breadcrumb`,
         speakable: ["h1"],
       }),
@@ -87,7 +88,7 @@ export default function WhiteLabelPage() {
       {
         "@type": "HowTo",
         "@id": `${SITE_URL}/whitelabel#howto`,
-        name: "How to Launch Your White-label AI Voice Business",
+        name: "How to Launch Your White-Label AI Voice Agent Business",
         description:
           "From application to first sale in as little as one week. We handle the technology, you focus on growing your agency.",
         step: [
