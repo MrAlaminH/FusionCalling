@@ -108,6 +108,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
           path === "/whitelabel/case-studies" ||
           path === "/whitelabel/gohighlevel" ||
           path === "/whitelabel/locations" ||
+          path === "/whitelabel/reseller-program" ||
+          path === "/contact" ||
+          path === "/faq" ||
           path === "/ai-phone-call-automation" ||
           path === "/ai-phone-answering-service" ||
           path === "/ai-voice-agent" ||

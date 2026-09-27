@@ -30,6 +30,7 @@ const footerGroups: FooterGroup[] = [
     title: "Partner Program",
     links: [
       { label: "Overview", href: "/whitelabel" },
+      { label: "Reseller Program", href: "/whitelabel/reseller-program" },
       { label: "GoHighLevel", href: "/whitelabel/gohighlevel" },
       { label: "Vapi", href: "/whitelabel/vapi" },
       { label: "Retell AI", href: "/whitelabel/retell" },
