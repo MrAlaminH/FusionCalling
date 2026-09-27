@@ -8,7 +8,7 @@ import CopyNumberButton from "@/components/sub/CopyNumberButton";
 
 export default function Component() {
   return (
-    <div className="min-h-screen bg-black text-white overflow-hidden pt-16 sm:pt-20 md:pt-24 lg:pt-28 xl:pt-32 relative">
+    <div className="min-h-screen bg-black text-white overflow-hidden pt-16 sm:pt-20 md:pt-24 lg:pt-24 xl:pt-24 relative">
       {/* Brand glow arc (Bolt) + broadcast signal rings (Scale) */}
       <div
         aria-hidden="true"
@@ -25,7 +25,7 @@ export default function Component() {
 
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl md:py-6 py-10">
         {/* Top pill button */}
-        <div className="flex justify-center mb-4 sm:mb-6 lg:mb-8">
+        <div className="flex justify-center mb-4 sm:mb-6 lg:mb-6">
           <Link
             href="#show-case"
             className={cn(
@@ -54,7 +54,7 @@ export default function Component() {
         </div>
 
         {/* Subheading — rendered visible at first paint */}
-        <div className="max-w-3xl mx-auto text-center mb-6 sm:mb-8 lg:mb-10 px-2 sm:px-4 md:px-6">
+        <div className="max-w-3xl mx-auto text-center mb-6 sm:mb-8 lg:mb-8 px-2 sm:px-4 md:px-6">
           <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-400 leading-relaxed text-balance">
             Fusion Calling is an AI phone call solution for businesses. AI
             call agents answer and place calls 24/7, book appointments,
@@ -64,7 +64,7 @@ export default function Component() {
         </div>
 
         {/* CTA Button — rendered visible at first paint */}
-        <div className="flex justify-center mb-8 sm:mb-12 lg:mb-16 xl:mb-20">
+        <div className="flex justify-center mb-8 sm:mb-12 lg:mb-10 xl:mb-12">
           <Link
             href="#show-case"
             className="inline-flex items-center rounded-md bg-brand px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm md:text-base font-medium text-brand-foreground transition hover:bg-brand-strong hover:scale-105 active:scale-[0.98]"
@@ -82,7 +82,7 @@ export default function Component() {
 
           <div>
             <NeonGradientCard
-              className="w-full dark mb-6 sm:mb-12 md:mb-20 lg:mb-32 relative z-0"
+              className="w-full dark mb-6 sm:mb-12 md:mb-20 lg:mb-16 relative z-0"
               borderSize={2}
               borderRadius={24}
               neonColors={{
