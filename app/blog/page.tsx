@@ -134,6 +134,12 @@ export default function BlogPage() {
                   AI phone call receptionist guide
                 </Link>
                 <Link
+                  href="/whitelabel"
+                  className="text-brand-light hover:text-brand transition-colors underline-offset-4 hover:underline"
+                >
+                  White-label platform
+                </Link>
+                <Link
                   href="/alternative"
                   className="text-brand-light hover:text-brand transition-colors underline-offset-4 hover:underline"
                 >

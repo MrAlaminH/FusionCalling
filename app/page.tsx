@@ -49,8 +49,8 @@ export default function Home() {
         "@type": "WebPage",
         "@id": `${SITE_URL}/#webpage`,
         url: `${SITE_URL}/`,
-        name: "Fusion Calling | AI Phone Call Automation for Businesses",
-        description: "AI-powered phone call automation for businesses. Streamline customer interactions, save time, and increase productivity with advanced voice technology.",
+        name: "AI Call Agent Solution for Businesses",
+        description: "Fusion Calling AI voice agents answer & place calls 24/7, book appointments, and qualify leads. Live demo, plans from $149/mo.",
         isPartOf: {
           "@id": `${SITE_URL}/#website`
         },
