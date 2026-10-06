@@ -30,12 +30,12 @@ const aboutFaqs = [
   {
     question: "When was Fusion Calling founded?",
     answer:
-      "Fusion Calling was founded in 2022 and has since helped 500+ agencies and businesses launch profitable voice-AI practices.",
+      "Fusion Calling was founded in 2025 and has since helped 100+ agencies and businesses launch profitable voice-AI practices.",
   },
   {
     question: "Where is Fusion Calling based?",
     answer:
-      "Fusion Calling is a US-based, fully remote company. Because the platform is cloud-hosted, partners and customers run their phone operations from anywhere while calls are answered 24/7.",
+      "Fusion Calling is a Bangladesh-based, fully remote company serving clients across the US and internationally. Because the platform is cloud-hosted, partners and customers run their phone operations from anywhere while calls are answered 24/7.",
   },
   {
     question: "How much does Fusion Calling cost?",
@@ -60,8 +60,8 @@ const aboutFaqs = [
 ];
 
 const stats = [
-  { value: "2022", label: "Founded" },
-  { value: "500+", label: "Agencies & businesses launched" },
+  { value: "2025", label: "Founded" },
+  { value: "100+", label: "Agencies & businesses launched" },
   { value: "4.8/5", label: "Customer satisfaction" },
   { value: "99.9%", label: "Uptime guarantee" },
 ];
@@ -149,7 +149,7 @@ const aboutJsonLd = {
       url: `${SITE_URL}/about`,
       name: "About Fusion Calling",
       description:
-        "Fusion Calling builds human-like AI voice agents that automate inbound and outbound business calls. Learn about our team, our mission, and why 500+ agencies trust us since 2022.",
+        "Fusion Calling builds human-like AI voice agents that automate inbound and outbound business calls. Learn about our team, our mission, and why 100+ agencies trust us since 2025.",
       inLanguage: "en-US",
       isPartOf: { "@id": `${SITE_URL}/#website` },
       breadcrumb: {
@@ -203,11 +203,11 @@ export const metadata: Metadata = {
     absolute: "About Fusion Calling — AI Voice Agents & Mission",
   },
   description:
-    "Fusion Calling builds human-like AI voice agents that automate inbound and outbound calls. Learn our mission and why 500+ agencies trust us since 2022.",
+    "Fusion Calling builds human-like AI voice agents that automate inbound and outbound calls. Learn our mission and why 100+ agencies trust us since 2025.",
   ...buildOpenGraph({
     title: "About Fusion Calling — AI Voice Agents & Mission",
     description:
-      "Fusion Calling builds human-like AI voice agents that automate inbound and outbound calls. Learn our mission and why 500+ agencies trust us since 2022.",
+      "Fusion Calling builds human-like AI voice agents that automate inbound and outbound calls. Learn our mission and why 100+ agencies trust us since 2025.",
     path: "/about",
     type: "website",
   }),
@@ -246,7 +246,7 @@ export default function AboutPage() {
                 adding headcount.
               </p>
               <p className="mt-5 text-sm text-gray-500">
-                Founded 2022 · US-based, fully remote team · 500+ agencies &amp;
+                Founded 2025 · Bangladesh-based, remote team · 100+ agencies &amp;
                 businesses
               </p>
             </Reveal>
@@ -288,7 +288,7 @@ export default function AboutPage() {
               </Reveal>
               <Reveal animation="animate-fade-in-right" className="space-y-5 text-gray-400 leading-relaxed">
                 <p>
-                  Fusion Calling was founded in 2022 by Alamin, a voice-AI
+                  Fusion Calling was founded in 2025 by Alamin, a voice-AI
                   engineer who kept watching small businesses lose customers to
                   voicemail — after hours, during rush jobs, whenever the phone
                   rang and nobody could pick up. Enterprise call centers had
@@ -305,7 +305,7 @@ export default function AboutPage() {
                   of what they charge clients.
                 </p>
                 <p>
-                  Today, 500+ agencies and businesses run on Fusion Calling
+                  Today, 100+ agencies and businesses run on Fusion Calling
                   across real estate, dental, insurance, home services, legal,
                   and automotive — and we publish our{" "}
                   <Link

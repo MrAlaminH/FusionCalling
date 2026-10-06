@@ -65,7 +65,7 @@ const PAGES: Result[] = [
     type: "Page",
     title: "About Fusion Calling",
     description:
-      "Fusion Calling builds human-like AI voice agents that automate inbound and outbound calls. Founded 2022.",
+      "Fusion Calling builds human-like AI voice agents that automate inbound and outbound calls. Founded 2025.",
     href: "/about",
   },
 ];

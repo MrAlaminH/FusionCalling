@@ -114,7 +114,7 @@ Comparison criteria: starting price, sub-accounts included, voice providers supp
   {
     path: "/team",
     title: "Our Team | Fusion Calling",
-    content: `Meet the team behind Fusion Calling — founders, voice AI engineers, and agency growth experts building the future of white-label voice automation. 500+ agencies launched.`,
+    content: `Meet the team behind Fusion Calling — founders, voice AI engineers, and agency growth experts building the future of white-label voice automation. 100+ agencies launched.`,
   },
   {
     path: "/pricing",
@@ -124,7 +124,7 @@ Comparison criteria: starting price, sub-accounts included, voice providers supp
   {
     path: "/about",
     title: "About Fusion Calling | AI Voice Agents",
-    content: `Fusion Calling builds human-like AI voice agents that automate inbound and outbound calls. Since 2022, 500+ agencies trust us for real estate, dental, insurance, home services, legal, automotive. Founder Alamin, voice-AI engineer. Mission: no call goes unanswered. GDPR & EU AI Act aligned, encryption for audio/transcripts, 99.9% uptime.`,
+    content: `Fusion Calling builds human-like AI voice agents that automate inbound and outbound calls. Since 2025, 100+ agencies trust us for real estate, dental, insurance, home services, legal, automotive. Founder Alamin, voice-AI engineer. Mission: no call goes unanswered. GDPR & EU AI Act aligned, encryption for audio/transcripts, 99.9% uptime.`,
   },
   {
     path: "/faq",
@@ -295,7 +295,7 @@ function generateLLMS(): string {
     ``,
     `- [FAQ](${SITE_URL}/faq): Direct answers to the most-asked questions — pricing ($149–$497/mo business, $99/mo+ wholesale), launch time (24 hours), supported providers, and compliance.`,
     `- [Contact](${SITE_URL}/contact): Email hello@fusioncalling.com, phone +1 (914) 639-4069, or book a discovery call.`,
-    `- [About](${SITE_URL}/about): Who builds Fusion Calling — founded 2022 by Alamin, serving 500+ agencies and businesses.`,
+    `- [About](${SITE_URL}/about): Who builds Fusion Calling — founded 2025 by Alamin, serving 100+ agencies and businesses.`,
     ``,
     `## Optional`,
     ``,

@@ -153,7 +153,7 @@ export default function RootLayout({
                     "Voice AI Agencies",
                     "Conversational AI",
                   ],
-                  foundingDate: "2022",
+                  foundingDate: "2025",
                   founder: {
                     "@type": "Person",
                     // Canonical @id shared with /team/alamin + /about Person
@@ -164,9 +164,9 @@ export default function RootLayout({
                   },
                   address: {
                     "@type": "PostalAddress",
-                    addressCountry: "US",
+                    addressCountry: "BD",
                   },
-                  areaServed: "US",
+                  areaServed: "Worldwide",
                   // Only profiles that verifiably belong to Fusion Calling.
                   // facebook.com/fusioncalling is a different company's page;
                   // the founder's personal X stays on Person nodes only.
@@ -178,7 +178,7 @@ export default function RootLayout({
                     "@type": "ContactPoint",
                     telephone: "+1-914-639-4069",
                     contactType: "sales",
-                    areaServed: "US",
+                    areaServed: "Worldwide",
                     availableLanguage: "English",
                     email: "hello@fusioncalling.com",
                   },
@@ -189,7 +189,7 @@ export default function RootLayout({
                   name: "AI Phone Call Automation",
                   serviceType: "AI phone call automation and AI receptionist",
                   provider: { "@id": `${SITE_URL}/#organization` },
-                  areaServed: "US",
+                  areaServed: "Worldwide",
                   description:
                     "Human-like AI voice agents that handle inbound and outbound business calls 24/7: answering, appointment booking, lead qualification, and white-label reselling for agencies.",
                   hasOfferCatalog: {
@@ -214,7 +214,7 @@ export default function RootLayout({
                     "@id": `${SITE_URL}/#organization`,
                   },
                   description:
-                    "The team behind Fusion Calling's voice AI platform. 500+ agencies, millions of calls automated.",
+                    "The team behind Fusion Calling's voice AI platform. 100+ agencies, millions of calls automated.",
                   image: `${SITE_URL}/avatars/female_avatar.png`,
                   sameAs: [
                     "https://www.linkedin.com/company/fusion-calling/",

@@ -526,8 +526,8 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
               </p>
               <p className="text-gray-400 text-sm leading-relaxed mb-4">
                 We&apos;re the team behind Fusion Calling&apos;s white-label AI voice
-                platform. Having helped 500+ agencies launch profitable voice AI
-                practices since 2022, we specialize in helping businesses scale their
+                platform. Having helped 100+ agencies launch profitable voice AI
+                practices since 2025, we specialize in helping businesses scale their
                 phone operations with cutting-edge automation technology.
               </p>
               <div className="flex items-center gap-4 text-sm">

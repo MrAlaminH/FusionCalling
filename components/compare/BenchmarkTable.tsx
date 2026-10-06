@@ -85,7 +85,7 @@ export function BenchmarkTable({ competitorName }: { competitorName: string }) {
         Performance benchmarks: {competitorName} vs Fusion Calling
       </h2>
       <p className="text-gray-400 text-sm mb-6">
-        Based on Fusion Calling&apos;s work with 500+ agency partners
+        Based on Fusion Calling&apos;s work with 100+ agency partners
         (2024–2026). We only list metrics with directly comparable data.
       </p>
 

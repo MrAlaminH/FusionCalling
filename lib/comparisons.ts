@@ -198,7 +198,7 @@ export const comparisons: Comparison[] = [
       "Fusion Calling is a white-label voice AI platform built specifically for agencies that want to launch fast and scale confidently. Unlike competitor platforms that focus on single-vendor solutions or self-serve setups, Fusion Calling provides done-with-you onboarding, multi-provider support (Vapi, Retell, and ElevenLabs), and a partnership model that includes 30 days of ongoing support.",
       "What makes Fusion Calling different is the focus on agency success from day one. You get 6 client sub-accounts included at the entry level ($99/month), a live interactive demo that your prospects can try immediately, and guided launch support that gets your branded agency live in 24 hours rather than weeks.",
       "The platform supports full white-label branding under your own domain, includes flexible client billing through Stripe rebilling, and connects to 2,200+ apps through Zapier integration. This means you can serve clients across any CRM or industry vertical, not just those using specific platforms.",
-      "Fusion Calling also emphasizes partnership over transactions. The team provides ongoing optimization support, hosts weekly training sessions, and actively helps agencies improve their client acquisition and retention strategies based on data from 500+ agency partnerships."
+      "Fusion Calling also emphasizes partnership over transactions. The team provides ongoing optimization support, hosts weekly training sessions, and actively helps agencies improve their client acquisition and retention strategies based on data from 100+ agency partnerships."
     ],
     competitorStrengths: [
       {
@@ -593,7 +593,7 @@ export const comparisons: Comparison[] = [
       "Fusion Calling focuses on doing fewer things at greater depth rather than bundling many tools together. Instead of spreading resources across website builders, lead finders, and workflow engines, Fusion Calling specializes exclusively in voice AI infrastructure and agency partnership.",
       "This focused approach means you get deeper expertise, better support, and more refined tools. The platform provides done-with-you onboarding included in the standard plan (no extra $3,999 white-glove fees), a live demo that improves your conversion rates, and ongoing optimization support.",
       "Multi-provider support with Vapi, Retell, and ElevenLabs ensures each client gets the best engine for their needs. Full white-label branding, flexible Stripe rebilling, and Zapier integration with 2,200+ apps give you the flexibility to serve clients across any industry.",
-      "What truly sets Fusion Calling apart is the partnership model. The team actively helps agencies improve their client acquisition, provides weekly training sessions, and shares optimization strategies based on data from 500+ successful agency partnerships."
+      "What truly sets Fusion Calling apart is the partnership model. The team actively helps agencies improve their client acquisition, provides weekly training sessions, and shares optimization strategies based on data from 100+ successful agency partnerships."
     ],
     competitorStrengths: [
       {
@@ -788,7 +788,7 @@ export const comparisons: Comparison[] = [
       "Agencies that prioritize maximum provider breadth and published compliance documentation with self-serve setup.",
     fusionCallingOverview: [
       "Fusion Calling takes a different approach than self-serve platforms. Instead of providing tools and letting agencies figure out implementation on their own, Fusion Calling provides done-with-you onboarding that gets your branded agency live in 24 hours with 30 days of ongoing support.",
-      "The platform focuses on partnership over transaction. You get a dedicated account manager on higher tiers, weekly training sessions to improve your client acquisition strategies, and active optimization support based on best practices from 500+ agency partnerships.",
+      "The platform focuses on partnership over transaction. You get a dedicated account manager on higher tiers, weekly training sessions to improve your client acquisition strategies, and active optimization support based on best practices from 100+ agency partnerships.",
       "Multi-provider support includes Vapi, Retell, and ElevenLabs, giving you the flexibility to match each client to the best voice engine. Full white-label branding, Stripe rebilling, and Zapier integration with 2,200+ apps ensure you can serve clients across any industry.",
       "While some platforms offer broader provider coverage, Fusion Calling emphasizes the providers that matter most for agency success. The focus is on giving you deep expertise with proven engines rather than shallow access to experimental options."
     ],
@@ -1404,7 +1404,7 @@ export const comparisons: Comparison[] = [
       "Fusion Calling is purpose-built for agencies, not just developers. Instead of wiring up APIs and infrastructure yourself, you get a guided, done-with-you launch that gets your branded agency live in 24 hours with 30 days of ongoing support.",
       "The platform provides full white-label branding under your own domain, logo, and pricing, a live interactive demo on your homepage that prospects can try instantly, and multi-provider support with Vapi, Retell, and ElevenLabs.",
       "Flexible client billing through Stripe rebilling and Zapier integration with 2,200+ apps mean you can serve clients across any industry or CRM. The focus is on giving agencies the tools and partnership to build a sustainable voice AI practice.",
-      "What sets Fusion Calling apart is the partnership model: weekly training, active optimization support, and guidance based on data from 500+ agency partnerships.",
+      "What sets Fusion Calling apart is the partnership model: weekly training, active optimization support, and guidance based on data from 100+ agency partnerships.",
     ],
     competitorStrengths: [
       {
@@ -1616,7 +1616,7 @@ export const comparisons: Comparison[] = [
       "Fusion Calling is purpose-built for agencies reselling voice AI. Instead of a single-seat AI employee, you get a platform with client sub-accounts, full white-label branding, and Stripe rebilling so you can serve many clients under your own brand.",
       "The platform supports Vapi, Retell, and ElevenLabs, letting you match each client to the best voice engine. A live interactive demo on your homepage helps you close prospects by letting them experience the technology before buying.",
       "Done-with-you onboarding gets your branded agency live in 24 hours with 30 days of ongoing support, and Zapier integration with 2,200+ apps connects to any CRM or industry tool.",
-      "The partnership model includes weekly training and active optimization support based on data from 500+ agency partnerships, so you grow faster than going it alone.",
+      "The partnership model includes weekly training and active optimization support based on data from 100+ agency partnerships, so you grow faster than going it alone.",
     ],
     competitorStrengths: [
       {
@@ -1814,7 +1814,7 @@ export const comparisons: Comparison[] = [
     fusionCallingOverview: [
       "Fusion Calling is purpose-built for agencies reselling voice AI. Instead of assembling providers, keys, telephony and billing yourself, you get a managed white-label platform with client sub-accounts, Stripe rebilling, and done-with-you onboarding that gets your branded agency live in 24 hours with 30 days of support.",
       "The platform is provider-agnostic: run Vapi agents where Vapi fits best, Retell where Retell fits best, and ElevenLabs where voice quality matters most—all under your own domain, logo, and pricing. A live interactive demo on your homepage helps prospects hear real calls before buying.",
-      "Zapier integration with 2,200+ apps connects calls to any CRM or workflow, and the partnership model includes weekly training plus optimization support based on data from 500+ agency partnerships.",
+      "Zapier integration with 2,200+ apps connects calls to any CRM or workflow, and the partnership model includes weekly training plus optimization support based on data from 100+ agency partnerships.",
       "If you already build on Vapi, Fusion Calling does not force you off it—import your Vapi agents and resell them white-labeled, keeping 100% of what you charge.",
     ],
     competitorStrengths: [

@@ -86,7 +86,7 @@ export default function TeamPage() {
               Our Team
             </h1>
             <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed px-4">
-              The founders, engineers, and voice AI experts helping 500+ agencies launch
+              The founders, engineers, and voice AI experts helping 100+ agencies launch
               profitable white-label voice AI businesses.
             </p>
           </div>
