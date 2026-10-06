@@ -4,7 +4,7 @@
 site_name: Fusion Calling
 url: https://www.fusioncalling.com
 full_content: https://www.fusioncalling.com/llms-full.txt
-founded: 2022
+founded: 2025
 founder: Alamin
 what_it_is: White-label AI voice automation platform. Deploys human-like AI phone agents that handle inbound and outbound calls 24/7 — appointment scheduling, lead qualification, FAQ handling, voicemails, and 24/7 receptionist coverage.
 audiences: (1) Businesses wanting AI agents to answer and place calls. (2) Agencies (primary focus) that resell the platform white-label under their own brand and domain, keeping 100% of what they charge clients.
