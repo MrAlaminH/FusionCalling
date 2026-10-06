@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { PAGE_UPDATED } from "@/lib/page-updated";
 import { glossaryTerms, slugifyTerm, GLOSSARY_LAST_UPDATED } from "@/lib/glossary";
 import { blogPosts } from "@/lib/blog-posts";
 import { whitelabelCaseStudies } from "@/lib/whitelabel-case-studies";
@@ -33,6 +34,7 @@ const STATIC_PATHS: string[] = [
   "/ai-phone-call-receptionist",
   "/ai-phone-call-automation",
   "/ai-phone-answering-service",
+  "/ai-receptionist-pricing",
   "/ai-voice-agent",
   "/ai-receptionist-for-small-business",
   "/ai-phone-call-automation/appointment-reminders",
@@ -68,6 +70,9 @@ function lastmodFor(path: string): Date {
     : undefined;
   if (blogPost) return new Date(blogPost.updated ?? blogPost.date);
   if (path.startsWith("/glossary")) return new Date(GLOSSARY_LAST_UPDATED);
+  // Per-page dates stay in sync with each page's JSON-LD dateModified via
+  // lib/page-updated.ts — see that file before editing here.
+  if (PAGE_UPDATED[path]) return new Date(PAGE_UPDATED[path]);
   return new Date(CONTENT_LAST_UPDATED);
 }
 
@@ -115,6 +120,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
           path === "/ai-phone-answering-service" ||
           path === "/ai-voice-agent" ||
           path === "/ai-receptionist-for-small-business" ||
+          path === "/ai-receptionist-pricing" ||
           path === "/alternative" ||
           path === "/industries" ||
           path === "/glossary"

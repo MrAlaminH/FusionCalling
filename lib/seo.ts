@@ -194,6 +194,7 @@ export function webPageSchema({
   description,
   breadcrumbId,
   speakable,
+  dateModified,
 }: {
   path: string;
   name: string;
@@ -202,6 +203,8 @@ export function webPageSchema({
   breadcrumbId?: string;
   /** CSS selectors for the SpeakableSpecification (e.g. ["h1"]). */
   speakable?: string[];
+  /** Per-page revision date; defaults to the global content date. */
+  dateModified?: string;
 }) {
   return {
     "@type": "WebPage",
@@ -211,7 +214,7 @@ export function webPageSchema({
     description,
     inLanguage: "en-US",
     isPartOf: { "@id": `${SITE_URL}/#website` },
-    dateModified: CONTENT_LAST_UPDATED,
+    dateModified: dateModified ?? CONTENT_LAST_UPDATED,
     ...(breadcrumbId ? { breadcrumb: { "@id": breadcrumbId } } : {}),
     ...(speakable
       ? {
@@ -231,6 +234,7 @@ export function articleSchema({
   description,
   image,
   datePublished,
+  dateModified,
   authorSchemaId = `${SITE_URL}/team/voice-team#person`,
 }: {
   path: string;
@@ -240,6 +244,8 @@ export function articleSchema({
   /** Image path or absolute URL. */
   image?: string;
   datePublished: string;
+  /** Per-page revision date; defaults to the global content date. */
+  dateModified?: string;
   authorSchemaId?: string;
 }) {
   return {
@@ -259,7 +265,7 @@ export function articleSchema({
     inLanguage: "en-US",
     isPartOf: { "@id": `${SITE_URL}/#website` },
     datePublished,
-    dateModified: CONTENT_LAST_UPDATED,
+    dateModified: dateModified ?? CONTENT_LAST_UPDATED,
     author: { "@id": authorSchemaId },
     publisher: { "@id": `${SITE_URL}/#organization` },
     speakable: {

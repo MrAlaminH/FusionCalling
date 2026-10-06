@@ -114,7 +114,12 @@ export default function AIReceptionistCostBlogPost() {
             <p className="text-gray-300 leading-relaxed">
               Most small businesses land in the mid-tier band: self-serve tools
               break once call volume gets real, and premium platforms are
-              built for enterprises with procurement budgets.
+              built for enterprises with procurement budgets. For the
+              market-wide view, see our{" "}
+              <Link href="/ai-receptionist-pricing" className="text-brand-light hover:text-brand underline underline-offset-4">
+                AI receptionist pricing benchmark
+              </Link>{" "}
+              — entry prices for 21 platforms, side by side.
             </p>
           </div>
 

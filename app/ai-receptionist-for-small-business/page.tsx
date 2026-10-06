@@ -10,13 +10,15 @@ import { Reveal } from "@/components/ui/reveal";
 import { primaryButton, secondaryButton } from "@/components/ui/button-styles";
 import { buildOpenGraph } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site-url";
+import { PAGE_UPDATED } from "@/lib/page-updated";
 
 const title = "AI Receptionist for Small Business (2026)";
 const description =
   "An AI receptionist for your small business: every call answered 24/7, jobs booked on the call, from $149/month flat. See the math and hear live demos.";
 
-/** This page's content revision — page-local so other pages' schema is unaffected. */
-const pageUpdated = "2026-09-24";
+/** This page's content revision — sourced from lib/page-updated.ts so the
+ * sitemap lastmod and this schema date can't drift. */
+const pageUpdated = PAGE_UPDATED["/ai-receptionist-for-small-business"];
 
 const sectionEyebrow =
   "text-xs font-semibold uppercase tracking-[0.2em] text-brand mb-3";

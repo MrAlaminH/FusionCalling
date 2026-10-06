@@ -26,13 +26,15 @@ import {
 } from "@/components/ui/button-styles";
 import { buildOpenGraph } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site-url";
+import { PAGE_UPDATED } from "@/lib/page-updated";
 
 const title = "After-Hours Answering Service with AI";
 const description =
   "An AI after-hours answering service picks up nights, weekends, and holidays — emergency triage, next-day booking, messages. From $149/mo, live in days.";
 
-/** This page's content revision — page-local so other pages' schema is unaffected. */
-const pageUpdated = "2026-09-24";
+/** This page's content revision — sourced from lib/page-updated.ts so the
+ * sitemap lastmod and this schema date can't drift. */
+const pageUpdated = PAGE_UPDATED["/ai-phone-call-automation/after-hours-answering"];
 
 const sectionEyebrow =
   "text-xs font-semibold uppercase tracking-[0.2em] text-brand mb-3";

@@ -537,6 +537,10 @@ export const glossaryTerms: GlossaryTerm[] = [
     whyItMatters:
       "Healthcare buyers require HIPAA-aware deployments, so agencies serving medical and dental clients must address it.",
     related: ["Business Associate Agreement", "SOC 2", "GDPR"],
+    platform: {
+      label: "Read our guide to voice AI security & compliance",
+      href: "/blog/voice-ai-security-compliance",
+    },
   },
   {
     term: "Business Associate Agreement",
@@ -564,6 +568,10 @@ export const glossaryTerms: GlossaryTerm[] = [
     whyItMatters:
       "Agencies serving EU clients or callers must ensure their voice AI handling complies with GDPR privacy rules.",
     related: ["HIPAA", "SOC 2", "Data Privacy"],
+    platform: {
+      label: "Read our guide to voice AI security & compliance",
+      href: "/blog/voice-ai-security-compliance",
+    },
   },
   {
     term: "TCPA",
@@ -573,6 +581,10 @@ export const glossaryTerms: GlossaryTerm[] = [
     whyItMatters:
       "TCPA compliance is critical for any outbound calling campaign; agencies must follow consent and dialing rules.",
     related: ["Outbound Calls", "Connect Rate", "GDPR"],
+    platform: {
+      label: "Read our guide to voice AI security & compliance",
+      href: "/blog/voice-ai-security-compliance",
+    },
   },
   {
     term: "Data Privacy",
@@ -582,6 +594,10 @@ export const glossaryTerms: GlossaryTerm[] = [
     whyItMatters:
       "Handling call data responsibly is both a legal requirement and a trust signal for buyers.",
     related: ["GDPR", "HIPAA", "SOC 2"],
+    platform: {
+      label: "Read our guide to voice AI security & compliance",
+      href: "/blog/voice-ai-security-compliance",
+    },
   },
   {
     term: "AES-256 Encryption",
@@ -591,6 +607,10 @@ export const glossaryTerms: GlossaryTerm[] = [
     whyItMatters:
       "Strong encryption is a standard expectation in vendor security reviews and supports compliance claims.",
     related: ["Data Privacy", "SOC 2", "HIPAA"],
+    platform: {
+      label: "Read our guide to voice AI security & compliance",
+      href: "/blog/voice-ai-security-compliance",
+    },
   },
 
   // ---------- Business & Operations ----------

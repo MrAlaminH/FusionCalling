@@ -31,6 +31,7 @@ The platform integrates with leading voice-AI providers. Agencies can bring exis
 - [Live Demo](https://www.fusioncalling.com/#show-case): Try an outbound or inbound AI call instantly.
 - [After-Hours Answering Service with AI](https://www.fusioncalling.com/ai-phone-call-automation/after-hours-answering): AI coverage for nights, weekends, and holidays — emergency triage with warm transfers, next-day booking, morning transcripts. From $149/mo.
 - [AI Phone Answering Service Buyer's Guide](https://www.fusioncalling.com/ai-phone-answering-service): What an AI phone answering service includes, what it costs ($149/mo flat, no per-minute billing), and how it beats voicemail, human services, and in-house hires.
+- [AI Receptionist Pricing: 2026 Benchmark](https://www.fusioncalling.com/ai-receptionist-pricing): Entry prices for 21 voice AI platforms collected October 2026 — what's public, what's hidden, median entry price, and what changes the bill.
 
 ## Documentation
 

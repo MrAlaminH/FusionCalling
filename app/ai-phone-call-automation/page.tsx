@@ -5,7 +5,8 @@ import Footer from "@/components/Footer";
 import Sources from "@/components/sources";
 import { buildOpenGraph } from "@/lib/seo";
 import { DIRECT_PLANS } from "@/lib/product-facts";
-import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { SITE_URL } from "@/lib/site-url";
+import { PAGE_UPDATED } from "@/lib/page-updated";
 
 const title = "AI Phone Call Automation Guide (2026)";
 const description =
@@ -249,6 +250,8 @@ export const metadata: Metadata = {
 };
 
 export default function AiPhoneCallAutomationPage() {
+  // Single-sourced with the sitemap lastmod via lib/page-updated.ts.
+  const pageUpdated = PAGE_UPDATED["/ai-phone-call-automation"];
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -277,7 +280,7 @@ export default function AiPhoneCallAutomationPage() {
         description,
         inLanguage: "en-US",
         datePublished: "2026-09-19",
-        dateModified: CONTENT_LAST_UPDATED,
+        dateModified: pageUpdated,
         author: { "@id": `${SITE_URL}/team/voice-team#person` },
         publisher: { "@id": `${SITE_URL}/#organization` },
         mainEntityOfPage: {
@@ -298,7 +301,7 @@ export default function AiPhoneCallAutomationPage() {
         name: title,
         description,
         inLanguage: "en-US",
-        dateModified: CONTENT_LAST_UPDATED,
+        dateModified: pageUpdated,
         isPartOf: { "@id": `${SITE_URL}/#website` },
         breadcrumb: {
           "@id": `${SITE_URL}/ai-phone-call-automation#breadcrumb`,

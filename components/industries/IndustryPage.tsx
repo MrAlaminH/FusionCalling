@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Industry } from "@/lib/industries";
 import { getRelatedIndustries } from "@/lib/industries";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { PAGE_UPDATED } from "@/lib/page-updated";
 import { generateIndustryStats, generateIndustryExpertQuote } from "@/lib/industry-seo";
 import { LAUNCH, SATISFACTION, UPTIME_SLA } from "@/lib/product-facts";
 
@@ -39,6 +40,8 @@ export default function IndustryPage({ industry }: { industry: Industry }) {
 
   const related = getRelatedIndustries(slug, 3);
   const articleUrl = `${SITE_URL}/industries/${slug}`;
+  // Per-page revision date (falls back to the global when not yet tracked).
+  const updated = PAGE_UPDATED[`/industries/${slug}`] ?? CONTENT_LAST_UPDATED;
   const industryStats = generateIndustryStats(name);
   const expertQuote = generateIndustryExpertQuote(name);
 
@@ -64,7 +67,7 @@ export default function IndustryPage({ industry }: { industry: Industry }) {
         inLanguage: "en-US",
         isPartOf: { "@id": `${SITE_URL}/#website` },
         datePublished,
-        dateModified: CONTENT_LAST_UPDATED,
+        dateModified: updated,
         author: { "@id": `${SITE_URL}/team/voice-team#person` },
         publisher: { "@id": `${SITE_URL}/#organization` },
         speakable: {

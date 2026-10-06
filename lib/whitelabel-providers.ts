@@ -1,6 +1,7 @@
 import { SITE_URL } from "@/lib/site-url";
 import { breadcrumbSchema, faqSchema, offerSchema, webPageSchema } from "@/lib/seo";
 import { WHOLESALE_PLANS, wholesalePricingSummary } from "@/lib/product-facts";
+import { PAGE_UPDATED } from "@/lib/page-updated";
 
 export type WhiteLabelProvider = {
   slug: string;
@@ -459,6 +460,7 @@ export function buildProviderGraph(
         description: provider.description,
         breadcrumbId: `${SITE_URL}${base}#breadcrumb`,
         speakable: ["h1", "h2", "p"],
+        dateModified: PAGE_UPDATED[base],
       }),
       {
         "@type": "Service",

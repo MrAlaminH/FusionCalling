@@ -3,6 +3,7 @@ import Image from "next/image";
 import type { Comparison } from "@/lib/comparisons";
 import { getRelatedComparisons } from "@/lib/comparisons";
 import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { PAGE_UPDATED } from "@/lib/page-updated";
 import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/seo";
 import { LAUNCH, WHOLESALE_STARTER } from "@/lib/product-facts";
 import { BenchmarkTable } from "@/components/compare/BenchmarkTable";
@@ -56,6 +57,8 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
   const related = getRelatedComparisons(slug, 3);
   const launch = splitStat(keyStatistics.timeToLaunch);
   const clients = splitStat(keyStatistics.clientsIncluded);
+  // Per-page revision date (falls back to the global when not yet tracked).
+  const updated = PAGE_UPDATED[`/alternative/${slug}`] ?? CONTENT_LAST_UPDATED;
 
   const sectionHeading =
     "font-display text-2xl md:text-3xl font-bold tracking-tight text-white";
@@ -77,6 +80,7 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
         description: metaDescription,
         image: heroImage || "/cardImage.jpg",
         datePublished,
+        dateModified: updated,
       }),
       faqSchema(faqs),
     ],
@@ -123,7 +127,7 @@ export default function ComparisonPage({ comparison }: { comparison: Comparison 
               By Fusion Calling Team
             </Link>
             <span aria-hidden="true">•</span>
-            <span>Updated {formatDate(CONTENT_LAST_UPDATED)}</span>
+            <span>Updated {formatDate(updated)}</span>
           </div>
         </div>
 

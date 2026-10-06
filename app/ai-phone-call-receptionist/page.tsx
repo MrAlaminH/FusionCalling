@@ -11,13 +11,15 @@ import { Reveal } from "@/components/ui/reveal";
 import { primaryButton, secondaryButton } from "@/components/ui/button-styles";
 import { buildOpenGraph } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site-url";
+import { PAGE_UPDATED } from "@/lib/page-updated";
 
 const title = "AI Phone Call Receptionist: 2026 Guide";
 const description =
   "See how an AI phone call receptionist answers, books, and routes business calls 24/7 — plus how it compares to IVR menus, answering services, and a human hire.";
 
-/** This page's content revision — page-local so other pages' schema is unaffected. */
-const pageUpdated = "2026-09-24";
+/** This page's content revision — sourced from lib/page-updated.ts so the
+ * sitemap lastmod and this schema date can't drift. */
+const pageUpdated = PAGE_UPDATED["/ai-phone-call-receptionist"];
 
 const sectionEyebrow =
   "text-xs font-semibold uppercase tracking-[0.2em] text-brand mb-3";

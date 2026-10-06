@@ -132,7 +132,14 @@ export default function CompareHubPage() {
             </h2>
             <p className="text-gray-400 text-center mb-8 max-w-2xl mx-auto">
               A quick overview of the main players and what they cost. Click
-              any name for the full breakdown.
+              any name for the full breakdown — or see the{" "}
+              <Link
+                href="/ai-receptionist-pricing"
+                className="text-brand-light hover:text-brand underline underline-offset-4"
+              >
+                AI receptionist pricing benchmark
+              </Link>{" "}
+              for the market-wide entry-price table.
             </p>
 
             <div className="glass rounded-3xl p-4 md:p-8 border border-brand/20 overflow-x-auto">
