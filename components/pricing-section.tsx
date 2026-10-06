@@ -21,7 +21,6 @@ interface Plan {
   cta: string;
   href: string;
   popular?: boolean;
-  setupFee?: number;
   features: string[];
 }
 
@@ -49,7 +48,6 @@ const PLANS: Plan[] = [
     cta: "Let's Start",
     href: "#calendar",
     popular: true,
-    setupFee: 799,
     features: [
       "Includes 1050 minutes",
       "Everything in Starter",
@@ -66,7 +64,6 @@ const PLANS: Plan[] = [
     tagline: "For large organizations",
     cta: "Contact Sales",
     href: "#calendar",
-    setupFee: 1250,
     features: [
       "Includes 2100 minutes",
       "Full Portal Access",
@@ -142,21 +139,6 @@ function PricingCard({
           )}
         </div>
       </div>
-
-      {/* Setup fee — separated from features, clearly a one-time cost */}
-      {plan.setupFee && (
-        <p
-          className={cn(
-            "mb-4 rounded-md px-3 py-2 text-xs",
-            popular
-              ? "bg-black/20 text-white/80"
-              : "bg-brand/10 text-brand"
-          )}
-        >
-          One-time setup fee:{" "}
-          <span className="font-semibold">${plan.setupFee}</span>
-        </p>
-      )}
 
       {/* CTA */}
       <a
