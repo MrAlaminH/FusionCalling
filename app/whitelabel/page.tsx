@@ -114,24 +114,6 @@ export default function WhiteLabelPage() {
           },
         ],
       },
-      {
-        "@type": "VideoObject",
-        "@id": `${SITE_URL}/whitelabel#video`,
-        name: "Fusion Calling White-label AI Voice Demo",
-        description:
-          "See the Fusion Calling white-label AI voice platform in action: branded dashboard, sub-account management, and live AI phone agents under your own domain.",
-        thumbnailUrl:
-          `${SITE_URL}/whitelabel-video-thumb.jpg`,
-        uploadDate: "2026-09-08T16:03:39+00:00",
-        datePublished: "2026-09-08T16:03:39+00:00",
-        duration: "PT6M27S",
-        embedUrl: "https://player.vimeo.com/video/1225047351",
-        regionsAllowed: ["US", "CA", "GB", "AU"],
-        isFamilyFriendly: true,
-        publisher: {
-          "@id": `${SITE_URL}/#organization`,
-        },
-      },
     ],
   };
 

@@ -62,23 +62,6 @@ export default function Home() {
         inLanguage: "en-US"
       },
       {
-        "@type": "VideoObject",
-        "@id": `${SITE_URL}/#video`,
-        "name": "Fusion Calling AI Phone Agent Demo - Real Estate",
-        "description": "Watch how our AI voice agent handles a real estate consultation call. The AI identifies client interests, discusses property preferences, and arranges for further information delivery with human-like conversation.",
-        "thumbnailUrl": `${SITE_URL}/cardImage.jpg`,
-        // Real values from the YouTube API for Oua1TyixaoA (verified 2026-09-21).
-        "uploadDate": "2026-09-12T11:57:18-07:00",
-        "datePublished": "2026-09-12T11:57:18-07:00",
-        "duration": "PT2M05S",
-        "embedUrl": "https://www.youtube.com/embed/Oua1TyixaoA",
-        "regionsAllowed": ["US", "CA", "GB", "AU"],
-        "isFamilyFriendly": true,
-        "publisher": {
-          "@id": `${SITE_URL}/#organization`
-        }
-      },
-      {
         "@type": "SoftwareApplication",
         "name": "Fusion Calling",
         "applicationCategory": "BusinessApplication",
