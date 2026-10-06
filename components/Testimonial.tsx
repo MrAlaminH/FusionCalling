@@ -1,19 +1,16 @@
-"use client";
-import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
+import { Star } from "lucide-react";
 import Image from "next/image";
-import { Card } from "@/components/ui/card";
 import { Reveal } from "@/components/ui/reveal";
-import { useCallback, useRef } from "react";
 
-interface TestimonialProps {
+type Testimonial = {
   name: string;
   role: string;
   content: string;
   heading: string;
   image: string;
-}
+};
 
-const testimonials: TestimonialProps[] = [
+const testimonials: Testimonial[] = [
   {
     name: "Lisa Chen",
     role: "Customer Support",
@@ -64,141 +61,95 @@ const testimonials: TestimonialProps[] = [
   },
 ];
 
+/**
+ * Testimonials mosaic for the homepage. Server component — every quote is
+ * static HTML for crawlers (the replaced carousel was client JS and showed
+ * only 3 of 6 quotes on mobile). Card styling mirrors the pricing cards.
+ * The 4.8/5 line reuses the existing on-site stat from the dashboard section.
+ */
 export default function TestimonialsSection() {
-  // Native scroll-snap carousel: same cards, buttons, and layout as before,
-  // but zero carousel library JS. Buttons advance one card and wrap around
-  // (preserves the previous loop behavior).
-  const trackRef = useRef<HTMLDivElement>(null);
-
-  const scrollByCard = useCallback((dir: 1 | -1) => {
-    const el = trackRef.current;
-    if (!el) return;
-    const firstCard = el.children[0] as HTMLElement | undefined;
-    // gap-4 = 16px between cards.
-    const step = firstCard ? firstCard.offsetWidth + 16 : el.clientWidth / 3;
-    const max = el.scrollWidth - el.clientWidth;
-    let next = el.scrollLeft + dir * step;
-    if (next < 0) next = max;
-    else if (next > max + 1) next = 0;
-    el.scrollTo({ left: next, behavior: "smooth" });
-  }, []);
-
-  const scrollPrev = useCallback(() => scrollByCard(-1), [scrollByCard]);
-  const scrollNext = useCallback(() => scrollByCard(1), [scrollByCard]);
-
   return (
-    <section className="w-full py-8 bg-black">
-      <div className="container px-4 md:px-6 mx-auto">
+    <section className="w-full bg-black py-16 sm:py-20 md:py-24">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <Reveal
           animation="animate-fade-in-up"
-          className="flex flex-col items-center justify-center space-y-4 text-center"
+          className="flex flex-col items-center mb-10 md:mb-14"
         >
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-3xl md:text-4xl sm:whitespace-nowrap">
-            <span className="text-brand-strong">Customer</span>{" "}
-            <span className="text-white">Success Stories</span>
+          <p className="text-brand-strong text-sm font-semibold uppercase tracking-wider mb-3">
+            Testimonials
+          </p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center mb-4 text-balance">
+            Customer{" "}
+            <span className="bg-gradient-to-r from-brand to-brand-strong text-transparent bg-clip-text">
+              Success Stories
+            </span>
           </h2>
-          <p className="text-gray-400 text-center md:text-xl mb-8">
-            Experience our impact through our clients words.
+          <p className="text-gray-400 text-base sm:text-lg md:text-xl text-center max-w-3xl text-balance">
+            Experience our impact through our clients&rsquo; words.
+          </p>
+          <p className="mt-4 flex items-center gap-2 text-sm text-gray-400">
+            <span className="flex items-center gap-0.5">
+              <span className="sr-only">Rated 4.8 out of 5</span>
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star
+                  key={i}
+                  aria-hidden="true"
+                  className="h-3.5 w-3.5 fill-brand text-brand-strong"
+                />
+              ))}
+            </span>
+            4.8/5 customer satisfaction
           </p>
         </Reveal>
 
-        <div className="relative max-w-screen-lg mx-auto mt-12">
-          {/* Desktop carousel with navigation buttons */}
-          <div className="hidden lg:block relative">
-            <div
-              ref={trackRef}
-              className="overflow-x-auto snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3 items-stretch">
+          {testimonials.map((testimonial, index) => (
+            <Reveal
+              key={testimonial.name}
+              as="li"
+              animation="animate-fade-in-up"
+              duration={0.5}
+              delay={(index % 3) * 0.08}
+              className="h-full"
             >
-              <div className="flex gap-4">
-                {testimonials.map((testimonial, index) => (
-                  <Reveal
-                    key={index}
-                    animation="animate-fade-in-up"
-                    duration={0.5}
-                    delay={(index % 3) * 0.08}
-                    className="flex-none w-full md:w-1/2 lg:w-1/3 snap-start"
-                  >
-                    <TestimonialCard testimonial={testimonial} />
-                  </Reveal>
-                ))}
-              </div>
-            </div>
-
-            {/* Navigation controls for desktop */}
-            <button
-              onClick={scrollPrev}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-black border border-brand rounded-full p-2 text-brand hover:bg-brand hover:text-black transition z-10"
-              aria-label="Previous slide"
-            >
-              <ChevronLeft className="h-6 w-6" />
-            </button>
-            <button
-              onClick={scrollNext}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-black border border-brand rounded-full p-2 text-brand hover:bg-brand hover:text-black transition z-10"
-              aria-label="Next slide"
-            >
-              <ChevronRight className="h-6 w-6" />
-            </button>
-          </div>
-
-          {/* Mobile grid layout (original) */}
-          <div className="grid gap-4 sm:gap-6 lg:hidden md:grid-cols-2 lg:grid-cols-3">
-            {testimonials.slice(0, 3).map((testimonial, index) => (
-              <Reveal key={index} animation="animate-fade-in-up" duration={0.5} delay={index * 0.08}>
-                <TestimonialCard testimonial={testimonial} />
-              </Reveal>
-            ))}
-          </div>
-        </div>
+              <figure className="flex h-full flex-col rounded-card border border-brand/20 bg-gradient-to-b from-[#0f172a] to-[#1e293b] p-4 md:p-6 transition duration-300 hover:-translate-y-1 hover:border-brand/40 hover:shadow-lg hover:shadow-brand/20">
+                <p className="flex items-center gap-0.5">
+                  <span className="sr-only">Rated 5 out of 5 stars</span>
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star
+                      key={i}
+                      aria-hidden="true"
+                      className="h-3.5 w-3.5 fill-brand text-brand-strong"
+                    />
+                  ))}
+                </p>
+                <h3 className="mt-4 text-sm md:text-base font-semibold text-white text-balance">
+                  {testimonial.heading}
+                </h3>
+                <blockquote className="mt-2 flex-1 text-xs md:text-sm leading-relaxed text-zinc-400">
+                  &ldquo;{testimonial.content}&rdquo;
+                </blockquote>
+                <figcaption className="mt-5 flex items-center gap-3 border-t border-gray-700/60 pt-4">
+                  <Image
+                    alt={`${testimonial.name}, ${testimonial.role}`}
+                    className="h-10 w-10 rounded-full object-cover"
+                    height={40}
+                    loading="lazy"
+                    src={testimonial.image}
+                    width={40}
+                  />
+                  <div>
+                    <p className="text-sm font-medium text-white">
+                      {testimonial.name}
+                    </p>
+                    <p className="text-xs text-zinc-400">{testimonial.role}</p>
+                  </div>
+                </figcaption>
+              </figure>
+            </Reveal>
+          ))}
+        </ul>
       </div>
     </section>
-  );
-}
-
-// Extracted Card component for reuse
-function TestimonialCard({ testimonial }: { testimonial: TestimonialProps }) {
-  return (
-    <Card className="bg-black border-brand/20 group relative overflow-hidden transition duration-300 hover:shadow-lg hover:shadow-brand-strong hover:-translate-y-1 min-h-[420px] h-full w-full max-w-sm mx-auto">
-      <div className="p-6 flex flex-col h-full">
-        <div className="text-brand-strong mb-4 text-4xl font-extrabold">
-          <Quote />
-        </div>
-        <h3 className="text-xl font-bold text-white mb-4">
-          {testimonial.heading}
-        </h3>
-        <p className="text-zinc-400 mb-6 flex-grow">{testimonial.content}</p>
-        <div className="h-px bg-brand-strong/40 w-full mb-6" />
-        <div className="flex items-center space-x-4 mt-auto">
-          <Image
-            alt={`${testimonial.name}'s profile picture`}
-            className="rounded-full"
-            height="40"
-            loading="lazy"
-            src={testimonial.image}
-            style={{
-              aspectRatio: "40/40",
-              objectFit: "cover",
-            }}
-            width="40"
-          />
-          <div className="space-y-1">
-            <h4 className="text-sm font-medium text-white">
-              {testimonial.name}
-            </h4>
-            <p className="text-sm text-zinc-400">{testimonial.role}</p>
-          </div>
-          <div className="flex ml-auto">
-            {Array(5)
-              .fill(null)
-              .map((_, i) => (
-                <Star
-                  key={i}
-                  className="w-4 h-4 fill-brand text-brand-strong"
-                />
-              ))}
-          </div>
-        </div>
-      </div>
-    </Card>
   );
 }
