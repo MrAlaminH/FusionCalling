@@ -329,7 +329,7 @@ export default function Home() {
       </section>
       <section id="pricing" className="scroll-mt-24">
         <PricingSection />
-        <p className="text-center text-gray-400 text-sm sm:text-base pb-8">
+        <p className="text-center text-gray-400 text-xs pb-8">
           Want the full breakdown?{" "}
           <Link
             href="/pricing"
