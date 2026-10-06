@@ -6,8 +6,7 @@ import ComparisonPage from "@/components/compare/ComparisonPage";
 import { comparisons, getComparison } from "@/lib/comparisons";
 import { glossaryTerms, slugifyTerm } from "@/lib/glossary";
 import { buildOpenGraph } from "@/lib/seo";
-import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
-import { PAGE_UPDATED } from "@/lib/page-updated";
+import { pageUpdated } from "@/lib/page-updated";
 import { truncateAtWord } from "@/lib/utils";
 
 export function generateStaticParams() {
@@ -23,9 +22,7 @@ export function generateMetadata({
   if (!comparison) {
     return { title: "Comparison Not Found" };
   }
-  // Per-page revision date (falls back to the global when not yet tracked).
-  const updated =
-    PAGE_UPDATED[`/alternative/${comparison.slug}`] ?? CONTENT_LAST_UPDATED;
+  const updated = pageUpdated(`/alternative/${comparison.slug}`);
 
   return {
     title: comparison.metaTitle,

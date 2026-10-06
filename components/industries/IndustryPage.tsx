@@ -1,8 +1,8 @@
 import Link from "next/link";
 import type { Industry } from "@/lib/industries";
 import { getRelatedIndustries } from "@/lib/industries";
-import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
-import { PAGE_UPDATED } from "@/lib/page-updated";
+import { SITE_URL } from "@/lib/site-url";
+import { pageUpdated } from "@/lib/page-updated";
 import { generateIndustryStats, generateIndustryExpertQuote } from "@/lib/industry-seo";
 import { LAUNCH, SATISFACTION, UPTIME_SLA } from "@/lib/product-facts";
 
@@ -40,8 +40,7 @@ export default function IndustryPage({ industry }: { industry: Industry }) {
 
   const related = getRelatedIndustries(slug, 3);
   const articleUrl = `${SITE_URL}/industries/${slug}`;
-  // Per-page revision date (falls back to the global when not yet tracked).
-  const updated = PAGE_UPDATED[`/industries/${slug}`] ?? CONTENT_LAST_UPDATED;
+  const updated = pageUpdated(`/industries/${slug}`);
   const industryStats = generateIndustryStats(name);
   const expertQuote = generateIndustryExpertQuote(name);
 

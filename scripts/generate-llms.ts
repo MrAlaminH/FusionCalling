@@ -155,7 +155,7 @@ Compliance: call audio is encrypted in transit (TLS/SRTP) and at rest (AES-256).
   {
     path: "/ai-receptionist-pricing",
     title: "AI Receptionist Pricing: 2026 Benchmark | Fusion Calling",
-    content: `Market benchmark of AI receptionist pricing: entry prices for ${comparisons.length} voice AI platforms collected October 2026 from each platform's own pricing pages. Only a minority publish monthly plans — those run $28–$255/mo (median $39/mo); the rest bill per minute, quote custom contracts, or publish no pricing. Fusion Calling publishes all plans: $99–$499/mo flat with client sub-accounts, white-label branding, and Stripe rebilling included. Methodology, limitations, and per-platform table with links to full comparisons.`,
+    content: `Market benchmark of AI receptionist pricing: entry prices for ${comparisons.length} voice AI platforms collected October 2026 from each platform's own pricing pages. Only a minority publish monthly plans (a $28–$255/mo spread); the rest bill per minute, quote custom contracts, or publish no pricing. Fusion Calling publishes all plans: $99–$499/mo flat with client sub-accounts, white-label branding, and Stripe rebilling included. Methodology, limitations, and per-platform table with links to full comparisons.`,
   },
   {
     path: "/ai-phone-call-automation/after-hours-answering",

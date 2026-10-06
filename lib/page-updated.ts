@@ -3,6 +3,8 @@
 // can't drift (the 2026-09-24 audit flagged exactly that). Pages not listed
 // fall back to CONTENT_LAST_UPDATED in lib/site-url.ts — only add an entry
 // here when a page's content changed later than that global date.
+import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
+
 export const PAGE_UPDATED: Record<string, string> = {
   "/ai-phone-call-receptionist": "2026-09-24",
   "/ai-receptionist-for-small-business": "2026-09-24",
@@ -35,3 +37,11 @@ export const PAGE_UPDATED: Record<string, string> = {
   // GHL sub-account deployment section (title/meta unchanged — freeze holds)
   "/whitelabel/gohighlevel": "2026-10-06",
 };
+
+/** Revision date for a path: its PAGE_UPDATED entry, or the global fallback.
+ * Always use this in page schema/OG code — a bare PAGE_UPDATED[path] index
+ * types as `string` even when the key is missing and would render
+ * `dateModified: undefined` at runtime. */
+export function pageUpdated(path: string): string {
+  return PAGE_UPDATED[path] ?? CONTENT_LAST_UPDATED;
+}

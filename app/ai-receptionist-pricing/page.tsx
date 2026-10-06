@@ -16,7 +16,8 @@ const description =
 const pageUpdated = PAGE_UPDATED["/ai-receptionist-pricing"];
 
 // Parse "$120/mo (3 clients)" / "~$125/mo (verify current)" / "From ~$255/mo"
-// into a monthly number. Usage-based, /yr, /min, and quote-only entries stay
+// into a monthly number. "Pro (annual)" style entries still state a monthly
+// rate, so they parse. Usage-based, /yr-only, and quote-only entries stay
 // unparsed and are excluded from the stats (counted and shown with raw text).
 function parseMonthlyPrice(raw: string): number | null {
   const m = raw.match(/\$~?(\d[\d,]+)\s*\/\s*mo/i);
@@ -154,6 +155,15 @@ export default function PricingBenchmarkPage() {
               public, what&apos;s hidden, and what actually changes the bill.
               Collected from each platform&apos;s own pricing pages and
               comparison data in October 2026.
+            </p>
+            <p className="mt-4 text-sm text-gray-500">
+              Updated{" "}
+              {new Date(`${pageUpdated}T00:00:00Z`).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+                timeZone: "UTC",
+              })}
             </p>
           </div>
         </section>
