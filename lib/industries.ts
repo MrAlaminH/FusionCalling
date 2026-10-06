@@ -1401,29 +1401,32 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2026-09-19T00:00:00Z",
     productSupported: true,
-    metaTitle: "Vet Clinic AI Receptionist: Scheduling",
+    metaTitle: "Vet Clinic AI Answering Service & Triage",
     metaDescription:
-      "AI voice agents for veterinary clinics answer every call, book visits, run vaccine reminders, and escalate emergencies 24/7. White-label for your agency.",
+      "AI answering service for veterinary clinics: every call answered 24/7, visits booked on the call, emergencies triaged to staff instantly. From $149/mo.",
     keywords: [
+      "ai veterinary answering service",
+      "veterinary answering service",
       "ai voice veterinary",
       "ai receptionist vet clinic",
       "vet appointment ai",
       "veterinary reminder calls ai",
       "ai voice animal hospital",
       "vet triage ai",
+      "ai phone system for veterinary clinics",
     ],
-    h1: "AI Voice for",
-    h1Highlight: "Veterinary Clinics",
+    h1: "AI Answering Service for",
+    h1Highlight: "Vet Clinics",
     subtitle:
-      "Every worried pet owner answered, every visit booked, every emergency escalated — even mid-surgery.",
+      "Every worried pet owner answered, every visit booked, every emergency escalated to the right person — even mid-surgery.",
     intro: [
       "Vet clinics live on an emotional phone line: appointment requests, vaccine schedules, post-op questions, and the urgent calls that can't wait. When the team is in surgery or with patients, the phone rings out — and anxious owners call the next clinic.",
-      "Fusion Calling gives clinics, and the agencies serving them, a branded AI receptionist that answers every call instantly, books into the practice calendar, runs vaccine and checkup reminders, and escalates emergencies to staff with full context.",
+      "Fusion Calling gives clinics, and the agencies serving them, a branded AI answering service that picks up every call instantly, books visits into the practice calendar, runs vaccine and checkup reminders, and triages emergencies straight to staff with full context.",
     ],
     receptionistSection: {
-      heading: "Your AI receptionist for vet clinics",
+      heading: "Your AI answering service for vet clinics",
       body:
-        "An AI receptionist answers every owner call in two rings, books and reschedules visits, handles vaccine reminders and routine questions, and passes emergencies straight to your team. The front desk stops triaging from memory while the phone rings.",
+        "An AI answering service answers every owner call in two rings, books and reschedules visits, handles vaccine reminders and routine questions, and triages emergencies using rules your team defines. The front desk stops triaging from memory while the phone rings.",
       bullets: [
         "Books, reschedules, and confirms visits on the call",
         "Vaccine and wellness reminder campaigns",
@@ -1446,9 +1449,9 @@ export const industries: Industry[] = [
       },
       {
         emoji: "🚨",
-        title: "Emergency Escalation",
+        title: "Emergency Triage & Escalation",
         description:
-          "Urgency rules route concerning symptoms to staff immediately instead of queueing worried owners.",
+          "You define what counts as urgent — breathing trouble, bleeding, hit-by-car, toxin ingestion, post-op complications — and those callers transfer to your on-call staff immediately with the transcript and owner details. Routine callers never block the urgent ones; non-urgent calls get booked for the next opening instead.",
       },
       {
         emoji: "❓",
@@ -1476,6 +1479,11 @@ export const industries: Industry[] = [
         question: "Is AI voice suitable for veterinary clinics?",
         answer:
           "Yes. Clinics use Fusion Calling to answer every call, book and confirm visits, run vaccine and wellness reminders, and route routine questions — while emergencies escalate to staff instantly with full context.",
+      },
+      {
+        question: "Can an AI answering service triage emergencies at a vet clinic?",
+        answer:
+          "Yes, using urgency rules your team defines. The AI answering service asks screening questions, recognizes red-flag symptoms — breathing trouble, bleeding, toxin ingestion, hit-by-car, post-op complications — and transfers those callers to your on-call staff immediately with the transcript and owner details. Everything non-urgent is booked or queued for the morning instead of occupying your team mid-surgery.",
       },
       {
         question: "How are pet emergencies handled?",

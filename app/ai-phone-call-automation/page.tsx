@@ -4,11 +4,76 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Sources from "@/components/sources";
 import { buildOpenGraph } from "@/lib/seo";
+import { DIRECT_PLANS } from "@/lib/product-facts";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 
 const title = "AI Phone Call Automation Guide (2026)";
 const description =
   "AI phone call automation handles inbound and outbound calls — receptionist answering, cold calling, lead qualification, and reminders. From $149/mo.";
+
+// Featured-snippet bait: 40-60 word definition + the price anchor, directly
+// beneath the hero (answer-first, per the plans/seo-pages-upgrade-2026-10-06 doc).
+const quickAnswer =
+  "AI phone call automation is software that handles business phone calls without a human on the line — answering inbound calls, placing outbound campaigns, and completing the follow-through (calendar booking, CRM updates, SMS confirmations) during the call itself. Fusion Calling runs both directions on one platform from $149/month with 500 included minutes.";
+
+const automationComparison = [
+  {
+    feature: "Calls covered",
+    automation: "Inbound + outbound on one platform",
+    receptionist: "Inbound only",
+    human: "Inbound only, script-driven",
+    voicemail: "None — one-way messages",
+  },
+  {
+    feature: "Two-way conversation",
+    automation: "Yes — answers, qualifies, books",
+    receptionist: "Yes, inbound tasks",
+    human: "Scripted + human agents",
+    voicemail: "No",
+  },
+  {
+    feature: "Outbound campaigns",
+    automation: "Follow-ups, qualification, reminders",
+    receptionist: "Not included",
+    human: "Limited or extra cost",
+    voicemail: "No",
+  },
+  {
+    feature: "Books into your calendar",
+    automation: "During the call",
+    receptionist: "During the call",
+    human: "Message relayed, callback later",
+    voicemail: "Depends on the caller",
+  },
+  {
+    feature: "Transcripts & recordings",
+    automation: "Every call",
+    receptionist: "Every call",
+    human: "Summary notes",
+    voicemail: "None",
+  },
+  {
+    feature: "Typical monthly cost",
+    automation: "$149–497 flat",
+    receptionist: "$149–497 flat",
+    human: "$1–3 per minute plus setup",
+    voicemail: "Free — but callers hang up",
+  },
+];
+
+const fitsWell = [
+  "Businesses losing revenue to missed calls — home services, clinics, real estate, legal",
+  "Sales teams where speed-to-lead decides the deal — inbound inquiries called back in minutes, not hours",
+  "Operations running appointment books that bleed no-shows — confirmations and backfills run themselves",
+  "Outreach programs that need consent-aware, transcript-auditable calling at volume",
+  "Agencies that want to resell all of the above under their own brand",
+];
+
+const fitsPoorly = [
+  "Teams whose calls are almost entirely complex, judgment-heavy conversations — automate the routine, route the rest",
+  "Programs that cannot review calling-consent rules (e.g. TCPA in the US) before dialing — compliance stays your responsibility",
+  "Buyers who need a human voice as part of the brand promise — a staffed line is still the right tool for that job",
+];
 
 const directions = [
   {
@@ -240,6 +305,21 @@ export default function AiPhoneCallAutomationPage() {
         },
       },
       {
+        "@type": "HowTo",
+        "@id": `${SITE_URL}/ai-phone-call-automation#howto`,
+        name: "How to launch AI phone call automation",
+        description:
+          "Connect a number, teach the agent your business, set the rules, then test and go live — most deployments are live within days of kickoff.",
+        totalTime: "P3D",
+        step: launchSteps.map((step, i) => ({
+          "@type": "HowToStep",
+          position: i + 1,
+          name: step.title,
+          text: step.text,
+          url: `${SITE_URL}/ai-phone-call-automation#how-it-works`,
+        })),
+      },
+      {
         "@type": "FAQPage",
         "@id": `${SITE_URL}/ai-phone-call-automation#faqpage`,
         mainEntity: faqs.map((f) => ({
@@ -307,6 +387,18 @@ export default function AiPhoneCallAutomationPage() {
           </div>
         </section>
 
+        {/* Quick answer — answer-first for snippets and answer engines */}
+        <section className="w-full bg-black pb-4" aria-label="Quick answer">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+            <div className="glass-light rounded-2xl border border-brand/30 p-6 md:p-8">
+              <h2 className="text-lg font-bold text-white mb-3">
+                Quick answer
+              </h2>
+              <p className="text-gray-300 leading-relaxed">{quickAnswer}</p>
+            </div>
+          </div>
+        </section>
+
         {/* What it is */}
         <section id="what-is" className="w-full bg-black py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
@@ -346,6 +438,99 @@ export default function AiPhoneCallAutomationPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Comparison */}
+        <section id="comparison" className="w-full bg-black py-16 md:py-24">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              How it compares to your other options
+            </h2>
+            <p className="text-gray-400 leading-relaxed mb-10 max-w-2xl">
+              Call automation, a single AI receptionist, a human answering
+              service, and voicemail sit at different points on the same line.
+              The honest comparison:
+            </p>
+            <div className="mb-6 overflow-x-auto rounded-xl border border-white/10">
+              <table className="w-full min-w-[720px] text-sm">
+                <caption className="sr-only">
+                  AI phone call automation compared with an AI receptionist, a
+                  human answering service, and voicemail
+                </caption>
+                <thead>
+                  <tr className="border-b border-white/10 bg-white/[0.03]">
+                    <th
+                      scope="col"
+                      className="px-4 py-3 text-left font-semibold text-gray-400"
+                    >
+                      Option
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-4 py-3 text-center font-semibold text-brand-light bg-brand/[0.08]"
+                    >
+                      AI call automation
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-4 py-3 text-center font-semibold text-gray-400"
+                    >
+                      AI receptionist
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-4 py-3 text-center font-semibold text-gray-400"
+                    >
+                      Answering service
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-4 py-3 text-center font-semibold text-gray-400"
+                    >
+                      Voicemail
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {automationComparison.map((row) => (
+                    <tr
+                      key={row.feature}
+                      className="border-b border-white/5 last:border-b-0"
+                    >
+                      <th
+                        scope="row"
+                        className="px-4 py-3 text-left font-medium text-gray-300"
+                      >
+                        {row.feature}
+                      </th>
+                      <td className="px-4 py-3 text-center text-white bg-brand/[0.06] font-medium">
+                        {row.automation}
+                      </td>
+                      <td className="px-4 py-3 text-center text-gray-400">
+                        {row.receptionist}
+                      </td>
+                      <td className="px-4 py-3 text-center text-gray-400">
+                        {row.human}
+                      </td>
+                      <td className="px-4 py-3 text-center text-gray-500">
+                        {row.voicemail}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-gray-400 leading-relaxed">
+              Only need the inbound side? That is the{" "}
+              <Link
+                href="/ai-phone-call-receptionist"
+                className="text-brand hover:underline"
+              >
+                AI phone call receptionist
+              </Link>{" "}
+              — same platform, one workflow.
+            </p>
           </div>
         </section>
 
@@ -455,26 +640,114 @@ export default function AiPhoneCallAutomationPage() {
           </div>
         </section>
 
+        {/* Who is this for */}
+        <section id="who-its-for" className="w-full bg-black py-16 md:py-24">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-10">
+              Who is AI phone call automation for?
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="rounded-xl border border-brand/20 bg-black/40 p-6">
+                <h3 className="font-semibold text-brand-light mb-4">
+                  A strong fit when
+                </h3>
+                <ul className="space-y-3">
+                  {fitsWell.map((item) => (
+                    <li key={item} className="flex gap-3 text-sm text-gray-400 leading-relaxed">
+                      <span aria-hidden className="text-brand-strong">✓</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-xl border border-white/10 bg-black/40 p-6">
+                <h3 className="font-semibold text-gray-300 mb-4">
+                  The wrong tool when
+                </h3>
+                <ul className="space-y-3">
+                  {fitsPoorly.map((item) => (
+                    <li key={item} className="flex gap-3 text-sm text-gray-500 leading-relaxed">
+                      <span aria-hidden className="text-gray-600">✗</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Pricing */}
         <section id="pricing" className="w-full bg-black py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              AI phone call automation pricing
+              How much does AI phone call automation cost?
             </h2>
-            <p className="text-gray-400 leading-relaxed mb-10">
-              Every workflow runs on the same plans — starting at $149/month.
-              See the{" "}
+            <p className="text-gray-400 leading-relaxed mb-10 max-w-2xl">
+              Every workflow — inbound, outbound, or both — runs on the same
+              direct plans. Prices and minutes from the{" "}
               <Link href="/pricing" className="text-brand hover:underline">
-                full plan breakdown
+                live pricing page
               </Link>
-              . Reselling automation to clients? The{" "}
+              :
+            </p>
+            <div className="mb-8 overflow-x-auto rounded-xl border border-white/10">
+              <table className="w-full min-w-[600px] text-sm">
+                <caption className="sr-only">
+                  Fusion Calling AI phone call automation plans: price,
+                  included minutes, setup fee, and overage rate
+                </caption>
+                <thead>
+                  <tr className="border-b border-white/10 bg-white/[0.03]">
+                    <th scope="col" className="px-4 py-3 text-left font-semibold text-gray-400">
+                      Plan
+                    </th>
+                    <th scope="col" className="px-4 py-3 text-center font-semibold text-gray-400">
+                      Monthly price
+                    </th>
+                    <th scope="col" className="px-4 py-3 text-center font-semibold text-gray-400">
+                      Included minutes
+                    </th>
+                    <th scope="col" className="px-4 py-3 text-center font-semibold text-gray-400">
+                      Setup fee
+                    </th>
+                    <th scope="col" className="px-4 py-3 text-center font-semibold text-gray-400">
+                      Overage
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {DIRECT_PLANS.map((plan) => (
+                    <tr key={plan.name} className="border-b border-white/5 last:border-b-0">
+                      <th scope="row" className="px-4 py-3 text-left font-medium text-gray-300">
+                        {plan.name}
+                      </th>
+                      <td className="px-4 py-3 text-center text-white font-medium">
+                        ${plan.price}/mo
+                      </td>
+                      <td className="px-4 py-3 text-center text-gray-400">
+                        {plan.includedMinutes.toLocaleString("en-US")}
+                      </td>
+                      <td className="px-4 py-3 text-center text-gray-400">
+                        {plan.setupFee === 0 ? "$0" : `$${plan.setupFee}`}
+                      </td>
+                      <td className="px-4 py-3 text-center text-gray-400">
+                        {plan.overageRate}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-gray-400 leading-relaxed">
+              Reselling automation to clients? The{" "}
               <Link
                 href="/whitelabel/reseller-program"
                 className="text-brand hover:underline"
               >
                 AI voice agent reseller program
               </Link>{" "}
-              starts at $99/month.
+              starts at $99/month with 6 client sub-accounts included.
             </p>
           </div>
         </section>

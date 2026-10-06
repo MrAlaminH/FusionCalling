@@ -8,10 +8,11 @@ import { LAUNCH, PROVIDERS, WHOLESALE_STARTER } from "@/lib/product-facts";
 import { primaryButton } from "@/components/ui/button-styles";
 import PostFaq from "@/components/blog/PostFaq";
 
-const title = `Voice AI Platform Comparisons (2026)`;
-// Head-to-head directory angle — /whitelabel/compare owns the feature-matrix
-// framing, this hub owns the "vs each competitor" framing.
-const description = `Head-to-head comparisons: Fusion Calling vs Vapi, Retell AI, Synthflow, Smith.ai + ${
+const title = `Voice AI Platform Alternatives (2026)`;
+// Alternatives-first framing — GSC queries hitting this hub are "vapi
+// alternative", "bland ai alternative", "synthflow alternative" etc., and
+// /whitelabel/compare owns the feature-matrix framing.
+const description = `Voice AI platform alternatives, ranked: Fusion Calling vs Vapi, Retell AI, Synthflow, Smith.ai + ${
   comparisons.length - 5
 } more. Pricing, features, white-label support — pick the right platform.`;
 
@@ -70,7 +71,7 @@ export default function CompareHubPage() {
         "@id": `${SITE_URL}/alternative#collectionpage`,
         url: `${SITE_URL}/alternative`,
         // Name = visible H1 text.
-        name: "Voice AI Platform Comparisons",
+        name: "Voice AI Platform Alternatives",
         description:
           "Side-by-side voice AI platform comparisons for teams evaluating end-user fit.",
         inLanguage: "en-US",
@@ -102,13 +103,14 @@ export default function CompareHubPage() {
           <div className="text-center mb-16 md:mb-20 pt-4 md:pt-6 relative z-10">
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6 md:mb-8 leading-[1.1]">
               Voice AI Platform
-              <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong bg-clip-text text-transparent"> Comparisons</span>
+              <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong bg-clip-text text-transparent"> Alternatives</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed px-4">
-              Honest, side-by-side voice AI platform comparisons for teams
-              choosing software for their own calls. See how Fusion Calling
-              stacks up on providers, pricing, onboarding, and support —
-              written for buyers evaluating end-user fit.
+              Looking for a voice AI alternative? {comparisons.length}{" "}
+              honest, side-by-side guides — Fusion Calling vs Vapi, Retell AI,
+              Synthflow, Smith.ai and more — covering providers, pricing,
+              onboarding, and support. Written for buyers evaluating fit, not
+              hype.
             </p>
             <p className="mt-4 text-sm sm:text-base text-gray-500 max-w-3xl mx-auto leading-relaxed px-4">
               Reselling voice AI to clients under your own brand instead? See
@@ -129,8 +131,8 @@ export default function CompareHubPage() {
               The Category at a Glance
             </h2>
             <p className="text-gray-400 text-center mb-8 max-w-2xl mx-auto">
-              A quick overview of the main players. Click any name for the full
-              breakdown.
+              A quick overview of the main players and what they cost. Click
+              any name for the full breakdown.
             </p>
 
             <div className="glass rounded-3xl p-4 md:p-8 border border-brand/20 overflow-x-auto">
@@ -193,7 +195,7 @@ export default function CompareHubPage() {
           {/* Detailed comparison cards */}
           <div className="mb-16">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 text-center">
-              Comprehensive Platform Comparisons
+              Every Alternative, Compared in Detail
             </h2>
             <p className="text-gray-400 text-center mb-10 max-w-2xl mx-auto">
               Explore detailed comparisons of the top white-label voice AI platforms. 
