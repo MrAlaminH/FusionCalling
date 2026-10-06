@@ -13,6 +13,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Reveal } from "@/components/ui/reveal";
 import { whitelabelFaqs } from "@/lib/whitelabel-faqs";
+import { whitelabelCaseStudies } from "@/lib/whitelabel-case-studies";
 import { SectionHeader } from "@/components/ui/section-header";
 
 const PROVIDER_LINKS = [
@@ -287,6 +288,70 @@ export default function WhiteLabelPage() {
       </section>
       <section id="how-it-works" className="scroll-mt-24">
         <HowItWorks />
+      </section>
+      <section id="partner-results" className="w-full bg-black section-rhythm scroll-mt-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <SectionHeader
+            title="Real Partners, Real White-Label AI Voice Revenue"
+            highlight="White-Label AI Voice Revenue"
+            subtitle="Agency partners resell white-label AI voice under their own brand on Fusion Calling. The numbers below come straight from our published case studies — in their words."
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+            {whitelabelCaseStudies.map((cs, i) => {
+              const stat = cs.heroStats[0];
+              return (
+                <Reveal key={cs.slug} delay={i * 0.06} className="h-full">
+                  <figure className="glass-light rounded-xl border border-brand/20 hover:border-brand/40 transition-premium p-5 md:p-6 flex h-full flex-col">
+                    <p className="font-display text-3xl md:text-4xl font-bold bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
+                      {stat.value}
+                    </p>
+                    <p className="text-xs uppercase tracking-wider text-gray-500 mt-1">
+                      {stat.label}
+                    </p>
+                    <blockquote className="mt-4 flex-1 text-sm md:text-base text-gray-300 leading-relaxed">
+                      &ldquo;{cs.testimonial.quote}&rdquo;
+                    </blockquote>
+                    <figcaption className="mt-5 pt-4 border-t border-white/10 flex items-center gap-3">
+                      <span
+                        aria-hidden="true"
+                        className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-gradient-to-br from-brand to-brand-strong text-sm font-bold text-black"
+                      >
+                        {cs.testimonial.attribution
+                          .split(" ")
+                          .map((w) => w[0])
+                          .join("")}
+                      </span>
+                      <span>
+                        <span className="block text-sm font-semibold text-white">
+                          {cs.testimonial.attribution}
+                        </span>
+                        <span className="block text-xs text-gray-400">
+                          {cs.testimonial.role}
+                        </span>
+                      </span>
+                    </figcaption>
+                    <Link
+                      href={`/whitelabel/case-studies/${cs.slug}`}
+                      className="mt-4 text-sm text-brand-light hover:text-brand underline-offset-4 hover:underline transition-colors"
+                    >
+                      Read the {cs.agencyName} case study →
+                    </Link>
+                  </figure>
+                </Reveal>
+              );
+            })}
+          </div>
+          <p className="text-center mt-6 text-sm text-gray-400">
+            See the full revenue, margin, and timeline breakdowns in our{" "}
+            <Link
+              href="/whitelabel/case-studies"
+              className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors"
+            >
+              white-label case studies
+            </Link>
+            .
+          </p>
+        </div>
       </section>
       <section id="pricing" className="scroll-mt-24">
         <Pricing />
