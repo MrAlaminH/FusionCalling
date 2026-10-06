@@ -21,49 +21,49 @@ export default function Benefits() {
       icon: Code2,
       title: "No Technical Expertise Needed",
       description:
-        "You never touch code, servers, or telephony configuration. Connect your domain, upload your branding, and configure agents through visual dashboards designed for operators rather than engineers. If your team can manage a CRM, it can run this platform. Technical work like model selection, prompt tuning, and infrastructure updates happens on our side, so your focus stays on sales and client relationships from day one.",
+        "If your team can manage a CRM, it can run this platform — no code, servers, or telephony.",
     },
     {
       icon: GraduationCap,
       title: "White-label Training Materials",
       description:
-        "Onboarding covers far more than software access. You get training resources built specifically for agencies, including guidance on positioning AI voice services, running demos that convert, and structuring offers around monthly retainers. Use these materials to bring new staff up to speed quickly and to brief client-facing team members with confidence, keeping delivery quality consistent as your roster of sub-accounts grows.",
+        "Agency-specific training covers positioning AI voice, running demos that convert, and structuring monthly retainers.",
     },
     {
       icon: FileText,
       title: "Marketing Resources Provided",
       description:
-        "Sell with assets designed for the white-label model: presentation decks, case study formats, and sales collateral you can rebrand as your own. These resources help you answer prospect questions about how AI phone agents perform day to day, what implementation looks like, and why monthly pricing makes sense. Instead of writing marketing material from scratch, you adapt proven frameworks and go to market in days.",
+        "Rebrandable decks, sales collateral, and case-study formats take you to market in days.",
     },
     {
       icon: HeadphonesIcon,
       title: "Dedicated Support Included",
       description:
-        "Support scales with your plan. Every partner gets access to our support team for platform questions and troubleshooting, and Scale partners receive a dedicated account manager who learns your business and helps plan launches and expansions. Whether you hit a configuration snag before a client demo or need advice on structuring a complex deployment, help comes from people who work with white-label agencies every day.",
+        "Every plan gets platform support; Scale adds a dedicated account manager who knows your business.",
     },
     {
       icon: Zap,
       title: "Fast Implementation",
       description:
-        "Most partners launch within one to two days of signing up. Start with the three-day free trial to configure your branding and test agents, with no setup fee at any tier, then activate a plan when you are ready to sell. Because there is no development cycle and no procurement process, you can respond to a hot lead today and put a branded pilot in front of them this week.",
+        "Most partners launch in one to two days — start with the three-day free trial, no setup fee.",
     },
     {
       icon: TrendingUp,
       title: "Scalable Infrastructure",
       description:
-        "Grow from your first client to a full portfolio on one platform. Plans scale by sub-account count, with six on Starter, twenty on Growth, and unlimited on Scale, so you always know exactly what capacity costs before you commit. Underneath, we manage the calling infrastructure and the AI providers, absorbing traffic spikes and shipping updates continuously. Adding a client is a configuration task, never an infrastructure project.",
+        "Six sub-accounts on Starter, twenty on Growth, unlimited on Scale — capacity is priced upfront.",
     },
     {
       icon: ShieldCheck,
       title: "Enterprise Security",
       description:
-        "Client trust compounds retention. Call recordings, transcripts, and lead data sit inside a platform built to enterprise-grade security standards, reached only through your branded portal with permission controls you define. Clients experience a secure, professional system carrying their name, which makes longer commitments easier to justify. Dependable data handling under your brand turns a tool purchase into a relationship clients are reluctant to leave.",
+        "Call recordings, transcripts, and lead data sit behind enterprise-grade security, under your brand.",
     },
     {
       icon: Users,
       title: "Partner Community",
       description:
-        "Learn from other agency owners running the same playbook. Compare notes on packaging AI voice services, setting retainers, handling common objections, and onboarding clients efficiently. Members share what is working across industries, from home services to medical offices, so you avoid expensive trial and error. Combined with our training library, the community shortens the distance between launching your first sub-account and running a profitable book of business.",
+        "Swap pricing, objection handling, and onboarding playbooks with agency owners running the same model.",
     },
   ];
 

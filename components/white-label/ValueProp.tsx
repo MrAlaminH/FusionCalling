@@ -11,7 +11,7 @@ export default function ValueProp() {
       icon: DollarSign,
       title: "New Revenue Stream",
       description:
-        "Package white-label AI voice as a productized service and price it however your market will bear. Partners keep 100% of client revenue, so every retainer you close flows straight to your margin. On the Growth plan at $299 per month for twenty sub-accounts, even a modest per-client fee compounds quickly across a small roster. You set pricing, you invoice, and you own the relationship end to end.",
+        "Set your own client prices and keep every dollar above the flat wholesale rate.",
       stat: "100%",
       statLabel: "Revenue You Keep",
     },
@@ -19,7 +19,7 @@ export default function ValueProp() {
       icon: Zap,
       title: "Launch in Days",
       description:
-        "Go from signup to a live, sellable product in one to two days. Your branded dashboard, client portals, and custom domain are configured during onboarding, and a three-day free trial lets you explore the full platform before committing. There is no setup fee and no engineering project to manage. While competitors spend months building, you can be running demos for paying prospects this week.",
+        "Your branded dashboard, domain, and client portals go live during onboarding — no engineering project.",
       stat: "1-2 Days",
       statLabel: "Typical Launch Time",
     },
@@ -27,7 +27,7 @@ export default function ValueProp() {
       icon: Users,
       title: "Scale Without Limits",
       description:
-        "The Scale plan includes unlimited sub-accounts, so growth never triggers an upgrade conversation mid-quarter. Behind the scenes we run the telephony, the underlying AI models from Vapi, Retell AI, and ElevenLabs, and every platform update. When providers ship new capabilities, they appear in your dashboard automatically. Your job is selling and account management; ours is keeping the infrastructure fast, current, and dependable.",
+        "Telephony and the Vapi, Retell AI, and ElevenLabs engines are run and updated for you.",
       stat: "Unlimited",
       statLabel: "Sub-Accounts on Scale",
     },
@@ -35,7 +35,7 @@ export default function ValueProp() {
       icon: Shield,
       title: "Full Control",
       description:
-        "Your logo, your colors, your domain at app.youragency.com, and your name on every client portal. Clients log into a dashboard that looks and feels like your product, and nothing exposes Fusion Calling. That control protects pricing power: because clients buy from you, switching means leaving their trusted agency, not just swapping a tool. You remain the provider of record on every account you create.",
+        "Your logo, colors, and domain on every client portal — nothing exposes Fusion Calling.",
       stat: "100%",
       statLabel: "Brand Ownership",
     },
