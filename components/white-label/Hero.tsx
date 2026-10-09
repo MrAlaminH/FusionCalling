@@ -90,7 +90,7 @@ export default function Hero() {
         <div className="max-w-4xl mx-auto text-center mb-8 sm:mb-10 lg:mb-12 px-2 sm:px-4 md:px-6">
           <p className="font-body text-sm sm:text-base lg:text-lg text-gray-400 leading-relaxed">
             Launch a white-label AI receptionist under your own brand — it
-            answers, books, and routes your clients&apos; calls 24/7. Bring your
+            answers, books, and routes your clients&apos; calls 24/7. Resell your
             existing Vapi, Retell, or ElevenLabs agents, keep 100% of client
             revenue, and launch in 24 hours.
           </p>
