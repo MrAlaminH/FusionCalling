@@ -40,13 +40,13 @@ const PROVIDER_LINKS = [
 ];
 
 export const metadata: Metadata = {
-  title: "White Label AI Voice Agent Platform — From $99/mo",
+  title: "White Label AI Receptionist Platform — Keep 100% of Revenue",
   description:
-    "White-label AI voice agent platform for agencies: resell Vapi, Retell & ElevenLabs under your brand. 6 sub-accounts, 24-hr launch, Stripe rebilling.",
+    "White-label AI receptionist & voice agent platform for agencies: resell Vapi, Retell & ElevenLabs, keep 100% of client revenue, and launch in 24 hours.",
   ...buildOpenGraph({
-    title: "White Label AI Voice Agent Platform — From $99/mo",
+    title: "White Label AI Receptionist Platform — Keep 100% of Revenue",
     description:
-      "White-label AI voice agent platform for agencies: resell Vapi, Retell & ElevenLabs under your brand. 6 sub-accounts, 24-hr launch, Stripe rebilling.",
+      "White-label AI receptionist & voice agent platform for agencies: resell Vapi, Retell & ElevenLabs, keep 100% of client revenue, and launch in 24 hours.",
     path: "/whitelabel",
   }),
 };
@@ -61,7 +61,7 @@ export default function WhiteLabelPage() {
       {
         "@type": "Service",
         "@id": `${SITE_URL}/whitelabel#service`,
-        name: "White-Label AI Voice Agent Platform",
+        name: "White-Label AI Receptionist & Voice AI Platform",
         description: "Partner program allowing agencies and resellers to offer AI voice agents under their own brand. Includes full white-label dashboard, custom voice training, and subscription-based pricing you control.",
         provider: {
           "@id": `${SITE_URL}/#organization`
@@ -80,7 +80,7 @@ export default function WhiteLabelPage() {
       ),
       webPageSchema({
         path: "/whitelabel",
-        name: "White-Label AI Voice Agent Platform | Fusion Calling Partner Program",
+        name: "White-Label AI Receptionist & Voice AI Platform | Fusion Calling Partner Program",
         description: "Become a Fusion Calling partner and white-label our AI voice agent platform. Resell Vapi, Retell & ElevenLabs under your own brand.",
         breadcrumbId: `${SITE_URL}/whitelabel#breadcrumb`,
         speakable: ["h1"],
