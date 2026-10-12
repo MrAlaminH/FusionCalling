@@ -50,8 +50,8 @@ type SlideDef = {
   Comp: ComponentType;
 };
 
-const DEMO_PHONE_DISPLAY = "+1 (914) 639-4069";
-const DEMO_PHONE_TEL = "tel:+19146394069";
+const DEMO_PHONE_DISPLAY = "+1 (435) 292-1249";
+const DEMO_PHONE_TEL = "tel:+14352921249";
 const CALENDAR_URL = "https://cal.com/mralamin/discovery-call";
 
 function SlideShell({

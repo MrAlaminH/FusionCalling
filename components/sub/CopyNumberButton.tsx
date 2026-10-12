@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 export default function CopyNumberButton() {
   const [copySuccess, setCopySuccess] = useState(false);
   const handleCopyNumber = () => {
-    navigator.clipboard.writeText("+19146394069");
+    navigator.clipboard.writeText("+14352921249");
     setCopySuccess(true);
     setTimeout(() => setCopySuccess(false), 2000);
   };

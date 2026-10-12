@@ -132,7 +132,7 @@ export default function Component() {
                       </div>
                       <div className="flex items-center gap-2">
                         <span className="text-xs sm:text-sm font-medium text-white">
-                          +1 (914) 639-4069
+                          +1 (435) 292-1249
                         </span>
                         <CopyNumberButton />
                       </div>
