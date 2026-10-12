@@ -118,6 +118,26 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/compare/chatdash-alternative",
+        destination: "/alternative/chatdash",
+        permanent: true,
+      },
+      {
+        source: "/compare/voicerr-alternative",
+        destination: "/alternative/voicerr",
+        permanent: true,
+      },
+      {
+        source: "/compare/voiceaiwrapper-alternative",
+        destination: "/alternative/voiceaiwrapper",
+        permanent: true,
+      },
+      {
+        source: "/compare/thinkrr-alternative",
+        destination: "/alternative/thinkrr",
+        permanent: true,
+      },
+      {
         source: "/compare",
         destination: "/alternative",
         permanent: true,
