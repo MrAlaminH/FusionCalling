@@ -184,7 +184,7 @@ export default function Component() {
                               <span className="font-semibold text-gray-500">
                                 Caller ·{" "}
                               </span>
-                              Hi — do you have anything Thursday morning?
+                              Hi, do you have anything open on Thursday?
                             </p>
                           </div>
                         </Reveal>
@@ -194,8 +194,7 @@ export default function Component() {
                               <span className="font-semibold text-brand-light">
                                 AI ·{" "}
                               </span>
-                              You&apos;re in luck — 9:30 or 11:15 with Dr.
-                              Patel?
+                              Yes, we have 9:30 or 11:15 with Dr. Patel.
                             </p>
                           </div>
                         </Reveal>
@@ -205,7 +204,7 @@ export default function Component() {
                               <span className="font-semibold text-gray-500">
                                 Caller ·{" "}
                               </span>
-                              9:30 works.
+                              9:30 works for me.
                             </p>
                           </div>
                         </Reveal>
@@ -215,7 +214,8 @@ export default function Component() {
                               <span className="font-semibold text-brand-light">
                                 AI ·{" "}
                               </span>
-                              Booked — confirmation text is on its way.
+                              Perfect, you&apos;re booked. I&apos;ll text you
+                              the details.
                             </p>
                           </div>
                         </Reveal>
