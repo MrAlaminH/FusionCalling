@@ -151,8 +151,8 @@ export default function Component() {
                         alt="Fusion Calling AI receptionist — a humanoid agent on a headset taking a call"
                         width={982}
                         height={941}
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        className="absolute inset-0 h-full w-full object-cover object-[50%_0] [mask-image:radial-gradient(ellipse_72%_78%_at_30%_42%,#000_36%,transparent_74%)]"
+                        sizes="(max-width: 768px) 50vw, 280px"
+                        className="absolute left-0 top-0 h-full w-auto [mask-image:radial-gradient(ellipse_72%_78%_at_30%_42%,#000_36%,transparent_74%)]"
                       />
                       <div className="absolute right-0 top-1 sm:top-2 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-black/60 px-3 py-1.5 backdrop-blur-sm">
                         <span
