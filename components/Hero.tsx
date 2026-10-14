@@ -5,6 +5,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import HeroForm from "@/components/sub/HeroForm";
 import CopyNumberButton from "@/components/sub/CopyNumberButton";
+import { Reveal } from "@/components/ui/reveal";
 
 export default function Component() {
   return (
@@ -141,7 +142,7 @@ export default function Component() {
                     {/* Visual anchor — the AI receptionist dissolving out of the
                         dark (same radial-mask blend as the deck title slide), so
                         no edge of the photo ever reads as cut */}
-                    <div className="relative h-44 sm:h-52 md:h-64 mt-2">
+                    <div className="relative h-52 md:h-64 mt-2">
                       <div
                         aria-hidden="true"
                         className="absolute left-4 sm:left-6 bottom-0 w-3/4 h-2/3 rounded-full bg-brand/20 blur-3xl pointer-events-none"
@@ -174,6 +175,50 @@ export default function Component() {
                             />
                           ))}
                         </span>
+                      </div>
+                      {/* Mini live transcript — a glance at how the call flows */}
+                      <div className="absolute right-0 top-10 sm:top-12 flex w-36 flex-col gap-1 sm:gap-1.5 sm:w-44 md:w-52">
+                        <Reveal delay={0.15} duration={0.4}>
+                          <div className="ml-auto max-w-[92%] rounded-lg rounded-br-sm border border-white/10 bg-zinc-900/80 px-2 py-1 backdrop-blur-sm sm:px-2.5 sm:py-1.5">
+                            <p className="text-[9px] leading-tight text-gray-300 sm:text-[11px] sm:leading-snug">
+                              <span className="font-semibold text-gray-500">
+                                Caller ·{" "}
+                              </span>
+                              Hi — do you have anything Thursday morning?
+                            </p>
+                          </div>
+                        </Reveal>
+                        <Reveal delay={0.3} duration={0.4}>
+                          <div className="mr-auto max-w-[92%] rounded-lg rounded-bl-sm border border-brand/25 bg-brand/15 px-2 py-1 backdrop-blur-sm sm:px-2.5 sm:py-1.5">
+                            <p className="text-[9px] leading-tight text-gray-100 sm:text-[11px] sm:leading-snug">
+                              <span className="font-semibold text-brand-light">
+                                AI ·{" "}
+                              </span>
+                              You&apos;re in luck — 9:30 or 11:15 with Dr.
+                              Patel?
+                            </p>
+                          </div>
+                        </Reveal>
+                        <Reveal delay={0.45} duration={0.4}>
+                          <div className="ml-auto max-w-[92%] rounded-lg rounded-br-sm border border-white/10 bg-zinc-900/80 px-2 py-1 backdrop-blur-sm sm:px-2.5 sm:py-1.5">
+                            <p className="text-[9px] leading-tight text-gray-300 sm:text-[11px] sm:leading-snug">
+                              <span className="font-semibold text-gray-500">
+                                Caller ·{" "}
+                              </span>
+                              9:30 works.
+                            </p>
+                          </div>
+                        </Reveal>
+                        <Reveal delay={0.6} duration={0.4}>
+                          <div className="mr-auto max-w-[92%] rounded-lg rounded-bl-sm border border-brand/25 bg-brand/15 px-2 py-1 backdrop-blur-sm sm:px-2.5 sm:py-1.5">
+                            <p className="text-[9px] leading-tight text-gray-100 sm:text-[11px] sm:leading-snug">
+                              <span className="font-semibold text-brand-light">
+                                AI ·{" "}
+                              </span>
+                              Booked — confirmation text is on its way.
+                            </p>
+                          </div>
+                        </Reveal>
                       </div>
                     </div>
                   </div>
