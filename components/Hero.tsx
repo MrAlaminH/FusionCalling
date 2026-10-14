@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Sparkles } from "lucide-react";
+import { PhoneCall, Sparkles } from "lucide-react";
 import { NeonGradientCard } from "@/components/ui/neon-gradient-card";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
@@ -102,41 +102,57 @@ export default function Component() {
                       <span className="text-brand-strong">Test it NOW</span>
                     </h2>
                     <p className="text-sm sm:text-base text-gray-400">
-                      Wondering how our AI agents work?
-                    </p>
-                    <p className="text-sm sm:text-base text-gray-400">
-                      Experience it yourself with a free demo call. Share your
-                      details, and our AI will reach out instantly.
-                      <br />
-                      Note: If the number you provided is incorrect or you want
-                      to make another call but it&apos;s not working, then
-                      please refresh the page to make a new call again.
-                    </p>
-                    <p className="text-xs sm:text-sm text-white">
-                      The AI agent is ready to chat about Fusion Calling and
-                      book appointments for you.
+                      Talk to our AI agent yourself — it answers, books, and
+                      qualifies like a human. Share your details and it dials
+                      you, or call in below.
                     </p>
 
-                    {/* Guide text for inbound call */}
-                    <p className="mt-2 text-xs md:text-sm text-brand/80">
-                      To Test Our Inbound Call Handling, Dial The Number Below:
-                    </p>
+                    {/* Visual anchor — the AI receptionist mid-call */}
+                    <div className="relative pt-2">
+                      <div
+                        aria-hidden="true"
+                        className="absolute inset-x-6 top-6 bottom-0 rounded-3xl bg-brand/15 blur-2xl pointer-events-none"
+                      />
+                      <Image
+                        src="/deck/receptionist.webp"
+                        alt="Fusion Calling AI receptionist — a humanoid agent on a headset taking a call"
+                        width={982}
+                        height={941}
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="relative w-full aspect-video object-cover object-top rounded-2xl border border-brand/20"
+                      />
+                    </div>
 
-                    {/* Inbound Call Box */}
-                    <div className="mt-2 bg-zinc-800/80 border border-brand/30 rounded-lg p-3 flex items-center justify-between">
+                    {/* Inbound — dial the live agent (tel: opens the phone dialer) */}
+                    <div className="rounded-xl border border-brand/30 bg-zinc-800/80 p-3 sm:p-4 space-y-2.5">
                       <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                        <span className="text-xs sm:text-sm text-gray-300">
-                          Inbound AI Agent:
+                        <span
+                          className="w-2 h-2 rounded-full bg-green-500 animate-pulse"
+                          aria-hidden="true"
+                        />
+                        <span className="text-xs sm:text-sm font-medium text-gray-300">
+                          Inbound AI Agent{" "}
+                          <span className="text-gray-500">· live 24/7</span>
                         </span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <span className="text-xs sm:text-sm font-medium text-white">
+                        <a
+                          href="tel:+14352921249"
+                          className="flex h-10 flex-1 items-center justify-center gap-2 rounded-lg bg-brand px-4 text-sm font-semibold text-black transition duration-200 hover:bg-brand-strong active:scale-[0.98]"
+                        >
+                          <PhoneCall className="h-4 w-4" aria-hidden="true" />
                           +1 (435) 292-1249
-                        </span>
-                        <CopyNumberButton />
+                        </a>
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-zinc-700 bg-zinc-800">
+                          <CopyNumberButton />
+                        </div>
                       </div>
                     </div>
+
+                    <p className="text-xs text-gray-500">
+                      Number busy or mistyped? Refresh the page to place a new
+                      call.
+                    </p>
                   </div>
                 </div>
 
