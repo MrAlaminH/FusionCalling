@@ -41,7 +41,6 @@ interface CountrySelectProps {
     value: Country;
     label: string;
   }>;
-  placeholder?: string;
   className?: string;
   disabled?: boolean;
   name?: string;
@@ -65,6 +64,12 @@ const CustomInput = forwardRef<HTMLInputElement, DefaultInputComponentProps>(
 
 CustomInput.displayName = "CustomInput";
 
+// The demo can only dial USA/Canada numbers (see the note under the form),
+// so the selector offers just those two. The library's default full atlas
+// (247 options) put dead-end countries and a broken flag fallback one tap
+// away, and turned the mobile picker into a scroll marathon.
+const DEMO_COUNTRIES = ["US", "CA"] as Country[];
+
 // Updated FlagComponent with proper typing and title handling
 const FlagComponent: React.FC<{ country: Country }> = ({ country }) => {
   const FlagIcon = (country && FLAG_ICONS[country]) || undefined;
@@ -83,7 +88,6 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
   value,
   onChange,
   options,
-  placeholder,
   className,
   ...rest
 }) => {
@@ -96,7 +100,7 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
   };
 
   return (
-    <div className="relative inline-flex items-center self-stretch rounded-s-lg border border-zinc-700 bg-zinc-800 py-2 pe-2 ps-3 text-white">
+    <div className="relative inline-flex items-center self-stretch rounded-s-lg border border-zinc-700 bg-zinc-800 py-2 pe-2 ps-3 text-white transition-colors hover:bg-zinc-700/60 focus-within:bg-zinc-700/60 focus-within:ring-1 focus-within:ring-ring">
       <div className="inline-flex items-center gap-1" aria-hidden="true">
         <FlagComponent country={value} />
         <ChevronDown size={16} strokeWidth={2} className="text-gray-400" />
@@ -110,12 +114,13 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
         }}
         className="absolute inset-0 w-full opacity-0 cursor-pointer"
       >
-        <option value="">{placeholder}</option>
-        {options.map(({ value, label }) => (
-          <option key={value || ""} value={value || ""}>
-            {label}
-          </option>
-        ))}
+        {options
+          .filter((option) => option.value)
+          .map(({ value, label }) => (
+            <option key={value} value={value}>
+              {label}
+            </option>
+          ))}
       </select>
     </div>
   );
@@ -152,6 +157,7 @@ const PhoneInputComponent: React.FC<PhoneInputProps> = ({
       <PhoneInput
         international={international}
         defaultCountry={defaultCountry}
+        countries={DEMO_COUNTRIES}
         value={phoneValue}
         onChange={handleChange}
         labels={en}
