@@ -107,72 +107,28 @@ export default function Component() {
                       you, or call in below.
                     </p>
 
-                    {/* Visual + inbound card live in their own sub-flow: the
-                        parent space-y sets margin-bottom:0 on every following
-                        sibling, which would cancel the -mb overlap below. */}
-                    <div>
-                      {/* Visual anchor — the AI receptionist, cut out and
-                          seated behind the inbound card below (her "desk") */}
-                      <div className="relative z-0 h-44 sm:h-52 md:h-64 mt-2 -mb-6 sm:-mb-8">
-                        <div
+                    {/* Inbound — dial the live agent (tel: opens the phone dialer) */}
+                    <div className="rounded-xl border border-brand/30 bg-zinc-800/80 p-3 sm:p-4 space-y-2.5">
+                      <div className="flex items-center gap-2">
+                        <span
+                          className="w-2 h-2 rounded-full bg-green-500 animate-pulse"
                           aria-hidden="true"
-                          className="absolute bottom-0 right-0 w-3/4 h-2/3 rounded-full bg-brand/20 blur-3xl pointer-events-none"
                         />
-                        <Image
-                          src="/demo-receptionist.webp"
-                          alt="Fusion Calling AI receptionist — a humanoid agent on a headset taking a call"
-                          width={720}
-                          height={645}
-                          unoptimized
-                          className="absolute bottom-0 right-0 h-full w-auto object-contain"
-                        />
-                        <div className="absolute left-0 top-1 sm:top-2 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-black/60 px-3 py-1.5 backdrop-blur-sm">
-                          <span
-                            className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"
-                            aria-hidden="true"
-                          />
-                          <span className="text-[11px] font-medium text-gray-200">
-                            Live call
-                          </span>
-                          <span
-                            className="flex items-end gap-[2px] h-3"
-                            aria-hidden="true"
-                          >
-                            {[0, 1, 2, 3].map((i) => (
-                              <span
-                                key={i}
-                                className="w-[2px] h-full rounded-full bg-brand animate-waveform"
-                                style={{ animationDelay: `${i * 140}ms` }}
-                              />
-                            ))}
-                          </span>
-                        </div>
+                        <span className="text-xs sm:text-sm font-medium text-gray-300">
+                          Inbound AI Agent{" "}
+                          <span className="text-gray-500">· live 24/7</span>
+                        </span>
                       </div>
-
-                      {/* Inbound — dial the live agent (tel: opens the phone
-                          dialer) */}
-                      <div className="relative z-10 rounded-xl border border-brand/30 bg-zinc-800/80 p-3 sm:p-4 space-y-2.5">
-                        <div className="flex items-center gap-2">
-                          <span
-                            className="w-2 h-2 rounded-full bg-green-500 animate-pulse"
-                            aria-hidden="true"
-                          />
-                          <span className="text-xs sm:text-sm font-medium text-gray-300">
-                            Inbound AI Agent{" "}
-                            <span className="text-gray-500">· live 24/7</span>
-                          </span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <a
-                            href="tel:+14352921249"
-                            className="flex h-10 flex-1 items-center justify-center gap-2 rounded-lg bg-brand px-4 text-sm font-semibold text-black transition duration-200 hover:bg-brand-strong active:scale-[0.98]"
-                          >
-                            <PhoneCall className="h-4 w-4" aria-hidden="true" />
-                            +1 (435) 292-1249
-                          </a>
-                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-zinc-700 bg-zinc-800">
-                            <CopyNumberButton />
-                          </div>
+                      <div className="flex items-center gap-2">
+                        <a
+                          href="tel:+14352921249"
+                          className="flex h-10 flex-1 items-center justify-center gap-2 rounded-lg bg-brand px-4 text-sm font-semibold text-black transition duration-200 hover:bg-brand-strong active:scale-[0.98]"
+                        >
+                          <PhoneCall className="h-4 w-4" aria-hidden="true" />
+                          +1 (435) 292-1249
+                        </a>
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-zinc-700 bg-zinc-800">
+                          <CopyNumberButton />
                         </div>
                       </div>
                     </div>
@@ -181,6 +137,45 @@ export default function Component() {
                       Number busy or mistyped? Refresh the page to place a new
                       call.
                     </p>
+
+                    {/* Visual anchor — the AI receptionist dissolving out of the
+                        dark (same radial-mask blend as the deck title slide), so
+                        no edge of the photo ever reads as cut */}
+                    <div className="relative h-44 sm:h-52 md:h-64 mt-2">
+                      <div
+                        aria-hidden="true"
+                        className="absolute left-0 bottom-0 w-3/4 h-2/3 rounded-full bg-brand/20 blur-3xl pointer-events-none"
+                      />
+                      <Image
+                        src="/deck/receptionist.webp"
+                        alt="Fusion Calling AI receptionist — a humanoid agent on a headset taking a call"
+                        width={982}
+                        height={941}
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="absolute inset-0 h-full w-full object-cover object-[50%_0] [mask-image:radial-gradient(ellipse_72%_78%_at_30%_42%,#000_36%,transparent_74%)]"
+                      />
+                      <div className="absolute right-0 top-1 sm:top-2 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-black/60 px-3 py-1.5 backdrop-blur-sm">
+                        <span
+                          className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"
+                          aria-hidden="true"
+                        />
+                        <span className="text-[11px] font-medium text-gray-200">
+                          Live call
+                        </span>
+                        <span
+                          className="flex items-end gap-[2px] h-3"
+                          aria-hidden="true"
+                        >
+                          {[0, 1, 2, 3].map((i) => (
+                            <span
+                              key={i}
+                              className="w-[2px] h-full rounded-full bg-brand animate-waveform"
+                              style={{ animationDelay: `${i * 140}ms` }}
+                            />
+                          ))}
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
