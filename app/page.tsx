@@ -30,11 +30,11 @@ const Calendar = dynamic(() => import("@/components/calendar"), { ssr: false });
 import { callFlowSteps } from "@/components/call-flow";
 
 export const metadata: Metadata = {
-  title: "AI Phone Call Agents That Answer & Book 24/7 | Fusion Calling",
+  title: "AI Receptionist & AI Phone Call Agents for Your Business | Fusion Calling",
   description:
     "AI phone call agents answer & place calls 24/7, book appointments, qualify leads. Live demo, plans from $149/mo.",
   ...buildOpenGraph({
-    title: "AI Phone Call Agents That Answer & Book 24/7 | Fusion Calling",
+    title: "AI Receptionist & AI Phone Call Agents for Your Business | Fusion Calling",
     description:
       "AI phone call agents answer & place calls 24/7, book appointments, qualify leads. Live demo, plans from $149/mo.",
     path: "/",
@@ -49,7 +49,7 @@ export default function Home() {
         "@type": "WebPage",
         "@id": `${SITE_URL}/#webpage`,
         url: `${SITE_URL}/`,
-        name: "AI Phone Call Agents That Answer & Book 24/7 | Fusion Calling",
+        name: "AI Receptionist & AI Phone Call Agents for Your Business | Fusion Calling",
         description: "AI phone call agents answer & place calls 24/7, book appointments, qualify leads. Live demo, plans from $149/mo.",
         isPartOf: {
           "@id": `${SITE_URL}/#website`

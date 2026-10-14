@@ -46,10 +46,12 @@ export default function Component() {
         {/* Main heading — rendered visible at first paint (LCP) */}
         <div className="text-center mb-3 sm:mb-4 md:mb-6 px-2 sm:px-4 md:px-6">
           <h1 className="font-display text-2xl xxs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1]">
+            <span className="block">
+              AI Receptionist <span aria-hidden="true">&</span>
+            </span>
             <span className="block">AI Phone Call Agents{" "}</span>
-            <span className="block">for Your Business{" "}</span>
             <span className="block bg-gradient-to-r from-brand-light via-brand to-brand-strong text-transparent bg-clip-text">
-              Answer Every Call 24/7
+              for Your Business
             </span>
           </h1>
         </div>
