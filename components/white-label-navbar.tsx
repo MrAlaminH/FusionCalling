@@ -87,7 +87,7 @@ const WhiteLabelNavbar = ({ links }: WhiteLabelNavbarProps) => {
         <Link
           href="/whitelabel"
           className="flex flex-shrink-0 items-center gap-2.5"
-          aria-label="Fusion Calling Labs — home"
+          aria-label="Fusion Calling — home"
         >
           <Image
             src="/logo.webp"
@@ -96,13 +96,9 @@ const WhiteLabelNavbar = ({ links }: WhiteLabelNavbarProps) => {
             height={40}
             className="cursor-pointer sm:h-[45px] sm:w-[45px] lg:h-[50px] lg:w-[50px]"
           />
-          <span className="flex flex-col leading-tight">
-            <span className="text-lg font-extrabold text-brand-strong sm:text-xl">
-              Fusion Calling
-            </span>
-            <span className="-mt-0.5 self-end text-[10px] font-bold text-brand">
-              Labs
-            </span>
+          <span className="text-lg font-bold tracking-tight text-white sm:text-xl">
+            Fusion{" "}
+            <span className="text-brand-strong">Calling</span>
           </span>
         </Link>
 
