@@ -262,9 +262,16 @@ export default function OnboardingPage({
       <main id="main" className="min-h-screen w-full bg-black">
         <WhiteLabelNavbar />
 
-        {/* Hero */}
-        <section id="hero" className="scroll-mt-24 border-b border-brand/20 bg-gradient-to-br from-brand/10 via-brand/5 to-brand-strong/10 py-14 sm:py-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        {/* Hero — layered backdrop: masked grid + brand glow (house black/orange) */}
+        <section id="hero" className="relative scroll-mt-24 overflow-hidden border-b border-brand/20 bg-black py-14 sm:py-20">
+          <div aria-hidden className="pointer-events-none absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-b from-brand/10 via-brand/5 to-transparent" />
+            <div className="absolute inset-0 [background-image:linear-gradient(to_right,rgb(255_255_255/0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgb(255_255_255/0.05)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:radial-gradient(ellipse_80%_65%_at_50%_-5%,black_30%,transparent_75%)] [-webkit-mask-image:radial-gradient(ellipse_80%_65%_at_50%_-5%,black_30%,transparent_75%)]" />
+            <div className="absolute -top-48 left-1/2 h-[30rem] w-[62rem] -translate-x-1/2 rounded-full bg-brand/20 blur-[140px]" />
+            <div className="absolute -bottom-44 right-[-8%] h-96 w-96 rounded-full bg-brand-strong/10 blur-[120px]" />
+            <div className="absolute left-1/2 top-0 h-px w-2/3 -translate-x-1/2 bg-gradient-to-r from-transparent via-brand/60 to-transparent" />
+          </div>
+          <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <div className="max-w-3xl">
               <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-brand/20 bg-black/40 px-4 py-1.5 text-xs sm:text-sm text-gray-300">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" aria-hidden />
