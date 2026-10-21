@@ -19,7 +19,7 @@ const CAL_URL = "https://cal.com/mralamin/discovery-call";
 const APP_URL = "https://app.fusioncalling.com/";
 // Owner's Vapi referral link goes here — swap the URL only; the link always
 // renders as plain "Sign up for Vapi" and carries rel="sponsored".
-const VAPI_SIGNUP_URL = "https://vapi.ai/";
+const VAPI_SIGNUP_URL = "https://vapi.ai/?aff=alamin";
 
 export const metadata: Metadata = {
   title,
