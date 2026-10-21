@@ -234,7 +234,13 @@ function GuideLinks({ guides }: { guides: GuideLink[] }) {
             <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
           </a>
         ) : (
-          <Link key={g.href} href={g.href} className={cls}>
+          <Link
+            key={g.href}
+            href={g.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cls}
+          >
             {g.label}
             <ArrowRight className="h-3.5 w-3.5" aria-hidden />
           </Link>
@@ -346,6 +352,8 @@ export default function OnboardingPage({
               The complete picture lives on the{" "}
               <Link
                 href="/whitelabel"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors"
               >
                 white-label partner program
@@ -450,6 +458,8 @@ export default function OnboardingPage({
               . Your margin is the spread — model it in the{" "}
               <Link
                 href="/calculator"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors"
               >
                 white-label margin calculator
@@ -457,6 +467,8 @@ export default function OnboardingPage({
               or see the{" "}
               <Link
                 href="/pricing"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors"
               >
                 full pricing breakdown
@@ -483,7 +495,7 @@ export default function OnboardingPage({
                     credentials, credits, and client sub-accounts are all
                     covered in the documentation — no call required.
                   </p>
-                  <Link href="/docs" className={`${secondaryButton} mt-6`}>
+                  <Link href="/docs" target="_blank" rel="noopener noreferrer" className={`${secondaryButton} mt-6`}>
                     Open the setup guides
                   </Link>
                 </div>
