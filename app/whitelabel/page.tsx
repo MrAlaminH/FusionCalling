@@ -171,6 +171,12 @@ export default function WhiteLabelPage() {
             >
               White-label availability by location
             </Link>
+            <Link
+              href="/whitelabel/onboarding"
+              className="text-gray-400 hover:text-brand underline-offset-4 hover:underline transition-colors"
+            >
+              White-label onboarding guide
+            </Link>
           </div>
         </div>
       </section>

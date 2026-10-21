@@ -1,7 +1,7 @@
 # Fusion Calling - Full Content for AI Crawlers
 # Generated at build time. Contains all indexable page content.
 # Source: https://www.fusioncalling.com
-# Last updated: 2026-10-14
+# Last updated: 2026-10-21
 
 ## AI Phone Call Automation & AI Receptionist | Fusion Calling
 URL: https://www.fusioncalling.com/
@@ -40,6 +40,13 @@ Benefits:
 - 2,200+ app integrations via Zapier
 
 Revenue calculator available at /calculator. Book a discovery call at cal.com/mralamin/discovery-call.
+
+---
+
+## White-Label Onboarding Guide — Launch in 48 Hours
+URL: https://www.fusioncalling.com/whitelabel/onboarding
+
+Step-by-step launch path for new Fusion Calling partners: create your account (3-day free trial, $0 setup), brand your dashboard, connect telephony (Twilio or Telnyx — $1.25 per number/month plus $0.005–$0.008/min carrier usage) and optional Vapi/Retell/ElevenLabs keys, set resale pricing with built-in Stripe rebilling, and launch your first client sub-account. AI call processing ~$0.10/min pay-as-you-go, or bring your own provider key and pay them directly. Platform plans: $99/mo Starter (6 sub-accounts), $299/mo Growth (20), $499/mo Scale (unlimited). Partners typically package the solution at $197–$500+/month per client. Commitments: 99.9% uptime SLA, Mon–Fri 9 AM–6 PM EST support via email/tickets/WhatsApp with 1-hour urgent response, 24/7 monitoring, per-sub-account data isolation, PII redaction, no training on customer data, HIPAA deployment with BAA as a $2,000 one-time add-on. The onboarding call is optional — each step links the exact guide in /docs.
 
 ---
 

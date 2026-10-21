@@ -36,6 +36,8 @@ export const PAGE_UPDATED: Record<string, string> = {
   "/ai-receptionist-pricing": "2026-10-06",
   // GHL sub-account deployment section (title/meta unchanged — freeze holds)
   "/whitelabel/gohighlevel": "2026-10-06",
+  // New linkable asset: white-label partner onboarding guide (2026-10-22)
+  "/whitelabel/onboarding": "2026-10-22",
 };
 
 /** Revision date for a path: its PAGE_UPDATED entry, or the global fallback.

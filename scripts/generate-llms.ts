@@ -54,6 +54,11 @@ Benefits:
 Revenue calculator available at /calculator. Book a discovery call at cal.com/mralamin/discovery-call.`,
   },
   {
+    path: "/whitelabel/onboarding",
+    title: "White-Label Onboarding Guide — Launch in 48 Hours",
+    content: `Step-by-step launch path for new Fusion Calling partners: create your account (3-day free trial, $0 setup), brand your dashboard, connect telephony (Twilio or Telnyx — $1.25 per number/month plus $0.005–$0.008/min carrier usage) and optional Vapi/Retell/ElevenLabs keys, set resale pricing with built-in Stripe rebilling, and launch your first client sub-account. AI call processing ~$0.10/min pay-as-you-go, or bring your own provider key and pay them directly. Platform plans: $99/mo Starter (6 sub-accounts), $299/mo Growth (20), $499/mo Scale (unlimited). Partners typically package the solution at $197–$500+/month per client. Commitments: 99.9% uptime SLA, Mon–Fri 9 AM–6 PM EST support via email/tickets/WhatsApp with 1-hour urgent response, 24/7 monitoring, per-sub-account data isolation, PII redaction, no training on customer data, HIPAA deployment with BAA as a $2,000 one-time add-on. The onboarding call is optional — each step links the exact guide in /docs.`,
+  },
+  {
     path: "/industries",
     title: "AI Voice by Industry | Fusion Calling",
     content: `Explore how white-label AI voice agents serve every industry: real estate, dental, insurance, home services, legal, automotive, call centers, finance, e-commerce, education, and restaurants.
@@ -250,6 +255,7 @@ function generateLLMS(): string {
     `- [Partner Pricing & Tiers](${SITE_URL}/whitelabel#pricing): Starter, Growth, and Scale partner tiers from $99 to $499/month based on the number of sub-accounts. Partners keep 100% of what they charge clients.`,
     `- [Revenue Calculator](${SITE_URL}/calculator): Estimate your recurring revenue based on number of clients and your per-client pricing.`,
     `- [Partner Benefits](${SITE_URL}/whitelabel#benefits): How It Works, onboarding, support levels, and earnings model.`,
+    `- [Onboarding Guide](${SITE_URL}/whitelabel/onboarding): Step-by-step partner launch — 3-day free trial, branding, telephony, resale pricing, and first client sub-account, with links into the docs.`,
     `- [Book a Demo](https://cal.com/mralamin/discovery-call): Schedule a discovery/partner call.`,
     ``,
     `## Bring Your Own Agent (Migration & Import)`,

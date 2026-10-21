@@ -17,6 +17,7 @@ The platform integrates with leading voice-AI providers. Agencies can bring exis
 - [Partner Pricing & Tiers](https://www.fusioncalling.com/whitelabel#pricing): Starter, Growth, and Scale partner tiers from $99 to $499/month based on the number of sub-accounts. Partners keep 100% of what they charge clients.
 - [Revenue Calculator](https://www.fusioncalling.com/calculator): Estimate your recurring revenue based on number of clients and your per-client pricing.
 - [Partner Benefits](https://www.fusioncalling.com/whitelabel#benefits): How It Works, onboarding, support levels, and earnings model.
+- [Onboarding Guide](https://www.fusioncalling.com/whitelabel/onboarding): Step-by-step partner launch — 3-day free trial, branding, telephony, resale pricing, and first client sub-account, with links into the docs.
 - [Book a Demo](https://cal.com/mralamin/discovery-call): Schedule a discovery/partner call.
 
 ## Bring Your Own Agent (Migration & Import)
