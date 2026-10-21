@@ -16,7 +16,7 @@ const description =
   "Set up your white-label AI voice platform: branded dashboards and client sub-accounts, AI receptionists that answer and book 24/7, telephony and engine setup (Vapi, Retell, ElevenLabs), Stripe rebilling, and the docs to do it all self-serve.";
 
 const CAL_URL = "https://cal.com/mralamin/discovery-call";
-const APP_URL = "https://app.fusioncalling.com/";
+const APP_URL = "https://app.fusioncalling.com/signup";
 // Owner's Vapi referral link goes here — swap the URL only; the link always
 // renders as plain "Sign up for Vapi" and carries rel="sponsored".
 const VAPI_SIGNUP_URL = "https://vapi.ai/?aff=alamin";
