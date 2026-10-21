@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import WhiteLabelNavbar from "@/components/white-label-navbar";
 import PostFaq from "@/components/blog/PostFaq";
 import CTA from "@/components/white-label/CTA";
@@ -11,12 +11,15 @@ import { buildOpenGraph, breadcrumbSchema, faqSchema, webPageSchema } from "@/li
 import { SITE_URL } from "@/lib/site-url";
 import { WHOLESALE_PLANS } from "@/lib/product-facts";
 
-const title = "White-Label Onboarding Guide — Launch in 48 Hours";
+const title = "White-Label Partner Onboarding Guide";
 const description =
-  "Your launch path as a Fusion Calling partner: start the 3-day free trial, follow the setup guides, and put your first branded AI voice agent live within 24–48 hours. Pricing, telephony, and support — all in one place.";
+  "Set up your white-label AI voice platform: branded dashboards and client sub-accounts, AI receptionists that answer and book 24/7, telephony and engine setup (Vapi, Retell, ElevenLabs), Stripe rebilling, and the docs to do it all self-serve.";
 
 const CAL_URL = "https://cal.com/mralamin/discovery-call";
 const APP_URL = "https://app.fusioncalling.com/";
+// Owner's Vapi referral link goes here — swap the URL only; the link always
+// renders as plain "Sign up for Vapi" and carries rel="sponsored".
+const VAPI_SIGNUP_URL = "https://vapi.ai/";
 
 export const metadata: Metadata = {
   title,
@@ -24,9 +27,23 @@ export const metadata: Metadata = {
   ...buildOpenGraph({ title, description, path: "/whitelabel/onboarding" }),
 };
 
-type GuideLink = { label: string; href: string; external?: boolean };
+type GuideLink = {
+  label: string;
+  href: string;
+  external?: boolean;
+  /** Affiliate/referral link — marked rel="sponsored" for crawlers. */
+  referral?: boolean;
+  /** Renders a small "Recommended" pill next to the label. */
+  recommended?: boolean;
+};
 
-const launchSteps: { n: string; title: string; text: string; guides: GuideLink[] }[] = [
+const launchSteps: {
+  n: string;
+  title: string;
+  text: string;
+  guides: GuideLink[];
+  signups?: GuideLink[];
+}[] = [
   {
     n: "1",
     title: "Create your account",
@@ -42,8 +59,15 @@ const launchSteps: { n: string; title: string; text: string; guides: GuideLink[]
   {
     n: "3",
     title: "Plug in telephony & engines",
-    text: "Connect Twilio or Telnyx for phone numbers and call routing. Vapi, Retell, or ElevenLabs keys are optional — add them if you'd rather have usage billed directly to your own provider account.",
+    text: "Create a Twilio or Telnyx account for phone numbers and call routing, then connect your voice engine. Most partners start with Vapi — it's the quickest engine to go live with. Retell and ElevenLabs work the same way, and engine keys are optional if you'd rather use the platform's built-in voices.",
     guides: [{ label: "AI credentials guide", href: "/docs/admin-section#ai-provider" }],
+    signups: [
+      { label: "Sign up for Twilio", href: "https://www.twilio.com/try-twilio", external: true },
+      { label: "Sign up for Telnyx", href: "https://telnyx.com/sign-up", external: true },
+      { label: "Sign up for Vapi", href: VAPI_SIGNUP_URL, external: true, referral: true, recommended: true },
+      { label: "Sign up for Retell", href: "https://retellai.com/", external: true },
+      { label: "Sign up for ElevenLabs", href: "https://elevenlabs.io/", external: true },
+    ],
   },
   {
     n: "4",
@@ -54,7 +78,7 @@ const launchSteps: { n: string; title: string; text: string; guides: GuideLink[]
   {
     n: "5",
     title: "Launch your first client",
-    text: "Create a sub-account login, configure their voice agent, and go live. Most partners run their first live call within 24–48 hours of signing up.",
+    text: "Create a sub-account login, configure their voice agent, and go live. Every client after that follows the same path — onboard them from your dashboard in minutes.",
     guides: [
       { label: "Client sub-accounts", href: "/docs/admin-section#client-management" },
       { label: "First voice agent", href: "/docs/agent-configuration#creating-first-agent" },
@@ -67,6 +91,25 @@ const checklist = [
   "A Twilio or Telnyx account — we'll help you connect it",
   "Optional: Vapi, Retell, or ElevenLabs API keys",
   "30 minutes for the optional onboarding call",
+];
+
+const capabilityCards = [
+  {
+    title: "Branded dashboards & sub-accounts",
+    text: "Your logo, colors, and domain on every portal. Each client gets an isolated login with their own call logs, transcripts, and analytics.",
+  },
+  {
+    title: "Multi-engine voice AI",
+    text: "Import and resell agents powered by Vapi, Retell AI, and ElevenLabs. Most partners start with Vapi, then match the engine to each client.",
+  },
+  {
+    title: "Calendar & CRM booking",
+    text: "The AI checks real availability, books, reschedules, and cancels appointments, then syncs qualified leads straight into your CRM.",
+  },
+  {
+    title: "Smart routing & transfers",
+    text: "Custom conversation scripts, warm transfers to human staff, and instant SMS handoffs based on your own trigger rules.",
+  },
 ];
 
 const planSummary = WHOLESALE_PLANS.map((p) => {
@@ -122,7 +165,7 @@ const onboardingFaqs = [
   {
     question: "Do I need my own API keys to launch?",
     answer:
-      "No. The platform runs on built-in voice engines, so you can go live without touching a single API key. If you prefer, bring your own Vapi, Retell, or ElevenLabs keys and usage is billed directly to your provider account — the AI credentials guide walks you through connecting them.",
+      "No. The platform runs on built-in voice engines, so you can go live without touching a single API key. If you prefer, bring your own Vapi, Retell, or ElevenLabs keys and usage is billed directly to your provider account — the AI credentials guide walks you through connecting them. Most partners start with Vapi; it's the smoothest first engine.",
   },
   {
     question: "How fast can we go live?",
@@ -169,6 +212,8 @@ const schema = {
 };
 
 function GuideLinks({ guides }: { guides: GuideLink[] }) {
+  const cls =
+    "inline-flex items-center gap-1.5 text-sm font-medium text-brand-light hover:text-brand transition-colors";
   return (
     <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2">
       {guides.map((g) =>
@@ -177,18 +222,19 @@ function GuideLinks({ guides }: { guides: GuideLink[] }) {
             key={g.href}
             href={g.href}
             target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-light hover:text-brand transition-colors"
+            rel={g.referral ? "sponsored noopener noreferrer" : "noopener noreferrer"}
+            className={cls}
           >
             {g.label}
-            <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+            {g.recommended && (
+              <span className="rounded-full border border-brand/30 bg-brand/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-brand-light">
+                Recommended
+              </span>
+            )}
+            <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
           </a>
         ) : (
-          <Link
-            key={g.href}
-            href={g.href}
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-light hover:text-brand transition-colors"
-          >
+          <Link key={g.href} href={g.href} className={cls}>
             {g.label}
             <ArrowRight className="h-3.5 w-3.5" aria-hidden />
           </Link>
@@ -225,20 +271,37 @@ export default function OnboardingPage({
                 White-label partner onboarding
               </span>
               {name && (
-                <p className="mb-3 text-lg text-brand-light">Welcome, {name} —</p>
+                <p className="mb-3 text-lg text-brand-light">
+                  Welcome, {name} — here&rsquo;s everything from your discovery call, on one page.
+                </p>
               )}
               <h1 className="mb-5 text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white">
-                You&rsquo;ve seen it work.{" "}
+                Everything you need to run your{" "}
                 <span className="bg-gradient-to-r from-brand-light via-brand to-brand-strong bg-clip-text text-transparent">
-                  Here&rsquo;s how it goes live.
+                  white-label AI voice business.
                 </span>
               </h1>
-              <p className="mb-8 text-lg sm:text-xl leading-relaxed text-gray-400">
-                Everything from your discovery call, on one page: start the
-                3-day free trial, follow the setup guides, and put your first
-                branded voice agent live — most partners do it within 48 hours.
-                No documents to wait on.
+              <p className="mb-6 text-lg sm:text-xl leading-relaxed text-gray-400">
+                Branded dashboards with client sub-accounts, AI receptionists
+                that answer, qualify, and book around the clock, your own
+                pricing with Stripe rebilling, and Vapi, Retell, or ElevenLabs
+                under the hood — one platform for every client you onboard.
+                Start with the 3-day free trial, follow the setup guides, and
+                launch with support on standby.
               </p>
+              <div className="mb-8 flex flex-wrap gap-2">
+                {["3-day free trial", "$0 setup", "Keep 100% of client revenue"].map((chip) => (
+                  <span
+                    key={chip}
+                    className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-black/40 px-3 py-1.5 text-xs text-gray-300"
+                  >
+                    <span className="text-brand" aria-hidden>
+                      ✓
+                    </span>
+                    {chip}
+                  </span>
+                ))}
+              </div>
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <a href={APP_URL} target="_blank" rel="noopener noreferrer" className={primaryButton}>
                   Start your free trial
@@ -254,14 +317,26 @@ export default function OnboardingPage({
           </div>
         </section>
 
-        {/* Recap strip */}
-        <section className="w-full bg-black section-rhythm">
+        {/* What's included */}
+        <section id="included" className="w-full bg-black section-rhythm scroll-mt-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-            <p className="text-center text-sm md:text-base text-gray-400 max-w-3xl mx-auto">
-              You&rsquo;re getting your own branded dashboard with client
-              sub-accounts, multi-engine voice AI (Vapi, Retell & ElevenLabs),
-              calendar & CRM booking, and smart call routing — the full picture
-              lives on the{" "}
+            <SectionHeader
+              title="What Your Platform Includes"
+              highlight="Includes"
+              subtitle="The full white-label package — and every client you onboard gets their own branded portal."
+            />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+              {capabilityCards.map((card, i) => (
+                <Reveal key={card.title} delay={i * 0.06}>
+                  <div className="glass-light rounded-xl p-5 md:p-6 border border-brand/20 h-full">
+                    <h3 className="text-base md:text-lg font-bold text-brand-light mb-1">{card.title}</h3>
+                    <p className="text-sm md:text-base text-gray-400">{card.text}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+            <p className="text-center mt-6 text-sm text-gray-400">
+              The complete picture lives on the{" "}
               <Link
                 href="/whitelabel"
                 className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors"
@@ -277,9 +352,9 @@ export default function OnboardingPage({
         <section id="launch-steps" className="w-full bg-black section-rhythm scroll-mt-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <SectionHeader
-              title="The Next 48 Hours, Step by Step"
-              highlight="Step by Step"
-              subtitle="Five steps from sign-up to your first live call. Each one links the exact guide that walks you through it."
+              title="From Account to First Live Call"
+              highlight="First Live Call"
+              subtitle="Five steps take you from sign-up to a live client — each one links the exact guide, plus the provider accounts you'll need on the way."
             />
             <div className="max-w-3xl mx-auto">
               {launchSteps.map((step, i) => (
@@ -297,6 +372,14 @@ export default function OnboardingPage({
                       <h3 className="text-lg md:text-xl font-bold text-white mb-2">{step.title}</h3>
                       <p className="text-sm md:text-base text-gray-400 leading-relaxed">{step.text}</p>
                       <GuideLinks guides={step.guides} />
+                      {step.signups && (
+                        <div className="mt-3">
+                          <p className="mb-1.5 font-mono text-[11px] uppercase tracking-wider text-gray-500">
+                            Provider signups
+                          </p>
+                          <GuideLinks guides={step.signups} />
+                        </div>
+                      )}
                     </div>
                   </div>
                 </Reveal>
