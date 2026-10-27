@@ -44,6 +44,19 @@ export const PAGE_UPDATED: Record<string, string> = {
   "/alternative/goodcall": "2026-10-28",
   // 2026-10-28 best-of listicle + inbound links (phase 4)
   "/blog/best-ai-receptionists-small-business": "2026-10-28",
+  // 2026-10-28 city-level locations added (phase 5); feeds sitemap lastmod —
+  // the location page templates themselves date from CONTENT_LAST_UPDATED
+  "/whitelabel/locations": "2026-10-28",
+  "/whitelabel/locations/los-angeles": "2026-10-28",
+  "/whitelabel/locations/san-francisco": "2026-10-28",
+  "/whitelabel/locations/dallas": "2026-10-28",
+  "/whitelabel/locations/houston": "2026-10-28",
+  "/whitelabel/locations/miami": "2026-10-28",
+  "/whitelabel/locations/new-york-city": "2026-10-28",
+  "/whitelabel/locations/chicago": "2026-10-28",
+  "/whitelabel/locations/atlanta": "2026-10-28",
+  "/whitelabel/locations/phoenix": "2026-10-28",
+  "/whitelabel/locations/seattle": "2026-10-28",
 };
 
 /** Revision date for a path: its PAGE_UPDATED entry, or the global fallback.

@@ -127,10 +127,10 @@ export default function WhitelabelLocationsHub() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <div className="text-center mb-12 md:mb-16">
               <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
-                Available States
+                States &amp; Metro Areas
               </h2>
               <p className="text-gray-400 text-base sm:text-lg max-w-3xl mx-auto">
-                We&apos;re expanding nationwide. Click your state for
+                We&apos;re expanding nationwide. Click a state or metro for
                 localized partner information, industry insights, and
                 compliance guidance.
               </p>
