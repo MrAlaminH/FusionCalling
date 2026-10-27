@@ -10,7 +10,7 @@ export const PAGE_UPDATED: Record<string, string> = {
   "/ai-receptionist-for-small-business": "2026-09-24",
   "/ai-phone-call-automation/after-hours-answering": "2026-09-24",
   // 2026-10-06 GSC-driven content upgrades (list-intent sections, retargets)
-  "/alternative": "2026-10-06",
+  "/alternative": "2026-10-28",
   "/alternative/chatdash": "2026-10-06",
   "/alternative/vapify": "2026-10-06",
   "/alternative/voicerr": "2026-10-06",
@@ -40,6 +40,8 @@ export const PAGE_UPDATED: Record<string, string> = {
   "/whitelabel/gohighlevel": "2026-10-06",
   // New linkable asset: white-label partner onboarding guide (2026-10-22)
   "/whitelabel/onboarding": "2026-10-22",
+  // 2026-10-28 new comparison page (goodcall); Bolna section on /alternative
+  "/alternative/goodcall": "2026-10-28",
 };
 
 /** Revision date for a path: its PAGE_UPDATED entry, or the global fallback.

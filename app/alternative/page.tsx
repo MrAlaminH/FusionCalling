@@ -275,6 +275,55 @@ export default function CompareHubPage() {
             </div>
           </div>
 
+          {/* Bolna subsection — "bolna ai competitors" ranks on this hub, so
+              the answer lives here (no dedicated page; phase 3, 2026-10-28). */}
+          <div className="mb-16">
+            <div className="glass-light rounded-2xl p-8 border border-brand/20 max-w-4xl mx-auto">
+              <h3 className="text-xl font-bold text-white mb-3">
+                Bolna AI competitors &amp; alternatives
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed mb-3">
+                Bolna is an open-source voice AI framework for building
+                conversational phone agents from speech components — speech
+                recognition, an LLM, and speech synthesis — either self-hosted
+                or on its cloud. That makes it a fit for engineering teams who
+                want source-level control and are comfortable running their own
+                infrastructure.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                Teams that want a finished product instead of a framework
+                usually end up comparing commercial platforms. The closest
+                documented alternatives:
+              </p>
+              <ul className="text-sm text-gray-400 space-y-2">
+                <li>
+                  <Link href="/alternative/vapi" className="text-brand-light hover:text-brand transition-colors">
+                    Vapi
+                  </Link>{" "}
+                  — BYO-models engine with a transparent platform fee; tooling and billing are self-built.
+                </li>
+                <li>
+                  <Link href="/alternative/retell" className="text-brand-light hover:text-brand transition-colors">
+                    Retell AI
+                  </Link>{" "}
+                  — usage-based platform with strong call-center tooling; resale layer is self-built.
+                </li>
+                <li>
+                  <Link href="/alternative/bland-ai" className="text-brand-light hover:text-brand transition-colors">
+                    Bland AI
+                  </Link>{" "}
+                  — API-first calling for high-volume outbound; agency workflows are self-built.
+                </li>
+                <li>
+                  <Link href="/whitelabel/compare" className="text-brand-light hover:text-brand transition-colors">
+                    Fusion Calling
+                  </Link>{" "}
+                  — a managed white-label platform with 6 sub-accounts from $99/mo for agencies reselling under their own brand.
+                </li>
+              </ul>
+            </div>
+          </div>
+
           {/* What makes Fusion Calling different */}
           <div className="glass rounded-3xl p-8 md:p-12 border border-brand/30 mb-16">
             <div className="text-center mb-12">
