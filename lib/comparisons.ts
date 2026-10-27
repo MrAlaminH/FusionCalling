@@ -3152,6 +3152,12 @@ export const comparisons: Comparison[] = [
           note: "Long-standing dedicated RVM platform with per-drop pricing.",
         },
         {
+          name: "Drop Cowboy",
+          href: "/alternative/drop-cowboy",
+          bestFor: "High-volume ringless voicemail and SMS broadcasting",
+          note: "Dedicated RVM and text-broadcast platform with cloned-voice campaigns; one-way outreach rather than two-way AI conversations.",
+        },
+        {
           name: "Call Loop",
           bestFor: "SMS + voice broadcast campaigns",
           note: "Messaging-only automation; no live two-way conversations.",

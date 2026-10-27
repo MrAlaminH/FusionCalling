@@ -27,7 +27,7 @@ export const PAGE_UPDATED: Record<string, string> = {
   "/alternative/aioncalls": "2026-10-06",
   "/alternative/birdcall": "2026-10-28",
   "/alternative/voiceflow": "2026-10-06",
-  "/alternative/voicestamp": "2026-10-06",
+  "/alternative/voicestamp": "2026-10-28",
   "/alternative/voicelate": "2026-10-06",
   "/alternative/famulor": "2026-10-06",
   // 2026-10-28 exact-match title fixes (plans/seo-growth-2026-10 phase 1) +
