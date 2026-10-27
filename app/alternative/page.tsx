@@ -12,9 +12,9 @@ const title = `Voice AI Platform Alternatives (2026)`;
 // Alternatives-first framing — GSC queries hitting this hub are "vapi
 // alternative", "bland ai alternative", "synthflow alternative" etc., and
 // /whitelabel/compare owns the feature-matrix framing.
-const description = `Voice AI platform alternatives, ranked: Fusion Calling vs Vapi, Retell AI, Synthflow, Smith.ai + ${
+const description = `Voice AI platform alternatives, ranked: Fusion Calling vs Vapi, Retell, Synthflow, Smith.ai + ${
   comparisons.length - 5
-} more. Pricing, features, white-label support — pick the right platform.`;
+} more. Pricing, features and white-label support compared.`;
 
 export const metadata: Metadata = {
   title,

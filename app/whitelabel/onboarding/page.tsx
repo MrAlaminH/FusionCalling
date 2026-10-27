@@ -13,7 +13,7 @@ import { WHOLESALE_PLANS } from "@/lib/product-facts";
 
 const title = "White-Label Partner Onboarding Guide";
 const description =
-  "Set up your white-label AI voice platform: branded dashboards and client sub-accounts, AI receptionists that answer and book 24/7, telephony and engine setup (Vapi, Retell, ElevenLabs), Stripe rebilling, and the docs to do it all self-serve.";
+  "Set up your white-label AI voice platform: branded dashboard, client sub-accounts, Vapi/Retell/ElevenLabs engine setup, Stripe rebilling, and self-serve docs.";
 
 const CAL_URL = "https://cal.com/mralamin/discovery-call";
 const APP_URL = "https://app.fusioncalling.com/signup";

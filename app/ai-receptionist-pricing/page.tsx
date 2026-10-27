@@ -11,7 +11,7 @@ import { PAGE_UPDATED } from "@/lib/page-updated";
 
 const title = "AI Receptionist Pricing: 2026 Benchmark";
 const description =
-  "What AI receptionists cost in 2026: entry prices for 21 voice AI platforms, the median published plan, what changes the price, and how flat-rate reseller plans compare.";
+  "What AI receptionists cost in 2026: entry prices for 21 platforms, the median published plan, and how flat-rate reseller plans compare.";
 
 const pageUpdated = PAGE_UPDATED["/ai-receptionist-pricing"];
 

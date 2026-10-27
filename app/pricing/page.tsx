@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -240,6 +241,16 @@ export default function PricingPage() {
             </div>
           </div>
         </section>
+        <p className="text-center text-gray-400 text-xs pb-8">
+          Want per-provider prices, not just our plans?{" "}
+          <Link
+            href="/ai-receptionist-pricing"
+            className="text-brand hover:text-brand-light underline underline-offset-4 hover:underline transition-colors"
+          >
+            See the 2026 AI receptionist pricing benchmark
+          </Link>
+          .
+        </p>
         <Footer />
       </main>
     </>

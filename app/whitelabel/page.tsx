@@ -40,11 +40,11 @@ const PROVIDER_LINKS = [
 ];
 
 export const metadata: Metadata = {
-  title: "White Label AI Receptionist Platform — Keep 100% of Revenue",
+  title: "White Label AI Receptionist Platform",
   description:
     "White-label AI receptionist & voice agent platform for agencies: resell Vapi, Retell & ElevenLabs, keep 100% of client revenue, and launch in 24 hours.",
   ...buildOpenGraph({
-    title: "White Label AI Receptionist Platform — Keep 100% of Revenue",
+    title: "White Label AI Receptionist Platform — Keep 100% Revenue",
     description:
       "White-label AI receptionist & voice agent platform for agencies: resell Vapi, Retell & ElevenLabs, keep 100% of client revenue, and launch in 24 hours.",
     path: "/whitelabel",
