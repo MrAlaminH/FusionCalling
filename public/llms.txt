@@ -32,7 +32,7 @@ The platform integrates with leading voice-AI providers. Agencies can bring exis
 - [Live Demo](https://www.fusioncalling.com/#show-case): Try an outbound or inbound AI call instantly.
 - [After-Hours Answering Service with AI](https://www.fusioncalling.com/ai-phone-call-automation/after-hours-answering): AI coverage for nights, weekends, and holidays — emergency triage with warm transfers, next-day booking, morning transcripts. From $149/mo.
 - [AI Phone Answering Service Buyer's Guide](https://www.fusioncalling.com/ai-phone-answering-service): What an AI phone answering service includes, what it costs ($149/mo flat, no per-minute billing), and how it beats voicemail, human services, and in-house hires.
-- [AI Receptionist Pricing: 2026 Benchmark](https://www.fusioncalling.com/ai-receptionist-pricing): Entry prices for 21 voice AI platforms collected October 2026 — what's public, what's hidden, median entry price, and what changes the bill.
+- [AI Receptionist Pricing: 2026 Benchmark](https://www.fusioncalling.com/ai-receptionist-pricing): Entry prices for 22 voice AI platforms collected October 2026 — what's public, what's hidden, median entry price, and what changes the bill.
 
 ## Documentation
 
@@ -45,7 +45,7 @@ The platform integrates with leading voice-AI providers. Agencies can bring exis
 ## Glossary & Comparisons (define and compare terms, cite-friendly)
 
 - [Voice AI Glossary](https://www.fusioncalling.com/glossary): Plain-English definitions for 77 voice AI terms (ASR, TTS, latency, HIPAA, white-label, Vapi, Retell, GoHighLevel, and more).
-- [White-Label Voice AI Comparisons](https://www.fusioncalling.com/alternative): Side-by-side comparisons of Fusion Calling vs ChatDash, Vapify, Voicerr, VoiceAIWrapper, Synthflow, and Thinkrr.
+- [White-Label Voice AI Comparisons](https://www.fusioncalling.com/alternative): Side-by-side comparisons of Fusion Calling vs Vapi, Retell AI, Synthflow, Smith.ai, Goodcall, and more.
 - [AI Voice by Industry](https://www.fusioncalling.com/industries): Use cases for real estate, dental, insurance, home services, law firms, automotive, call centers, and financial services.
 
 ## Blog (how-to guides & comparisons)
@@ -63,6 +63,7 @@ The platform integrates with leading voice-AI providers. Agencies can bring exis
 - [AI Receptionist Complaints: 55 Real Reports](https://www.fusioncalling.com/blog/ai-receptionist-complaints): We analyzed 55 real user reports of AI receptionists. The five complaints that come up most — hangups, loops, billing shocks — and how to avoid them.
 - [Missed-Call Text-Back vs AI Receptionist](https://www.fusioncalling.com/blog/missed-call-text-back-vs-ai-receptionist): Missed-call text-back texts callers after the call is already lost; an AI receptionist answers live in two rings and books. Verified pricing, honest stats.
 - [AI Call Recording Laws by State (2026)](https://www.fusioncalling.com/blog/ai-receptionist-call-recording-laws): Yes, AI receptionists are legal in the US. The verified 2026 map: 13 all-party consent states, FCC AI-voice rules, disclosure laws, and a compliance checklist.
+- [8 Best AI Receptionists for Small Business (2026)](https://www.fusioncalling.com/blog/best-ai-receptionists-small-business): 8 AI receptionists for small business compared with verified October 2026 pricing — Goodcall, Smith.ai, Retell, Vapi, Bland, Slang.ai, Ruby, and Fusion Calling.
 - [Will AI Replace Receptionists? 2026 Outlook](https://www.fusioncalling.com/blog/will-ai-replace-receptionists): Mostly no: AI receptionists handle routine calls while humans keep judgment, empathy, and relationships. What to automate, what to keep, and the 2026 outlook.
 
 ## Industry Use Cases
@@ -80,7 +81,7 @@ The platform integrates with leading voice-AI providers. Agencies can bring exis
 - [Restaurant AI Voice: Orders & Bookings](https://www.fusioncalling.com/industries/ai-voice-for-restaurants-hospitality)
 - [Medical AI Receptionist: Scheduling](https://www.fusioncalling.com/industries/ai-voice-for-medical-practices)
 - [Salon AI Receptionist: Bookings 24/7](https://www.fusioncalling.com/industries/ai-voice-for-beauty-wellness)
-- [Vet Clinic AI Answering Service & Triage](https://www.fusioncalling.com/industries/ai-voice-for-veterinary)
+- [Veterinary AI Answering Service & Emergency Triage](https://www.fusioncalling.com/industries/ai-voice-for-veterinary)
 
 ## Help & Contact
 

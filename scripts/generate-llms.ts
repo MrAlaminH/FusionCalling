@@ -73,7 +73,7 @@ Each industry page includes use cases, ROI statistics, agency angle, and why Fus
   {
     path: "/alternative",
     title: "White-Label Voice AI Comparisons | Fusion Calling",
-    content: `Side-by-side comparisons of top white-label voice AI platforms for agencies. Compare Fusion Calling vs ChatDash, Vapify, Voicerr, VoiceAIWrapper, Synthflow, Thinkrr, Bland AI, Air AI.
+    content: `Side-by-side comparisons of top voice AI platforms for buyers and agencies. Compare Fusion Calling vs Vapi, Retell AI, ElevenLabs, Synthflow, Smith.ai, Goodcall, ChatDash, Vapify, Thinkrr, Bland AI, Air AI, and more.
 
 Comparison criteria: starting price, sub-accounts included, voice providers supported, live demo availability, onboarding model, GoHighLevel integration, client billing, top-tier pricing.`,
   },
@@ -284,7 +284,7 @@ function generateLLMS(): string {
     `## Glossary & Comparisons (define and compare terms, cite-friendly)`,
     ``,
     `- [Voice AI Glossary](${SITE_URL}/glossary): Plain-English definitions for 77 voice AI terms (ASR, TTS, latency, HIPAA, white-label, Vapi, Retell, GoHighLevel, and more).`,
-    `- [White-Label Voice AI Comparisons](${SITE_URL}/alternative): Side-by-side comparisons of Fusion Calling vs ChatDash, Vapify, Voicerr, VoiceAIWrapper, Synthflow, and Thinkrr.`,
+    `- [White-Label Voice AI Comparisons](${SITE_URL}/alternative): Side-by-side comparisons of Fusion Calling vs Vapi, Retell AI, Synthflow, Smith.ai, Goodcall, and more.`,
     `- [AI Voice by Industry](${SITE_URL}/industries): Use cases for real estate, dental, insurance, home services, law firms, automotive, call centers, and financial services.`,
     ``,
     `## Blog (how-to guides & comparisons)`,
