@@ -16,7 +16,7 @@ export const PAGE_UPDATED: Record<string, string> = {
   "/alternative/voicerr": "2026-10-06",
   "/alternative/thinkrr": "2026-10-06",
   "/alternative/verloop": "2026-10-06",
-  "/alternative/drop-cowboy": "2026-10-06",
+  "/alternative/drop-cowboy": "2026-10-28",
   // 2026-10-06: ranked alternatives list added to every remaining comparison
   // page (vapi already carried one from the previous commit)
   "/alternative/voiceaiwrapper": "2026-10-06",
@@ -25,12 +25,13 @@ export const PAGE_UPDATED: Record<string, string> = {
   "/alternative/elevenlabs": "2026-10-06",
   "/alternative/gohighlevel": "2026-10-06",
   "/alternative/aioncalls": "2026-10-06",
-  "/alternative/birdcall": "2026-10-06",
+  "/alternative/birdcall": "2026-10-28",
   "/alternative/voiceflow": "2026-10-06",
   "/alternative/voicestamp": "2026-10-06",
   "/alternative/voicelate": "2026-10-06",
   "/alternative/famulor": "2026-10-06",
-  // 2026-10-28 exact-match title fixes (plans/seo-growth-2026-10 phase 1)
+  // 2026-10-28 exact-match title fixes (plans/seo-growth-2026-10 phase 1) +
+  // 2026-10-28 aioncalls context links added to ranked lists (phase 2)
   "/industries/ai-voice-for-veterinary": "2026-10-28",
   "/ai-phone-call-automation": "2026-10-28",
   // New linkable asset: AI receptionist pricing benchmark (2026-10-06)

@@ -2802,6 +2802,12 @@ export const comparisons: Comparison[] = [
           bestFor: "High-volume outbound infrastructure",
           note: "API-first calling at scale; self-built tooling for agency workflows.",
         },
+        {
+          name: "AIOnCalls",
+          href: "/alternative/aioncalls",
+          bestFor: "Teams wanting inbound and outbound call handling in one place",
+          note: "Inbound and outbound calling with CRM links; if reselling is the goal, compare its white-label depth before committing.",
+        },
       ],
     },
     keyStatistics: {
@@ -3867,7 +3873,7 @@ export const comparisons: Comparison[] = [
     quickAnswer:
       "Drop Cowboy is a credible choice for ringless voicemail and SMS broadcasting at scale. It is not built for two-way AI phone conversations — no back-and-forth with a live caller. If your clients need agents that answer calls, qualify, and book, Fusion Calling provides that: Vapi, Retell, and ElevenLabs under one branded dashboard, 6 sub-accounts from $99/mo, and a 24-hour guided launch.",
     topAlternatives: {
-      heading: "The 6 best Drop Cowboy alternatives, ranked (2026)",
+      heading: "The 7 best Drop Cowboy alternatives, ranked (2026)",
       intro:
         "Drop Cowboy is a messaging platform for ringless voicemail and SMS broadcasts. Ranked by fit: dedicated broadcast tools and two-way conversational platforms — different jobs, so pick by the job — verify current pricing before you commit.",
       items: [
@@ -3902,6 +3908,12 @@ export const comparisons: Comparison[] = [
           href: "/alternative/air-ai",
           bestFor: "Teams wanting a sales-development AI caller",
           note: "Outbound-focused AI calling; evaluate compliance controls and current availability before committing.",
+        },
+        {
+          name: "AIOnCalls",
+          href: "/alternative/aioncalls",
+          bestFor: "Teams wanting inbound and outbound AI calling with CRM links",
+          note: "One platform for inbound and outbound calls and CRM integrations; a different job from ringless voicemail, so pick by the job.",
         },
       ],
     },
