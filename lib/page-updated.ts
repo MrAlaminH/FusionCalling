@@ -37,7 +37,7 @@ export const PAGE_UPDATED: Record<string, string> = {
   // New linkable asset: AI receptionist pricing benchmark (2026-10-06)
   "/ai-receptionist-pricing": "2026-10-28",
   // GHL sub-account deployment section (title/meta unchanged — freeze holds)
-  "/whitelabel/gohighlevel": "2026-10-06",
+  "/whitelabel/gohighlevel": "2026-10-28",
   // New linkable asset: white-label partner onboarding guide (2026-10-22)
   "/whitelabel/onboarding": "2026-10-22",
   // 2026-10-28 new comparison page (goodcall); Bolna section on /alternative

@@ -145,7 +145,14 @@ export default function GHLWhiteLabelPage() {
                   </span>
                 </h2>
                 <p className="text-gray-400 text-base sm:text-lg max-w-3xl mx-auto">
-                  GoHighLevel&apos;s native Missed Call Text Back sends an
+                  GoHighLevel&apos;s native{" "}
+                  <Link
+                    href="/blog/missed-call-text-back-vs-ai-receptionist"
+                    className="text-brand-light hover:text-brand transition-colors"
+                  >
+                    Missed Call Text Back
+                  </Link>{" "}
+                  sends an
                   automatic SMS when a call goes unanswered. Pair it with Fusion
                   Calling&apos;s white-label AI voice agent and the missed call
                   mostly disappears: the AI answers in two rings, 24/7, takes the
