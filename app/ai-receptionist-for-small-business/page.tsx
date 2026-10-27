@@ -699,6 +699,13 @@ export default function AiReceptionistForSmallBusinessPage() {
                 </Reveal>
               ))}
             </div>
+            <p className="text-gray-400 leading-relaxed mt-8">
+              Setting up is the easy part — choosing the platform matters more.{" "}
+              <Link href="/blog/best-ai-receptionists-small-business" className="text-brand-light hover:text-brand underline underline-offset-4">
+                We compared the full field of AI receptionists for small business
+              </Link>{" "}
+              with verified October 2026 pricing and a fit verdict for each.
+            </p>
           </div>
         </section>
 

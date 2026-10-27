@@ -180,6 +180,17 @@ export const blogPosts: BlogPost[] = [
     image: "/blog/blog3.webp",
   },
   {
+    slug: "best-ai-receptionists-small-business",
+    title: "8 Best AI Receptionists for Small Business (2026 Review)",
+    metaTitle: "8 Best AI Receptionists for Small Business (2026)",
+    description:
+      "8 AI receptionists for small business compared with verified October 2026 pricing — Goodcall, Smith.ai, Retell, Vapi, Bland, Slang.ai, Ruby, and Fusion Calling.",
+    date: "2026-10-28",
+    category: "Buyer's Guide",
+    readTime: "9 min read",
+    image: "/blog/blog6.webp",
+  },
+  {
     slug: "will-ai-replace-receptionists",
     title: "Will AI Replace Receptionists? What Actually Changes in 2026",
     metaTitle: "Will AI Replace Receptionists? 2026 Outlook",

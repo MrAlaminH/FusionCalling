@@ -187,7 +187,12 @@ export default function PricingBenchmarkPage() {
             <p className="text-gray-400 leading-relaxed mb-10 max-w-2xl">
               The cheapest publicly listed plan per platform, quoted exactly as
               each platform states it. Monthly-published plans sort first;
-              everything else follows with its exact status.
+              everything else follows with its exact status. Evaluating a
+              specific small business?{" "}
+              <Link href="/blog/best-ai-receptionists-small-business" className="text-brand-light hover:text-brand underline underline-offset-4">
+                We compared the full field for small-business fit
+              </Link>{" "}
+              with per-vendor verdicts.
             </p>
             <div className="overflow-x-auto rounded-xl border border-white/10">
               <table className="w-full min-w-[680px] text-sm">

@@ -405,5 +405,23 @@ export const blogFaqs: Record<string, BlogFaq[]> = {
       "question": "How do businesses introduce an AI receptionist to callers?",
       "answer": "Simply and honestly. A short disclosure such as 'This is the automated assistant for [business]' at the start of the call, consistent branding, and an instant path to a human when asked. Callers adapt quickly to good AI, and clear disclosure builds trust — some jurisdictions also require it for call recording, so check local rules before launch."
     }
+  ],
+  "best-ai-receptionists-small-business": [
+    {
+      "question": "How much does an AI receptionist cost for a small business?",
+      "answer": "As of October 2026, entry prices span roughly $79 to $600 per month for subscription plans: Goodcall starts at $79/mo, Fusion Calling at $149/mo with 500 included minutes, and Smith.ai's per-call plans at $300/mo for 30 calls. Usage-based engines (Retell at $0.07–$0.31/min, Vapi at $0.05/min plus provider costs, Bland at $0.14/min) can run cheaper at low volume but scale with every minute of talk time. Human services like Ruby start at $250/mo for 50 minutes."
+    },
+    {
+      "question": "What is the best AI receptionist for a small business?",
+      "answer": "It depends on the job. For a single location that wants simple setup, Goodcall's no-code builder and $79/mo entry fit well. For flat-rate answering with included minutes and transcripts, Fusion Calling's $149/mo plan covers most single locations. For law firms that want humans available, Smith.ai. For restaurants, Slang.ai. Teams with engineering resources that want per-minute control should look at Retell or Vapi instead."
+    },
+    {
+      "question": "Are per-minute AI receptionists cheaper than flat-rate plans?",
+      "answer": "At low volume, sometimes. A business taking 100 minutes a month on Retell at roughly $0.11/min pays about $11 plus a $2/mo phone number — well under any flat plan. Past a few hundred minutes a month, flat-rate plans with included minutes usually win, because usage bills scale with every second while a $149/mo plan with 500 minutes covers most single-location volume. Estimate your busiest month's minutes, not your average month, before choosing."
+    },
+    {
+      "question": "Will callers know they are talking to an AI receptionist?",
+      "answer": "They should — disclose it briefly at the start of the call. Every platform in this list produces natural, interruptible conversation, and callers generally adapt quickly. The practical requirement is an instant path to a human: configure escalation triggers before launch, because hangups and loops happen when the agent has no configured way to hand off."
+    }
   ]
 };

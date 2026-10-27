@@ -7,7 +7,7 @@ import { CONTENT_LAST_UPDATED } from "@/lib/site-url";
 
 export const PAGE_UPDATED: Record<string, string> = {
   "/ai-phone-call-receptionist": "2026-09-24",
-  "/ai-receptionist-for-small-business": "2026-09-24",
+  "/ai-receptionist-for-small-business": "2026-10-28",
   "/ai-phone-call-automation/after-hours-answering": "2026-09-24",
   // 2026-10-06 GSC-driven content upgrades (list-intent sections, retargets)
   "/alternative": "2026-10-28",
@@ -35,13 +35,15 @@ export const PAGE_UPDATED: Record<string, string> = {
   "/industries/ai-voice-for-veterinary": "2026-10-28",
   "/ai-phone-call-automation": "2026-10-28",
   // New linkable asset: AI receptionist pricing benchmark (2026-10-06)
-  "/ai-receptionist-pricing": "2026-10-06",
+  "/ai-receptionist-pricing": "2026-10-28",
   // GHL sub-account deployment section (title/meta unchanged — freeze holds)
   "/whitelabel/gohighlevel": "2026-10-06",
   // New linkable asset: white-label partner onboarding guide (2026-10-22)
   "/whitelabel/onboarding": "2026-10-22",
   // 2026-10-28 new comparison page (goodcall); Bolna section on /alternative
   "/alternative/goodcall": "2026-10-28",
+  // 2026-10-28 best-of listicle + inbound links (phase 4)
+  "/blog/best-ai-receptionists-small-business": "2026-10-28",
 };
 
 /** Revision date for a path: its PAGE_UPDATED entry, or the global fallback.
