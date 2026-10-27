@@ -1401,7 +1401,7 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2026-09-19T00:00:00Z",
     productSupported: true,
-    metaTitle: "Vet Clinic AI Answering Service & Triage",
+    metaTitle: "Veterinary AI Answering Service & Emergency Triage",
     metaDescription:
       "AI answering service for veterinary clinics: every call answered 24/7, visits booked on the call, emergencies triaged to staff instantly. From $149/mo.",
     keywords: [
@@ -1416,7 +1416,7 @@ export const industries: Industry[] = [
       "ai phone system for veterinary clinics",
     ],
     h1: "AI Answering Service for",
-    h1Highlight: "Vet Clinics",
+    h1Highlight: "Veterinary Clinics",
     subtitle:
       "Every worried pet owner answered, every visit booked, every emergency escalated to the right person — even mid-surgery.",
     intro: [

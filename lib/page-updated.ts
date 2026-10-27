@@ -30,8 +30,9 @@ export const PAGE_UPDATED: Record<string, string> = {
   "/alternative/voicestamp": "2026-10-06",
   "/alternative/voicelate": "2026-10-06",
   "/alternative/famulor": "2026-10-06",
-  "/industries/ai-voice-for-veterinary": "2026-10-06",
-  "/ai-phone-call-automation": "2026-10-06",
+  // 2026-10-28 exact-match title fixes (plans/seo-growth-2026-10 phase 1)
+  "/industries/ai-voice-for-veterinary": "2026-10-28",
+  "/ai-phone-call-automation": "2026-10-28",
   // New linkable asset: AI receptionist pricing benchmark (2026-10-06)
   "/ai-receptionist-pricing": "2026-10-06",
   // GHL sub-account deployment section (title/meta unchanged — freeze holds)

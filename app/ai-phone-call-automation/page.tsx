@@ -8,7 +8,7 @@ import { DIRECT_PLANS } from "@/lib/product-facts";
 import { SITE_URL } from "@/lib/site-url";
 import { PAGE_UPDATED } from "@/lib/page-updated";
 
-const title = "AI Phone Call Automation Guide (2026)";
+const title = "AI Phone Automation (2026 Guide)";
 const description =
   "AI phone call automation handles inbound and outbound calls — receptionist answering, cold calling, lead qualification, and reminders. From $149/mo.";
 
