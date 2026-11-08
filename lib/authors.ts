@@ -45,7 +45,7 @@ export const authors: Author[] = [
     slug: "voice-team",
     name: "Fusion Calling Team",
     role: "Product & Voice Engineering",
-    bio: "The Fusion Calling team builds and operates the white-label AI voice platform used by 100+ agencies worldwide. Our product and voice engineering team specializes in multi-provider voice AI (Vapi, Retell, ElevenLabs), white-label infrastructure, and agency go-to-market strategies. We publish technical guides, industry benchmarks, and agency playbooks based on production data from millions of automated calls.",
+    bio: "The Fusion Calling team builds and operates the white-label AI voice platform used by 100+ agencies worldwide. Our product and voice engineering team specializes in multi-provider voice AI (Vapi, Retell, ElevenLabs), white-label infrastructure, and agency go-to-market strategies. We publish technical guides, industry benchmarks, and agency playbooks based on production data from 50,000+ automated calls.",
     shortBio:
       "The engineering team behind Fusion Calling's multi-provider voice AI platform: Vapi, Retell & ElevenLabs integration and production deployments.",
     avatar: "/avatars/female_avatar.png",
@@ -54,7 +54,7 @@ export const authors: Author[] = [
     email: "team@fusioncalling.com",
     authorSchemaId: `${SITE_URL}/team/voice-team#person`,
     longBio: [
-      "The Fusion Calling Voice Team comprises conversation designers, voice engineers, and platform architects who have collectively deployed 10,000+ AI voice agents across real estate, healthcare, insurance, home services, and legal verticals.",
+      "The Fusion Calling Voice Team comprises conversation designers, voice engineers, and platform architects who have collectively deployed 500+ AI voice agents across real estate, healthcare, insurance, home services, and legal verticals.",
       "They specialize in optimizing latency, barge-in handling, endpointing accuracy, and multi-turn conversation flows. The team maintains direct partnerships with Vapi, Retell, and ElevenLabs engineering teams to ensure Fusion Calling customers get early access to new features and priority support.",
       "Their published work includes the industry's most comprehensive voice AI glossary (77 terms), benchmark studies on provider performance, and open-source tooling for voice agent testing.",
     ],

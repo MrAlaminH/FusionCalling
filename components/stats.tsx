@@ -4,10 +4,10 @@ import { useEffect, useRef, useState } from "react";
 
 const AnimatedStatistics = () => {
   const targets = useRef({
-    projects: 60,
+    projects: 100,
     satisfaction: 99,
     hours: 40,
-    calls: 12,
+    calls: 50,
   });
 
   // Initialize to the final values so search-engine crawlers and no-JS clients
@@ -125,7 +125,7 @@ const AnimatedStatistics = () => {
 
       {/* Source disclaimer */}
       <p className="text-gray-400 text-xs mt-8 max-w-3xl text-center">
-        Statistics based on internal data from Jan 2024 - June 2026. Individual results may vary.
+        Statistics based on internal data, 2025–2026. Individual results may vary.
       </p>
     </section>
   );

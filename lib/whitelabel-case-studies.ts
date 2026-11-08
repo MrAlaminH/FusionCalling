@@ -92,13 +92,13 @@ export const whitelabelCaseStudies: WhiteLabelCaseStudy[] = [
       { value: "$18K", label: "Monthly Recurring Revenue" },
       { value: "22", label: "Active White-Label Clients" },
       { value: "40%", label: "Higher Margins vs Traditional" },
-      { value: "2 Years", label: "Running on Fusion Calling" },
+      { value: "2 Weeks", label: "Full Transition to AI Voice" },
     ],
     story: [
       "CallFlow Solutions started as a traditional call center BPO serving small-to-medium businesses in the Midwest. With 12 agents handling overflow and after-hours calls, margins were tight and scaling required hiring more people.",
       "CEO Sarah Kline had been watching AI voice technology for two years. 'I knew AI was coming for our industry. I decided to get in front of it rather than be disrupted by it.' She found Fusion Calling and saw the white-label opportunity: she could offer AI voice to her existing client base under her own brand.",
       "The transition took 2 weeks. CallFlow kept their brand, moved their best clients to AI voice plans, and gradually reduced their human agent headcount as natural attrition occurred. 'We didn't fire anyone — we retrained. Some agents became AI voice specialists who customize and monitor the AI agents for clients.'",
-      "After 2 years on the platform, CallFlow serves 22 clients with white-label AI voice plans. Their monthly recurring revenue is $18,200. Margins on AI voice are 40% higher than their traditional call center services because there's no per-call staffing cost.",
+      "Today, CallFlow serves 22 clients with white-label AI voice plans. Their monthly recurring revenue is $18,200. Margins on AI voice are 40% higher than their traditional call center services because there's no per-call staffing cost.",
       "'The question isn't whether AI will replace call centers,' Sarah reflects. 'It's which call centers will own the AI relationship with their clients. We own ours through Fusion Calling.'",
     ],
     testimonial: {

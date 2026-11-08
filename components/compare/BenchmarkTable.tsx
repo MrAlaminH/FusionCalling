@@ -86,7 +86,7 @@ export function BenchmarkTable({ competitorName }: { competitorName: string }) {
       </h2>
       <p className="text-gray-400 text-sm mb-6">
         Based on Fusion Calling&apos;s work with 100+ agency partners
-        (2024–2026). We only list metrics with directly comparable data.
+        (2025–2026). We only list metrics with directly comparable data.
       </p>
 
       <div className="overflow-x-auto rounded-xl border border-brand/30">

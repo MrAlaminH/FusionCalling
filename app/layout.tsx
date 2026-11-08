@@ -214,7 +214,7 @@ export default function RootLayout({
                     "@id": `${SITE_URL}/#organization`,
                   },
                   description:
-                    "The team behind Fusion Calling's voice AI platform. 100+ agencies, millions of calls automated.",
+                    "The team behind Fusion Calling's voice AI platform. 100+ agencies, 50,000+ calls automated.",
                   image: `${SITE_URL}/avatars/female_avatar.png`,
                   sameAs: [
                     "https://www.linkedin.com/company/fusion-calling/",

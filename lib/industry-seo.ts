@@ -10,7 +10,7 @@
 // numbers to external bodies (NAR, ADA, Gartner, etc.) — fabricated third-party
 // citations damage E-E-A-T and get dropped by AI cite
 
-export const INDUSTRY_STAT_SOURCE = "FusionCalling platform & client data, 2024–2026";
+export const INDUSTRY_STAT_SOURCE = "FusionCalling platform & client data, 2025–2026";
 
 export function generateIndustryStats(industryName: string) {
   const stats: Record<string, {

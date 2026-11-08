@@ -918,9 +918,9 @@ function IndustriesSlide() {
 
 function ResultsSlide() {
   const counters = [
-    { value: 60, suffix: "+", label: "voice-AI deployments" },
+    { value: 100, suffix: "+", label: "voice-AI deployments" },
     { value: 99, suffix: "%", label: "client satisfaction" },
-    { value: 12000, suffix: "+", label: "calls managed" },
+    { value: 50000, suffix: "+", label: "calls managed" },
     { value: 40, suffix: "h", label: "saved monthly" },
     { value: 80, suffix: "%", label: "fewer missed calls" },
   ];
@@ -940,7 +940,7 @@ function ResultsSlide() {
       meta: "Call center / BPO · Kansas City, MO",
       metric: "$18.2K",
       metricLabel: "monthly recurring revenue",
-      points: ["22 clients on platform", "40% higher margins", "2 years on Fusion Calling"],
+      points: ["22 clients on platform", "40% higher margins", "2-week transition to AI voice"],
       quote: "We didn't fire anyone — we retrained.",
       author: "Sarah Kline, CEO",
     },
@@ -1011,8 +1011,8 @@ function ResultsSlide() {
         ))}
       </div>
       <SourceNote>
-        Platform figures from internal Fusion Calling data, Jan 2024 – Jun
-        2026; individual results may vary. Case figures from published partner
+        Platform figures from internal Fusion Calling data, 2025–2026;
+        individual results may vary. Case figures from published partner
         case studies at fusioncalling.com/whitelabel/case-studies.
       </SourceNote>
     </SlideShell>
