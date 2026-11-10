@@ -112,7 +112,7 @@ export default function Home() {
             name: "What is AI phone call automation?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "AI phone call automation uses artificial intelligence to handle inbound and outbound voice calls without human intervention. It combines speech recognition, natural language processing, and text-to-speech technology to conduct natural conversations that can book appointments, answer questions, qualify leads, and provide customer service 24/7.",
+              text: "AI phone call automation uses artificial intelligence to handle inbound and outbound voice calls without human intervention. It combines speech recognition, natural language processing, and text-to-speech technology to conduct natural conversations that can book appointments, answer questions, qualify leads, and provide customer service 24/7. In practice it works like a phone answering service staffed by AI: every inbound call gets picked up automatically, routine questions get answered end to end, and anything that needs human judgment gets transferred to your team.",
             },
           },
           {
@@ -120,7 +120,7 @@ export default function Home() {
             name: "How much does Fusion Calling cost?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Fusion Calling offers three pricing plans: Starter at $149/month (500 minutes), Pro at $249/month (1,050 minutes), and Enterprise at $497/month (2,100 minutes). All plans include custom voice training, calendar integrations, SMS capabilities, and dedicated support.",
+              text: "Fusion Calling offers three pricing plans: Starter at $149/month (500 minutes), Pro at $249/month (1,050 minutes), and Enterprise at $497/month (2,100 minutes). All plans include custom voice training, calendar integrations, SMS capabilities, and dedicated support. Every plan starts with a 3-day free trial, and you can hear a live demo call on this page before you commit.",
             },
           },
           {
@@ -176,7 +176,15 @@ export default function Home() {
             name: "How does Fusion Calling compare to other AI calling platforms?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Fusion Calling is provider-agnostic across Vapi, Retell, and ElevenLabs, so each call runs on the best engine instead of locking you into one. Plans from $149/month include minutes, calendar and CRM integrations, SMS follow-ups, and a live demo before you commit — compare side by side in the table above.",
+              text: "Fusion Calling is provider-agnostic across Vapi, Retell, and ElevenLabs, so each call runs on the best engine instead of locking you into one. If you're shortlisting other platforms — AionCalls, Synthflow, Bland AI, Smith.ai, GoodCall — we've published side-by-side comparisons with each of them. Plans from $149/month include minutes, calendar and CRM integrations, SMS follow-ups, and a live demo before you commit — compare side by side in the table above.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Do you work with businesses in my area?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. Fusion Calling is fully remote and cloud-hosted, serving businesses across the US and internationally. Your existing business number and carrier stay exactly as they are — calls route to the AI agent with forwarding you control, and porting is never required. Setup, testing, and support all happen over calls and email, so there's nothing to install on-site.",
             },
           },
         ],
