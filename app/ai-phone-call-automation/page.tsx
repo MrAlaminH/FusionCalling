@@ -83,7 +83,7 @@ const directions = [
   },
   {
     title: "Outbound automation",
-    text: "Campaigns dial your lists in parallel within your time-of-day rules: follow-ups, re-engagement, qualification, and reminders — with transcripts and outcome tags on every call.",
+    text: "Campaigns dial your lists in parallel within your time-of-day rules: follow-ups, re-engagement, qualification, reminders, and scheduled check calls for fleets and field crews — with transcripts and outcome tags on every call.",
   },
 ];
 
@@ -409,12 +409,13 @@ export default function AiPhoneCallAutomationPage() {
               What is AI phone call automation?
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-4">
-              AI phone call automation moves routine call work off your team
-              and onto software: voice agents answer inbound calls, place
-              outbound calls, hold natural two-way conversations, and complete
-              the follow-through — booking calendars, writing CRM records, and
-              sending SMS confirmations — while your people handle only the
-              conversations that need judgment.
+              AI phone call automation moves routine call handling off your
+              team and onto software: voice agents answer inbound calls, place
+              outbound calls, and hold natural two-way conversations, while
+              your people handle only the conversations that need judgment.
+              Post-call automation is part of every flow — the moment a call
+              ends, it books the calendar, writes the CRM record, and sends
+              the SMS confirmation without anyone touching a keyboard.
             </p>
             <p className="text-gray-400 text-lg leading-relaxed">
               It covers both directions of your phone lines. Need just the
