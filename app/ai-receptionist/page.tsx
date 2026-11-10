@@ -138,7 +138,7 @@ const faqs = [
   {
     question: "How much does an AI receptionist cost?",
     answer:
-      "Plans start at $149/month with 500 included minutes — see /pricing for the full breakdown across all tiers.",
+      "Plans start at $149/month with 500 included minutes. There is no permanent free tier, but every plan starts with a 3-day free trial, a 14-day money-back guarantee, and a live demo call you can take before committing — see /pricing for the full breakdown across all tiers.",
   },
   {
     question: "Will AI replace receptionists?",
@@ -153,12 +153,12 @@ const faqs = [
   {
     question: "Can callers tell they are talking to an AI?",
     answer:
-      "Owners usually settle this from transcripts, not theory: callers who get an instant correct booking rarely ask whether the voice was human. Best practice is a named greeting up front plus disclosure when asked, with a human-transfer rule for anything emotional — speed plus honesty beats both hold music and a surprise reveal.",
+      "Owners usually settle this from transcripts, not theory: callers who get an instant correct booking rarely ask whether the voice was human. The voices come from natural-sounding speech engines like ElevenLabs, and customers report them up to 95% indistinguishable from human speakers in blind listening tests. Best practice is a named greeting up front plus disclosure when asked, with a human-transfer rule for anything emotional — speed plus honesty beats both hold music and a surprise reveal.",
   },
   {
     question: "What happens when the AI cannot help a caller?",
     answer:
-      "You set the rules for escalation. Emergencies, angry callers, or requests you mark human-only trigger a warm transfer to you or your team, with the transcript, caller details, and reason for the handoff attached. Nothing gets stranded, and nobody has to start over.",
+      "You set the rules for call transfer and escalation. Emergencies, angry callers, or requests you mark human-only trigger a warm transfer to you or your team, with the transcript, caller details, and reason for the handoff attached. Nothing gets stranded, and nobody has to start over.",
   },
   {
     question: "How is an AI receptionist different from an answering service?",
@@ -169,6 +169,11 @@ const faqs = [
     question: "Can I resell an AI receptionist to my clients?",
     answer:
       "Yes. Agencies, consultants, and MSPs resell Fusion Calling as a white-label AI receptionist under their own brand and pricing, with client sub-accounts and Stripe rebilling included. Partner plans start at $99/month — see the white-label program for details.",
+  },
+  {
+    question: "Do I need a new phone number for an AI receptionist?",
+    answer:
+      "No. Your existing business number and carrier stay exactly as they are — calls route to the AI receptionist with forwarding you control, and porting is optional, never required.",
   },
 ];
 
