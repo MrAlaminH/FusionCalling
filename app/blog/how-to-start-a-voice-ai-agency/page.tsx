@@ -138,8 +138,11 @@ export default function StartVoiceAIAgencyBlogPost() {
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                   <span>
-                    Don&apos;t build infra &mdash; partner with a white-label
-                    platform that already integrates the best providers.
+                    Don&apos;t build infra &mdash; partner with a{" "}
+                    <Link href="/whitelabel" className="text-brand-light hover:text-brand transition-colors">
+                      white-label AI receptionist platform
+                    </Link>{" "}
+                    that already integrates the best providers.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">

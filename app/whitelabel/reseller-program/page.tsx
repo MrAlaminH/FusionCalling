@@ -30,7 +30,7 @@ const programSteps = [
 
 const audiences = [
   {
-    t: "Marketing agencies",
+    t: "Digital marketing agencies",
     d: "Add a high-margin, recurring AI service to your retainers. Launch a branded AI receptionist or calling service for every client in about 24 hours.",
   },
   {
