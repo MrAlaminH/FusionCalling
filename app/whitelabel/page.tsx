@@ -141,7 +141,7 @@ export default function WhiteLabelPage() {
           <SectionHeader
             title="Resell Vapi, Retell & ElevenLabs Under Your Brand"
             highlight="Vapi, Retell & ElevenLabs"
-            subtitle="Fusion Calling is provider-agnostic — pick the engine that fits each client and resell it under your own brand."
+            subtitle="Fusion Calling is provider-agnostic — pick the engine that fits each client and resell real-time phone agents under your own brand."
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {PROVIDER_LINKS.map((link, i) => (
@@ -300,7 +300,7 @@ export default function WhiteLabelPage() {
           <SectionHeader
             title="Real Partners, Real White-Label AI Voice Revenue"
             highlight="White-Label AI Voice Revenue"
-            subtitle="Agency partners resell white-label AI voice under their own brand on Fusion Calling. The numbers below come straight from our published case studies — in their words."
+            subtitle="Agency partners resell white-label AI voice under their own brand on Fusion Calling — a private-label AI answering service they sell as their own product. The numbers below come straight from our published case studies — in their words."
           />
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
             {whitelabelCaseStudies.map((cs, i) => {
