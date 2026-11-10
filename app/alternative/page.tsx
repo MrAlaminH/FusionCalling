@@ -8,13 +8,15 @@ import { LAUNCH, PROVIDERS, WHOLESALE_STARTER } from "@/lib/product-facts";
 import { primaryButton } from "@/components/ui/button-styles";
 import PostFaq from "@/components/blog/PostFaq";
 
-const title = `Voice AI Alternatives: Bland, Retell, Synthflow, Famulor`;
+const title = `Vapi Alternatives: Bland, Retell, Synthflow, Famulor`;
 // Alternatives-first framing — GSC queries hitting this hub are "vapi
 // alternative", "bland ai alternative", "synthflow alternative" etc., and
-// /whitelabel/compare owns the feature-matrix framing. Title names the
-// highest-impression brands from GSC (Bland 361, Retell 265, Synthflow 257,
-// Famulor 215) — the old title named none of them, hence 1 click / 1,555 imp.
-const description = `Compare Bland AI, Retell, Synthflow, Famulor, Vapi, ElevenLabs and more — pricing, features, white-label support. Fusion Calling from $99/mo.`;
+// /whitelabel/compare owns the feature-matrix framing. Title leads with the
+// biggest hub query and names the next-highest-impression brands (vapi 1,101,
+// bland 395, retell 352, synthflow 273, famulor 215 hub impressions, 90d GSC)
+// — the pre-2026-11-11 title named no brands (1 click / 1,555 imp), and the
+// 2026-11-06 one omitted Vapi entirely despite 4× Bland's volume.
+const description = `Compare Vapi, Bland AI, Retell, Synthflow, Famulor and more — pricing, features, white-label support. Fusion Calling from $99/mo.`;
 
 export const metadata: Metadata = {
   title,
@@ -110,7 +112,8 @@ export default function CompareHubPage() {
               honest, side-by-side guides — Fusion Calling vs Vapi, Retell AI,
               Synthflow, Smith.ai and more — covering providers, pricing,
               onboarding, and support. Written for buyers evaluating fit, not
-              hype.
+              hype — for teams comparing platforms from India, the US, and
+              beyond.
             </p>
             <p className="mt-4 text-sm sm:text-base text-gray-500 max-w-3xl mx-auto leading-relaxed px-4">
               Reselling voice AI to clients under your own brand instead? See

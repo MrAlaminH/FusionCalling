@@ -8,7 +8,11 @@ import { DIRECT_PLANS } from "@/lib/product-facts";
 import { SITE_URL } from "@/lib/site-url";
 import { PAGE_UPDATED } from "@/lib/page-updated";
 
-const title = "AI Phone Automation (2026 Guide)";
+// Title matches the slug, H1, and the top GSC cluster ("call automation" 256,
+// "ai call automation" 204, "ai phone call automation" 63 — 90d GSC). The
+// pre-2026-11-11 "AI Phone Automation" variant omitted the "call" the
+// searchers type; "ai phone automation" (101 imp) still matches on tokens.
+const title = "AI Phone Call Automation (2026 Guide)";
 const description =
   "AI phone call automation handles inbound and outbound calls — receptionist answering, cold calling, lead qualification, and reminders. From $149/mo.";
 
@@ -150,7 +154,7 @@ const capabilities = [
 const launchSteps = [
   {
     title: "Connect your number",
-    text: "Bring your existing business number or provision a new one. Inbound routing and outbound caller ID are configured to match your brand.",
+    text: "Bring your existing business number or provision a new one. The telephony layer is managed for you — inbound routing and outbound caller ID are configured to match your brand.",
   },
   {
     title: "Teach it your business",
@@ -409,10 +413,11 @@ export default function AiPhoneCallAutomationPage() {
               What is AI phone call automation?
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-4">
-              AI phone call automation moves routine call handling off your
-              team and onto software: voice agents answer inbound calls, place
-              outbound calls, and hold natural two-way conversations, while
-              your people handle only the conversations that need judgment.
+              AI phone call automation uses artificial intelligence to move
+              routine call handling off your team and onto software: voice
+              agents answer inbound calls, place outbound calls, and hold
+              natural two-way conversations, while your people handle only the
+              conversations that need judgment.
               Post-call automation is part of every flow — the moment a call
               ends, it books the calendar, writes the CRM record, and sends
               the SMS confirmation without anyone touching a keyboard.

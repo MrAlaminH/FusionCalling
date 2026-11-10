@@ -456,7 +456,7 @@ Wake word detection is the ability of a voice system to recognize a specific tri
 ## Hotword Detection | AI Glossary | Fusion Calling
 URL: https://www.fusioncalling.com/glossary/hotword-detection
 
-Hotword detection, similar to wake word detection, is the recognition of a specific phrase that signals the system to start listening or take an action. On phone calls it doubles as a safety net, letting callers say a keyword like human to request a live person at any point. Hotword capabilities enable always-on voice features in apps and devices beyond traditional phone calls. Related: Wake Word Detection, Keyword Spotting, Voice User Interface
+Hotword detection, similar to wake word detection, is the recognition of a specific phrase that signals the system to start listening or take an action. On phone calls it doubles as a safety net, letting callers say a keyword like human to request a live person at any point. A branded hotword — the company or product name used as the trigger phrase — follows the same principle, waking the agent only when the brand name is spoken. Hotword capabilities enable always-on voice features in apps and devices beyond traditional phone calls. Related: Wake Word Detection, Keyword Spotting, Voice User Interface
 
 ---
 
@@ -743,7 +743,7 @@ White-labeling is the practice of rebranding a product or service so an agency c
 ## Reseller | AI Glossary | Fusion Calling
 URL: https://www.fusioncalling.com/glossary/reseller
 
-A reseller is a partner who sells another company's product or service to end clients, often under their own brand and at their own price. Voice AI resellers keep the margin between their cost and what they charge clients. Reselling is the business model behind white-label voice AI, and healthy margins can make it a lucrative recurring revenue stream. Related: White-Label, Recurring Revenue, SaaS
+A reseller is a partner who sells another company's product or service to end clients, often under their own brand and at their own price. Voice AI resellers keep the margin between their cost and what they charge clients. Reselling is the business model behind white-label voice AI: the agency brands a white-label voice AI solution as its own, and the margin between cost and client pricing can make it a lucrative recurring revenue stream. Related: White-Label, Recurring Revenue, SaaS
 
 ---
 

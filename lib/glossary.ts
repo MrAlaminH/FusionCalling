@@ -45,7 +45,7 @@ export type GlossaryTerm = {
 // Date the glossary entries were last editorially reviewed/updated. Used as the
 // `dateModified`/`datePublished` signal in the Article schema on each term page
 // so AI and traditional search engines see a freshness signal.
-export const GLOSSARY_LAST_UPDATED = "2026-07-07";
+export const GLOSSARY_LAST_UPDATED = "2026-11-11";
 
 export function slugifyTerm(term: string): string {
   return term
@@ -229,7 +229,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: "Hotword Detection",
     category: "Speech Technology",
     definition:
-      "Hotword detection, similar to wake word detection, is the recognition of a specific phrase that signals the system to start listening or take an action. On phone calls it doubles as a safety net, letting callers say a keyword like human to request a live person at any point.",
+      "Hotword detection, similar to wake word detection, is the recognition of a specific phrase that signals the system to start listening or take an action. On phone calls it doubles as a safety net, letting callers say a keyword like human to request a live person at any point. A branded hotword — the company or product name used as the trigger phrase — follows the same principle, waking the agent only when the brand name is spoken.",
     whyItMatters:
       "Hotword capabilities enable always-on voice features in apps and devices beyond traditional phone calls.",
     related: ["Wake Word Detection", "Keyword Spotting", "Voice User Interface"],
@@ -630,7 +630,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     definition:
       "A reseller is a partner who sells another company's product or service to end clients, often under their own brand and at their own price. Voice AI resellers keep the margin between their cost and what they charge clients.",
     whyItMatters:
-      "Reselling is the business model behind white-label voice AI, and healthy margins can make it a lucrative recurring revenue stream.",
+      "Reselling is the business model behind white-label voice AI: the agency brands a white-label voice AI solution as its own, and the margin between cost and client pricing can make it a lucrative recurring revenue stream.",
     related: ["White-Label", "Recurring Revenue", "SaaS"],
     platform: { label: "See the Fusion Calling AI voice agent reseller program", href: "/whitelabel/reseller-program" },
   },

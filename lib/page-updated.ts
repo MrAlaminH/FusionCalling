@@ -10,7 +10,7 @@ export const PAGE_UPDATED: Record<string, string> = {
   "/ai-receptionist-for-small-business": "2026-10-28",
   "/ai-phone-call-automation/after-hours-answering": "2026-09-24",
   // 2026-10-06 GSC-driven content upgrades (list-intent sections, retargets)
-  "/alternative": "2026-10-28",
+  "/alternative": "2026-11-11",
   "/alternative/chatdash": "2026-10-06",
   "/alternative/vapify": "2026-10-06",
   "/alternative/voicerr": "2026-10-06",
@@ -33,7 +33,7 @@ export const PAGE_UPDATED: Record<string, string> = {
   // 2026-10-28 exact-match title fixes (plans/seo-growth-2026-10 phase 1) +
   // 2026-10-28 aioncalls context links added to ranked lists (phase 2)
   "/industries/ai-voice-for-veterinary": "2026-10-28",
-  "/ai-phone-call-automation": "2026-10-28",
+  "/ai-phone-call-automation": "2026-11-11",
   // New linkable asset: AI receptionist pricing benchmark (2026-10-06)
   "/ai-receptionist-pricing": "2026-10-28",
   // GHL sub-account deployment section (title/meta unchanged — freeze holds)
