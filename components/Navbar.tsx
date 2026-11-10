@@ -3,7 +3,15 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import {
+  ArrowRight,
+  BookOpen,
+  ChevronDown,
+  CircleHelp,
+  Newspaper,
+  Users,
+  type LucideIcon,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
@@ -15,12 +23,38 @@ const NAV_LINKS = [
 
 // Secondary destinations grouped under the "More" dropdown to keep the
 // desktop navbar uncluttered. New sections can simply be appended here.
-const MORE_LINKS = [
-  { label: "Blog", href: "/blog", description: "Guides & insights" },
-  { label: "Docs", href: "/docs", description: "Platform documentation" },
+// Each item carries an icon so the row reads as a clickable card, not text.
+const MORE_LINKS: {
+  label: string;
+  href: string;
+  description: string;
+  icon: LucideIcon;
+}[] = [
+  {
+    label: "Blog",
+    href: "/blog",
+    description: "Guides & insights",
+    icon: Newspaper,
+  },
+  {
+    label: "Docs",
+    href: "/docs",
+    description: "Platform documentation",
+    icon: BookOpen,
+  },
   // The /faq hub, not the homepage section — the hub needs the internal links.
-  { label: "FAQs", href: "/faq", description: "Common questions" },
-  { label: "About", href: "/about", description: "Who we are" },
+  {
+    label: "FAQs",
+    href: "/faq",
+    description: "Common questions",
+    icon: CircleHelp,
+  },
+  {
+    label: "About",
+    href: "/about",
+    description: "Who we are",
+    icon: Users,
+  },
 ];
 
 const CONTACT_URL = "https://cal.com/mralamin/discovery-call";
@@ -188,14 +222,23 @@ const Navbar = () => {
                       <Link
                         href={item.href}
                         onClick={() => setIsMenuOpen(false)}
-                        className="block rounded-xl px-4 py-2.5 transition-colors duration-200 hover:bg-white/5 focus:bg-white/5 focus:outline-none"
+                        className="group/item flex items-center gap-3 rounded-xl px-3 py-2 transition-colors duration-200 hover:bg-white/5 focus:bg-white/5 focus:outline-none"
                       >
-                        <span className="block text-sm font-medium text-gray-200 group-hover:text-white">
-                          {item.label}
+                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-brand-strong transition-colors duration-200 group-hover/item:border-brand/40 group-hover/item:bg-brand/10 group-hover/item:text-brand">
+                          <item.icon className="h-4 w-4" aria-hidden="true" />
                         </span>
-                        <span className="block text-xs text-gray-500">
-                          {item.description}
+                        <span className="min-w-0 flex-1">
+                          <span className="block text-sm font-medium text-gray-200 transition-colors duration-200 group-hover/item:text-white">
+                            {item.label}
+                          </span>
+                          <span className="block text-xs text-gray-500">
+                            {item.description}
+                          </span>
                         </span>
+                        <ArrowRight
+                          className="h-3.5 w-3.5 shrink-0 -translate-x-1 text-gray-500 opacity-0 transition-all duration-200 group-hover/item:translate-x-0 group-hover/item:opacity-100"
+                          aria-hidden="true"
+                        />
                       </Link>
                     </li>
                   ))}
