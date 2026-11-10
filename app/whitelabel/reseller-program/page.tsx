@@ -286,7 +286,9 @@ export default function ResellerProgramPage() {
               </h2>
               <p className="text-gray-400 text-base sm:text-lg max-w-3xl mx-auto">
                 From application to your first branded client launch in days,
-                not months.
+                not months. Cloud reselling in practice: you buy voice AI at a
+                flat wholesale rate, sell it under your own brand, and keep the
+                entire spread.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -392,8 +394,8 @@ export default function ResellerProgramPage() {
                 What&apos;s included for resellers
               </h2>
               <p className="text-gray-400 text-base sm:text-lg max-w-3xl mx-auto">
-                Everything you need to run a branded AI voice practice — none
-                of the infrastructure.
+                Everything you need to run a branded, private-label AI voice
+                practice — none of the infrastructure.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
