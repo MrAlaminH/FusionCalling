@@ -17,6 +17,15 @@ export type IndustryAdvantage = {
   description: string;
 };
 
+/** Illustrative missed-call math for one vertical. The checker
+ * (scripts/check-data.ts) asserts result === product of the line values. */
+export type IndustryPricingMath = {
+  intro: string;
+  lines: { label: string; value: string }[];
+  result: string;
+  footnote: string;
+};
+
 export type Industry = {
   slug: string;
   name: string;
@@ -35,6 +44,7 @@ export type Industry = {
   receptionistSection?: { heading: string; body: string; bullets: string[] };
   useCases: IndustryUseCase[];
   stats: IndustryStat[];
+  pricingMath?: IndustryPricingMath;
   agencyAngle: string;
   agencyPoints: string[];
   whyFusion: IndustryAdvantage[];
@@ -88,7 +98,7 @@ export const industries: Industry[] = [
       "voice ai for realtors",
       "white label voice ai",
     ],
-    h1: "AI Voice for",
+    h1: "AI Receptionist for",
     h1Highlight: "Real Estate",
     subtitle:
       "Never miss a buyer or seller lead again. AI voice agents answer instantly, qualify prospects, and book showings around the clock.",
@@ -138,6 +148,19 @@ export const industries: Industry[] = [
       { value: "24/7", label: "after-hours coverage without extra staff" },
       { value: "<5s", label: "average time to first response" },
     ],
+    pricingMath: {
+      intro:
+        "Agents can usually name the deal that slipped away because nobody picked up. Here is what one month of missed sign calls costs a small team.",
+      lines: [
+        { label: "Missed calls per month", value: "40" },
+        { label: "Callers ready to buy or sell now", value: "50%" },
+        { label: "Close when the first response is fast", value: "15%" },
+        { label: "Average commission per side", value: "$8,000" },
+      ],
+      result: "$24,000/month in lost commissions",
+      footnote:
+        "Illustrative example using typical figures for this vertical. Plug in your own call volume and close rates to size it for your business.",
+    },
     agencyAngle:
       "Real estate is one of the most receptive markets for white-label voice AI, and one of the most profitable for agencies to serve.",
     agencyPoints: [
@@ -184,7 +207,7 @@ export const industries: Industry[] = [
       "patient recall ai",
       "hipaa voice ai",
     ],
-    h1: "AI Voice for",
+    h1: "AI Receptionist for",
     h1Highlight: "Dental & Healthcare",
     subtitle:
       "Fill cancellations, cut no-shows, and book new patients around the clock with an AI receptionist that never takes a break.",
@@ -234,6 +257,19 @@ export const industries: Industry[] = [
       { value: "100%", label: "of after-hours calls answered" },
       { value: "0", label: "additional front-desk headcount required" },
     ],
+    pricingMath: {
+      intro:
+        "Voicemail during treatment is unfilled chair time. Here is the month a small practice loses to missed calls alone.",
+      lines: [
+        { label: "Missed calls per month", value: "80" },
+        { label: "Callers requesting an appointment", value: "60%" },
+        { label: "Would book when answered instantly", value: "70%" },
+        { label: "Average treatment value per visit", value: "$350" },
+      ],
+      result: "$11,760/month in unfilled appointments",
+      footnote:
+        "Illustrative example using typical figures for this vertical. Plug in your own call volume and close rates to size it for your business.",
+    },
     agencyAngle:
       "Healthcare and dental practices are ideal clients: predictable pain, clear ROI, and recurring needs that justify a monthly retainer.",
     agencyPoints: [
@@ -269,7 +305,7 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2025-02-03T00:00:00Z",
     productSupported: true,
-    metaTitle: "Insurance AI Voice: Quotes & Renewals",
+    metaTitle: "Insurance AI Receptionist: Quote Intake",
     metaDescription:
       "AI voice agents for insurance agencies capture quotes, retain renewals, and qualify leads 24/7. White-label voice AI for your agency clients.",
     keywords: [
@@ -280,7 +316,7 @@ export const industries: Industry[] = [
       "ai insurance receptionist",
       "white label voice ai",
     ],
-    h1: "AI Voice for",
+    h1: "AI Receptionist for",
     h1Highlight: "Insurance",
     subtitle:
       "Respond to quote requests in seconds, follow up on claims, and retain renewals with an AI agent that works every lead.",
@@ -319,6 +355,19 @@ export const industries: Industry[] = [
       { value: "24/7", label: "quote capture, even after hours" },
       { value: "100%", label: "of renewals proactively touched" },
     ],
+    pricingMath: {
+      intro:
+        "Quote shoppers contact several agencies and buy from whoever answers first. Here is what a quiet phone line costs an independent agency.",
+      lines: [
+        { label: "Missed calls per month", value: "50" },
+        { label: "Callers requesting a quote", value: "40%" },
+        { label: "Bind rate with a fast response", value: "15%" },
+        { label: "Average annual premium written", value: "$1,800" },
+      ],
+      result: "$5,400/month in premium that goes to a competitor",
+      footnote:
+        "Illustrative example using typical figures for this vertical. Plug in your own call volume and close rates to size it for your business.",
+    },
     agencyAngle:
       "Insurance agencies value retention and lead speed, both of which an AI voice agent improves measurably, making it an easy sell and a sticky retainer.",
     agencyPoints: [
@@ -354,7 +403,7 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2025-02-04T00:00:00Z",
     productSupported: false,
-    metaTitle: "Home Services AI Voice: HVAC & Plumbing",
+    metaTitle: "Home Services AI Receptionist: HVAC",
     metaDescription:
       "AI voice agents for home services answer every call 24/7 — dispatch, book HVAC/plumbing/roofing jobs, and follow up. White-label for contractors.",
     keywords: [
@@ -366,7 +415,7 @@ export const industries: Industry[] = [
       "ai voice agent for home services",
       "white label voice ai",
     ],
-    h1: "AI Voice for",
+    h1: "AI Receptionist for",
     h1Highlight: "Home Services",
     subtitle:
       "For HVAC, plumbing, roofing, and electrical teams, a missed call is a lost job. An AI agent answers every one, even at 2 a.m.",
@@ -417,6 +466,19 @@ export const industries: Industry[] = [
       { value: "24/7", label: "emergency coverage, no overtime pay" },
       { value: "100%", label: "of inbound calls captured" },
     ],
+    pricingMath: {
+      intro:
+        "The first contractor to answer wins the job. Here is the revenue a single-truck operation loses to missed calls in a month.",
+      lines: [
+        { label: "Missed calls per month", value: "70" },
+        { label: "Genuine job requests", value: "45%" },
+        { label: "Book when a competitor is slow to answer", value: "50%" },
+        { label: "Average job value", value: "$400" },
+      ],
+      result: "$6,300/month in jobs lost to faster competitors",
+      footnote:
+        "Illustrative example using typical figures for this vertical. Plug in your own call volume and close rates to size it for your business.",
+    },
     agencyAngle:
       "Home services is one of the easiest markets to sell voice AI into, because missed-call pain is felt every single day.",
     agencyPoints: [
@@ -457,7 +519,7 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2025-02-05T00:00:00Z",
     productSupported: false,
-    metaTitle: "Law Firm AI Voice: Intake & Consults",
+    metaTitle: "Law Firm AI Receptionist: 24/7 Intake",
     metaDescription:
       "AI voice agents for law firms capture every case, qualify leads, and book consultations 24/7. White-label legal intake for your agency.",
     keywords: [
@@ -468,7 +530,7 @@ export const industries: Industry[] = [
       "legal lead qualification",
       "white label voice ai",
     ],
-    h1: "AI Voice for",
+    h1: "AI Receptionist for",
     h1Highlight: "Law Firms & Legal",
     subtitle:
       "Potential clients often call after hours and move on fast. An AI intake agent captures every case, qualifies it, and books the consultation.",
@@ -507,6 +569,19 @@ export const industries: Industry[] = [
       { value: "24/7", label: "intake coverage for time-sensitive cases" },
       { value: "0", label: "intake detail missed or forgotten" },
     ],
+    pricingMath: {
+      intro:
+        "Retainer shoppers call three firms and hire the one that answers. Here is a small firm's month without after-hours intake.",
+      lines: [
+        { label: "Missed calls per month", value: "40" },
+        { label: "Potential client inquiries", value: "35%" },
+        { label: "Sign when intake is immediate", value: "20%" },
+        { label: "Average fee per matter", value: "$6,500" },
+      ],
+      result: "$18,200/month in retainers lost to other firms",
+      footnote:
+        "Illustrative example using typical figures for this vertical. Plug in your own call volume and close rates to size it for your business.",
+    },
     agencyAngle:
       "Legal clients have high case values, making voice AI a high-ROI, easy-to-justify retainer for agencies serving the profession.",
     agencyPoints: [
@@ -542,7 +617,7 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2025-02-06T00:00:00Z",
     productSupported: false,
-    metaTitle: "Auto Dealer AI Voice: Booking & Recall",
+    metaTitle: "Auto Dealer AI Receptionist: Booking",
     metaDescription:
       "AI voice agents for auto dealers & service centers book appointments, run recalls, and qualify sales leads 24/7. White-label for agencies.",
     keywords: [
@@ -553,7 +628,7 @@ export const industries: Industry[] = [
       "dealership ai calling",
       "white label voice ai",
     ],
-    h1: "AI Voice for",
+    h1: "AI Receptionist for",
     h1Highlight: "Automotive",
     subtitle:
       "Keep service bays full and sales leads warm. An AI agent books service, handles recalls, and qualifies buyers without adding staff.",
@@ -592,6 +667,19 @@ export const industries: Industry[] = [
       { value: "24/7", label: "lead capture for online shoppers" },
       { value: "1000s", label: "of recall contacts per campaign" },
     ],
+    pricingMath: {
+      intro:
+        "An empty service bay earns nothing. Here is what missed phones cost a dealership service department each month.",
+      lines: [
+        { label: "Missed calls per month", value: "60" },
+        { label: "Callers booking service", value: "50%" },
+        { label: "Book on the spot when answered", value: "60%" },
+        { label: "Average service ticket", value: "$300" },
+      ],
+      result: "$5,400/month in unbilled service work",
+      footnote:
+        "Illustrative example using typical figures for this vertical. Plug in your own call volume and close rates to size it for your business.",
+    },
     agencyAngle:
       "Automotive combines high call volume with clear revenue per interaction, making it a strong, scalable vertical for agencies.",
     agencyPoints: [
@@ -638,7 +726,7 @@ export const industries: Industry[] = [
       "outbound campaign ai",
       "white label voice ai",
     ],
-    h1: "AI Voice for",
+    h1: "AI Receptionist for",
     h1Highlight: "Call Centers & BPO",
     subtitle:
       "Handle spikes in volume, automate tier-1 queries, and run high-volume outbound campaigns without scaling headcount linearly.",
@@ -677,6 +765,18 @@ export const industries: Industry[] = [
       { value: "1000s", label: "of concurrent calls handled" },
       { value: "100%", label: "of calls recorded and transcribed" },
     ],
+    pricingMath: {
+      intro:
+        "For BPOs the loss is contracts, not calls. Clients audit SLA performance, and unanswered calls show up in the report.",
+      lines: [
+        { label: "Missed SLA calls per month", value: "600" },
+        { label: "Callers who move their business elsewhere", value: "5%" },
+        { label: "Average monthly value per lost account", value: "$1,500" },
+      ],
+      result: "$45,000/month in churned contract revenue",
+      footnote:
+        "Illustrative example using typical figures for this vertical. Plug in your own call volume and churn data to size it for your business.",
+    },
     agencyAngle:
       "BPOs and contact centers are sophisticated buyers with high volume, making them ideal for agencies offering white-labeled AI capacity.",
     agencyPoints: [
@@ -724,7 +824,7 @@ export const industries: Industry[] = [
       "ai voice agent for financial services",
       "white label voice ai",
     ],
-    h1: "AI Voice for",
+    h1: "AI Receptionist for",
     h1Highlight: "Financial Services",
     subtitle:
       "Qualify prospects, schedule advisor appointments, and follow up on applications with an AI agent that's available whenever clients call.",
@@ -786,6 +886,19 @@ export const industries: Industry[] = [
       { value: "24/7", label: "availability for time-sensitive leads" },
       { value: "<5s", label: "average response time" },
     ],
+    pricingMath: {
+      intro:
+        "Prospects call whoever responds first, and they call at night. Here is a month of missed inquiries for a small advisory or lending team.",
+      lines: [
+        { label: "Missed calls per month", value: "50" },
+        { label: "New-account inquiries", value: "40%" },
+        { label: "Open with consistent follow-up", value: "20%" },
+        { label: "First-year revenue per account", value: "$2,400" },
+      ],
+      result: "$9,600/month in accounts that never opened",
+      footnote:
+        "Illustrative example using typical figures for this vertical. Plug in your own call volume and close rates to size it for your business.",
+    },
     agencyAngle:
       "Financial services clients have high lifetime value, making consistent follow-up and qualification a compelling, high-ROI use case.",
     agencyPoints: [
@@ -840,7 +953,7 @@ export const industries: Industry[] = [
       "ai receptionist retail",
       "white label voice ai",
     ],
-    h1: "AI Voice for",
+    h1: "AI Receptionist for",
     h1Highlight: "E-commerce & Retail",
     subtitle:
       "Every abandoned-cart follow-up and 'where is my order' call is revenue at risk. An AI agent recovers sales and deflects support volume around the clock.",
@@ -909,6 +1022,18 @@ export const industries: Industry[] = [
       { value: "100%", label: "of routine support calls deflected" },
       { value: "Instant", label: "answers on order status from your store data" },
     ],
+    pricingMath: {
+      intro:
+        "Carts are abandoned around the clock, and a call is the follow-up no email sequence matches. Here is one month of recoverable revenue for a mid-size store.",
+      lines: [
+        { label: "Abandoned carts per month", value: "300" },
+        { label: "Recovered by a timely call", value: "12%" },
+        { label: "Average order value", value: "$85" },
+      ],
+      result: "$3,060/month in recovered orders",
+      footnote:
+        "Illustrative example using typical figures for this vertical. Plug in your own cart volume and order values to size it for your business.",
+    },
     agencyAngle:
       "E-commerce is a massive, recurring-pain market where every recovered call is directly measurable revenue, making it an easy retainer to sell.",
     agencyPoints: [
@@ -959,7 +1084,7 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2025-02-10T00:00:00Z",
     productSupported: false,
-    metaTitle: "Education AI Voice: Enroll & Schedule",
+    metaTitle: "Education AI Receptionist: Enroll",
     metaDescription:
       "AI voice agents for tutoring, schools & edtech enroll students, book trials, and cut no-shows 24/7. White-label education voice AI for agencies.",
     keywords: [
@@ -971,7 +1096,7 @@ export const industries: Industry[] = [
       "ai voice agent for education",
       "white label voice ai",
     ],
-    h1: "AI Voice for",
+    h1: "AI Receptionist for",
     h1Highlight: "Education & Tutoring",
     subtitle:
       "Capture every prospective student and parent, schedule trials, and reduce no-shows with an AI agent that works around the academic calendar.",
@@ -1022,6 +1147,19 @@ export const industries: Industry[] = [
       { value: "24/7", label: "enrollment coverage during campaigns" },
       { value: "<5s", label: "average time to first response" },
     ],
+    pricingMath: {
+      intro:
+        "Enrollment calls spike at night and on weekends, exactly when instructors are teaching. Here is the tuition a program misses in a month.",
+      lines: [
+        { label: "Missed calls per month", value: "60" },
+        { label: "Enrollment inquiries", value: "50%" },
+        { label: "Enroll with a booked trial", value: "30%" },
+        { label: "Average program value", value: "$1,200" },
+      ],
+      result: "$10,800/month in enrollments that went elsewhere",
+      footnote:
+        "Illustrative example using typical figures for this vertical. Plug in your own call volume and close rates to size it for your business.",
+    },
     agencyAngle:
       "Education and tutoring providers have predictable enrollment cycles and clear ROI from filled cohorts, making them ideal, recurring agency clients.",
     agencyPoints: [
@@ -1062,7 +1200,7 @@ export const industries: Industry[] = [
     readTime: "7 min read",
     datePublished: "2025-02-11T00:00:00Z",
     productSupported: false,
-    metaTitle: "Restaurant AI Voice: Orders & Bookings",
+    metaTitle: "Restaurant AI Receptionist: Bookings",
     metaDescription:
       "AI voice agent for restaurants & hotels: reservations via OpenTable/Resy, phone orders via Toast/Square, catering & after-hours answering 24/7. From $149/mo.",
     keywords: [
@@ -1080,7 +1218,7 @@ export const industries: Industry[] = [
       "hospitality voice ai",
       "white label voice ai",
     ],
-    h1: "AI Voice for",
+    h1: "AI Receptionist for",
     h1Highlight: "Restaurants & Hospitality",
     subtitle:
       "A ringing phone during a rush means a lost reservation or a dropped order. An AI agent answers every call, even at the peak of service.",
@@ -1154,6 +1292,19 @@ export const industries: Industry[] = [
       { value: "24/7", label: "coverage through late-night and off-peak" },
       { value: "0", label: "missed orders during the dinner rush" },
     ],
+    pricingMath: {
+      intro:
+        "One unanswered ring during the rush is a lost table or a lost takeout order. Here is a month for a mid-size restaurant.",
+      lines: [
+        { label: "Missed calls per month", value: "140" },
+        { label: "Reservation or order requests", value: "50%" },
+        { label: "Book when answered on the first ring", value: "70%" },
+        { label: "Average cover or order", value: "$65" },
+      ],
+      result: "$3,185/month in unbooked tables and orders",
+      footnote:
+        "Illustrative example using typical figures for this vertical. Plug in your own call volume and cover values to size it for your business.",
+    },
     agencyAngle:
       "Hospitality is a high-call-volume, thin-margin industry where every answered call protects revenue, making voice AI an easy, sticky sell.",
     agencyPoints: [
@@ -1220,7 +1371,7 @@ export const industries: Industry[] = [
       "ai voice healthcare",
       "hipaa voice ai",
     ],
-    h1: "AI Voice for",
+    h1: "AI Receptionist for",
     h1Highlight: "Medical Practices",
     subtitle:
       "Every patient call answered, every visit scheduled, every urgent case routed — with an AI receptionist that never puts care on hold.",
@@ -1270,6 +1421,19 @@ export const industries: Industry[] = [
       { value: "100%", label: "of after-hours patient calls answered" },
       { value: "0", label: "additional front-desk headcount required" },
     ],
+    pricingMath: {
+      intro:
+        "Patients who reach voicemail book with the practice that answers. Here is the schedule value a practice loses in a month.",
+      lines: [
+        { label: "Missed calls per month", value: "80" },
+        { label: "Appointment requests", value: "50%" },
+        { label: "Book when answered instantly", value: "65%" },
+        { label: "Average visit revenue", value: "$250" },
+      ],
+      result: "$6,500/month in visits booked elsewhere",
+      footnote:
+        "Illustrative example using typical figures for this vertical. Plug in your own call volume and visit values to size it for your business.",
+    },
     agencyAngle:
       "Medical practices are premium retainer clients: high call volumes, measurable scheduling pain, and compliance needs that justify expert setup.",
     agencyPoints: [
@@ -1316,7 +1480,7 @@ export const industries: Industry[] = [
       "ai voice beauty business",
       "wellness clinic ai receptionist",
     ],
-    h1: "AI Voice for",
+    h1: "AI Receptionist for",
     h1Highlight: "Beauty & Wellness",
     subtitle:
       "Chairs stay full while hands stay busy — an AI receptionist that books, confirms, and backfills appointments around the clock.",
@@ -1366,6 +1530,19 @@ export const industries: Industry[] = [
       { value: "100%", label: "of after-hours booking calls answered" },
       { value: "0", label: "missed bookings during treatments" },
     ],
+    pricingMath: {
+      intro:
+        "Clients book while you are mid-treatment, or they book somewhere else. Here is one venue's month of missed calls.",
+      lines: [
+        { label: "Missed calls per month", value: "80" },
+        { label: "Booking attempts", value: "50%" },
+        { label: "Book on the spot when answered", value: "60%" },
+        { label: "Average ticket per visit", value: "$90" },
+      ],
+      result: "$2,160/month in empty chairs",
+      footnote:
+        "Illustrative example using typical figures for this vertical. Plug in your own call volume and ticket values to size it for your business.",
+    },
     agencyAngle:
       "Beauty and wellness venues are fast-closing retainer clients: obvious pain, simple deployments, and owners who feel every empty chair.",
     agencyPoints: [
@@ -1465,6 +1642,19 @@ export const industries: Industry[] = [
       { value: "100%", label: "of after-hours owner calls answered" },
       { value: "0", label: "additional front-desk headcount required" },
     ],
+    pricingMath: {
+      intro:
+        "Owners call anxious, and they call the next clinic when nobody answers. Here is what one clinic's month of missed calls costs.",
+      lines: [
+        { label: "Missed calls per month", value: "60" },
+        { label: "Appointment and service requests", value: "50%" },
+        { label: "Book when answered on the first ring", value: "50%" },
+        { label: "Average visit revenue", value: "$200" },
+      ],
+      result: "$3,000/month in visits booked at the next clinic",
+      footnote:
+        "Illustrative example using typical figures for this vertical. Plug in your own call volume and visit values to size it for your business.",
+    },
     agencyAngle:
       "Vet clinics are loyal, high-retention clients: emotional buyer motivation, recurring reminder revenue, and underserved competition.",
     agencyPoints: [

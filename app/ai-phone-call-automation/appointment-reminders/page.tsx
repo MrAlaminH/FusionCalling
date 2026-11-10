@@ -64,6 +64,16 @@ const industryLinks = [
     href: "/industries/ai-voice-for-home-services",
     text: "Confirm estimate and job windows, reschedule rain checks, and keep technicians routed to real work.",
   },
+  {
+    label: "AI receptionist for medical practices",
+    href: "/industries/ai-voice-for-medical-practices",
+    text: "Confirm and reschedule patient visits, run recall lists, and refill the schedule without front-desk overtime.",
+  },
+  {
+    label: "AI receptionist for beauty salons",
+    href: "/industries/ai-voice-for-beauty-wellness",
+    text: "Confirm bookings, fill cancellations from the waitlist, and keep chairs booked while hands stay busy.",
+  },
 ];
 
 const faqs = [

@@ -5,6 +5,7 @@ import {
   CalendarCheck,
   Check,
   Hammer,
+  Headset,
   KeyRound,
   MessageSquareText,
   MoonStar,
@@ -251,6 +252,12 @@ const useCases = [
     name: "Real Estate",
     href: "/industries/ai-voice-for-real-estate",
     text: "Evening portal browsers — peak inquiry time — get instant answers and showings instead of morning-after callbacks.",
+  },
+  {
+    icon: Headset,
+    name: "Call Centers & BPO",
+    href: "/industries/ai-voice-for-call-centers",
+    text: "Night and weekend overflow answered under your SLA; agents wake only for escalations.",
   },
 ];
 

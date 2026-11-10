@@ -63,6 +63,11 @@ const industryLinks = [
     href: "/industries/ai-voice-for-financial-services",
     text: "Qualify prospects, schedule advisor meetings, and keep every application follow-up consistent.",
   },
+  {
+    label: "AI receptionist for law firms",
+    href: "/industries/ai-voice-for-law-firms",
+    text: "Screen potential clients for practice-area fit, capture case details, and route qualified matters to attorneys.",
+  },
 ];
 
 const faqs = [

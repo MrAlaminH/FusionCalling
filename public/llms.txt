@@ -29,7 +29,6 @@ The platform integrates with leading voice-AI providers. Agencies can bring exis
 ## Product
 - [Home](https://www.fusioncalling.com/): AI phone call automation overview with a live demo.
 - [Pricing](https://www.fusioncalling.com/pricing): Starter $149/mo, Pro $249/mo, Enterprise $497/mo — month-to-month, 14-day guarantee.
-- [Pricing (machine-readable)](https://www.fusioncalling.com/pricing.md): The same business and partner plans as a markdown file AI agents can parse directly.
 - [Live Demo](https://www.fusioncalling.com/#show-case): Try an outbound or inbound AI call instantly.
 - [After-Hours Answering Service with AI](https://www.fusioncalling.com/ai-phone-call-automation/after-hours-answering): AI coverage for nights, weekends, and holidays — emergency triage with warm transfers, next-day booking, morning transcripts. From $149/mo.
 - [AI Phone Answering Service Buyer's Guide](https://www.fusioncalling.com/ai-phone-answering-service): What an AI phone answering service includes, what it costs ($149/mo flat, no per-minute billing), and how it beats voicemail, human services, and in-house hires.
@@ -71,15 +70,15 @@ The platform integrates with leading voice-AI providers. Agencies can bring exis
 
 - [Real Estate AI Receptionist: 24/7 Leads](https://www.fusioncalling.com/industries/ai-voice-for-real-estate)
 - [Dental AI Receptionist: Booking & Recall](https://www.fusioncalling.com/industries/ai-voice-for-dental)
-- [Insurance AI Voice: Quotes & Renewals](https://www.fusioncalling.com/industries/ai-voice-for-insurance)
-- [Home Services AI Voice: HVAC & Plumbing](https://www.fusioncalling.com/industries/ai-voice-for-home-services)
-- [Law Firm AI Voice: Intake & Consults](https://www.fusioncalling.com/industries/ai-voice-for-law-firms)
-- [Auto Dealer AI Voice: Booking & Recall](https://www.fusioncalling.com/industries/ai-voice-for-automotive)
+- [Insurance AI Receptionist: Quote Intake](https://www.fusioncalling.com/industries/ai-voice-for-insurance)
+- [Home Services AI Receptionist: HVAC](https://www.fusioncalling.com/industries/ai-voice-for-home-services)
+- [Law Firm AI Receptionist: 24/7 Intake](https://www.fusioncalling.com/industries/ai-voice-for-law-firms)
+- [Auto Dealer AI Receptionist: Booking](https://www.fusioncalling.com/industries/ai-voice-for-automotive)
 - [Call Center AI Voice: Scale & Cut Costs](https://www.fusioncalling.com/industries/ai-voice-for-call-centers)
 - [Financial AI Receptionist: 24/7 Booking](https://www.fusioncalling.com/industries/ai-voice-for-financial-services)
 - [Ecommerce AI Receptionist: 24/7 Support](https://www.fusioncalling.com/industries/ai-voice-for-ecommerce-retail)
-- [Education AI Voice: Enroll & Schedule](https://www.fusioncalling.com/industries/ai-voice-for-education-tutoring)
-- [Restaurant AI Voice: Orders & Bookings](https://www.fusioncalling.com/industries/ai-voice-for-restaurants-hospitality)
+- [Education AI Receptionist: Enroll](https://www.fusioncalling.com/industries/ai-voice-for-education-tutoring)
+- [Restaurant AI Receptionist: Bookings](https://www.fusioncalling.com/industries/ai-voice-for-restaurants-hospitality)
 - [Medical AI Receptionist: Scheduling](https://www.fusioncalling.com/industries/ai-voice-for-medical-practices)
 - [Salon AI Receptionist: Bookings 24/7](https://www.fusioncalling.com/industries/ai-voice-for-beauty-wellness)
 - [Veterinary AI Answering Service & Emergency Triage](https://www.fusioncalling.com/industries/ai-voice-for-veterinary)

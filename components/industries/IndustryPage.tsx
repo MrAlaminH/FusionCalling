@@ -32,6 +32,7 @@ export default function IndustryPage({ industry }: { industry: Industry }) {
     intro,
     useCases,
     stats,
+    pricingMath,
     agencyAngle,
     agencyPoints,
     whyFusion,
@@ -139,7 +140,7 @@ export default function IndustryPage({ industry }: { industry: Industry }) {
             <div className="text-center">
               <div className="text-6xl mb-4">{emoji}</div>
               <div className="text-lg text-gray-500">
-                AI Voice for {name}
+                {h1} {name}
               </div>
             </div>
           </div>
@@ -173,6 +174,35 @@ export default function IndustryPage({ industry }: { industry: Industry }) {
                 </div>
               ))}
             </div>
+
+            {/* Missed-call math */}
+            {pricingMath && (
+              <div className="glass-light rounded-2xl p-8 border border-brand/20">
+                <h2 className="text-2xl font-bold text-white mb-4">
+                  What Missed Calls Cost {name}
+                </h2>
+                <p className="text-gray-300 leading-relaxed mb-6">
+                  {pricingMath.intro}
+                </p>
+                <div className="grid md:grid-cols-2 gap-8 items-stretch">
+                  <ul className="space-y-3 text-gray-300">
+                    {pricingMath.lines.map((line) => (
+                      <li key={line.label} className="flex items-center justify-between gap-4 border-b border-brand/10 pb-3 last:border-0">
+                        <span>{line.label}</span>
+                        <span className="text-white font-bold whitespace-nowrap">{line.value}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="bg-gradient-to-br from-brand/10 to-brand-strong/5 rounded-xl p-6 border border-brand/30 flex flex-col justify-center text-center">
+                    <div className="text-xs uppercase tracking-wide text-gray-400 mb-2">That adds up to</div>
+                    <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-brand-light to-brand-strong bg-clip-text text-transparent mb-1">
+                      {pricingMath.result}
+                    </div>
+                  </div>
+                </div>
+                <p className="text-xs text-gray-500 mt-5">{pricingMath.footnote}</p>
+              </div>
+            )}
 
             {/* Enhanced 2026 Industry Data */}
             <div className="bg-gradient-to-br from-brand/10 to-brand-strong/5 rounded-2xl p-8 border border-brand/30">

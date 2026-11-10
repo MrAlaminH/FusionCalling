@@ -20,6 +20,7 @@ import {
   LAUNCH,
   WHOLESALE_PLANS,
 } from "../lib/product-facts";
+import { industries } from "../lib/industries";
 
 // Every curated related list must resolve to 3 real, non-self comparisons.
 for (const c of comparisons) {
@@ -174,6 +175,37 @@ for (const rel of launchClaimFiles) {
   );
 }
 
+// Industry pages render missed-call math with the assumption lines and the
+// result side by side, so the result must equal the product of the line
+// values — a wrong product would be visibly wrong to readers.
+function parseMathValue(v: string): number {
+  const raw = v.replace(/[$,\s]/g, "");
+  if (raw.endsWith("%")) return parseFloat(raw) / 100;
+  return parseFloat(raw);
+}
+const industryMetaTitles = new Set<string>();
+for (const ind of industries) {
+  assert(ind.pricingMath, `${ind.slug}: missing pricingMath section`);
+  const product = ind.pricingMath.lines
+    .map((l) => parseMathValue(l.value))
+    .reduce((acc, n) => acc * n, 1);
+  const resultMatch = ind.pricingMath.result.match(/\$([\d,]+)/);
+  assert(
+    resultMatch,
+    `${ind.slug}: pricingMath.result has no $amount ("${ind.pricingMath.result}")`
+  );
+  const resultNum = parseFloat(resultMatch[1].replace(/,/g, ""));
+  assert(
+    Math.abs(product - resultNum) / resultNum < 0.005,
+    `${ind.slug}: pricingMath lines multiply to ${product} but result says ${resultNum}`
+  );
+  assert(
+    !industryMetaTitles.has(ind.metaTitle),
+    `${ind.slug}: duplicate metaTitle "${ind.metaTitle}"`
+  );
+  industryMetaTitles.add(ind.metaTitle);
+}
+
 console.log(
-  `✓ ${comparisons.length} comparisons, ${blogPosts.length} posts with FAQs, ${whitelabelProviders.length} providers — all data invariants hold`
+  `✓ ${comparisons.length} comparisons, ${industries.length} industries, ${blogPosts.length} posts with FAQs, ${whitelabelProviders.length} providers — all data invariants hold`
 );

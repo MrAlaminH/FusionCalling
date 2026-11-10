@@ -32,7 +32,22 @@ export const PAGE_UPDATED: Record<string, string> = {
   "/alternative/famulor": "2026-10-06",
   // 2026-10-28 exact-match title fixes (plans/seo-growth-2026-10 phase 1) +
   // 2026-10-28 aioncalls context links added to ranked lists (phase 2)
-  "/industries/ai-voice-for-veterinary": "2026-10-28",
+  // 2026-11-11 industries pass: H1/metaTitle demand alignment ("ai receptionist
+  // for [vertical]" per 90-day GSC template audit) + pricingMath sections
+  "/industries/ai-voice-for-real-estate": "2026-11-11",
+  "/industries/ai-voice-for-dental": "2026-11-11",
+  "/industries/ai-voice-for-insurance": "2026-11-11",
+  "/industries/ai-voice-for-home-services": "2026-11-11",
+  "/industries/ai-voice-for-law-firms": "2026-11-11",
+  "/industries/ai-voice-for-automotive": "2026-11-11",
+  "/industries/ai-voice-for-call-centers": "2026-11-11",
+  "/industries/ai-voice-for-financial-services": "2026-11-11",
+  "/industries/ai-voice-for-ecommerce-retail": "2026-11-11",
+  "/industries/ai-voice-for-education-tutoring": "2026-11-11",
+  "/industries/ai-voice-for-restaurants-hospitality": "2026-11-11",
+  "/industries/ai-voice-for-medical-practices": "2026-11-11",
+  "/industries/ai-voice-for-beauty-wellness": "2026-11-11",
+  "/industries/ai-voice-for-veterinary": "2026-11-11",
   "/ai-phone-call-automation": "2026-11-11",
   // New linkable asset: AI receptionist pricing benchmark (2026-10-06)
   "/ai-receptionist-pricing": "2026-10-28",
