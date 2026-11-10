@@ -169,6 +169,27 @@ export default function AIReceptionistCallRecordingLawsBlogPost() {
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                 <span>
+                  <strong>Caller ID has to be honest.</strong> The Truth in
+                  Caller ID Act (47 U.S.C. &sect;227(e) &mdash;{" "}
+                  <a
+                    href="https://www.law.cornell.edu/uscode/text/47/227/e"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-brand-light hover:text-brand transition-colors underline decoration-brand/40"
+                  >
+                    statute text
+                  </a>
+                  ) bans transmitting misleading or inaccurate caller ID with
+                  intent to defraud, cause harm, or wrongfully obtain anything
+                  of value. Dialing out from real local numbers you own &mdash;
+                  the &ldquo;local presence&rdquo; setup most AI calling
+                  platforms offer &mdash; is lawful; spoofing numbers you have
+                  no claim to is not.
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
+                <span>
                   <strong>No impersonating humans.</strong> The FTC&apos;s
                   Impersonation Rule (16 CFR Part 461, effective April 1,{" "}
                   <a
@@ -254,6 +275,18 @@ export default function AIReceptionistCallRecordingLawsBlogPost() {
               verbal-notification route &mdash; and that one habit also
               undercuts the &ldquo;secret recording&rdquo; wording in
               Massachusetts and is harmless in every one-party state.
+            </p>
+            <p className="text-gray-300 leading-relaxed mb-4">
+              <strong>If confidentiality matters more than transcripts, not
+              recording is the cleanest answer.</strong> Law offices, therapy
+              practices, and medical clinics &mdash; especially in markets
+              where callers expect discretion, like Orange County &mdash;
+              often ask whether an AI receptionist can run without recording
+              at all. Nothing recorded, nothing to consent to: that is the
+              simplest way to stay safe in every all-party state, and the
+              trade-off is losing transcripts and searchable call history. If
+              you do record, the habits in the checklist below are what keep
+              it lawful.
             </p>
             <p className="text-gray-300 leading-relaxed">
               Several all-party states also carve out exceptions for ordinary
