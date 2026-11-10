@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import VoiceCalculator from "./VoiceCalculator";
 import { buildOpenGraph, GEO_SOURCES } from "@/lib/seo";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { SITE_URL } from "@/lib/site-url";
 
@@ -86,8 +87,9 @@ export default function CalculatorPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(calculatorJsonLd) }}
       />
+      <Navbar />
       <section className="bg-black text-white border-b border-brand/20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl py-14">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl pt-28 pb-14 md:pt-36">
           <p className="text-sm font-bold uppercase tracking-wider text-brand-light mb-3">
             AI Call Capacity Planning
           </p>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/site-url";
 import { buildOpenGraph } from "@/lib/seo";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const revalidate = 86400;
@@ -72,7 +73,8 @@ export default function ContactPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(contactJsonLd) }}
       />
-      <main className="min-h-screen w-full bg-black text-white">
+      <main id="main" className="min-h-screen w-full bg-black text-white">
+        <Navbar />
         <section className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl pt-28 pb-6 md:pt-36 md:pb-8">
           <p className="text-brand-strong text-sm font-semibold uppercase tracking-wider mb-3">
             Contact

@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { SITE_URL } from "@/lib/site-url";
 import { buildOpenGraph } from "@/lib/seo";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Reveal } from "@/components/ui/reveal";
 
@@ -220,7 +221,8 @@ export default function AboutPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }}
       />
-      <main className="min-h-screen w-full bg-black text-white">
+      <main id="main" className="min-h-screen w-full bg-black text-white">
+        <Navbar />
         {/* Hero — the slogan, set big. Type is the design. */}
         <section className="relative overflow-hidden pt-28 pb-12 md:pt-36 md:pb-16">
           <div

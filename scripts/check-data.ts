@@ -206,6 +206,42 @@ for (const ind of industries) {
   industryMetaTitles.add(ind.metaTitle);
 }
 
+// Navigation: every route must render the site navbar somewhere — in the page
+// itself, in an ancestor layout, or via a template it delegates to
+// (ProviderPageTemplate renders WhiteLabelNavbar). Chrome-less routes opt out
+// explicitly below. Guards against new pages shipping unreachable-by-nav
+// (the /about-and-siblings missing-navbar bug, fixed 2026-11).
+const NAVBARLESS_OK = new Set([
+  "deck/page.tsx", // standalone sales-deck viewer, no site chrome by design
+]);
+const appEntries = readdirSync(new URL("../app", import.meta.url), {
+  recursive: true,
+}).map(String);
+const pageFiles = appEntries.filter(
+  (f) => f === "page.tsx" || /\/page\.tsx$/.test(f)
+);
+const layoutNavbarDirs = appEntries
+  .filter((f) => /\/layout\.tsx$/.test(f) || f === "layout.tsx")
+  .filter((l) => {
+    const src = readFileSync(new URL(`../app/${l}`, import.meta.url), "utf8");
+    return /<Navbar|WhiteLabelNavbar/.test(src);
+  })
+  .map((l) => (l.includes("/") ? l.slice(0, l.lastIndexOf("/")) : ""));
+for (const page of pageFiles) {
+  if (NAVBARLESS_OK.has(page)) continue;
+  const src = readFileSync(new URL(`../app/${page}`, import.meta.url), "utf8");
+  const coveredInPage =
+    /<Navbar|WhiteLabelNavbar|ProviderPageTemplate/.test(src);
+  const dir = page.slice(0, page.lastIndexOf("/"));
+  const coveredByLayout = layoutNavbarDirs.some(
+    (l) => dir === l || dir.startsWith(`${l}/`)
+  );
+  assert(
+    coveredInPage || coveredByLayout,
+    `${page}: renders no navbar — add <Navbar /> (or an app-level layout with it), or add to NAVBARLESS_OK if chrome-less by design`
+  );
+}
+
 console.log(
-  `✓ ${comparisons.length} comparisons, ${industries.length} industries, ${blogPosts.length} posts with FAQs, ${whitelabelProviders.length} providers — all data invariants hold`
+  `✓ ${comparisons.length} comparisons, ${industries.length} industries, ${blogPosts.length} posts with FAQs, ${whitelabelProviders.length} providers, ${pageFiles.length} pages navbar-covered — all data invariants hold`
 );

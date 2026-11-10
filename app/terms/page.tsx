@@ -1,6 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 import { buildOpenGraph } from "@/lib/seo";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const title = "Terms of Service";
@@ -19,9 +20,10 @@ export const metadata: Metadata = {
 export default function TermsOfUse() {
   return (
     <div
-      className="max-w-4xl mx-auto px-4 py-12 bg-black text-white"
+      className="max-w-4xl mx-auto px-4 pt-28 pb-12 md:pt-36 bg-black text-white"
       id="Terms"
     >
+      <Navbar />
       <h1 className="text-4xl font-bold mb-8 text-center text-white">
         Terms of Service
       </h1>

@@ -13,6 +13,7 @@ import {
 } from "@/lib/product-facts";
 import { whitelabelFaqs } from "@/lib/whitelabel-faqs";
 import { blogFaqs } from "@/lib/blog-faqs";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const revalidate = 86400;
@@ -172,7 +173,8 @@ export default function FaqPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      <main className="min-h-screen w-full bg-black text-white">
+      <main id="main" className="min-h-screen w-full bg-black text-white">
+        <Navbar />
         <section className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl pt-28 pb-6 md:pt-36 md:pb-8">
           <p className="text-brand-strong text-sm font-semibold uppercase tracking-wider mb-3">
             FAQ

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { authors } from "@/lib/authors";
 import { SITE_URL } from "@/lib/site-url";
 import { buildOpenGraph } from "@/lib/seo";
+import Navbar from "@/components/Navbar";
 
 export const revalidate = 86400;
 
@@ -78,7 +79,8 @@ export default function TeamPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="min-h-screen bg-gradient-to-b from-black via-black to-gray-900 text-white py-8 md:py-16">
+      <Navbar />
+      <div className="min-h-screen bg-gradient-to-b from-black via-black to-gray-900 text-white pt-28 pb-8 md:pt-36 md:pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16 md:mb-20 pt-4 md:pt-6 relative z-10">

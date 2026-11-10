@@ -5,6 +5,7 @@ import Image from "next/image";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { authors, getAuthor } from "@/lib/authors";
 import { blogPosts } from "@/lib/blog-posts";
+import Navbar from "@/components/Navbar";
 
 // Bylines live on the BlogPost record (post.author, lib/blog-posts.ts);
 // voice-team owns everything not explicitly attributed.
@@ -135,7 +136,8 @@ export default function TeamMemberPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="min-h-screen bg-gradient-to-b from-black via-black to-gray-900 text-white py-8 md:py-16">
+      <Navbar />
+      <div className="min-h-screen bg-gradient-to-b from-black via-black to-gray-900 text-white pt-28 pb-8 md:pt-36 md:pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Back Link */}
           <div className="mb-8">

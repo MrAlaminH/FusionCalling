@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { glossaryTerms, slugifyTerm } from "@/lib/glossary";
 import { industries } from "@/lib/industries";
 import { comparisons } from "@/lib/comparisons";
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Search",
@@ -133,8 +134,9 @@ export default function SearchPage({
 
   return (
     <>
+      <Navbar />
       <div className="min-h-screen bg-gradient-to-b from-black via-black to-gray-900 text-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 md:pt-36 md:pb-24">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 bg-gradient-to-r from-white via-orange-200 to-orange-400 bg-clip-text text-transparent">
             Search
           </h1>
