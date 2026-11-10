@@ -8,13 +8,13 @@ import { LAUNCH, PROVIDERS, WHOLESALE_STARTER } from "@/lib/product-facts";
 import { primaryButton } from "@/components/ui/button-styles";
 import PostFaq from "@/components/blog/PostFaq";
 
-const title = `Voice AI Platform Alternatives (2026)`;
+const title = `Voice AI Alternatives: Bland, Retell, Synthflow, Famulor`;
 // Alternatives-first framing — GSC queries hitting this hub are "vapi
 // alternative", "bland ai alternative", "synthflow alternative" etc., and
-// /whitelabel/compare owns the feature-matrix framing.
-const description = `Voice AI platform alternatives, ranked: Fusion Calling vs Vapi, Retell, Synthflow, Smith.ai + ${
-  comparisons.length - 5
-} more. Pricing, features and white-label support compared.`;
+// /whitelabel/compare owns the feature-matrix framing. Title names the
+// highest-impression brands from GSC (Bland 361, Retell 265, Synthflow 257,
+// Famulor 215) — the old title named none of them, hence 1 click / 1,555 imp.
+const description = `Compare Bland AI, Retell, Synthflow, Famulor, Vapi, ElevenLabs and more — pricing, features, white-label support. Fusion Calling from $99/mo.`;
 
 export const metadata: Metadata = {
   title,
