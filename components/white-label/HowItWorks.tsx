@@ -41,7 +41,7 @@ export default function HowItWorks() {
       step: "04",
       title: "Start Selling & Earning",
       description:
-        "Begin onboarding clients and generating recurring revenue. Scale as fast as you want with our infrastructure. Each client gets their own sub-account with lead management, calendar booking, and portal access, so adding a new client is a dashboard task rather than a build project. Import existing Vapi, Retell, or ElevenLabs agents and have a first client live in 1-2 days.",
+        "Begin onboarding clients and generating recurring revenue. Scale as fast as you want with our infrastructure. Each client gets their own sub-account with lead management, calendar booking, and portal access, so adding a new client is a dashboard task rather than a build project. Import existing Vapi, Retell, or ElevenLabs agents and have a first client live in 24 hours.",
     },
   ];
 

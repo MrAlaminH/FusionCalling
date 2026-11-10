@@ -9,7 +9,7 @@ export const whitelabelFaqs: WhitelabelFaq[] = [
   {
     question: "How long does it take to get started?",
     answer:
-      "Once approved, you can launch your white-label solution within 1-2 days. This includes branding setup, voice training, and dashboard customization. Our team guides you through every step of the process.",
+      "Once approved, you can launch your white-label solution within 24 hours. This includes branding setup, voice training, and dashboard customization. Our team guides you through every step of the process.",
   },
   {
     question: "Do I need technical expertise?",

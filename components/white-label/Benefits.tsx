@@ -45,7 +45,7 @@ export default function Benefits() {
       icon: Zap,
       title: "Fast Implementation",
       description:
-        "Most partners launch in one to two days — start with the three-day free trial, no setup fee.",
+        "Most partners launch within 24 hours — start with the three-day free trial, no setup fee.",
     },
     {
       icon: TrendingUp,

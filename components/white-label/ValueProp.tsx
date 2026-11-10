@@ -20,7 +20,7 @@ export default function ValueProp() {
       title: "Launch in Days",
       description:
         "Your branded dashboard, domain, and client portals go live during onboarding — no engineering project.",
-      stat: "1-2 Days",
+      stat: "24 Hours",
       statLabel: "Typical Launch Time",
     },
     {

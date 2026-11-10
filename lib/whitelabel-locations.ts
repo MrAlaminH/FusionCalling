@@ -323,7 +323,7 @@ export const whitelabelLocations: WhiteLabelLocation[] = [
       {
         title: "Rapid partner onboarding",
         description:
-          "Georgia partners typically launch their first client within 1-2 days. The Atlanta market moves fast, and your white-label platform should too.",
+          "Georgia partners typically launch their first client within 24 hours. The Atlanta market moves fast, and your white-label platform should too.",
       },
     ],
     faqs: [
