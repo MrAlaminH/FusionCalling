@@ -1,5 +1,6 @@
 import { SITE_URL } from "@/lib/site-url";
 import { breadcrumbSchema, faqSchema, webPageSchema, buildOpenGraph } from "@/lib/seo";
+import { pageUpdated } from "@/lib/page-updated";
 import WhiteLabelNavbar from "@/components/white-label-navbar";
 import Hero from "@/components/white-label/Hero";
 import ValueProp from "@/components/white-label/ValueProp";
@@ -84,6 +85,7 @@ export default function WhiteLabelPage() {
         description: "Become a Fusion Calling partner and white-label our AI voice agent platform. Resell Vapi, Retell & ElevenLabs under your own brand.",
         breadcrumbId: `${SITE_URL}/whitelabel#breadcrumb`,
         speakable: ["h1"],
+        dateModified: pageUpdated("/whitelabel"),
       }),
       faqSchema(whitelabelFaqs, `${SITE_URL}/whitelabel#faqpage`),
       {

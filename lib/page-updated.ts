@@ -51,6 +51,9 @@ export const PAGE_UPDATED: Record<string, string> = {
   "/ai-phone-call-automation": "2026-11-11",
   // New linkable asset: AI receptionist pricing benchmark (2026-10-06)
   "/ai-receptionist-pricing": "2026-10-28",
+  // 2026-10-10 hub retitle (receptionist-led) + 2026-11-11 SEMrush alignment
+  // (audiences card) + launch-time fixes (ef9c1c6)
+  "/whitelabel": "2026-11-11",
   // GHL sub-account deployment section (title/meta unchanged — freeze holds)
   "/whitelabel/gohighlevel": "2026-10-28",
   // New linkable asset: white-label partner onboarding guide (2026-10-22)

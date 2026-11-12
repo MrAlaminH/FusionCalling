@@ -69,7 +69,7 @@ export const whitelabelFaqs: WhitelabelFaq[] = [
   {
     question: "Are white-label AI receptionists worth reselling?",
     answer:
-      "For most agencies, yes: demand is mainstream (small businesses miss an estimated 60% of inbound calls, and AI receptionists solve it for $149–$497/month at retail), while your wholesale cost starts at $99/month for 6 sub-accounts. Partners typically package a receptionist at $197–$497/month per client, keep 100% of the spread, and bill recurring revenue through Stripe — one or two clients usually cover the platform cost.",
+      "For most agencies, yes: demand is mainstream (industry studies estimate small businesses miss up to 60% of inbound calls, and AI receptionists solve it for $149–$497/month at retail), while your wholesale cost starts at $99/month for 6 sub-accounts. Partners typically package a receptionist at $197–$497/month per client, keep 100% of the spread, and bill recurring revenue through Stripe — one or two clients usually cover the platform cost.",
   },
   {
     question: "Will AI replace the receptionists our clients already have?",
