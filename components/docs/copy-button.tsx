@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import { Copy, Check } from "lucide-react";
+import { useCopied } from "@/lib/use-copied";
 
 interface CopyButtonProps {
   value: string;
@@ -18,17 +18,9 @@ export default function CopyButton({
   className = "",
   iconOnly = false,
 }: CopyButtonProps) {
-  const [copied, setCopied] = useState(false);
+  const { copied, copy } = useCopied();
 
-  const onCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(value);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      // ignore
-    }
-  };
+  const onCopy = () => void copy(value);
 
   if (iconOnly) {
     return (

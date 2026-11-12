@@ -61,6 +61,10 @@ const CONTACT_URL = "https://cal.com/mralamin/discovery-call";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // AT-facing mirror of the More dropdown's CSS hover/focus state: the panel
+  // opens via `group-hover`/`group-focus-within` classes, and without this
+  // the trigger would announce `aria-expanded="false"` while it is open.
+  const [isMoreOpen, setIsMoreOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const firstItemRef = useRef<HTMLAnchorElement>(null);
@@ -195,12 +199,26 @@ const Navbar = () => {
                 </Link>
               </li>
             ))}
-            {/* More dropdown — opens on hover and when focused via keyboard */}
-            <li className="group relative">
+            {/* More dropdown — opens on hover and when focused via keyboard.
+                Pointer/focus handlers only feed isMoreOpen for aria-expanded;
+                the open mechanic itself stays the CSS group-hover machine. */}
+            <li
+              className="group relative"
+              onPointerEnter={() => setIsMoreOpen(true)}
+              onPointerLeave={() => setIsMoreOpen(false)}
+              onFocus={() => setIsMoreOpen(true)}
+              // Bubbling focusout: moving focus between the trigger and a
+              // dropdown link fires blur first — only close when focus left
+              // the whole list item, or aria-expanded flickers mid-traversal.
+              onBlur={(e) => {
+                if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+                  setIsMoreOpen(false);
+                }
+              }}
+            >
               <button
                 type="button"
-                aria-haspopup="true"
-                aria-expanded="false"
+                aria-expanded={isMoreOpen}
                 className="flex items-center gap-1 rounded-full px-3.5 py-2 text-sm font-medium text-gray-300 transition-colors duration-200 hover:bg-white/5 hover:text-white group-focus-within:bg-white/5 group-focus-within:text-white group-hover:text-white cursor-pointer"
               >
                 More

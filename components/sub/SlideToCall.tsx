@@ -1,23 +1,29 @@
 "use client";
 
-import React, { useState, useRef, useCallback, useEffect } from "react";
+import React, { useState, useRef, useCallback, useEffect, useReducer } from "react";
 import { Phone } from "lucide-react";
 import Toast from "@/components/ui/Toast";
 import { shouldReleaseCall } from "@/lib/slide-to-call";
+import { transitionCallPhase } from "@/lib/slide-to-call-machine";
 
 interface SlideToCallProps {
+  /** Fired when the call request is accepted (phase → done). The parent owns
+      any confirmation UI and input reset — the slider no longer reaches down. */
   onCallComplete?: () => void;
   phoneNumber?: string;
   name?: string;
   email?: string;
   selectedAgent?: string;
-  resetInputs: () => void;
   disabled?: boolean;
 }
 
 const HANDLE_WIDTH = 48;
 const VIBRATION_DURATION = 50;
 const COUNTDOWN_SECONDS = 10;
+// ponytail: a hung /api/webhook must fail into `failed` (retryable) instead of
+// stranding the slider on "Connecting…" forever. 15s ≈ generous dial timeout;
+// upgrade path = server-side SLA or streaming status.
+const CALL_TIMEOUT_MS = 15_000;
 const RESET_DELAY = 6000;
 const VALIDATION_MESSAGE =
   "Please fill in all fields correctly: valid name, valid email, phone number, and select an agent";
@@ -28,14 +34,12 @@ export default function SlideToCall({
   name,
   email,
   selectedAgent,
-  resetInputs,
   disabled,
 }: SlideToCallProps) {
-  const [slideState, setSlideState] = useState({
-    isDragging: false,
-    position: 0,
-    isSuccess: false,
-  });
+  const [phase, dispatchPhase] = useReducer(transitionCallPhase, "idle");
+  // Continuous drag state lives beside the phase machine; the two never mix —
+  // countdown/calling/done are independent of where the handle sits.
+  const [drag, setDrag] = useState({ isDragging: false, position: 0 });
   const [countdown, setCountdown] = useState<number | null>(null);
 
   const [showToast, setShowToast] = useState(false);
@@ -44,10 +48,29 @@ export default function SlideToCall({
 
   const sliderRef = useRef<HTMLDivElement>(null);
   const widthRef = useRef(0);
-  const callInitiatedRef = useRef(false);
+  // Mirror of drag.position so pointerup can read the final position without
+  // running logic inside a state updater (updaters double-invoke in StrictMode).
+  const positionRef = useRef(0);
   const dragStartRef = useRef(0);
+  // Latest contact details: the 10s countdown interval captures placeCall once,
+  // so without this mirror, edits made mid-countdown would call the old number.
+  const contactRef = useRef({ phoneNumber, name, email, selectedAgent });
+  contactRef.current = { phoneNumber, name, email, selectedAgent };
   const toastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const countdownTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const resetTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Spring the handle home + clear transient display state. Shared by the
+  // failure path and the post-success safety net.
+  const resetDrag = useCallback(() => {
+    setDrag({ isDragging: false, position: 0 });
+    positionRef.current = 0;
+    setCountdown(null);
+  }, []);
+
+  // Green states: a release was accepted and the call pipeline is running.
+  const isSuccess = phase === "countdown" || phase === "calling" || phase === "done";
+  const isResting = phase === "idle" || phase === "failed";
 
   // Two-phase close: play the toast's exit transition, then unmount.
   // The 200ms must match Toast's duration-200 exit transition.
@@ -75,6 +98,7 @@ export default function SlideToCall({
     () => () => {
       if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
       if (countdownTimerRef.current) clearInterval(countdownTimerRef.current);
+      if (resetTimerRef.current) clearTimeout(resetTimerRef.current);
     },
     []
   );
@@ -94,50 +118,46 @@ export default function SlideToCall({
   }, []);
 
   const placeCall = useCallback(async () => {
-    try {
-      setCountdown(null);
+    dispatchPhase({ type: "CALLING" });
+    setCountdown(null);
 
+    try {
+      const { phoneNumber, name, email, selectedAgent } = contactRef.current;
       const response = await fetch("/api/webhook", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ phoneNumber, name, email, selectedAgent }),
+        signal: AbortSignal.timeout(CALL_TIMEOUT_MS),
       });
 
       if (!response.ok) throw new Error("Call request failed");
 
+      dispatchPhase({ type: "CALL_OK" });
       onCallComplete?.();
-      resetInputs();
 
-      setTimeout(() => {
-        setSlideState({ isDragging: false, position: 0, isSuccess: false });
-        callInitiatedRef.current = false;
+      // Safety net for the (now parent-driven) success flow: return to idle
+      // even if the parent keeps us mounted.
+      resetTimerRef.current = setTimeout(() => {
+        dispatchPhase({ type: "RESET" });
+        resetDrag();
       }, RESET_DELAY);
     } catch (error) {
       console.error("Call initiation failed:", error);
-      setSlideState({ isDragging: false, position: 0, isSuccess: false });
-      callInitiatedRef.current = false;
-      setCountdown(null);
+      dispatchPhase({ type: "CALL_FAIL" });
+      resetDrag();
       showToastMessage(
         "The call couldn't start. Please check your details and try again."
       );
     }
-  }, [
-    phoneNumber,
-    name,
-    email,
-    selectedAgent,
-    onCallComplete,
-    resetInputs,
-    showToastMessage,
-  ]);
+  }, [onCallComplete, showToastMessage, resetDrag]);
 
   const initiateCall = useCallback(() => {
     if (disabled) return;
-    if (callInitiatedRef.current) return;
-    callInitiatedRef.current = true;
+    // Machine guard: a call can only (re)start from idle or failed.
+    if (!isResting) return;
 
     vibrate();
-    setSlideState((prev) => ({ ...prev, isSuccess: true }));
+    dispatchPhase({ type: "START" });
     setCountdown(COUNTDOWN_SECONDS);
 
     // Hold the dial for COUNTDOWN_SECONDS so the user has time to get
@@ -151,72 +171,79 @@ export default function SlideToCall({
         return;
       }
       if (countdownTimerRef.current) clearInterval(countdownTimerRef.current);
+      countdownTimerRef.current = null;
       void placeCall();
     }, 1000);
-  }, [disabled, vibrate, placeCall]);
+  }, [disabled, isResting, vibrate, placeCall]);
 
   const handleDragEnd = useCallback(() => {
+    if (!isResting) return;
     const effectiveWidth = getEffectiveWidth();
     const elapsed = performance.now() - dragStartRef.current;
+    const position = positionRef.current;
 
-    setSlideState((prev) => {
-      if (prev.isSuccess) return prev;
-      if (shouldReleaseCall(prev.position, effectiveWidth, elapsed)) {
-        initiateCall();
-        return { ...prev, position: effectiveWidth, isDragging: false };
-      }
-      return { ...prev, position: 0, isDragging: false };
-    });
-  }, [getEffectiveWidth, initiateCall]);
+    if (shouldReleaseCall(position, effectiveWidth, elapsed)) {
+      setDrag({ isDragging: false, position: effectiveWidth });
+      initiateCall();
+    } else {
+      // Bounce-back must zero the mirror too — a stale position ≥ the flick
+      // threshold would let the next tap pass shouldReleaseCall spuriously.
+      resetDrag();
+    }
+  }, [isResting, getEffectiveWidth, initiateCall, resetDrag]);
 
   const handleDrag = useCallback(
     (clientX: number) => {
-      if (!sliderRef.current || !slideState.isDragging) return;
+      if (!sliderRef.current || !drag.isDragging) return;
 
       const rect = sliderRef.current.getBoundingClientRect();
       const effectiveWidth = getEffectiveWidth();
       const offsetX = clientX - rect.left - HANDLE_WIDTH / 2;
       const newPosition = Math.min(Math.max(0, offsetX), effectiveWidth);
 
-      setSlideState((prev) => ({ ...prev, position: newPosition }));
+      positionRef.current = newPosition;
+      setDrag((prev) => ({ ...prev, position: newPosition }));
 
       // Vibrate at quarters
       if (Math.floor(newPosition % (effectiveWidth / 4)) === 0) {
         vibrate();
       }
     },
-    [slideState.isDragging, getEffectiveWidth, vibrate]
+    [drag.isDragging, getEffectiveWidth, vibrate]
   );
 
   const handlePointerDown = useCallback(
     (e: React.PointerEvent) => {
       e.preventDefault();
-      if (slideState.isSuccess) return;
+      if (!isResting) return;
       if (disabled) {
         showToastMessage(VALIDATION_MESSAGE);
         return;
       }
       // Re-measure per gesture: a cached width goes stale after resize/rotation.
       widthRef.current = 0;
+      // Every gesture starts from rest (handleDrag can't run on this event —
+      // its closure still sees the old isDragging=false).
+      positionRef.current = 0;
       dragStartRef.current = performance.now();
       vibrate();
-      setSlideState((prev) => ({ ...prev, isDragging: true }));
+      setDrag((prev) => ({ ...prev, isDragging: true }));
       handleDrag(e.clientX);
     },
-    [slideState.isSuccess, vibrate, handleDrag, disabled, showToastMessage]
+    [isResting, disabled, vibrate, handleDrag, showToastMessage]
   );
 
   const handlePointerMove = useCallback(
     (e: React.PointerEvent) => {
-      if (slideState.isDragging) {
+      if (drag.isDragging) {
         handleDrag(e.clientX);
       }
     },
-    [slideState.isDragging, handleDrag]
+    [drag.isDragging, handleDrag]
   );
 
   const progressWidth = Math.min(
-    (slideState.position / getEffectiveWidth()) * 100,
+    (drag.position / getEffectiveWidth()) * 100,
     100
   );
 
@@ -249,11 +276,11 @@ export default function SlideToCall({
           {/* Progress bar — scaleX (compositor-only) instead of animated width */}
           <div
             className={`absolute top-0 left-0 h-full w-full origin-left rounded-full ${
-              slideState.isSuccess ? "bg-green-500" : "bg-orange-500"
+              isSuccess ? "bg-green-500" : "bg-orange-500"
             }`}
             style={{
               transform: `scaleX(${progressWidth / 100})`,
-              transition: slideState.isDragging
+              transition: drag.isDragging
                 ? "none"
                 : "transform 0.3s ease-out",
             }}
@@ -262,18 +289,18 @@ export default function SlideToCall({
           {/* Handle */}
           <div
             className={`absolute top-1/2 left-0 w-12 h-12 ${
-              slideState.isSuccess ? "bg-green-500" : "bg-orange-500"
+              isSuccess ? "bg-green-500" : "bg-orange-500"
             } rounded-full flex items-center justify-center cursor-grab`}
             style={{
-              transform: `translate(${slideState.position}px, -50%)${
-                slideState.isDragging ? " scale(1.05)" : ""
+              transform: `translate(${drag.position}px, -50%)${
+                drag.isDragging ? " scale(1.05)" : ""
               }`,
-              transition: slideState.isDragging
+              transition: drag.isDragging
                 ? "none"
                 : "transform 0.3s ease-out, background-color 0.3s ease-out",
             }}
           >
-            {slideState.isSuccess ? (
+            {isSuccess ? (
               <svg
                 className="w-6 h-6 text-white animate-bounce"
                 fill="none"
@@ -296,13 +323,13 @@ export default function SlideToCall({
           <span
             className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
               text-white font-semibold transition-opacity duration-300 ${
-                slideState.isSuccess ? "opacity-0" : "opacity-100"
+                isSuccess ? "opacity-0" : "opacity-100"
               }`}
           >
             {progressWidth > 90 ? "Release to Call" : "→ SLIDE TO CALL"}
           </span>
 
-          {slideState.isSuccess && (
+          {isSuccess && (
             <span
               key={countdown ?? "connecting"}
               className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 

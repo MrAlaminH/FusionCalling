@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { SyntaxHighlighter, vscDarkPlus } from "./highlighter";
 import { Copy, Check } from "lucide-react";
 import { useLanguage } from "./language-context";
+import { useCopied } from "@/lib/use-copied";
 
 interface CodeExample {
   language: string;
@@ -28,7 +29,7 @@ const languageColors: Record<string, string> = {
 
 export default function CodeTabs({ examples, filename }: CodeTabsProps) {
   const [activeTab, setActiveTab] = useState(0);
-  const [copied, setCopied] = useState(false);
+  const { copied, copy } = useCopied();
   const { language } = useLanguage();
 
   // Follow the global language preference when a matching example exists.
@@ -40,13 +41,8 @@ export default function CodeTabs({ examples, filename }: CodeTabsProps) {
   const activeExample = examples[activeTab] ?? examples[0];
 
   const copyToClipboard = async () => {
-    try {
-      await navigator.clipboard.writeText(activeExample.code);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error("Failed to copy code:", err);
-    }
+    const ok = await copy(activeExample.code);
+    if (!ok) console.error("Failed to copy code");
   };
 
   return (

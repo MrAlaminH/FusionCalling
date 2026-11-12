@@ -18,15 +18,20 @@ export default function SalesDeck() {
   const touchX = useRef<number | null>(null);
   const total = slides.length;
 
-  const go = useCallback(
-    (next: number) => {
-      setIndex(Math.min(total - 1, Math.max(0, next)));
-    },
+  const clamp = useCallback(
+    (i: number) => Math.min(total - 1, Math.max(0, i)),
     [total]
   );
 
-  const next = useCallback(() => setIndex((i) => Math.min(total - 1, i + 1)), [total]);
-  const prev = useCallback(() => setIndex((i) => Math.max(0, i - 1)), []);
+  const go = useCallback(
+    (next: number) => {
+      setIndex(clamp(next));
+    },
+    [clamp]
+  );
+
+  const next = useCallback(() => setIndex((i) => clamp(i + 1)), [clamp]);
+  const prev = useCallback(() => setIndex((i) => clamp(i - 1)), [clamp]);
 
   // The first slide plays its full staggered choreography; after the first
   // manual navigation, entrance animation collapses to instant so arrow-key
@@ -75,6 +80,15 @@ export default function SalesDeck() {
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      // While the overview grid is open, only its own keys act — without this
+      // gate, arrow keys/space silently flip the hidden slide underneath (and
+      // the grid can't scroll because Space was preventDefaulted below).
+      if (overview) {
+        if (e.key === "Escape" || e.key === "o" || e.key === "O") {
+          setOverview(false);
+        }
+        return;
+      }
       switch (e.key) {
         case "ArrowRight":
         case "ArrowDown":
@@ -105,7 +119,7 @@ export default function SalesDeck() {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [navNext, navPrev, navGo, total, toggleFs]);
+  }, [overview, navNext, navPrev, navGo, total, toggleFs]);
 
   useEffect(() => {
     const onFsChange = () => setIsFs(Boolean(document.fullscreenElement));

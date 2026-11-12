@@ -14,10 +14,11 @@
   ],
   "scripts": {
     "dev": "next dev",
-    "build": "npm run llms:gen && npm run check:data && next build",
+    "build": "npm run llms:gen && npm run check:data && npm run check:machine && next build",
     "start": "next start",
     "lint": "next lint",
     "check:data": "npx --yes tsx scripts/check-data.ts",
+    "check:machine": "npx --yes tsx scripts/check-slide-to-call-machine.ts",
     "typecheck": "tsc --noEmit",
     "analyze": "node scripts/analyze.mjs",
     "optimize-images": "node scripts/optimize-images.mjs",

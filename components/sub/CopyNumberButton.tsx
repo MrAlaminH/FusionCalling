@@ -1,14 +1,12 @@
 "use client";
-import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { useCopied } from "@/lib/use-copied";
+
+const DEMO_NUMBER = "+14352921249";
 
 export default function CopyNumberButton() {
-  const [copySuccess, setCopySuccess] = useState(false);
-  const handleCopyNumber = () => {
-    navigator.clipboard.writeText("+14352921249");
-    setCopySuccess(true);
-    setTimeout(() => setCopySuccess(false), 2000);
-  };
+  const { copied: copySuccess, copy } = useCopied();
+  const handleCopyNumber = () => void copy(DEMO_NUMBER);
   return (
     <button
       onClick={handleCopyNumber}

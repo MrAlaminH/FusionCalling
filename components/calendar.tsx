@@ -10,7 +10,11 @@ interface CalendarProps {
 }
 
 const Calendar = ({ calUsername, eventSlug, showHeader = true }: CalendarProps) => {
-  const [ready, setReady] = useState(false);
+  // Lazy-load machine: idle (below viewport) → loading (near viewport) →
+  // ready (embed mounted) | failed (import rejected — booking must stay
+  // reachable, so the fallback links straight to cal.com).
+  type LoadStatus = "idle" | "loading" | "ready" | "failed";
+  const [status, setStatus] = useState<LoadStatus>("idle");
   const [Cal, setCal] = useState<typeof CalEmbedded | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -18,27 +22,34 @@ const Calendar = ({ calUsername, eventSlug, showHeader = true }: CalendarProps) 
   // the viewport so it never competes with initial page load. The module
   // import itself is gated too — ~48 KB of embed JS stays out of hydration.
   useEffect(() => {
-    if (!ready) return;
+    if (status !== "loading") return;
     let cancelled = false;
-    import("@calcom/embed-react").then((m) => {
-      if (!cancelled) setCal(() => m.default);
-    });
+    import("@calcom/embed-react")
+      .then((m) => {
+        if (!cancelled) {
+          setCal(() => m.default);
+          setStatus("ready");
+        }
+      })
+      .catch(() => {
+        if (!cancelled) setStatus("failed");
+      });
     return () => {
       cancelled = true;
     };
-  }, [ready]);
+  }, [status]);
 
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
     if (typeof IntersectionObserver === "undefined") {
-      setReady(true);
+      setStatus("loading");
       return;
     }
     const io = new IntersectionObserver(
       (entries) => {
         if (entries.some((e) => e.isIntersecting)) {
-          setReady(true);
+          setStatus("loading");
           io.disconnect();
         }
       },
@@ -60,7 +71,7 @@ const Calendar = ({ calUsername, eventSlug, showHeader = true }: CalendarProps) 
         </div>
       )}
       <div className="calendar-container calendar-embed" ref={containerRef}>
-        {ready && Cal ? (
+        {status === "ready" && Cal ? (
           <Cal
             calLink={`${calUsername}/${eventSlug}`}
             style={{
@@ -80,6 +91,17 @@ const Calendar = ({ calUsername, eventSlug, showHeader = true }: CalendarProps) 
               hideTimeZoneSwitcher: "true",
             }}
           />
+        ) : status === "failed" ? (
+          <div role="status" className="calendar-fallback">
+            <p>The booking calendar couldn&apos;t load just now.</p>
+            <a
+              href={`https://cal.com/${calUsername}/${eventSlug}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book your slot directly on Cal.com →
+            </a>
+          </div>
         ) : (
           <div
             aria-busy="true"
@@ -130,6 +152,24 @@ const Calendar = ({ calUsername, eventSlug, showHeader = true }: CalendarProps) 
           border: 1px solid rgba(255, 255, 255, 0.1);
           margin-bottom: 1rem;
           -webkit-overflow-scrolling: touch;
+        }
+
+        .calendar-fallback {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 1rem;
+          min-height: 500px;
+          text-align: center;
+          color: #9ca3af;
+          font-size: 1rem;
+        }
+        .calendar-fallback a {
+          color: #ffffff;
+          font-weight: 600;
+          text-decoration: underline;
+          text-underline-offset: 4px;
         }
 
         /* Extra large desktop screens (4K, ultrawide) */

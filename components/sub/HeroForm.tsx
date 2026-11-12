@@ -1,6 +1,7 @@
 "use client";
 import dynamic from "next/dynamic";
 import { useState } from "react";
+import { usePostHog } from "posthog-js/react";
 import { Input } from "@/components/ui/input";
 
 const PhoneInputComponent = dynamic(
@@ -8,18 +9,24 @@ const PhoneInputComponent = dynamic(
 );
 const SlideToCall = dynamic(() => import("@/components/sub/SlideToCall"));
 
+// Form lifecycle: idle → (slider succeeds) → success → idle. The slider only
+// reports via onCallComplete; the form owns reset and confirmation.
+type FormStatus = "idle" | "success";
+
 export default function HeroForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [selectedAgent, setSelectedAgent] = useState("");
   const [formKey, setFormKey] = useState(0);
+  const [status, setStatus] = useState<FormStatus>("idle");
   const [touched, setTouched] = useState<{
     name: boolean;
     email: boolean;
     phone: boolean;
     agent: boolean;
   }>({ name: false, email: false, phone: false, agent: false });
+  const posthog = usePostHog();
   const markTouched = (field: keyof typeof touched) =>
     setTouched((t) => ({ ...t, [field]: true }));
 
@@ -46,7 +53,39 @@ export default function HeroForm() {
     );
   };
 
-  const handleCallComplete = () => {};
+  const handleCallComplete = () => {
+    // First analytics on the site's highest-intent action.
+    posthog?.capture("demo_call_placed", {
+      selectedAgent: selectedAgent || null,
+    });
+    setStatus("success");
+    resetInputs();
+  };
+
+  if (status === "success") {
+    return (
+      <div
+        role="status"
+        aria-live="polite"
+        className="rounded-xl border border-brand/30 bg-brand/10 p-6 text-center animate-fade-in"
+      >
+        <p className="text-lg font-semibold text-white">
+          Call placed. Your agent is dialing you now.
+        </p>
+        <p className="mt-2 text-sm text-gray-300">
+          Pick up when your phone rings! The call automatically ends after 5
+          minutes.
+        </p>
+        <button
+          type="button"
+          onClick={() => setStatus("idle")}
+          className="mt-4 text-sm font-medium text-brand-light underline-offset-4 hover:underline"
+        >
+          Test another scenario
+        </button>
+      </div>
+    );
+  }
 
   return (
     <form className="space-y-4" key={formKey} noValidate>
@@ -159,7 +198,6 @@ export default function HeroForm() {
             email={email}
             phoneNumber={phoneNumber}
             selectedAgent={selectedAgent}
-            resetInputs={resetInputs}
             onCallComplete={handleCallComplete}
             disabled={!isFormValid()}
           />

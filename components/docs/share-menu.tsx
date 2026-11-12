@@ -4,12 +4,13 @@ import { useState } from "react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { Copy, Check, ChevronDown, FileText, MessageSquare, Braces } from "lucide-react";
 import { generateMarkdown } from "@/app/docs/api-reference/lib/markdown";
+import { useCopied } from "@/lib/use-copied";
 
 const itemClass =
   "flex items-center gap-2.5 px-3 py-2 text-sm text-gray-200 rounded-md outline-none cursor-pointer data-[highlighted]:bg-white/10 data-[highlighted]:text-white";
 
 export default function ShareMenu() {
-  const [copied, setCopied] = useState(false);
+  const { copied, copy } = useCopied();
   const [toast, setToast] = useState<string | null>(null);
 
   const flash = (msg: string) => {
@@ -28,14 +29,8 @@ export default function ShareMenu() {
   const copyMarkdown = async () => {
     const md = getMarkdown();
     if (md === null) return flash("Couldn't generate — try again");
-    try {
-      await navigator.clipboard.writeText(md);
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 2000);
-      flash("Page copied as Markdown");
-    } catch {
-      flash("Couldn't copy — try again");
-    }
+    const ok = await copy(md);
+    flash(ok ? "Page copied as Markdown" : "Couldn't copy — try again");
   };
 
   const askChatGPT = async () => {

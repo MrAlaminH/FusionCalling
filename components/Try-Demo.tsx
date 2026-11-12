@@ -6,9 +6,9 @@ import { useState } from "react";
 import { Reveal } from "@/components/ui/reveal";
 
 export default function TryDemo() {
-  const [playingVideos, setPlayingVideos] = useState<{
-    [key: number]: boolean;
-  }>({});
+  // Single slot: at most one demo plays at a time — starting card B stops
+  // card A's audio instead of overlapping it.
+  const [playing, setPlaying] = useState<number | null>(null);
   const [showMore, setShowMore] = useState(false);
 
   const features = [
@@ -103,10 +103,7 @@ export default function TryDemo() {
     : features;
 
   const handlePlayVideo = (index: number) => {
-    setPlayingVideos((prev) => ({
-      ...prev,
-      [index]: !prev[index],
-    }));
+    setPlaying((prev) => (prev === index ? null : index));
   };
 
   return (
@@ -133,7 +130,7 @@ export default function TryDemo() {
                 <div
                   className={`relative aspect-video ${feature.bgColor} overflow-hidden`}
                 >
-                  {playingVideos[index] ? (
+                  {playing === index ? (
                     <iframe
                       src={`${feature.video}?autoplay=1`}
                       title={feature.title}
