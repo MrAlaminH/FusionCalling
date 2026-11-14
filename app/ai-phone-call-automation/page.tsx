@@ -7,6 +7,7 @@ import { buildOpenGraph } from "@/lib/seo";
 import { DIRECT_PLANS } from "@/lib/product-facts";
 import { SITE_URL } from "@/lib/site-url";
 import { PAGE_UPDATED } from "@/lib/page-updated";
+import { aiPhoneCallAutomationFaqs as faqs } from "@/lib/page-faqs";
 
 // Title matches the slug, H1, and the top GSC cluster ("call automation" 256,
 // "ai call automation" 204, "ai phone call automation" 63 — 90d GSC). The
@@ -200,55 +201,6 @@ const verticals = [
     name: "Ecommerce & retail",
     href: "/industries/ai-voice-for-ecommerce-retail",
     text: "Handle order-status calls, returns, and pre-purchase questions without queueing customers.",
-  },
-];
-
-const faqs = [
-  {
-    question: "What is AI phone call automation?",
-    answer:
-      "AI phone call automation is software that handles business phone calls without a human on the line: it answers inbound calls, places outbound calls, holds natural conversations, and completes follow-through work like booking, CRM updates, and SMS confirmations. Fusion Calling runs both directions on one platform from $149/month.",
-  },
-  {
-    question:
-      "What is the difference between AI phone call automation and an AI receptionist?",
-    answer:
-      "Automation is the whole capability — every inbound and outbound workflow running on software. The AI receptionist is one application of it: the inbound voice agent that answers your lines like a front-desk employee. If you only need inbound coverage, start with the AI phone call receptionist guide; if you also want outbound campaigns, reminders, or qualification, you need the full automation platform described on this page.",
-  },
-  {
-    question: "Does it handle outbound calls or only inbound?",
-    answer:
-      "Both. Inbound agents answer, book, and route; outbound agents dial lists in parallel for follow-ups, re-engagement, qualification, and reminders. You can run one direction or both on the same account, under the same calling rules and minute pool.",
-  },
-  {
-    question: "How much does AI phone call automation cost?",
-    answer:
-      "Plans start at $149/month with 500 included minutes — agencies resell from $99/month; full tiers on /pricing.",
-  },
-  {
-    question: "How long does it take to set up?",
-    answer:
-      "Most deployments go live within days of kickoff: connect your number, provide your business knowledge, set greetings and handoff rules, then test with the team before switching it on. Complex multi-workflow setups take longer, but a single inbound or outbound workflow is typically live in under a week.",
-  },
-  {
-    question: "What tools does it connect to?",
-    answer:
-      "Calendars for booking, CRMs for lead and outcome logging, SMS for confirmations and follow-ups, and Zapier for 2,200+ additional apps. The agent reads and writes during the call, so records stay current without staff typing anything in by hand.",
-  },
-  {
-    question: "Is automated outbound calling legal?",
-    answer:
-      "Outbound rules depend on your jurisdiction — in the US, the TCPA governs consent, calling hours, and do-not-call obligations, and automation does not exempt you. Fusion Calling supports consent-aware workflows, time-of-day windows, and opt-out handling, but list consent and compliance decisions remain your responsibility. Consult counsel for your program.",
-  },
-  {
-    question: "Can agencies white-label it?",
-    answer:
-      "Yes. Agencies resell the platform under their own brand with client sub-accounts, branded portals, and Stripe rebilling from $99/month. Each client gets their own agents, numbers, and rules while you manage everything from one dashboard.",
-  },
-  {
-    question: "Which AI outbound calling platform integrates with our CRM?",
-    answer:
-      "Fusion Calling logs calls, outcomes, and transcripts to your CRM, connects to GoHighLevel and HubSpot, and reaches 2,200+ additional apps via Zapier, with API and webhook access for custom stacks. Outbound results write back during the call, so lead records stay current without manual entry.",
   },
 ];
 

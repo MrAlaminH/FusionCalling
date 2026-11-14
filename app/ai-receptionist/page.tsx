@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Sources from "@/components/sources";
 import { buildOpenGraph } from "@/lib/seo";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { aiReceptionistFaqs as faqs } from "@/lib/page-faqs";
 
 const title = "AI Receptionist for Business Calls";
 const description =
@@ -126,54 +127,6 @@ const industryLinks = [
     name: "Restaurants & Hospitality",
     href: "/industries/ai-voice-for-restaurants-hospitality",
     text: "Take reservations and phone orders, and answer hours, menu, and directions questions.",
-  },
-];
-
-const faqs = [
-  {
-    question: "What is an AI receptionist?",
-    answer:
-      "An AI receptionist is software that answers your business phone calls like a front-desk employee: it greets callers, answers questions using your business knowledge, books appointments into your calendar, takes messages, sends SMS confirmations, and transfers urgent calls to your team. It works 24/7 and handles many calls at the same time.",
-  },
-  {
-    question: "How much does an AI receptionist cost?",
-    answer:
-      "Plans start at $149/month with 500 included minutes. There is no permanent free tier, but every plan starts with a 3-day free trial, a 14-day money-back guarantee, and a live demo call you can take before committing — see /pricing for the full breakdown across all tiers.",
-  },
-  {
-    question: "Will AI replace receptionists?",
-    answer:
-      "No — it replaces the repetitive part of the job. The AI handles routine calls: bookings, hours, directions, reminders, and message-taking. Judgment calls, sensitive conversations, and loyal-customer relationships stay with your people. Most businesses use the AI as the first line so staff time goes to conversations that need a human.",
-  },
-  {
-    question: "Are AI receptionists worth it for small businesses?",
-    answer:
-      "Usually, yes — the math is about missed calls. If your business misses 20 calls a month and closes 1 in 4 at $300 average value, that is $1,500 in lost revenue, more than the plan cost. An AI receptionist makes sense when a missed call means lost work: home services, clinics, restaurants, real estate, and law firms see the fastest payback.",
-  },
-  {
-    question: "Can callers tell they are talking to an AI?",
-    answer:
-      "Owners usually settle this from transcripts, not theory: callers who get an instant correct booking rarely ask whether the voice was human. The voices come from natural-sounding speech engines like ElevenLabs, and customers report them up to 95% indistinguishable from human speakers in blind listening tests. Best practice is a named greeting up front plus disclosure when asked, with a human-transfer rule for anything emotional — speed plus honesty beats both hold music and a surprise reveal.",
-  },
-  {
-    question: "What happens when the AI cannot help a caller?",
-    answer:
-      "You set the rules for call transfer and escalation. Emergencies, angry callers, or requests you mark human-only trigger a warm transfer to you or your team, with the transcript, caller details, and reason for the handoff attached. Nothing gets stranded, and nobody has to start over.",
-  },
-  {
-    question: "How is an AI receptionist different from an answering service?",
-    answer:
-      "An answering service takes messages on your behalf, per minute, from a script. An AI receptionist takes action on your behalf: it books into your actual calendar, answers from your real business knowledge, sends SMS confirmations, and updates your CRM — at a flat monthly rate instead of per-minute billing.",
-  },
-  {
-    question: "Can I resell an AI receptionist to my clients?",
-    answer:
-      "Yes. Agencies, consultants, and MSPs resell Fusion Calling as a white-label AI receptionist under their own brand and pricing, with client sub-accounts and Stripe rebilling included. Partner plans start at $99/month — see the white-label program for details.",
-  },
-  {
-    question: "Do I need a new phone number for an AI receptionist?",
-    answer:
-      "No. Your existing business number and carrier stay exactly as they are — calls route to the AI receptionist with forwarding you control, and porting is optional, never required.",
   },
 ];
 

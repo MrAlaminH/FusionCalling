@@ -114,6 +114,32 @@ export default function GlossaryHubPage() {
             </div>
           </div>
 
+          {/* Answer-first routing: the conversational questions buyers ask most
+              (GSC 8+-word slice) route straight to the terms that answer them,
+              instead of dying on an index page at pos 38. */}
+          <div className="glass rounded-2xl p-4 md:p-6 border border-brand/20 mb-12">
+            <p className="text-sm text-gray-400 mb-3 text-center">
+              Questions answered here — jump straight to the term:
+            </p>
+            <div className="flex flex-wrap justify-center gap-2">
+              {[
+                { term: "AES-256 Encryption", label: "How is call audio encrypted?" },
+                { term: "Automatic Speech Recognition", label: "Accuracy on noisy recordings" },
+                { term: "Barge-In", label: "Interruption handling" },
+                { term: "Large Language Model", label: "LLMs in call workflows" },
+                { term: "White-Label", label: "Reselling under your brand" },
+              ].map((q) => (
+                <Link
+                  key={q.term}
+                  href={`/glossary/${slugifyTerm(q.term)}`}
+                  className="rounded-lg bg-brand/10 text-brand-light hover:bg-brand hover:text-white font-medium transition text-sm px-3 py-1.5"
+                >
+                  {q.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
           {/* Terms by letter */}
           <div className="space-y-12 mb-16">
             {letters.map((letter) => (

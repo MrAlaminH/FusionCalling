@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Sources from "@/components/sources";
 import { buildOpenGraph } from "@/lib/seo";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { aiVoiceAgentFaqs as faqs } from "@/lib/page-faqs";
 
 const title = "AI Voice Agent: 2026 Guide";
 const description =
@@ -76,54 +77,6 @@ const buyingCriteria = [
   {
     title: "White-label path",
     text: "Agencies should be able to resell the same agents under their own brand with sub-accounts and rebilling — a $99/month starting point keeps the math working.",
-  },
-];
-
-const faqs = [
-  {
-    question: "What is an AI voice agent?",
-    answer:
-      "An AI voice agent is software that holds spoken phone conversations on behalf of a business: it listens, understands intent, replies in a natural voice, and completes tasks like booking appointments or updating a CRM. It combines speech recognition, a language model, and voice synthesis with telephony and business integrations — no human on the line.",
-  },
-  {
-    question: "Is an AI voice agent the same as an AI receptionist?",
-    answer:
-      "A receptionist is one type of voice agent — the inbound one that answers your lines. 'AI voice agent' is the broader category: it also covers outbound sales agents, qualification agents, and reminder agents. Our AI phone call receptionist guide covers the inbound type; AI phone call automation covers the full platform.",
-  },
-  {
-    question: "How do AI voice agents work technically?",
-    answer:
-      "Four stages run in a loop: automatic speech recognition transcribes the caller, a large language model decides the response using your business knowledge, text-to-speech renders it in a natural voice, and integrations execute actions like booking or CRM updates. The full loop typically completes in under a second, which is why conversations feel fluid.",
-  },
-  {
-    question: "Can AI voice agents handle outbound calls?",
-    answer:
-      "Yes. The same agent technology dials lists in parallel for cold calling, lead qualification, reminders, and follow-ups — inside calling-hour windows and consent rules you configure. Inbound and outbound can run on the same account and minute pool.",
-  },
-  {
-    question: "How much does an AI voice agent cost?",
-    answer:
-      "Plans start at $149/month with 500 included minutes — compare every tier on /pricing.",
-  },
-  {
-    question: "Do callers know they're talking to an AI?",
-    answer:
-      "Best practice is transparency when asked — most businesses introduce the agent by name in the greeting, which callers accept readily. The conversation itself feels natural: fast replies, realistic pacing, interruption handling, and multiple languages.",
-  },
-  {
-    question: "What can't AI voice agents do?",
-    answer:
-      "They don't replace human judgment: complex disputes, emotional conversations, and unusual requests should transfer to your team — which is why warm transfers with full transcripts are a core feature, not an afterthought. They also don't exempt outbound programs from telemarketing rules like the TCPA.",
-  },
-  {
-    question: "How do I choose an AI voice agent platform?",
-    answer:
-      "Test interruption handling with messy calls, verify tasks complete during the call (booking, CRM, SMS), prefer minute-pooled over per-seat pricing, confirm compliance controls, and measure time-to-live in days not months. Hear live demo calls on our homepage before comparing plans.",
-  },
-  {
-    question: "Can an AI receptionist qualify leads from phone calls?",
-    answer:
-      "Yes. The agent asks your qualifying questions on live inbound calls — budget, timeline, location, service need — scores the caller against your rules, writes everything to your CRM, and books appointments for qualified leads. Unqualified callers still get answered, so you capture the long tail that voicemail loses.",
   },
 ];
 

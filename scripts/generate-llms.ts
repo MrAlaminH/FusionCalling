@@ -16,6 +16,11 @@ import { whitelabelCaseStudies } from "../lib/whitelabel-case-studies";
 import { whitelabelLocations } from "../lib/whitelabel-locations";
 import { whitelabelProviders } from "../lib/whitelabel-providers";
 import { whitelabelFaqs } from "../lib/whitelabel-faqs";
+import {
+  aiPhoneCallAutomationFaqs,
+  aiVoiceAgentFaqs,
+  aiReceptionistFaqs,
+} from "../lib/page-faqs";
 
 const PAGES: { path: string; title: string; content: string }[] = [
   {
@@ -159,6 +164,21 @@ Compliance: call audio is encrypted in transit (TLS/SRTP) and at rest (AES-256).
     path: "/ai-phone-answering-service",
     title: "AI Phone Answering Service: 2026 Buyer's Guide | Fusion Calling",
     content: `2026 buyer's guide to the AI phone answering service: what an AI answering service includes (24/7 live answering on every call, appointment booking into your real calendar, message-taking and screening, smart transfers with transcripts, SMS follow-ups), what it costs — flat monthly plans from $149/mo with 500 included minutes, no per-minute billing — and how it compares to human answering services, voicemail, and hiring in-house. Covers switching from a current service in days while keeping your existing number, warm-transfer rules for calls the AI can't handle, identical after-hours and weekend coverage, and encrypted caller-data handling.`,
+  },
+  {
+    path: "/ai-phone-call-automation",
+    title: "AI Phone Call Automation (2026 Guide) | Fusion Calling",
+    content: `AI phone call automation handles inbound and outbound calls — receptionist answering, cold calling, lead qualification, and reminders. From $149/mo. AI phone call automation is software that handles business phone calls without a human on the line — answering inbound calls, placing outbound campaigns, and completing the follow-through (calendar booking, CRM updates, SMS confirmations) during the call itself. Fusion Calling runs both directions on one platform from $149/month with 500 included minutes. FAQs: ${aiPhoneCallAutomationFaqs.map((f) => `Q: ${f.question} A: ${f.answer}`).join(" ")}`,
+  },
+  {
+    path: "/ai-voice-agent",
+    title: "AI Voice Agent: 2026 Guide | Fusion Calling",
+    content: `What is an AI voice agent? How speech recognition, language models, and voice synthesis hold real phone conversations — plus uses and pricing from $149/mo. The agent loop: speech recognition transcribes the caller, a language model decides the response from your business knowledge, voice synthesis renders it naturally, and integrations complete actions like booking and CRM updates — under a second end to end. FAQs: ${aiVoiceAgentFaqs.map((f) => `Q: ${f.question} A: ${f.answer}`).join(" ")}`,
+  },
+  {
+    path: "/ai-receptionist",
+    title: "AI Receptionist for Business Calls | Fusion Calling",
+    content: `An AI receptionist answers your business calls 24/7 — bookings, messages, smart transfers, SMS follow-ups. See how it works and pricing from $149/mo. Works with your existing number via forwarding; warm-transfers to your team with full context; reads and writes to your CRM during the call. FAQs: ${aiReceptionistFaqs.map((f) => `Q: ${f.question} A: ${f.answer}`).join(" ")}`,
   },
   {
     path: "/ai-receptionist-pricing",
