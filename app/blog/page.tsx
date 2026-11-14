@@ -8,14 +8,17 @@ import BlogGrid from "@/components/blog/BlogGrid";
 
 export const revalidate = 3600;
 
+// Title deliberately avoids "white-label voice AI" — that exact phrase belongs
+// to the /whitelabel money page; GSC shows this index cannibalising it on
+// 6 queries (2026-11 export).
 export const metadata: Metadata = {
-  title: "White-Label Voice AI Blog: Agency Guides",
+  title: "Voice AI Agency Blog: Guides & Playbooks",
   description:
-    "Expert insights on white-label AI voice platforms, agency growth strategies, and voice automation trends. Learn how to build profitable AI voice businesses.",
+    "Expert guides on building and selling AI voice services: agency growth strategies, platform breakdowns, and voice automation trends for teams selling AI phone agents.",
   ...buildOpenGraph({
-    title: "White-Label Voice AI Blog: Agency Guides",
+    title: "Voice AI Agency Blog: Guides & Playbooks",
     description:
-      "Expert insights on white-label AI voice platforms, agency growth strategies, and voice automation trends. Learn how to build profitable AI voice businesses.",
+      "Expert guides on building and selling AI voice services: agency growth strategies, platform breakdowns, and voice automation trends for teams selling AI phone agents.",
     path: "/blog",
     image: "/blog/blog1.webp",
   }),

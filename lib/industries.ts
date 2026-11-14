@@ -1229,6 +1229,9 @@ export const industries: Industry[] = [
       "hotel concierge ai",
       "hospitality voice ai",
       "white label voice ai",
+      "ai answering service for restaurants",
+      "best ai receptionist for restaurants",
+      "restaurant phone answering ai",
     ],
     h1: "AI Receptionist for",
     h1Highlight: "Restaurants & Hospitality",
@@ -1331,6 +1334,12 @@ export const industries: Industry[] = [
         question: "What is the best AI voice agent for restaurants?",
         answer:
           "The best AI voice agent for restaurants answers every call in under a second, books directly into OpenTable, Resy, or Tock with party size and SMS confirmation, sends takeout tickets into Toast, Square, or Clover with modifiers, and runs 24-hour and 2-hour no-show reminders plus waitlist callbacks. For a 40-seat venue at $60 average cover, cutting no-shows from 10% to 3% on 100 weekly covers recovers about $420/week. Fusion Calling starts at $149/month for restaurants and agencies white-labeling hospitality.",
+      },
+      {
+        question:
+          "How does Fusion Calling compare to restaurant phone AI tools like Slang.ai, Goodcall, or Kea?",
+        answer:
+          "Restaurant-specific tools such as Slang.ai and Kea focus only on restaurant phone answering, and Goodcall serves general small businesses. All three connect to reservation and POS systems. Fusion Calling covers the same ground — OpenTable, Resy, and Tock for reservations, Toast, Square, and Clover for orders — and adds two things those tools don't ship: flat pricing at $149/month with 500 included minutes (no per-location metering), and a white-label layer so an agency can resell the same setup under its own brand to multiple venues. Restaurant owners can hear the live demo before deciding, and agencies can launch a branded hospitality offering in 24 hours.",
       },
       {
         question: "Can an AI voice agent take restaurant reservations and orders?",
@@ -1483,7 +1492,7 @@ export const industries: Industry[] = [
     productSupported: true,
     metaTitle: "Salon AI Receptionist: Bookings 24/7",
     metaDescription:
-      "AI voice agents for salons, spas, and clinics book appointments, fill cancellations, and answer questions 24/7. White-label the AI receptionist for your agency.",
+      "AI voice agents for salons, med spas, and clinics book appointments, fill cancellations, and answer questions 24/7. White-label the AI receptionist for your agency.",
     keywords: [
       "ai voice salon",
       "ai receptionist spa",
@@ -1491,17 +1500,19 @@ export const industries: Industry[] = [
       "spa appointment ai",
       "ai voice beauty business",
       "wellness clinic ai receptionist",
+      "ai receptionist for med spa",
+      "med spa ai receptionist",
     ],
     h1: "AI Receptionist for",
     h1Highlight: "Beauty & Wellness",
     subtitle:
       "Chairs stay full while hands stay busy — an AI receptionist that books, confirms, and backfills appointments around the clock.",
     intro: [
-      "Salons, spas, and wellness clinics take bookings exactly when staff can't pick up: mid-treatment, mid-class, mid-rush. Every call that hits voicemail is a client booking with the competitor down the street.",
+      "Salons, spas, med spas, and wellness clinics take bookings exactly when staff can't pick up: mid-treatment, mid-class, mid-rush. Every call that hits voicemail is a client booking with the competitor down the street.",
       "Fusion Calling gives venues, and the agencies serving them, a branded AI receptionist that answers every call instantly, books into the real schedule, confirms and reminds automatically, and offers waitlisted clients newly opened slots the moment cancellations land.",
     ],
     receptionistSection: {
-      heading: "Your AI receptionist for salons and spas",
+      heading: "Your AI receptionist for salons, spas, and med spas",
       body:
         "An AI receptionist answers every client call in two rings, books and reschedules services, sends confirmations and reminders, and fills cancellations from the waitlist — while your team keeps their hands on clients, not phones.",
       bullets: [
@@ -1574,6 +1585,11 @@ export const industries: Industry[] = [
         question: "Can it handle complex service menus?",
         answer:
           "Yes. You provide services, durations, prices, and staff specialties in plain language, and the agent books correctly — including add-ons and the right provider for the requested treatment.",
+      },
+      {
+        question: "Do you support med spas and aesthetic clinics?",
+        answer:
+          "Yes. Med spas use the same AI receptionist to book consultations and treatments, take deposit payments on high-ticket services like injectables and laser packages, and route clinical questions — candidacy, safety, aftercare — to licensed staff with a full transcript. Reminder calls cut no-shows on long appointments, where one missed slot can mean hundreds of dollars of unused chair time. Pricing starts at $149/month per location, and agencies white-labeling med-spa clients keep 100% of client revenue.",
       },
       {
         question: "Can I sell this to salon and spa clients under my brand?",

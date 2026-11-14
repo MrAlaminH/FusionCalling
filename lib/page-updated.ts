@@ -44,11 +44,11 @@ export const PAGE_UPDATED: Record<string, string> = {
   "/industries/ai-voice-for-financial-services": "2026-11-11",
   "/industries/ai-voice-for-ecommerce-retail": "2026-11-11",
   "/industries/ai-voice-for-education-tutoring": "2026-11-11",
-  "/industries/ai-voice-for-restaurants-hospitality": "2026-11-11",
+  "/industries/ai-voice-for-restaurants-hospitality": "2026-11-14",
   "/industries/ai-voice-for-medical-practices": "2026-11-11",
-  "/industries/ai-voice-for-beauty-wellness": "2026-11-11",
+  "/industries/ai-voice-for-beauty-wellness": "2026-11-14",
   "/industries/ai-voice-for-veterinary": "2026-11-11",
-  "/ai-phone-call-automation": "2026-11-11",
+  "/ai-phone-call-automation": "2026-11-14",
   // New linkable asset: AI receptionist pricing benchmark (2026-10-06)
   "/ai-receptionist-pricing": "2026-10-28",
   // 2026-10-10 hub retitle (receptionist-led) + 2026-11-11 SEMrush alignment
@@ -60,6 +60,8 @@ export const PAGE_UPDATED: Record<string, string> = {
   "/whitelabel/onboarding": "2026-10-22",
   // 2026-10-28 new comparison page (goodcall); Bolna section on /alternative
   "/alternative/goodcall": "2026-10-28",
+  // 2026-11-14 new comparison page (podium) — keyword-research pass
+  "/alternative/podium": "2026-11-14",
   // 2026-10-28 best-of listicle + inbound links (phase 4)
   "/blog/best-ai-receptionists-small-business": "2026-10-28",
   // 2026-10-28 city-level locations added (phase 5); feeds sitemap lastmod —
