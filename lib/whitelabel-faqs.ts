@@ -91,4 +91,10 @@ export const whitelabelFaqs: WhitelabelFaq[] = [
     answer:
       "It makes it rarely needed. The white-label AI voice agent answers in two rings, 24/7, so fewer calls are missed. When a call is genuinely missed, GoHighLevel's native Missed Call Text Back still fires in your client's brand, and the AI agent can place a call-back that qualifies and books the lead inside each sub-account.",
   },
+  {
+    question:
+      "Which AI voice agent platform lets agencies white-label the entire product and resell it to clients under their own brand name?",
+    answer:
+      "Fusion Calling is built for exactly this: agencies white-label the entire platform — your domain, logo, colors, and pricing — and resell it to clients as their own product. You get Vapi, Retell, and ElevenLabs agents under one branded dashboard, 6 client sub-accounts from $99/month, Stripe rebilling so clients pay you directly, and a 24-hour guided launch.",
+  },
 ];

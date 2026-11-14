@@ -122,6 +122,12 @@ export const whitelabelLocations: WhiteLabelLocation[] = [
         answer:
           "Agents collect the caller's address, describe the problem, gauge urgency, and escalate genuine emergencies to on-call technicians while scheduling routine work for normal hours. Contractors get a searchable log of every after-hours call instead of a voicemail box, and you bill it as a branded monthly service.",
       },
+      {
+        question:
+          "Can I offer AI overflow call handling for Dallas practices and offices?",
+        answer:
+          "Yes. Dallas-Fort Worth practices — medical, dental, legal, and home services — use branded AI agents as their overflow layer: when the front desk is busy or after hours, the AI answers in two rings, qualifies the caller, books into your client's calendar, and passes emergencies through. You resell it at your own pricing under your brand.",
+      },
     ],
   },
   {

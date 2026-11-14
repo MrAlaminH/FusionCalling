@@ -802,6 +802,12 @@ export const industries: Industry[] = [
         answer:
           "Yes. White-label partners deploy branded AI capacity for each client, control pricing, keep 100% of revenue, with unlimited sub-accounts on the Scale tier.",
       },
+      {
+        question:
+          "How accurate is speech recognition on noisy call-center recordings?",
+        answer:
+          "Modern ASR handles noise far better than legacy systems: independent 2025 benchmarks put leading engines around 8% word error rate on noisy real-world audio, though Deepgram's own guidance warns that benchmark accuracy overstates production results. Accuracy depends on audio quality and your vertical's vocabulary, so test on your own recorded calls before committing — our automatic speech recognition glossary guide explains what to measure.",
+      },
     ],
   },
   {

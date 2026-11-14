@@ -54,7 +54,15 @@ export default function AIReceptionistCallRecordingLawsBlogPost() {
             are three: state call-recording consent laws, bans on
             impersonating a human, and &mdash; for calls your system{" "}
             <em>makes</em> &mdash; the TCPA as applied to AI voices. Here&apos;s
-            the verified map, statutes linked, current as of September 2026.
+            the verified map, statutes linked, current as of September 2026
+            &mdash; or jump straight to the{" "}
+            <a
+              href="#recording-consent"
+              className="text-brand-light hover:text-brand underline underline-offset-4 transition-colors"
+            >
+              13-state consent table
+            </a>
+            .
           </>
         }
         author={author}

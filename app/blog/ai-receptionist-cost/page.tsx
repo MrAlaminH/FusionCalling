@@ -60,7 +60,7 @@ export default function AIReceptionistCostBlogPost() {
           { id: "cost-tiers", title: "What does an AI receptionist cost in 2026?" },
           { id: "per-minute-vs-per-month", title: "Per-minute vs. per-month pricing" },
           { id: "hidden-costs", title: "The hidden costs" },
-          { id: "ai-vs-human-cost", title: "AI vs. human receptionist cost" },
+          { id: "ai-vs-human-cost", title: "AI receptionist vs. in-house staff cost" },
           { id: "where-fusion-fits", title: "Where Fusion Calling fits" },
           { id: "estimate-roi", title: "How to estimate your ROI" },
         ]}
@@ -119,7 +119,12 @@ export default function AIReceptionistCostBlogPost() {
               <Link href="/ai-receptionist-pricing" className="text-brand-light hover:text-brand underline underline-offset-4">
                 AI receptionist pricing benchmark
               </Link>{" "}
-              — entry prices for 21 platforms, side by side.
+              — entry prices for 21 platforms, side by side. Want the math for
+              your own call volume? Run your numbers through our{" "}
+              <Link href="/calculator" className="text-brand-light hover:text-brand underline underline-offset-4">
+                AI receptionist ROI calculator
+              </Link>
+              .
             </p>
           </div>
 
@@ -213,7 +218,7 @@ export default function AIReceptionistCostBlogPost() {
 
           <div className="glass rounded-2xl p-8 border border-brand/20">
             <h2 id="ai-vs-human-cost" className="scroll-mt-28 mb-4">
-              AI receptionist vs. human receptionist cost
+              AI receptionist vs. in-house staff cost
             </h2>
             <p className="text-gray-300 leading-relaxed mb-4">
               The comparison isn&apos;t close on price. A full-time human

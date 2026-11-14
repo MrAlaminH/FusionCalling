@@ -40,6 +40,9 @@ export type GlossaryTerm = {
   whyItMatters: string;
   related?: string[];
   platform?: { label: string; href: string };
+  // Term-specific FAQs asked verbatim by searchers (rendered before the
+  // template FAQs and emitted in FAQPage schema — exact-question capture).
+  customFaqs?: { question: string; answer: string }[];
 };
 
 // Date the glossary entries were last editorially reviewed/updated. Used as the
@@ -611,6 +614,14 @@ export const glossaryTerms: GlossaryTerm[] = [
       label: "Read our guide to voice AI security & compliance",
       href: "/blog/voice-ai-security-compliance",
     },
+    customFaqs: [
+      {
+        question:
+          "How is call audio encrypted at rest and in transit on voice AI platforms?",
+        answer:
+          "Two layers are standard: live audio is encrypted in transit with TLS and SRTP, while stored recordings and transcripts are encrypted at rest with AES-256. When you evaluate vendors, also ask where encryption keys are stored, who can access recordings, and whether backups and exports are covered — our voice AI security guide lists the questions that matter.",
+      },
+    ],
   },
 
   // ---------- Business & Operations ----------

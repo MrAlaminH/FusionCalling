@@ -86,7 +86,7 @@ export const blogFaqs: Record<string, BlogFaq[]> = {
       "answer": "Four are most common: setup fees (typically $250 to $5,000 at some vendors), per-minute overage charges beyond your included minutes, integration or add-on fees (typically $50 to $500 per month for CRM and calendar connections), and compliance or premium-voice add-ons. Fusion Calling charges $0 setup and requires no long-term contracts."
     },
     {
-      "question": "How much does a human receptionist cost compared to an AI receptionist?",
+      "question": "What is the cost of an AI receptionist vs in-house staff?",
       "answer": "A full-time human receptionist typically costs $3,000 or more per month in salary alone, before benefits, and covers roughly 40 hours per week. An AI receptionist runs a flat $14 to $600 per month for most businesses and answers 24/7. Many teams use AI for routine calls and keep humans for judgment calls."
     },
     {

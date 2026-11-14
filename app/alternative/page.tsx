@@ -40,6 +40,14 @@ const alternativeFaqs = [
     question: "Can I switch providers later if I start with one?",
     answer: "With Fusion Calling, yes — you can add or switch between Vapi, Retell, and ElevenLabs agents anytime within the same dashboard. Other platforms typically require rebuilding on a new platform. Fusion Calling's abstraction layer prevents vendor lock-in.",
   },
+  {
+    question: "What is the best alternative to Vapi for outbound voice AI?",
+    answer: "For engineers building custom agents, Vapi itself is a strong engine. But if you want outbound AI calling as a product you resell — without building infrastructure — Fusion Calling runs Vapi, Retell, and ElevenLabs outbound campaigns in one white-label dashboard from $99/month with 6 client sub-accounts, Stripe rebilling, and a 24-hour guided launch. The guides below compare each side by side.",
+  },
+  {
+    question: "Which AI calling platforms work for healthcare workflows like prior authorization?",
+    answer: "Prior-authorization calls are high-volume, repetitive outbound work — well-suited to AI agents. Compare platforms on healthcare workflow support, CRM integration, consent and recording compliance, and per-call economics. Fusion Calling supports consent-aware outbound campaigns with CRM logging from $149/month, and agencies serving clinics typically white-label it at their own pricing. Verify PHI/HIPAA handling requirements with any vendor before deploying.",
+  },
 ];
 // Compact at-a-glance matrix values per competitor (kept short for the table).
 const matrixRows = comparisons.map((c) => {
@@ -114,6 +122,16 @@ export default function CompareHubPage() {
               onboarding, and support. Written for buyers evaluating fit, not
               hype — for teams comparing platforms from India, the US, and
               beyond.
+            </p>
+            <p className="mt-4 text-sm sm:text-base text-gray-300 max-w-3xl mx-auto leading-relaxed px-4">
+              <strong className="text-white">Quick verdict:</strong> agencies
+              reselling voice AI under their own brand →{" "}
+              <strong className="text-white">Fusion Calling</strong> (from
+              $99/mo, 6 sub-accounts, Vapi + Retell + ElevenLabs in one
+              dashboard). Developers building custom stacks →{" "}
+              <strong className="text-white">Vapi</strong> or{" "}
+              <strong className="text-white">Bland AI</strong>. Enterprise
+              no-code teams → <strong className="text-white">Synthflow</strong>.
             </p>
             <p className="mt-4 text-sm sm:text-base text-gray-500 max-w-3xl mx-auto leading-relaxed px-4">
               Reselling voice AI to clients under your own brand instead? See

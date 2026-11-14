@@ -52,6 +52,9 @@ export default function GlossaryTermPage({ term }: { term: GlossaryTerm }) {
     "booking, handoff, and follow-up basics";
   const firstRelated = relatedNames[0] ?? "call transcripts";
   const faqs = [
+    // Term-specific exact-match FAQs come first so a searcher's own words get
+    // the answer-first slot, in both the visible list and FAQPage schema.
+    ...(term.customFaqs ?? []),
     {
       question: `How is ${term.term} used on a real phone call?`,
       answer: `On a live call, ${term.term} shows up in the moments that decide whether a caller books, waits, or hangs up. It sits in the ${term.category} layer of the voice stack and works alongside ${relatedList} — evaluate it on real calls with background noise and interruptions before trusting it in production.`,

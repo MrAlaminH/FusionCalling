@@ -120,6 +120,11 @@ const faqs = [
     answer:
       "Test interruption handling with messy calls, verify tasks complete during the call (booking, CRM, SMS), prefer minute-pooled over per-seat pricing, confirm compliance controls, and measure time-to-live in days not months. Hear live demo calls on our homepage before comparing plans.",
   },
+  {
+    question: "Can an AI receptionist qualify leads from phone calls?",
+    answer:
+      "Yes. The agent asks your qualifying questions on live inbound calls — budget, timeline, location, service need — scores the caller against your rules, writes everything to your CRM, and books appointments for qualified leads. Unqualified callers still get answered, so you capture the long tail that voicemail loses.",
+  },
 ];
 
 export const metadata: Metadata = {

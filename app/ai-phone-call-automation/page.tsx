@@ -245,6 +245,11 @@ const faqs = [
     answer:
       "Yes. Agencies resell the platform under their own brand with client sub-accounts, branded portals, and Stripe rebilling from $99/month. Each client gets their own agents, numbers, and rules while you manage everything from one dashboard.",
   },
+  {
+    question: "Which AI outbound calling platform integrates with our CRM?",
+    answer:
+      "Fusion Calling logs calls, outcomes, and transcripts to your CRM, connects to GoHighLevel and HubSpot, and reaches 2,200+ additional apps via Zapier, with API and webhook access for custom stacks. Outbound results write back during the call, so lead records stay current without manual entry.",
+  },
 ];
 
 export const metadata: Metadata = {
