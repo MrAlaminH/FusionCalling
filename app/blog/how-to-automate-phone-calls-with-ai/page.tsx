@@ -232,6 +232,10 @@ export default function HowToAutomatePhoneCallsWithAI() {
               <Link href="/ai-phone-call-receptionist" className="text-brand-light hover:text-brand transition-colors">
                 guide to AI phone call receptionists
               </Link>
+              , explore the full{" "}
+              <Link href="/ai-phone-call-automation" className="text-brand-light hover:text-brand transition-colors">
+                AI phone call automation platform
+              </Link>
               , or check current plans and start your setup today.
             </p>
 

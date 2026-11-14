@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 import { CONTENT_LAST_UPDATED, SITE_URL } from "@/lib/site-url";
 import { buildOpenGraph } from "@/lib/seo";
+import { comparisons } from "@/lib/comparisons";
 
 // Below-the-fold sections are code-split so their JavaScript is not part of
 // the initial page bundle. They still render server-side (default ssr:true)
@@ -365,6 +366,27 @@ export default function Home() {
             className="text-brand hover:text-brand-light underline underline-offset-4 hover:underline transition-colors"
           >
             explore the AI phone call automation platform
+          </Link>
+          . Weighing engines? Read the{" "}
+          <Link
+            href="/alternative/vapi"
+            className="text-brand hover:text-brand-light underline underline-offset-4 hover:underline transition-colors"
+          >
+            Vapi alternatives
+          </Link>{" "}
+          or{" "}
+          <Link
+            href="/alternative/bland-ai"
+            className="text-brand hover:text-brand-light underline underline-offset-4 hover:underline transition-colors"
+          >
+            Bland AI alternatives
+          </Link>{" "}
+          breakdowns, or see all{" "}
+          <Link
+            href="/alternative"
+            className="text-brand hover:text-brand-light underline underline-offset-4 hover:underline transition-colors"
+          >
+            {comparisons.length} platforms compared
           </Link>
           .
         </p>

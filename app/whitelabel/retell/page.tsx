@@ -72,6 +72,11 @@ export default function RetellWhiteLabelPage() {
           note: "Run Retell agents inside GHL sub-accounts.",
         },
         {
+          href: "/alternative/retell",
+          title: "Retell alternatives",
+          note: "How Retell compares to Vapi, Bland, and more.",
+        },
+        {
           href: "/whitelabel/compare",
           title: "Compare all providers",
           note: "Pricing and features side by side.",

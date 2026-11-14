@@ -67,6 +67,11 @@ export default function VapiWhiteLabelPage() {
           note: "Run Vapi agents inside GHL sub-accounts.",
         },
         {
+          href: "/alternative/vapi",
+          title: "Vapi alternatives",
+          note: "How Vapi compares to Retell, Bland, and more.",
+        },
+        {
           href: "/whitelabel/compare",
           title: "Compare all providers",
           note: "Pricing and features side by side.",

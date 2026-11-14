@@ -61,6 +61,11 @@ export default function ElevenLabsWhiteLabelPage() {
           note: "Run ElevenLabs voices inside GHL sub-accounts.",
         },
         {
+          href: "/alternative/elevenlabs",
+          title: "ElevenLabs alternatives",
+          note: "How ElevenLabs compares to Vapi, Retell, and more.",
+        },
+        {
           href: "/whitelabel/compare",
           title: "Compare all providers",
           note: "Pricing and features side by side.",

@@ -114,7 +114,11 @@ export default function VapiVsRetellVsElevenLabsBlogPost() {
                   <Link href="/whitelabel/vapi" className="text-brand-light hover:text-brand transition-colors">
                     white-labeling Vapi
                   </Link>{" "}
-                  works.
+                  works, or read the full{" "}
+                  <Link href="/alternative/vapi" className="text-brand-light hover:text-brand transition-colors">
+                    Vapi alternatives
+                  </Link>{" "}
+                  breakdown.
                 </p>
                 <ul className="space-y-2 text-gray-400 text-sm">
                   <li className="flex items-start gap-2">
@@ -140,7 +144,16 @@ export default function VapiVsRetellVsElevenLabsBlogPost() {
                 <p className="text-gray-400 text-sm mb-3">
                   A speech-to-speech platform known for strong conversational
                   quality and low latency. Excels at natural back-and-forth
-                  dialogue that feels responsive in real time.
+                  dialogue that feels responsive in real time. Reselling it?
+                  See{" "}
+                  <Link href="/whitelabel/retell" className="text-brand-light hover:text-brand transition-colors">
+                    white-labeling Retell
+                  </Link>{" "}
+                  or the{" "}
+                  <Link href="/alternative/retell" className="text-brand-light hover:text-brand transition-colors">
+                    Retell alternatives
+                  </Link>{" "}
+                  breakdown.
                 </p>
                 <ul className="space-y-2 text-gray-400 text-sm">
                   <li className="flex items-start gap-2">
@@ -172,7 +185,15 @@ export default function VapiVsRetellVsElevenLabsBlogPost() {
                   The leader in realistic, expressive text-to-speech voices.
                   Ideal when the quality and personality of the voice is the
                   priority — receptionists, premium brands, and narrated
-                  experiences.
+                  experiences. See{" "}
+                  <Link href="/whitelabel/elevenlabs" className="text-brand-light hover:text-brand transition-colors">
+                    white-labeling ElevenLabs
+                  </Link>{" "}
+                  or the{" "}
+                  <Link href="/alternative/elevenlabs" className="text-brand-light hover:text-brand transition-colors">
+                    ElevenLabs alternatives
+                  </Link>{" "}
+                  breakdown.
                 </p>
                 <ul className="space-y-2 text-gray-400 text-sm">
                   <li className="flex items-start gap-2">

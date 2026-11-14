@@ -60,6 +60,11 @@ export default function GHLWhiteLabelPage() {
           note: "Resell ElevenLabs voices inside GHL sub-accounts.",
         },
         {
+          href: "/alternative/gohighlevel",
+          title: "GoHighLevel alternatives",
+          note: "How GHL voice AI compares to dedicated platforms.",
+        },
+        {
           href: "/whitelabel/compare",
           title: "Compare all providers",
           note: "Pricing and features side by side.",
