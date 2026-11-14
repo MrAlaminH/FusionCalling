@@ -26,14 +26,14 @@ export default function RetellAIBlogPost() {
             buildBlogGraph({
               slug: post.slug,
               // Headline = visible H1 text.
-              title: "White-Labeling Retell AI with Fusion Calling",
+              title: "How to White-Label Retell AI Voice Agents",
               description: post.description,
               image: post.image,
               datePublished: post.date,
               dateModified: post.updated,
               authorSchemaId: author.authorSchemaId,
               faqs,
-              crumbName: "Can You White-Label Retell AI? Here's How",
+              crumbName: "How to White-Label Retell AI Voice Agents",
             })
           ),
         }}
@@ -41,8 +41,8 @@ export default function RetellAIBlogPost() {
 
       <PostLayout
         post={post}
-        titleLead="White-Labeling Retell AI"
-        titleHighlight="with Fusion Calling"
+        titleLead="How to White-Label Retell AI"
+        titleHighlight="Voice Agents"
         dek={
           <>
             Retell AI is a powerful conversational voice engine. Fusion Calling
@@ -55,8 +55,9 @@ export default function RetellAIBlogPost() {
         faqs={faqs}
         toc={[
           { id: "great-voice-engine", title: "A Great Voice Engine, Now a Sellable Product" },
+          { id: "what-you-can-brand", title: "White Label Voice Agent for Retell: What You Can Brand" },
           { id: "what-fusion-adds", title: "What Fusion Calling Adds on Top of Retell" },
-          { id: "how-they-work-together", title: "How Retell + Fusion Calling Work Together" },
+          { id: "how-they-work-together", title: "How to White-Label Retell in 4 Steps" },
           { id: "bring-your-agents", title: "Bring Your Retell Agents Along" },
           { id: "the-economics", title: "The Economics: Simple and Yours" },
           { id: "built-with-retell-and-more", title: "Built With Retell — And Ready for More" },
@@ -105,6 +106,42 @@ export default function RetellAIBlogPost() {
               </Link>{" "}
               layer Fusion Calling is built to provide — alongside Retell,
               not against it.
+            </p>
+          </div>
+
+          {/* What Retell brands natively vs what needs a platform layer */}
+          <div className="glass-light rounded-2xl p-8 border border-brand/20">
+            <h2 id="what-you-can-brand" className="scroll-mt-28 text-3xl font-bold text-white mb-6">
+              White Label Voice Agent for Retell: What You Can Brand on Calls
+            </h2>
+            <p className="text-gray-300 leading-relaxed mb-4">
+              Retell already white-labels part of the experience on its own. On the calls
+              themselves, you set the agent name, the voice, and the greeting for each
+              client — and you can add a custom voice clone so the agent sounds like the
+              client&apos;s brand, not a generic assistant. Agents answer on your
+              client&apos;s own phone number, and verified US numbers can show the
+              business name instead of a bare caller ID. On the website side, Retell&apos;s
+              white-label token removes the &quot;Powered by Retell&quot; line from chat
+              widgets.
+            </p>
+            <p className="text-gray-300 leading-relaxed mb-4">
+              Where Retell stops is the part your clients actually log into. The Retell
+              dashboard stays Retell-branded. You can keep each client&apos;s agents,
+              numbers, and billing separate in their own workspace, but those workspaces
+              are created by hand in the dashboard — there is no API to provision them,
+              and there is no branded client-facing portal. If you want clients to log in
+              under your logo, see their own calls, and get billed on your invoice, you
+              either build that portal yourself on Retell&apos;s API or use a partner
+              platform. That middle layer is exactly what{" "}
+              <Link href="/whitelabel/retell" className="text-brand-light hover:text-brand transition-colors">
+                Fusion Calling&apos;s white-label Retell platform
+              </Link>{" "}
+              provides — your logo, your domain, client sub-accounts, and rebilling,
+              without touching a line of code.
+            </p>
+            <p className="text-brand-light text-lg font-semibold">
+              Short version: Retell brands the calls. Fusion Calling brands everything
+              around them.
             </p>
           </div>
 
@@ -176,10 +213,10 @@ export default function RetellAIBlogPost() {
           {/* How They Work Together */}
           <div className="glass rounded-2xl p-8 border border-brand/20">
             <h2 id="how-they-work-together" className="scroll-mt-28 text-3xl font-bold text-white mb-6">
-              How Retell + Fusion Calling Work Together
+              How to White-Label Retell in 4 Steps
             </h2>
             <p className="text-gray-300 leading-relaxed mb-6">
-              The flow is intentionally simple. Fusion Calling sits in front of Retell,
+              The full setup is four steps. Fusion Calling sits in front of Retell,
               handling the client-facing experience and the business operations, while
               Retell keeps doing what it does best: the conversation itself.
             </p>

@@ -26,14 +26,14 @@ export default function VapiWhiteLabelBlogPost() {
             buildBlogGraph({
               slug: post.slug,
               // Headline = visible H1 text.
-              title: "White-Labeling Vapi with Fusion Calling",
+              title: "How to White-Label Vapi AI Voice Agents",
               description: post.description,
               image: post.image,
               datePublished: post.date,
               dateModified: post.updated,
               authorSchemaId: author.authorSchemaId,
               faqs,
-              crumbName: "White-Labeling Vapi with Fusion Calling",
+              crumbName: "How to White-Label Vapi AI Voice Agents",
             })
           ),
         }}
@@ -41,8 +41,8 @@ export default function VapiWhiteLabelBlogPost() {
 
       <PostLayout
         post={post}
-        titleLead="White-Labeling Vapi with"
-        titleHighlight="Fusion Calling"
+        titleLead="How to White-Label Vapi"
+        titleHighlight="AI Voice Agents"
         dek={
           <>
             Vapi is excellent voice AI infrastructure. Fusion Calling is the
@@ -54,9 +54,9 @@ export default function VapiWhiteLabelBlogPost() {
         author={author}
         faqs={faqs}
         toc={[
-          { id: "why-agencies-love-vapi", title: "Why Agencies Love Vapi — and Where the Gap Is" },
+          { id: "why-agencies-love-vapi", title: "Does Vapi Offer White Label? Where the Gap Is" },
           { id: "what-fusion-adds", title: "What Fusion Calling Adds on Top of Vapi" },
-          { id: "how-they-work-together", title: "How Vapi + Fusion Calling Work Together" },
+          { id: "how-they-work-together", title: "How to White-Label Vapi in 4 Steps" },
           { id: "who-this-is-for", title: "Who This Is For" },
           { id: "the-economics", title: "The Economics: You Keep 100%" },
         ]}
@@ -73,7 +73,7 @@ export default function VapiWhiteLabelBlogPost() {
           {/* Introduction */}
           <div className="glass-light rounded-2xl p-8 border border-brand/20">
             <h2 id="why-agencies-love-vapi" className="scroll-mt-28 text-2xl font-bold text-white mb-4">
-              Why Agencies Love Vapi — and Where the Gap Is
+              Does Vapi Offer White Label? Where the Gap Is
             </h2>
             <p className="text-gray-300 leading-relaxed mb-4">
               <Link href="/glossary/vapi" className="text-brand-light hover:text-brand transition-colors">
@@ -176,12 +176,12 @@ export default function VapiWhiteLabelBlogPost() {
           {/* How They Work Together */}
           <div>
             <h2 id="how-they-work-together" className="scroll-mt-28 text-3xl font-bold text-white mb-6">
-              How Vapi + Fusion Calling Work Together
+              How to White-Label Vapi in 4 Steps
             </h2>
             <p className="text-gray-300 leading-relaxed mb-6">
-              The integration is designed to be straightforward. Fusion
-              Calling sits in front of Vapi and handles the agency experience,
-              while Vapi keeps powering the actual calls.
+              The setup is four steps. Fusion Calling sits in front of Vapi and
+              handles the agency experience, while Vapi keeps powering the
+              actual calls.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

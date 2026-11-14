@@ -79,23 +79,29 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "vapi-white-label-platform",
-    title: "Does Vapi Offer White Label? How It Works",
-    metaTitle: "White-Label Vapi: It's Not Resellable Alone",
+    // "How to" guide angle — the transactional "white label Vapi" query is
+    // owned by /whitelabel/vapi; this post owns the setup-guide band instead.
+    title: "How to White-Label Vapi AI Voice Agents",
+    metaTitle: "How to White-Label Vapi (Step-by-Step Guide)",
     description:
-      "Does Vapi offer white label natively? Learn how agencies resell Vapi under their own brand in 2026, what's missing, and the step-by-step setup.",
+      "Does Vapi offer white label? Not natively. The step-by-step guide to white-labeling Vapi agents under your own brand — setup, costs, what Vapi leaves out.",
     date: "2025-02-10",
-    updated: "2026-09-19",
+    updated: "2026-11-14",
     category: "Integration Guide",
     readTime: "7 min read",
     image: "/blog/blog5.webp",
   },
   {
     slug: "retell-ai-white-label",
-    title: "Can You White-Label Retell AI? Here's How",
+    // "How to" guide angle — the transactional "retell white label" query is
+    // owned by /whitelabel/retell; this post stops competing on the head term
+    // (both sat on page 1 with near-zero clicks) and owns the setup-guide band.
+    title: "How to White-Label Retell AI Voice Agents",
+    metaTitle: "How to White-Label Retell AI (Step-by-Step Guide)",
     description:
-      "How agencies white-label Retell AI for clients like dental clinics, how it compares with Vapi on cost and setup, and the step-by-step path to launch.",
+      "Step-by-step guide to white-labeling Retell AI voice agents: what Retell brands on calls, where it stops, and the 4-step setup to launch under your own brand.",
     date: "2025-02-11",
-    updated: "2026-09-19",
+    updated: "2026-11-14",
     category: "Integration Guide",
     readTime: "7 min read",
     image: "/blog/blog6.webp",

@@ -261,6 +261,10 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
         heading: "ElevenLabs vs. Vapi vs. Retell, from the ElevenLabs side",
         text: "Pick ElevenLabs when voice quality and brand experience are the selling point; Vapi when a technical client wants deep pipeline control and BYOK; Retell when speed of deployment leads the conversation. Fusion Calling lets you deploy ElevenLabs for flagship accounts and the other engines elsewhere — per client, from one dashboard.",
       },
+      {
+        heading: "How to white-label ElevenLabs in 4 steps",
+        text: "Connect your ElevenLabs account with an API key, apply your logo, domain, and colors, spin up isolated client sub-accounts, and set your resale prices. ElevenLabs does not ship a native reseller dashboard or client portal — this branding and billing layer is what Fusion Calling adds on top, and your existing agents carry over without a rebuild.",
+      },
     ],
     keywords: [
       "white label elevenlabs",
@@ -302,6 +306,11 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
       },
     ],
     faqs: [
+      {
+        question: "Does ElevenLabs offer white label natively?",
+        answer:
+          "No. ElevenLabs lets you customize agents, voices, and widgets in depth, but it does not ship a branded reseller dashboard, client sub-account portal, or reseller billing. Anything client-facing under your brand has to be built on the ElevenLabs API or added with a platform layer — that layer is what Fusion Calling provides, with your logo, domain, sub-accounts, and pricing on top of ElevenLabs.",
+      },
       {
         question: "Can I white label ElevenLabs AI voice agents?",
         answer:
