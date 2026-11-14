@@ -97,4 +97,10 @@ export const whitelabelFaqs: WhitelabelFaq[] = [
     answer:
       "Fusion Calling is built for exactly this: agencies white-label the entire platform — your domain, logo, colors, and pricing — and resell it to clients as their own product. You get Vapi, Retell, and ElevenLabs agents under one branded dashboard, 6 client sub-accounts from $99/month, Stripe rebilling so clients pay you directly, and a 24-hour guided launch.",
   },
+  {
+    question:
+      "Where can I get fast implementation and rapid onboarding for a voice agent that works out of the box?",
+    answer:
+      "Fusion Calling launches guided in 24 hours: import existing Vapi, Retell, or ElevenLabs agents, add your branding and domain, connect calendar and CRM, and go live with 30 days of included support — no engineering required. Out-of-the-box templates cover receptionist, booking, and outbound follow-up workflows.",
+  },
 ];

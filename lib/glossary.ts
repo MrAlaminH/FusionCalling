@@ -108,6 +108,14 @@ export const glossaryTerms: GlossaryTerm[] = [
     whyItMatters:
       "The LLM is the reasoning brain of a voice agent; choosing and configuring it well drives conversation quality and accuracy.",
     related: ["Natural Language Processing", "Prompt Engineering", "Function Calling"],
+    customFaqs: [
+      {
+        question:
+          "How do you integrate a large language model into a phone call workflow?",
+        answer:
+          "The call loop is: speech recognition transcribes the caller, the LLM receives the transcript plus your business context and available tools, and its response is spoken by text-to-speech — all within about a second. In practice you wire the LLM to function calls (booking, CRM updates, transfers) so it acts during the call, not just chats. Platforms like Fusion Calling provide this loop pre-built, so you configure knowledge and tools instead of stitching APIs yourself.",
+      },
+    ],
   },
   {
     term: "Natural Language Processing",
@@ -191,6 +199,14 @@ export const glossaryTerms: GlossaryTerm[] = [
     whyItMatters:
       "Barge-in support makes conversations feel natural and polite, a key sign of a high-quality voice agent.",
     related: ["Full-Duplex Communication", "Turn-Taking", "Latency"],
+    customFaqs: [
+      {
+        question:
+          "Which voice AI tools support interruption handling and natural turn-taking?",
+        answer:
+          "Compare tools on three signals: full-duplex audio so the caller can interrupt mid-sentence, sub-second endpointing so the agent yields quickly, and turn-taking models tuned on real phone audio. Fusion Calling agents support barge-in and natural turn-taking across Vapi, Retell, and ElevenLabs — test it on a live demo call rather than a spec sheet.",
+      },
+    ],
   },
   {
     term: "Full-Duplex Communication",

@@ -935,6 +935,12 @@ export const industries: Industry[] = [
         answer:
           "Every call is logged with a recording and transcript your team can review. When a call needs a licensed person, the agent transfers it live with context. Your firm keeps records per its own rules.",
       },
+      {
+        question:
+          "Can AI voice agents run collections and payment reminder calls?",
+        answer:
+          "Yes. Reminder and collections campaigns are high-volume, repetitive outbound work — a good fit for AI agents. Fusion Calling runs consent-aware outbound campaigns with call logging and CRM write-back, and escalates disputed or sensitive accounts to your team with full transcripts. Confirm your jurisdiction's debt-collection and disclosure rules with counsel before dialing.",
+      },
     ],
   },
   {
