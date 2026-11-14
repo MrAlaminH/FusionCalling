@@ -103,4 +103,15 @@ export const whitelabelFaqs: WhitelabelFaq[] = [
     answer:
       "Fusion Calling launches guided in 24 hours: import existing Vapi, Retell, or ElevenLabs agents, add your branding and domain, connect calendar and CRM, and go live with 30 days of included support — no engineering required. Out-of-the-box templates cover receptionist, booking, and outbound follow-up workflows.",
   },
+  {
+    question: "How should an MSP add AI voice services for its clients?",
+    answer:
+      "Treat AI voice like any other managed service: resell it white-label and bundle it into your existing agreements. As a Fusion Calling partner you get client sub-accounts (6 on the $99/month Starter tier), branded portals on your domain, and Stripe rebilling — each managed client gets AI receptionists, outbound campaigns, and call reporting under your brand while you keep 100% of what you charge. No engineering required: import Vapi, Retell, or ElevenLabs agents and launch in 24 hours with guided onboarding.",
+  },
+  {
+    question:
+      "Can an agency run multitenant client setups on one AI sales agent platform for outbound campaigns?",
+    answer:
+      "Yes. Fusion Calling is multitenant by design: each client gets an isolated sub-account with its own agents, numbers, knowledge base, call logs, and billing, while you manage all of them from one branded dashboard. Starter includes 6 sub-accounts from $99/month, Growth includes 20, and Scale includes unlimited — with Stripe rebilling so each tenant pays you directly.",
+  },
 ];

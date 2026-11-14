@@ -154,6 +154,14 @@ export const glossaryTerms: GlossaryTerm[] = [
     whyItMatters:
       "Higher-quality ASR providers like Deepgram improve recognition accuracy and reduce costly misunderstandings in automated calls.",
     related: ["Speech-to-Text", "Deepgram", "Transcription"],
+    customFaqs: [
+      {
+        question:
+          "How do I benchmark voice agent providers on my own call data before committing?",
+        answer:
+          "Run a bake-off on your own audio, not vendor demos: pull 50–100 real recorded calls containing your actual noise, accents, and vocabulary, send identical audio to each provider, then compare word error rate, cost per minute, and how often a misrecognition changes the caller's meaning. Published vendor accuracy overstates production results, so this 30-minute test predicts real-world performance far better than public benchmarks.",
+      },
+    ],
   },
   {
     term: "Text-to-Speech",

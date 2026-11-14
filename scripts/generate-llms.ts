@@ -15,6 +15,7 @@ import { blogFaqs } from "../lib/blog-faqs";
 import { whitelabelCaseStudies } from "../lib/whitelabel-case-studies";
 import { whitelabelLocations } from "../lib/whitelabel-locations";
 import { whitelabelProviders } from "../lib/whitelabel-providers";
+import { whitelabelFaqs } from "../lib/whitelabel-faqs";
 
 const PAGES: { path: string; title: string; content: string }[] = [
   {
@@ -51,7 +52,9 @@ Benefits:
 - Stripe rebilling for client billing
 - 2,200+ app integrations via Zapier
 
-Revenue calculator available at /calculator. Book a discovery call at cal.com/mralamin/discovery-call.`,
+Revenue calculator available at /calculator. Book a discovery call at cal.com/mralamin/discovery-call.
+
+FAQs: ${whitelabelFaqs.map((f) => `Q: ${f.question} A: ${f.answer}`).join(" ")}`,
   },
   {
     path: "/whitelabel/onboarding",
@@ -90,7 +93,7 @@ Comparison criteria: starting price, sub-accounts included, voice providers supp
   ...glossaryTerms.map((t) => ({
     path: `/glossary/${t.term.toLowerCase().replace(/&/g, "and").replace(/[()]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")}`,
     title: `${t.term} | AI Glossary | Fusion Calling`,
-    content: `${t.definition} ${t.whyItMatters} Related: ${t.related?.join(", ") || ""}`,
+    content: `${t.definition} ${t.whyItMatters} Related: ${t.related?.join(", ") || ""}${t.customFaqs?.length ? ` FAQs: ${t.customFaqs.map((f) => `Q: ${f.question} A: ${f.answer}`).join(" ")}` : ""}`,
   })),
   {
     path: "/blog",
