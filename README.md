@@ -1,10 +1,13 @@
-# 🚀 Fusion Calling — AI-Powered Phone Agents for Modern Businesses
+# Fusion Calling — White-Label AI Receptionist & Phone Agent Platform
 
-**Turn Missed Calls Into Revenue** with AI phone call agents that sound and behave like real humans. Fusion Calling automates inbound and outbound calling, appointment scheduling, lead qualification, and customer service—so you can focus on growing your business.
+**Turn missed calls into booked appointments** with AI phone agents that sound and behave like real humans. Fusion Calling answers inbound calls, runs outbound campaigns, books appointments, and qualifies leads 24/7 — and agencies resell the entire platform under their own brand.
 
-[![Live Demo](https://img.shields.io/badge/👉_Live_Demo-FusionCalling.com-orange?style=for-the-badge)](https://fusioncalling.com)
+[![Live Site](https://img.shields.io/badge/🌐_Live_Site-fusioncalling.com-orange?style=for-the-badge)](https://fusioncalling.com)
+[![White-Label](https://img.shields.io/badge/🏷️_White_Label-For_Agencies-purple?style=for-the-badge)](https://fusioncalling.com/whitelabel)
+[![Pricing](https://img.shields.io/badge/💰_Pricing-View_Plans-green?style=for-the-badge)](https://fusioncalling.com/pricing)
 [![Documentation](https://img.shields.io/badge/📚_Documentation-Docs-blue?style=for-the-badge)](https://fusioncalling.com/docs)
-[![API Reference](https://img.shields.io/badge/🔌_API-Reference-purple?style=for-the-badge)](https://fusioncalling.com/docs/api-reference)
+
+![Fusion Calling dashboard](public/deck/dashboard.webp)
 
 ---
 
@@ -12,174 +15,128 @@
 
 - [What is Fusion Calling?](#what-is-fusion-calling)
 - [Key Features](#key-features)
-- [Why Choose Fusion Calling?](#why-choose-fusion-calling)
+- [White-Label for Agencies](#white-label-for-agencies)
 - [Use Cases](#use-cases)
 - [Integrations](#integrations)
 - [Getting Started](#getting-started)
 - [Documentation](#documentation)
-- [Services & Solutions](#services--solutions)
+- [Explore](#explore)
 - [Tech Stack](#tech-stack)
-- [Contributing](#contributing)
+- [Support & Contact](#support--contact)
 - [License](#license)
 
 ---
 
 ## 🎯 What is Fusion Calling?
 
-**Fusion Calling** is a revolutionary AI calling platform designed for businesses of all sizes—from startups and agencies to enterprises. Our intelligent AI agents handle phone calls 24/7 without burnout, capturing leads, scheduling appointments, and providing exceptional customer service.
+**Fusion Calling** is an AI phone platform for businesses and agencies. Our AI voice agents handle calls around the clock without burnout — capturing leads, scheduling appointments, and answering customer questions with human-like conversations. Behind the agents, we run on proven voice infrastructure from **Vapi, Retell, and ElevenLabs**, so call quality and reliability aren't a gamble.
 
-Whether you need to manage **inbound customer inquiries**, **outbound lead qualification**, or **appointment reminders**, Fusion Calling automates the entire conversation with human-like interactions powered by advanced AI.
+By the numbers:
 
-### Core Capabilities:
+- **100+** agencies and projects launched on the platform
+- **50,000+** calls handled
+- **500+** AI agents deployed
+- **24 hours** from signup to a branded, live agency platform
+- **99.9%** uptime SLA
 
-- ✅ **AI Phone Agents** — Intelligent agents that handle calls autonomously
-- ✅ **Lead Qualification** — Automatically capture and qualify leads in real-time
-- ✅ **Appointment Scheduling** — Smart calendar integration with automated reminders
-- ✅ **Multi-Channel Support** — Inbound calls, outbound campaigns, voicemails, and SMS
-- ✅ **24/7 Availability** — Never miss a call again
-- ✅ **Custom Workflows** — Tailor conversations to your specific business needs
-- ✅ **White-Label Solution** — Resell under your own brand with complete customization for agencies and resellers
+### Core Capabilities
+
+- ✅ **AI Phone Agents** — inbound receptionist and outbound callers, configured without code
+- ✅ **Appointment Scheduling** — live calendar integration with booking, reminders, and rescheduling
+- ✅ **Lead Qualification** — capture and score leads in real time, route them to your CRM
+- ✅ **Multi-Channel** — inbound calls, outbound campaigns, voicemail drop, and SMS
+- ✅ **White-Label** — resell under your own brand, domain, and pricing
+- ✅ **Try Before You Buy** — 3-day free trial, no setup fee, 14-day money-back guarantee
 
 ---
 
 ## ⚡ Key Features
 
-### 🤖 Intelligent AI Agents
+### 🤖 AI Phone Agents
 
-Create and deploy AI phone agents with natural conversations. Configure exactly how your agent should behave, what information to collect, and how to handle edge cases—all without code.
+Describe how your agent should behave, what information to collect, and how to handle edge cases — no code required. Agents answer with context, transfer to humans when needed, and log every call.
 
 ### 📞 Smart Call Handling
 
-- **Inbound Calls**: Automatically answer customer inquiries, route to departments, or collect information
-- **Outbound Campaigns**: Make thousands of calls simultaneously for lead generation, surveys, or reminders
-- **Voicemail Intelligence**: Leave personalized, emotional voicemails that get responses
+- **Inbound** — answer customer inquiries, route to departments, capture details
+- **Outbound campaigns** — run lead generation, surveys, reminders, and collections at scale
+- **Voicemail drop** — leave personalized voicemails that get callbacks
 
 ### 📅 Automated Scheduling
 
-Live calendar integration with your systems. AI agents can check availability, confirm bookings, send reminders, and reschedule as needed—completely autonomous.
+Agents check live availability, confirm bookings, send reminders, and reschedule on their own. Works with Google Calendar, Outlook, and Cal.com, plus an External Calendar API for anything custom.
 
 ### 📊 Lead Management Hub
 
-- Real-time lead capture and qualification
-- Custom fields and tags for organization
-- Automatic CRM integration and lead routing
-- Detailed call analytics and performance metrics
-
-### 🔄 2,200+ Integrations
-
-Connect seamlessly with the tools you already use:
-
-- **CRM Platforms**: HubSpot, Salesforce, Pipedrive
-- **Calendar Systems**: Google Calendar, Outlook, Cal.com
-- **Communication**: Gmail, WhatsApp, Facebook Messenger
-- **Marketing**: ChatGPT, GoHighLevel, Make, Zapier
-- **And 2,200+ more through our API**
+Real-time lead capture, custom fields and tags, automatic CRM routing, and per-call analytics with recordings and transcripts.
 
 ---
 
-## ✨ Why Choose Fusion Calling?
+## 🏷️ White-Label for Agencies
 
-| Feature                 | Benefit                                          |
-| ----------------------- | ------------------------------------------------ |
-| **Human-Like AI**       | Conversations sound natural and build trust      |
-| **No Code Required**    | Configure agents with simple, intuitive UI       |
-| **Enterprise Grade**    | Built for scale with 99.9% uptime SLA            |
-| **Complete Control**    | Full customization, no limitations               |
-| **Real-Time Analytics** | Track performance, ROI, and optimization metrics |
-| **Agency Friendly**     | White-label solution for resellers and agencies  |
-| **Security First**      | Enterprise-grade encryption and compliance       |
+The fastest way to sell AI receptionist services without building the platform yourself. You get:
+
+- **Your brand, your domain** — full white-label customization, we stay invisible
+- **Client management portal** — create and manage unlimited client sub-accounts
+- **Your pricing** — charge your own markup; you keep the client relationship
+- **Multi-provider agents** — Vapi, Retell, and ElevenLabs behind one dashboard
+- **Launch in 24 hours** — guided setup with 30 days of done-with-you support
+
+**Wholesale plans** start at **$99/month** (6 sub-accounts), with Growth at $299 (20 sub-accounts) and Scale at $499 (unlimited). Details at [fusioncalling.com/whitelabel](https://fusioncalling.com/whitelabel).
 
 ---
 
 ## 📱 Use Cases
 
-### **Inbound Call Management**
+| Inbound | Outbound |
+| --- | --- |
+| 24/7 customer support | Lead generation and qualification |
+| Appointment confirmation and reminders | Appointment reminders and no-show recovery |
+| Lead capture and routing | Follow-up and nurture sequences |
+| Emergency / urgent-call triage | Professional, compliant collections |
 
-- **Customer Support**: Answer queries 24/7 with context-aware responses
-- **Appointment Confirmation**: Automatically confirm bookings and send reminders
-- **Lead Capture**: Qualify inbound leads and route to sales teams
-- **Emergency Dispatch**: Triage urgent requests to appropriate departments
-
-### **Outbound Campaigns**
-
-- **Lead Generation**: Qualify prospects at scale with natural conversations
-- **Survey & Feedback**: Collect customer insights automatically
-- **Appointment Reminders**: Reduce no-shows with personalized confirmations
-- **Follow-Up Calls**: Nurture leads with strategic touchpoints
-- **Collections**: Professional, compliant payment reminders
-
-### **Industry-Specific Solutions**
-
-- **Real Estate**: Virtual property tours, qualification, scheduling
-- **Healthcare**: Patient scheduling, prescription reminders, follow-up care
-- **E-Commerce**: Order confirmations, customer support, feedback
-- **Legal Services**: Appointment booking, retainer reminders, document requests
-- **SaaS**: Onboarding calls, support, upsell opportunities
-- **Agencies**: White-label AI calling for your clients
+**Industry solutions** include real estate, healthcare, legal, home services, beauty and wellness, restaurants, veterinary clinics, and more — see [industries](https://fusioncalling.com/industries).
 
 ---
 
 ## 🔗 Integrations
 
-Connect Fusion Calling with **over 2,200+ apps and platforms**:
+Connect Fusion Calling with **2,200+ apps and platforms**:
 
 ```
 CRM & Sales       → HubSpot, Salesforce, Pipedrive, GoHighLevel
 Calendars         → Google Calendar, Outlook, Cal.com
-Email & Messaging → Gmail, WhatsApp, Facebook, Slack
-AI & Automation   → ChatGPT, Make, Zapier, n8n
-Custom APIs       → Build your own integrations
+Email & Messaging → Gmail, WhatsApp, Slack
+AI & Automation   → Zapier, Make, n8n
+Custom APIs       → External Calendar API, External Leads API, webhooks
 ```
-
-**Plus**: External Calendar API and External Leads API for unlimited custom integrations.
 
 ---
 
 ## 🚀 Getting Started
 
-### Prerequisites
+> This repository contains the **fusioncalling.com marketing site**. The Fusion Calling product itself is self-serve — no setup needed.
 
-- Node.js 18+
-- npm, yarn, pnpm, or bun
-- Git
+### Try the product
 
-### Development Setup
+1. Start the **3-day free trial** at [app.fusioncalling.com/signup](https://app.fusioncalling.com/signup)
+2. Configure your first AI agent (no code)
+3. Go live — or [book a demo](https://fusioncalling.com/contact) if you'd rather see it first
 
-1. **Clone the repository**:
+### Run the website locally
 
-   ```bash
-   git clone https://github.com/fusion-calling/my-app.git
-   cd my-app
-   ```
+Prerequisites: Node.js 18+, npm.
 
-2. **Install dependencies**:
+```bash
+git clone https://github.com/MrAlaminH/FusionCalling.git
+cd FusionCalling
+npm install
+npm run dev
+```
 
-   ```bash
-   npm install
-   # or
-   yarn install
-   # or
-   pnpm install
-   ```
+Open [http://localhost:3000](http://localhost:3000).
 
-3. **Run the development server**:
-
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   # or
-   pnpm dev
-   ```
-
-4. **Open your browser**:
-   ```
-   http://localhost:3000
-   ```
-
-The app will auto-reload as you make changes.
-
-### Build for Production
+### Build for production
 
 ```bash
 npm run build
@@ -190,102 +147,38 @@ npm start
 
 ## 📚 Documentation
 
-### Quick Links
-
-- **[Full Documentation](https://fusioncalling.com/docs)** — Complete guides and tutorials
+- **[Full Documentation](https://fusioncalling.com/docs)** — complete guides and tutorials
 - **[API Reference](https://fusioncalling.com/docs/api-reference)** — External Calendar API & Leads API
-- **[Lead Management Guide](https://fusioncalling.com/docs/lead-management)** — Master lead handling
-- **[Agent Configuration](https://fusioncalling.com/docs/agent-configuration)** — Create powerful AI agents
-- **[Admin Guide](https://fusioncalling.com/docs/admin-section)** — Manage clients, users, and branding
-
-### Key Topics
-
-- Setting up your first AI agent
-- Integrating with external systems
-- Managing leads and workflows
-- Custom field configuration
-- Webhook setup and automation
-- White-label deployment
+- **[Lead Management](https://fusioncalling.com/docs/lead-management)** — master lead handling
+- **[Agent Configuration](https://fusioncalling.com/docs/agent-configuration)** — create powerful AI agents
+- **[SMS Messaging](https://fusioncalling.com/docs/sms-messaging)** — SMS alongside voice
+- **[Admin Guide](https://fusioncalling.com/docs/admin-section)** — manage clients, users, and branding
 
 ---
 
-## 🏢 Services & Solutions
+## 🌐 Explore
 
-### **Public Platform**
-
-Self-serve access to the full Fusion Calling platform. Perfect for small to mid-sized businesses.
-
-### **White-Label Solution**
-
-Resell Fusion Calling under your own brand with complete customization:
-
-- Custom branding and domain
-- Client management portal
-- Revenue share models
-- Dedicated support
-
-### **Enterprise API**
-
-Build custom applications with our powerful APIs:
-
-- **External Calendar API** — Integrate any calendar system
-- **External Leads API** — Connect any lead source
-- Webhooks for real-time notifications
-- Advanced authentication and security
-
-### **Admin Features (Agency & Enterprise)**
-
-- 👥 Client Management — Manage unlimited clients
-- 👤 User Management — Role-based access control
-- 🔑 AI Credentials — Manage LLM providers (OpenAI, Claude, etc.)
-- 🎨 Branding — Full white-label customization
-- 💳 Credits & Subscriptions — Billing and usage management
-- 📊 Analytics Dashboard — Monitor all metrics
+- [White-Label Program](https://fusioncalling.com/whitelabel) — resell AI receptionists under your brand
+- [Pricing](https://fusioncalling.com/pricing) — direct plans and wholesale tiers
+- [Blog](https://fusioncalling.com/blog) — guides like [how to start a voice AI agency](https://fusioncalling.com/blog/how-to-start-a-voice-ai-agency)
+- [Glossary](https://fusioncalling.com/glossary) — AI voice terminology explained
+- [Platform Alternatives](https://fusioncalling.com/alternative) — how we compare to Bland, Retell, Synthflow, and others
+- [AI Phone Call Automation](https://fusioncalling.com/ai-phone-call-automation) — pillar guide
 
 ---
 
 ## 🛠 Tech Stack
 
-**Frontend & Web:**
+This site is built with:
 
-- [Next.js](https://nextjs.org) — React framework for production
-- [React](https://react.dev) — UI library
-- [TypeScript](https://www.typescriptlang.org) — Type safety
-- [Tailwind CSS](https://tailwindcss.com) — Utility-first styling
-- [Framer Motion](https://www.framer.com/motion) — Animations
-- [Radix UI](https://www.radix-ui.com) — Accessible components
-
-**Tools & Libraries:**
-
-- [PostHog](https://posthog.com) — Product analytics
-- [React Syntax Highlighter](https://github.com/react-syntax-highlighter) — Code display
-- [Embla Carousel](https://www.embla-carousel.com) — Carousel functionality
-- [Three.js](https://threejs.org) — 3D graphics
-
-**APIs & Integrations:**
-
-- Calendar API (Google, Outlook, Cal.com)
-- Leads API
-- 2,200+ app integrations via Zapier, Make, etc.
-
----
-
-## 🤝 Contributing
-
-We welcome contributions from the community! To contribute:
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-Please ensure:
-
-- Code follows our style guidelines
-- All tests pass
-- Documentation is updated
-- Commits have clear, descriptive messages
+- [Next.js 14](https://nextjs.org) (App Router) — React framework
+- [TypeScript](https://www.typescriptlang.org) — strict mode
+- [Tailwind CSS](https://tailwindcss.com) — styling
+- [Radix UI](https://www.radix-ui.com) — accessible primitives
+- [PostHog](https://posthog.com) — product analytics
+- [Cal.com embed](https://cal.com) — demo booking
+- [lucide-react](https://lucide.dev) — icons
+- [react-hook-form](https://react-hook-form.com) + [react-phone-number-input](https://catamphetamine.gitlab.io/react-phone-number-input/) — forms
 
 ---
 
@@ -293,32 +186,16 @@ Please ensure:
 
 - **Website**: [fusioncalling.com](https://fusioncalling.com)
 - **Documentation**: [fusioncalling.com/docs](https://fusioncalling.com/docs)
-- **Email Support**: [hello@fusioncalling.com](mailto:hello@fusioncalling.com)
-- **Live Chat**: Available on our website
-- **Book a Demo**: [Schedule a call](https://fusioncalling.com#calendar)
+- **Email**: [hello@fusioncalling.com](mailto:hello@fusioncalling.com)
+- **Live chat**: available on our website
+- **Book a demo**: [fusioncalling.com/contact](https://fusioncalling.com/contact)
 
 ---
 
 ## 📄 License
 
-This project is proprietary software owned by Fusion Calling. All rights reserved.
-
-For licensing inquiries, please contact us at [hello@fusioncalling.com](mailto:hello@fusioncalling.com)
+This project is proprietary software owned by Fusion Calling. All rights reserved. For licensing inquiries, contact [hello@fusioncalling.com](mailto:hello@fusioncalling.com).
 
 ---
 
-## 🌟 Ready to Transform Your Business?
-
-Stop leaving money on the table. Let Fusion Calling handle your calls while you focus on what matters most.
-
-**[Start Your Free Trial →](https://fusioncalling.com)**
-
----
-
-<div align="center">
-
-**Built with ❤️ by the Fusion Calling Team**
-
-_Powering smarter conversations, one call at a time._
-
-</div>
+**[Start your 3-day free trial →](https://app.fusioncalling.com/signup)**
