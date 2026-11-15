@@ -88,6 +88,12 @@ const featuredBadges = [
     img: "https://www.scrolllaunch.com/api/badge/fusion-calling",
     alt: "Featured on ScrollLaunch",
   },
+  {
+    name: "Twelve Tools",
+    href: "https://twelve.tools",
+    img: "https://twelve.tools/badge0-white.svg",
+    alt: "Featured on Twelve Tools",
+  },
 ];
 
 function FooterLinkItem({ link }: { link: FooterLink }) {
