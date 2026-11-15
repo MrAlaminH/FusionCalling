@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { whitelabelProviders, buildProviderGraph } from "@/lib/whitelabel-providers";
+import { wholesalePricingSummary } from "@/lib/product-facts";
 import { buildOpenGraph } from "@/lib/seo";
 import { Reveal } from "@/components/ui/reveal";
 import ProviderPageTemplate from "@/components/white-label/ProviderPageTemplate";
@@ -206,7 +207,7 @@ const GHL_DEPLOY_STEPS = [
   },
   {
     t: "Resell with minute rebilling",
-    d: "Set your own per-client pricing and keep 100% of what you charge. Plans start at $99/month for 6 sub-accounts, $299 for 20, and $499 for unlimited.",
+    d: `Set your own per-client pricing and keep 100% of what you charge — wholesale plans ${wholesalePricingSummary()}.`,
   },
 ];
 

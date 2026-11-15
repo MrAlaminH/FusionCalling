@@ -205,11 +205,16 @@ export default function WillAIReplaceReceptionistsBlogPost() {
                 <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                 <span>
                   <strong className="text-white">Missed calls are the real cost.</strong>{" "}
-                  Industry estimates suggest small businesses miss an
-                  estimated 60% of inbound calls &mdash; after-hours callers,
-                  hold-time abandoners, and voicemail leavers who rarely call
-                  back. Capturing even a fraction of those is usually worth
-                  more than the subscription itself.
+                  How many inbound calls small businesses actually miss is
+                  contested &mdash; estimates vary widely, from roughly a fifth
+                  to more than half, depending on the study (see our{" "}
+                  <Link href="/blog/missed-call-text-back-vs-ai-receptionist" className="text-brand-light hover:text-brand transition-colors">
+                    missed-call stat breakdown
+                  </Link>
+                  ). After-hours callers, hold-time abandoners, and voicemail
+                  leavers rarely call back, so capturing even a fraction of
+                  those calls is usually worth more than the subscription
+                  itself.
                 </span>
               </li>
               <li className="flex items-start gap-3">

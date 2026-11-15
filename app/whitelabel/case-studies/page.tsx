@@ -9,7 +9,7 @@ import { buildOpenGraph } from "@/lib/seo";
 
 const title = "White-Label AI Voice Partner Case Studies";
 const description =
-  "Real agencies building recurring revenue with white-label AI voice. See how partners generate $12K–$18K/month reselling AI voice agents under their own brand.";
+  "Real agencies building recurring revenue with white-label AI voice. See real partner results across billing, retention, and lead capture — reselling AI voice agents under their own brand.";
 
 export const metadata: Metadata = {
   title,

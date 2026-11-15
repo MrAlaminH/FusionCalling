@@ -54,6 +54,9 @@ const INDUSTRY_GLOSSARY_TERMS: Record<string, string[]> = {
   "ai-voice-for-ecommerce-retail": ["Interactive Voice Response", "Intent Recognition", "CRM Integration"],
   "ai-voice-for-education-tutoring": ["AI Receptionist", "Multi-Turn Conversation", "Barge-In"],
   "ai-voice-for-restaurants-hospitality": ["AI Receptionist", "Interactive Voice Response", "Inbound Calls"],
+  "ai-voice-for-medical-practices": ["HIPAA", "Human Handoff"],
+  "ai-voice-for-beauty-wellness": ["AI Receptionist", "Human Handoff"],
+  "ai-voice-for-veterinary": ["Human Handoff", "Keyword Spotting", "Call Routing"],
 };
 
 function resolveGlossaryLinks(industrySlug: string) {

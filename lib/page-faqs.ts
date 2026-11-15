@@ -125,7 +125,22 @@ export const aiReceptionistFaqs: PageFaq[] = [
   {
     question: "Can callers tell they are talking to an AI?",
     answer:
-      "Owners usually settle this from transcripts, not theory: callers who get an instant correct booking rarely ask whether the voice was human. The voices come from natural-sounding speech engines like ElevenLabs, and customers report them up to 95% indistinguishable from human speakers in blind listening tests. Best practice is a named greeting up front plus disclosure when asked, with a human-transfer rule for anything emotional — speed plus honesty beats both hold music and a surprise reveal.",
+      "Owners usually settle this from transcripts, not theory: callers who get an instant correct booking rarely ask whether the voice was human. The voices come from natural-sounding speech engines like ElevenLabs with human-like conversation flow, natural pacing, and interruption handling. Best practice is a named greeting up front plus disclosure when asked, with a human-transfer rule for anything emotional — speed plus honesty beats both hold music and a surprise reveal.",
+  },
+  {
+    question: "How long does setup take?",
+    answer:
+      "Your AI receptionist goes live with a guided launch in 24 hours: connect your existing number, provide your business knowledge, set greetings and transfer rules, then run test calls before customers hear it. Most workflows are live within days; complex multi-system setups take longer, but a single inbound workflow is typically live in under a week.",
+  },
+  {
+    question: "What tools does it integrate with?",
+    answer:
+      "Calendars for booking, CRMs for lead and outcome logging — GoHighLevel and HubSpot — SMS for confirmations and follow-ups, and Zapier for 2,200+ additional apps, with API and webhook access for custom stacks. The receptionist reads and writes during the call, so records stay current without staff typing anything in by hand.",
+  },
+  {
+    question: "Is there a free trial?",
+    answer:
+      "Yes — every plan starts with a 3-day free trial, backed by a 14-day money-back guarantee. There is no permanent free tier, but you can hear a live demo call on the homepage before committing to anything.",
   },
   {
     question: "What happens when the AI cannot help a caller?",

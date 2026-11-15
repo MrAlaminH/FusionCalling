@@ -144,7 +144,7 @@ export const industries: Industry[] = [
       },
     ],
     stats: [
-      { value: "78%", label: "of leads choose the first agent to respond" },
+      { value: "Speed wins", label: "leads contacted first typically win the conversation" },
       { value: "24/7", label: "after-hours coverage without extra staff" },
       { value: "<5s", label: "average time to first response" },
     ],
@@ -253,7 +253,7 @@ export const industries: Industry[] = [
       },
     ],
     stats: [
-      { value: "30%", label: "average no-show reduction with reminders" },
+      { value: "Fewer", label: "no-shows commonly reported with automated reminder calls" },
       { value: "100%", label: "of after-hours calls answered" },
       { value: "0", label: "additional front-desk headcount required" },
     ],
@@ -324,6 +324,17 @@ export const industries: Industry[] = [
       "Insurance is competitive and speed-sensitive. Shoppers requesting a quote usually contact several agencies, and the fastest response wins the policy. An AI voice agent answers instantly, captures the details needed for a quote, and keeps renewals from slipping to a competitor.",
       "Fusion Calling helps agencies and the partners serving them deploy a branded AI agent that handles inbound quote intake, outbound renewal reminders, and claims follow-up without expanding the call center.",
     ],
+    receptionistSection: {
+      heading: "Your AI receptionist for insurance agencies",
+      body:
+        "Quote shoppers call several agencies and buy from whoever answers first. An AI receptionist answers every inquiry in seconds, captures the details a quote needs, reminds clients ahead of renewals, and hands licensed conversations to your producers with the transcript attached.",
+      bullets: [
+        "Captures quote requests instantly, after hours included",
+        "Renewal reminder calls that keep policies from lapsing",
+        "Pre-qualifies leads on coverage needs and budget",
+        "Warm-transfers policy questions to a licensed agent",
+      ],
+    },
     useCases: [
       {
         emoji: "💰",
@@ -351,7 +362,7 @@ export const industries: Industry[] = [
       },
     ],
     stats: [
-      { value: "5x", label: "higher contact rate when responding in minutes" },
+      { value: "Faster", label: "outreach is strongly associated with higher contact rates" },
       { value: "24/7", label: "quote capture, even after hours" },
       { value: "100%", label: "of renewals proactively touched" },
     ],
@@ -423,6 +434,17 @@ export const industries: Industry[] = [
       "Home services businesses live and die by the phone. A burst pipe or dead furnace is an emergency, and the contractor who answers first gets the job. But owners and technicians can't always pick up while on a roof or under a sink, and after-hours calls go to voicemail, then to a competitor.",
       "Fusion Calling gives home services companies, and the agencies that serve them, a branded AI agent that answers instantly, triages emergencies, books service appointments, and schedules estimates without adding staff.",
     ],
+    receptionistSection: {
+      heading: "Your AI receptionist for home services",
+      body:
+        "A homeowner with a burst pipe calls whoever picks up first. An AI receptionist answers every call at 2 p.m. or 2 a.m., separates true emergencies from routine requests, books service and estimate appointments into the dispatch calendar, and alerts the on-call tech when it matters.",
+      bullets: [
+        "Answers emergency and routine calls instantly, 24/7",
+        "Triages urgent calls to the on-call technician with context",
+        "Books service appointments and estimates into the calendar",
+        "Captures address, issue, and contact details on every call",
+      ],
+    },
     useCases: [
       {
         emoji: "🚨",
@@ -538,6 +560,17 @@ export const industries: Industry[] = [
       "For law firms, every inbound call can be a high-value case, and potential clients frequently reach out outside business hours or while the firm is in court. A missed or delayed call often means the case goes elsewhere. An AI voice agent ensures every caller is captured, pre-qualified, and booked for a consultation.",
       "Fusion Calling lets firms, and the agencies serving them, deploy a branded intake agent that gathers case details, screens for conflicts and fit, and schedules consultations without expanding reception staff.",
     ],
+    receptionistSection: {
+      heading: "Your AI receptionist for law firms",
+      body:
+        "Prospective clients call at night, on weekends, and while your team is in court — and they usually hire the firm that answers first. An AI receptionist captures every inquiry, asks practice-area intake questions, screens for fit, and books consultations straight into attorney calendars.",
+      bullets: [
+        "Captures case type, timeline, and contact details consistently",
+        "Screens for practice-area fit before attorney time is spent",
+        "Books consultations directly into attorney calendars",
+        "Routes sensitive or complex matters to staff with a transcript",
+      ],
+    },
     useCases: [
       {
         emoji: "📥",
@@ -636,6 +669,17 @@ export const industries: Industry[] = [
       "Dealerships and service centers juggle two phone-heavy workflows: a service bay that needs to stay full, and a sales floor chasing leads. Missed calls mean empty bays and lost sales, while recall campaigns require reaching thousands of owners quickly.",
       "Fusion Calling helps automotive businesses, and the agencies serving them, deploy a branded AI agent that books service appointments, runs recall outreach, and qualifies sales leads at scale.",
     ],
+    receptionistSection: {
+      heading: "Your AI receptionist for dealerships and service centers",
+      body:
+        "Service advisors can't answer mid-repair and salespeople can't pick up mid-demo, so bays sit empty and leads go cold. An AI receptionist books and confirms service appointments, answers recall and status questions, and qualifies sales inquiries for test drives — around the clock.",
+      bullets: [
+        "Books, reschedules, and confirms service appointments on the call",
+        "Reaches owners at scale for open-recall campaigns",
+        "Qualifies sales leads and schedules test drives",
+        "Answers hours, service status, and pricing questions instantly",
+      ],
+    },
     useCases: [
       {
         emoji: "🛠️",
@@ -734,6 +778,17 @@ export const industries: Industry[] = [
       "Call centers and BPOs operate on thin margins and variable volume. Spikes overwhelm agents, while quiet periods waste capacity. AI voice agents absorb the predictable, repetitive work, handling tier-1 inquiries and large outbound campaigns so human agents focus on complex, high-value conversations.",
       "Fusion Calling gives contact centers and the agencies serving them a platform to deploy AI agents that handle high-volume inbound and outbound calls with recordings, transcripts, and analytics built in.",
     ],
+    receptionistSection: {
+      heading: "Your AI receptionist layer for call centers and BPOs",
+      body:
+        "AI agents absorb the tier-1 load — balances, hours, status checks, FAQs — so spikes stop overwhelming human agents and quiet periods stop wasting capacity. Every call is answered instantly, resolved where possible, and escalated with a transcript when a person is genuinely needed.",
+      bullets: [
+        "Handles routine tier-1 inquiries without queueing callers",
+        "Absorbs call spikes without adding headcount",
+        "Escalates complex conversations to human agents with context",
+        "Records, transcribes, and tags every call for QA and SLA reporting",
+      ],
+    },
     useCases: [
       {
         emoji: "📲",
@@ -1116,6 +1171,17 @@ export const industries: Industry[] = [
       "Tutoring centers, bootcamps, and edtech programs live on enrollment calls and trial-booking, but inquiries spike after school hours and during campaigns when staff are teaching. Missed calls mean missed cohorts and lost tuition.",
       "Fusion Calling helps education providers, and the agencies serving them, deploy a branded AI voice agent that qualifies prospective students, books trial sessions, sends reminders, and follows up with parents, automatically.",
     ],
+    receptionistSection: {
+      heading: "Your AI receptionist for education and tutoring",
+      body:
+        "Parents research programs in the evening and on weekends, exactly when instructors are teaching. An AI receptionist answers every inquiry, captures the student's subject and goals, books trial lessons into the calendar, and runs reminder calls that keep scheduled sessions from becoming no-shows.",
+      bullets: [
+        "Answers parent and student inquiries instantly, after hours included",
+        "Books trial lessons and classes into the calendar",
+        "Reminder calls that reduce missed sessions",
+        "Answers curriculum, schedule, and pricing questions consistently",
+      ],
+    },
     useCases: [
       {
         emoji: "📝",
@@ -1438,9 +1504,9 @@ export const industries: Industry[] = [
       },
     ],
     stats: [
-      { value: "30%", label: "average no-show reduction with reminders" },
+      { value: "Fewer", label: "no-shows commonly reported with automated reminder calls" },
       { value: "100%", label: "of after-hours patient calls answered" },
-      { value: "0", label: "additional front-desk headcount required" },
+      { value: "0", label: "extra hires needed to answer the phone" },
     ],
     pricingMath: {
       intro:
@@ -1549,7 +1615,7 @@ export const industries: Industry[] = [
       },
     ],
     stats: [
-      { value: "40-60%", label: "no-show reduction with reminder calls" },
+      { value: "Fewer", label: "no-shows commonly reported with automated reminder calls" },
       { value: "100%", label: "of after-hours booking calls answered" },
       { value: "0", label: "missed bookings during treatments" },
     ],
@@ -1666,7 +1732,7 @@ export const industries: Industry[] = [
       },
     ],
     stats: [
-      { value: "30%", label: "average no-show reduction with reminders" },
+      { value: "Fewer", label: "no-shows commonly reported with automated reminder calls" },
       { value: "100%", label: "of after-hours owner calls answered" },
       { value: "0", label: "additional front-desk headcount required" },
     ],
@@ -1701,12 +1767,7 @@ export const industries: Industry[] = [
       {
         question: "Can an AI answering service triage emergencies at a vet clinic?",
         answer:
-          "Yes, using urgency rules your team defines. The AI answering service asks screening questions, recognizes red-flag symptoms — breathing trouble, bleeding, toxin ingestion, hit-by-car, post-op complications — and transfers those callers to your on-call staff immediately with the transcript and owner details. Everything non-urgent is booked or queued for the morning instead of occupying your team mid-surgery.",
-      },
-      {
-        question: "How are pet emergencies handled?",
-        answer:
-          "You define urgency rules up front: breathing issues, injuries, post-op concerns, and anything you flag transfers to staff immediately with the transcript and owner details. Routine calls never block urgent ones.",
+          "Yes, using urgency rules your team defines. The AI answering service asks screening questions, recognizes the red-flag symptoms you've flagged, and transfers those callers to your on-call staff immediately with the transcript and owner details. Everything non-urgent is booked or queued for the morning instead of occupying your team mid-surgery.",
       },
       {
         question: "Can I sell this to vet clients under my brand?",

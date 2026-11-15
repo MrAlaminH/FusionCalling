@@ -31,7 +31,7 @@ const aboutFaqs = [
   {
     question: "When was Fusion Calling founded?",
     answer:
-      "Fusion Calling was founded in 2025 and has since helped 100+ agencies and businesses launch profitable voice-AI practices.",
+      "Fusion Calling was founded in 2025 and has since helped 100+ agencies and projects launch profitable voice-AI practices.",
   },
   {
     question: "Where is Fusion Calling based?",
@@ -62,7 +62,9 @@ const aboutFaqs = [
 
 const stats = [
   { value: "2025", label: "Founded" },
-  { value: "100+", label: "Agencies & businesses launched" },
+  { value: "100+", label: "Agencies & projects launched" },
+  { value: "50,000+", label: "Calls automated" },
+  { value: "500+", label: "AI agents deployed" },
   { value: "4.8/5", label: "Customer satisfaction" },
   { value: "99.9%", label: "Uptime guarantee" },
 ];
@@ -150,7 +152,7 @@ const aboutJsonLd = {
       url: `${SITE_URL}/about`,
       name: "About Fusion Calling",
       description:
-        "Fusion Calling builds human-like AI voice agents that automate inbound and outbound business calls. Learn about our team, our mission, and why 100+ agencies trust us since 2025.",
+        "Fusion Calling builds human-like AI voice agents that automate inbound and outbound business calls. Learn about our team, our mission, and why 100+ agencies and projects trust us since 2025.",
       inLanguage: "en-US",
       isPartOf: { "@id": `${SITE_URL}/#website` },
       breadcrumb: {
@@ -204,11 +206,11 @@ export const metadata: Metadata = {
     absolute: "About Fusion Calling — AI Voice Agents & Mission",
   },
   description:
-    "Fusion Calling builds human-like AI voice agents that automate inbound and outbound calls. Learn our mission and why 100+ agencies trust us since 2025.",
+    "Fusion Calling builds human-like AI voice agents that automate inbound and outbound calls. Learn our mission and why 100+ agencies and projects trust us since 2025.",
   ...buildOpenGraph({
     title: "About Fusion Calling — AI Voice Agents & Mission",
     description:
-      "Fusion Calling builds human-like AI voice agents that automate inbound and outbound calls. Learn our mission and why 100+ agencies trust us since 2025.",
+      "Fusion Calling builds human-like AI voice agents that automate inbound and outbound calls. Learn our mission and why 100+ agencies and projects trust us since 2025.",
     path: "/about",
     type: "website",
   }),
@@ -249,7 +251,7 @@ export default function AboutPage() {
               </p>
               <p className="mt-5 text-sm text-gray-500">
                 Founded 2025 · Bangladesh-based, remote team · 100+ agencies &amp;
-                businesses
+                projects
               </p>
             </Reveal>
           </div>
@@ -258,7 +260,7 @@ export default function AboutPage() {
         {/* Stats band */}
         <section aria-label="Fusion Calling in numbers" className="border-y border-white/10 bg-white/[0.02]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-            <dl className="grid grid-cols-2 lg:grid-cols-4">
+            <dl className="grid grid-cols-2 lg:grid-cols-3">
               {stats.map((stat) => (
                 <div key={stat.label} className="flex flex-col py-8 md:py-10 px-2 sm:px-6">
                   <dt className="order-2 mt-1 text-sm text-gray-400">
@@ -307,7 +309,7 @@ export default function AboutPage() {
                   of what they charge clients.
                 </p>
                 <p>
-                  Today, 100+ agencies and businesses run on Fusion Calling
+                  Today, 100+ agencies and projects run on Fusion Calling
                   across real estate, dental, insurance, home services, legal,
                   and automotive — and we publish our{" "}
                   <Link

@@ -303,17 +303,31 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
             </div>
 
             <p className="text-gray-300 leading-relaxed mb-6">
-              Now weigh that recovered revenue against the cost. Fusion Calling
-              runs from{" "}
-              <strong className="text-brand-light">$99 to $499/mo</strong>{" "}
-              depending on how many locations or sub-accounts you manage (full
-              tier details on our{" "}
+              Now weigh that recovered revenue against the cost. For a single
+              business, Fusion Calling&apos;s direct plans run from{" "}
+              <strong className="text-brand-light">$149/mo with 500 included
+              minutes</strong>{" "}
+              up to $497/mo with 2,100 minutes (full tier details on our{" "}
               <Link href="/pricing" className="text-brand-light hover:text-brand transition-colors">
                 pricing page
               </Link>
               ). For
               most small businesses, recovering a single job per month covers
               the entire subscription — and most recover far more than that.
+            </p>
+
+            <h3 className="text-xl font-bold text-brand-light mb-2">
+              White-Label Partner Plans (for agencies)
+            </h3>
+            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+              The tiers below are agency and reseller pricing — for packaging
+              voice AI across multiple client sub-accounts, not what a single
+              business pays. If you run an agency, see our{" "}
+              <Link href="/whitelabel" className="text-brand-light hover:text-brand transition-colors">
+                white-label platform
+              </Link>
+              ; small-business owners should start on the $149/mo direct plan
+              above.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">

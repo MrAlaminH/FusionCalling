@@ -185,8 +185,8 @@ export default function WhiteLabelPage() {
       <section id="reseller-program" className="w-full bg-black section-rhythm scroll-mt-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <SectionHeader
-            title="AI Voice Agent Reseller Program"
-            highlight="Reseller Program"
+            title="Resell AI Voice Under Your Own Brand"
+            highlight="Your Own Brand"
             subtitle="Buy wholesale from $99/month, set your own client pricing, and keep 100% of the margin. Sub-accounts, Stripe rebilling, and a 24-hour launch are included on every plan."
           />
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">

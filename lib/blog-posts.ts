@@ -84,7 +84,7 @@ export const blogPosts: BlogPost[] = [
     title: "How to White-Label Vapi AI Voice Agents",
     metaTitle: "How to White-Label Vapi (Step-by-Step Guide)",
     description:
-      "Does Vapi offer white label? Not natively. The step-by-step guide to white-labeling Vapi agents under your own brand — setup, costs, what Vapi leaves out.",
+      "Does Vapi offer white label? Not as a first-party agency product. How to white-label Vapi agents under your own brand — setup, costs, gaps.",
     date: "2025-02-10",
     updated: "2026-11-14",
     category: "Integration Guide",

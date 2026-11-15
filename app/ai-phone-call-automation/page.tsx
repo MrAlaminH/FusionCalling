@@ -695,7 +695,7 @@ export default function AiPhoneCallAutomationPage() {
                         {plan.includedMinutes.toLocaleString("en-US")}
                       </td>
                       <td className="px-4 py-3 text-center text-gray-400">
-                        {plan.setupFee === 0 ? "$0" : `$${plan.setupFee}`}
+                        {plan.setupFee === 0 ? "$0" : `$${plan.setupFee.toLocaleString("en-US")}`}
                       </td>
                       <td className="px-4 py-3 text-center text-gray-400">
                         {plan.overageRate}

@@ -80,7 +80,14 @@ const unparsedCount = rows.length - parsed.length;
 
 const quickAnswer = `Most voice AI platforms hide their entry price: only ${parsed.length} of ${rows.length} we track publish a monthly plan, and those cluster between $${Math.min(
   ...parsed,
-)} and $${Math.max(...parsed)} per month (median $${median}). Usage-metered engines add $0.05–$0.33 per minute on top. Fusion Calling publishes all plans: $99–$499/mo with sub-accounts included.`;
+)} and $${Math.max(...parsed)} per month (median $${median}). Usage-metered engines add $0.05–$0.33 per minute on top. Fusion Calling publishes all plans: agency white-label plans run $99–$499/mo with sub-accounts included, and direct business plans run $149–$497/mo on FusionCalling.com/pricing.`;
+
+// "Updated <Month Year>" for FAQ prose, derived from the same PAGE_UPDATED
+// entry the visible Updated line uses — no hardcoded month to go stale.
+const benchmarkMonth = new Date(`${pageUpdated}T00:00:00Z`).toLocaleDateString(
+  "en-US",
+  { month: "long", year: "numeric", timeZone: "UTC" },
+);
 
 const faqs = [
   {
@@ -89,7 +96,7 @@ const faqs = [
       ...parsed,
     )}–$${Math.max(
       ...parsed,
-    )} per month (median $${median} across ${parsed.length} platforms, October 2026). Budget tiers usually include a single client or portal; plans that include multiple client sub-accounts start around $99/mo. Usage-metered platforms bill separately per minute — roughly $0.05/min platform fees plus $0.23–$0.33/min all-in once speech, language, and telephony costs are added.`,
+    )} per month (median $${median} across ${parsed.length} platforms, ${benchmarkMonth}). Budget tiers usually include a single client or portal; plans that include multiple client sub-accounts start around $99/mo. Usage-metered platforms bill separately per minute — roughly $0.05/min platform fees plus $0.23–$0.33/min all-in once speech, language, and telephony costs are added.`,
   },
   {
     question: "Why do AI receptionist prices vary so much?",
@@ -301,6 +308,8 @@ export default function PricingBenchmarkPage() {
               agencies reselling under their own brand. There is no per-minute
               platform fee on top: the ${WHOLESALE_STARTER.price} Starter plan
               includes {WHOLESALE_STARTER.subAccounts} client sub-accounts.
+              These are the agency plans — direct business plans without
+              sub-accounts run $149–$497/mo on our pricing page.
             </p>
             <p className="text-gray-400 leading-relaxed">
               Compare the{" "}

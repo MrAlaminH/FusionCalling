@@ -7,17 +7,8 @@ import ProviderPageTemplate from "@/components/white-label/ProviderPageTemplate"
 const provider = whitelabelProviders.find((p) => p.slug === "vapi")!;
 const metaDescription = truncateAtWord(provider.description, 158);
 
-const extraFaqs = [
-  {
-    question: "Do my clients ever see Vapi?",
-    answer:
-      "No. Your clients see only your brand — logo, domain, and pricing. You import your existing Vapi agents and API keys with no rebuild.     Usage stays on your Vapi account behind the scenes.",
-  },
-];
-
 const schema = buildProviderGraph(provider, {
   audience: "Marketing agencies, call centers, SaaS resellers",
-  extraFaqs,
 });
 
 export const metadata: Metadata = {
@@ -77,7 +68,6 @@ export default function VapiWhiteLabelPage() {
           note: "Pricing and features side by side.",
         },
       ]}
-      extraFaqs={extraFaqs}
       navbarLinks={[
         { label: "Home", href: "/whitelabel" },
         { label: "Features", href: "#vapi-features" },

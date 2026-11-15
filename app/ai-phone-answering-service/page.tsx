@@ -39,12 +39,14 @@ import {
 import { primaryButton, secondaryButton } from "@/components/ui/button-styles";
 import { buildOpenGraph } from "@/lib/seo";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { DIRECT_PLANS, type DirectPlan } from "@/lib/product-facts";
 
 const title = "AI Phone Answering Service: 2026 Buyer's Guide";
-// Buyer's-guide angle — deliberately different structure from
-// /ai-receptionist's description so the two never render as clones.
+// Buyer's-guide angle — leads with the switch-from-legacy-service flow (this
+// page's differentiator vs /ai-receptionist) while the title keeps the exact
+// "ai phone answering service" query phrase.
 const description =
-  "AI phone answering service that answers every call 24/7 — books appointments, answers questions & transfers urgent calls. Flat monthly rate, keep your number.";
+  "Switch your per-minute answering service to AI: keep the coverage, lose the per-minute fees. Every call answered 24/7, booked on the call, from $149/mo flat — keep your number.";
 
 const sectionEyebrow =
   "text-xs font-semibold uppercase tracking-[0.2em] text-brand mb-3";
@@ -218,7 +220,7 @@ const comparisons = [
   },
   {
     title: "vs. voicemail",
-    text: "Roughly 4 in 5 first-time callers who reach voicemail never call back. An AI service answers every call live, captures the lead, and books the job — the exact revenue voicemail quietly loses.",
+    text: "Most first-time callers who reach voicemail never call back — they move on to the next result. An AI service answers every call live, captures the lead, and books the job — the exact revenue voicemail quietly loses.",
   },
   {
     title: "vs. hiring in-house",
@@ -259,29 +261,21 @@ const useCases = [
   },
 ];
 
-const plans = [
-  {
-    name: "Starter",
-    price: 149,
-    minutes: "500 minutes included",
-    blurb: "Everything on this page — 24/7 answering, booking, transfers, SMS.",
-    setupFee: null as number | null,
-  },
-  {
-    name: "Pro",
-    price: 249,
-    minutes: "1,050 minutes included",
-    blurb: "Adds inbound/outbound handling and custom LLM integration.",
-    setupFee: 799,
-  },
-  {
-    name: "Enterprise",
-    price: 497,
-    minutes: "2,100 minutes included",
-    blurb: "Custom-trained voice with dedicated support and developer.",
-    setupFee: 1250,
-  },
-];
+// Per-plan editorial copy keyed by plan name — a renamed plan is a compile
+// error. Prices, minutes, and setup fees are data from DIRECT_PLANS.
+const PLAN_BLURBS: Record<DirectPlan["name"], string> = {
+  Starter: "Everything on this page — 24/7 answering, booking, transfers, SMS.",
+  Pro: "Adds inbound/outbound handling and custom LLM integration.",
+  Enterprise: "Custom-trained voice with dedicated support and developer.",
+};
+
+const plans = DIRECT_PLANS.map((plan) => ({
+  name: plan.name,
+  price: plan.price,
+  minutes: `${plan.includedMinutes.toLocaleString("en-US")} minutes included`,
+  blurb: PLAN_BLURBS[plan.name],
+  setupFee: (plan.setupFee === 0 ? null : plan.setupFee) as number | null,
+}));
 
 const pricingTrustChips = [
   { icon: Check, label: "Month-to-month, no long-term contract" },
@@ -473,16 +467,17 @@ export default function AiAnsweringServicePage() {
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               <span className="bg-gradient-to-r from-brand to-brand-strong text-transparent bg-clip-text">
-                AI Phone Answering Service
+                Switch Your Answering Service to AI
               </span>{" "}
-              That Picks Up Every Call
+              — Keep the Coverage, Lose the Per-Minute Fees
             </h1>
             <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
-              Never miss a call again. Fusion Calling answers every business
-              call on the first ring — 24/7, even nights and weekends. Our AI
-              agent books appointments into your real calendar, answers common
-              questions, takes detailed messages, and transfers urgent callers
-              to your team. Flat $149/month, keep your number, no contract.
+              Paying per minute for a human answering service that reads from a
+              script? Fusion Calling is the AI phone answering service that
+              replaces it: every call picked up on the first ring — 24/7, even
+              nights and weekends — with booking into your real calendar and
+              full transcripts you can audit yourself. Flat monthly plans from
+              $149, keep your number, go live in days, no contract.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link href="/#show-case" className={primaryButton}>

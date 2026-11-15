@@ -157,12 +157,12 @@ const faqItems = [
   {
     question: "How realistic do AI voice agents sound?",
     answer:
-      "Customers report our AI voice agents are up to 95% indistinguishable from human speakers in blind listening tests. We use advanced text-to-speech technology from providers like ElevenLabs and offer voice customization options, including the ability to clone your own voice or choose from our library of natural-sounding voices in multiple languages and accents.",
+      "The voices come from advanced text-to-speech engines like ElevenLabs, with natural pacing, interruption handling, and voice customization options — clone your own voice or choose from our library of natural-sounding voices in multiple languages and accents. Judge the quality yourself: hear a live demo call on this page.",
   },
   {
     question: "How long does deployment take?",
     answer:
-      "Most AI agents go live within 4 weeks after proposal approval. The timeline includes: Week 1-2 for discovery and workflow design, Week 3 for AI training and integration, Week 4 for testing and optimization. Simple implementations can be done in as little as 2 weeks, while complex multi-system integrations may take 6-8 weeks.",
+      "Launch is guided and fast: your agent goes live within 24 hours of kickoff, and most workflows are live within days. Setup covers connecting your number, loading your business knowledge, setting greetings and handoff rules, and running test calls before you switch it on. Complex multi-system workflows take longer, but a single inbound or outbound workflow is typically live in under a week.",
   },
   {
     question: "Can AI agents handle complex conversations?",

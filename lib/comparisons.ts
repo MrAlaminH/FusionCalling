@@ -172,7 +172,7 @@ export const comparisons: Comparison[] = [
           name: "Synthflow",
           href: "/alternative/synthflow",
           bestFor: "Established teams preferring enterprise, single-vendor contracts",
-          note: "Polished no-code builder, but pricing moves to ~$30k/yr sales-led tiers where white-label lives.",
+          note: "Polished no-code builder on a single proprietary engine; pay-as-you-go usage pricing plus enterprise/custom quotes — verify current pricing before you commit.",
         },
         {
           name: "Vapi",
@@ -183,10 +183,10 @@ export const comparisons: Comparison[] = [
       ],
     },
     keyStatistics: {
-      retentionRate: "73%",
+      retentionRate: "Not published",
       timeToLaunch: "24 hours vs 60 minutes self-serve",
       clientsIncluded: "6 vs 3 at entry level",
-      featureUpdates: "8+/month vs 4/month"
+      featureUpdates: "8+/month vs not published"
     },
     intro: [
       "ChatDash has built a solid reputation as a white-label voice AI platform, with deep native integrations into GoHighLevel and HubSpot and a polished, outcome-based billing surface for agencies that charge per booked appointment or qualified lead.",
@@ -265,7 +265,7 @@ export const comparisons: Comparison[] = [
       ]
     },
     expertQuote: {
-      text: "Platforms offering guided onboarding and multi-provider support like Fusion Calling are seeing 73% higher agency retention compared to self-serve single-vendor solutions. The 24-hour launch with ongoing support is revolutionary for agency growth.",
+      text: "Platforms offering guided onboarding and multi-provider support, like Fusion Calling, give agencies a better shot at long-term retention than self-serve single-vendor solutions. The 24-hour launch with ongoing support matters more to agency growth than any single feature.",
       attribution: "FusionCalling Voice Team",
       source: "FusionCalling"
     },
@@ -306,6 +306,16 @@ export const comparisons: Comparison[] = [
         question: "What is the best ChatDash alternative for agencies?",
         answer:
           "Fusion Calling is the best fit for agencies that want more sub-accounts and guided help. You get 6 sub-accounts from $99/mo, support for Vapi, Retell, and ElevenLabs, and a 24-hour launch with 30 days of support. ChatDash still fits GoHighLevel-first teams that bill clients per booked call or lead.",
+      },
+      {
+        question: "Can I migrate my existing agents from ChatDash?",
+        answer:
+          "Public documentation on direct import from ChatDash into Fusion Calling is limited, so plan on re-configuring rather than a one-click transfer. Both platforms run on the same core engines (Retell, Vapi, ElevenLabs), so prompts and provider settings usually adapt quickly; sub-account structure, billing setup, and portal configuration are rebuilt. Verify any export options with both vendors before you move.",
+      },
+      {
+        question: "When should I stay on ChatDash instead of switching?",
+        answer:
+          "Stay on ChatDash if your agency is GoHighLevel-native and you depend on its packaged GHL and HubSpot integrations and outcome-based billing (per booked appointment or qualified lead). Switch when you need more sub-accounts at entry, a guided launch with live support, or a live interactive demo to help close prospects.",
       },
     ],
   },
@@ -381,10 +391,10 @@ export const comparisons: Comparison[] = [
       ],
     },
     keyStatistics: {
-      retentionRate: "73%",
+      retentionRate: "Not published",
       timeToLaunch: "24 hours guided vs 30 minutes self-serve",
       clientsIncluded: "6 vs 1 at entry level",
-      featureUpdates: "8+/month vs 2/month"
+      featureUpdates: "8+/month vs not published"
     },
     intro: [
       "Vapify is a lightweight, affordable white-label wrapper built primarily around Vapi (with Retell support) that's popular with solo operators and small agencies getting started with voice AI. Its low entry price and GoHighLevel marketplace app make it easy to test the waters.",
@@ -463,7 +473,7 @@ export const comparisons: Comparison[] = [
       ]
     },
     expertQuote: {
-      text: "Agencies choosing platforms based solely on entry price often face 3x more migration costs when scaling. Fusion Calling's 6-client entry tier eliminates the need to re-platform as you grow, saving agencies an average of $12,000 in transition costs.",
+      text: "Agencies choosing platforms based solely on entry price often pay for it later in re-platforming costs. A 6-client entry tier removes the need to migrate as you grow — and avoiding a migration is cheaper than any transition budget.",
       attribution: "FusionCalling Voice Team",
       source: "FusionCalling"
     },
@@ -504,6 +514,16 @@ export const comparisons: Comparison[] = [
         question: "What is the best Vapify alternative for agencies?",
         answer:
           "Fusion Calling is the best fit for agencies with more than one client. You get 6 sub-accounts from $99/mo, support for Vapi, Retell, and ElevenLabs, and a guided 24-hour launch. Vapify still fits solo operators who only need one Vapi-based client at the lowest entry price.",
+      },
+      {
+        question: "Can I migrate my existing agents from Vapify?",
+        answer:
+          "Vapify runs on Vapi (with Retell supported), and Fusion Calling supports both engines, so prompts and engine configuration usually adapt quickly. No direct import is documented, though — plan on rebuilding agents, sub-account structure, and Stripe billing inside Fusion Calling, and verify any export tooling with both vendors before you switch.",
+      },
+      {
+        question: "When should I stay on Vapify instead of switching?",
+        answer:
+          "Stay on Vapify if you are a solo operator running exactly one Vapi-based client at the lowest entry price ($29/month Starter) and don't expect to add clients soon. Switch when a second client forces a tier upgrade, when you want a guided launch and ongoing support, or when you want a live interactive demo to help sell.",
       },
     ],
   },
@@ -578,10 +598,10 @@ export const comparisons: Comparison[] = [
       ],
     },
     keyStatistics: {
-      retentionRate: "73%",
+      retentionRate: "Not published",
       timeToLaunch: "24 hours guided vs $3,999 white-glove option",
       clientsIncluded: "6 at $99 vs unlimited at $28",
-      featureUpdates: "8+/month vs 2/month"
+      featureUpdates: "8+/month vs not published"
     },
     intro: [
       "Voicerr AI is a feature-rich, budget-friendly white-label platform that wraps Vapi and Retell and bundles an impressive toolkit: a landing page builder, a lead finder, a workflow engine, SaaS mode, and multi-currency client billing. It's an official Vapi partner and a strong value pick for cost-conscious agencies.",
@@ -660,7 +680,7 @@ export const comparisons: Comparison[] = [
       ]
     },
     expertQuote: {
-      text: "Agencies that choose platforms based on bundled features often struggle with shallow implementation. Fusion Calling's focused approach on core voice AI capabilities—combined with hands-on partnership—results in 67% higher client satisfaction and 43% faster time-to-revenue.",
+      text: "Agencies that choose platforms based on bundled features often struggle with shallow implementation. A focused approach to core voice AI capabilities—combined with hands-on partnership—tends to produce stronger client outcomes than a wide toolkit used thinly.",
       attribution: "FusionCalling Voice Team",
       source: "FusionCalling"
     },
@@ -701,6 +721,16 @@ export const comparisons: Comparison[] = [
         question: "What is the best Voicerr AI alternative for agencies?",
         answer:
           "Fusion Calling is the best fit for agencies that want guided onboarding and a live demo. You get a done-with-you launch in 24 hours, support for Vapi, Retell, and ElevenLabs, and 30 days of help. Voicerr still fits tight budgets that need many bundled tools at the lowest monthly fee.",
+      },
+      {
+        question: "Can I migrate my existing agents from Voicerr?",
+        answer:
+          "Voicerr wraps Vapi and Retell, and Fusion Calling runs both engines (plus ElevenLabs), so prompts and engine settings usually carry over conceptually. No direct import is documented, so plan on rebuilding agents, white-label websites, and client billing in Fusion Calling. Verify any export tooling with both vendors before you move.",
+      },
+      {
+        question: "When should I stay on Voicerr instead of switching?",
+        answer:
+          "Stay on Voicerr if your priority is the lowest monthly fee with a wide bundle — website builder, lead finder, workflows, SaaS mode, multi-currency billing — and you're comfortable with self-serve setup. Switch when you want done-with-you onboarding included (rather than the $3,999 white-glove tier), a live interactive demo for closing prospects, or ElevenLabs alongside Vapi and Retell.",
       },
     ],
   },
@@ -775,17 +805,17 @@ export const comparisons: Comparison[] = [
       ],
     },
     keyStatistics: {
-      retentionRate: "73%",
+      retentionRate: "Not published",
       timeToLaunch: "24 hours guided vs 60 minutes self-serve",
       clientsIncluded: "Unlimited at $499 vs 10 at $499",
-      featureUpdates: "8+/month vs 3/month"
+      featureUpdates: "8+/month vs not published"
     },
     intro: [
-      "VoiceAIWrapper is widely regarded as one of the most complete white-label voice AI platforms, with broad multi-provider support, published compliance documentation, and a strong content presence. It's a serious, well-built option for agencies that want flexibility and compliance.",
+      "VoiceAIWrapper is widely regarded as one of the most complete white-label voice AI platforms, with broad multi-provider support, advertised compliance documentation (verify specifics like a current BAA before committing), and a strong content presence. It's a serious, well-built option for agencies that want flexibility.",
       "Fusion Calling competes on a different axis: a guided, done-with-you launch, a live demo your prospects can try before buying, and a hands-on partnership model. This page lays out the trade-offs honestly so you can choose what fits your agency.",
       ],
     competitorBestFor:
-      "Agencies that prioritize maximum provider breadth and published compliance documentation with self-serve setup.",
+      "Agencies that prioritize maximum provider breadth and advertised compliance documentation with self-serve setup.",
     fusionCallingOverview: [
       "Fusion Calling takes a different approach than self-serve platforms. Instead of providing tools and letting agencies figure out implementation on their own, Fusion Calling provides done-with-you onboarding that gets your branded agency live in 24 hours with 30 days of ongoing support.",
       "The platform focuses on partnership over transaction. You get a dedicated account manager on higher tiers, weekly training sessions to improve your client acquisition strategies, and active optimization support based on best practices from 100+ agency partnerships.",
@@ -803,7 +833,7 @@ export const comparisons: Comparison[] = [
         emoji: "",
         title: "Published Compliance",
         description:
-          "SOC 2 Type 2, GDPR, and HIPAA documentation with a signed BAA available on the Pro tier.",
+          "Advertises SOC 2 with HIPAA BAA on its Pro tier — verify a current BAA before committing if compliance documentation drives your decision.",
       },
       {
         emoji: "",
@@ -819,7 +849,7 @@ export const comparisons: Comparison[] = [
       { label: "Live product demo", competitor: "Sign-up based", fusion: "Interactive demo on homepage" },
       { label: "Onboarding model", competitor: "Self-serve (~60 min)", fusion: "Launch in 24 hours + 30-day support" },
       { label: "Client billing", competitor: "Stripe rebilling + external", fusion: "Stripe rebilling + your own pricing" },
-      { label: "Compliance docs", competitor: "SOC 2 + HIPAA + BAA (Pro)", fusion: "Enterprise-grade security posture" },
+      { label: "Compliance docs", competitor: "Advertised SOC 2 + HIPAA BAA (Pro; verify)", fusion: "Enterprise-grade security posture" },
       { label: "Top-tier price", competitor: "$499/mo Pro (incl. BAA)", fusion: "$499/mo Scale (unlimited)" },
     ],
     advantagesTitle: "Where Fusion Calling Goes Further",
@@ -857,7 +887,7 @@ export const comparisons: Comparison[] = [
       ]
     },
     expertQuote: {
-      text: "The hidden cost of self-serve platforms isn't in the setup time—it's in the ongoing optimization. Agencies with guided onboarding see 73% higher retention because they implement best practices from day one rather than learning through trial and error.",
+      text: "The hidden cost of self-serve platforms isn't in the setup time—it's in the ongoing optimization. Guided onboarding helps agencies implement best practices from day one rather than learning through trial and error.",
       attribution: "FusionCalling Voice Team",
       source: "FusionCalling"
     },
@@ -870,7 +900,7 @@ export const comparisons: Comparison[] = [
       competitorPoints: [
         "Starter $29/mo with 5 client portals",
         "Scale $249/mo with unlimited clients",
-        "Pro $499/mo with signed BAA included",
+        "Pro $499/mo with advertised HIPAA BAA (verify before committing)",
         "Pass-through voice minutes, no markup",
       ],
       fusionTitle: "Fusion Calling Economics",
@@ -892,12 +922,22 @@ export const comparisons: Comparison[] = [
       {
         question: "Both top tiers are $499/month. What's the difference?",
         answer:
-          "VoiceAIWrapper Pro includes a signed HIPAA BAA and compliance documentation. Fusion Calling Scale includes unlimited sub-accounts, a dedicated account manager, and a guided launch. The right choice depends on whether compliance docs or a guidance-and-demo model matters more to your agency.",
+          "VoiceAIWrapper advertises SOC 2 with a HIPAA BAA on its Pro tier — verify a current BAA before committing. Fusion Calling Scale includes unlimited sub-accounts, a dedicated account manager, and a guided launch. The right choice depends on whether advertised compliance docs or a guidance-and-demo model matters more to your agency.",
       },
       {
         question: "What is the best VoiceAIWrapper alternative for agencies?",
         answer:
-          "Fusion Calling is the best fit for agencies that want a guided launch and a live demo. You get done-with-you onboarding in 24 hours, support for Vapi, Retell, and ElevenLabs, and 30 days of help. VoiceAIWrapper still fits teams that need 5 providers and published SOC 2 and HIPAA docs.",
+          "Fusion Calling is the best fit for agencies that want a guided launch and a live demo. You get done-with-you onboarding in 24 hours, support for Vapi, Retell, and ElevenLabs, and 30 days of help. VoiceAIWrapper still fits teams that need 5 providers and advertised SOC 2 and HIPAA docs (verify a current BAA before committing).",
+      },
+      {
+        question: "Can I migrate my existing agents from VoiceAIWrapper?",
+        answer:
+          "VoiceAIWrapper supports five providers including Vapi, Retell, and ElevenLabs — all three run on Fusion Calling — so prompts and engine configuration adapt in principle. There is no documented one-click import: plan on re-creating portals, sub-accounts, and Stripe billing, and verify any migration options with both vendors before you commit.",
+      },
+      {
+        question: "When should I stay on VoiceAIWrapper instead of switching?",
+        answer:
+          "Stay on VoiceAIWrapper if you need maximum provider breadth (five engines, including Bolna and Ultravox) or its advertised SOC 2 and HIPAA BAA documentation on the Pro tier — verified current — for compliance-sensitive clients. Switch when you want done-with-you onboarding, a live interactive demo, and a partnership model instead of self-serve setup.",
       },
     ],
   },
@@ -912,7 +952,7 @@ export const comparisons: Comparison[] = [
     heroImage: "/alternative/alternative5.webp",
     metaTitle: "Synthflow Alternatives for Agencies (2026)",
     metaDescription:
-      "Top Synthflow alternative for agencies: white-label voice AI from $99/mo vs Synthflow enterprise (from $30k/yr) — public pricing, live demo, 24-hour launch.",
+      "Top Synthflow alternative for agencies: white-label voice AI from $99/mo vs Synthflow's usage pricing (~$0.07–0.08/min) plus custom quotes — public pricing, live demo, 24-hour launch.",
     keywords: [
       "best synthflow alternatives",
       "synthflow alternative for transparent voice ai pricing",
@@ -974,10 +1014,10 @@ export const comparisons: Comparison[] = [
       ],
     },
     keyStatistics: {
-      retentionRate: "73%",
+      retentionRate: "Not published",
       timeToLaunch: "24 hours vs 4-6 weeks sales-led",
       clientsIncluded: "6 at public pricing vs custom",
-      featureUpdates: "8+/month vs 3/month"
+      featureUpdates: "8+/month vs not published"
     },
     intro: [
       "Synthflow is one of the most recognizable names in AI voice, with a polished no-code agent builder and an enterprise-oriented white-label offering. It's a strong choice for established agencies that prefer a custom-negotiated, single-vendor relationship.",
@@ -1013,17 +1053,17 @@ export const comparisons: Comparison[] = [
     ],
     tableTitle: "Fusion Calling vs. Synthflow at a Glance",
     comparisonRows: [
-      { label: "Starting monthly cost", competitor: "Enterprise from ~$30k/yr (sales-led)", fusion: "$99/mo (public pricing)" },
+      { label: "Starting monthly cost", competitor: "Pay-as-you-go usage (~$0.07–0.08/min) + custom quotes", fusion: "$99/mo (public pricing)" },
       { label: "Voice providers supported", competitor: "Proprietary engine", fusion: fusionProviders },
       { label: "Live product demo", competitor: "Request-based", fusion: "Interactive demo on homepage" },
-      { label: "Pricing transparency", competitor: "Quote-based, no self-serve tier", fusion: "Fully public pricing" },
+      { label: "Pricing transparency", competitor: "Self-serve usage pricing + enterprise/custom quotes", fusion: "Fully public pricing" },
       { label: "Onboarding model", competitor: "Sales-assisted, weeks", fusion: "Launch in 24 hours + 30-day support" },
       { label: "Engine type", competitor: "Single proprietary engine", fusion: "Multi-provider (BYOK-style)" },
       { label: "Free trial", competitor: "Enterprise pilot", fusion: "3-day free trial, $0 setup" },
     ],
     advantagesTitle: "Where Fusion Calling Goes Further",
     intro2:
-      "Synthflow excels as an enterprise, proprietary-engine option. Fusion Calling is built for speed, transparency, and partnership:",
+      "Synthflow excels as a polished, proprietary-engine option. Fusion Calling is built for speed, transparency, and partnership:",
     advantages: sharedAdvantages,
     whyChooseFusionCalling: {
       title: "Why Choose Fusion Calling Over Synthflow?",
@@ -1031,12 +1071,12 @@ export const comparisons: Comparison[] = [
         {
           emoji: "",
           title: "Public Pricing vs. Custom Quotes",
-          description: "Synthflow's white-label requires a sales call and custom pricing. Fusion Calling publishes all pricing publicly from $99 to $499—start immediately with a free trial."
+          description: "Synthflow's self-serve pricing is usage-based (around $0.07–0.08/min), with larger deployments moving to custom quotes. Fusion Calling publishes all pricing publicly from $99 to $499—start immediately with a free trial."
         },
         {
           emoji: "",
           title: "No Procurement Friction",
-          description: "Synthflow involves enterprise sales cycles. Fusion Calling is self-serve with transparent pricing, so you can launch in days instead of weeks."
+          description: "Synthflow's larger deployments involve enterprise sales cycles. Fusion Calling is self-serve with transparent pricing, so you can launch in days instead of weeks."
         },
         {
           emoji: "",
@@ -1056,27 +1096,27 @@ export const comparisons: Comparison[] = [
       ]
     },
     expertQuote: {
-      text: "Sales-led procurement is the biggest killer of agency momentum. Our research shows that platforms requiring custom pricing extend sales cycles by 6-8 weeks, resulting in 43% longer time-to-revenue. Fusion Calling's transparent pricing eliminates this friction entirely.",
+      text: "Sales-led procurement is the biggest killer of agency momentum. Platforms that require custom pricing stretch time-to-revenue by weeks; transparent pricing eliminates that friction entirely.",
       attribution: "FusionCalling Voice Team",
       source: "FusionCalling"
     },
     differentiatorHeadline:
       "Transparent pricing and a guided launch, instead of a quote",
     differentiatorBody:
-      "Synthflow's white-label is gated behind custom pricing and a sales conversation. Fusion Calling publishes its pricing, lets you start with a free trial, helps you launch in days, and offers a live demo, so agencies can move fast without procurement friction.",
+      "Synthflow's larger deployments run through custom quotes and a sales conversation. Fusion Calling publishes its pricing, lets you start with a free trial, helps you launch in days, and offers a live demo, so agencies can move fast without procurement friction.",
     economics: {
       competitorTitle: "Synthflow Economics",
       competitorPoints: [
-        "Enterprise contracts from ~$30,000/yr, sales-negotiated (2026)",
-        "Proprietary engine (single vendor), no self-serve tier published",
-        "Enterprise positioning with custom contracts",
-        "Well-suited to large, established deployments",
+        "Pay-as-you-go usage pricing (advertised around $0.07–0.08/min — verify current rates)",
+        "Enterprise/custom quotes for larger deployments",
+        "Agency white-label works through Stripe sub-account billing (verify current terms)",
+        "Proprietary single engine — one vendor for voice quality and pricing",
       ],
       fusionTitle: "Fusion Calling Economics",
       fusionPoints: FUSION_ECONOMICS_POINTS,
     },
     highlight:
-      "💡 Fusion Calling offers public pricing, a free trial, a live demo, and a guided launch, removing the procurement friction of sales-led enterprise pricing.",
+      "💡 Fusion Calling offers public pricing, a free trial, a live demo, and a guided launch — no procurement friction, unlike the custom-quote path larger Synthflow deployments take.",
     faqs: [
       {
         question: "Is Fusion Calling a good Synthflow alternative?",
@@ -1084,14 +1124,14 @@ export const comparisons: Comparison[] = [
           "Yes, for agencies that want transparent public pricing, a fast self-serve start, multi-provider support, and a guided launch. Synthflow is a stronger fit for established agencies that prefer a custom, enterprise-grade single-vendor contract.",
       },
       {
-        question: "How does pricing compare? Synthflow now starts at $30k/yr?",
+        question: "How does Synthflow pricing compare?",
         answer:
-          "Synthflow's site now positions white-label as enterprise-only from around $30,000/year with scoped volume and integrations. Fusion Calling publishes all pricing publicly, from $99/month to $499/month, with a free trial and no setup fee—so smaller agencies can start immediately without procurement.",
+          "Synthflow now runs self-serve pay-as-you-go usage pricing (advertised around $0.07–0.08/min), with larger deployments moving to enterprise/custom quotes; agency white-label works through Stripe sub-account billing. Verify current rates on synthflow.ai before committing. Fusion Calling publishes all pricing publicly, from $99/month to $499/month, with a free trial and no setup fee—so smaller agencies can start immediately without procurement.",
       },
       {
         question: "How does pricing transparency compare?",
         answer:
-          "Synthflow's white-label is custom-priced through a sales conversation. Fusion Calling publishes all pricing publicly, from $99/month to $499/month, and offers a free trial with no setup fee.",
+          "Synthflow publishes usage-based self-serve pricing, but its larger deployments and enterprise terms are custom-priced through a sales conversation. Fusion Calling publishes all pricing publicly, from $99/month to $499/month, and offers a free trial with no setup fee.",
       },
       {
         question: "Proprietary engine vs multi-provider, what's the difference?",
@@ -1101,17 +1141,17 @@ export const comparisons: Comparison[] = [
       {
         question: "What is the best Synthflow alternative for agencies?",
         answer:
-          "For agencies that want public pricing and a fast launch, Fusion Calling is the most direct fit: plans from $99 to $499 with 6 sub-accounts at entry, support for Vapi, Retell, and ElevenLabs, and a guided 24-hour launch. Synthflow remains a solid pick for larger teams that prefer a negotiated enterprise contract.",
+          "For agencies that want public pricing and a fast launch, Fusion Calling is the most direct fit: plans from $99 to $499 with 6 sub-accounts at entry, support for Vapi, Retell, and ElevenLabs, and a guided 24-hour launch. Synthflow remains a solid pick for larger teams that prefer a single proprietary engine with custom enterprise terms.",
       },
       {
         question: "How do Synthflow competitors compare on white-label cost in 2026?",
         answer:
-          "Synthflow competitors split by procurement model: enterprise sales-led (Synthflow white-label from ~$30,000/year as of June-September 2026 pricing audits) versus public self-serve (Fusion Calling $99-$499/month with 6 sub-accounts at entry, 3-day trial, Stripe rebilling). If you need custom compliance and a single-vendor contract, stay enterprise. If you need to launch this month without procurement, pick public pricing.",
+          "Synthflow competitors split by procurement model: usage-priced self-serve with custom quotes at the top (Synthflow advertises around $0.07–0.08/min, with enterprise/custom quotes for larger deployments, as of the November 2026 pricing review — verify current rates) versus fully public flat plans (Fusion Calling $99-$499/month with 6 sub-accounts at entry, 3-day trial, Stripe rebilling). If you need custom compliance and a single-vendor contract, the quote path works. If you need to launch this month without procurement, pick public pricing.",
       },
       {
         question: "When should I stay on Synthflow instead of switching?",
         answer:
-          "Stay on Synthflow if you are an established team with a negotiated enterprise contract, rely on its mature no-code builder and template library, and prefer a single proprietary engine with SOC 2 documentation via enterprise channel. Switch when white-label cost, procurement speed, or multi-provider flexibility (Vapi, Retell, ElevenLabs per client) blocks growth.",
+          "Stay on Synthflow if you are an established team that relies on its mature no-code builder and template library, prefers a single proprietary engine with SOC 2 documentation via enterprise channel, or has custom enterprise terms already in place. Switch when white-label cost predictability, procurement speed, or multi-provider flexibility (Vapi, Retell, ElevenLabs per client) blocks growth.",
       },
       {
         question: "¿Hay alternativas a Synthflow en inglés?",
@@ -1180,7 +1220,7 @@ export const comparisons: Comparison[] = [
           name: "Synthflow",
           href: "/alternative/synthflow",
           bestFor: "Established teams preferring enterprise, single-vendor contracts",
-          note: "Polished no-code builder, but white-label pricing moves to ~$30k/yr sales-led tiers.",
+          note: "Polished no-code builder on a single proprietary engine; usage-based pricing with enterprise/custom quotes for larger deployments.",
         },
         {
           name: "Vapi",
@@ -1191,10 +1231,10 @@ export const comparisons: Comparison[] = [
       ],
     },
     keyStatistics: {
-      retentionRate: "73%",
+      retentionRate: "Not published",
       timeToLaunch: "24 hours guided vs 14 days self-serve",
       clientsIncluded: "6 at $99 vs 1 at $39",
-      featureUpdates: "8+/month vs 2/month"
+      featureUpdates: "8+/month vs not published"
     },
     intro: [
       "Thinkrr is purpose-built for agencies that live inside GoHighLevel, with native sub-account sync for contacts, calls, and outcomes across every client. For GHL-exclusive agencies, it's one of the most integrated options available.",
@@ -1273,7 +1313,7 @@ export const comparisons: Comparison[] = [
       ]
     },
     expertQuote: {
-      text: "Agencies locked into single-ecosystem platforms like GoHighLevel face 3x higher client acquisition costs because they can't serve prospects outside that ecosystem. Multi-CRM flexibility isn't just convenient—it's essential for sustainable agency growth.",
+      text: "Agencies locked into single-ecosystem platforms like GoHighLevel can't serve prospects outside that ecosystem, which caps growth at the edge of the platform. Multi-CRM flexibility isn't just convenient—it's essential for sustainable agency growth.",
       attribution: "FusionCalling Voice Team",
       source: "FusionCalling"
     },
@@ -1314,6 +1354,16 @@ export const comparisons: Comparison[] = [
         question: "What is the best Thinkrr alternative for agencies?",
         answer:
           "Fusion Calling is the best fit for agencies that serve clients outside GoHighLevel. You get connections to 2,200+ apps, 6 sub-accounts from $99/mo, and support for Vapi, Retell, and ElevenLabs. Thinkrr still fits GoHighLevel-only shops that want the deepest native sync.",
+      },
+      {
+        question: "Can I migrate my existing agents from Thinkrr?",
+        answer:
+          "Thinkrr runs voice AI for GoHighLevel sub-accounts with bundled Twilio telephony; Fusion Calling connects to GoHighLevel via API and webhooks and runs Vapi, Retell, and ElevenLabs. No direct import is documented — expect to rebuild agents and rewire the GoHighLevel connection, and verify any migration tooling with both vendors before you switch.",
+      },
+      {
+        question: "When should I stay on Thinkrr instead of switching?",
+        answer:
+          "Stay on Thinkrr if your agency is GoHighLevel-exclusive and you want the deepest native sync — workflows across every client sub-account with bundled Twilio telephony and no wiring. Switch when you serve clients outside GoHighLevel, want multi-provider engine choice per client, or need a guided launch.",
       },
     ],
   },
@@ -1389,7 +1439,7 @@ export const comparisons: Comparison[] = [
       ],
     },
     keyStatistics: {
-      retentionRate: "73%",
+      retentionRate: "Not published",
       timeToLaunch: "24 hours guided vs self-serve build",
       clientsIncluded: "6 at $99 vs developer metering",
       featureUpdates: "8+/month vs steady",
@@ -1606,7 +1656,7 @@ export const comparisons: Comparison[] = [
       ],
     },
     keyStatistics: {
-      retentionRate: "73%",
+      retentionRate: "Not published",
       timeToLaunch: "24 hours guided vs self-serve",
       clientsIncluded: "6 at $99 vs single-seat focus",
       featureUpdates: "8+/month vs steady",
@@ -1688,7 +1738,7 @@ export const comparisons: Comparison[] = [
       ],
     },
     expertQuote: {
-      text: "Autonomous agent platforms are great for end-users, but agencies need resell infrastructure: sub-accounts, rebilling, and white-label branding. Platforms built for that model see 73% higher agency retention.",
+      text: "Autonomous agent platforms are great for end-users, but agencies need resell infrastructure: sub-accounts, rebilling, and white-label branding. Platforms built for that model have a structural advantage in keeping agencies long-term.",
       attribution: "FusionCalling Voice Team",
       source: "FusionCalling",
     },
@@ -1729,6 +1779,16 @@ export const comparisons: Comparison[] = [
         question: "What is the best Air AI alternative for agencies?",
         answer:
           "Fusion Calling is the best fit for agencies that want to resell voice AI under their own brand. You get client sub-accounts, Stripe rebilling, and support for Vapi, Retell, and ElevenLabs. Air AI still fits businesses that want a single AI employee for their own inbound and outbound calls.",
+      },
+      {
+        question: "Can I migrate my existing agents from Air AI?",
+        answer:
+          "Air AI is a proprietary, direct-use autonomous agent, so there is no documented path to import its agents into Fusion Calling. Conversation scripts and use-case definitions can inform new builds, but agents are configured fresh on the new platform — verify any export options with both vendors before you move.",
+      },
+      {
+        question: "When should I stay on Air AI instead of switching?",
+        answer:
+          "Stay on Air AI if you want a turnkey, autonomous AI employee for your own inbound and outbound sales calls with long-term memory, and white-label resale isn't the goal. Switch when you need client sub-accounts, your own branding and pricing, Stripe rebilling, or multi-provider engine choice under one dashboard.",
       },
     ],
   },
@@ -1805,7 +1865,7 @@ export const comparisons: Comparison[] = [
       ],
     },
     keyStatistics: {
-      retentionRate: "73%",
+      retentionRate: "Not published",
       timeToLaunch: "24 hours guided vs self-serve build",
       clientsIncluded: "6 at $99 vs usage-metered dev seats",
       featureUpdates: "8+/month vs steady",
@@ -2017,7 +2077,7 @@ export const comparisons: Comparison[] = [
       ],
     },
     keyStatistics: {
-      retentionRate: "73%",
+      retentionRate: "Not published",
       timeToLaunch: "24 hours guided vs months of custom build",
       clientsIncluded: "6 at $99 vs engine-only",
       featureUpdates: "8+/month vs steady",
@@ -2216,7 +2276,7 @@ export const comparisons: Comparison[] = [
       ],
     },
     keyStatistics: {
-      retentionRate: "73%",
+      retentionRate: "Not published",
       timeToLaunch: "24 hours guided vs self-serve build",
       clientsIncluded: "6 at $99 vs usage-metered seats",
       featureUpdates: "8+/month vs steady",
@@ -2417,7 +2477,7 @@ export const comparisons: Comparison[] = [
       ],
     },
     keyStatistics: {
-      retentionRate: "73%",
+      retentionRate: "Not published",
       timeToLaunch: "24 hours guided vs self-serve setup",
       clientsIncluded: "6 at $99 with API + webhooks",
       featureUpdates: "8+/month vs steady",
@@ -2585,7 +2645,7 @@ export const comparisons: Comparison[] = [
           name: "Synthflow",
           href: "/alternative/synthflow",
           bestFor: "No-code agent building on a proprietary engine",
-          note: "Polished EU builder with multilingual agents; white-label tiers move to enterprise contracts.",
+          note: "Polished EU builder with multilingual agents; pay-as-you-go usage pricing plus enterprise/custom quotes — verify current.",
         },
         {
           name: "Famulor",
@@ -2613,7 +2673,7 @@ export const comparisons: Comparison[] = [
       ],
     },
     keyStatistics: {
-      retentionRate: "73%",
+      retentionRate: "Not published",
       timeToLaunch: "24 hours guided vs self-serve setup",
       clientsIncluded: "6 at $99 vs single-account start",
       featureUpdates: "8+/month vs steady",
@@ -2645,8 +2705,8 @@ export const comparisons: Comparison[] = [
       },
     ],
     fusionCallingOverview: [
-      "Fusion Calling is purpose-built for agencies reselling voice AI. Instead of running one account for your own calls, you get a managed white-label platform with 6 client sub-accounts from $99/mo, plans up to $499 for scale, Stripe rebilling, and done-with-you onboarding that gets your branded agency live in 24 hours with 30 days of support.",
-      "The platform is provider-agnostic: run Vapi, Retell, and ElevenLabs agents per client and match each client to the best engine instead of a single fixed option. A live interactive demo on your homepage helps prospects hear real calls before buying.",
+      "AIOnCalls gives a direct team inbound and outbound calling with lead follow-up and CRM links in one setup — a solid single-account product. Fusion Calling wraps the same calling experience in the agency layer instead: 6 client sub-accounts from $99/mo, plans up to $499 for scale, full white-label branding, Stripe rebilling, and done-with-you onboarding that gets your branded agency live in 24 hours with 30 days of support.",
+      "Where AIOnCalls runs one fixed calling setup, Fusion Calling runs Vapi, Retell, and ElevenLabs side by side, so each client gets the engine that fits their use case. A live interactive demo on your homepage helps prospects hear real calls before buying, and you keep 100% of what you charge clients.",
       "Zapier links to 2,200+ apps keep calls in sync with the CRMs your clients already use. You keep 100% of what you charge, with public pricing and a free trial to start.",
     ],
     tableTitle: "Fusion Calling vs. AIOnCalls at a Glance",
@@ -2781,7 +2841,7 @@ export const comparisons: Comparison[] = [
           name: "Synthflow",
           href: "/alternative/synthflow",
           bestFor: "Established teams wanting a proven enterprise platform",
-          note: "Polished no-code builder with EU hosting; white-label moves to sales-led contracts.",
+          note: "Polished no-code builder with EU hosting; usage-priced self-serve plus enterprise/custom quotes — verify current.",
         },
         {
           name: "Voiceflow",
@@ -2816,7 +2876,7 @@ export const comparisons: Comparison[] = [
       ],
     },
     keyStatistics: {
-      retentionRate: "73%",
+      retentionRate: "Not published",
       timeToLaunch: "24 hours guided vs not published",
       clientsIncluded: "6 at $99 vs not published",
       featureUpdates: "8+/month vs not published",
@@ -2828,8 +2888,8 @@ export const comparisons: Comparison[] = [
     competitorBestFor:
       "Businesses that want AI voice agents for their own inbound sales and booking flows; agency and white-label suitability is unclear and should be verified directly with the vendor.",
     fusionCallingOverview: [
-      "Fusion Calling is purpose-built for agencies reselling voice AI. You get a managed white-label platform with 6 client sub-accounts from $99/mo, Stripe rebilling, and done-with-you onboarding that gets your branded agency live in 24 hours with 30 days of support.",
-      "The platform is provider-agnostic: run Vapi, Retell, and ElevenLabs agents per client and match each client to the best engine instead of one fixed setup. A live interactive demo on your homepage helps prospects hear real calls before buying, and Zapier connects calls to 2,200+ apps.",
+      "Because BirdCall AI's public documentation doesn't clearly answer the agency questions — branding, sub-accounts, client billing — the comparison comes down to what you can verify. Fusion Calling puts all of it in writing: 6 client sub-accounts from $99/mo, full white-label branding on your own domain, Stripe rebilling, and done-with-you onboarding that gets your branded agency live in 24 hours with 30 days of support.",
+      "Run Vapi, Retell, and ElevenLabs per client and match each client to the best engine rather than one fixed setup. A live interactive demo on your homepage helps prospects hear real calls before buying, and you keep 100% of what you charge clients.",
     ],
     competitorStrengths: [
       {
@@ -2920,7 +2980,7 @@ export const comparisons: Comparison[] = [
       {
         question: "What should I compare before switching from BirdCall AI?",
         answer:
-          "Ask every vendor the same five questions: Can I use my own domain and branding? Do I get separate client sub-accounts? Can clients pay me directly? What does onboarding include? Which voice engines can I offer? Get written answers before you commit.",
+          "BirdCall AI markets itself around sales and booking agents, but its agency features are not clearly documented, so run the white-label checklist: Can you use your own domain, and where does the vendor's brand appear? Do you get separate client sub-accounts? Can clients pay you directly through Stripe? What does onboarding include, and in what timeframe? Can you choose or switch voice engines per client? Get written answers to all five before you commit.",
       },
       {
         question: "Can I keep my existing agents or workflows?",
@@ -2972,7 +3032,7 @@ export const comparisons: Comparison[] = [
           name: "Synthflow",
           href: "/alternative/synthflow",
           bestFor: "No-code voice agents on a phone-first builder",
-          note: "Mature EU voice platform; white-label tiers move to enterprise sales-led contracts.",
+          note: "Mature EU voice platform; pay-as-you-go usage pricing plus enterprise/custom quotes — verify current.",
         },
         {
           name: "Verloop",
@@ -3000,7 +3060,7 @@ export const comparisons: Comparison[] = [
       ],
     },
     keyStatistics: {
-      retentionRate: "73%",
+      retentionRate: "Not published",
       timeToLaunch: "24 hours guided vs self-serve build",
       clientsIncluded: "6 at $99 vs workspace seats",
       featureUpdates: "8+/month vs steady",
@@ -3012,8 +3072,8 @@ export const comparisons: Comparison[] = [
     competitorBestFor:
       "Product and CX teams building conversational agents across chat and voice, especially where chat leads and phone is a secondary channel.",
     fusionCallingOverview: [
-      "Fusion Calling is purpose-built for agencies reselling voice AI. You get a managed white-label platform with 6 client sub-accounts from $99/mo, Stripe rebilling, and done-with-you onboarding that gets your branded agency live in 24 hours with 30 days of support.",
-      "The platform is provider-agnostic: run Vapi, Retell, and ElevenLabs agents per client and match each client to the best engine. A live interactive demo on your homepage helps prospects hear real calls before buying, and Zapier connects calls to 2,200+ apps.",
+      "Voiceflow earned its reputation on a conversation-design canvas where chat leads and voice is expanding — a strong fit for product and CX teams designing multi-channel agents. If your clients pay for phone calls, Fusion Calling is the phone-first counterpart: 6 client sub-accounts from $99/mo, Stripe rebilling, and done-with-you onboarding that gets your branded agency live in 24 hours with 30 days of support.",
+      "The platform is telephony-native and provider-agnostic: run Vapi, Retell, and ElevenLabs per client and match each to the best engine. A live interactive demo on your homepage helps prospects hear real two-way calls before buying, and Zapier connects calls to 2,200+ apps.",
     ],
     competitorStrengths: [
       {
@@ -3171,7 +3231,7 @@ export const comparisons: Comparison[] = [
           name: "Synthflow",
           href: "/alternative/synthflow",
           bestFor: "Documented no-code voice agents",
-          note: "Established EU builder; white-label tiers move to enterprise contracts.",
+          note: "Established EU builder; pay-as-you-go usage pricing plus enterprise/custom quotes — verify current.",
         },
         {
           name: "Retell AI",
@@ -3188,7 +3248,7 @@ export const comparisons: Comparison[] = [
       ],
     },
     keyStatistics: {
-      retentionRate: "73%",
+      retentionRate: "Not published",
       timeToLaunch: "24 hours guided vs not published",
       clientsIncluded: "6 at $99 vs not published",
       featureUpdates: "8+/month vs not published",
@@ -3200,27 +3260,27 @@ export const comparisons: Comparison[] = [
     competitorBestFor:
       "Unclear based on public information; confirm the exact company, product scope, and agency features directly before evaluating.",
     fusionCallingOverview: [
-      "Fusion Calling is purpose-built for agencies reselling voice AI. You get a managed white-label platform with 6 client sub-accounts from $99/mo, Stripe rebilling, and done-with-you onboarding that gets your branded agency live in 24 hours with 30 days of support.",
-      "The platform is provider-agnostic: run Vapi, Retell, and ElevenLabs agents per client and match each client to the best engine. A live interactive demo on your homepage helps prospects hear real calls before buying, and Zapier connects calls to 2,200+ apps.",
+      "With Voicestamp Technologies, limited public documentation means the honest comparison is between what you can verify and what you can't. Fusion Calling makes verification easy — pricing, agency architecture, and launch commitments are all published: 6 client sub-accounts from $99/mo, full white-label branding, Stripe rebilling, and done-with-you onboarding that gets your branded agency live in 24 hours with 30 days of support.",
+      "Nothing here needs a discovery call to confirm: run Vapi, Retell, and ElevenLabs per client under your own domain and pricing, keep 100% of what you charge through Stripe rebilling, and hear real calls on the live homepage demo before you commit.",
     ],
     competitorStrengths: [
       {
         emoji: "",
-        title: "A Name Worth Verifying",
+        title: "Adjacent IVR & Verification Telephony",
         description:
-          "If Voicestamp Technologies fits your use case, the verification exercise in this guide will surface it quickly.",
+          "Several similarly named telephony vendors offer IVR hosting, call verification, and recorded-voice services — a real category, but confirm exactly which company and product you are evaluating before crediting any of it to Voicestamp Technologies.",
       },
       {
         emoji: "",
-        title: "Adjacent Telephony Services Exist",
+        title: "Honest Scope Caveat",
         description:
-          "Similarly named vendors market IVR, verification, and recorded-voice services, indicating real demand for the category.",
+          "Public documentation on Voicestamp Technologies' two-way AI agent capabilities is limited, so its suitability for agency resale cannot be verified from public sources — request written confirmation directly from the vendor.",
       },
       {
         emoji: "",
-        title: "Evaluation Discipline",
+        title: "A Checklist Instead of a Scorecard",
         description:
-          "Thin documentation is a reason to run a structured comparison — not necessarily a reason to rule a vendor out.",
+          "When public documentation is thin, the structured agency checklist in this guide (branding, sub-accounts, billing, onboarding, engines) is the honest way to evaluate — applied to any vendor you shortlist.",
       },
     ],
     tableTitle: "Fusion Calling vs. Voicestamp Technologies at a Glance",
@@ -3292,7 +3352,7 @@ export const comparisons: Comparison[] = [
       {
         question: "What should I compare before switching from Voicestamp Technologies?",
         answer:
-          "Confirm the exact company you are evaluating, then ask: Can I use my own domain and branding? Do I get separate client sub-accounts? Can clients pay me directly? What does onboarding include? Which voice engines can I offer? Written answers to those five questions settle most decisions.",
+          "Before any feature questions, verify identity: confirm the exact company, website domain, and product scope — several similarly named vendors sell IVR hosting, verification, and recorded-voice services, and it's easy to evaluate the wrong one. Then check the resell essentials: your own branding and domain, separate client sub-accounts, direct client billing, what onboarding includes, and which voice engines you can offer. Get every answer in writing.",
       },
       {
         question: "Can I keep my existing agents or workflows?",
@@ -3349,7 +3409,7 @@ export const comparisons: Comparison[] = [
           name: "Synthflow",
           href: "/alternative/synthflow",
           bestFor: "Multilingual no-code phone agents",
-          note: "EU builder with multilingual agents; white-label tiers move to enterprise contracts.",
+          note: "EU builder with multilingual agents; pay-as-you-go usage pricing plus enterprise/custom quotes — verify current.",
         },
         {
           name: "Voiceflow",
@@ -3372,7 +3432,7 @@ export const comparisons: Comparison[] = [
       ],
     },
     keyStatistics: {
-      retentionRate: "73%",
+      retentionRate: "Not published",
       timeToLaunch: "24 hours guided vs not published",
       clientsIncluded: "6 at $99 vs not published",
       featureUpdates: "8+/month vs not published",
@@ -3384,8 +3444,8 @@ export const comparisons: Comparison[] = [
     competitorBestFor:
       "Teams and individuals seeking AI-assisted voice translation and communication across languages; suitability for white-label voice AI resale is unclear and should be verified directly.",
     fusionCallingOverview: [
-      "Fusion Calling is purpose-built for agencies reselling voice AI. You get a managed white-label platform with 6 client sub-accounts from $99/mo, Stripe rebilling, and done-with-you onboarding that gets your branded agency live in 24 hours with 30 days of support.",
-      "The platform is provider-agnostic: run Vapi, Retell, and ElevenLabs agents per client and match each client to the best engine. A live interactive demo on your homepage helps prospects hear real calls before buying, and Zapier connects calls to 2,200+ apps.",
+      "Voicelate positions itself around AI translation across voice, text, and chat in 30+ languages — a communication job, not the two-way agent job your clients pay for. If you're reselling phone-based voice AI, Fusion Calling is built for exactly that: 6 client sub-accounts from $99/mo, Stripe rebilling, full white-label branding, and done-with-you onboarding that gets your branded agency live in 24 hours with 30 days of support.",
+      "Engine choice also covers the multilingual angle: run Vapi, Retell, and ElevenLabs per client, matching each client to an engine that serves multilingual callers well. A live interactive demo on your homepage helps prospects hear real calls before buying, and you keep 100% of what you charge clients.",
     ],
     competitorStrengths: [
       {
@@ -3528,7 +3588,7 @@ export const comparisons: Comparison[] = [
           name: "Synthflow",
           href: "/alternative/synthflow",
           bestFor: "EU-adjacent teams wanting a mature no-code builder",
-          note: "Established EU voice platform; white-label tiers move to enterprise sales-led contracts.",
+          note: "Established EU voice platform; pay-as-you-go usage pricing plus enterprise/custom quotes — verify current.",
         },
         {
           name: "Retell AI",
@@ -3557,7 +3617,7 @@ export const comparisons: Comparison[] = [
       ],
     },
     keyStatistics: {
-      retentionRate: "73%",
+      retentionRate: "Not published",
       timeToLaunch: "24 hours guided vs self-serve setup",
       clientsIncluded: "6 at $99 vs single-engine program",
       featureUpdates: "8+/month vs steady",
@@ -3569,8 +3629,8 @@ export const comparisons: Comparison[] = [
     competitorBestFor:
       "Agencies and businesses that want no-code phone assistants on a single built-in engine, especially where EU hosting and GDPR positioning matter.",
     fusionCallingOverview: [
-      "Fusion Calling is purpose-built for agencies reselling voice AI. You get a managed white-label platform with 6 client sub-accounts from $99/mo, Stripe rebilling, and done-with-you onboarding that gets your branded agency live in 24 hours with 30 days of support.",
-      "The platform is provider-agnostic: run Vapi, Retell, and ElevenLabs agents per client and match each client to the best engine instead of one fixed option. A live interactive demo on your homepage helps prospects hear real calls before buying, and Zapier connects calls to 2,200+ apps.",
+      "Famulor gives agencies no-code phone assistants on one built-in engine, with EU hosting and a white-label program — a clean single-stack setup. Fusion Calling's different bet is engine choice as a per-client decision: 6 client sub-accounts from $99/mo, Stripe rebilling, and done-with-you onboarding that gets your branded agency live in 24 hours with 30 days of support.",
+      "Run Vapi, Retell, and ElevenLabs side by side under your brand, so a client who outgrows one engine switches engines instead of re-platforming. A live interactive demo on your homepage helps prospects hear real calls before buying, and Zapier connects calls to 2,200+ apps.",
     ],
     competitorStrengths: [
       {
@@ -3720,7 +3780,7 @@ export const comparisons: Comparison[] = [
           name: "Synthflow",
           href: "/alternative/synthflow",
           bestFor: "Teams wanting a polished no-code voice agent builder",
-          note: "Mature builder with multilingual agents; white-label tiers move to enterprise sales-led contracts.",
+          note: "Mature builder with multilingual agents; pay-as-you-go usage pricing plus enterprise/custom quotes — verify current.",
         },
         {
           name: "Retell AI",
@@ -3742,7 +3802,7 @@ export const comparisons: Comparison[] = [
       ],
     },
     keyStatistics: {
-      retentionRate: "73%",
+      retentionRate: "Not published",
       timeToLaunch: "24 hours guided vs enterprise onboarding",
       clientsIncluded: "6 at $99 vs direct accounts",
       featureUpdates: "8+/month vs steady",
@@ -3754,8 +3814,8 @@ export const comparisons: Comparison[] = [
     competitorBestFor:
       "Enterprise support and CX teams automating customer conversations across chat and voice within a single brand.",
     fusionCallingOverview: [
-      "Fusion Calling is purpose-built for agencies reselling voice AI. You get a managed white-label platform with 6 client sub-accounts from $99/mo, Stripe rebilling, and done-with-you onboarding that gets your branded agency live in 24 hours with 30 days of support.",
-      "The platform is provider-agnostic: run Vapi, Retell, and ElevenLabs agents per client and match each client to the best engine. A live interactive demo on your homepage helps prospects hear real calls before buying, and Zapier connects calls to 2,200+ apps.",
+      "Verloop automates customer support for one brand — chat-first heritage, now voice, across 80+ languages, optimized for deflection inside a company. Agencies selling voice AI to many clients need the opposite shape: Fusion Calling provides the resell layer with 6 client sub-accounts from $99/mo, Stripe rebilling, and done-with-you onboarding that gets your branded agency live in 24 hours with 30 days of support.",
+      "White-label branding puts your name on the domain and pricing, and Vapi, Retell, and ElevenLabs run side by side so each client gets the best engine. A live interactive demo on your homepage helps prospects hear real calls before buying, and you keep 100% of what you charge clients.",
     ],
     competitorStrengths: [
       {
@@ -3929,7 +3989,7 @@ export const comparisons: Comparison[] = [
       ],
     },
     keyStatistics: {
-      retentionRate: "73%",
+      retentionRate: "Not published",
       timeToLaunch: "24 hours guided vs self-serve campaigns",
       clientsIncluded: "6 at $99 vs direct accounts",
       featureUpdates: "8+/month vs steady",
@@ -3941,8 +4001,8 @@ export const comparisons: Comparison[] = [
     competitorBestFor:
       "Sales and marketing teams running high-volume ringless voicemail drops and SMS broadcasting campaigns.",
     fusionCallingOverview: [
-      "Fusion Calling is purpose-built for agencies reselling voice AI. You get a managed white-label platform with 6 client sub-accounts from $99/mo, Stripe rebilling, and done-with-you onboarding that gets your branded agency live in 24 hours with 30 days of support.",
-      "The platform is provider-agnostic: run Vapi, Retell, and ElevenLabs agents per client and match each client to the best engine. A live interactive demo on your homepage helps prospects hear real calls before buying, and Zapier connects calls to 2,200+ apps.",
+      "Drop Cowboy broadcasts: ringless voicemail drops and SMS campaigns deliver a message and wait for a callback. When clients need agents that converse — answer, qualify, book — Fusion Calling covers that job and wraps it for resale: 6 client sub-accounts from $99/mo, Stripe rebilling, and done-with-you onboarding that gets your branded agency live in 24 hours with 30 days of support.",
+      "Run Vapi, Retell, and ElevenLabs per client and match each to the best engine. A live interactive demo on your homepage shows prospects a real two-way call before buying, and Zapier connects calls to 2,200+ apps. Many agencies keep a broadcast tool alongside it for one-way follow-up.",
     ],
     competitorStrengths: [
       {
@@ -4091,7 +4151,7 @@ export const comparisons: Comparison[] = [
           name: "Fusion Calling",
           bestFor:
             "Businesses that want every call answered by AI at a flat monthly rate",
-          note: "24/7 AI answering with booking, transfers, and SMS from $149/mo; unlimited parallel calls, no per-call fees, live demo on the homepage.",
+          note: "24/7 AI answering with booking, transfers, and SMS from $149/mo; unlimited parallel calls, minute pools with published per-minute overage rates — no per-call metering — plus a live demo on the homepage.",
         },
         {
           name: "Bland AI",
@@ -4119,7 +4179,7 @@ export const comparisons: Comparison[] = [
       ],
     },
     keyStatistics: {
-      retentionRate: "73%",
+      retentionRate: "Not published",
       timeToLaunch: "24 hours guided vs onboarding queue",
       clientsIncluded: "Unlimited calls vs per-call metering",
       featureUpdates: "8+/month vs steady",
@@ -4132,7 +4192,7 @@ export const comparisons: Comparison[] = [
       "Teams that want a human receptionist available for complex calls and accept per-call pricing for that reassurance.",
     fusionCallingOverview: [
       "Fusion Calling is a full-AI answering service: voice agents answer every call on the first ring, book into your calendar, take messages, warm-transfer urgent calls, and send SMS confirmations — around the clock, with unlimited simultaneous calls.",
-      "Pricing is flat and predictable: $149/month with 500 included minutes scaling to $497/month for 2,100 minutes, with no per-call fees, no overage surprises, and no long-term contract. A live interactive demo on the homepage lets you hear the quality before committing.",
+      "Pricing is flat and predictable: $149/month with 500 included minutes scaling to $497/month for 2,100 minutes, with minute pools that carry published per-minute overage rates — no per-call metering — and no long-term contract. A live interactive demo on the homepage lets you hear the quality before committing.",
       "Where a human-assisted service queues callers during surges, AI answers ten simultaneous callers as easily as one. Where per-call plans punish growth, minute pools scale with volume. And every call comes transcribed, so you audit quality yourself instead of trusting a service report.",
       "For agencies, the same platform white-labels: client sub-accounts, your branding and pricing, Stripe rebilling from $99/month — resell answering as your own service.",
     ],
@@ -4160,7 +4220,7 @@ export const comparisons: Comparison[] = [
     comparisonRows: [
       { label: "Answering model", competitor: "AI + live human agents", fusion: "Full-AI voice agents" },
       { label: "Starting monthly cost", competitor: "From ~$255/mo (30 calls, AI-only)", fusion: "$149/mo (500 minutes included)" },
-      { label: "Overage model", competitor: "Per-call overages (~$8.50+/call)", fusion: "Minute pools, no per-call fees" },
+      { label: "Overage model", competitor: "Per-call overages (~$8.50+/call)", fusion: "Minute pools with published per-minute overage rates — no per-call metering" },
       { label: "Parallel calls", competitor: "Queues behind staffing at peaks", fusion: "Unlimited simultaneous calls" },
       { label: "Voice providers supported", competitor: "Proprietary service stack", fusion: fusionProviders },
       { label: "Call transcripts", competitor: "Summaries via service", fusion: "Full transcript on every call" },
@@ -4176,7 +4236,7 @@ export const comparisons: Comparison[] = [
         {
           emoji: "",
           title: "Flat Rate vs. Per-Call Meter",
-          description: "Smith.ai bundles calls per month with per-call overages that punish busy periods. Fusion Calling's minute pools cover unlimited simultaneous calls at a predictable flat rate.",
+          description: "Smith.ai bundles calls per month with per-call overages that punish busy periods. Fusion Calling's minute pools cover unlimited simultaneous calls at a predictable flat rate, with published per-minute overage rates instead of per-call metering.",
         },
         {
           emoji: "",
@@ -4201,7 +4261,7 @@ export const comparisons: Comparison[] = [
       ],
     },
     expertQuote: {
-      text: "The answering-service bill has two parts: the plan and the overages nobody forecasts. Businesses that switch to flat-rate AI answering typically cut phone-handling costs by half while answering more calls — the meter was the product, not the service.",
+      text: "The answering-service bill has two parts: the plan and the overages nobody forecasts. Businesses that switch to flat-rate AI answering usually end up paying less overall while answering more calls — the meter was the product, not the service.",
       attribution: "FusionCalling Voice Team",
       source: "FusionCalling",
     },
@@ -4231,7 +4291,7 @@ export const comparisons: Comparison[] = [
       {
         question: "How does Smith.ai pricing compare?",
         answer:
-          "Smith.ai AI-only plans start around $255/month for 30 bundled calls with roughly $8.50 per-call overages; human-assisted tiers cost more. Fusion Calling starts at $149/month with 500 included minutes and no per-call fees. Verify current Smith.ai pricing before committing, as plans change.",
+          "Smith.ai AI-only plans start around $255/month for 30 bundled calls with roughly $8.50 per-call overages; human-assisted tiers cost more. Fusion Calling starts at $149/month with 500 included minutes in a minute pool and published per-minute overage rates — no per-call metering. Verify current Smith.ai pricing before committing, as plans change.",
       },
       {
         question: "Will callers notice the switch from humans to AI?",
@@ -4307,7 +4367,7 @@ export const comparisons: Comparison[] = [
       ],
     },
     keyStatistics: {
-      retentionRate: "73%",
+      retentionRate: "Not published",
       timeToLaunch: "24 hours guided vs self-serve setup",
       clientsIncluded: "6 at $99 vs single account",
       featureUpdates: "8+/month vs steady",
@@ -4319,8 +4379,8 @@ export const comparisons: Comparison[] = [
     competitorBestFor:
       "Non-technical small-business owners who want a 24/7 AI receptionist they can set up themselves without touching code or infrastructure.",
     fusionCallingOverview: [
-      "Fusion Calling is purpose-built for agencies reselling voice AI. You get a managed white-label platform with 6 client sub-accounts from $99/mo, Stripe rebilling, and done-with-you onboarding that gets your branded agency live in 24 hours with 30 days of support.",
-      "The platform is provider-agnostic: run Vapi, Retell, and ElevenLabs agents per client and match each client to the best engine. A live interactive demo on your homepage helps prospects hear real calls before buying, and Zapier connects calls to 2,200+ apps.",
+      "Goodcall is aimed at the single-location owner: describe your business and the builder writes the agent, with plans from $79/month and no per-minute charges. If you also want to resell answering, Fusion Calling adds the agency layer on top of the same 24/7 answering core — 6 client sub-accounts from $99/mo, Stripe rebilling, and done-with-you onboarding that gets your branded agency live in 24 hours with 30 days of support.",
+      "Run Vapi, Retell, and ElevenLabs per client under your own domain and pricing, keeping 100% of what you charge. A live interactive demo on your homepage helps prospects hear real calls before buying, and Zapier connects calls to 2,200+ apps.",
     ],
     competitorStrengths: [
       {
@@ -4490,7 +4550,7 @@ export const comparisons: Comparison[] = [
       ],
     },
     keyStatistics: {
-      retentionRate: "73%",
+      retentionRate: "Not published",
       timeToLaunch: "24 hours guided vs self-serve setup",
       clientsIncluded: "6 at $99 vs single account",
       featureUpdates: "8+/month vs bundled roadmap",
@@ -4502,8 +4562,8 @@ export const comparisons: Comparison[] = [
     competitorBestFor:
       "Local businesses that already run Podium for reviews and messaging and want AI call answering inside the same login.",
     fusionCallingOverview: [
-      "Fusion Calling is purpose-built for agencies reselling voice AI. You get a managed white-label platform with 6 client sub-accounts from $99/mo, Stripe rebilling, and done-with-you onboarding that gets your branded agency live in 24 hours with 30 days of support.",
-      "The platform is provider-agnostic: run Vapi, Retell, and ElevenLabs agents per client and match each client to the best engine. A live interactive demo on your homepage helps prospects hear real calls before buying, and Zapier connects calls to 2,200+ apps.",
+      "Podium bundles AI call answering into a reviews-and-messaging suite — an AI add-on (listed around $99/month) on core plans near $399/month, which makes sense mainly if you use the whole bundle. If the phone is the priority, Fusion Calling prices voice directly: 6 client sub-accounts from $99/mo, Stripe rebilling, and done-with-you onboarding that gets your branded agency live in 24 hours with 30 days of support.",
+      "Run Vapi, Retell, and ElevenLabs per client under your own brand, keep 100% of what you charge, and hear real calls on the live homepage demo before committing — no bundle required.",
     ],
     competitorStrengths: [
       {

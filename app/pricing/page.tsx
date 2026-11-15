@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
-import { DIRECT_PLANS, type DirectPlan } from "@/lib/product-facts";
+import { DIRECT_PLANS, OFFER, type DirectPlan } from "@/lib/product-facts";
 
 const PricingSection = dynamic(() => import("@/components/pricing-section"), { ssr: true });
 
@@ -54,8 +54,7 @@ const pricingFaqs = [
   },
   {
     question: "Do you offer a free trial?",
-    answer:
-      "We offer a 14-day money-back guarantee on all plans. Try the platform risk-free and if it's not a fit, request a full refund within 14 days.",
+    answer: `Yes — every plan starts with a ${OFFER.trial} free trial. We also offer a 14-day money-back guarantee on all plans: try the platform risk-free and if it's not a fit, request a full refund within 14 days.`,
   },
 ];
 

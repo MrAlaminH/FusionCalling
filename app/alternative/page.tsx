@@ -30,11 +30,11 @@ export const metadata: Metadata = {
 const alternativeFaqs = [
   {
     question: "How does Fusion Calling compare to other white-label voice AI platforms?",
-    answer: `Fusion Calling is the only multi-provider white-label platform supporting Vapi, Retell AI, and ElevenLabs simultaneously. Competitors typically lock you into one provider. We also offer guided ${LAUNCH.guided} launch, full brand ownership on your domain, and you keep 100% of revenue.`,
+    answer: `Fusion Calling is the only platform that pairs multi-provider support (Vapi, Retell AI, and ElevenLabs) with a guided ${LAUNCH.guided} launch, full brand ownership on your domain, and 100% revenue kept. Several competitors support multiple providers too, but usually as self-serve wrappers or single-CRM-native stacks — the guided launch and done-with-you support are the difference.`,
   },
   {
     question: "Which white-label voice AI platform is best for agencies?",
-    answer: "For agencies wanting multi-provider flexibility, full brand control, and fastest time-to-revenue, Fusion Calling leads. Vapify and ChatDash are Vapi-only. Synthflow and Bland AI are single-provider. VoiceAIWrapper is a basic wrapper. Fusion Calling's multi-provider layer + guided launch is unique.",
+    answer: "For agencies wanting multi-provider flexibility, full brand control, and fastest time-to-revenue, Fusion Calling leads. Vapify leans Vapi-first but also supports Retell. ChatDash supports Retell, Vapi, and ElevenLabs but is GoHighLevel-first. Synthflow and Bland AI run single proprietary engines. VoiceAIWrapper is a Vapi/Retell-focused wrapper with billing tooling. Fusion Calling's multi-provider layer + guided launch is the differentiator.",
   },
   {
     question: "Can I switch providers later if I start with one?",

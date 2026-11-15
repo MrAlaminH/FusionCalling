@@ -71,6 +71,8 @@ const COMPARISON_GLOSSARY_TERMS: Record<string, string[]> = {
   famulor: ["White-Label", "Reseller", "AI Voice Agent"],
   verloop: ["Conversational AI", "Intent Recognition", "Human Handoff"],
   "drop-cowboy": ["Outbound Calls", "VoIP", "White-Label"],
+  goodcall: ["AI Receptionist", "Human Handoff", "Call Routing"],
+  podium: ["AI Receptionist", "Call Routing", "Telephony"],
 };
 
 function resolveGlossaryLinks(comparisonSlug: string) {

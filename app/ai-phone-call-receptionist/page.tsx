@@ -211,7 +211,7 @@ const faqs = [
   {
     question: "Are AI phone agents worth it for small businesses?",
     answer:
-      "Usually, yes — the math is about missed calls. Industry estimates suggest small businesses miss roughly 60% of inbound calls, and most first-time callers who hit voicemail never call back. If a single new customer is worth a few hundred dollars, an AI agent answering every call from $149/month typically pays for itself with one saved job or booking.",
+      "Usually, yes — the math is about missed calls. Estimates of how many calls small businesses miss vary widely, from roughly a fifth to more than half of inbound calls depending on the study, and most first-time callers who hit voicemail never call back. If a single new customer is worth a few hundred dollars, an AI agent answering every call from $149/month typically pays for itself with one saved job or booking.",
   },
 ];
 
@@ -676,7 +676,15 @@ export default function AiPhoneCallReceptionistPage() {
               <Link href="/#show-case" className="text-brand hover:underline">
                 hear live demo calls
               </Link>
-              , or compare buying options in the{" "}
+              , read{" "}
+              <Link
+                href="/blog/missed-call-text-back-vs-ai-receptionist"
+                className="text-brand hover:underline"
+              >
+                missed-call text-back vs. AI receptionist
+              </Link>{" "}
+              for why missed-call estimates vary, or compare buying options in
+              the{" "}
               <Link
                 href="/ai-phone-answering-service"
                 className="text-brand hover:underline"

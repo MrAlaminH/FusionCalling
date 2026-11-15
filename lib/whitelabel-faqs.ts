@@ -59,7 +59,7 @@ export const whitelabelFaqs: WhitelabelFaq[] = [
   {
     question: "How does white label voice agent reselling work?",
     answer:
-      "You buy wholesale and sell retail: Fusion Calling Starter is $99/month for 6 sub-accounts, Growth is $299/month for 20 sub-accounts, and Scale is $499/month for unlimited sub-accounts. Most partners package a receptionist at $197-$297/month, a receptionist-plus-outbound bundle at $397-$597/month, and a growth engine with managed campaigns at $797-$1,497/month. Because clients compare you to a hire or lost revenue, not to minutes, 1-2 clients typically cover the platform cost. Launch takes about 24 hours: apply, add your logo and domain, import Vapi, Retell, or ElevenLabs agents, connect calendar and CRM, then bill clients yourself.",
+      "You buy wholesale and sell retail: Fusion Calling Starter is $99/month for 6 sub-accounts, Growth is $299/month for 20 sub-accounts, and Scale is $499/month for unlimited sub-accounts. Most partners package a receptionist at $197–$497/month, a receptionist-plus-outbound bundle at $397-$597/month, and a growth engine with managed campaigns at $797-$1,497/month. Because clients compare you to a hire or lost revenue, not to minutes, 1-2 clients typically cover the platform cost. Launch takes about 24 hours: apply, add your logo and domain, import Vapi, Retell, or ElevenLabs agents, connect calendar and CRM, then bill clients yourself.",
   },
   {
     question: "White label AI voice agents vs building on Vapi or Retell directly?",
@@ -69,7 +69,7 @@ export const whitelabelFaqs: WhitelabelFaq[] = [
   {
     question: "Are white-label AI receptionists worth reselling?",
     answer:
-      "For most agencies, yes: demand is mainstream (industry studies estimate small businesses miss up to 60% of inbound calls, and AI receptionists solve it for $149–$497/month at retail), while your wholesale cost starts at $99/month for 6 sub-accounts. Partners typically package a receptionist at $197–$497/month per client, keep 100% of the spread, and bill recurring revenue through Stripe — one or two clients usually cover the platform cost.",
+      "For most agencies, yes: demand is mainstream (a large share of inbound calls to small businesses go unanswered, and AI receptionists solve it for $149–$497/month at retail), while your wholesale cost starts at $99/month for 6 sub-accounts. Partners typically package a receptionist at $197–$497/month per client, keep 100% of the spread, and bill recurring revenue through Stripe — one or two clients usually cover the platform cost.",
   },
   {
     question: "Will AI replace the receptionists our clients already have?",

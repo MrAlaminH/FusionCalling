@@ -89,8 +89,15 @@ export default function StartVoiceAIAgencyBlogPost() {
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                 <span>
-                  <strong className="text-white">Demand.</strong> Small businesses
-                  miss an estimated 60% of inbound calls. Every missed call is lost
+                  <strong className="text-white">Demand.</strong> How many
+                  inbound calls small businesses actually miss is contested —
+                  estimates vary widely, from roughly a fifth to more than
+                  half, depending on the study (we break down the evidence in
+                  our{" "}
+                  <Link href="/blog/missed-call-text-back-vs-ai-receptionist" className="text-brand-light hover:text-brand transition-colors">
+                    missed-call analysis
+                  </Link>
+                  ). Whatever the true figure, every missed call is lost
                   revenue, and owners finally understand it.
                 </span>
               </li>

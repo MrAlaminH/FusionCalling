@@ -55,6 +55,7 @@ export default function VapiWhiteLabelBlogPost() {
         faqs={faqs}
         toc={[
           { id: "why-agencies-love-vapi", title: "Does Vapi Offer White Label? Where the Gap Is" },
+          { id: "what-vapi-supports-natively", title: "What Vapi Supports Natively (and What It Doesn't)" },
           { id: "what-fusion-adds", title: "What Fusion Calling Adds on Top of Vapi" },
           { id: "how-they-work-together", title: "How to White-Label Vapi in 4 Steps" },
           { id: "who-this-is-for", title: "Who This Is For" },
@@ -87,23 +88,70 @@ export default function VapiWhiteLabelBlogPost() {
               excellent.
             </p>
             <p className="text-gray-300 leading-relaxed mb-4">
-              But most agencies who build on Vapi hit the same wall: Vapi
-              alone isn&apos;t white-label or resellable. It is developer{" "}
+              But most agencies who build on Vapi hit the same wall: Vapi is
+              API-first{" "}
               <Link href="/glossary/white-label" className="text-brand-light hover:text-brand transition-colors">
                 white-label
               </Link>{" "}
-              infrastructure, not a sellable product. To actually turn Vapi
-              into something you can charge clients for under your own brand,
-              you need a layer on top —{" "}
+              infrastructure, not an agency product. There is no first-party
+              dashboard for managing clients, branding their portals, or
+              billing them — so to turn Vapi into something you can charge
+              clients for under your own brand, you need a layer on top. That
+              layer is exactly why partner platforms exist: Vapi&apos;s own
+              documentation lists{" "}
+              <a
+                href="https://docs.vapi.ai/providers/vapify"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-brand-light hover:text-brand transition-colors underline decoration-brand/40"
+              >
+                white-label platforms built on its API
+              </a>{" "}
+              (Vapify, Voicerr, ChatDash — and{" "}
               <Link href="/whitelabel/vapi" className="text-brand-light hover:text-brand transition-colors">
                 Fusion Calling&apos;s white-label Vapi platform
-              </Link>{" "}
-              — and that layer is what most teams try (and struggle) to build
-              themselves.
+              </Link>
+              ), each adding the branded client-facing layer most teams try
+              (and struggle) to build themselves.
             </p>
             <p className="text-brand-light text-lg font-semibold">
               That gap is exactly where Fusion Calling fits. We&apos;re built
               with Vapi, not against it.
+            </p>
+          </div>
+
+          {/* What Vapi supports natively vs what needs a platform layer */}
+          <div className="glass-light rounded-2xl p-8 border border-brand/20">
+            <h2 id="what-vapi-supports-natively" className="scroll-mt-28 text-3xl font-bold text-white mb-6">
+              White Label Voice Agents on Vapi: What Vapi Supports Natively
+            </h2>
+            <p className="text-gray-300 leading-relaxed mb-4">
+              Vapi natively covers the call-level branding you&apos;d expect.
+              Each agent&apos;s name, greeting, voice, and conversation
+              behavior are configured per client through the API, so the agent
+              itself presents as the client&apos;s business — not as a generic
+              assistant. Agents answer on phone numbers you control, and
+              Vapi&apos;s embeddable web widget can live on your own site, so
+              the caller-facing touchpoints carry your brand rather than
+              Vapi&apos;s.
+            </p>
+            <p className="text-gray-300 leading-relaxed mb-4">
+              Where Vapi stops is the part your clients actually log into. It
+              is developer infrastructure with no first-party agency dashboard:
+              there are no branded client logins, no per-client sub-accounts
+              with their own usage and settings, and no rebilling you can
+              resell from. Agencies close that gap either by building the
+              layer themselves on Vapi&apos;s API or by using a partner
+              platform — the documented options above, plus{" "}
+              <Link href="/whitelabel/vapi" className="text-brand-light hover:text-brand transition-colors">
+                Fusion Calling&apos;s white-label Vapi platform
+              </Link>
+              , which adds your logo, your domain, client sub-accounts, and
+              rebilling without touching a line of code.
+            </p>
+            <p className="text-brand-light text-lg font-semibold">
+              Short version: Vapi&apos;s API brands the calls. A partner
+              platform brands everything around them.
             </p>
           </div>
 
@@ -116,9 +164,9 @@ export default function VapiWhiteLabelBlogPost() {
               Fusion Calling is the white-label agency layer for Vapi. Most of
               our users come <em>from</em> Vapi — they love the infrastructure
               and use Fusion Calling to turn it into a branded, sellable
-              product. Instead of building a custom white-label app yourself
-              (typically a $45K project and months of work), Fusion Calling
-              gives you everything you need to launch in 24 hours.
+              product. Instead of building a custom white-label app yourself —
+              often a five-figure custom build and months of work — Fusion
+              Calling gives you everything you need to launch in 24 hours.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -163,12 +211,10 @@ export default function VapiWhiteLabelBlogPost() {
             <div className="glass rounded-2xl p-8 border border-brand/20 mt-6">
               <p className="text-gray-300 leading-relaxed">
                 The point isn&apos;t to replace Vapi. It&apos;s to save you
-                from building a custom white-label application yourself. A
-                build-it-yourself approach typically runs about{" "}
-                <strong className="text-brand-light">$45K</strong> and takes
-                months. With Fusion Calling&apos;s done-with-you setup, most
-                agencies launch in{" "}
-                <strong className="text-brand-light">24 hours</strong>.
+                from building a custom white-label application yourself —
+                often a five-figure custom build that takes months. With
+                Fusion Calling&apos;s done-with-you setup, most agencies launch
+                in <strong className="text-brand-light">24 hours</strong>.
               </p>
             </div>
           </div>

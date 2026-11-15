@@ -1,7 +1,7 @@
 import { SITE_URL } from "@/lib/site-url";
 import { breadcrumbSchema, faqSchema, offerSchema, webPageSchema } from "@/lib/seo";
 import { WHOLESALE_PLANS, wholesalePricingSummary } from "@/lib/product-facts";
-import { PAGE_UPDATED } from "@/lib/page-updated";
+import { pageUpdated } from "@/lib/page-updated";
 
 export type WhiteLabelProvider = {
   slug: string;
@@ -247,6 +247,10 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
     h1Prefix: "White-Label",
     h1Highlight: "ElevenLabs AI Voice Agents",
     h1Suffix: "Under Your Own Brand",
+    blogGuide: {
+      href: "/blog/vapi-vs-retell-vs-elevenlabs",
+      label: "Vapi vs Retell vs ElevenLabs: Choosing the Right Provider",
+    },
     relatedCaseStudySlugs: ["voicewave-marketing"],
     differentiators: [
       {
@@ -421,7 +425,7 @@ export const whitelabelProviders: WhiteLabelProvider[] = [
       {
         question: "How does billing work for my GoHighLevel clients?",
         answer:
-          "You set your own client pricing and keep 100% of what you charge. Plans start at $99/month for 6 sub-accounts, $299 for 20, and $499 for unlimited, with minute rebilling so you control your margin on every client.",
+          `You set your own client pricing and keep 100% of what you charge. Plans are available at wholesale tiers (${wholesalePricingSummary()}), with minute rebilling so you control your margin on every client.`,
       },
       {
         question: "Will my clients see Fusion Calling branding?",
@@ -469,7 +473,7 @@ export function buildProviderGraph(
         description: provider.description,
         breadcrumbId: `${SITE_URL}${base}#breadcrumb`,
         speakable: ["h1", "h2", "p"],
-        dateModified: PAGE_UPDATED[base],
+        dateModified: pageUpdated(base),
       }),
       {
         "@type": "Service",

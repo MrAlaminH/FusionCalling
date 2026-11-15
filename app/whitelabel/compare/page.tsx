@@ -3,11 +3,14 @@ import WhiteLabelNavbar from "@/components/white-label-navbar";
 import CTA from "@/components/white-label/CTA";
 import PostFaq from "@/components/blog/PostFaq";
 import { primaryButton, secondaryButton } from "@/components/ui/button-styles";
-import { comparisons } from "@/lib/comparisons";
 import { SITE_URL } from "@/lib/site-url";
 import { breadcrumbSchema, faqSchema, webPageSchema } from "@/lib/seo";
 import { buildOpenGraph } from "@/lib/seo";
-import { LAUNCH, PROVIDERS, WHOLESALE_STARTER } from "@/lib/product-facts";
+import { WHOLESALE_STARTER } from "@/lib/product-facts";
+import {
+  whitelabelCompareRows,
+  whitelabelPlatforms,
+} from "@/lib/whitelabel-compare";
 import { truncateAtWord } from "@/lib/utils";
 
 const title = "White-Label AI Voice Platforms Compared";
@@ -22,7 +25,7 @@ const COMPARE_FAQS = [
   },
   {
     question: "How much does a white-label AI voice platform cost?",
-    answer: "White-label AI voice platforms typically range from $99/month to $499/month wholesale. Fusion Calling offers Starter ($99/mo, 6 sub-accounts), Growth ($299/mo, 20 sub-accounts, priority support, advanced analytics), and Scale ($499/mo, unlimited sub-accounts, dedicated account manager, API access). Partners keep 100% of what they charge clients.",
+    answer: "Self-serve white-label AI voice platforms range widely — from ~$28–29/month entry tiers (Vapify, Voicerr) to $499+/month for unlimited sub-accounts. Fusion Calling offers Starter ($99/mo, 6 sub-accounts), Growth ($299/mo, 20 sub-accounts, priority support, advanced analytics), and Scale ($499/mo, unlimited sub-accounts, dedicated account manager, API access). Partners keep 100% of what they charge clients.",
   },
   {
     question: "Which platform supports Vapi, Retell, AND ElevenLabs?",
@@ -48,122 +51,9 @@ export const metadata: Metadata = {
   }),
 };
 
-const WHITELABEL_COMPARISON_ROWS = [
-  {
-    label: "Starting Monthly Cost",
-    getValue: (c: (typeof comparisons)[number]) => {
-      const row = c.comparisonRows.find((r) =>
-        r.label.toLowerCase().includes("starting")
-      );
-      return row?.competitor ?? "—";
-    },
-    fusionValue: `$${WHOLESALE_STARTER.price}/mo`,
-  },
-  {
-    label: "Voice Providers Supported",
-    getValue: (c: (typeof comparisons)[number]) => {
-      const row = c.comparisonRows.find((r) =>
-        r.label.toLowerCase().includes("voice")
-      );
-      return row?.competitor ?? "—";
-    },
-    fusionValue: PROVIDERS.plus,
-  },
-  {
-    label: "Sub-Accounts Included",
-    getValue: (c: (typeof comparisons)[number]) => {
-      const row = c.comparisonRows.find((r) =>
-        r.label.toLowerCase().includes("sub") ||
-        r.label.toLowerCase().includes("account") ||
-        r.label.toLowerCase().includes("client")
-      );
-      return row?.competitor ?? "—";
-    },
-    fusionValue: "6–Unlimited",
-  },
-  {
-    label: "White-Label Dashboard",
-    getValue: (c: (typeof comparisons)[number]) => {
-      const row = c.comparisonRows.find((r) =>
-        r.label.toLowerCase().includes("dashboard") ||
-        r.label.toLowerCase().includes("white label") ||
-        r.label.toLowerCase().includes("branding")
-      );
-      return row?.competitor ?? "—";
-    },
-    fusionValue: "Full (logo, domain, colors, email)",
-  },
-  {
-    label: "Client Portal",
-    getValue: (c: (typeof comparisons)[number]) => {
-      const row = c.comparisonRows.find((r) =>
-        r.label.toLowerCase().includes("portal") ||
-        r.label.toLowerCase().includes("client")
-      );
-      return row?.competitor ?? "—";
-    },
-    fusionValue: "Yes — per-client branded portal",
-  },
-  {
-    label: "Sub-Account Billing",
-    getValue: (c: (typeof comparisons)[number]) => {
-      const row = c.comparisonRows.find((r) =>
-        r.label.toLowerCase().includes("billing") ||
-        r.label.toLowerCase().includes("revenue") ||
-        r.label.toLowerCase().includes("keep")
-      );
-      return row?.competitor ?? "—";
-    },
-    fusionValue: "Keep 100% of revenue",
-  },
-  {
-    label: "Minute Rebilling",
-    getValue: (c: (typeof comparisons)[number]) => {
-      const row = c.comparisonRows.find((r) =>
-        r.label.toLowerCase().includes("minute") ||
-        r.label.toLowerCase().includes("min") ||
-        r.label.toLowerCase().includes("usage")
-      );
-      return row?.competitor ?? "—";
-    },
-    fusionValue: "Yes",
-  },
-  {
-    label: "Onboarding Model",
-    getValue: (c: (typeof comparisons)[number]) => {
-      const row = c.comparisonRows.find((r) =>
-        r.label.toLowerCase().includes("onboarding") ||
-        r.label.toLowerCase().includes("setup")
-      );
-      return row?.competitor ?? "—";
-    },
-    fusionValue: `Guided (${LAUNCH.guided})`,
-  },
-  {
-    label: "API Access",
-    getValue: (c: (typeof comparisons)[number]) => {
-      const row = c.comparisonRows.find((r) =>
-        r.label.toLowerCase().includes("api")
-      );
-      return row?.competitor ?? "—";
-    },
-    fusionValue: "Yes (Scale plan)",
-  },
-  {
-    label: "Dedicated Account Manager",
-    getValue: (c: (typeof comparisons)[number]) => {
-      const row = c.comparisonRows.find((r) =>
-        r.label.toLowerCase().includes("account") ||
-        r.label.toLowerCase().includes("manager") ||
-        r.label.toLowerCase().includes("support")
-      );
-      return row?.competitor ?? "—";
-    },
-    fusionValue: "Yes (Scale plan)",
-  },
-];
-
 export default function WhitelabelComparePage() {
+  const fusion = whitelabelPlatforms[0];
+  const competitors = whitelabelPlatforms.slice(1);
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -207,11 +97,11 @@ export default function WhitelabelComparePage() {
               </span>
             </h1>
             <p className="mt-6 max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-gray-400 leading-relaxed">
-              Compare the top white-label AI voice platforms for agencies
-              reselling voice AI under their own brand. We&apos;ve analyzed
-              wholesale pricing, sub-accounts, Stripe rebilling, and
-              multi-provider import so you can pick the resale platform with
-              the best margin.
+              Compare {whitelabelPlatforms.length} white-label AI voice
+              platforms for agencies reselling voice AI under their own brand.
+              We&apos;ve compared wholesale pricing, sub-accounts, Stripe
+              rebilling, and multi-provider import so you can pick the resale
+              platform with the best margin.
             </p>
             <p className="mt-4 max-w-3xl mx-auto text-sm sm:text-base text-gray-500 leading-relaxed">
               Buying voice AI for your own business calls instead of reselling
@@ -247,22 +137,22 @@ export default function WhitelabelComparePage() {
                         Feature
                       </th>
                       <th className="bg-gradient-to-r from-brand/20 to-brand/10 px-4 py-3 text-center text-xs font-bold uppercase tracking-wider text-brand-light min-w-[120px]">
-                        Fusion Calling
+                        {fusion.name}
                       </th>
-                      {comparisons.map((c) => (
+                      {competitors.map((p) => (
                         <th
-                          key={c.slug}
+                          key={p.name}
                           className="px-4 py-3 text-center text-xs font-bold uppercase tracking-wider text-gray-400 min-w-[120px]"
                         >
-                          {c.competitorName}
+                          {p.name}
                         </th>
                       ))}
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-brand/10">
-                    {WHITELABEL_COMPARISON_ROWS.map((row, i) => (
+                    {whitelabelCompareRows.map((row, i) => (
                       <tr
-                        key={row.label}
+                        key={row.key}
                         className={
                           i % 2 === 0
                             ? "bg-white/[0.02]"
@@ -273,14 +163,14 @@ export default function WhitelabelComparePage() {
                           {row.label}
                         </td>
                         <td className="bg-gradient-to-r from-brand/10 to-brand/5 px-4 py-3 text-center text-sm text-brand-light font-semibold">
-                          {row.fusionValue}
+                          {fusion.cells[row.key]}
                         </td>
-                        {comparisons.map((c) => (
+                        {competitors.map((p) => (
                           <td
-                            key={c.slug}
+                            key={p.name}
                             className="px-4 py-3 text-center text-sm text-gray-400"
                           >
-                            {row.getValue(c)}
+                            {p.cells[row.key]}
                           </td>
                         ))}
                       </tr>
@@ -289,6 +179,14 @@ export default function WhitelabelComparePage() {
                 </table>
               </div>
             </div>
+            <p className="mt-6 text-center text-xs sm:text-sm text-gray-500 max-w-3xl mx-auto leading-relaxed">
+              Pricing and plans verified November 2026. &quot;Not
+              published&quot; means we couldn&apos;t verify a figure from
+              public sources — confirm with the vendor. Where a competitor
+              wins a dimension (e.g. VoiceAIWrapper&apos;s $29 entry), we say
+              so — our strengths are multi-provider coverage, BYO API keys,
+              sub-account capacity, and a 24-hour guided launch.
+            </p>
           </div>
         </section>
 
@@ -304,29 +202,44 @@ export default function WhitelabelComparePage() {
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {comparisons.map((c) => (
-                <a
-                  key={c.slug}
-                  href={`/alternative/${c.slug}`}
-                  className="group glass-light rounded-2xl p-6 border border-brand/20 hover:border-brand/40 transition-premium"
-                >
-                  <div className="text-3xl mb-3">{c.heroEmoji}</div>
-                  <h3 className="font-display text-lg font-bold text-white group-hover:text-brand-light transition-colors mb-2">
-                    {c.competitorName}
-                  </h3>
-                  <p className="text-sm text-gray-400 leading-relaxed mb-4 line-clamp-2">
-                    {c.quickAnswer}
-                  </p>
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-semibold text-brand-light">
-                      Read full comparison
-                    </span>
-                    <span className="text-brand-light text-sm group-hover:translate-x-1 transition-transform">
-                      &rarr;
-                    </span>
+              {whitelabelPlatforms.map((p) => {
+                const cardClass =
+                  "group glass-light rounded-2xl p-6 border border-brand/20 transition-premium h-full";
+                const body = (
+                  <>
+                    <div className="text-3xl mb-3">{p.emoji}</div>
+                    <h3 className="font-display text-lg font-bold text-white group-hover:text-brand-light transition-colors mb-2">
+                      {p.name}
+                    </h3>
+                    <p className="text-sm text-gray-400 leading-relaxed mb-4 line-clamp-3">
+                      {p.blurb}
+                    </p>
+                    {p.href && (
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs font-semibold text-brand-light">
+                          {p.isFusion ? "Explore the platform" : "Read full comparison"}
+                        </span>
+                        <span className="text-brand-light text-sm group-hover:translate-x-1 transition-transform">
+                          &rarr;
+                        </span>
+                      </div>
+                    )}
+                  </>
+                );
+                return p.href ? (
+                  <a
+                    key={p.name}
+                    href={p.href}
+                    className={`${cardClass} hover:border-brand/40`}
+                  >
+                    {body}
+                  </a>
+                ) : (
+                  <div key={p.name} className={cardClass}>
+                    {body}
                   </div>
-                </a>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>

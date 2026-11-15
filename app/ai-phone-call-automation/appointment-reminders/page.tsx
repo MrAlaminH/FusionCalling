@@ -13,7 +13,7 @@ const description =
 const benefits = [
   {
     title: "Cut no-shows",
-    text: "Studies and industry reports suggest automated reminder calls typically reduce no-shows by 30–40%. A live, conversational confirmation is harder to ignore than a text, and every open slot gets a chance to be refilled.",
+    text: "Businesses consistently see meaningfully fewer no-shows after automated reminder calls — the size of the reduction varies by industry. A live, conversational confirmation is harder to ignore than a text, and every open slot gets a chance to be refilled.",
   },
   {
     title: "Fill cancellations from your waitlist",
@@ -80,7 +80,7 @@ const faqs = [
   {
     question: "Do automated reminder calls reduce no-shows?",
     answer:
-      "Yes. Studies and industry reports suggest automated appointment reminder calls typically reduce no-shows by 30–40%, because a live, conversational call is harder to ignore than a text. The AI confirms the appointment, offers to reschedule on the spot, and updates your calendar, so empty slots get refilled instead of lost.",
+      "Yes. Businesses consistently report meaningfully fewer no-shows after automated reminder calls — the size of the reduction varies by industry — because a live, conversational call is harder to ignore than a text. The AI confirms the appointment, offers to reschedule on the spot, and updates your calendar, so empty slots get refilled instead of lost.",
   },
   {
     question: "Can the AI reschedule a missed appointment on the call?",

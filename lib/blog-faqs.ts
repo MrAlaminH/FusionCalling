@@ -96,10 +96,6 @@ export const blogFaqs: Record<string, BlogFaq[]> = {
   ],
   "ai-voice-agents-for-small-business": [
     {
-      "question": "Can a small business afford AI voice?",
-      "answer": "Yes. Fusion Calling business plans start at $149/mo with $0 setup and no contracts, including 500 minutes, calendar booking, and SMS. Most small businesses find a single saved job per month covers the subscription, since missed calls that once went to voicemail now get answered, booked, and followed up automatically."
-    },
-    {
       "question": "Do callers know it's AI?",
       "answer": "Modern AI voice agents sound natural and conversational, so most callers simply continue the conversation without noticing. Voices, greetings, and scripts are customized to your business, and you can always offer a live handoff — the agent transfers to a human with full context whenever a caller asks or a situation needs judgment."
     },
@@ -109,7 +105,7 @@ export const blogFaqs: Record<string, BlogFaq[]> = {
     },
     {
       "question": "What's the ROI for a typical small business?",
-      "answer": "A 5-person HVAC company missing 15 calls a week at a $500 average job value leaves roughly $390K a year on the table. At $149/mo, an AI agent capturing the majority of those calls recovers a multiple of its cost — which is why busy trades routinely report ROI figures above 2000% once after-hours and overflow calls are covered."
+      "answer": "A 5-person HVAC company missing 15 calls a week at a $500 average job value leaves roughly $390K a year on the table. At $149/mo, an AI agent capturing the majority of those calls recovers a multiple of its cost — which is why busy trades routinely find the subscription pays for itself several times over once after-hours and overflow calls are covered."
     },
     {
       "question": "Which industries benefit most from AI voice agents?",
@@ -124,16 +120,12 @@ export const blogFaqs: Record<string, BlogFaq[]> = {
       "answer": "The agent transfers gracefully to a human with full context — a call summary, captured details, and the reason for transfer. You define the escalation rules up front: complex questions, emotional callers, specific keywords, or VIP clients all route to your team instantly while routine calls stay automated."
     },
     {
-      "question": "How quickly can a small business deploy an AI voice agent?",
-      "answer": "With done-with-you onboarding, most small businesses go live in 7–14 days. You pick a proven template for your trade, customize the greeting and booking rules, connect your phone number and calendar, then test with real calls before customers hear a thing. No engineering or IT staff required at any step."
+      "question": "How long does launch take for a small team with no tech staff?",
+      "answer": "Most small businesses launch in 24 hours with done-with-you onboarding. You pick a proven template for your trade, customize the greeting and booking rules, we help connect your phone number and calendar, then you test with real calls before customers hear a thing. No engineering or IT staff required at any step."
     },
     {
       "question": "What does an AI voice agent cost a small team each month?",
-      "answer": "Small teams typically start on the $149/mo business plan, which covers the platform, AI call handling, transcripts, calendar booking, and 500 included minutes. There is $0 setup and no contract. Since one recovered job a month usually exceeds $149 in value, the plan tends to pay for itself quickly."
-    },
-    {
-      "question": "How long does launch take for a small team with no tech staff?",
-      "answer": "Most non-technical teams launch in 7–14 days with done-with-you onboarding. You pick a template for your trade, we help connect your number and calendar, you test with real calls before going live — and the team tunes greetings and booking rules with you until every call sounds right."
+      "answer": "Small teams typically start on the $149/mo business plan, which covers the platform, AI call handling, transcripts, calendar booking, and 500 included minutes — with $0 setup and no contract. Most small businesses find a single saved job per month covers the subscription, since missed calls that once went to voicemail now get answered, booked, and followed up automatically."
     }
   ],
   "gohighlevel-alternative-for-voice-ai": [
@@ -151,7 +143,7 @@ export const blogFaqs: Record<string, BlogFaq[]> = {
     },
     {
       "question": "What's the cost difference vs GoHighLevel?",
-      "answer": "GoHighLevel starts at $297/mo for agencies. Fusion Calling starts at $99/mo with voice AI, CRM, portals, and white-label included — no per-feature upsells. Voice-first agencies typically save 60%+ by consolidating."
+      "answer": "GoHighLevel's agency plans start at $97/mo, with white-label and SaaS capabilities on the $297–$497 tiers. Fusion Calling starts at $99/mo with voice AI, CRM, portals, and white-label included — no per-feature upsells. Against the $297 tier where white-label actually kicks in, that's roughly two-thirds less to run a voice-first agency."
     },
     {
       "question": "Does the built-in CRM support pipelines and automations?",
@@ -253,7 +245,7 @@ export const blogFaqs: Record<string, BlogFaq[]> = {
     },
     {
       "question": "Is a voice AI agency business profitable?",
-      "answer": "Yes. Wholesale platform access starts from $99/month, and typical packaged client pricing runs $297-$497/month. Five clients at $297 covers about $1,485/month in revenue against a $99-$299 platform cost, and the margins stay with you as the reseller."
+      "answer": "Yes. Wholesale platform access starts from $99/month, and many partners package their service at $297–$497/month — a modeling assumption, not a rule, so price to your market. Five clients at $297 covers about $1,485/month in revenue against a $99-$299 platform cost, and the margins stay with you as the reseller."
     }
   ],
   "retell-ai-white-label": [
@@ -305,7 +297,7 @@ export const blogFaqs: Record<string, BlogFaq[]> = {
     },
     {
       "question": "What is the latency difference between providers?",
-      "answer": "Retell AI typically achieves the lowest end-to-end latency (sub-500ms) due to its speech-to-speech architecture. Vapi and ElevenLabs (when used via TTS) are slightly higher but still conversational. Fusion Calling lets you pick the engine that meets your latency requirements per client."
+      "answer": "Retell AI is generally the lowest-latency of the three due to its speech-to-speech architecture — low latency, commonly in the sub-second range, though the exact figure depends on your configuration, so benchmark it for your use case. Vapi and ElevenLabs (when used via TTS) are slightly higher but still conversational. Fusion Calling lets you pick the engine that meets your latency requirements per client."
     },
     {
       "question": "Can I switch providers for a client after launch?",
@@ -331,11 +323,11 @@ export const blogFaqs: Record<string, BlogFaq[]> = {
     },
     {
       "question": "Can I resell Vapi under my own brand?",
-      "answer": "Yes — that is exactly what Fusion Calling adds. Vapi is excellent voice AI infrastructure, but on its own it is not white-label or resellable. Fusion Calling turns Vapi into a branded, sellable product with your logo, your custom domain, your client portals, and your pricing. You keep 100% of what you charge clients."
+      "answer": "Yes — that is exactly what Fusion Calling adds. Vapi is API-first voice infrastructure without a first-party agency dashboard; the white-label client-facing layer comes from partner platforms built on Vapi's API (Vapify, Voicerr, ChatDash — and Fusion Calling). Fusion Calling turns Vapi into a branded, sellable product with your logo, your custom domain, your client portals, and your pricing. You keep 100% of what you charge clients."
     },
     {
       "question": "How long does setup take?",
-      "answer": "Most partners launch in 24 hours thanks to our done-with-you onboarding. Instead of spending months building a custom $45K white-label app, you connect your Vapi account, apply your branding, and start reselling within 24 hours."
+      "answer": "Most partners launch in 24 hours thanks to our done-with-you onboarding. Instead of spending months building a custom white-label app — often a five-figure build — you connect your Vapi account, apply your branding, and start reselling within 24 hours."
     },
     {
       "question": "Can I use other providers alongside Vapi?",
@@ -395,7 +387,7 @@ export const blogFaqs: Record<string, BlogFaq[]> = {
     },
     {
       "question": "Are AI receptionists worth it for small businesses?",
-      "answer": "Usually yes when missed calls cost revenue. Industry estimates suggest small businesses miss around 60% of inbound calls, and AI receptionist plans run from $149 to $497 per month versus $3,000 or more for a full-time hire. If your team cannot answer every call in two rings, a handful of captured appointments typically covers the subscription."
+      "answer": "Usually yes when missed calls cost revenue. Estimates of missed calls vary widely by study — from roughly a fifth to more than half of inbound calls going unanswered, depending on how missed is measured — and AI receptionist plans run from $149 to $497 per month versus $3,000 or more for a full-time hire. If your team cannot answer every call in two rings, a handful of captured appointments typically covers the subscription."
     },
     {
       "question": "Can AI answer phone calls as well as a human?",

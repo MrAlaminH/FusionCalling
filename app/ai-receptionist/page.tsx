@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Sources from "@/components/sources";
 import { buildOpenGraph } from "@/lib/seo";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
+import { DIRECT_PLANS } from "@/lib/product-facts";
 import { aiReceptionistFaqs as faqs } from "@/lib/page-faqs";
 
 const title = "AI Receptionist for Business Calls";
@@ -68,7 +69,7 @@ const comparisons = [
   },
   {
     title: "vs. voicemail",
-    text: "Roughly 4 in 5 first-time callers who reach voicemail do not call back. An AI receptionist answers every call live, captures the lead, and books the job — which is exactly the revenue voicemail quietly loses.",
+    text: "Most first-time callers who reach voicemail never call back — they move on to the next result. An AI receptionist answers every call live, captures the lead, and books the job — which is exactly the revenue voicemail quietly loses.",
   },
 ];
 
@@ -394,7 +395,67 @@ export default function AiReceptionistPage() {
               <Link href="/pricing" className="text-brand hover:underline">
                 full plan breakdown
               </Link>
-              .
+              . Prices and minutes below come straight from the live pricing
+              page:
+            </p>
+            <div className="mb-8 overflow-x-auto rounded-xl border border-white/10">
+              <table className="w-full min-w-[600px] text-sm">
+                <caption className="sr-only">
+                  Fusion Calling AI receptionist plans: price, included
+                  minutes, setup fee, and overage rate
+                </caption>
+                <thead>
+                  <tr className="border-b border-white/10 bg-white/[0.03]">
+                    <th scope="col" className="px-4 py-3 text-left font-semibold text-gray-400">
+                      Plan
+                    </th>
+                    <th scope="col" className="px-4 py-3 text-center font-semibold text-gray-400">
+                      Monthly price
+                    </th>
+                    <th scope="col" className="px-4 py-3 text-center font-semibold text-gray-400">
+                      Included minutes
+                    </th>
+                    <th scope="col" className="px-4 py-3 text-center font-semibold text-gray-400">
+                      Setup fee
+                    </th>
+                    <th scope="col" className="px-4 py-3 text-center font-semibold text-gray-400">
+                      Overage
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {DIRECT_PLANS.map((plan) => (
+                    <tr key={plan.name} className="border-b border-white/5 last:border-b-0">
+                      <th scope="row" className="px-4 py-3 text-left font-medium text-gray-300">
+                        {plan.name}
+                      </th>
+                      <td className="px-4 py-3 text-center text-white font-medium">
+                        ${plan.price}/mo
+                      </td>
+                      <td className="px-4 py-3 text-center text-gray-400">
+                        {plan.includedMinutes.toLocaleString("en-US")}
+                      </td>
+                      <td className="px-4 py-3 text-center text-gray-400">
+                        {plan.setupFee === 0 ? "$0" : `$${plan.setupFee.toLocaleString("en-US")}`}
+                      </td>
+                      <td className="px-4 py-3 text-center text-gray-400">
+                        {plan.overageRate}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-gray-400 leading-relaxed">
+              Every plan starts with a 3-day free trial and a 14-day
+              money-back guarantee. For context beyond our own plans, the{" "}
+              <Link
+                href="/ai-receptionist-pricing"
+                className="text-brand hover:underline"
+              >
+                2026 AI receptionist pricing benchmark
+              </Link>{" "}
+              compares entry prices across 21 voice AI platforms.
             </p>
           </div>
         </section>

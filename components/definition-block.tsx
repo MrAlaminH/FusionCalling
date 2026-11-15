@@ -14,8 +14,7 @@ export const definitionBlockData = {
     },
     {
       value: "99%",
-      label:
-        "Customer satisfaction across 100+ completed voice-AI deployments.",
+      label: "Customer satisfaction across 100+ agencies and projects.",
       source: "Fusion Calling internal data, 2025–2026",
     },
     {

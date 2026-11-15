@@ -22,7 +22,7 @@ const industriesFaqs = [
   {
     question: "Do I need separate accounts for each industry?",
     answer:
-      "No. One white-label partner account supports unlimited sub-accounts across all industries. Each client gets their own branded portal with industry-specific agent configurations, but you manage everything centrally.",
+      "No. One white-label partner account covers every industry — sub-account capacity scales with your plan (6 on Starter, unlimited on Scale). Each client gets their own branded portal with industry-specific agent configurations, but you manage everything centrally.",
   },
 ];
 

@@ -153,7 +153,7 @@ export const whitelabelCaseStudies: WhiteLabelCaseStudy[] = [
       { value: "24/7", label: "Lead Capture Coverage" },
     ],
     story: [
-      "Apex Realty Group is a 12-agent real estate team in Miami handling luxury residential and commercial properties. Their biggest challenge: every property listing generated calls at all hours, and they were missing 60% of after-hours leads.",
+      "Apex Realty Group is a 12-agent real estate team in Miami handling luxury residential and commercial properties. Their biggest challenge: every property listing generated calls at all hours, and they were missing a majority of after-hours leads.",
       "They tried a traditional answering service — $1,200/month for limited hours and scripted responses that couldn't answer property-specific questions. 'It was better than nothing, but barely,' says broker-owner James Torres.",
       "Through their marketing agency (who is a Fusion Calling partner), Apex was set up with a white-label AI voice solution branded as 'Apex AI Concierge.' The AI agent knows every listing's details — price, square footage, HOA fees, open house dates — and can qualify leads, schedule showings, and transfer hot leads directly to agents.",
       "Setup took 10 minutes per property. Within 60 days, Apex was capturing 40+ qualified leads per month from calls that previously went to voicemail. The AI books an average of 8 showings per week automatically.",
@@ -161,7 +161,7 @@ export const whitelabelCaseStudies: WhiteLabelCaseStudy[] = [
     ],
     testimonial: {
       quote:
-        "AI Concierge changed how we handle inbound calls. We went from missing 60% of after-hours leads to capturing every single one, qualified and scheduled.",
+        "AI Concierge changed how we handle inbound calls. We went from missing a majority of after-hours leads to capturing every single one, qualified and scheduled.",
       attribution: "James Torres",
       role: "Broker-Owner, Apex Realty Group",
       avatar: "/avatars/james-torres.jpg",

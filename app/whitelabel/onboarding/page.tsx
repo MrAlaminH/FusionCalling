@@ -454,7 +454,7 @@ export default function OnboardingPage({
             </div>
             <p className="max-w-4xl mx-auto mt-6 text-sm md:text-base text-gray-400">
               Partners typically package the full solution at{" "}
-              <strong className="text-white">$197–$500+/month per client</strong>
+              <strong className="text-white">$197–$497/month per client</strong>
               . Your margin is the spread — model it in the{" "}
               <Link
                 href="/calculator"

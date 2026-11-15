@@ -35,7 +35,7 @@ const howItWorks = [
   },
   {
     title: "The AI calls within minutes",
-    text: "Speed-to-lead is the whole game: research consistently shows that contacting a lead within minutes dramatically raises contact and conversion rates compared with calling back hours later, when prospects have gone cold or signed with a competitor. The AI calls in minutes, 24/7.",
+    text: "Speed-to-lead is the whole game: contacting a lead within minutes instead of hours is one of the biggest levers on contact rates — prospects called back hours later have often gone cold or signed with a competitor. The AI calls in minutes, 24/7.",
   },
   {
     title: "It asks your questions, scores, and tags the lead",
@@ -74,7 +74,7 @@ const faqs = [
   {
     question: "How fast should leads be called after they come in?",
     answer:
-      "Within minutes. Speed-to-lead research consistently shows that contacting a lead within the first few minutes dramatically raises contact and conversion rates compared with calling back hours later, when prospects have already gone cold or chosen a competitor. An AI qualifier calls every new lead in minutes, around the clock.",
+      "Within minutes. Contacting a lead within minutes instead of hours is one of the biggest levers on contact and conversion rates — prospects called back hours later have often already gone cold or chosen a competitor. An AI qualifier calls every new lead in minutes, around the clock.",
   },
   {
     question: "Can AI qualification calls sync to my CRM?",

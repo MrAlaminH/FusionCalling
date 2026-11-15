@@ -64,9 +64,12 @@ export default function GoHighLevelBlogPost() {
           { id: "perfect-fit", title: "Why GHL Agencies Are a Perfect Fit for Voice AI" },
           { id: "where-voice-ai-fits", title: "Where Voice AI Fits in a GHL Agency" },
           { id: "how-it-works-together", title: "How Fusion Calling + GoHighLevel Work Together" },
+          { id: "gohighlevel-setup", title: "Step-by-Step: Connecting Voice AI to GHL Sub-Accounts" },
           { id: "dedicated-voice-layer", title: "Why a Dedicated Voice Layer Complements GoHighLevel" },
           { id: "built-in-crm", title: "Don't Have GoHighLevel Yet? Fusion Calling Includes a CRM" },
+          { id: "cost-math", title: "The Per-Client Cost Math, Worked" },
           { id: "economics", title: "The Economics: Simple and Predictable" },
+          { id: "pitfalls", title: "Pitfalls to Avoid Before Launch" },
         ]}
       >
         <div className="space-y-8">
@@ -234,6 +237,81 @@ export default function GoHighLevelBlogPost() {
             </div>
           </div>
 
+          {/* Step-by-step: connecting voice AI to GHL sub-accounts */}
+          <div>
+            <h2 id="gohighlevel-setup" className="scroll-mt-28 text-3xl font-bold text-white mb-6">
+              Step-by-Step: Connecting Voice AI to GHL Sub-Accounts
+            </h2>
+            <p className="text-gray-300 leading-relaxed mb-6">
+              The integration is configuration, not code. Most agencies
+              complete the API and webhook setup in one to two hours, guided by
+              our team as part of the{" "}
+              <strong className="text-brand-light">24-hour launch</strong>.
+              Here&apos;s the sequence:
+            </p>
+
+            <div className="space-y-4">
+              <div className="glass-light rounded-2xl p-6 border border-brand/20">
+                <h3 className="text-lg font-bold text-brand-light mb-2">
+                  1. Connect your GoHighLevel workspace
+                </h3>
+                <p className="text-gray-400 leading-relaxed">
+                  Link Fusion Calling to each client&apos;s GHL sub-account via
+                  API and webhooks, so calls, contacts, notes, and call
+                  outcomes flow back into the right GHL workspace automatically.
+                </p>
+              </div>
+
+              <div className="glass-light rounded-2xl p-6 border border-brand/20">
+                <h3 className="text-lg font-bold text-brand-light mb-2">
+                  2. Point a GHL webhook at Fusion Calling
+                </h3>
+                <p className="text-gray-400 leading-relaxed mb-3">
+                  In GoHighLevel, go to <strong>Settings → Automation → Webhooks</strong>{" "}
+                  and click <strong>Add Webhook</strong>. Configure it as a{" "}
+                  <strong>POST</strong> to your Fusion Calling leads endpoint
+                  with an <code className="text-brand-light break-all">Authorization: Bearer YOUR_API_KEY</code>{" "}
+                  header, mapping the contact&apos;s name, phone, and email in
+                  the body. That&apos;s how a new GHL contact triggers a voice
+                  agent. The full walkthrough with the payload is in our{" "}
+                  <Link href="/docs" className="text-brand-light hover:text-brand transition-colors">
+                    API &amp; webhook docs
+                  </Link>
+                  .
+                </p>
+              </div>
+
+              <div className="glass-light rounded-2xl p-6 border border-brand/20">
+                <h3 className="text-lg font-bold text-brand-light mb-2">
+                  3. Import or build the agents
+                </h3>
+                <p className="text-gray-400 leading-relaxed">
+                  Bring your existing Vapi, Retell, or ElevenLabs agent
+                  configurations and API keys — or build fresh ones — and
+                  assign each agent to the client it serves.
+                </p>
+              </div>
+
+              <div className="glass-light rounded-2xl p-6 border border-brand/20">
+                <h3 className="text-lg font-bold text-brand-light mb-2">
+                  4. Brand each client&apos;s portal and set pricing
+                </h3>
+                <p className="text-gray-400 leading-relaxed">
+                  Set each sub-account&apos;s logo, domain, and pricing.
+                  Clients see a fully branded voice AI product — Fusion Calling
+                  stays invisible end to end — and you keep 100% of what you
+                  charge.
+                </p>
+              </div>
+            </div>
+
+            <p className="text-gray-300 leading-relaxed mt-6">
+              Before rolling out to every sub-account, fire one test contact
+              through the GHL workflow and confirm it lands in Fusion Calling
+              with the right fields.
+            </p>
+          </div>
+
           {/* Why a Dedicated Voice Layer */}
           <div>
             <h2 id="dedicated-voice-layer" className="scroll-mt-28 text-3xl font-bold text-white mb-6">
@@ -293,10 +371,10 @@ export default function GoHighLevelBlogPost() {
             </h2>
             <p className="text-gray-300 leading-relaxed mb-6">
               Everything above assumes you already run on GoHighLevel. But many
-              agencies are just starting out, and GoHighLevel&apos;s higher tiers
-              the ones you need to white-label client sub-accounts, are a real
-              expense before you&apos;ve landed a single voice AI client. Here&apos;s
-              the part most agencies miss:
+              agencies are just starting out, and GoHighLevel&apos;s higher
+              tiers — the ones you need to white-label client sub-accounts —
+              are a real expense before you&apos;ve landed a single voice AI
+              client. Here&apos;s the part most agencies miss:
             </p>
             <p className="text-brand-light text-lg font-semibold mb-6">
               Fusion Calling includes its own built-in CRM (lead management), so
@@ -338,6 +416,71 @@ export default function GoHighLevelBlogPost() {
                   GHL for existing ones, all from one platform.
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* Per-Client Cost Math */}
+          <div>
+            <h2 id="cost-math" className="scroll-mt-28 text-3xl font-bold text-white mb-6">
+              The Per-Client Cost Math, Worked
+            </h2>
+            <p className="text-gray-300 leading-relaxed mb-6">
+              Before launch, know your floor. Two subscriptions determine it:
+              your GoHighLevel agency plan and your Fusion Calling platform
+              plan. Neither charges per client beyond tier limits, so the
+              monthly math is fixed:
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div className="glass-light rounded-xl p-6 border border-brand/20">
+                <h3 className="text-lg font-bold text-brand-light mb-3">
+                  GoHighLevel agency plans
+                </h3>
+                <ul className="text-gray-400 text-sm space-y-2">
+                  <li>• Starter — $97/mo (3 sub-accounts)</li>
+                  <li>• Agency Unlimited — $297/mo</li>
+                  <li>• SaaS mode — $497/mo</li>
+                </ul>
+              </div>
+              <div className="glass-light rounded-xl p-6 border border-brand/20">
+                <h3 className="text-lg font-bold text-brand-light mb-3">
+                  Fusion Calling partner plans
+                </h3>
+                <ul className="text-gray-400 text-sm space-y-2">
+                  <li>• Starter — $99/mo (6 sub-accounts)</li>
+                  <li>• Growth — $299/mo (20 sub-accounts)</li>
+                  <li>• Scale — $499/mo (unlimited sub-accounts)</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-brand/10 to-brand-strong/5 rounded-xl p-6 border border-brand/30 mb-6">
+              <h3 className="text-xl font-bold text-brand-light mb-3">
+                A worked example
+              </h3>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Take a realistic setup: an agency on GoHighLevel&apos;s Agency
+                Unlimited plan ($297/mo) plus Fusion Calling&apos;s Starter
+                tier ($99/mo, 6 sub-accounts). Fixed platform cost:{" "}
+                <strong className="text-brand-light">$396/mo</strong>.
+              </p>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Now price the service. As a modeling assumption — not a rule —
+                many partners package white-label voice AI at{" "}
+                <strong className="text-brand-light">$297–$497/month</strong>{" "}
+                per client, depending on volume and vertical. At the low end:
+                six clients × $297 ={" "}
+                <strong className="text-brand-light">$1,782/month</strong>{" "}
+                against $396 in platform cost, and you keep 100% of the
+                difference. Even while you&apos;re still landing clients, the
+                second signed account already covers both subscriptions.
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                Watch the ceilings, not the unit costs: GHL&apos;s Starter plan
+                caps you at 3 sub-accounts and Fusion Calling&apos;s Starter
+                covers 6, so the constraint on growth is your tier limits —
+                tier up before your client roster runs out of slots.
+              </p>
             </div>
           </div>
 
@@ -395,6 +538,54 @@ export default function GoHighLevelBlogPost() {
                 bill stays with your agency
               </p>
             </div>
+          </div>
+
+          {/* Pitfalls */}
+          <div className="glass-light rounded-2xl p-8 border border-brand/20">
+            <h2 id="pitfalls" className="scroll-mt-28 text-3xl font-bold text-white mb-6">
+              Pitfalls to Avoid Before Launch
+            </h2>
+            <ul className="space-y-3 text-gray-300">
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 mt-2 rounded-full bg-red-500 flex-shrink-0" />
+                <span>
+                  <strong className="text-white">Skipping the single-contact test.</strong>{" "}
+                  A misconfigured webhook fails silently — the GHL workflow
+                  &ldquo;runs&rdquo; while nothing reaches Fusion Calling. Fire
+                  one test contact through and verify it arrives before
+                  pointing every sub-account at the webhook.
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 mt-2 rounded-full bg-red-500 flex-shrink-0" />
+                <span>
+                  <strong className="text-white">Exposing your API key client-side.</strong>{" "}
+                  Webhook calls to Fusion Calling should always run
+                  server-side (via GHL&apos;s automation builder or your own
+                  backend), never from browser JavaScript where the key is
+                  visible to anyone.
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 mt-2 rounded-full bg-red-500 flex-shrink-0" />
+                <span>
+                  <strong className="text-white">Forgetting SMS registration.</strong>{" "}
+                  Confirmations, reminders, and missed-call texts only deliver
+                  if the numbers are registered — A2P 10DLC (or toll-free
+                  verification). Unregistered numbers can silently fail, so
+                  register before launch, not after the first complaint.
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 mt-2 rounded-full bg-red-500 flex-shrink-0" />
+                <span>
+                  <strong className="text-white">Cloning one agent config across every client.</strong>{" "}
+                  Each client needs their own greeting, qualification
+                  questions, and calendar connection. A generic shared agent is
+                  the fastest way to churn a white-label account.
+                </span>
+              </li>
+            </ul>
           </div>
 
           {/* Conclusion */}

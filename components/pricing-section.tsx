@@ -202,7 +202,7 @@ export default function PricingSection({
         {/* Title Header */}
         <div className="text-center mb-8 md:mb-10">
           <Heading className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-brand mb-2">
-            AI Phone Call Pricing
+            AI Phone Automation Pricing
           </Heading>
           <p className="text-xs text-gray-400 md:text-sm max-w-xl mx-auto">
             Choose the perfect plan for your business needs. Scale effortlessly

@@ -129,7 +129,7 @@ export default function Home() {
             name: "How realistic do AI voice agents sound?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Customers report our AI voice agents are up to 95% indistinguishable from human speakers in blind listening tests. We use advanced text-to-speech technology from providers like ElevenLabs and offer voice customization options, including the ability to clone your own voice or choose from our library of natural-sounding voices in multiple languages and accents.",
+              text: "The voices come from advanced text-to-speech engines like ElevenLabs, with natural pacing, interruption handling, and voice customization options — clone your own voice or choose from our library of natural-sounding voices in multiple languages and accents. Judge the quality yourself: hear a live demo call on this page.",
             },
           },
           {
@@ -137,7 +137,7 @@ export default function Home() {
             name: "How long does deployment take?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Most AI agents go live within 4 weeks after proposal approval. The timeline includes: Week 1-2 for discovery and workflow design, Week 3 for AI training and integration, Week 4 for testing and optimization. Simple implementations can be done in as little as 2 weeks, while complex multi-system integrations may take 6-8 weeks.",
+              text: "Launch is guided and fast: your agent goes live within 24 hours of kickoff, and most workflows are live within days. Setup covers connecting your number, loading your business knowledge, setting greetings and handoff rules, and running test calls before you switch it on. Complex multi-system workflows take longer, but a single inbound or outbound workflow is typically live in under a week.",
             },
           },
           {
@@ -291,7 +291,7 @@ export default function Home() {
             </Link>
             {" · "}
             <Link
-              href="/ai-phone-call-automation/after-hours-answering"
+              href="/ai-phone-call-receptionist"
               className="text-brand hover:text-brand-light underline underline-offset-4 hover:underline transition-colors"
             >
               missed-call handling

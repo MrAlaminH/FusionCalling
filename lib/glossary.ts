@@ -62,6 +62,23 @@ export function slugifyTerm(term: string): string {
 export const glossaryTerms: GlossaryTerm[] = [
   // ---------- Core AI & Voice ----------
   {
+    term: "AI Answering Service",
+    category: "Core AI & Voice",
+    definition:
+      "An AI answering service is a voice agent that answers a business's inbound phone calls around the clock — greeting callers, answering routine questions, taking messages, and booking appointments — without a human operator on the line. Unlike a traditional answering service staffed by people, an AI answering service handles every call instantly and simultaneously, so callers never wait or reach voicemail.",
+    whyItMatters:
+      "It replaces per-minute operator fees with flat-rate 24/7 coverage, and agencies can white-label it as their own branded answering service for client verticals like vet clinics and home services.",
+    related: ["AI Receptionist", "AI Voice Agent", "Inbound Calls"],
+    platform: { label: "See Fusion Calling's AI receptionist platform", href: "/ai-receptionist" },
+    customFaqs: [
+      {
+        question: "How much does an AI answering service cost?",
+        answer:
+          "Flat monthly pricing is the norm: Fusion Calling starts at $149/month with 500 included minutes and $0.30/min overage, with no per-location metering. Traditional human answering services typically bill per minute and per operator seat, so costs climb with volume — flat pricing is the main reason agencies package AI answering as a retainer product.",
+      },
+    ],
+  },
+  {
     term: "AI Calling",
     category: "Core AI & Voice",
     definition:
@@ -70,6 +87,22 @@ export const glossaryTerms: GlossaryTerm[] = [
       "AI calling turns the phone channel — the highest-intent channel most businesses miss — into an always-on operation, which is why agencies package it as their flagship white-label offer.",
     related: ["AI Voice Agent", "Conversational AI", "Outbound Calls"],
     platform: { label: "How an AI phone call receptionist works", href: "/ai-phone-call-receptionist" },
+  },
+  {
+    term: "AI Cold Calling",
+    category: "Core AI & Voice",
+    definition:
+      "AI cold calling is the use of AI voice agents to place outbound sales calls to prospects who haven't expressed interest yet. The agent dials from a contact list, handles voicemail and gatekeepers, delivers a qualification or pitch script, and books meetings or flags interested leads for a human closer.",
+    whyItMatters:
+      "Cold calling is the most labor-intensive sales motion there is, and AI agents let teams dial every list instead of a slice of it — at a fraction of the per-dial cost of a human SDR.",
+    related: ["AI Calling", "Outbound Calls", "Connect Rate"],
+    customFaqs: [
+      {
+        question: "Is AI cold calling legal?",
+        answer:
+          "It is legal when run within telemarketing rules, which are strict for automated outbound calls. In the US, the TCPA restricts autodialed and prerecorded marketing calls without the right consent, requires honoring do-not-call and opt-out requests, and states (with the FCC) that AI-generated voices count as prerecorded messages. Collect consent before dialing, honor opt-outs immediately, and confirm your jurisdiction's rules with counsel before launching a campaign.",
+      },
+    ],
   },
   {
     term: "AI Voice Agent",
@@ -127,6 +160,15 @@ export const glossaryTerms: GlossaryTerm[] = [
     related: ["Large Language Model", "Intent Recognition", "Named Entity Recognition"],
   },
   {
+    term: "Voice AI",
+    category: "Core AI & Voice",
+    definition:
+      "Voice AI is the umbrella term for artificial intelligence that understands and generates human speech. It covers speech-to-text, natural language understanding, large language models, and text-to-speech working together — in practice, powering voice agents that answer calls, hold real-time conversations, and complete tasks like bookings and lead qualification over the phone.",
+    whyItMatters:
+      "Voice AI is the category term buyers actually search for; knowing what sits underneath it helps agencies explain the technology credibly and position their offer within it.",
+    related: ["AI Voice Agent", "Conversational AI", "AI Receptionist"],
+  },
+  {
     term: "Voice Bot",
     category: "Core AI & Voice",
     definition:
@@ -141,7 +183,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: "Speech-to-Text",
     category: "Speech Technology",
     definition:
-      "Speech-to-text (STT), also called automatic speech recognition, is the technology that converts spoken words into written text. In a voice agent, STT transcribes what the caller says so the system can understand and act on it.",
+      "Speech-to-text (STT) is what turns a caller's spoken words into written text so a voice agent can understand them. As a buyer, the practical question is accuracy: how well the agent handles your callers' accents, background noise, and industry vocabulary. Vendor demo accuracy overstates real-world results, so test providers on your own recorded calls before committing.",
     whyItMatters:
       "STT accuracy directly affects whether the agent understands the caller, especially in noisy environments or with accents.",
     related: ["Automatic Speech Recognition", "Text-to-Speech", "Transcription"],
@@ -450,16 +492,16 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: "Named Entity Recognition",
     category: "Conversational Design",
     definition:
-      "Named Entity Recognition (NER) is the extraction of specific data points from speech, such as names, dates, phone numbers, and amounts, so the agent can capture and act on structured information.",
+      "Named Entity Recognition (NER) is the natural language processing technique that detects and classifies entity spans in text — labeling a word or phrase like a caller's name, an appointment date, or a dollar amount as person, time, or money. It is the underlying machine-learning method; the applied task of pulling usable values out of a conversation is entity extraction.",
     whyItMatters:
-      "NER enables agents to collect lead details and booking information accurately during a conversation.",
+      "NER is what enables agents to collect lead details and booking information accurately during a conversation.",
     related: ["Intent Recognition", "Natural Language Processing", "Function Calling"],
   },
   {
     term: "Entity Extraction",
     category: "Conversational Design",
     definition:
-      "Entity extraction is the process of identifying and pulling structured values, like a date or a budget figure, out of a caller's free-form speech for use in the conversation or a CRM.",
+      "Entity extraction is the applied task of pulling structured values — a booking date, a budget figure, a phone number — out of a caller's free-form speech and delivering them in a form a workflow can use. Named Entity Recognition (NER) is the detection technique underneath it; entity extraction is the end result: clean values populated into forms, calendars, and CRMs.",
     whyItMatters:
       "Reliable entity extraction lets agents populate forms, calendars, and CRMs automatically from spoken input.",
     related: ["Named Entity Recognition", "Intent Recognition", "Function Calling"],
