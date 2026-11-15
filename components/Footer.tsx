@@ -100,6 +100,12 @@ const featuredBadges = [
     img: "https://neeed.directory/badges/neeed-badge-light.svg",
     alt: "Featured on neeed.directory",
   },
+  {
+    name: "Shipyard",
+    href: "https://shipyardhq.dev/products/fusion-calling",
+    img: "/badges/shipyard-badge-light.svg",
+    alt: "Featured on Shipyard",
+  },
 ];
 
 function FooterLinkItem({ link }: { link: FooterLink }) {
