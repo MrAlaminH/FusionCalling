@@ -96,8 +96,8 @@ const featuredBadges = [
   },
   {
     name: "neeed.directory",
-    href: "https://neeed.directory",
-    img: "https://neeed.directory/badges/neeed-badge-dark.svg",
+    href: "https://neeed.directory/products/fusion-calling-white-label?utm_source=fusion-calling-white-label",
+    img: "https://neeed.directory/badges/neeed-badge-light.svg",
     alt: "Featured on neeed.directory",
   },
 ];
