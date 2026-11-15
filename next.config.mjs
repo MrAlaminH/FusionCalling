@@ -43,6 +43,9 @@ const nextConfig = {
   // Don't leak `X-Powered-By: Next.js` — minor fingerprint reduction.
   poweredByHeader: false,
   images: {
+    // YouTube facade thumbnails for components/video-embed.tsx (click-to-play
+    // pattern — the thumbnail is the only ytimg request before playback).
+    remotePatterns: [{ protocol: "https", hostname: "i.ytimg.com" }],
     // Serve modern formats first. AVIF is ~30% smaller than WebP; WebP stays
     // as the fallback for older browsers.
     formats: ["image/avif", "image/webp"],

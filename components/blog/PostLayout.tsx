@@ -5,6 +5,8 @@ import type { BlogPost } from "@/lib/blog-posts";
 import type { Author } from "@/lib/authors";
 import type { BlogFaq } from "@/components/blog/PostFaq";
 import { formatDate } from "@/lib/utils";
+import { videoObjectSchema, type EmbeddedVideo } from "@/lib/videos";
+import VideoEmbed from "@/components/video-embed";
 import PostFaq from "@/components/blog/PostFaq";
 import PostToc from "@/components/blog/PostToc";
 import ReadingProgress from "@/components/docs/reading-progress";
@@ -65,6 +67,7 @@ export default function PostLayout({
   author,
   faqs,
   toc = [],
+  heroVideo,
   children,
 }: {
   post: BlogPost;
@@ -76,6 +79,8 @@ export default function PostLayout({
   author: Author;
   faqs: BlogFaq[];
   toc?: PostTocItem[];
+  /** When set, replaces the hero image with a click-to-play video embed. */
+  heroVideo?: EmbeddedVideo;
   children: ReactNode;
 }) {
   // Topical related posts: same category first, then most recent others.
@@ -85,6 +90,17 @@ export default function PostLayout({
   return (
     <>
       <ReadingProgress />
+      {heroVideo ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [videoObjectSchema(heroVideo, `/blog/${post.slug}`)],
+            }),
+          }}
+        />
+      ) : null}
       <article className="pb-8">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-10 md:pt-14">
           <div className="xl:grid xl:grid-cols-[200px_minmax(0,1fr)] xl:gap-12">
@@ -149,17 +165,25 @@ export default function PostLayout({
                 </div>
               </header>
 
-              {/* Hero image */}
-              <div className="relative mt-10 aspect-video rounded-3xl overflow-hidden border border-brand/20 shadow-premium">
-                <Image
-                  src={post.image}
-                  alt={post.title}
-                  fill
-                  priority
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 800px"
+              {/* Hero media — video embed when heroVideo is set, image otherwise */}
+              {heroVideo ? (
+                <VideoEmbed
+                  videoId={heroVideo.id}
+                  title={heroVideo.title}
+                  className="mt-10 rounded-3xl"
                 />
-              </div>
+              ) : (
+                <div className="relative mt-10 aspect-video rounded-3xl overflow-hidden border border-brand/20 shadow-premium">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    priority
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 800px"
+                  />
+                </div>
+              )}
 
               {/* Body — normalized by .post-body in globals.css */}
               <div className="prose post-body mt-12 max-w-none">{children}</div>
