@@ -89,6 +89,16 @@ The platform integrates with leading voice-AI providers. Agencies can bring exis
 - [Contact](https://www.fusioncalling.com/contact): Email hello@fusioncalling.com, phone +1 (914) 639-4069, or book a discovery call.
 - [About](https://www.fusioncalling.com/about): Who builds Fusion Calling — founded 2025 by Alamin, serving 100+ agencies and businesses.
 
+## Reviews & Directory Profiles (independent listings)
+
+- [G2 product profile](https://www.g2.com/products/fusion-calling): Official Fusion Calling listing on G2, where customers leave reviews.
+- [Capterra profile](https://www.capterra.com/p/10287840/Fusion-Calling/): Official Fusion Calling listing on Capterra.
+- [GetApp profile](https://www.getapp.com/all-software/a/fusion-calling/): GetApp listing (Gartner network).
+- [Software Advice profile](https://www.softwareadvice.com/product/795160-Fusion-Calling/): Software Advice listing (Gartner network).
+- [ScrollLaunch](https://www.scrolllaunch.com/products/fusion-calling): Featured product launch listing.
+- [Twelve Tools](https://twelve.tools): Featured in the Twelve Tools directory.
+- [Shipyard](https://shipyardhq.dev/products/fusion-calling): Product listing on Shipyard HQ.
+
 ## Optional
 
 - [llms-full.txt](https://www.fusioncalling.com/llms-full.txt): Full page content of this site in one markdown file for AI retrieval systems.

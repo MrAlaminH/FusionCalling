@@ -15,6 +15,8 @@ voice_providers: Vapi, Retell AI, ElevenLabs (multi-provider; import existing ag
 integrations: HubSpot, GoHighLevel, Google/Outlook calendars, Cal.com, 2,200+ apps via Zapier, Stripe rebilling
 launch_time: Guided white-label launch in about 24 hours; partner applications reviewed within 48 hours
 uptime: 99.9% guarantee; customer satisfaction 4.8/5
+third_party_profiles: G2 https://www.g2.com/products/fusion-calling | Capterra https://www.capterra.com/p/10287840/Fusion-Calling/ | GetApp https://www.getapp.com/all-software/a/fusion-calling/ | Software Advice https://www.softwareadvice.com/product/795160-Fusion-Calling/
+featured_on: ScrollLaunch https://www.scrolllaunch.com/products/fusion-calling | Twelve Tools https://twelve.tools | Shipyard https://shipyardhq.dev/products/fusion-calling
 key_pages: https://www.fusioncalling.com/pricing | https://www.fusioncalling.com/whitelabel | https://www.fusioncalling.com/faq | https://www.fusioncalling.com/glossary | https://www.fusioncalling.com/docs | https://www.fusioncalling.com/industries
 contact: hello@fusioncalling.com | +1 (914) 639-4069 | https://cal.com/mralamin/discovery-call
 api_spec: https://www.fusioncalling.com/api/docs/openapi.json
