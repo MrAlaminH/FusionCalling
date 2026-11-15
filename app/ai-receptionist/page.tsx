@@ -7,6 +7,11 @@ import { buildOpenGraph } from "@/lib/seo";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { DIRECT_PLANS } from "@/lib/product-facts";
 import { aiReceptionistFaqs as faqs } from "@/lib/page-faqs";
+import {
+  PRODUCT_TUTORIAL_VIDEO,
+  videoObjectSchema,
+} from "@/lib/videos";
+import VideoEmbed from "@/components/video-embed";
 
 const title = "AI Receptionist for Business Calls";
 const description =
@@ -184,6 +189,7 @@ export default function AiReceptionistPage() {
         isPartOf: { "@id": `${SITE_URL}/#website` },
         breadcrumb: { "@id": `${SITE_URL}/ai-receptionist#breadcrumb` },
       },
+      videoObjectSchema(PRODUCT_TUTORIAL_VIDEO, "/ai-receptionist"),
       {
         "@type": "FAQPage",
         "@id": `${SITE_URL}/ai-receptionist#faqpage`,
@@ -354,6 +360,16 @@ export default function AiReceptionistPage() {
                   </div>
                 </div>
               ))}
+            </div>
+            <div className="mt-12">
+              <VideoEmbed
+                videoId={PRODUCT_TUTORIAL_VIDEO.id}
+                title={PRODUCT_TUTORIAL_VIDEO.title}
+                duration="11 min"
+              />
+              <p className="mt-3 text-center text-xs sm:text-sm text-gray-500">
+                Watch the full setup walkthrough — no code, start to finish.
+              </p>
             </div>
           </div>
         </section>

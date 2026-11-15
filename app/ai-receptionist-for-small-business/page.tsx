@@ -11,6 +11,11 @@ import { primaryButton, secondaryButton } from "@/components/ui/button-styles";
 import { buildOpenGraph } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site-url";
 import { PAGE_UPDATED } from "@/lib/page-updated";
+import {
+  PRODUCT_TUTORIAL_VIDEO,
+  videoObjectSchema,
+} from "@/lib/videos";
+import VideoEmbed from "@/components/video-embed";
 
 const title = "AI Receptionist for Small Business (2026)";
 const description =
@@ -369,6 +374,10 @@ export default function AiReceptionistForSmallBusinessPage() {
           "@id": `${SITE_URL}/ai-receptionist-for-small-business#breadcrumb`,
         },
       },
+      videoObjectSchema(
+        PRODUCT_TUTORIAL_VIDEO,
+        "/ai-receptionist-for-small-business"
+      ),
       {
         "@type": "FAQPage",
         "@id": `${SITE_URL}/ai-receptionist-for-small-business#faqpage`,
@@ -706,6 +715,16 @@ export default function AiReceptionistForSmallBusinessPage() {
               </Link>{" "}
               with verified October 2026 pricing and a fit verdict for each.
             </p>
+            <div className="mt-10">
+              <VideoEmbed
+                videoId={PRODUCT_TUTORIAL_VIDEO.id}
+                title={PRODUCT_TUTORIAL_VIDEO.title}
+                duration="11 min"
+              />
+              <p className="mt-3 text-center text-xs sm:text-sm text-gray-500">
+                Prefer to watch? The full setup walkthrough, no IT required.
+              </p>
+            </div>
           </div>
         </section>
 

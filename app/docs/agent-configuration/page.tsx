@@ -10,6 +10,11 @@ import { TroubleshootingSection } from "./components/troubleshooting";
 import { QuickReferenceSection } from "./components/quick-reference";
 import { buildOpenGraph } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site-url";
+import {
+  PRODUCT_TUTORIAL_VIDEO,
+  videoObjectSchema,
+} from "@/lib/videos";
+import VideoEmbed from "@/components/video-embed";
 
 const title = "AI Voice Agent Configuration Guide";
 const description =
@@ -118,6 +123,10 @@ export default function AgentConfigurationPage() {
                   "@id": `${SITE_URL}/#service`,
                 },
               },
+              videoObjectSchema(
+                PRODUCT_TUTORIAL_VIDEO,
+                "/docs/agent-configuration"
+              ),
             ],
           }),
         }}
@@ -135,6 +144,18 @@ export default function AgentConfigurationPage() {
               readingTime={10}
               steps={navItems.length}
             />
+
+            {/* Video walkthrough — covers setup, configuration, and testing */}
+            <div className="mb-12 md:mb-14">
+              <VideoEmbed
+                videoId={PRODUCT_TUTORIAL_VIDEO.id}
+                title={PRODUCT_TUTORIAL_VIDEO.title}
+                duration="11 min"
+              />
+              <p className="mt-3 text-center text-xs sm:text-sm text-gray-500">
+                Watch the full walkthrough, or follow the written guide below.
+              </p>
+            </div>
 
             {/* Sections */}
             <OverviewSection />

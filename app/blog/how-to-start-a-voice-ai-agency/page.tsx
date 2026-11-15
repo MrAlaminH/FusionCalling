@@ -4,6 +4,7 @@ import { getAuthor } from "@/lib/authors";
 import { getBlogPost } from "@/lib/blog-posts";
 import { blogFaqs } from "@/lib/blog-faqs";
 import { buildBlogGraph, buildPostMetadata } from "@/lib/blog-schema";
+import { AGENCY_WHITE_LABEL_VIDEO } from "@/lib/videos";
 import PostLayout from "@/components/blog/PostLayout";
 
 /* eslint-disable react/no-unescaped-entities */
@@ -42,6 +43,7 @@ export default function StartVoiceAIAgencyBlogPost() {
 
       <PostLayout
         post={post}
+        heroVideo={AGENCY_WHITE_LABEL_VIDEO}
         titleLead="How to Start a Voice AI Agency"
         titleHighlight="in 2026"
         dek={

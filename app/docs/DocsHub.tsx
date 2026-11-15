@@ -1,6 +1,11 @@
 import Link from "next/link";
 import { GEO_SOURCES } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site-url";
+import {
+  PRODUCT_TUTORIAL_VIDEO,
+  videoObjectSchema,
+} from "@/lib/videos";
+import VideoEmbed from "@/components/video-embed";
 import DocsSearchInput from "./docs-search-input";
 import DocsGrid from "./docs-grid";
 import DocsFaqAccordion from "@/components/docs/docs-faq";
@@ -97,6 +102,7 @@ export default function DocsHub() {
                   },
                 })),
               },
+              videoObjectSchema(PRODUCT_TUTORIAL_VIDEO, "/docs"),
             ],
           }),
         }}
@@ -274,6 +280,17 @@ export default function DocsHub() {
               <p className="text-gray-400 mb-8">
                 Our team can help you integrate Fusion Calling into your workflow and optimize your AI voice automation strategy.
               </p>
+              <div className="max-w-3xl mx-auto mb-8 text-left">
+                <VideoEmbed
+                  videoId={PRODUCT_TUTORIAL_VIDEO.id}
+                  title={PRODUCT_TUTORIAL_VIDEO.title}
+                  duration="11 min"
+                />
+                <p className="mt-3 text-center text-xs sm:text-sm text-gray-500">
+                  Or watch the full walkthrough first — account setup to first
+                  live call in 11 minutes.
+                </p>
+              </div>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
                   href="https://cal.com/mralamin/discovery-call"

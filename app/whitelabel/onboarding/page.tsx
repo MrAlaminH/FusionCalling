@@ -10,6 +10,8 @@ import { primaryButton, secondaryButton } from "@/components/ui/button-styles";
 import { buildOpenGraph, breadcrumbSchema, faqSchema, webPageSchema } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site-url";
 import { WHOLESALE_PLANS } from "@/lib/product-facts";
+import { PRODUCT_TUTORIAL_VIDEO, videoObjectSchema } from "@/lib/videos";
+import VideoEmbed from "@/components/video-embed";
 
 const title = "White-Label Partner Onboarding Guide";
 const description =
@@ -208,6 +210,7 @@ const schema = {
       `${SITE_URL}/whitelabel/onboarding#breadcrumb`,
     ),
     faqSchema(onboardingFaqs, `${SITE_URL}/whitelabel/onboarding#faqpage`),
+    videoObjectSchema(PRODUCT_TUTORIAL_VIDEO, "/whitelabel/onboarding"),
   ],
 };
 
@@ -486,6 +489,17 @@ export default function OnboardingPage({
               highlight="Your Call"
               subtitle="Most partners finish with the guides alone. If you'd rather watch it done once, we're one click away."
             />
+            <div className="max-w-3xl mx-auto mb-8 sm:mb-10">
+              <VideoEmbed
+                videoId={PRODUCT_TUTORIAL_VIDEO.id}
+                title={PRODUCT_TUTORIAL_VIDEO.title}
+                duration="11 min"
+              />
+              <p className="mt-3 text-center text-xs sm:text-sm text-gray-500">
+                Watch it done once: the full platform walkthrough, from account
+                setup to first live call.
+              </p>
+            </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto">
               <Reveal>
                 <div className="glass-light rounded-xl p-6 md:p-8 border border-brand/20 h-full flex flex-col">

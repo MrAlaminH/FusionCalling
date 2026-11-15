@@ -5,6 +5,11 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { SITE_URL, CONTENT_LAST_UPDATED } from "@/lib/site-url";
 import { DIRECT_PLANS, OFFER, type DirectPlan } from "@/lib/product-facts";
+import {
+  PRODUCT_TUTORIAL_VIDEO,
+  videoObjectSchema,
+} from "@/lib/videos";
+import VideoEmbed from "@/components/video-embed";
 
 const PricingSection = dynamic(() => import("@/components/pricing-section"), { ssr: true });
 
@@ -158,6 +163,7 @@ const pricingJsonLd = {
       breadcrumb: { "@id": `${SITE_URL}/pricing#breadcrumb` },
     },
     ...productNodes,
+    videoObjectSchema(PRODUCT_TUTORIAL_VIDEO, "/pricing"),
     {
       "@type": "FAQPage",
       "@id": `${SITE_URL}/pricing#faqpage`,
@@ -218,6 +224,19 @@ export default function PricingPage() {
       <main id="main" className="min-h-screen w-full bg-black">
         <Navbar />
         <PricingSection headingLevel="h1" />
+        <section className="w-full bg-black pb-4">
+          <div className="container mx-auto px-4 md:px-6 max-w-3xl">
+            <VideoEmbed
+              videoId={PRODUCT_TUTORIAL_VIDEO.id}
+              title={PRODUCT_TUTORIAL_VIDEO.title}
+              duration="11 min"
+            />
+            <p className="mt-3 text-center text-xs sm:text-sm text-gray-500">
+              New here? Watch the full platform walkthrough (11 min) before
+              picking a plan.
+            </p>
+          </div>
+        </section>
         <section id="pricing-faq" className="w-full section-spacing bg-black text-gray-200" aria-labelledby="pricing-faq-heading">
           <div className="container mx-auto px-4 md:px-6 max-w-4xl">
             <h2 id="pricing-faq-heading" className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-brand mb-8 md:mb-10 text-center">

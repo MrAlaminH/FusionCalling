@@ -8,6 +8,11 @@ import PostFaq from "@/components/blog/PostFaq";
 import CTA from "@/components/white-label/CTA";
 import { buildOpenGraph } from "@/lib/seo";
 import { WHOLESALE_PLANS } from "@/lib/product-facts";
+import {
+  AGENCY_WHITE_LABEL_VIDEO,
+  videoObjectSchema,
+} from "@/lib/videos";
+import VideoEmbed from "@/components/video-embed";
 
 const title = "AI Voice Agent Reseller Program";
 const description =
@@ -184,6 +189,7 @@ const rpSchema = {
         acceptedAnswer: { "@type": "Answer", text: f.answer },
       })),
     },
+    videoObjectSchema(AGENCY_WHITE_LABEL_VIDEO, "/whitelabel/reseller-program"),
   ],
 };
 
@@ -271,6 +277,17 @@ export default function ResellerProgramPage() {
               <a href="#rp-pricing" className={secondaryButton}>
                 View Partner Pricing
               </a>
+            </div>
+            <div className="mt-12 sm:mt-14 max-w-3xl mx-auto">
+              <VideoEmbed
+                videoId={AGENCY_WHITE_LABEL_VIDEO.id}
+                title={AGENCY_WHITE_LABEL_VIDEO.title}
+                duration="2 min"
+              />
+              <p className="mt-3 text-center text-xs sm:text-sm text-gray-500">
+                Watch how agencies resell white-label AI receptionists with
+                Fusion Calling.
+              </p>
             </div>
           </div>
         </section>

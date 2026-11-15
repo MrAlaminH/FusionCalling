@@ -8,6 +8,11 @@ import { breadcrumbSchema, faqSchema, webPageSchema } from "@/lib/seo";
 import { buildOpenGraph } from "@/lib/seo";
 import { WHOLESALE_STARTER } from "@/lib/product-facts";
 import {
+  AGENCY_WHITE_LABEL_VIDEO,
+  videoObjectSchema,
+} from "@/lib/videos";
+import VideoEmbed from "@/components/video-embed";
+import {
   whitelabelCompareRows,
   whitelabelPlatforms,
 } from "@/lib/whitelabel-compare";
@@ -72,6 +77,7 @@ export default function WhitelabelComparePage() {
         `${SITE_URL}/whitelabel/compare#breadcrumb`
       ),
       faqSchema(COMPARE_FAQS, `${SITE_URL}/whitelabel/compare#faqpage`),
+      videoObjectSchema(AGENCY_WHITE_LABEL_VIDEO, "/whitelabel/compare"),
     ],
   };
 
@@ -187,6 +193,27 @@ export default function WhitelabelComparePage() {
               so — our strengths are multi-provider coverage, BYO API keys,
               sub-account capacity, and a 24-hour guided launch.
             </p>
+          </div>
+        </section>
+
+        {/* See it in action — video tour after the table */}
+        <section className="w-full bg-black section-spacing">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+            <div className="text-center mb-10 md:mb-12">
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
+                See the platform in action
+              </h2>
+              <p className="text-gray-400 text-base sm:text-lg max-w-3xl mx-auto">
+                A two-minute tour of the white-label portal agencies resell
+                with — your branding, your pricing, client sub-accounts
+                included.
+              </p>
+            </div>
+            <VideoEmbed
+              videoId={AGENCY_WHITE_LABEL_VIDEO.id}
+              title={AGENCY_WHITE_LABEL_VIDEO.title}
+              duration="2 min"
+            />
           </div>
         </section>
 

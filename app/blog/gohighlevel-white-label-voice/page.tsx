@@ -4,6 +4,7 @@ import { getAuthor } from "@/lib/authors";
 import { getBlogPost } from "@/lib/blog-posts";
 import { blogFaqs } from "@/lib/blog-faqs";
 import { buildBlogGraph, buildPostMetadata } from "@/lib/blog-schema";
+import { AGENCY_WHITE_LABEL_VIDEO } from "@/lib/videos";
 import PostLayout from "@/components/blog/PostLayout";
 
 /* eslint-disable react/no-unescaped-entities */
@@ -41,6 +42,7 @@ export default function GoHighLevelBlogPost() {
 
       <PostLayout
         post={post}
+        heroVideo={AGENCY_WHITE_LABEL_VIDEO}
         titleLead="Adding Voice AI to Your"
         titleHighlight="GoHighLevel Agency"
         dek={

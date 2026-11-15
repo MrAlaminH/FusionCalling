@@ -13,6 +13,11 @@ import { CommonWorkflowsSection } from "./components/common-workflows";
 import { QuickReferenceSection } from "./components/quick-reference";
 import { buildOpenGraph } from "@/lib/seo";
 import { SITE_URL } from "@/lib/site-url";
+import {
+  AGENCY_WHITE_LABEL_VIDEO,
+  videoObjectSchema,
+} from "@/lib/videos";
+import VideoEmbed from "@/components/video-embed";
 
 const title = "White-Label Admin Guide for Agencies";
 const description =
@@ -124,6 +129,7 @@ export default function AdminSectionPage() {
                   "@id": `${SITE_URL}/#service`,
                 },
               },
+              videoObjectSchema(AGENCY_WHITE_LABEL_VIDEO, "/docs/admin-section"),
             ],
           }),
         }}
@@ -141,6 +147,19 @@ export default function AdminSectionPage() {
               readingTime={12}
               steps={navItems.length}
             />
+
+            {/* Video walkthrough — the white-label portal this guide covers */}
+            <div className="mb-12 md:mb-14">
+              <VideoEmbed
+                videoId={AGENCY_WHITE_LABEL_VIDEO.id}
+                title={AGENCY_WHITE_LABEL_VIDEO.title}
+                duration="2 min"
+              />
+              <p className="mt-3 text-center text-xs sm:text-sm text-gray-500">
+                Prefer video? Watch the white-label portal walkthrough before
+                diving in.
+              </p>
+            </div>
 
             {/* Sections */}
             <IntroductionSection />

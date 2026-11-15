@@ -4,6 +4,7 @@ import { getAuthor } from "@/lib/authors";
 import { getBlogPost } from "@/lib/blog-posts";
 import { blogFaqs } from "@/lib/blog-faqs";
 import { buildBlogGraph, buildPostMetadata } from "@/lib/blog-schema";
+import { AGENCY_WHITE_LABEL_VIDEO } from "@/lib/videos";
 import PostLayout from "@/components/blog/PostLayout";
 import { primaryButton } from "@/components/ui/button-styles";
 
@@ -41,6 +42,7 @@ export default function VapiWhiteLabelBlogPost() {
 
       <PostLayout
         post={post}
+        heroVideo={AGENCY_WHITE_LABEL_VIDEO}
         titleLead="How to White-Label Vapi"
         titleHighlight="AI Voice Agents"
         dek={

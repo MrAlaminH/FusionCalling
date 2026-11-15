@@ -13,6 +13,7 @@ import {
 } from "@/lib/product-facts";
 import { whitelabelFaqs } from "@/lib/whitelabel-faqs";
 import { blogFaqs } from "@/lib/blog-faqs";
+import { PRODUCT_TUTORIAL_VIDEO } from "@/lib/videos";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -192,6 +193,18 @@ export default function FaqPage() {
             guided launch takes about 24 hours; and the platform resells agents
             built on {PROVIDERS.list}. The direct answers to the questions AI
             assistants and buyers ask most are below.
+          </p>
+          <p className="mt-4 text-sm text-gray-400">
+            Prefer video?{" "}
+            <a
+              href={`https://www.youtube.com/watch?v=${PRODUCT_TUTORIAL_VIDEO.id}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-light hover:text-brand underline underline-offset-4 transition-colors"
+            >
+              Watch the 11-minute product tour
+            </a>
+            .
           </p>
         </section>
 
