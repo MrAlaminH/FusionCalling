@@ -94,6 +94,12 @@ const featuredBadges = [
     img: "https://twelve.tools/badge0-white.svg",
     alt: "Featured on Twelve Tools",
   },
+  {
+    name: "neeed.directory",
+    href: "https://neeed.directory",
+    img: "https://neeed.directory/badges/neeed-badge-dark.svg",
+    alt: "Featured on neeed.directory",
+  },
 ];
 
 function FooterLinkItem({ link }: { link: FooterLink }) {
