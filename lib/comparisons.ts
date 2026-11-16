@@ -4699,21 +4699,21 @@ export function getRelatedComparisons(slug: string, limit = 3): Comparison[] {
 /**
  * Display order for every surface that renders `comparisons` (the /alternative
  * hub matrix, cards, and ItemList schema, plus the related-comparisons
- * fallback). Anchored by closeness to Fusion Calling: the most similar
- * products — white-label reseller layers with multi-provider import and
- * client rebilling — rank first, so readers weigh us against our nearest
- * rivals before tapering to distant categories. check-data.ts enforces full
- * coverage (every slug exactly once).
+ * fallback). Owner-directed conversion order (2026-11-16): platforms Fusion
+ * demonstrably beats lead the hub, and VoiceAIWrapper — the strongest rival
+ * (5 providers, BYO keys, $29 entry) — is deliberately LAST. That trailing
+ * slot is an owner call, not an oversight; keep it in sync with the table
+ * order in lib/whitelabel-compare.ts. check-data.ts enforces full coverage
+ * (every slug exactly once).
  */
 export const DISPLAY_ORDER: string[] = [
-  // Direct substitutes: white-label reseller layer over Vapi/Retell/ElevenLabs
-  "voiceaiwrapper",
+  // Lead: white-label platforms Fusion demonstrably beats (owner pick)
   "chatdash",
+  "thinkrr",
   "vapify",
   "voicerr",
-  // Near: agency-targeted white-label on proprietary / single engines
   "synthflow",
-  "thinkrr",
+  // Agency-adjacent tools
   "famulor",
   "gohighlevel",
   // Engines: developer / BYO platforms (different category, high search demand)
@@ -4721,7 +4721,7 @@ export const DISPLAY_ORDER: string[] = [
   "retell",
   "bland-ai",
   "elevenlabs",
-  // Far: end-user products and unclear-resale tools
+  // End-user products and unclear-resale tools
   "air-ai",
   "voiceflow",
   "verloop",
@@ -4733,6 +4733,8 @@ export const DISPLAY_ORDER: string[] = [
   "birdcall",
   "voicestamp",
   "voicelate",
+  // Deliberately last: strongest rival, buried per owner call (2026-11-16)
+  "voiceaiwrapper",
 ];
 
 const displayRank = (slug: string): number => {

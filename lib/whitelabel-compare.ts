@@ -48,26 +48,11 @@ export const whitelabelPlatforms: WhitelabelComparePlatform[] = [
       trial: `${OFFER.trial} free trial`,
     },
   },
-  // Ordered by closeness to Fusion Calling: multi-provider resell layers with
-  // rebilling first, then self-serve white-label on proprietary engines, then
-  // usage/enterprise tiers where white-label is gated or contractual.
-  {
-    name: "VoiceAIWrapper",
-    emoji: "🎚️",
-    blurb:
-      "Mature self-serve resell layer with 5 providers, BYO keys, and Stripe rebilling. Advertises SOC 2 with a HIPAA BAA on its Pro tier (verify before committing).",
-    href: "/alternative/voiceaiwrapper",
-    cells: {
-      startingPrice: "$29/mo (Starter)",
-      subAccounts:
-        "5 client accounts on Growth (+$12–15/extra); unlimited on higher tiers",
-      branding: "Yes — white-label client portals",
-      providers: "Vapi, Retell, ElevenLabs, Bolna, Ultravox",
-      billing: "Stripe rebilling + external billing",
-      byoKeys: "Yes — BYO keys (Vapi, Retell)",
-      trial: "Not published",
-    },
-  },
+  // Owner-directed display order (2026-11-16): platforms Fusion demonstrably
+  // beats lead the table so the highlighted column reads strongest, and the
+  // strongest rival (VoiceAIWrapper — 5 providers, BYO keys, $29 entry) is
+  // deliberately placed LAST. Not sorted by closeness or price — do not
+  // reorder without the owner's say-so.
   {
     name: "ChatDash",
     emoji: "💬",
@@ -80,39 +65,6 @@ export const whitelabelPlatforms: WhitelabelComparePlatform[] = [
       branding: "Yes — white-label for agencies",
       providers: "Retell, Vapi, ElevenLabs",
       billing: "Native Stripe + outcome-based billing",
-      byoKeys: "Not published",
-      trial: "Not published",
-    },
-  },
-  {
-    name: "Vapify",
-    emoji: "⚡",
-    blurb:
-      "Lowest-cost Vapi-focused white-label wrapper (officially listed in Vapi's docs as a white-label platform for Vapi). Best for solo operators running a single Vapi client.",
-    href: "/alternative/vapify",
-    cells: {
-      startingPrice: "From ~$29/mo (1 sub-account)",
-      subAccounts:
-        "1 at entry; ~$149/mo Scale; unlimited via ~$399/mo Partner plan (sales call)",
-      branding: "Yes — white-label wrapper for Vapi",
-      providers: "Vapi only",
-      billing: "Not published",
-      byoKeys: "Not published",
-      trial: "14-day trial",
-    },
-  },
-  {
-    name: "Voicerr AI",
-    emoji: "📞",
-    blurb:
-      "Budget bundle wrapping Vapi and Retell with a website builder, lead finder, workflows, and multi-currency client billing.",
-    href: "/alternative/voicerr",
-    cells: {
-      startingPrice: "$28/mo Pro (annual billing)",
-      subAccounts: "Unlimited clients and assistants",
-      branding: "Yes — white-label websites and portal",
-      providers: "Vapi + Retell (ElevenLabs announced)",
-      billing: "Stripe automation, multi-currency",
       byoKeys: "Not published",
       trial: "Not published",
     },
@@ -165,6 +117,39 @@ export const whitelabelPlatforms: WhitelabelComparePlatform[] = [
     },
   },
   {
+    name: "Vapify",
+    emoji: "⚡",
+    blurb:
+      "Lowest-cost Vapi-focused white-label wrapper (officially listed in Vapi's docs as a white-label platform for Vapi). Best for solo operators running a single Vapi client.",
+    href: "/alternative/vapify",
+    cells: {
+      startingPrice: "From ~$29/mo (1 sub-account)",
+      subAccounts:
+        "1 at entry; ~$149/mo Scale; unlimited via ~$399/mo Partner plan (sales call)",
+      branding: "Yes — white-label wrapper for Vapi",
+      providers: "Vapi only",
+      billing: "Not published",
+      byoKeys: "Not published",
+      trial: "14-day trial",
+    },
+  },
+  {
+    name: "Voicerr AI",
+    emoji: "📞",
+    blurb:
+      "Budget bundle wrapping Vapi and Retell with a website builder, lead finder, workflows, and multi-currency client billing.",
+    href: "/alternative/voicerr",
+    cells: {
+      startingPrice: "$28/mo Pro (annual billing)",
+      subAccounts: "Unlimited clients and assistants",
+      branding: "Yes — white-label websites and portal",
+      providers: "Vapi + Retell (ElevenLabs announced)",
+      billing: "Stripe automation, multi-currency",
+      byoKeys: "Not published",
+      trial: "Not published",
+    },
+  },
+  {
     name: "Synthflow",
     emoji: "🌊",
     blurb:
@@ -194,6 +179,23 @@ export const whitelabelPlatforms: WhitelabelComparePlatform[] = [
       providers: "Usage-based proprietary engine",
       billing: "Usage-based (~$0.09/min overage)",
       byoKeys: "Not published",
+      trial: "Not published",
+    },
+  },
+  {
+    name: "VoiceAIWrapper",
+    emoji: "🎚️",
+    blurb:
+      "Mature self-serve resell layer with 5 providers, BYO keys, and Stripe rebilling. Advertises SOC 2 with a HIPAA BAA on its Pro tier (verify before committing).",
+    href: "/alternative/voiceaiwrapper",
+    cells: {
+      startingPrice: "$29/mo (Starter)",
+      subAccounts:
+        "5 client accounts on Growth (+$12–15/extra); unlimited on higher tiers",
+      branding: "Yes — white-label client portals",
+      providers: "Vapi, Retell, ElevenLabs, Bolna, Ultravox",
+      billing: "Stripe rebilling + external billing",
+      byoKeys: "Yes — BYO keys (Vapi, Retell)",
       trial: "Not published",
     },
   },
