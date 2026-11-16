@@ -216,13 +216,8 @@ export default function BestAIReceptionistsSmallBusinessBlogPost() {
               3. Smith.ai — best for law firms and human-handled intake
             </h2>
             <p className="text-gray-300 leading-relaxed mb-4">
-              <strong><a
-                href="https://smith.ai/pricing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-brand-light hover:text-brand transition-colors underline decoration-brand/40"
-              >Starter plan $300/mo for 30 calls, $11.50/call overage;
-              larger plans scale to $2,100/mo for 300 calls</a>. As of October
+              <strong>Starter plan $300/mo for 30 calls, $11.50/call overage;
+              larger plans scale to $2,100/mo for 300 calls. As of October
               2026.</strong>
             </p>
             <p className="text-gray-300 leading-relaxed mb-4">
@@ -246,13 +241,8 @@ export default function BestAIReceptionistsSmallBusinessBlogPost() {
               4. Ruby — best for live-human coverage with AI assists
             </h2>
             <p className="text-gray-300 leading-relaxed mb-4">
-              <strong><a
-                href="https://ruby.com/pricing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-brand-light hover:text-brand transition-colors underline decoration-brand/40"
-              >From $250/mo for 50 minutes, up to $1,725/mo for 500
-              minutes</a>. No setup fees. As of October 2026.</strong>
+              <strong>From $250/mo for 50 minutes, up to $1,725/mo for 500
+              minutes. No setup fees. As of October 2026.</strong>
             </p>
             <p className="text-gray-300 leading-relaxed mb-4">
               Ruby is the human benchmark on this list rather than a pure AI
@@ -310,16 +300,8 @@ export default function BestAIReceptionistsSmallBusinessBlogPost() {
             <p className="text-gray-300 leading-relaxed">
               <strong>Limits:</strong> this is infrastructure, not a product —
               expect to build dashboards, branding, and client billing yourself.
-              HIPAA compliance is a $2,000/mo add-on (per{" "}
-              <a
-                href="https://vapi.ai/pricing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-brand-light hover:text-brand transition-colors underline decoration-brand/40"
-              >
-                Vapi&apos;s pricing page
-              </a>
-              ), and the optional Core success package adds $29/mo.
+              HIPAA compliance is a $2,000/mo add-on (per Vapi&apos;s
+              published pricing), and the optional Core success package adds $29/mo.
             </p>
           </div>
 

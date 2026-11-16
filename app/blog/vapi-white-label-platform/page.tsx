@@ -101,14 +101,7 @@ export default function VapiWhiteLabelBlogPost() {
               clients for under your own brand, you need a layer on top. That
               layer is exactly why partner platforms exist: Vapi&apos;s own
               documentation lists{" "}
-              <a
-                href="https://docs.vapi.ai/providers/vapify"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-brand-light hover:text-brand transition-colors underline decoration-brand/40"
-              >
-                white-label platforms built on its API
-              </a>{" "}
+              white-label platforms built on its API{" "}
               (Vapify, Voicerr, ChatDash — and{" "}
               <Link href="/whitelabel/vapi" className="text-brand-light hover:text-brand transition-colors">
                 Fusion Calling&apos;s white-label Vapi platform
