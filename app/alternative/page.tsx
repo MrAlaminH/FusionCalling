@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { comparisons } from "@/lib/comparisons";
+import { whitelabelPlatforms } from "@/lib/whitelabel-compare";
 import { SITE_URL } from "@/lib/site-url";
 import { breadcrumbSchema, buildOpenGraph, faqSchema, itemListSchema } from "@/lib/seo";
 import { LAUNCH, PROVIDERS, WHOLESALE_STARTER } from "@/lib/product-facts";
@@ -66,6 +67,11 @@ const matrixFeatures = [
     fusion: PROVIDERS.plus,
   },
   {
+    key: "byo",
+    label: "BYO API Keys",
+    fusion: "Yes — BYO API keys",
+  },
+  {
     key: "onboarding",
     label: "Onboarding Model",
     fusion: `Guided, ${LAUNCH.guided}`,
@@ -79,12 +85,23 @@ const matrixRows = comparisons.map((c) => {
     (r) => r.label === "Voice providers supported",
   );
   const onboarding = c.comparisonRows.find((r) => r.label === "Onboarding model");
+  // BYO API Keys: reuse the researched cells from lib/whitelabel-compare.ts
+  // (single source of truth, matched by platform name). Vapi is a BYO-models
+  // engine per its own comparison copy. Everything else isn't verified from
+  // public sources — same "Not published" convention as /whitelabel/compare
+  // (never a bare "—", which would imply the feature is missing).
+  const byo = whitelabelPlatforms.find(
+    (p) => p.name === c.competitorName,
+  )?.cells.byoKeys;
   return {
     slug: c.slug,
     name: c.competitorName,
     emoji: c.heroEmoji,
     entry: entry?.competitor ?? "—",
     providers: providers?.competitor ?? "—",
+    byo:
+      byo ??
+      (c.slug === "vapi" ? "Yes — BYO models" : "Not published"),
     onboarding: onboarding?.competitor ?? "—",
   };
 });
