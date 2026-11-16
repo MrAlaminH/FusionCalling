@@ -186,11 +186,12 @@ export default function WhitelabelComparePage() {
               </div>
             </div>
             <p className="mt-6 text-center text-xs sm:text-sm text-gray-500 max-w-3xl mx-auto leading-relaxed">
-              Pricing and plans verified November 2026. &quot;Not
-              published&quot; means we couldn&apos;t verify a figure from
+              Pricing and plans verified November 2026 against each
+              vendor&apos;s own site. &quot;Not published&quot; / &quot;Not
+              documented&quot; means we couldn&apos;t verify a figure from
               public sources — confirm with the vendor. Where a competitor
-              wins a dimension (e.g. VoiceAIWrapper&apos;s $29 entry), we say
-              so — our strengths are multi-provider coverage, BYO API keys,
+              wins a dimension (e.g. Vapify&apos;s $29 entry), we say so —
+              our strengths are multi-provider coverage, BYO API keys,
               sub-account capacity, and a 24-hour guided launch.
             </p>
           </div>
