@@ -49,6 +49,29 @@ const alternativeFaqs = [
     answer: "Prior-authorization calls are high-volume, repetitive outbound work — well-suited to AI agents. Compare platforms on healthcare workflow support, CRM integration, consent and recording compliance, and per-call economics. Fusion Calling supports consent-aware outbound campaigns with CRM logging from $149/month, and agencies serving clinics typically white-label it at their own pricing. Verify PHI/HIPAA handling requirements with any vendor before deploying.",
   },
 ];
+// Vertical feature-matrix rows — same layout as /whitelabel/compare: feature
+// rows down the side, platform columns across, Fusion highlighted first.
+// Platform columns come from matrixRows (DISPLAY_ORDER); Fusion's column
+// comes from product-facts so the hub can never contradict /pricing or the
+// comparison pages it links to.
+const matrixFeatures = [
+  {
+    key: "entry",
+    label: "Starting Monthly Cost",
+    fusion: `$${WHOLESALE_STARTER.price}/mo (${WHOLESALE_STARTER.subAccounts} sub-accounts)`,
+  },
+  {
+    key: "providers",
+    label: "Voice Providers Supported",
+    fusion: PROVIDERS.plus,
+  },
+  {
+    key: "onboarding",
+    label: "Onboarding Model",
+    fusion: `Guided, ${LAUNCH.guided}`,
+  },
+] as const;
+
 // Compact at-a-glance matrix values per competitor (kept short for the table).
 const matrixRows = comparisons.map((c) => {
   const entry = c.comparisonRows.find((r) => r.label === "Starting monthly cost");
@@ -153,7 +176,7 @@ export default function CompareHubPage() {
             </h2>
             <p className="text-gray-400 text-center mb-8 max-w-2xl mx-auto">
               A quick overview of the main players and what they cost. Click
-              any name for the full breakdown — or see the{" "}
+              any platform for the full breakdown — or see the{" "}
               <Link
                 href="/ai-receptionist-pricing"
                 className="text-brand-light hover:text-brand underline underline-offset-4"
@@ -163,60 +186,60 @@ export default function CompareHubPage() {
               for the market-wide entry-price table.
             </p>
 
-            <div className="glass rounded-3xl p-4 md:p-8 border border-brand/20 overflow-x-auto">
-              <table className="w-full border-collapse min-w-[640px]">
-                <thead>
-                  <tr className="border-b border-gray-800">
-                    <th className="text-left py-4 px-4 text-gray-300 font-bold">
-                      Platform
-                    </th>
-                    <th className="text-left py-4 px-4 text-gray-300 font-bold">
-                      Entry Price
-                    </th>
-                    <th className="text-left py-4 px-4 text-gray-300 font-bold">
-                      Providers
-                    </th>
-                    <th className="text-left py-4 px-4 text-gray-300 font-bold">
-                      Onboarding
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="text-gray-300">
-                  {matrixRows.map((row) => (
-                    <tr key={row.slug} className="border-b border-gray-800/60">
-                      <td className="py-4 px-4">
-                        <Link
-                          href={`/alternative/${row.slug}`}
-                          className="flex items-center gap-3 text-white hover:text-brand-light transition-colors"
+            <div className="glass rounded-3xl p-4 md:p-8 border border-brand/20">
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse">
+                  <thead>
+                    <tr className="border-b border-gray-800">
+                      <th className="sticky left-0 bg-black px-4 py-3 text-left text-xs font-bold uppercase tracking-wider text-gray-300 min-w-[140px]">
+                        Platform
+                      </th>
+                      <th className="bg-gradient-to-r from-brand/20 to-brand/10 px-4 py-3 text-center text-xs font-bold uppercase tracking-wider text-brand-light min-w-[150px]">
+                        <span className="mr-1">🚀</span> Fusion Calling
+                      </th>
+                      {matrixRows.map((row) => (
+                        <th
+                          key={row.slug}
+                          className="px-4 py-3 text-center text-xs font-bold uppercase tracking-wider text-gray-400 min-w-[130px]"
                         >
-                          <span className="text-xl">{row.emoji}</span>
-                          <span className="font-medium">{row.name}</span>
-                        </Link>
-                      </td>
-                      <td className="py-4 px-4 text-gray-400">{row.entry}</td>
-                      <td className="py-4 px-4 text-gray-400">{row.providers}</td>
-                      <td className="py-4 px-4 text-gray-500">{row.onboarding}</td>
+                          <Link
+                            href={`/alternative/${row.slug}`}
+                            className="hover:text-brand-light transition-colors"
+                          >
+                            <span className="mr-1">{row.emoji}</span>
+                            {row.name}
+                          </Link>
+                        </th>
+                      ))}
                     </tr>
-                  ))}
-                  <tr className="bg-gradient-to-r from-brand/10 to-brand-strong/5">
-                    <td className="py-4 px-4">
-                      <span className="flex items-center gap-3 text-white font-bold">
-                        <span className="text-xl">🚀</span>
-                        <span>Fusion Calling</span>
-                      </span>
-                    </td>
-                    <td className="py-4 px-4 text-brand-light font-medium">
-                      ${WHOLESALE_STARTER.price}/mo ({WHOLESALE_STARTER.subAccounts} sub-accounts)
-                    </td>
-                    <td className="py-4 px-4 text-brand-light font-medium">
-                      {PROVIDERS.plus}
-                    </td>
-                    <td className="py-4 px-4 text-brand-light font-bold">
-                      Guided, {LAUNCH.guided}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody className="divide-y divide-gray-800/60">
+                    {matrixFeatures.map((feature, i) => (
+                      <tr
+                        key={feature.label}
+                        className={
+                          i % 2 === 0 ? "bg-white/[0.02]" : "bg-transparent"
+                        }
+                      >
+                        <td className="sticky left-0 bg-black px-4 py-3 text-sm font-medium text-white whitespace-nowrap">
+                          {feature.label}
+                        </td>
+                        <td className="bg-gradient-to-r from-brand/10 to-brand/5 px-4 py-3 text-center text-sm text-brand-light font-semibold">
+                          {feature.fusion}
+                        </td>
+                        {matrixRows.map((row) => (
+                          <td
+                            key={row.slug}
+                            className="px-4 py-3 text-center text-sm text-gray-400"
+                          >
+                            {row[feature.key]}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
 
