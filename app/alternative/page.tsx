@@ -89,6 +89,21 @@ const matrixRows = comparisons.map((c) => {
   };
 });
 
+// Owner call 2026-11-16: engines (Bland AI, Retell AI, ElevenLabs) and
+// GoHighLevel are not platforms buyers weigh Fusion Calling against, so their
+// columns are dropped from the at-a-glance table only. Their comparison pages
+// and the cards below stay untouched — those pages rank and still need the
+// internal links.
+const TABLE_EXCLUDED = new Set([
+  "bland-ai",
+  "retell",
+  "gohighlevel",
+  "elevenlabs",
+]);
+const matrixColumns = matrixRows.filter(
+  (row) => !TABLE_EXCLUDED.has(row.slug),
+);
+
 export default function CompareHubPage() {
   // Fusion's own matrix row is sourced from lib/product-facts so the hub can
   // never contradict the detailed comparison pages it links to.
@@ -197,7 +212,7 @@ export default function CompareHubPage() {
                       <th className="bg-gradient-to-r from-brand/20 to-brand/10 px-4 py-3 text-center text-xs font-bold uppercase tracking-wider text-brand-light min-w-[150px]">
                         <span className="mr-1">🚀</span> Fusion Calling
                       </th>
-                      {matrixRows.map((row) => (
+                      {matrixColumns.map((row) => (
                         <th
                           key={row.slug}
                           className="px-4 py-3 text-center text-xs font-bold uppercase tracking-wider text-gray-400 min-w-[130px]"
@@ -227,7 +242,7 @@ export default function CompareHubPage() {
                         <td className="bg-gradient-to-r from-brand/10 to-brand/5 px-4 py-3 text-center text-sm text-brand-light font-semibold">
                           {feature.fusion}
                         </td>
-                        {matrixRows.map((row) => (
+                        {matrixColumns.map((row) => (
                           <td
                             key={row.slug}
                             className="px-4 py-3 text-center text-sm text-gray-400"
