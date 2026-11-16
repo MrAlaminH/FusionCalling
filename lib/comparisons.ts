@@ -110,7 +110,11 @@ export const FUSION_ECONOMICS_POINTS = [
   `Launch your branded agency in ${LAUNCH.guided} with ${LAUNCH.supportWindow} support`,
 ];
 
-export const comparisons: Comparison[] = [
+// Authoring order below is irrelevant to display. The exported `comparisons`
+// (bottom of this file) is sorted into DISPLAY_ORDER — closest-to-Fusion
+// platforms first — which drives the /alternative hub matrix + cards +
+// ItemList schema and the related-comparisons fallback.
+const rawComparisons: Comparison[] = [
   {
     slug: "chatdash",
     related: ["vapify", "voicerr", "synthflow"],
@@ -4691,3 +4695,53 @@ export function getRelatedComparisons(slug: string, limit = 3): Comparison[] {
   const fillers = comparisons.filter((c) => !seen.has(c.slug));
   return [...curated, ...fillers].slice(0, limit);
 }
+
+/**
+ * Display order for every surface that renders `comparisons` (the /alternative
+ * hub matrix, cards, and ItemList schema, plus the related-comparisons
+ * fallback). Anchored by closeness to Fusion Calling: the most similar
+ * products — white-label reseller layers with multi-provider import and
+ * client rebilling — rank first, so readers weigh us against our nearest
+ * rivals before tapering to distant categories. check-data.ts enforces full
+ * coverage (every slug exactly once).
+ */
+export const DISPLAY_ORDER: string[] = [
+  // Direct substitutes: white-label reseller layer over Vapi/Retell/ElevenLabs
+  "voiceaiwrapper",
+  "chatdash",
+  "vapify",
+  "voicerr",
+  // Near: agency-targeted white-label on proprietary / single engines
+  "synthflow",
+  "thinkrr",
+  "famulor",
+  "gohighlevel",
+  // Engines: developer / BYO platforms (different category, high search demand)
+  "vapi",
+  "retell",
+  "bland-ai",
+  "elevenlabs",
+  // Far: end-user products and unclear-resale tools
+  "air-ai",
+  "voiceflow",
+  "verloop",
+  "smith-ai",
+  "goodcall",
+  "podium",
+  "aioncalls",
+  "drop-cowboy",
+  "birdcall",
+  "voicestamp",
+  "voicelate",
+];
+
+const displayRank = (slug: string): number => {
+  const i = DISPLAY_ORDER.indexOf(slug);
+  // Unlisted slugs sort last (stable sort keeps authoring order) so a newly
+  // added comparison still renders; check-data.ts flags missing coverage.
+  return i === -1 ? DISPLAY_ORDER.length : i;
+};
+
+export const comparisons: Comparison[] = [...rawComparisons].sort(
+  (a, b) => displayRank(a.slug) - displayRank(b.slug),
+);

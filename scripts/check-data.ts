@@ -4,7 +4,7 @@
  */
 import { readFileSync, readdirSync } from "node:fs";
 import assert from "node:assert/strict";
-import { comparisons } from "../lib/comparisons";
+import { comparisons, DISPLAY_ORDER } from "../lib/comparisons";
 import {
   blogPosts,
   blogPostsByDate,
@@ -14,6 +14,7 @@ import {
 import { blogFaqs } from "../lib/blog-faqs";
 import { authors } from "../lib/authors";
 import { whitelabelProviders } from "../lib/whitelabel-providers";
+import { whitelabelPlatforms } from "../lib/whitelabel-compare";
 import {
   DIRECT_PLANS,
   FEATURE_UPDATES,
@@ -38,6 +39,36 @@ for (const c of comparisons) {
     );
   }
 }
+
+// Hub display order must cover every comparison exactly once — a typo'd or
+// missing slug would silently misorder the /alternative hub (the sort is
+// failure-soft by design, so the coverage gap is caught here instead).
+{
+  const seen = new Set<string>();
+  for (const slug of DISPLAY_ORDER) {
+    assert(
+      comparisons.some((c) => c.slug === slug),
+      `DISPLAY_ORDER: unknown comparison slug "${slug}"`
+    );
+    assert(!seen.has(slug), `DISPLAY_ORDER: duplicate slug "${slug}"`);
+    seen.add(slug);
+  }
+  const missing = comparisons
+    .map((c) => c.slug)
+    .filter((slug) => !seen.has(slug));
+  assert.equal(
+    missing.length,
+    0,
+    `DISPLAY_ORDER: missing slugs — ${missing.join(", ")}`
+  );
+}
+
+// /whitelabel/compare slices [0] as the highlighted Fusion column — keep it
+// anchored first.
+assert(
+  whitelabelPlatforms[0]?.isFusion === true,
+  "whitelabelPlatforms[0] must be the Fusion Calling entry (page slices [0] as the highlighted column)"
+);
 
 // Benchmarks exist only for the competitors with comparable internal data.
 const BENCHMARKED = [
