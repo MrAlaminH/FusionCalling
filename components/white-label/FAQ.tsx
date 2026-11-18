@@ -70,10 +70,10 @@ export default function FAQ() {
             </Link>{" "}
             or{" "}
             <Link
-              href="/pricing"
+              href="/whitelabel#pricing"
               className="text-brand hover:text-brand-light underline-offset-4 hover:underline transition-colors"
             >
-              see white-label AI voice agent pricing
+              see partner pricing
             </Link>
             .
           </p>

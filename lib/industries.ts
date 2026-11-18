@@ -54,7 +54,7 @@ export type Industry = {
 const sharedWhyFusion: IndustryAdvantage[] = [
   {
     emoji: "⚡",
-    title: "Launch in Days, Not Months",
+    title: "Launch in Hours, Not Months",
     description:
       "Pre-built agent templates and a guided setup get your first client live in 24 hours with a fully branded portal.",
   },
@@ -104,7 +104,7 @@ export const industries: Industry[] = [
       "Never miss a buyer or seller lead again. AI voice agents answer instantly, qualify prospects, and book showings around the clock.",
     intro: [
       "Real estate is a speed business. The agent who responds first usually wins the listing or the buyer, yet most inquiries arrive outside business hours when teams are showing homes or asleep. AI voice agents close that gap by answering every call instantly, qualifying the lead, and booking a showing directly into the calendar.",
-      "With Fusion Calling, brokerages and the agencies that serve them can deploy a branded AI voice agent in days, one that handles inbound inquiries, outbound follow-up, and after-hours coverage without adding headcount.",
+      "With Fusion Calling, brokerages and the agencies that serve them can deploy a branded AI voice agent in 24 hours, one that handles inbound inquiries, outbound follow-up, and after-hours coverage without adding headcount.",
     ],
     receptionistSection: {
       heading: "Your AI receptionist for real estate",
@@ -167,7 +167,7 @@ export const industries: Industry[] = [
       "Brokerages and solo agents feel the pain of missed calls daily",
       "Monthly retainer pricing fits naturally alongside marketing services",
       "Each listing or buyer represents high lifetime value, so ROI is easy to prove",
-      "Pre-built real estate agent templates let you launch a client in days",
+      "Pre-built real estate agent templates let you launch a client in 24 hours",
     ],
     whyFusion: sharedWhyFusion,
     faqs: [
@@ -213,7 +213,7 @@ export const industries: Industry[] = [
       "Fill cancellations, cut no-shows, and book new patients around the clock with an AI receptionist that never takes a break.",
     intro: [
       "Dental and healthcare practices lose revenue every time a call goes to voicemail during treatment, and every time a patient no-shows. An AI voice agent answers every call instantly, books appointments into the practice management system, and runs automated recall and reminder campaigns to keep the schedule full.",
-      "Fusion Calling lets practices, and the agencies serving them, deploy a branded AI receptionist in days that handles scheduling, recalls, and patient questions while keeping conversations professional and compliant.",
+      "Fusion Calling lets practices, and the agencies serving them, deploy a branded AI receptionist in 24 hours that handles scheduling, recalls, and patient questions while keeping conversations professional and compliant.",
     ],
     receptionistSection: {
       heading: "Your AI receptionist for dental offices",
@@ -1244,7 +1244,7 @@ export const industries: Industry[] = [
       "Inquiries peak outside teaching hours when staff are busy",
       "Filled cohorts and fewer no-shows are directly dollarized",
       "Recurring terms and cohorts justify a monthly retainer",
-      "Pre-built education flows let you launch a client in days",
+      "Pre-built education flows let you launch a client in 24 hours",
     ],
     whyFusion: sharedWhyFusion,
     faqs: [
@@ -1392,20 +1392,20 @@ export const industries: Industry[] = [
       "Phones ring constantly during service when staff can't answer",
       "Lost reservations and orders are immediate, visible revenue loss",
       "Takeout and catering are high-margin, repeatable use cases",
-      "Pre-built hospitality flows launch a client in days",
+      "Pre-built hospitality flows launch a client in 24 hours",
     ],
     whyFusion: sharedWhyFusion,
     faqs: [
       {
         question: "What is the best AI voice agent for restaurants?",
         answer:
-          "The best AI voice agent for restaurants answers every call in under a second, books directly into OpenTable, Resy, or Tock with party size and SMS confirmation, sends takeout tickets into Toast, Square, or Clover with modifiers, and runs 24-hour and 2-hour no-show reminders plus waitlist callbacks. For a 40-seat venue at $60 average cover, cutting no-shows from 10% to 3% on 100 weekly covers recovers about $420/week. Fusion Calling starts at $149/month for restaurants and agencies white-labeling hospitality.",
+          "The best AI voice agent for restaurants answers every call in under a second, books directly into OpenTable, Resy, or Tock with party size and SMS confirmation, sends takeout tickets into Toast, Square, or Clover with modifiers, and runs 24-hour and 2-hour no-show reminders plus waitlist callbacks. For a 40-seat venue at $60 average cover, cutting no-shows from 10% to 3% on 100 weekly covers recovers about $420/week. Fusion Calling starts at $149/month for restaurants, and agencies white-labeling hospitality start at $99/month.",
       },
       {
         question:
           "How does Fusion Calling compare to restaurant phone AI tools like Slang.ai, Goodcall, or Kea?",
         answer:
-          "Restaurant-specific tools such as Slang.ai and Kea focus only on restaurant phone answering, and Goodcall serves general small businesses. All three connect to reservation and POS systems. Fusion Calling covers the same ground — OpenTable, Resy, and Tock for reservations, Toast, Square, and Clover for orders — and adds two things those tools don't ship: flat pricing at $149/month with 500 included minutes (no per-location metering), and a white-label layer so an agency can resell the same setup under its own brand to multiple venues. Restaurant owners can hear the live demo before deciding, and agencies can launch a branded hospitality offering in 24 hours.",
+          "Restaurant-specific tools such as Slang.ai and Kea focus only on restaurant phone answering, and Goodcall serves general small businesses. All three connect to reservation and POS systems. Fusion Calling covers the same ground — OpenTable, Resy, and Tock for reservations, Toast, Square, and Clover for orders — and adds two things those tools don't ship: flat direct pricing at $149/month with 500 included minutes (no per-location metering), and a white-label layer from $99/month so an agency can resell the same setup under its own brand to multiple venues. Restaurant owners can hear the live demo before deciding, and agencies can launch a branded hospitality offering in 24 hours.",
       },
       {
         question: "Can an AI voice agent take restaurant reservations and orders?",

@@ -49,11 +49,11 @@ export function QuickReferenceSection() {
                 <span className="text-gray-300">6 clients</span>
               </div>
               <div className="flex justify-between items-center p-3 bg-zinc-800/50 rounded">
-                <span className="font-semibold text-white">Pro</span>
+                <span className="font-semibold text-white">Growth</span>
                 <span className="text-gray-300">20 clients</span>
               </div>
               <div className="flex justify-between items-center p-3 bg-zinc-800/50 rounded">
-                <span className="font-semibold text-white">Enterprise</span>
+                <span className="font-semibold text-white">Scale</span>
                 <span className="text-gray-300">Unlimited</span>
               </div>
             </div>

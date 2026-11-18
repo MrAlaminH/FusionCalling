@@ -24,7 +24,7 @@ export default function Pricing() {
         "Direct Calendar Booking",
         "Complete White-Labeling",
         "Client Portal Access",
-        "Vapi + Retell Support",
+        "Vapi, Retell & ElevenLabs Engines",
         "Minute Rebilling",
       ],
     },
@@ -87,7 +87,7 @@ export default function Pricing() {
         <SectionHeader
           title="White-Label AI Voice Agent Pricing — From $99/mo"
           highlight="Pricing Plans"
-          subtitle="Choose the plan that fits your agency's needs. Scale up as you grow."
+          subtitle="Every plan includes Vapi, Retell & ElevenLabs engines. Choose the tier that fits your agency's needs and scale up as you grow."
         />
 
         {/* Billing Cycle Toggle */}

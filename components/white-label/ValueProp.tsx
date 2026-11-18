@@ -17,7 +17,7 @@ export default function ValueProp() {
     },
     {
       icon: Zap,
-      title: "Launch in Days",
+      title: "Launch in Hours",
       description:
         "Your branded dashboard, domain, and client portals go live during onboarding — no engineering project.",
       stat: "24 Hours",

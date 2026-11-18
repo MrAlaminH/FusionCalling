@@ -36,7 +36,7 @@ By the numbers:
 - **100+** agencies and projects launched on the platform
 - **50,000+** calls handled
 - **500+** AI agents deployed
-- **24 hours** from signup to a branded, live agency platform
+- **24 hours** from approval to a branded, live agency platform (applications reviewed within 48 hours)
 - **99.9%** uptime SLA
 
 ### Core Capabilities
@@ -82,7 +82,7 @@ The fastest way to sell AI receptionist services without building the platform y
 - **Multi-provider agents** — Vapi, Retell, and ElevenLabs behind one dashboard
 - **Launch in 24 hours** — guided setup with 30 days of done-with-you support
 
-**Wholesale plans** start at **$99/month** (6 sub-accounts), with Growth at $299 (20 sub-accounts) and Scale at $499 (unlimited). Details at [fusioncalling.com/whitelabel](https://fusioncalling.com/whitelabel).
+**Wholesale plans** start at **$99/month** (Starter, 6 sub-accounts), with Growth at $299 (20 sub-accounts) and Scale at $499 (unlimited). Details at [fusioncalling.com/whitelabel](https://fusioncalling.com/whitelabel).
 
 ---
 

@@ -37,7 +37,7 @@ const pricingFaqs = [
   {
     question: "What is included in each pricing plan?",
     answer:
-      "All plans include 24/7 AI voice agents, full portal access, all integrations, CRM and lead routing, auto-tagging and logging, and 99.9% uptime guarantee. Pro adds inbound/outbound call handling, outbound routing, private Slack support, advanced FAQ handling, and custom LLM integration. Enterprise adds custom trained voice, dedicated support/developer, extensive scripting, and extensive testing.",
+      "All plans include 24/7 AI voice agents, full portal access, all integrations, CRM and lead routing, auto-tagging and logging, and 99.9% uptime guarantee. Pro adds inbound/outbound call handling, outbound routing, private Slack support, advanced FAQ handling, and custom LLM integration. Enterprise adds custom trained voice, dedicated support/developer, extensive scripting, and extensive testing. These are the direct business plans — agencies reselling under their own brand have separate wholesale partner plans starting at $99/month with 6 sub-accounts.",
   },
   {
     question: "Is there a setup fee?",

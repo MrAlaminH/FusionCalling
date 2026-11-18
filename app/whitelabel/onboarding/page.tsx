@@ -172,7 +172,7 @@ const onboardingFaqs = [
   {
     question: "How fast can we go live?",
     answer:
-      "Most partners launch within 24–48 hours of signing up. Branding takes about 15 minutes with the branding guide, and your first sub-account can be live the same day. If you'd rather have us configure everything with you, book the optional onboarding call.",
+      "Most partners launch within 24 hours of approval (applications are reviewed within 48 hours). Branding takes about 15 minutes with the branding guide, and your first sub-account can be live the same day. If you'd rather have us configure everything with you, book the optional onboarding call.",
   },
   {
     question: "What happens after the 3-day free trial?",

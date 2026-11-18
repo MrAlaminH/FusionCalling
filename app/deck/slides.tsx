@@ -1025,7 +1025,7 @@ function WhiteLabelSlide() {
       name: "Starter",
       price: "$99",
       accounts: "6 sub-accounts",
-      features: ["Direct calendar booking", "Complete white-labeling", "Client portal access", "Minute rebilling"],
+      features: ["Vapi, Retell & ElevenLabs engines", "Direct calendar booking", "Complete white-labeling", "Client portal access", "Minute rebilling"],
       popular: false,
     },
     {

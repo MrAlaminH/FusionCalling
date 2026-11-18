@@ -302,8 +302,9 @@ export default function ResellerProgramPage() {
                 How the reseller program works
               </h2>
               <p className="text-gray-400 text-base sm:text-lg max-w-3xl mx-auto">
-                From application to your first branded client launch in days,
-                not months. Cloud reselling in practice: you buy voice AI at a
+                From application to your first branded client launch in a few
+                days: approval within 48 hours, launch within 24 hours of
+                that. Cloud reselling in practice: you buy voice AI at a
                 flat wholesale rate, sell it under your own brand, and keep the
                 entire spread.
               </p>

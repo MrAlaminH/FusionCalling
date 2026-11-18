@@ -242,11 +242,11 @@ export function ClientManagementSection() {
               <span className="text-gray-300">6 clients (Warning at 80%)</span>
             </div>
             <div className="flex justify-between items-center p-3 bg-zinc-800/50 rounded">
-              <span className="font-semibold text-white">Pro</span>
+              <span className="font-semibold text-white">Growth</span>
               <span className="text-gray-300">20 clients (Warning at 80%)</span>
             </div>
             <div className="flex justify-between items-center p-3 bg-zinc-800/50 rounded">
-              <span className="font-semibold text-white">Enterprise</span>
+              <span className="font-semibold text-white">Scale</span>
               <span className="text-gray-300">Unlimited (No limit)</span>
             </div>
           </div>

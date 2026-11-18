@@ -93,7 +93,7 @@ export default function WhiteLabelPage() {
         "@id": `${SITE_URL}/whitelabel#howto`,
         name: "How to Launch Your White-Label AI Voice Agent Business",
         description:
-          "From application to first sale in as little as one week. We handle the technology, you focus on growing your agency.",
+          "From application to first sale in as little as one week: approval within 48 hours, your branded platform live within 24 hours of that. We handle the technology, you focus on growing your agency.",
         step: [
           {
             "@type": "HowToStep",

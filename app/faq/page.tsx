@@ -60,7 +60,7 @@ const pricingFaqs: Faq[] = [
   },
   {
     question: "Is there a setup fee or free trial?",
-    answer: `The Starter plan has a $0 setup fee and every plan comes with a ${OFFER.trial} free trial plus the ${OFFER.guarantee} money-back guarantee. Higher tiers carry a one-time onboarding fee that covers custom voice training and white-label setup.`,
+    answer: `The business Starter plan ($149/month) has a $0 setup fee and every plan comes with a ${OFFER.trial} free trial plus the ${OFFER.guarantee} money-back guarantee. Higher tiers carry a one-time onboarding fee that covers custom voice training and white-label setup.`,
   },
   {
     question: "How much does the white-label partner program cost?",
@@ -70,7 +70,7 @@ const pricingFaqs: Faq[] = [
   },
   {
     question: "How fast can I launch?",
-    answer: `A guided white-label launch takes about ${LAUNCH.guided}: apply, add your logo and domain, import Vapi, Retell, or ElevenLabs agents, connect calendar and CRM, then bill clients yourself. Partner applications are reviewed within ${LAUNCH.approval}.`,
+    answer: `A guided white-label launch takes about ${LAUNCH.guided} once you're approved: add your logo and domain, import Vapi, Retell, or ElevenLabs agents, connect calendar and CRM, then bill clients yourself. Partner applications are reviewed within ${LAUNCH.approval}, so from applying to live is typically a few days.`,
   },
 ];
 

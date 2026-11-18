@@ -32,7 +32,7 @@ const CTA_VARIANTS = [
   },
   {
     heading: "Launch Your First Voice Agent in 24 Hours",
-    text: "Pick one use case — after-hours answering is the fastest win — and ship it branded this week. Guided setup covers voices, calendars, and transfer rules, so you sell while we handle the plumbing.",
+    text: "Pick one use case — after-hours answering is the fastest win — and ship it branded in a day. Guided setup covers voices, calendars, and transfer rules, so you sell while we handle the plumbing.",
     cta: "Start With Agent Setup",
   },
 ];

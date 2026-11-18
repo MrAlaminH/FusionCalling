@@ -29,7 +29,7 @@ const docFaqs = [
   {
     question: "Does Fusion Calling support white-label resellers?",
     answer:
-      "Yes. Agencies can resell AI voice agents under their own brand using the white-label program, bringing their own Vapi, Retell, or ElevenLabs keys and managing unlimited client sub-accounts from one dashboard.",
+      "Yes. Agencies can resell AI voice agents under their own brand using the white-label program, bringing their own Vapi, Retell, or ElevenLabs keys and managing client sub-accounts (6 on Starter, up to unlimited on Scale) from one dashboard.",
   },
 ];
 

@@ -20,7 +20,7 @@ export default function HowItWorks() {
       step: "01",
       title: "Schedule a call or email to apply",
       description:
-        "Submit your application and get approved within 48 hours. We review your agency to ensure a successful partnership. The application asks about your client base, your current Voice AI experience if any, and the industries you plan to serve so we can tailor your onboarding. Most partners hear back within two business days and can start their 3-day free trial immediately after approval.",
+        "Submit your application — most partners hear back within 48 hours. We review your agency to ensure a successful partnership. The application asks about your client base, your current Voice AI experience if any, and the industries you plan to serve so we can tailor your onboarding. You can start your 3-day free trial immediately after approval.",
     },
     {
       icon: Palette,
@@ -52,7 +52,7 @@ export default function HowItWorks() {
         <SectionHeader
           title="How to Launch Your White-Label AI Voice Agent Business"
           highlight="White-Label Business"
-          subtitle="From application to first sale in as little as one week. We handle the technology, you focus on growing your agency."
+          subtitle="From application to first sale in as little as one week: approval within 48 hours, your branded platform live within 24 hours of that. We handle the technology, you focus on growing your agency."
         />
 
         {/* Steps Timeline */}
