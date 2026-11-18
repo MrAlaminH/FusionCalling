@@ -206,6 +206,36 @@ for (const rel of launchClaimFiles) {
   );
 }
 
+// Provider support is included on every wholesale plan (whitelabel FAQ:
+// "Vapi, Retell AI, and ElevenLabs out of the box"). A plan-card bullet that
+// names a strict subset (e.g. "Vapi + Retell Support") contradicts every
+// other surface, so plan-card files may not reintroduce one.
+const PARTIAL_PROVIDER_PATTERN = /Vapi\s*\+\s*Retell(?!\s*\+\s*ElevenLabs)/;
+for (const rel of [
+  "../components/white-label/Pricing.tsx",
+  "../app/deck/slides.tsx",
+]) {
+  const src = readFileSync(new URL(rel, import.meta.url), "utf8");
+  const match = src.match(PARTIAL_PROVIDER_PATTERN);
+  assert(
+    !match,
+    `${rel}: partial provider bullet ("${match?.[0]}") — provider support is on every plan; use "Vapi, Retell & ElevenLabs" (PROVIDERS.plus in lib/product-facts)`
+  );
+}
+
+// The business pricing cards hardcode their prices; they must match
+// DIRECT_PLANS in lib/product-facts or the cards and the JSON-LD diverge.
+const pricingSection = readFileSync(
+  new URL("../components/pricing-section.tsx", import.meta.url),
+  "utf8"
+);
+for (const p of DIRECT_PLANS) {
+  assert(
+    pricingSection.includes(`monthly: ${p.price}`),
+    `pricing-section.tsx: monthly price ${p.price} (${p.name}) drifted from DIRECT_PLANS`
+  );
+}
+
 // Industry pages render missed-call math with the assumption lines and the
 // result side by side, so the result must equal the product of the line
 // values — a wrong product would be visibly wrong to readers.
