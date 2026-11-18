@@ -49,7 +49,7 @@ const PLANS: Plan[] = [
     href: "#calendar",
     popular: true,
     features: [
-      "Includes 1050 minutes",
+      "Includes 1,050 minutes",
       "Everything in Starter",
       "Inbound / outbound call handling",
       "Outbound call routing integrations",
@@ -65,7 +65,7 @@ const PLANS: Plan[] = [
     cta: "Contact Sales",
     href: "#calendar",
     features: [
-      "Includes 2100 minutes",
+      "Includes 2,100 minutes",
       "Full Portal Access",
       "Everything in Pro",
       "Custom Trained Voice",
@@ -230,7 +230,9 @@ export default function PricingSection({
 
         {/* Footnote */}
         <p className="text-center text-gray-400 mt-6 md:mt-8 text-xs">
-          *All plans include 24/7 support and 99.9% uptime guarantee. Not sure
+          *24/7 agent coverage and a 99.9% uptime guarantee on every plan.
+          Human support scales with your plan: private Slack channel on Pro,
+          dedicated support and developer on Enterprise. Not sure
           what you need?{" "}
           <Link
             href="/calculator"

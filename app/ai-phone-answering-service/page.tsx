@@ -279,7 +279,7 @@ const plans = DIRECT_PLANS.map((plan) => ({
 
 const pricingTrustChips = [
   { icon: Check, label: "Month-to-month, no long-term contract" },
-  { icon: ShieldCheck, label: "99.9% uptime · 24/7 support" },
+  { icon: ShieldCheck, label: "99.9% uptime · 24/7 answering" },
   { icon: ShieldCheck, label: "HIPAA- & TCPA-conscious workflows" },
   { icon: ShieldCheck, label: "Encrypted calls, access-controlled transcripts" },
 ];

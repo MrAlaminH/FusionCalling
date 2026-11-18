@@ -191,8 +191,8 @@ export default function LeadQualificationPage() {
               attached — 24/7, from $149/month.{" "}
               <Link href="/pricing" className="text-brand hover:underline">
                 View pricing
-              </Link>
-              , no setup fee.
+              </Link>{" "}
+              — no setup fee on Starter.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Link

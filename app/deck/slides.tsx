@@ -841,8 +841,8 @@ function EconomicsSlide() {
             </div>
           </div>
           <p className="mt-3 text-[11px] leading-relaxed text-white/40">
-            Overages $0.20–0.30/min · usage alerts at 80% and 95% · all plans
-            include 24/7 support and a 99.9% uptime guarantee
+            Overages $0.20–0.30/min · usage alerts at 80% and 95% · 24/7
+            agent coverage and a 99.9% uptime guarantee on every plan
           </p>
         </div>
       </div>
@@ -1202,7 +1202,7 @@ function TrustSlide() {
         "Month-to-month, cancel anytime",
         "14-day money-back guarantee (direct plans)",
         "3-day free trial + $0 setup (partner plans)",
-        "99.9% uptime · 24/7 support · usage alerts at 80% & 95%",
+        "99.9% uptime · 24/7 agent coverage · usage alerts at 80% & 95%",
       ],
     },
   ];

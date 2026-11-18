@@ -419,7 +419,7 @@ export default function SmallBusinessVoiceAgentsBlogPost() {
             </p>
             <p className="text-gray-300 leading-relaxed mb-8">
               Get started with{" "}
-              <strong className="text-brand-light">$0 setup</strong> and a{" "}
+              <strong className="text-brand-light">$0 setup on Starter</strong> and a{" "}
               <strong className="text-brand-light">3-day free trial</strong>,
               watch the{" "}
               <Link href="/#show-case" className="text-brand-light hover:text-brand transition-colors">

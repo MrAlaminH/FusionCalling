@@ -110,7 +110,7 @@ export default function CalculatorPage() {
           </h2>
           <p className="text-gray-400 leading-relaxed mb-6">
             Match your call volume to a plan — every tier includes 24/7
-            support and a 99.9% uptime guarantee.{" "}
+            agent coverage and a 99.9% uptime guarantee.{" "}
             <Link
               href="/pricing"
               className="text-brand-light hover:text-brand underline-offset-4 hover:underline transition-colors font-medium"

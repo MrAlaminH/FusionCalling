@@ -17,7 +17,7 @@ export const blogFaqs: Record<string, BlogFaq[]> = {
     },
     {
       "question": "How do I avoid usage-based billing surprises?",
-      "answer": "Ask three questions in writing before signing: what is the per-minute or per-call rate once included minutes run out, is billing per-second or rounded up, and what counts as a billable call? Billing opacity was behind 7 of the 55 reports we analyzed. Flat-rate plans with included minutes — like Fusion Calling's $149–$497/mo business plans with $0 setup and no contracts — remove the surprise entirely."
+      "answer": "Ask three questions in writing before signing: what is the per-minute or per-call rate once included minutes run out, is billing per-second or rounded up, and what counts as a billable call? Billing opacity was behind 7 of the 55 reports we analyzed. Flat-rate plans with included minutes — like Fusion Calling's business plans from $149/mo, Starter with $0 setup and no contracts — remove the surprise entirely."
     },
     {
       "question": "Did the FTC really sue an AI calling company?",
@@ -75,7 +75,7 @@ export const blogFaqs: Record<string, BlogFaq[]> = {
   "ai-receptionist-cost": [
     {
       "question": "How much does an AI receptionist cost per month?",
-      "answer": "Most AI receptionists cost between $14 and $65 per month on budget self-serve plans, $200 to $600 per month on mid-tier business plans, and up to $3,000 per month at the premium end. Fusion Calling business plans start at $149 per month with 500 included minutes and scale to $497 per month with 2,100 minutes, with no setup fee."
+      "answer": "Most AI receptionists cost between $14 and $65 per month on budget self-serve plans, $200 to $600 per month on mid-tier business plans, and up to $3,000 per month at the premium end. Fusion Calling business plans start at $149 per month with 500 included minutes and scale to $497 per month with 2,100 minutes. Starter carries no setup fee; Pro and Enterprise have a one-time setup fee disclosed on the pricing page."
     },
     {
       "question": "Is there a per-minute AI receptionist pricing model?",
@@ -83,7 +83,7 @@ export const blogFaqs: Record<string, BlogFaq[]> = {
     },
     {
       "question": "What hidden costs should I watch for?",
-      "answer": "Four are most common: setup fees (typically $250 to $5,000 at some vendors), per-minute overage charges beyond your included minutes, integration or add-on fees (typically $50 to $500 per month for CRM and calendar connections), and compliance or premium-voice add-ons. Fusion Calling charges $0 setup and requires no long-term contracts."
+      "answer": "Four are most common: setup fees (typically $250 to $5,000 at some vendors), per-minute overage charges beyond your included minutes, integration or add-on fees (typically $50 to $500 per month for CRM and calendar connections), and compliance or premium-voice add-ons. Fusion Calling's Starter plan carries $0 setup and requires no long-term contracts; higher tiers add a one-time setup fee."
     },
     {
       "question": "What is the cost of an AI receptionist vs in-house staff?",

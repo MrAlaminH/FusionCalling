@@ -198,7 +198,7 @@ export default function AppointmentRemindersPage() {
               <Link href="/pricing" className="text-brand hover:underline">
                 View pricing
               </Link>{" "}
-              from $149/month, no setup fee.
+              from $149/month, no setup fee on Starter.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Link

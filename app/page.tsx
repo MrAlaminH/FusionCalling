@@ -121,7 +121,7 @@ export default function Home() {
             name: "How much does Fusion Calling cost?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Fusion Calling offers three pricing plans: Starter at $149/month (500 minutes), Pro at $249/month (1,050 minutes), and Enterprise at $497/month (2,100 minutes). All plans include custom voice training, calendar integrations, SMS capabilities, and dedicated support. Every plan starts with a 3-day free trial, and you can hear a live demo call on this page before you commit.",
+              text: "Fusion Calling offers three business plans: Starter at $149/month (500 minutes), Pro at $249/month (1,050 minutes), and Enterprise at $497/month (2,100 minutes). Every plan includes calendar integrations, SMS follow-ups, and full portal access; Pro adds inbound/outbound call handling and private Slack support; Enterprise adds a custom trained voice plus dedicated support and a developer. Every plan starts with a 3-day free trial, and you can hear a live demo call on this page before you commit.",
             },
           },
           {

@@ -200,7 +200,7 @@ export default function RootLayout({
                       name: `${plan.name} plan`,
                       price: plan.price,
                       priceCurrency: "USD",
-                      description: `${plan.includedMinutes} included minutes per month, ${plan.overageRate} overage.`,
+                      description: `${plan.includedMinutes.toLocaleString("en-US")} included minutes per month, ${plan.overageRate} overage.`,
                     })),
                   },
                 },

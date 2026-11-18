@@ -159,7 +159,7 @@ export default function BestAIReceptionistsSmallBusinessBlogPost() {
             </h2>
             <p className="text-gray-300 leading-relaxed mb-4">
               <strong>$149/mo with 500 included minutes, scaling to $497/mo
-              for 2,100 minutes. $0 setup, no contract. As of October 2026.</strong>
+              for 2,100 minutes. $0 setup on Starter, no contract. As of October 2026.</strong>
             </p>
             <p className="text-gray-300 leading-relaxed mb-4">
               Fusion Calling answers every call in two rings, books into your

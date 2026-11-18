@@ -535,7 +535,7 @@ export default function AIReceptionistComplaintsBlogPost() {
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                 <span>
-                  <strong>Flat monthly pricing, $0 setup, no contracts.</strong>{" "}
+                  <strong>Flat monthly pricing, no contracts; $0 setup on Starter.</strong>{" "}
                   Business plans run $149/mo with 500 included minutes to
                   $497/mo with 2,100 minutes &mdash; no credits to decode, and
                   month-to-month terms mean you&apos;re never trapped{" "}

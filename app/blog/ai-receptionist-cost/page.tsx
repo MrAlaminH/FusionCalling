@@ -210,9 +210,11 @@ export default function AIReceptionistCostBlogPost() {
               </li>
             </ul>
             <p className="text-gray-300 leading-relaxed">
-              Fusion Calling takes a different approach: <strong>$0 setup</strong>{" "}
-              and no long-term contracts. Your monthly subscription is the
-              whole cost &mdash; setup, integrations, and support are included.
+              Fusion Calling takes a different approach: <strong>no
+              long-term contracts</strong>, and Starter carries{" "}
+              <strong>$0 setup</strong>. Your monthly subscription covers
+              integrations and support &mdash; the only extra is a one-time
+              setup fee on Pro and Enterprise.
             </p>
           </div>
 
@@ -269,7 +271,7 @@ export default function AIReceptionistCostBlogPost() {
               <li className="flex items-start gap-3">
                 <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
                 <span>
-                  <strong>$0 setup fee</strong> and no
+                  <strong>$0 setup fee on Starter</strong>, no
                   long-term contracts &mdash; cancel anytime
                 </span>
               </li>
