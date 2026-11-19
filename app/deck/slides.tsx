@@ -442,8 +442,8 @@ function ProductSlide() {
       </div>
       <p className="animate-fade-in-up mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium text-white/70 [animation-delay:700ms]">
         <span className="flex items-center gap-2">
-          <Zap className="h-4 w-4 text-brand" aria-hidden /> 10–20 concurrent
-          calls
+          <Zap className="h-4 w-4 text-brand" aria-hidden /> Unlimited
+          concurrent calls
         </span>
         <span className="flex items-center gap-2">
           <MessageSquare className="h-4 w-4 text-brand" aria-hidden /> SMS

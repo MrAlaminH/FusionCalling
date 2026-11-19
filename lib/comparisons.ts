@@ -4301,7 +4301,7 @@ const rawComparisons: Comparison[] = [
       {
         question: "Will callers notice the switch from humans to AI?",
         answer:
-          "Callers notice faster answers: first-ring pickup, no hold queues, natural conversation with interruption handling. Most businesses introduce the agent by name. Calls needing empathy or judgment still warm-transfer to your team with full transcripts.",
+          "Callers notice faster answers: pickup in two rings, no hold queues, natural conversation with interruption handling. Most businesses introduce the agent by name. Calls needing empathy or judgment still warm-transfer to your team with full transcripts.",
       },
       {
         question: "What is the best Smith.ai alternative for small businesses?",

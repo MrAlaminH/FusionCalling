@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { SATISFACTION } from "@/lib/product-facts";
 
 const AnimatedStatistics = () => {
   const targets = useRef({
@@ -79,7 +80,7 @@ const AnimatedStatistics = () => {
     },
     {
       title: "Client Satisfaction",
-      value: "4.8/5",
+      value: SATISFACTION,
       description: "Delivering excellence that keeps our clients coming back.",
     },
     {

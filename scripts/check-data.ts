@@ -23,6 +23,14 @@ import {
 } from "../lib/product-facts";
 import { industries } from "../lib/industries";
 
+/** All .tsx file paths under a top-level repo dir, as "../app/..."-style relative strings. */
+function tsxFilesUnder(dir: "app" | "components"): string[] {
+  return readdirSync(new URL(`../${dir}`, import.meta.url), { recursive: true })
+    .map(String)
+    .filter((f) => f.endsWith(".tsx"))
+    .map((f) => `../${dir}/${f}`);
+}
+
 // Every curated related list must resolve to 3 real, non-self comparisons.
 for (const c of comparisons) {
   const related = c.related ?? [];
@@ -209,6 +217,8 @@ for (const rel of launchClaimFiles) {
 // There is no money-back guarantee (owner decision 2026-11-19). The claim was
 // removed from every surface; nothing may reintroduce it.
 const moneybackFiles: string[] = [
+  ...tsxFilesUnder("app"),
+  ...tsxFilesUnder("components"),
   "../lib/blog-faqs.ts",
   "../lib/page-faqs.ts",
   "../lib/whitelabel-faqs.ts",
@@ -221,17 +231,8 @@ const moneybackFiles: string[] = [
   "../lib/blog-posts.ts",
   "../lib/glossary.ts",
   "../lib/product-facts.ts",
+  "../scripts/generate-llms.ts",
 ];
-for (const entry of readdirSync(new URL("../app", import.meta.url), {
-  recursive: true,
-})) {
-  if (String(entry).endsWith(".tsx")) moneybackFiles.push(`../app/${entry}`);
-}
-for (const entry of readdirSync(new URL("../components", import.meta.url), {
-  recursive: true,
-})) {
-  if (String(entry).endsWith(".tsx")) moneybackFiles.push(`../components/${entry}`);
-}
 for (const rel of moneybackFiles) {
   const src = readFileSync(new URL(rel, import.meta.url), "utf8");
   const match = src.match(/money-back/i);
@@ -244,8 +245,11 @@ for (const rel of moneybackFiles) {
 // Pickup-speed canon is "two rings" (PICKUP in lib/product-facts). Numeric
 // variants ("first ring", "under a second" pickup) contradict it. The homepage
 // call-flow narrative ("from the first ring to the completed follow-up") is a
-// stage description, not a pickup claim, and uses none of these patterns.
+// stage description, not a pickup claim, and its line is excluded by the
+// lookahead below.
 const pickupFiles: string[] = [
+  ...tsxFilesUnder("app"),
+  ...tsxFilesUnder("components"),
   "../lib/blog-faqs.ts",
   "../lib/page-faqs.ts",
   "../lib/whitelabel-faqs.ts",
@@ -255,19 +259,11 @@ const pickupFiles: string[] = [
   "../lib/industry-seo.ts",
   "../lib/glossary.ts",
   "../scripts/generate-llms.ts",
-  "../app/deck/slides.tsx",
-  "../components/call-flow.tsx",
-  "../components/definition-block.tsx",
 ];
-for (const entry of readdirSync(new URL("../app", import.meta.url), {
-  recursive: true,
-})) {
-  if (String(entry).endsWith(".tsx")) pickupFiles.push(`../app/${entry}`);
-}
 for (const rel of pickupFiles) {
   const src = readFileSync(new URL(rel, import.meta.url), "utf8");
   const match = src.match(
-    /on the first ring|First ring, |first ring instead|pickup.{0,20}under a second|answers every call in under a second/i
+    /first[- ]ring(?![^\n]*to the completed follow-up)|pickup.{0,20}under a second|answers every call in under a second/i
   );
   assert(
     !match,

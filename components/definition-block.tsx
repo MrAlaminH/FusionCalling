@@ -1,3 +1,5 @@
+import { SATISFACTION } from "@/lib/product-facts";
+
 export const definitionBlockData = {
   eyebrow: "What is an AI phone call receptionist?",
   heading: "AI phone call receptionist, explained",
@@ -13,7 +15,7 @@ export const definitionBlockData = {
       source: "Fusion Calling platform",
     },
     {
-      value: "4.8/5",
+      value: SATISFACTION,
       label: "Customer satisfaction across 100+ agencies and projects.",
       source: "Fusion Calling internal data, 2025–2026",
     },

@@ -94,16 +94,24 @@ const complianceCurated: Faq[] = [
   blogFaqs["voice-ai-security-compliance"][0],
   blogFaqs["voice-ai-security-compliance"][2],
   blogFaqs["voice-ai-security-compliance"][4],
-].filter(Boolean);
+]
+  .filter(Boolean)
+  // Shallow copies: these objects are shared with the security-compliance
+  // blog post, and the mutation below must not leak the /faq-only citation
+  // onto that post's rendered FAQ.
+  .map((f) => ({ ...f }));
 
 // Append the outbound-dialing source here (not at render time) so the
 // FAQPage JSON-LD and the rendered answer carry identical text.
 const outboundFaq = complianceCurated.find((f) =>
   f.question.startsWith("What rules apply to outbound dialing")
 );
-if (outboundFaq) {
-  outboundFaq.answer += ` Authoritative reference: ${GEO_SOURCES.fccTcpa.label} (${GEO_SOURCES.fccTcpa.url}).`;
+if (!outboundFaq) {
+  throw new Error(
+    "/faq: outbound-dialing FAQ missing from complianceCurated — the schema/render parity append below has nothing to attach to"
+  );
 }
+outboundFaq.answer += ` Authoritative reference: ${GEO_SOURCES.fccTcpa.label} (${GEO_SOURCES.fccTcpa.url}).`;
 
 const allFaqs: Faq[] = [
   ...platformFaqs,

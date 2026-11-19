@@ -105,7 +105,7 @@ const principles = [
   {
     title: "Transparent pricing",
     description:
-      "Public plans from $149/month, and we publish a benchmark of entry prices across 21 voice AI platforms — including competitors'.",
+      "Public plans from $149/month, and we publish a benchmark of entry prices across 23 voice AI platforms — including competitors'.",
   },
   {
     title: "Ship weekly",

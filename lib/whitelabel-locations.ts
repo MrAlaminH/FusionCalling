@@ -831,7 +831,7 @@ export const whitelabelLocations: WhiteLabelLocation[] = [
       {
         question: "Can AI voice handle Miami's international callers?",
         answer:
-          "Yes. Agents handle English, Spanish, and Portuguese, answer in any time zone, and never close. A caller from São Paulo or Buenos Aires gets the same first-ring answer and booking flow as a local — which is exactly the coverage international real estate and hospitality clients in Miami need.",
+          "Yes. Agents handle English, Spanish, and Portuguese, answer in any time zone, and never close. A caller from São Paulo or Buenos Aires gets the same two-ring answer and booking flow as a local — which is exactly the coverage international real estate and hospitality clients in Miami need.",
       },
       {
         question: "Which Miami verticals should I target first?",

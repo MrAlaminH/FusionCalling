@@ -11,125 +11,127 @@
  * then reintroduce the tiles.
  */
 
+import { SATISFACTION } from "./product-facts";
+
 export const INDUSTRY_STAT_SOURCE = "Fusion Calling platform & client data, 2025–2026";
 
 export function generateIndustryStats(industryName: string) {
   const stats: Record<string, {
-    adoptionRate: string;
-    costSavings: string;
-    satisfactionIncrease: string;
+    adoptionNote: string;
+    costPayoff: string;
+    satisfactionNote: string;
     competitiveAdvantage: string;
     source: string;
     fusionAdvantage: string;
   }> = {
     "Real Estate": {
-      adoptionRate: "A fast-growing share",
-      costSavings: "one saved listing often covers the monthly plan",
-      satisfactionIncrease: "4.8/5 across 100+ agencies and projects",
+      adoptionNote: "A fast-growing share",
+      costPayoff: "one saved listing often covers the monthly plan",
+      satisfactionNote: `${SATISFACTION} across 100+ agencies and projects`,
       competitiveAdvantage: "First-to-answer",
       source: INDUSTRY_STAT_SOURCE,
       fusionAdvantage: "Fusion Calling answers every buyer and seller call in two rings, 24/7 — no lead waits for a callback"
     },
     "Dental & Healthcare": {
-      adoptionRate: "A fast-growing share",
-      costSavings: "a single filled slot often covers the monthly plan",
-      satisfactionIncrease: "4.8/5 across 100+ agencies and projects",
+      adoptionNote: "A fast-growing share",
+      costPayoff: "a single filled slot often covers the monthly plan",
+      satisfactionNote: `${SATISFACTION} across 100+ agencies and projects`,
       competitiveAdvantage: "Every call answered",
       source: INDUSTRY_STAT_SOURCE,
       fusionAdvantage: "Fusion Calling books, recalls, and reminds around the clock, so no patient question waits until the front desk frees up"
     },
     "Insurance": {
-      adoptionRate: "A fast-growing share",
-      costSavings: "one bound policy often covers months of the plan",
-      satisfactionIncrease: "4.8/5 across 100+ agencies and projects",
+      adoptionNote: "A fast-growing share",
+      costPayoff: "one bound policy often covers months of the plan",
+      satisfactionNote: `${SATISFACTION} across 100+ agencies and projects`,
       competitiveAdvantage: "Minutes-not-hours response",
       source: INDUSTRY_STAT_SOURCE,
       fusionAdvantage: "Fusion Calling qualifies and routes every quote request the moment it arrives, in two rings, around the clock"
     },
     "Home Services": {
-      adoptionRate: "A fast-growing share",
-      costSavings: "one saved emergency job often covers the monthly plan",
-      satisfactionIncrease: "4.8/5 across 100+ agencies and projects",
+      adoptionNote: "A fast-growing share",
+      costPayoff: "one saved emergency job often covers the monthly plan",
+      satisfactionNote: `${SATISFACTION} across 100+ agencies and projects`,
       competitiveAdvantage: "First contractor to answer wins",
       source: INDUSTRY_STAT_SOURCE,
       fusionAdvantage: "Fusion Calling answers after-hours and emergency calls 24/7 and escalates real emergencies to on-call staff"
     },
     "Legal": {
-      adoptionRate: "A fast-growing share",
-      costSavings: "one captured case inquiry often covers the monthly plan",
-      satisfactionIncrease: "4.8/5 across 100+ agencies and projects",
+      adoptionNote: "A fast-growing share",
+      costPayoff: "one captured case inquiry often covers the monthly plan",
+      satisfactionNote: `${SATISFACTION} across 100+ agencies and projects`,
       competitiveAdvantage: "100% after-hours calls captured",
       source: INDUSTRY_STAT_SOURCE,
       fusionAdvantage: "Fusion Calling captures every potential-client call with intake details logged to your CRM — never voicemail"
     },
     "Automotive": {
-      adoptionRate: "A fast-growing share",
-      costSavings: "one booked service appointment often covers the monthly plan",
-      satisfactionIncrease: "4.8/5 across 100+ agencies and projects",
+      adoptionNote: "A fast-growing share",
+      costPayoff: "one booked service appointment often covers the monthly plan",
+      satisfactionNote: `${SATISFACTION} across 100+ agencies and projects`,
       competitiveAdvantage: "100% of service calls answered",
       source: INDUSTRY_STAT_SOURCE,
       fusionAdvantage: "Fusion Calling books service visits into your live calendar around the clock, with SMS confirmations"
     },
     "Call Centers & BPO": {
-      adoptionRate: "A fast-growing share",
-      costSavings: "scale call volume without linear headcount growth",
-      satisfactionIncrease: "4.8/5 across 100+ agencies and projects",
+      adoptionNote: "A fast-growing share",
+      costPayoff: "scale call volume without linear headcount growth",
+      satisfactionNote: `${SATISFACTION} across 100+ agencies and projects`,
       competitiveAdvantage: "No queue at peak volume",
       source: INDUSTRY_STAT_SOURCE,
       fusionAdvantage: "Fusion Calling handles unlimited concurrent calls on every plan — busy season never means a busy signal"
     },
     "Financial Services": {
-      adoptionRate: "A fast-growing share",
-      costSavings: "one completed application often covers the monthly plan",
-      satisfactionIncrease: "4.8/5 across 100+ agencies and projects",
+      adoptionNote: "A fast-growing share",
+      costPayoff: "one completed application often covers the monthly plan",
+      satisfactionNote: `${SATISFACTION} across 100+ agencies and projects`,
       competitiveAdvantage: "Compliance-aware workflows",
       source: INDUSTRY_STAT_SOURCE,
       fusionAdvantage: "Fusion Calling answers and routes every caller instantly, with transcripts and CRM logging for every conversation"
     },
     "E-commerce & Retail": {
-      adoptionRate: "A fast-growing share",
-      costSavings: "recovered order-and-returns calls add revenue with no extra headcount",
-      satisfactionIncrease: "4.8/5 across 100+ agencies and projects",
+      adoptionNote: "A fast-growing share",
+      costPayoff: "recovered order-and-returns calls add revenue with no extra headcount",
+      satisfactionNote: `${SATISFACTION} across 100+ agencies and projects`,
       competitiveAdvantage: "Abandoned-cart calls recovered",
       source: INDUSTRY_STAT_SOURCE,
       fusionAdvantage: "Fusion Calling answers order-status, returns, and booking calls 24/7 and logs every outcome to your stack"
     },
     "Education & Tutoring": {
-      adoptionRate: "A fast-growing share",
-      costSavings: "one filled cohort seat often covers the monthly plan",
-      satisfactionIncrease: "4.8/5 across 100+ agencies and projects",
+      adoptionNote: "A fast-growing share",
+      costPayoff: "one filled cohort seat often covers the monthly plan",
+      satisfactionNote: `${SATISFACTION} across 100+ agencies and projects`,
       competitiveAdvantage: "After-hours inquiries captured",
       source: INDUSTRY_STAT_SOURCE,
       fusionAdvantage: "Fusion Calling qualifies prospects and books trials around the clock, so evening and weekend inquiries never go to voicemail"
     },
     "Restaurants & Hospitality": {
-      adoptionRate: "A fast-growing share",
-      costSavings: "one saved table booking often covers the monthly plan",
-      satisfactionIncrease: "4.8/5 across 100+ agencies and projects",
+      adoptionNote: "A fast-growing share",
+      costPayoff: "one saved table booking often covers the monthly plan",
+      satisfactionNote: `${SATISFACTION} across 100+ agencies and projects`,
       competitiveAdvantage: "Every rush-hour call answered",
       source: INDUSTRY_STAT_SOURCE,
       fusionAdvantage: "Fusion Calling answers reservation and order calls in two rings during the Friday-night rush and at 10pm on a quiet Tuesday"
     },
     "Medical Practices": {
-      adoptionRate: "A fast-growing share",
-      costSavings: "one filled appointment slot often covers the monthly plan",
-      satisfactionIncrease: "4.8/5 across 100+ agencies and projects",
+      adoptionNote: "A fast-growing share",
+      costPayoff: "one filled appointment slot often covers the monthly plan",
+      satisfactionNote: `${SATISFACTION} across 100+ agencies and projects`,
       competitiveAdvantage: "Recall and reminder automation",
       source: INDUSTRY_STAT_SOURCE,
       fusionAdvantage: "Fusion Calling books visits, runs recall campaigns, and escalates urgent calls instantly — with HIPAA-conscious workflows"
     },
     "Beauty & Wellness": {
-      adoptionRate: "A fast-growing share",
-      costSavings: "one backfilled cancellation often covers the monthly plan",
-      satisfactionIncrease: "4.8/5 across 100+ agencies and projects",
+      adoptionNote: "A fast-growing share",
+      costPayoff: "one backfilled cancellation often covers the monthly plan",
+      satisfactionNote: `${SATISFACTION} across 100+ agencies and projects`,
       competitiveAdvantage: "Same-day waitlist fills",
       source: INDUSTRY_STAT_SOURCE,
       fusionAdvantage: "Fusion Calling books into the live schedule and backfills cancellations from the waitlist while stylists are mid-appointment"
     },
     "Veterinary": {
-      adoptionRate: "A fast-growing share",
-      costSavings: "one booked visit often covers the monthly plan",
-      satisfactionIncrease: "4.8/5 across 100+ agencies and projects",
+      adoptionNote: "A fast-growing share",
+      costPayoff: "one booked visit often covers the monthly plan",
+      satisfactionNote: `${SATISFACTION} across 100+ agencies and projects`,
       competitiveAdvantage: "Urgent calls escalated instantly",
       source: INDUSTRY_STAT_SOURCE,
       fusionAdvantage: "Fusion Calling books visits, runs vaccine reminders, and escalates urgent symptoms to staff around the clock"
@@ -137,9 +139,9 @@ export function generateIndustryStats(industryName: string) {
   };
 
   return stats[industryName] || {
-    adoptionRate: "A fast-growing share",
-    costSavings: "one saved customer often covers the monthly plan",
-    satisfactionIncrease: "4.8/5 across 100+ agencies and projects",
+    adoptionNote: "A fast-growing share",
+    costPayoff: "one saved customer often covers the monthly plan",
+    satisfactionNote: `${SATISFACTION} across 100+ agencies and projects`,
     competitiveAdvantage: "First-to-answer",
     source: INDUSTRY_STAT_SOURCE,
     fusionAdvantage: "Fusion Calling answers every call in two rings, 24/7 — no caller waits, no lead goes to voicemail"
