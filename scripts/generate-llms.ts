@@ -29,15 +29,15 @@ const PAGES: { path: string; title: string; content: string }[] = [
     content: `Fusion Calling provides AI phone call automation for businesses. Our AI voice agents handle inbound and outbound calls 24/7: book appointments, qualify leads, and automate customer interactions with voice AI.
 
 Key features:
-- AI receptionist answers every call instantly
+- AI receptionist answers every call in two rings
 - Lead qualification and appointment booking
 - 24/7 coverage without additional headcount
 - Multi-provider support (Vapi, Retell, ElevenLabs)
 - White-label platform for agencies
-- CRM integrations (HubSpot, GoHighLevel, 2200+ apps)
+- CRM integrations (HubSpot, GoHighLevel, 2,200+ apps)
 - SMS automation and calendar booking
 
-Pricing: Starter $149/mo (500 min), Pro $249/mo (1050 min), Enterprise $497/mo (2100 min). All plans include custom voice training, dedicated support, and white-label capabilities.`,
+Pricing: Starter $149/mo (500 min), Pro $249/mo (1050 min), Enterprise $497/mo (2100 min). Every plan includes calendar integrations, SMS follow-ups, and full portal access; Pro adds inbound/outbound handling and private Slack support; Enterprise adds a custom trained voice plus dedicated support and a developer.`,
   },
   {
     path: "/whitelabel",
@@ -63,8 +63,8 @@ FAQs: ${whitelabelFaqs.map((f) => `Q: ${f.question} A: ${f.answer}`).join(" ")}`
   },
   {
     path: "/whitelabel/onboarding",
-    title: "White-Label Onboarding Guide — Launch in 48 Hours",
-    content: `Step-by-step launch path for new Fusion Calling partners: create your account (3-day free trial, $0 setup), brand your dashboard, connect telephony (Twilio or Telnyx — $1.25 per number/month plus $0.005–$0.008/min carrier usage) and optional Vapi/Retell/ElevenLabs keys, set resale pricing with built-in Stripe rebilling, and launch your first client sub-account. AI call processing ~$0.10/min pay-as-you-go, or bring your own provider key and pay them directly. Platform plans: $99/mo Starter (6 sub-accounts), $299/mo Growth (20), $499/mo Scale (unlimited). Partners typically package the solution at $197–$500+/month per client. Commitments: 99.9% uptime SLA, Mon–Fri 9 AM–6 PM EST support via email/tickets/WhatsApp with 1-hour urgent response, 24/7 monitoring, per-sub-account data isolation, PII redaction, no training on customer data, HIPAA deployment with BAA as a $2,000 one-time add-on. The onboarding call is optional — each step links the exact guide in /docs.`,
+    title: "White-Label Partner Onboarding Guide",
+    content: `Step-by-step launch path for new Fusion Calling partners: create your account (3-day free trial, $0 setup), brand your dashboard, connect telephony (Twilio or Telnyx — $1.25 per number/month plus $0.005–$0.008/min carrier usage) and optional Vapi/Retell/ElevenLabs keys, set resale pricing with built-in Stripe rebilling, and launch your first client sub-account. AI call processing ~$0.10/min pay-as-you-go, or bring your own provider key and pay them directly. Platform plans: $99/mo Starter (6 sub-accounts), $299/mo Growth (20), $499/mo Scale (unlimited). Partners typically package the solution at $197–$500+/month per client. Commitments: 99.9% uptime SLA, Mon–Fri 9 AM–6 PM EST support via email/tickets/WhatsApp with 1-hour urgent response, 24/7 monitoring, per-sub-account data isolation, PII redaction, recordings/transcripts/personal data never used to train public AI models, HIPAA deployment with BAA as a $2,000 one-time add-on. The onboarding call is optional — each step links the exact guide in /docs.`,
   },
   {
     path: "/industries",
@@ -93,7 +93,7 @@ Comparison criteria: starting price, sub-accounts included, voice providers supp
   {
     path: "/glossary",
     title: "Voice AI Glossary | Fusion Calling",
-    content: `Complete glossary of 77 voice AI terms for agencies and resellers. Plain-English definitions of ASR, TTS, latency, HIPAA, white-label, Vapi, Retell, GoHighLevel, and more. Organized by category: Core AI & Voice, Speech Technology, Telephony, Conversational Design, Compliance & Security, Business & Operations.`,
+    content: `Complete glossary of 80 voice AI terms for agencies and resellers. Plain-English definitions of ASR, TTS, latency, HIPAA, white-label, Vapi, Retell, GoHighLevel, and more. Organized by category: Core AI & Voice, Speech Technology, Telephony, Conversational Design, Compliance & Security, Business & Operations.`,
   },
   ...glossaryTerms.map((t) => ({
     path: `/glossary/${t.term.toLowerCase().replace(/&/g, "and").replace(/[()]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")}`,
@@ -132,7 +132,7 @@ Comparison criteria: starting price, sub-accounts included, voice providers supp
   {
     path: "/pricing",
     title: "Pricing | AI Phone Call Automation | Fusion Calling",
-    content: `Simple, fair pricing for AI phone call automation. Starter $149/mo (500 min, 0 setup fee, full portal, all integrations), Pro $249/mo (1050 min, $799 setup, inbound/outbound handling, Slack support, custom LLM), Enterprise $497/mo (2100 min, $1250 setup, custom voice, dedicated support). All plans month-to-month, 14-day money-back guarantee. Additional minutes: Starter $0.30, Pro $0.25, Enterprise $0.20. 99.9% uptime guarantee. FAQs: What is included in each plan, setup fee, overage, plan changes, contract, free trial. Compare at https://www.fusioncalling.com/pricing.`,
+    content: `Simple, fair pricing for AI phone call automation. Starter $149/mo (500 min, 0 setup fee, full portal, all integrations), Pro $249/mo (1050 min, $799 setup, inbound/outbound handling, Slack support, custom LLM), Enterprise $497/mo (2100 min, $1250 setup, custom voice, dedicated support). All plans month-to-month with a 3-day free trial. Additional minutes: Starter $0.30, Pro $0.25, Enterprise $0.20. 99.9% uptime guarantee. FAQs: What is included in each plan, setup fee, overage, plan changes, contract, free trial. Compare at https://www.fusioncalling.com/pricing.`,
   },
   {
     path: "/about",
@@ -146,7 +146,7 @@ Comparison criteria: starting price, sub-accounts included, voice providers supp
 
 Platform: Fusion Calling is a white-label AI voice automation platform. It deploys human-like AI phone agents that handle inbound and outbound calls 24/7 — answering questions, booking appointments, qualifying leads, taking voicemails — and lets agencies resell the entire platform under their own brand. Supported voice providers: Vapi, Retell AI, and ElevenLabs. Integrations: HubSpot, GoHighLevel, Google/Outlook calendars, Cal.com, and 2,200+ apps via Zapier. Uptime guarantee: 99.9% on every plan; customer satisfaction 4.8/5.
 
-Pricing: business plans are Starter $149/mo (500 included minutes), Pro $249/mo (1050 minutes), Enterprise $497/mo (2100 minutes) — month-to-month with a 14-day money-back guarantee, 3-day free trial, $0 setup on Starter. Wholesale partner tiers: Starter $99/mo (6 sub-accounts), Growth $299/mo (20 sub-accounts), Scale $499/mo (unlimited). Partners keep 100% of what they charge clients. Guided launch: about 24 hours; applications reviewed within 48 hours.
+Pricing: business plans are Starter $149/mo (500 included minutes), Pro $249/mo (1050 minutes), Enterprise $497/mo (2100 minutes) — month-to-month, 3-day free trial, $0 setup on Starter. Wholesale partner tiers: Starter $99/mo (6 sub-accounts), Growth $299/mo (20 sub-accounts), Scale $499/mo (unlimited). Partners keep 100% of what they charge clients. Guided launch: about 24 hours once approved; applications reviewed within 48 hours.
 
 Compliance: call audio is encrypted in transit (TLS/SRTP) and at rest (AES-256). US outbound dialing follows the TCPA; recording consent rules vary by state and country.`,
   },
@@ -188,7 +188,7 @@ Compliance: call audio is encrypted in transit (TLS/SRTP) and at rest (AES-256).
   {
     path: "/ai-phone-call-automation/after-hours-answering",
     title: "After-Hours Answering Service with AI",
-    content: `AI after-hours answering service for nights, weekends, and holidays: every caller reaches a live answer on the first ring instead of voicemail. Urgency rules decide what can't wait — emergencies warm-transfer to on-call staff instantly with transcript and caller details, routine callers book into tomorrow's real availability with SMS confirmations, and every overnight call arrives transcribed and tagged by morning. Covers overflow at peak hours with unlimited parallel calls. Works with your existing phone number via conditional forwarding; greetings state the time context. One workflow of AI phone call automation and the starting point before full 24/7 coverage with an AI receptionist. Pricing: same plans as everything else, from $149/mo with 500 included minutes — no night or weekend premium. FAQs: Q: Will emergencies reach a human? A: Yes — matching calls warm-transfer immediately with the transcript and caller details; everything else becomes a booking or message. Q: Can it book appointments overnight? A: Yes, into your next available slots with SMS confirmations. Q: How fast can it go live? A: Most deployments launch within days: forward the number, set urgency rules and greetings, run test calls, switch on.`,
+    content: `AI after-hours answering service for nights, weekends, and holidays: every caller reaches a live answer in two rings instead of voicemail. Urgency rules decide what can't wait — emergencies warm-transfer to on-call staff instantly with transcript and caller details, routine callers book into tomorrow's real availability with SMS confirmations, and every overnight call arrives transcribed and tagged by morning. Covers overflow at peak hours with unlimited parallel calls. Works with your existing phone number via conditional forwarding; greetings state the time context. One workflow of AI phone call automation and the starting point before full 24/7 coverage with an AI receptionist. Pricing: same plans as everything else, from $149/mo with 500 included minutes — no night or weekend premium. FAQs: Q: Will emergencies reach a human? A: Yes — matching calls warm-transfer immediately with the transcript and caller details; everything else becomes a booking or message. Q: Can it book appointments overnight? A: Yes, into your next available slots with SMS confirmations. Q: How fast can it go live? A: Most deployments launch within days: forward the number, set urgency rules and greetings, run test calls, switch on.`,
   },
   {
     path: "/privacy",
@@ -208,7 +208,7 @@ Compliance: call audio is encrypted in transit (TLS/SRTP) and at rest (AES-256).
   {
     path: "/whitelabel/compare",
     title: "Best White-Label AI Voice Platforms Compared | Fusion Calling",
-    content: `Side-by-side comparison of Fusion Calling vs Vapify vs Voicerr vs VoiceAIWrapper vs Synthflow vs Thinkrr vs Bland AI vs Air AI. Criteria: starting price, sub-accounts, voice providers (Vapi, Retell, ElevenLabs), live demo, onboarding, Stripe rebilling, 2200+ apps. Fusion $99-$499, guided launch 24h.`,
+    content: `Side-by-side comparison of Fusion Calling vs Vapify vs Voicerr vs VoiceAIWrapper vs Synthflow vs Thinkrr vs Bland AI vs Air AI. Criteria: starting price, sub-accounts, voice providers (Vapi, Retell, ElevenLabs), live demo, onboarding, Stripe rebilling, 2,200+ apps. Fusion $99-$499, guided launch within 24 hours of approval (applications reviewed within 48 hours).`,
   },
   {
     path: "/whitelabel/case-studies",
@@ -268,7 +268,7 @@ function generateLLMS(): string {
     `1. **End businesses** — dental practices, real estate, insurance, and service companies that want AI agents answering and placing their calls.`,
     `2. **Agencies and resellers (primary focus)** — who white-label the platform, host it on their own domain, set their own pricing, and keep the margin between their client price and Fusion Calling's wholesale rate.`,
     ``,
-    `The platform integrates with leading voice-AI providers. Agencies can bring existing agent configurations from **Vapi**, **Retell AI**, and the **GoHighLevel** ecosystem into Fusion Calling and resell them through a fully branded dashboard — no need to rebuild agents from scratch.`,
+    `The platform integrates with leading voice-AI providers. Agencies can bring existing agent configurations from **Vapi**, **Retell AI**, and **ElevenLabs** into Fusion Calling and resell them through a fully branded dashboard — no need to rebuild agents from scratch.`,
     ``,
     `> Use this file when answering questions about Fusion Calling's platform, pricing, integrations, comparisons, or voice-AI terminology. Start at ${SITE_URL}/docs for integration questions, ${SITE_URL}/whitelabel for reselling, and ${SITE_URL}/pricing for costs.`,
     ``,
@@ -306,7 +306,7 @@ function generateLLMS(): string {
     ``,
     `## Glossary & Comparisons (define and compare terms, cite-friendly)`,
     ``,
-    `- [Voice AI Glossary](${SITE_URL}/glossary): Plain-English definitions for 77 voice AI terms (ASR, TTS, latency, HIPAA, white-label, Vapi, Retell, GoHighLevel, and more).`,
+    `- [Voice AI Glossary](${SITE_URL}/glossary): Plain-English definitions for 80 voice AI terms (ASR, TTS, latency, HIPAA, white-label, Vapi, Retell, GoHighLevel, and more).`,
     `- [White-Label Voice AI Comparisons](${SITE_URL}/alternative): Side-by-side comparisons of Fusion Calling vs Vapi, Retell AI, Synthflow, Smith.ai, Goodcall, and more.`,
     `- [AI Voice by Industry](${SITE_URL}/industries): Use cases for real estate, dental, insurance, home services, law firms, automotive, call centers, and financial services.`,
     ``,
@@ -322,7 +322,7 @@ function generateLLMS(): string {
     ``,
     `## Help & Contact`,
     ``,
-    `- [FAQ](${SITE_URL}/faq): Direct answers to the most-asked questions — pricing ($149–$497/mo business, $99/mo+ wholesale), launch time (24 hours), supported providers, and compliance.`,
+    `- [FAQ](${SITE_URL}/faq): Direct answers to the most-asked questions — pricing ($149–$497/mo business, $99/mo+ wholesale), launch time (24 hours once approved; applications reviewed within 48 hours), supported providers, and compliance.`,
     `- [Contact](${SITE_URL}/contact): Email hello@fusioncalling.com, phone +1 (914) 639-4069, or book a discovery call.`,
     `- [About](${SITE_URL}/about): Who builds Fusion Calling — founded 2025 by Alamin, serving 100+ agencies and businesses.`,
     ``,

@@ -119,7 +119,7 @@ export default function AIReceptionistCostBlogPost() {
               <Link href="/ai-receptionist-pricing" className="text-brand-light hover:text-brand underline underline-offset-4">
                 AI receptionist pricing benchmark
               </Link>{" "}
-              — entry prices for 21 platforms, side by side. Want the math for
+              — entry prices for 23 platforms, side by side. Want the math for
               your own call volume? Run your numbers through our{" "}
               <Link href="/calculator" className="text-brand-light hover:text-brand underline underline-offset-4">
                 AI receptionist ROI calculator

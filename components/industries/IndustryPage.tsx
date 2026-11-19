@@ -223,11 +223,11 @@ export default function IndustryPage({ industry }: { industry: Industry }) {
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
-                      <span>Average cost savings: <span className="text-brand font-bold">{industryStats.costSavings}</span> with Fusion Calling</span>
+                      <span>Cost payoff: <span className="text-brand font-bold">{industryStats.costSavings}</span> with Fusion Calling</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />
-                      <span>Customer satisfaction increase: <span className="text-brand font-bold">{industryStats.satisfactionIncrease}</span></span>
+                      <span>Customer satisfaction: <span className="text-brand font-bold">{industryStats.satisfactionIncrease}</span></span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-2 h-2 mt-2 rounded-full bg-brand flex-shrink-0" />

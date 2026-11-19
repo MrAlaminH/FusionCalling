@@ -46,7 +46,7 @@ By the numbers:
 - ✅ **Lead Qualification** — capture and score leads in real time, route them to your CRM
 - ✅ **Multi-Channel** — inbound calls, outbound campaigns, voicemail drop, and SMS
 - ✅ **White-Label** — resell under your own brand, domain, and pricing
-- ✅ **Try Before You Buy** — 3-day free trial, no setup fee, 14-day money-back guarantee
+- ✅ **Try Before You Buy** — 3-day free trial, $0 setup on Starter
 
 ---
 

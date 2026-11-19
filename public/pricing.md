@@ -1,6 +1,6 @@
 # Pricing — Fusion Calling
 
-> Fusion Calling is a white-label AI voice automation platform: human-like AI phone agents handle inbound and outbound calls 24/7 (appointment scheduling, lead qualification, FAQ handling, voicemails, receptionist coverage), and agencies resell the platform under their own brand and domain. Month-to-month billing, no long-term contracts, 14-day money-back guarantee, 3-day free trial.
+> Fusion Calling is a white-label AI voice automation platform: human-like AI phone agents handle inbound and outbound calls 24/7 (appointment scheduling, lead qualification, FAQ handling, voicemails, receptionist coverage), and agencies resell the platform under their own brand and domain. Month-to-month billing, no long-term contracts, 3-day free trial.
 
 ## Business plans (for businesses that want AI answering their calls)
 

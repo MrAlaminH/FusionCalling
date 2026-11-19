@@ -206,6 +206,75 @@ for (const rel of launchClaimFiles) {
   );
 }
 
+// There is no money-back guarantee (owner decision 2026-11-19). The claim was
+// removed from every surface; nothing may reintroduce it.
+const moneybackFiles: string[] = [
+  "../lib/blog-faqs.ts",
+  "../lib/page-faqs.ts",
+  "../lib/whitelabel-faqs.ts",
+  "../lib/comparisons.ts",
+  "../lib/whitelabel-compare.ts",
+  "../lib/whitelabel-locations.ts",
+  "../lib/industries.ts",
+  "../lib/industry-seo.ts",
+  "../lib/authors.ts",
+  "../lib/blog-posts.ts",
+  "../lib/glossary.ts",
+  "../lib/product-facts.ts",
+];
+for (const entry of readdirSync(new URL("../app", import.meta.url), {
+  recursive: true,
+})) {
+  if (String(entry).endsWith(".tsx")) moneybackFiles.push(`../app/${entry}`);
+}
+for (const entry of readdirSync(new URL("../components", import.meta.url), {
+  recursive: true,
+})) {
+  if (String(entry).endsWith(".tsx")) moneybackFiles.push(`../components/${entry}`);
+}
+for (const rel of moneybackFiles) {
+  const src = readFileSync(new URL(rel, import.meta.url), "utf8");
+  const match = src.match(/money-back/i);
+  assert(
+    !match,
+    `${rel}: money-back guarantee claim reintroduced ("${match?.[0]}") — there is no money-back guarantee (owner decision 2026-11-19)`
+  );
+}
+
+// Pickup-speed canon is "two rings" (PICKUP in lib/product-facts). Numeric
+// variants ("first ring", "under a second" pickup) contradict it. The homepage
+// call-flow narrative ("from the first ring to the completed follow-up") is a
+// stage description, not a pickup claim, and uses none of these patterns.
+const pickupFiles: string[] = [
+  "../lib/blog-faqs.ts",
+  "../lib/page-faqs.ts",
+  "../lib/whitelabel-faqs.ts",
+  "../lib/comparisons.ts",
+  "../lib/whitelabel-locations.ts",
+  "../lib/industries.ts",
+  "../lib/industry-seo.ts",
+  "../lib/glossary.ts",
+  "../scripts/generate-llms.ts",
+  "../app/deck/slides.tsx",
+  "../components/call-flow.tsx",
+  "../components/definition-block.tsx",
+];
+for (const entry of readdirSync(new URL("../app", import.meta.url), {
+  recursive: true,
+})) {
+  if (String(entry).endsWith(".tsx")) pickupFiles.push(`../app/${entry}`);
+}
+for (const rel of pickupFiles) {
+  const src = readFileSync(new URL(rel, import.meta.url), "utf8");
+  const match = src.match(
+    /on the first ring|First ring, |first ring instead|pickup.{0,20}under a second|answers every call in under a second/i
+  );
+  assert(
+    !match,
+    `${rel}: first-ring pickup claim reintroduced ("${match?.[0]}") — use PICKUP ("two rings") from lib/product-facts`
+  );
+}
+
 // Provider support is included on every wholesale plan (whitelabel FAQ:
 // "Vapi, Retell AI, and ElevenLabs out of the box"). A plan-card bullet that
 // names a strict subset (e.g. "Vapi + Retell Support") contradicts every

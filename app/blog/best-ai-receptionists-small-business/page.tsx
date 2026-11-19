@@ -393,7 +393,7 @@ export default function BestAIReceptionistsSmallBusinessBlogPost() {
               <Link href="/ai-receptionist-pricing" className="text-brand-light hover:text-brand underline underline-offset-4">
                 AI receptionist pricing benchmark
               </Link>{" "}
-              covers 21 platforms side by side if the eight here aren&apos;t
+              covers 23 platforms side by side if the eight here aren&apos;t
               enough.
             </p>
           </div>

@@ -92,7 +92,7 @@ export default function Hero() {
             Launch a white-label AI receptionist under your own brand — it
             answers, books, and routes your clients&apos; calls 24/7. Resell your
             existing Vapi, Retell, or ElevenLabs agents, keep 100% of client
-            revenue, and launch in 24 hours.
+            revenue, and launch in 24 hours once approved.
           </p>
         </div>
 

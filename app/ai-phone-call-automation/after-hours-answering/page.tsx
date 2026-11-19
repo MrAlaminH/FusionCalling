@@ -52,7 +52,7 @@ const handles = [
   {
     icon: PhoneCall,
     title: "Every after-hours call answered",
-    text: "Nights, weekends, holidays — every caller reaches a live answer on the first ring instead of voicemail. No separate night staff, no forwarding chains.",
+    text: "Nights, weekends, holidays — every caller reaches a live answer in two rings instead of voicemail. No separate night staff, no forwarding chains.",
   },
   {
     icon: Siren,
@@ -95,7 +95,7 @@ const howItWorks = [
   {
     stage: "Overnight",
     title: "Every call answered, triaged, and closed out",
-    text: "The AI answers on the first ring — in parallel, so a busy night never means a busy signal — classifies each caller against your urgency rules, warm-transfers real emergencies, and books or messages the rest.",
+    text: "The AI answers in two rings — in parallel, so a busy night never means a busy signal — classifies each caller against your urgency rules, warm-transfers real emergencies, and books or messages the rest.",
   },
   {
     stage: "Morning",
@@ -183,7 +183,7 @@ const comparisonRows = [
   },
   {
     feature: "Response time",
-    ai: "First ring, unlimited parallel calls",
+    ai: "Two rings, unlimited parallel calls",
     service: "Hold queues at peak",
     voicemail: "No answer",
   },
@@ -220,7 +220,7 @@ const comparisonNotes = [
   },
   {
     title: "vs. plain voicemail",
-    text: "Emergency callers rarely leave voicemail — they keep dialing until someone answers, and the next name on the list gets the job. An answered call on the first ring is the difference between a booked job and a lost customer.",
+    text: "Emergency callers rarely leave voicemail — they keep dialing until someone answers, and the next name on the list gets the job. An answered call in two rings is the difference between a booked job and a lost customer.",
   },
   {
     title: "vs. waking staff for everything",
@@ -290,7 +290,7 @@ const faqs = [
   {
     question: "What is an after-hours answering service?",
     answer:
-      "An after-hours answering service picks up your business calls outside working hours — nights, weekends, and holidays. An AI version answers instantly on the first ring, triages emergencies to on-call staff, books routine callers into the next day, and delivers complete messages by morning.",
+      "An after-hours answering service picks up your business calls outside working hours — nights, weekends, and holidays. An AI version answers within two rings, triages emergencies to on-call staff, books routine callers into the next day, and delivers complete messages by morning.",
   },
   {
     question: "How is this different from a 24/7 AI receptionist?",
@@ -600,7 +600,7 @@ export default function AfterHoursAnsweringPage() {
               <div className="border-l-2 border-brand/40 pl-5 sm:pl-6 space-y-4">
                 <p className="text-gray-400 text-lg leading-relaxed">
                   An AI after-hours answering service takes your calls when your
-                  team is off: it answers on the first ring, separates
+                  team is off: it answers in two rings, separates
                   emergencies from routine calls using rules you set,
                   warm-transfers the urgent ones to on-call staff, and books or
                   messages the rest — so mornings start with a fuller diary

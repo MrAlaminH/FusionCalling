@@ -162,8 +162,8 @@ function TitleSlide() {
           </p>
           <div className="animate-fade-in-up mt-8 flex flex-wrap gap-2 [animation-delay:300ms]">
             <Chip>24/7 coverage</Chip>
-            <Chip>Picks up in seconds</Chip>
-            <Chip>10–20 concurrent calls</Chip>
+            <Chip>Answers in two rings</Chip>
+            <Chip>Unlimited concurrent calls</Chip>
             <Chip>Human-like AI voices</Chip>
             <Chip>2,200+ integrations</Chip>
           </div>
@@ -352,7 +352,7 @@ function ProductSlide() {
     {
       icon: PhoneCall,
       title: "24/7 answering",
-      body: "Every caller answered in seconds — nights, weekends, holidays. No voicemail, no hold queue.",
+      body: "Every caller answered in two rings — nights, weekends, holidays. No voicemail, no hold queue.",
     },
     {
       icon: CalendarCheck,
@@ -463,7 +463,7 @@ function HowItWorksSlide() {
     {
       icon: PhoneCall,
       step: "Connects",
-      body: "Picks up in seconds. No phone tree, no hold music.",
+      body: "Answers in two rings. No phone tree, no hold music.",
     },
     {
       icon: AudioLines,
@@ -586,7 +586,7 @@ function DemoSlide() {
             {DEMO_PHONE_DISPLAY}
           </p>
           <p className="mt-3 text-sm font-medium text-brand">
-            Dial it — the AI picks up in seconds
+            Dial it — the AI answers in two rings
           </p>
           <p className="mt-2 text-xs leading-relaxed text-white/50">
             Or leave your number on fusioncalling.com and the agent will call
@@ -757,7 +757,7 @@ function EconomicsSlide() {
       points: [
         "Books into your real calendar, acts in your stack",
         "24/7, unlimited concurrent calls",
-        "$0 setup on Starter · 14-day money-back",
+        "$0 setup on Starter · 3-day free trial",
       ],
       highlight: true,
     },
@@ -909,7 +909,7 @@ function IndustriesSlide() {
         </span>
         <span className="flex items-center gap-2">
           <Sparkles className="h-4 w-4 text-brand" aria-hidden /> Voice cloning
-          available
+          via your ElevenLabs account
         </span>
       </p>
     </SlideShell>
@@ -918,11 +918,11 @@ function IndustriesSlide() {
 
 function ResultsSlide() {
   const counters = [
-    { value: 100, suffix: "+", label: "voice-AI deployments" },
-    { value: 99, suffix: "%", label: "client satisfaction" },
-    { value: 50000, suffix: "+", label: "calls managed" },
-    { value: 40, suffix: "h", label: "saved monthly" },
-    { value: 80, suffix: "%", label: "fewer missed calls" },
+    { value: 100, suffix: "+", label: "voice-AI deployments", decimals: 0 },
+    { value: 4.8, suffix: "/5", label: "client satisfaction", decimals: 1 },
+    { value: 50, suffix: "k+", label: "calls managed", decimals: 0 },
+    { value: 2, suffix: " rings", label: "average pickup", decimals: 0 },
+    { value: 8, suffix: "+/mo", label: "feature updates shipped", decimals: 0 },
   ];
   const cases = [
     {
@@ -930,7 +930,7 @@ function ResultsSlide() {
       meta: "Digital agency · Austin, TX",
       metric: "$12.4K",
       metricLabel: "monthly recurring revenue",
-      points: ["15 white-label clients", "94% client retention", "Branded platform live in 24 hours"],
+      points: ["15 white-label clients", "94% client retention", "Live within 24 hours of approval"],
       quote:
         "Every new client we onboard takes 15 minutes of setup and generates $500+ a month.",
       author: "Marcus Chen, Founder",
@@ -951,7 +951,7 @@ function ResultsSlide() {
       metricLabel: "ROI in 60 days",
       points: ["40+ qualified leads/mo", "8 showings booked weekly", "Replaced $1,200/mo service"],
       quote:
-        "We went from missing 60% of after-hours leads to capturing every single one.",
+        "We went from missing a majority of after-hours leads to capturing every single one.",
       author: "James Torres, Broker-Owner",
     },
   ];
@@ -966,7 +966,7 @@ function ResultsSlide() {
             className="rounded-card border border-white/10 bg-white/5 p-4 text-center"
           >
             <p className="font-display text-3xl font-bold text-brand md:text-4xl">
-              <CountUp to={c.value} suffix={c.suffix} />
+              <CountUp to={c.value} suffix={c.suffix} decimals={c.decimals} />
             </p>
             <p className="mt-1 text-[11px] font-medium uppercase tracking-wide text-white/50">
               {c.label}
@@ -1180,7 +1180,7 @@ function TrustSlide() {
       title: "Security",
       points: [
         "GDPR & EU AI Act aligned",
-        "ISO certified · SOC 2 in progress",
+        "SOC 2 audit in progress",
         "TLS 1.2+/1.3, SRTP media, AES-256 at rest",
         "Per-use-case recording on/off, retention schedules, per-caller access & delete",
       ],
@@ -1189,10 +1189,10 @@ function TrustSlide() {
       icon: Scale,
       title: "Compliance",
       points: [
-        "TCPA consent, calling-hour & do-not-call checks on outbound",
+        "Consent-aware outbound with calling-hour windows & opt-out handling",
         "Recording-consent notices (one-party vs all-party by state)",
         "HIPAA-conscious deployments for dental & medical intake",
-        "Consent, time, and DNC logs kept per campaign",
+        "Consent and time-of-day settings configured per campaign",
       ],
     },
     {
@@ -1200,8 +1200,8 @@ function TrustSlide() {
       title: "Friendly terms",
       points: [
         "Month-to-month, cancel anytime",
-        "14-day money-back guarantee (direct plans)",
-        "3-day free trial + $0 setup (partner plans)",
+        "3-day free trial on every plan",
+        "$0 setup fee on partner plans",
         "99.9% uptime · 24/7 agent coverage · usage alerts at 80% & 95%",
       ],
     },
@@ -1299,8 +1299,8 @@ function CTASlide() {
           </a>
         </div>
         <p className="animate-fade-in-up mt-8 text-sm text-white/40 [animation-delay:450ms]">
-          cal.com/mralamin/discovery-call · hello@fusioncalling.com · 14-day
-          money-back guarantee
+          cal.com/mralamin/discovery-call · hello@fusioncalling.com · 3-day
+          free trial on every plan
         </p>
       </div>
     </SlideShell>

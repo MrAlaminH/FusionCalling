@@ -5,16 +5,14 @@ import { useEffect, useRef, useState } from "react";
 const AnimatedStatistics = () => {
   const targets = useRef({
     projects: 100,
-    satisfaction: 99,
     hours: 40,
     calls: 50,
   });
 
   // Initialize to the final values so search-engine crawlers and no-JS clients
-  // see the real numbers in the server-rendered HTML (not "0+ / 0% / 0h / 0k").
+  // see the real numbers in the server-rendered HTML (not "0+ / 0h / 0k").
   const [counters, setCounters] = useState({
     projects: targets.current.projects,
-    satisfaction: targets.current.satisfaction,
     hours: targets.current.hours,
     calls: targets.current.calls,
   });
@@ -48,7 +46,7 @@ const AnimatedStatistics = () => {
 
   const startAnimation = () => {
     // Reset to zero so the count-up animation still plays on first view.
-    setCounters({ projects: 0, satisfaction: 0, hours: 0, calls: 0 });
+    setCounters({ projects: 0, hours: 0, calls: 0 });
     const duration = 1500;
     const start = performance.now();
 
@@ -60,7 +58,6 @@ const AnimatedStatistics = () => {
 
       setCounters({
         projects: Math.floor(targets.current.projects * eased),
-        satisfaction: Math.floor(targets.current.satisfaction * eased),
         hours: Math.floor(targets.current.hours * eased),
         calls: Math.floor(targets.current.calls * eased),
       });
@@ -82,7 +79,7 @@ const AnimatedStatistics = () => {
     },
     {
       title: "Client Satisfaction",
-      value: `${counters.satisfaction}%`,
+      value: "4.8/5",
       description: "Delivering excellence that keeps our clients coming back.",
     },
     {

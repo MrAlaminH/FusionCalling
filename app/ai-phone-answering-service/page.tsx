@@ -65,7 +65,7 @@ const stats = [
   {
     icon: Clock,
     value: "24/7",
-    label: "Nights, weekends, and holidays answered on the first ring",
+    label: "Nights, weekends, and holidays answered in two rings",
   },
   {
     icon: CreditCard,
@@ -88,7 +88,7 @@ const included = [
   {
     icon: PhoneCall,
     title: "24/7 live answering",
-    text: "Every call picked up on the first ring — nights, weekends, holidays. No voicemail, no hold queue, no missed first impression, however many call at once.",
+    text: "Every call picked up in two rings — nights, weekends, holidays. No voicemail, no hold queue, no missed first impression, however many call at once.",
   },
   {
     icon: CalendarCheck,
@@ -205,7 +205,7 @@ const switchSteps = [
 
 const comparisonRows = [
   { feature: "Monthly cost", fusion: "$149 flat", human: "$1–3 per minute", voicemail: "$0" },
-  { feature: "Who answers", fusion: "AI agent on the first ring", human: "Agent on shift, then a queue", voicemail: "Nobody — a greeting" },
+  { feature: "Who answers", fusion: "AI agent in two rings", human: "Agent on shift, then a queue", voicemail: "Nobody — a greeting" },
   { feature: "Nights, weekends, holidays", fusion: "Full service, same quality", human: "Shift-dependent", voicemail: "Greeting only" },
   { feature: "Simultaneous calls", fusion: "Unlimited", human: "One per agent on shift", voicemail: "Messages only" },
   { feature: "Books on the call", fusion: "Yes — real calendar availability", human: "Takes a message, calls back", voicemail: "No" },
@@ -474,7 +474,7 @@ export default function AiAnsweringServicePage() {
             <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
               Paying per minute for a human answering service that reads from a
               script? Fusion Calling is the AI phone answering service that
-              replaces it: every call picked up on the first ring — 24/7, even
+              replaces it: every call picked up in two rings — 24/7, even
               nights and weekends — with booking into your real calendar and
               full transcripts you can audit yourself. Flat monthly plans from
               $149, keep your number, go live in days, no contract.
@@ -950,7 +950,7 @@ export default function AiAnsweringServicePage() {
           </div>
         </section>
 
-        <StickyMobileCta />
+        <StickyMobileCta href="https://cal.com/mralamin/discovery-call" />
 
         <Sources />
 

@@ -396,6 +396,11 @@ export default function OnboardingPage({
                             Provider signups
                           </p>
                           <GuideLinks guides={step.signups} />
+                          <p className="mt-1.5 text-[11px] text-gray-500">
+                            The Vapi link is a referral link — we may earn a
+                            commission if you sign up through it, at no extra
+                            cost to you.
+                          </p>
                         </div>
                       )}
                     </div>

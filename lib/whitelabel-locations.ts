@@ -594,7 +594,7 @@ export const whitelabelLocations: WhiteLabelLocation[] = [
       {
         title: "Pacific-time coverage without a night shift",
         description:
-          "LA businesses serve East Coast customers who call from 8am their time — 5am in Los Angeles. Branded AI agents answer from the first ring at any hour, so your clients stop losing early-morning callers to voicemail.",
+          "LA businesses serve East Coast customers who call from 8am their time — 5am in Los Angeles. Branded AI agents answer within two rings at any hour, so your clients stop losing early-morning callers to voicemail.",
       },
       {
         title: "E-commerce and DTC brand support",
@@ -864,7 +864,7 @@ export const whitelabelLocations: WhiteLabelLocation[] = [
       {
         title: "The fastest-hanging-up market in the country",
         description:
-          "New York callers who hit voicemail are gone in seconds, and they call at 7am and 11pm. Branded AI agents answer on the first ring around the clock, which is the entire pitch in this city.",
+          "New York callers who hit voicemail are gone in seconds, and they call at 7am and 11pm. Branded AI agents answer in two rings around the clock, which is the entire pitch in this city.",
       },
       {
         title: "Legal and financial intake with compliance controls",
@@ -929,7 +929,7 @@ export const whitelabelLocations: WhiteLabelLocation[] = [
       {
         title: "Consent-first configuration for Illinois law",
         description:
-          "Illinois is an all-party consent state with the strictest biometric privacy law in the country (BIPA). Fusion Calling supports configurable recording notices and consent prompts, so Chicago deployments start compliant by default. Confirm specifics with your legal advisor.",
+          "Illinois is an all-party consent state with the strictest biometric privacy law in the country (BIPA). Fusion Calling supports configurable recording notices and consent prompts, so Chicago deployments can be configured for consent messaging from day one. Confirm specifics with your legal advisor.",
       },
       {
         title: "One dashboard for a three-state metro",

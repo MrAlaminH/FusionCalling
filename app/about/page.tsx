@@ -41,7 +41,7 @@ const aboutFaqs = [
   {
     question: "How much does Fusion Calling cost?",
     answer:
-      "Direct plans start at $149/month (Starter, 500 minutes), with Pro at $249/month and Enterprise at $497/month — every plan includes a 99.9% uptime guarantee and a 14-day money-back guarantee. Agencies reselling the platform white-label start at $99/month and keep 100% of what they charge their clients.",
+      "Direct plans start at $149/month (Starter, 500 minutes), with Pro at $249/month and Enterprise at $497/month — every plan includes a 99.9% uptime guarantee and a 3-day free trial. Agencies reselling the platform white-label start at $99/month and keep 100% of what they charge their clients.",
   },
   {
     question: "Which voice AI providers does Fusion Calling support?",
@@ -56,7 +56,7 @@ const aboutFaqs = [
   {
     question: "How is Fusion Calling different from other voice AI platforms?",
     answer:
-      "Three things: a multi-provider layer across Vapi, Retell, and ElevenLabs; a true white-label program where agencies keep 100% of client revenue; and transparency — public pricing from $149/month and a published benchmark of entry prices across 21 voice AI platforms.",
+      "Three things: a multi-provider layer across Vapi, Retell, and ElevenLabs; a true white-label program where agencies keep 100% of client revenue; and transparency — public pricing from $149/month and a published benchmark of entry prices across 23 voice AI platforms.",
   },
 ];
 
@@ -134,7 +134,7 @@ const trustItems = [
   {
     icon: FileCheck2,
     title: "SOC 2 in progress",
-    description: "ISO certifications held; SOC 2 audit underway.",
+    description: "A SOC 2 audit is underway with an independent auditor; call data is encrypted in transit and at rest.",
   },
   {
     icon: Activity,

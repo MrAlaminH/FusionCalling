@@ -134,12 +134,12 @@ const securityFeatures = [
   {
     title: "Global compliance",
     description:
-      "We comply with GDPR, AI EU Act, and other international data protection regulations.",
+      "GDPR & EU AI Act aligned — data handling designed around EU requirements from day one.",
   },
   {
     title: "Security certifications",
     description:
-      "We hold ISO certifications and are in the process of obtaining SOC2 certification.",
+      "A SOC 2 audit is underway — security controls are being evaluated by an independent auditor.",
   },
 ];
 
@@ -157,7 +157,7 @@ const faqItems = [
   {
     question: "How realistic do AI voice agents sound?",
     answer:
-      "The voices come from advanced text-to-speech engines like ElevenLabs, with natural pacing, interruption handling, and voice customization options — clone your own voice or choose from our library of natural-sounding voices in multiple languages and accents. Judge the quality yourself: hear a live demo call on this page.",
+      "The voices come from advanced text-to-speech engines like ElevenLabs, with natural pacing, interruption handling, and voice customization options — Enterprise plans can add a custom voice clone built in your own ElevenLabs account, or choose from our library of natural-sounding voices in multiple languages and accents. Judge the quality yourself: hear a live demo call on this page.",
   },
   {
     question: "How long does deployment take?",

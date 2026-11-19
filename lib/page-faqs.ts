@@ -110,7 +110,7 @@ export const aiReceptionistFaqs: PageFaq[] = [
   {
     question: "How much does an AI receptionist cost?",
     answer:
-      "Plans start at $149/month with 500 included minutes. There is no permanent free tier, but every plan starts with a 3-day free trial, a 14-day money-back guarantee, and a live demo call you can take before committing — see /pricing for the full breakdown across all tiers.",
+      "Plans start at $149/month with 500 included minutes. There is no permanent free tier, but every plan starts with a 3-day free trial, and a live demo call you can take before committing — see /pricing for the full breakdown across all tiers.",
   },
   {
     question: "Will AI replace receptionists?",
@@ -130,7 +130,7 @@ export const aiReceptionistFaqs: PageFaq[] = [
   {
     question: "How long does setup take?",
     answer:
-      "Your AI receptionist goes live with a guided launch in 24 hours: connect your existing number, provide your business knowledge, set greetings and transfer rules, then run test calls before customers hear it. Most workflows are live within days; complex multi-system setups take longer, but a single inbound workflow is typically live in under a week.",
+      "Your AI receptionist goes live with a guided launch in days, not weeks: connect your existing number, provide your business knowledge, set greetings and transfer rules, then run test calls before customers hear it. Complex multi-system setups take longer, but a single inbound workflow is typically live in under a week.",
   },
   {
     question: "What tools does it integrate with?",
@@ -140,7 +140,7 @@ export const aiReceptionistFaqs: PageFaq[] = [
   {
     question: "Is there a free trial?",
     answer:
-      "Yes — every plan starts with a 3-day free trial, backed by a 14-day money-back guarantee. There is no permanent free tier, but you can hear a live demo call on the homepage before committing to anything.",
+      "Yes — every plan starts with a 3-day free trial. There is no permanent free tier, but you can hear a live demo call on the homepage before committing to anything.",
   },
   {
     question: "What happens when the AI cannot help a caller?",

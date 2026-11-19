@@ -16,7 +16,7 @@ import VideoEmbed from "@/components/video-embed";
 
 const title = "AI Voice Agent Reseller Program";
 const description =
-  "Resell AI voice agents under your brand. Wholesale from $99/mo, 6 sub-accounts, Stripe rebilling, 100% margins. Launch in 24 hours.";
+  "Resell AI voice agents under your brand. Wholesale from $99/mo, 6 sub-accounts, Stripe rebilling, 100% margins. Launch in 24 hours once approved.";
 
 const programSteps = [
   {
@@ -36,7 +36,7 @@ const programSteps = [
 const audiences = [
   {
     t: "Digital marketing agencies",
-    d: "Add a high-margin, recurring AI service to your retainers. Launch a branded AI receptionist or calling service for every client in about 24 hours.",
+      d: "Add a high-margin, recurring AI service to your retainers. Launch a branded AI receptionist or calling service for every client in about 24 hours once you're approved.",
   },
   {
     t: "MSPs & telecom consultants",

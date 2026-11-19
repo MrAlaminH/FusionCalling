@@ -129,7 +129,7 @@ export default function Home() {
             name: "How realistic do AI voice agents sound?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "The voices come from advanced text-to-speech engines like ElevenLabs, with natural pacing, interruption handling, and voice customization options — clone your own voice or choose from our library of natural-sounding voices in multiple languages and accents. Judge the quality yourself: hear a live demo call on this page.",
+              text: "The voices come from advanced text-to-speech engines like ElevenLabs, with natural pacing, interruption handling, and voice customization options — Enterprise plans can add a custom voice clone built in your own ElevenLabs account, or choose from our library of natural-sounding voices in multiple languages and accents. Judge the quality yourself: hear a live demo call on this page.",
             },
           },
           {

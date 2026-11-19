@@ -33,6 +33,7 @@ const PLANS: Plan[] = [
     href: "#calendar",
     features: [
       "Includes 500 minutes",
+      "SMS follow-ups",
       "Full Portal Access",
       "All Integrations Compatible",
       "Auto-tags and logs every lead",

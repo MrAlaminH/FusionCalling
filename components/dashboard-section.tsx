@@ -24,7 +24,7 @@ const panels = [
 const trustChips = [
   { icon: Timer, label: "99.9% uptime guarantee" },
   { icon: Star, label: "4.8/5 customer satisfaction" },
-  { icon: ShieldCheck, label: "14-day money-back guarantee" },
+  { icon: ShieldCheck, label: "3-day free trial on every plan" },
 ];
 
 /**

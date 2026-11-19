@@ -59,10 +59,12 @@ export const LAUNCH = {
 } as const;
 
 export const OFFER = {
-  trial: "3 days",
+  trial: "3-day",
   setupFee: 0,
-  guarantee: "14-day money-back",
 } as const;
+
+/** Pickup-speed claim — how fast the AI answers a live caller. */
+export const PICKUP = "two rings";
 
 export const PROVIDERS = {
   /** Compact "+"-joined form for tables. */

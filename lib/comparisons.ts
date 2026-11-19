@@ -4196,7 +4196,7 @@ const rawComparisons: Comparison[] = [
     competitorBestFor:
       "Teams that want a human receptionist available for complex calls and accept per-call pricing for that reassurance.",
     fusionCallingOverview: [
-      "Fusion Calling is a full-AI answering service: voice agents answer every call on the first ring, book into your calendar, take messages, warm-transfer urgent calls, and send SMS confirmations — around the clock, with unlimited simultaneous calls.",
+      "Fusion Calling is a full-AI answering service: voice agents answer every call in two rings, book into your calendar, take messages, warm-transfer urgent calls, and send SMS confirmations — around the clock, with unlimited simultaneous calls.",
       "Pricing is flat and predictable: $149/month with 500 included minutes scaling to $497/month for 2,100 minutes, with minute pools that carry published per-minute overage rates — no per-call metering — and no long-term contract. A live interactive demo on the homepage lets you hear the quality before committing.",
       "Where a human-assisted service queues callers during surges, AI answers ten simultaneous callers as easily as one. Where per-call plans punish growth, minute pools scale with volume. And every call comes transcribed, so you audit quality yourself instead of trusting a service report.",
       "For agencies, the same platform white-labels: client sub-accounts, your branding and pricing, Stripe rebilling from $99/month — resell answering as your own service.",

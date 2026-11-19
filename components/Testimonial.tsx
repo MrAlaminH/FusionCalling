@@ -31,7 +31,7 @@ const testimonials: Testimonial[] = [
     name: "Emily Davis",
     role: "Operations Lead",
     content:
-      "Scaling inbound calls with AI has been a game-changer for our business. It's effortless to manage high call volumes without compromising on quality really super cool.",
+      "Scaling inbound calls with AI has been a game-changer for our business. It's effortless to manage high call volumes without compromising on quality.",
     heading: "Effortlessly scaled inbound call management",
     image: "/testimonial/testimonial3.webp",
   },

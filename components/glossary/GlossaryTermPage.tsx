@@ -69,7 +69,7 @@ export default function GlossaryTermPage({ term }: { term: GlossaryTerm }) {
     },
   ];
 
-  // Cross-sell boilerplate rotated by slug hash so 77 term pages don't share
+  // Cross-sell boilerplate rotated by slug hash so the term pages don't share
   // one identical CTA paragraph.
   const cta = CTA_VARIANTS[hashSlug(slug) % CTA_VARIANTS.length];
 

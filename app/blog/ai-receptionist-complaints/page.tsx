@@ -581,7 +581,11 @@ export default function AIReceptionistComplaintsBlogPost() {
               <Link href="/blog/ai-receptionist-cost" className="text-brand-light hover:text-brand transition-colors">
                 real cost breakdown
               </Link>
-              , then hear the difference yourself on the live demo.
+              , then hear the difference yourself on the{" "}
+              <Link href="/#show-case" className="text-brand-light hover:text-brand transition-colors">
+                live demo
+              </Link>
+              .
             </p>
           </div>
         </div>

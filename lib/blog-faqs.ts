@@ -57,7 +57,7 @@ export const blogFaqs: Record<string, BlogFaq[]> = {
     },
     {
       "question": "Do I have to tell callers they're talking to an AI?",
-      "answer": "As of September 2026, no federal rule requires AI disclosure on inbound calls. But Utah requires disclosure when consumers ask (and at the outset for regulated occupations), Colorado phases in a general disclosure duty on June 30, 2026, and California requires verbal AI disclaimers in healthcare patient communications. The best practice is simple: a one-line notice at the start of the call — 'this call may be recorded and may be answered by an automated assistant' — which also satisfies state recording-consent exposure."
+      "answer": "As of September 2026, no federal rule requires AI disclosure on inbound calls. But Utah requires disclosure when consumers ask (and at the outset for regulated occupations), Colorado's general disclosure duty began phasing in on June 30, 2026, and California requires verbal AI disclaimers in healthcare patient communications. The best practice is simple: a one-line notice at the start of the call — 'this call may be recorded and may be answered by an automated assistant' — which also satisfies state recording-consent exposure."
     },
     {
       "question": "Which states require all-party consent to record phone calls?",

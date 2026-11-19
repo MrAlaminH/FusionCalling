@@ -38,7 +38,7 @@ const PAGES: Result[] = [
     type: "Page",
     title: "Pricing — AI Phone Call Automation",
     description:
-      "Plans from $149/month with 500–2,100 included minutes. No long-term contracts. 14-day money-back guarantee.",
+      "Plans from $149/month with 500–2,100 included minutes. No long-term contracts. 3-day free trial on every plan.",
     href: "/pricing",
   },
   {

@@ -43,11 +43,11 @@ const PROVIDER_LINKS = [
 export const metadata: Metadata = {
   title: "White Label AI Receptionist Platform",
   description:
-    "White-label AI receptionist & voice agent platform for agencies: resell Vapi, Retell & ElevenLabs, keep 100% of client revenue, and launch in 24 hours.",
+    "White-label AI receptionist & voice agent platform for agencies: resell Vapi, Retell & ElevenLabs, keep 100% of client revenue, and launch in 24 hours once approved.",
   ...buildOpenGraph({
     title: "White Label AI Receptionist Platform — Keep 100% Revenue",
     description:
-      "White-label AI receptionist & voice agent platform for agencies: resell Vapi, Retell & ElevenLabs, keep 100% of client revenue, and launch in 24 hours.",
+      "White-label AI receptionist & voice agent platform for agencies: resell Vapi, Retell & ElevenLabs, keep 100% of client revenue, and launch in 24 hours once approved.",
     path: "/whitelabel",
   }),
 };
@@ -63,7 +63,7 @@ export default function WhiteLabelPage() {
         "@type": "Service",
         "@id": `${SITE_URL}/whitelabel#service`,
         name: "White-Label AI Receptionist & Voice AI Platform",
-        description: "Partner program allowing agencies and resellers to offer AI voice agents under their own brand. Includes full white-label dashboard, custom voice training, and subscription-based pricing you control.",
+        description: "Partner program allowing agencies and resellers to offer AI voice agents under their own brand. Includes full white-label dashboard, voice cloning through your own ElevenLabs account, and subscription-based pricing you control.",
         provider: {
           "@id": `${SITE_URL}/#organization`
         },
@@ -187,7 +187,7 @@ export default function WhiteLabelPage() {
           <SectionHeader
             title="Resell AI Voice Under Your Own Brand"
             highlight="Your Own Brand"
-            subtitle="Buy wholesale from $99/month, set your own client pricing, and keep 100% of the margin. Sub-accounts, Stripe rebilling, and a 24-hour launch are included on every plan."
+            subtitle="Buy wholesale from $99/month, set your own client pricing, and keep 100% of the margin. Sub-accounts, Stripe rebilling, and a 24-hour launch after approval are included on every plan."
           />
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
             {[

@@ -41,7 +41,7 @@ const platformFaqs: Faq[] = [
   {
     question: "Does Fusion Calling integrate with my CRM and calendar?",
     answer:
-      "Yes. Native integrations cover HubSpot and GoHighLevel, calendar booking (Google, Outlook, Cal.com), and 2,200+ additional apps via Zapier. Leads, call outcomes, and transcripts sync automatically after each call.",
+      "Yes. Native integrations cover HubSpot and calendar booking (Google Calendar, Outlook, Cal.com); GoHighLevel connects via API and webhooks; and 2,200+ additional apps are reachable via Zapier. Leads, call outcomes, and transcripts sync automatically after each call.",
   },
   {
     question: "How reliable is the platform?",
@@ -54,13 +54,13 @@ const pricingFaqs: Faq[] = [
     question: "How much does Fusion Calling cost for businesses?",
     answer: `Direct plans are ${DIRECT_PLANS
       .map((p) => `${p.name} at $${p.price}/month with ${p.includedMinutes} included minutes`)
-      .join(", ")}, billed month-to-month with a ${OFFER.guarantee} money-back guarantee. Overage beyond included minutes runs from ${
+      .join(", ")}, billed month-to-month. Overage beyond included minutes runs from ${
       DIRECT_PLANS[DIRECT_PLANS.length - 1].overageRate
     } to ${DIRECT_PLANS[0].overageRate} depending on tier.`,
   },
   {
     question: "Is there a setup fee or free trial?",
-    answer: `The business Starter plan ($149/month) has a $0 setup fee and every plan comes with a ${OFFER.trial} free trial plus the ${OFFER.guarantee} money-back guarantee. Higher tiers carry a one-time onboarding fee that covers custom voice training and white-label setup.`,
+    answer: `The business Starter plan ($149/month) has a $0 setup fee and every plan comes with a ${OFFER.trial} free trial. Pro and Enterprise carry a one-time setup fee ($799 and $1,250) covering agent configuration, integration setup, testing, and launch support — custom trained voice is part of Enterprise.`,
   },
   {
     question: "How much does the white-label partner program cost?",
@@ -96,6 +96,15 @@ const complianceCurated: Faq[] = [
   blogFaqs["voice-ai-security-compliance"][4],
 ].filter(Boolean);
 
+// Append the outbound-dialing source here (not at render time) so the
+// FAQPage JSON-LD and the rendered answer carry identical text.
+const outboundFaq = complianceCurated.find((f) =>
+  f.question.startsWith("What rules apply to outbound dialing")
+);
+if (outboundFaq) {
+  outboundFaq.answer += ` Authoritative reference: ${GEO_SOURCES.fccTcpa.label} (${GEO_SOURCES.fccTcpa.url}).`;
+}
+
 const allFaqs: Faq[] = [
   ...platformFaqs,
   ...pricingFaqs,
@@ -112,7 +121,7 @@ export const metadata: Metadata = {
   ...buildOpenGraph({
     title: "Fusion Calling FAQ — Pricing, White-Label & Providers",
     description:
-      "Direct answers about Fusion Calling: business pricing ($149–$497/mo), 24-hour white-label launch, supported voice providers, and compliance.",
+      "Direct answers about Fusion Calling: business pricing ($149–$497/mo), white-label launch in 24 hours once approved, supported voice providers, and compliance.",
     path: "/faq",
   }),
 };
@@ -214,14 +223,7 @@ export default function FaqPage() {
           <FaqSection title="White-label partner program" faqs={whitelabelCurated} />
           <FaqSection
             title="Compliance & security"
-            faqs={complianceCurated.map((f) =>
-              f.question.startsWith("What rules apply to outbound dialing")
-                ? {
-                    ...f,
-                    answer: `${f.answer} Authoritative reference: ${GEO_SOURCES.fccTcpa.label} (${GEO_SOURCES.fccTcpa.url}).`,
-                  }
-                : f
-            )}
+            faqs={complianceCurated}
           />
 
           {/* Related pages — internal links for crawlers and AI assistants. */}
@@ -235,7 +237,7 @@ export default function FaqPage() {
                 { href: "/whitelabel", label: "White-label partner program" },
                 { href: "/calculator", label: "Revenue calculator for resellers" },
                 { href: "/ai-receptionist", label: "AI receptionist product overview" },
-                { href: "/glossary", label: "Voice AI glossary — 77 terms defined" },
+                { href: "/glossary", label: "Voice AI glossary — 80 terms defined" },
                 { href: "/contact", label: "Contact — talk to the team" },
               ].map((l) => (
                 <li

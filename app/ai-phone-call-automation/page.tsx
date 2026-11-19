@@ -84,7 +84,7 @@ const fitsPoorly = [
 const directions = [
   {
     title: "Inbound automation",
-    text: "Every incoming call is answered on the first ring: greetings, questions about services and hours, booking and rescheduling, messages, SMS follow-ups, and warm transfers when a human is needed.",
+    text: "Every incoming call is answered in two rings: greetings, questions about services and hours, booking and rescheduling, messages, SMS follow-ups, and warm transfers when a human is needed.",
   },
   {
     title: "Outbound automation",

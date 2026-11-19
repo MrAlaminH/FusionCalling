@@ -17,7 +17,7 @@ const title = `Vapi Alternatives: Bland, Retell, Synthflow, Famulor`;
 // bland 395, retell 352, synthflow 273, famulor 215 hub impressions, 90d GSC)
 // — the pre-2026-11-11 title named no brands (1 click / 1,555 imp), and the
 // 2026-11-06 one omitted Vapi entirely despite 4× Bland's volume.
-const description = `Compare Vapi, Bland AI, Retell, Synthflow, Famulor and more — pricing, features, white-label support. Fusion Calling from $99/mo.`;
+const description = `Compare Vapi, Bland AI, Retell, Synthflow, Famulor and more — pricing, features, white-label support. Fusion Calling white-label plans from $99/mo.`;
 
 export const metadata: Metadata = {
   title,
@@ -43,7 +43,7 @@ const alternativeFaqs = [
   },
   {
     question: "What is the best alternative to Vapi for outbound voice AI?",
-    answer: "For engineers building custom agents, Vapi itself is a strong engine. But if you want outbound AI calling as a product you resell — without building infrastructure — Fusion Calling runs Vapi, Retell, and ElevenLabs outbound campaigns in one white-label dashboard from $99/month with 6 client sub-accounts, Stripe rebilling, and a 24-hour guided launch. The guides below compare each side by side.",
+    answer: "For engineers building custom agents, Vapi itself is a strong engine. But if you want outbound AI calling as a product you resell — without building infrastructure — Fusion Calling runs Vapi, Retell, and ElevenLabs outbound campaigns in one white-label dashboard from $99/month with 6 client sub-accounts, Stripe rebilling, and a 24-hour guided launch once approved. The guides below compare each side by side.",
   },
   {
     question: "Which AI calling platforms work for healthcare workflows like prior authorization?",
@@ -432,7 +432,7 @@ export default function CompareHubPage() {
                 {
                   icon: "●",
                   title: "Guided Launch",
-                  body: "Done-with-you onboarding gets your branded agency live in 24 hours with 30 days of support.",
+                  body: "Done-with-you onboarding gets your branded agency live within 24 hours of approval with 30 days of support.",
                 },
               ].map((f) => (
                 <div

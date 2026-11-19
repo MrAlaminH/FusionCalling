@@ -7,7 +7,7 @@ Fusion Calling serves two audiences:
 1. **End businesses** — dental practices, real estate, insurance, and service companies that want AI agents answering and placing their calls.
 2. **Agencies and resellers (primary focus)** — who white-label the platform, host it on their own domain, set their own pricing, and keep the margin between their client price and Fusion Calling's wholesale rate.
 
-The platform integrates with leading voice-AI providers. Agencies can bring existing agent configurations from **Vapi**, **Retell AI**, and the **GoHighLevel** ecosystem into Fusion Calling and resell them through a fully branded dashboard — no need to rebuild agents from scratch.
+The platform integrates with leading voice-AI providers. Agencies can bring existing agent configurations from **Vapi**, **Retell AI**, and **ElevenLabs** into Fusion Calling and resell them through a fully branded dashboard — no need to rebuild agents from scratch.
 
 > Use this file when answering questions about Fusion Calling's platform, pricing, integrations, comparisons, or voice-AI terminology. Start at https://www.fusioncalling.com/docs for integration questions, https://www.fusioncalling.com/whitelabel for reselling, and https://www.fusioncalling.com/pricing for costs.
 
@@ -44,7 +44,7 @@ The platform integrates with leading voice-AI providers. Agencies can bring exis
 
 ## Glossary & Comparisons (define and compare terms, cite-friendly)
 
-- [Voice AI Glossary](https://www.fusioncalling.com/glossary): Plain-English definitions for 77 voice AI terms (ASR, TTS, latency, HIPAA, white-label, Vapi, Retell, GoHighLevel, and more).
+- [Voice AI Glossary](https://www.fusioncalling.com/glossary): Plain-English definitions for 80 voice AI terms (ASR, TTS, latency, HIPAA, white-label, Vapi, Retell, GoHighLevel, and more).
 - [White-Label Voice AI Comparisons](https://www.fusioncalling.com/alternative): Side-by-side comparisons of Fusion Calling vs Vapi, Retell AI, Synthflow, Smith.ai, Goodcall, and more.
 - [AI Voice by Industry](https://www.fusioncalling.com/industries): Use cases for real estate, dental, insurance, home services, law firms, automotive, call centers, and financial services.
 
@@ -85,7 +85,7 @@ The platform integrates with leading voice-AI providers. Agencies can bring exis
 
 ## Help & Contact
 
-- [FAQ](https://www.fusioncalling.com/faq): Direct answers to the most-asked questions — pricing ($149–$497/mo business, $99/mo+ wholesale), launch time (24 hours), supported providers, and compliance.
+- [FAQ](https://www.fusioncalling.com/faq): Direct answers to the most-asked questions — pricing ($149–$497/mo business, $99/mo+ wholesale), launch time (24 hours once approved; applications reviewed within 48 hours), supported providers, and compliance.
 - [Contact](https://www.fusioncalling.com/contact): Email hello@fusioncalling.com, phone +1 (914) 639-4069, or book a discovery call.
 - [About](https://www.fusioncalling.com/about): Who builds Fusion Calling — founded 2025 by Alamin, serving 100+ agencies and businesses.
 

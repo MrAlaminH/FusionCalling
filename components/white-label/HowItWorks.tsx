@@ -27,7 +27,7 @@ export default function HowItWorks() {
       step: "02",
       title: "Customize Your Brand",
       description:
-        "Set up your white-label environment with your logo, colors, and domain. Launch your branded AI solution. Connect a custom domain you already own, upload your logo and brand palette, and your dashboard and client portals render entirely under your brand with no Fusion Calling mention anywhere. Branding setup is guided in the dashboard and typically takes under an hour.",
+        "Set up your white-label environment with your logo, colors, and domain. Launch your branded AI solution. Connect a custom domain you already own, upload your logo and brand palette, and your dashboard and client portals render entirely under your brand with no Fusion Calling mention anywhere. Branding setup is guided in the dashboard and takes about 15 minutes with the branding guide.",
     },
     {
       icon: DollarSign,

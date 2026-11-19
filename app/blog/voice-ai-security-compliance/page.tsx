@@ -252,7 +252,11 @@ export default function VoiceAISecurityComplianceBlogPost() {
               <Link href="/pricing" className="text-brand-light hover:text-brand transition-colors">
                 pricing page
               </Link>{" "}
-              and try the demo line yourself.
+              and try the{" "}
+              <Link href="/#show-case" className="text-brand-light hover:text-brand transition-colors">
+                live demo calls
+              </Link>{" "}
+              yourself.
             </p>
           </div>
 

@@ -59,7 +59,7 @@ const pricingFaqs = [
   },
   {
     question: "Do you offer a free trial?",
-    answer: `Yes — every plan starts with a ${OFFER.trial} free trial. We also offer a 14-day money-back guarantee on all plans: try the platform risk-free and if it's not a fit, request a full refund within 14 days.`,
+    answer: `Yes — every plan starts with a ${OFFER.trial} free trial. There is no permanent free tier, but you can hear a live demo call on the homepage before committing.`,
   },
 ];
 
@@ -156,7 +156,7 @@ const pricingJsonLd = {
       "@id": `${SITE_URL}/pricing#webpage`,
       url: `${SITE_URL}/pricing`,
       name: "Pricing | Fusion Calling",
-      description: `Simple, fair pricing for AI phone call automation. ${PRICING_SUMMARY} No long-term contracts. 14-day money-back guarantee.`,
+      description: `Simple, fair pricing for AI phone call automation. ${PRICING_SUMMARY} No long-term contracts.`,
       inLanguage: "en-US",
       dateModified: CONTENT_LAST_UPDATED,
       isPartOf: { "@id": `${SITE_URL}/#website` },
@@ -186,7 +186,7 @@ export const metadata: Metadata = {
     // in the SERP badge anyway).
     absolute: `Pricing & Plans — AI Phone Automation from $${FROM_PRICE}/mo`,
   },
-  description: `Simple, fair pricing for AI phone call automation. ${PRICING_SUMMARY} No long-term contracts. 14-day money-back guarantee.`,
+  description: `Simple, fair pricing for AI phone call automation. ${PRICING_SUMMARY} No long-term contracts.`,
   alternates: {
     canonical: "/pricing",
   },

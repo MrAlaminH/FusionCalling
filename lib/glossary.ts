@@ -602,7 +602,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: "HIPAA",
     category: "Compliance & Security",
     definition:
-      "The Health Insurance Portability and Accountability Act (HIPAA) is a US law governing the protection of protected health information. Voice AI used in healthcare may require compliant infrastructure and a signed agreement. Ask for a signed BAA before handling patient calls, and switch on redaction so private health details are masked in transcripts and logs. See our security and compliance guide for the full checklist to run before taking healthcare clients.",
+      "The Health Insurance Portability and Accountability Act (HIPAA) is a US law governing the protection of protected health information. Voice AI used in healthcare may require compliant infrastructure and a signed agreement. Ask for a signed BAA before handling patient calls, and turn on the built-in redaction so private health details are masked in transcripts and logs. See our security and compliance guide for the full checklist to run before taking healthcare clients.",
     whyItMatters:
       "Healthcare buyers require HIPAA-aware deployments, so agencies serving medical and dental clients must address it.",
     related: ["Business Associate Agreement", "SOC 2", "GDPR"],

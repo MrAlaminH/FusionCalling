@@ -7,13 +7,13 @@ export const definitionBlockData = {
     "Unlike a traditional IVR menu or a basic chatbot, a modern AI receptionist understands context, remembers details within a call, and integrates with your CRM, calendar, and helpdesk in real time.",
   stats: [
     {
-      value: "80%",
+      value: "2 rings",
       label:
-        "Fewer missed calls reported by customers after switching to AI receptionists.",
-      source: "Fusion Calling customer testimonials",
+        "Average pickup — every call answered in two rings, around the clock.",
+      source: "Fusion Calling platform",
     },
     {
-      value: "99%",
+      value: "4.8/5",
       label: "Customer satisfaction across 100+ agencies and projects.",
       source: "Fusion Calling internal data, 2025–2026",
     },

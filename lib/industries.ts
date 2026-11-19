@@ -122,7 +122,7 @@ export const industries: Industry[] = [
         emoji: "📞",
         title: "Instant Lead Capture",
         description:
-          "Answer every buyer and seller inquiry on the first ring, 24/7, and capture name, budget, timeline, and property interest.",
+          "Answer every buyer and seller inquiry in two rings, 24/7, and capture name, budget, timeline, and property interest.",
       },
       {
         emoji: "🗓️",
@@ -1310,7 +1310,7 @@ export const industries: Industry[] = [
     receptionistSection: {
       heading: "Your AI receptionist for restaurants",
       body:
-        "From the Friday-night rush to a quiet Tuesday at 10pm, an AI receptionist picks up on the first ring, takes phone orders, books reservations, and answers hours, menu, and directions questions — so the host stand never has to choose between a guest in front of them and a caller on hold.",
+        "From the Friday-night rush to a quiet Tuesday at 10pm, an AI receptionist picks up in two rings, takes phone orders, books reservations, and answers hours, menu, and directions questions — so the host stand never has to choose between a guest in front of them and a caller on hold.",
       bullets: [
         "Takes phone orders and routes them to the kitchen or POS",
         "Books reservations and confirms or reschedules on the call",
@@ -1379,7 +1379,7 @@ export const industries: Industry[] = [
       lines: [
         { label: "Missed calls per month", value: "140" },
         { label: "Reservation or order requests", value: "50%" },
-        { label: "Book when answered on the first ring", value: "70%" },
+        { label: "Book when answered in two rings", value: "70%" },
         { label: "Average cover or order", value: "$65" },
       ],
       result: "$3,185/month in unbooked tables and orders",
@@ -1399,7 +1399,7 @@ export const industries: Industry[] = [
       {
         question: "What is the best AI voice agent for restaurants?",
         answer:
-          "The best AI voice agent for restaurants answers every call in under a second, books directly into OpenTable, Resy, or Tock with party size and SMS confirmation, sends takeout tickets into Toast, Square, or Clover with modifiers, and runs 24-hour and 2-hour no-show reminders plus waitlist callbacks. For a 40-seat venue at $60 average cover, cutting no-shows from 10% to 3% on 100 weekly covers recovers about $420/week. Fusion Calling starts at $149/month for restaurants, and agencies white-labeling hospitality start at $99/month.",
+          "The best AI voice agent for restaurants answers every call in two rings, books directly into OpenTable, Resy, or Tock with party size and SMS confirmation, sends takeout tickets into Toast, Square, or Clover with modifiers, and runs 24-hour and 2-hour no-show reminders plus waitlist callbacks. For a 40-seat venue at $60 average cover, cutting no-shows from 10% to 3% on 100 weekly covers recovers about $420/week. Fusion Calling starts at $149/month for restaurants, and agencies white-labeling hospitality start at $99/month.",
       },
       {
         question:
@@ -1420,7 +1420,7 @@ export const industries: Industry[] = [
       {
         question: "Does it work after hours and during the dinner rush?",
         answer:
-          "Yes. The agent picks up in under a second 24/7, handles nights, weekends, and peak overflow, sends SMS confirmations and no-show reminders, and never sends a caller to voicemail.",
+          "Yes. The agent picks up in two rings 24/7, handles nights, weekends, and peak overflow, sends SMS confirmations and no-show reminders, and never sends a caller to voicemail.",
       },
       {
         question: "Does it work for hotels as well as restaurants?",
@@ -1742,7 +1742,7 @@ export const industries: Industry[] = [
       lines: [
         { label: "Missed calls per month", value: "60" },
         { label: "Appointment and service requests", value: "50%" },
-        { label: "Book when answered on the first ring", value: "50%" },
+        { label: "Book when answered in two rings", value: "50%" },
         { label: "Average visit revenue", value: "$200" },
       ],
       result: "$3,000/month in visits booked at the next clinic",

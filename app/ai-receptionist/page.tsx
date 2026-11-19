@@ -463,15 +463,15 @@ export default function AiReceptionistPage() {
               </table>
             </div>
             <p className="text-gray-400 leading-relaxed">
-              Every plan starts with a 3-day free trial and a 14-day
-              money-back guarantee. For context beyond our own plans, the{" "}
+              Every plan starts with a 3-day free trial. For context beyond
+              our own plans, the{" "}
               <Link
                 href="/ai-receptionist-pricing"
                 className="text-brand hover:underline"
               >
                 2026 AI receptionist pricing benchmark
               </Link>{" "}
-              compares entry prices across 21 voice AI platforms.
+              compares entry prices across 23 voice AI platforms.
             </p>
           </div>
         </section>

@@ -55,8 +55,8 @@ export const authors: Author[] = [
     authorSchemaId: `${SITE_URL}/team/voice-team#person`,
     longBio: [
       "The Fusion Calling Voice Team comprises conversation designers, voice engineers, and platform architects who have collectively deployed 500+ AI voice agents across real estate, healthcare, insurance, home services, and legal verticals.",
-      "They specialize in optimizing latency, barge-in handling, endpointing accuracy, and multi-turn conversation flows. The team maintains direct partnerships with Vapi, Retell, and ElevenLabs engineering teams to ensure Fusion Calling customers get early access to new features and priority support.",
-      "Their published work includes the industry's most comprehensive voice AI glossary (77 terms), benchmark studies on provider performance, and open-source tooling for voice agent testing.",
+      "They specialize in optimizing latency, barge-in handling, endpointing accuracy, and multi-turn conversation flows. The team maintains direct partnerships with Vapi, Retell, and ElevenLabs engineering teams to ensure Fusion Calling customers get early access to new features.",
+      "Their published work includes the industry's most comprehensive voice AI glossary (80 terms), benchmark studies on provider performance, and open-source tooling for voice agent testing.",
     ],
     specialties: [
       "Conversation Design",

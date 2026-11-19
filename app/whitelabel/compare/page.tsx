@@ -192,7 +192,8 @@ export default function WhitelabelComparePage() {
               public sources — confirm with the vendor. Where a competitor
               wins a dimension (e.g. Vapify&apos;s $29 entry), we say so —
               our strengths are multi-provider coverage, BYO API keys,
-              sub-account capacity, and a 24-hour guided launch.
+              sub-account capacity, and a 24-hour guided launch after
+              approval.
             </p>
           </div>
         </section>

@@ -36,7 +36,7 @@ const howItWorksSteps = [
   {
     stage: "Telephony",
     title: "The call connects",
-    text: "An inbound caller reaches your business number — or the AI receptionist places an outbound call from your number. There is no phone tree and no hold music; a natural voice answers on the first ring, in your brand's tone.",
+    text: "An inbound caller reaches your business number — or the AI receptionist places an outbound call from your number. There is no phone tree and no hold music; a natural voice answers in two rings, in your brand's tone.",
   },
   {
     stage: "ASR",
@@ -69,7 +69,7 @@ const useCases = [
   {
     name: "Dental & healthcare practices",
     href: "/industries/ai-voice-for-dental",
-    text: "Handle appointment bookings, reschedules, and insurance questions while staying compliant with HIPAA requirements.",
+    text: "Handle appointment bookings, reschedules, and insurance questions with HIPAA-conscious workflows — BAA-backed deployment available as an add-on for healthcare.",
   },
   {
     name: "Insurance",
@@ -336,7 +336,7 @@ export default function AiPhoneCallReceptionistPage() {
             </h1>
             <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
               An AI phone call receptionist is a voice agent that answers your
-              business line on the first ring, understands what callers need in
+              business line in two rings, understands what callers need in
               plain speech, and gets things done — bookings, answers, messages,
               transfers. This guide breaks down exactly how it works, what it
               can handle, and where it beats an IVR menu or a human hire.

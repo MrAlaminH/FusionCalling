@@ -9,8 +9,8 @@ import { Reveal } from "@/components/ui/reveal";
 export const callFlowSteps = [
   {
     icon: PhoneIncoming,
-    title: "Answers on the first ring",
-    text: "Your AI call agent picks up instantly — nights, weekends, holidays, and every simultaneous caller. No hold queue, no voicemail dead end.",
+    title: "Answers in two rings",
+    text: "Your AI call agent picks up in two rings — nights, weekends, holidays, and every simultaneous caller. No hold queue, no voicemail dead end.",
   },
   {
     icon: Brain,

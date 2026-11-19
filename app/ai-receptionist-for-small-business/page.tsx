@@ -133,7 +133,7 @@ const demoTakeaways = [
 const comparisonRows = [
   {
     feature: "When calls get answered",
-    ai: "24/7, first ring",
+    ai: "24/7, two rings",
     voicemail: "Never — callers hit a greeting",
     service: "Shift-based",
     hire: "~40 hrs/week",
